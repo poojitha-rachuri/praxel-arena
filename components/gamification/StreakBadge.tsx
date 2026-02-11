@@ -11,7 +11,7 @@ export function StreakBadge({ streak }: StreakBadgeProps) {
   if (streak < 2) return null;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       <motion.div
         key={streak}
         initial={{ scale: 0.5, opacity: 0 }}

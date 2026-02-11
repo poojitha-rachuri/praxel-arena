@@ -3,7 +3,6 @@
 import { useState, useCallback, useMemo } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Lightbulb, PenLine } from "lucide-react";
 import type { InteractionOption } from "@/types";
 
@@ -84,9 +83,9 @@ export function FillTheGap({
               !selected &&
                 "border-primary/40 bg-primary/5 text-muted-foreground",
               revealed && isCorrect &&
-                "border-emerald-500 bg-emerald-500/10 text-emerald-300",
+                "border-success bg-success/10 text-success",
               revealed && !isCorrect &&
-                "border-red-500 bg-red-500/10 text-red-300 line-through"
+                "border-danger bg-danger/10 text-danger line-through"
             )}
           >
             {selectedText ?? "\u00A0____\u00A0"}
@@ -96,7 +95,7 @@ export function FillTheGap({
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-block mx-1 px-2 py-0.5 rounded-md border-b-2 border-emerald-500 bg-emerald-500/10 text-emerald-300"
+              className="inline-block mx-1 px-2 py-0.5 rounded-md border-b-2 border-success bg-success/10 text-success"
             >
               {correctText}
             </motion.span>

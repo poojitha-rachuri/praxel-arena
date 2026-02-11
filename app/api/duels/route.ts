@@ -6,6 +6,24 @@ import {
   ELO_INITIAL_RATING,
 } from "@/lib/utils/constants";
 
+/** Strip correctAnswer/insightAnswer from COMPETE sprint interactions before sending to client */
+function sanitizeDuelForClient(duel: Record<string, unknown>) {
+  const sprint = duel.sprint as Record<string, unknown> | null;
+  if (!sprint || sprint.mode !== "COMPETE") return duel;
+  const interactions = sprint.interactions as Record<string, unknown>[];
+  return {
+    ...duel,
+    sprint: {
+      ...sprint,
+      interactions: interactions.map((i) => ({
+        ...i,
+        correctAnswer: null,
+        insightAnswer: null,
+      })),
+    },
+  };
+}
+
 export async function GET() {
   const user = await ensureUser();
   if (!user) {
@@ -80,7 +98,7 @@ export async function POST(request: NextRequest) {
           },
         });
 
-        return NextResponse.json({ duel: updatedDuel, action: "joined" });
+        return NextResponse.json({ duel: sanitizeDuelForClient(updatedDuel as unknown as Record<string, unknown>), action: "joined" });
       } catch {
         // Update failed = duel not found, already taken, or is own duel
         return NextResponse.json(
@@ -132,7 +150,7 @@ export async function POST(request: NextRequest) {
 
     if (existingWaiting) {
       return NextResponse.json({
-        duel: existingWaiting,
+        duel: sanitizeDuelForClient(existingWaiting as unknown as Record<string, unknown>),
         action: "already_waiting",
       });
     }
@@ -200,14 +218,14 @@ export async function POST(request: NextRequest) {
           },
         });
 
-        return NextResponse.json({ duel: updatedDuel, action: "matched" });
+        return NextResponse.json({ duel: sanitizeDuelForClient(updatedDuel as unknown as Record<string, unknown>), action: "matched" });
       } catch {
         // Another user took this duel first -- fall through to create new
       }
     }
 
     // No match found - find a COMPETE sprint for this skill to use
-    let sprint = await prisma.sprint.findFirst({
+    const sprint = await prisma.sprint.findFirst({
       where: {
         skillId: skill.id,
         mode: "COMPETE",
@@ -238,7 +256,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    return NextResponse.json({ duel: newDuel, action: "created" });
+    return NextResponse.json({ duel: sanitizeDuelForClient(newDuel as unknown as Record<string, unknown>), action: "created" });
   } catch (error) {
     console.error("Failed to handle duel:", error);
     return NextResponse.json(

@@ -47,7 +47,8 @@ export async function GET(
       (isPlayer1 && !!duel.player1AttemptId) ||
       (isPlayer2 && !!duel.player2AttemptId);
 
-    // Serialize sprint for client
+    // Serialize sprint for client — strip answers in COMPETE mode to prevent cheating
+    const isCompete = duel.sprint?.mode === "COMPETE";
     const sprintData = duel.sprint
       ? {
           id: duel.sprint.id,
@@ -61,8 +62,8 @@ export async function GET(
             order: i.order,
             prompt: i.prompt,
             options: i.options,
-            correctAnswer: i.correctAnswer,
-            insightAnswer: i.insightAnswer,
+            correctAnswer: isCompete ? null : i.correctAnswer,
+            insightAnswer: isCompete ? null : i.insightAnswer,
             teachingPreamble: i.teachingPreamble,
             priorContext: i.priorContext,
             timeTarget: i.timeTarget,

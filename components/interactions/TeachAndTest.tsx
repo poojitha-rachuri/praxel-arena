@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ArrowRight, Lightbulb, Check, GraduationCap } from "lucide-react";
 import { SpotTheSignal } from "./SpotTheSignal";

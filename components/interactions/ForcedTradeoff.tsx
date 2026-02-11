@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Lightbulb, Scale } from "lucide-react";
 import type { InteractionOption } from "@/types";
 import { renderBoldPrompt } from "@/lib/utils/safe-html";

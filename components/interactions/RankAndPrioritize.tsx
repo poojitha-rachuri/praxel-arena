@@ -243,14 +243,14 @@ export function RankAndPrioritize({
           className={cn(
             "px-4 py-3 rounded-xl border",
             isCorrect
-              ? "bg-emerald-500/10 border-emerald-500/30"
-              : "bg-amber-500/10 border-amber-500/30"
+              ? "bg-success/10 border-success/30"
+              : "bg-warning/10 border-warning/30"
           )}
         >
           <p
             className={cn(
               "text-sm font-medium",
-              isCorrect ? "text-emerald-300" : "text-amber-300"
+              isCorrect ? "text-success" : "text-warning"
             )}
           >
             {isCorrect ? "Excellent prioritization!" : "Ranking locked in."}

@@ -55,6 +55,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Sprint not found" }, { status: 404 });
     }
 
+    // Validate response interactionIds belong to this sprint (fail fast before expensive AI call)
+    const validIds = new Set(sprint.interactions.map((i) => i.id));
+    for (const r of responses) {
+      if (!validIds.has(r.interactionId)) {
+        return NextResponse.json(
+          { error: "Invalid interaction ID in responses" },
+          { status: 400 }
+        );
+      }
+    }
+
     // Build SprintData for the evaluator
     const sprintData = {
       title: sprint.title,
@@ -80,17 +91,6 @@ export async function POST(request: NextRequest) {
       responses,
       sprint.mode
     );
-
-    // Validate response interactionIds belong to this sprint
-    const validIds = new Set(sprint.interactions.map((i) => i.id));
-    for (const r of responses) {
-      if (!validIds.has(r.interactionId)) {
-        return NextResponse.json(
-          { error: "Invalid interaction ID in responses" },
-          { status: 400 }
-        );
-      }
-    }
 
     // Atomic: create attempt + update skill scores in a transaction
     const attempt = await prisma.$transaction(async (tx) => {

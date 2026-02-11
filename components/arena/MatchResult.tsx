@@ -42,7 +42,10 @@ export default function MatchResult({
     if (player1.isWinner && !celebratedRef.current) {
       celebratedRef.current = true;
       const timer = setTimeout(() => onDuelVictory(), 600);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        celebratedRef.current = false;
+      };
     }
   }, [player1.isWinner, onDuelVictory]);
 

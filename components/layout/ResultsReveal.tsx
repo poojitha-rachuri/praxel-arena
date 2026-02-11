@@ -41,15 +41,18 @@ function AnimatedNumber({
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
+    let controls: { stop: () => void } | undefined;
     const timeout = setTimeout(() => {
-      const controls = animate(count, target, {
+      controls = animate(count, target, {
         duration: SCORE_COUNT_DURATION,
         ease: "easeOut",
       });
-      return () => controls.stop();
     }, delay * 1000);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      controls?.stop();
+    };
   }, [count, target, delay]);
 
   useEffect(() => {
@@ -80,22 +83,19 @@ export default function ResultsReveal({
     const chartTimer = setTimeout(() => setShowChart(true), 800);
     const detailsTimer = setTimeout(() => setShowDetails(true), 2000);
 
-    // Fire celebration confetti after score count-up
+    // Fire celebration confetti after score count-up (once only)
+    let celebrationTimer: ReturnType<typeof setTimeout> | undefined;
     if (!celebratedRef.current) {
       celebratedRef.current = true;
-      const celebrationTimer = setTimeout(() => {
+      celebrationTimer = setTimeout(() => {
         onSprintComplete(totalScore);
       }, 1200);
-      return () => {
-        clearTimeout(chartTimer);
-        clearTimeout(detailsTimer);
-        clearTimeout(celebrationTimer);
-      };
     }
 
     return () => {
       clearTimeout(chartTimer);
       clearTimeout(detailsTimer);
+      if (celebrationTimer) clearTimeout(celebrationTimer);
     };
   }, [onSprintComplete, totalScore]);
 
