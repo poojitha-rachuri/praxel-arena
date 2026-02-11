@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useMemo } from "react";
+import { useState, useCallback, useRef, useMemo, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
 import { InteractionCard } from "./InteractionCard";
 import { SpotTheSignal } from "./SpotTheSignal";
@@ -10,6 +10,8 @@ import { RankAndPrioritize } from "./RankAndPrioritize";
 import { Curveball } from "./Curveball";
 import { TeachAndTest } from "./TeachAndTest";
 import { ProgressBar } from "./ProgressBar";
+import { StreakBadge } from "@/components/gamification/StreakBadge";
+import { useCelebration } from "@/lib/hooks/use-celebration";
 import type { SprintResponse, InteractionOption } from "@/types";
 
 // ─── Types ──────────────────────────────────────────────
@@ -24,10 +26,10 @@ type InteractionType =
 
 export interface Interaction {
   id: string;
-  type: InteractionType | string;
+  type: string; // Prisma stores as String; validated at render time via switch-like conditionals
   order: number;
   prompt: string;
-  options: InteractionOption[] | unknown;
+  options: unknown;
   correctAnswer: string | null;
   insightAnswer: string | null;
   teachingPreamble: string | null;
@@ -76,10 +78,23 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const [responses, setResponses] = useState<SprintResponse[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
+  const [streak, setStreak] = useState(0);
+  const streakRef = useRef(0);
 
   // Track when each card starts
   const cardStartTimeRef = useRef<number>(Date.now());
   const sprintStartTimeRef = useRef<number>(Date.now());
+  const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const submittedRef = useRef(false);
+
+  const { onCorrect } = useCelebration();
+
+  // Clear feedback timer on unmount
+  useEffect(() => {
+    return () => {
+      if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
+    };
+  }, []);
 
   const currentInteraction = sortedInteractions[currentIndex] ?? null;
   const totalInteractions = sortedInteractions.length;
@@ -87,6 +102,9 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const handleAnswer = useCallback(
     (answer: string) => {
       if (!currentInteraction) return;
+      // Double-tap guard: prevent submitting twice for same interaction
+      if (submittedRef.current) return;
+      submittedRef.current = true;
 
       const now = Date.now();
       const timeSpent = parseFloat(
@@ -114,6 +132,17 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
       setLastCorrect(finalCorrect);
       setShowFeedback(true);
 
+      // Streak tracking + celebration (use ref to avoid stale closure)
+      if (finalCorrect === true) {
+        const newStreak = streakRef.current + 1;
+        streakRef.current = newStreak;
+        setStreak(newStreak);
+        onCorrect(newStreak);
+      } else if (finalCorrect === false) {
+        streakRef.current = 0;
+        setStreak(0);
+      }
+
       const newResponse: SprintResponse = {
         interactionId: currentInteraction.id,
         answer,
@@ -125,9 +154,10 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
 
       // After feedback delay, advance or complete
       const feedbackDelay = 400;
-      setTimeout(() => {
+      feedbackTimerRef.current = setTimeout(() => {
         setShowFeedback(false);
         setLastCorrect(null);
+        submittedRef.current = false;
 
         if (currentIndex + 1 >= totalInteractions) {
           // Sprint complete
@@ -139,7 +169,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         }
       }, feedbackDelay);
     },
-    [currentInteraction, currentIndex, totalInteractions, responses, onComplete]
+    [currentInteraction, currentIndex, totalInteractions, responses, onComplete, onCorrect]
   );
 
   if (!currentInteraction) {
@@ -168,6 +198,9 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         startTime={sprintStartTimeRef.current}
         mode={mode}
       />
+
+      {/* Streak Badge */}
+      <StreakBadge streak={streak} />
 
       {/* Interaction Card with transitions */}
       <AnimatePresence mode="wait">

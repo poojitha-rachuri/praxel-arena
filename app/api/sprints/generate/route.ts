@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 import { generateSprint } from "@/lib/ai/generate";
 import { SPRINT_GENERATION_RATE_LIMIT } from "@/lib/utils/constants";
 import type { InteractionType } from "@/app/generated/prisma/client";
 
 export async function POST(request: NextRequest) {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -35,14 +35,6 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    // Look up user
-    const user = await prisma.user.findUnique({
-      where: { clerkId },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
-
     // Look up skill
     const skill = await prisma.skill.findUnique({
       where: { slug: skillSlug },

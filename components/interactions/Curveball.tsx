@@ -3,8 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, Lightbulb } from "lucide-react";
 import type { InteractionOption } from "@/types";
 import { renderBoldPrompt } from "@/lib/utils/safe-html";
 
@@ -52,23 +51,20 @@ export function Curveball({
         initial={{ opacity: 0, y: -10, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        className="flex items-start gap-3 px-4 py-3 rounded-xl bg-amber-500/10 border-2 border-amber-500/30"
+        className="flex items-start gap-3 px-4 py-3 rounded-xl bg-warning/10 border-2 border-warning/30"
       >
-        <AlertTriangle className="size-5 text-amber-400 flex-shrink-0 mt-0.5" />
+        <AlertTriangle className="size-5 text-warning flex-shrink-0 mt-0.5" />
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-amber-300">CURVEBALL</p>
+          <p className="text-sm font-bold text-warning">CURVEBALL</p>
           {priorContext && (
-            <p className="text-xs text-amber-200/70 mt-1 leading-relaxed">
+            <p className="text-xs text-warning/70 mt-1 leading-relaxed">
               {priorContext}
             </p>
           )}
         </div>
       </motion.div>
 
-      {/* Type Badge */}
-      <Badge variant="secondary" className="self-start text-xs">
-        Curveball
-      </Badge>
+      {/* Type badge (kept subtle since warning banner is prominent) */}
 
       {/* Prompt */}
       <div className="space-y-2">
@@ -77,8 +73,8 @@ export function Curveball({
         </p>
       </div>
 
-      {/* Options */}
-      <div className="flex flex-col gap-3 mt-2">
+      {/* Option Cards */}
+      <div className="flex flex-col gap-3 mt-1">
         {options.map((option, index) => {
           const isSelected = selected === option.id;
           const isCorrectOption = correctAnswer === option.id;
@@ -98,23 +94,19 @@ export function Curveball({
               onClick={() => handleSelect(option.id)}
               disabled={!!selected || disabled}
               className={cn(
-                "relative w-full min-h-[56px] px-4 py-4 rounded-xl text-left",
-                "border-2 transition-colors duration-150",
+                "relative w-full min-h-[56px] pl-5 pr-4 py-4 rounded-xl text-left overflow-hidden",
+                "border transition-all duration-200",
                 "active:scale-[0.98] touch-manipulation",
-                // Default
                 !selected &&
-                  "border-border bg-card text-card-foreground active:border-amber-500 active:bg-amber-500/5",
-                // Best
+                  "border-border/60 bg-surface-2/80 text-card-foreground hover:border-border hover:bg-surface-3/60",
                 isBestAnswer &&
-                  "border-emerald-500 bg-emerald-500/10",
-                // Selected wrong
+                  "border-success/50 bg-success/10 ring-1 ring-success/30",
                 isSelectedWrong &&
-                  "border-amber-500 bg-amber-500/10",
-                // Unselected after reveal
+                  "border-warning/50 bg-warning/10",
                 revealed &&
                   !isSelected &&
                   !isCorrectOption &&
-                  "border-border/50 bg-card/50 opacity-60",
+                  "border-border/30 bg-card/30 opacity-50",
                 (!!selected || disabled) && "cursor-default"
               )}
             >
@@ -122,9 +114,9 @@ export function Curveball({
                 <span
                   className={cn(
                     "flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold mt-0.5",
-                    !selected && "bg-amber-500/10 text-amber-400",
-                    isBestAnswer && "bg-emerald-500/20 text-emerald-400",
-                    isSelectedWrong && "bg-amber-500/20 text-amber-400",
+                    !selected && "bg-warning/10 text-warning",
+                    isBestAnswer && "bg-success/20 text-success",
+                    isSelectedWrong && "bg-warning/20 text-warning",
                     revealed &&
                       !isSelected &&
                       !isCorrectOption &&
@@ -137,8 +129,8 @@ export function Curveball({
                   <span
                     className={cn(
                       "block text-sm font-semibold leading-snug",
-                      isBestAnswer && "text-emerald-300",
-                      isSelectedWrong && "text-amber-300",
+                      isBestAnswer && "text-success",
+                      isSelectedWrong && "text-warning",
                       revealed &&
                         !isSelected &&
                         !isCorrectOption &&
@@ -165,18 +157,21 @@ export function Curveball({
         })}
       </div>
 
-      {/* Insight */}
+      {/* Insight Callout */}
       {revealed && insightAnswer && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.3, delay: 0.3 }}
-          className="mt-2 px-4 py-3 rounded-xl bg-amber-500/5 border border-amber-500/20"
+          className="mt-1 flex gap-3 px-4 py-3 rounded-xl bg-warning/5 border border-warning/20"
         >
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-amber-400">Curveball insight:</span>{" "}
-            {insightAnswer}
-          </p>
+          <Lightbulb className="size-4 text-warning flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-xs font-bold text-warning mb-1">Curveball Insight</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {insightAnswer}
+            </p>
+          </div>
         </motion.div>
       )}
     </div>

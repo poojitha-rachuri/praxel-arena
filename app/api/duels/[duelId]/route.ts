@@ -1,27 +1,19 @@
 import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ duelId: string }> }
 ) {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const { duelId } = await params;
 
   try {
-    // Look up user
-    const user = await prisma.user.findUnique({
-      where: { clerkId },
-      select: { id: true },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
 
     const duel = await prisma.duel.findUnique({
       where: { id: duelId },
@@ -55,7 +47,8 @@ export async function GET(
       (isPlayer1 && !!duel.player1AttemptId) ||
       (isPlayer2 && !!duel.player2AttemptId);
 
-    // Serialize sprint for client
+    // Serialize sprint for client — strip answers in COMPETE mode to prevent cheating
+    const isCompete = duel.sprint?.mode === "COMPETE";
     const sprintData = duel.sprint
       ? {
           id: duel.sprint.id,
@@ -69,8 +62,8 @@ export async function GET(
             order: i.order,
             prompt: i.prompt,
             options: i.options,
-            correctAnswer: i.correctAnswer,
-            insightAnswer: i.insightAnswer,
+            correctAnswer: isCompete ? null : i.correctAnswer,
+            insightAnswer: isCompete ? null : i.insightAnswer,
             teachingPreamble: i.teachingPreamble,
             priorContext: i.priorContext,
             timeTarget: i.timeTarget,

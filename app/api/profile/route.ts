@@ -1,17 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
 
 export async function GET() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const baseUser = await ensureUser();
+  if (!baseUser) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
+    // Re-query with full includes now that we know the user exists
     const user = await prisma.user.findUnique({
-      where: { clerkId },
+      where: { id: baseUser.id },
       include: {
         skillScores: {
           include: {
@@ -85,8 +86,8 @@ export async function GET() {
 }
 
 export async function PUT(request: NextRequest) {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -111,12 +112,6 @@ export async function PUT(request: NextRequest) {
   }
 
   try {
-    const user = await prisma.user.findUnique({
-      where: { clerkId },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
 
     // Verify all career outcomes exist
     const careers = await prisma.careerOutcome.findMany({

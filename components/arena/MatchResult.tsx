@@ -1,11 +1,13 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import RadarChart from "@/components/skill-graph/RadarChart";
 import EloDisplay from "@/components/arena/EloDisplay";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { SCORING_DIMENSIONS } from "@/lib/scoring/dimensions";
+import { useCelebration } from "@/lib/hooks/use-celebration";
 import { cn } from "@/lib/utils";
 
 interface MatchResultProps {
@@ -33,6 +35,19 @@ export default function MatchResult({
   analysis,
 }: MatchResultProps) {
   const winner = player1.isWinner ? player1 : player2;
+  const { onDuelVictory } = useCelebration();
+  const celebratedRef = useRef(false);
+
+  useEffect(() => {
+    if (player1.isWinner && !celebratedRef.current) {
+      celebratedRef.current = true;
+      const timer = setTimeout(() => onDuelVictory(), 600);
+      return () => {
+        clearTimeout(timer);
+        celebratedRef.current = false;
+      };
+    }
+  }, [player1.isWinner, onDuelVictory]);
 
   return (
     <div className="space-y-6">

@@ -1,16 +1,16 @@
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
 import AppShell from "@/components/layout/AppShell";
 import ProfileClient from "./ProfileClient";
 
 export default async function ProfilePage() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) redirect("/sign-in");
+  const baseUser = await ensureUser();
+  if (!baseUser) redirect("/sign-in");
 
   const user = await prisma.user.findUnique({
-    where: { clerkId },
+    where: { id: baseUser.id },
     include: {
       skillScores: {
         include: {

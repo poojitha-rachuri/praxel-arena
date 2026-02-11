@@ -3,9 +3,16 @@
 import { useState, useCallback, useMemo } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
+import { Lightbulb, BarChart3 } from "lucide-react";
 import type { InteractionOption } from "@/types";
 import { renderBoldPrompt } from "@/lib/utils/safe-html";
+
+const OPTION_ACCENT_COLORS = [
+  "bg-info",      // A = blue
+  "bg-success",   // B = green
+  "bg-warning",   // C = amber
+  "bg-danger",    // D = coral
+];
 
 interface SpotTheSignalProps {
   id: string;
@@ -44,11 +51,14 @@ export function SpotTheSignal({
   );
 
   return (
-    <div className="flex flex-col gap-6 px-4 py-6">
-      {/* Type Badge */}
-      <Badge variant="secondary" className="self-start text-xs">
-        Spot the Signal
-      </Badge>
+    <div className="flex flex-col gap-5 px-4 py-6">
+      {/* Type Header */}
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-info/10 border border-info/20">
+          <BarChart3 className="size-4 text-info" />
+          <span className="text-xs font-bold text-info uppercase tracking-wide">Spot the Signal</span>
+        </div>
+      </div>
 
       {/* Prompt */}
       <div className="space-y-2">
@@ -57,8 +67,8 @@ export function SpotTheSignal({
         </p>
       </div>
 
-      {/* Options */}
-      <div className="flex flex-col gap-3 mt-2">
+      {/* Option Cards */}
+      <div className="flex flex-col gap-3 mt-1">
         {options.map((option, index) => {
           const isSelected = selected === option.id;
           const isCorrectOption = correctAnswer === option.id;
@@ -74,34 +84,36 @@ export function SpotTheSignal({
               onClick={() => handleSelect(option.id)}
               disabled={!!selected || disabled}
               className={cn(
-                "relative w-full min-h-[44px] px-4 py-3 rounded-xl text-left text-sm font-medium",
-                "border-2 transition-colors duration-150",
+                "relative w-full min-h-[48px] pl-5 pr-4 py-3 rounded-xl text-left text-sm font-medium overflow-hidden",
+                "border transition-all duration-200",
                 "active:scale-[0.98] touch-manipulation",
-                // Default state
                 !selected &&
-                  "border-border bg-card text-card-foreground active:border-primary active:bg-primary/5",
-                // Correct answer revealed
+                  "border-border/60 bg-surface-2/80 text-card-foreground hover:border-border hover:bg-surface-3/60",
                 showAsCorrect &&
-                  "border-emerald-500 bg-emerald-500/10 text-emerald-300",
-                // Incorrect selection
+                  "border-success/50 bg-success/10 text-success ring-1 ring-success/30",
                 showAsIncorrect &&
-                  "border-red-500 bg-red-500/10 text-red-300",
-                // Unselected after reveal
+                  "border-danger/50 bg-danger/10 text-danger",
                 revealed &&
                   !isSelected &&
                   !isCorrectOption &&
-                  "border-border/50 bg-card/50 text-muted-foreground opacity-60",
-                // Disabled
+                  "border-border/30 bg-card/30 text-muted-foreground opacity-50",
                 (!!selected || disabled) && "cursor-default"
               )}
             >
+              {/* Left accent stripe */}
+              <div className={cn(
+                "absolute left-0 top-3 bottom-3 w-1 rounded-full transition-opacity",
+                showAsCorrect ? "bg-success" :
+                showAsIncorrect ? "bg-danger" :
+                OPTION_ACCENT_COLORS[index] ?? "bg-muted"
+              )} />
               <span className="flex items-start gap-3">
                 <span
                   className={cn(
                     "flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold",
                     !selected && "bg-muted text-muted-foreground",
-                    showAsCorrect && "bg-emerald-500/20 text-emerald-400",
-                    showAsIncorrect && "bg-red-500/20 text-red-400",
+                    showAsCorrect && "bg-success/20 text-success",
+                    showAsIncorrect && "bg-danger/20 text-danger",
                     revealed &&
                       !isSelected &&
                       !isCorrectOption &&
@@ -112,23 +124,36 @@ export function SpotTheSignal({
                 </span>
                 <span className="flex-1 leading-snug">{option.text}</span>
               </span>
+              {/* Correct badge */}
+              {showAsCorrect && (
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-success bg-success/10 px-2 py-0.5 rounded-full"
+                >
+                  Correct!
+                </motion.span>
+              )}
             </motion.button>
           );
         })}
       </div>
 
-      {/* Insight explanation after answer */}
+      {/* Insight Callout */}
       {revealed && insightAnswer && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="mt-2 px-4 py-3 rounded-xl bg-primary/5 border border-primary/20"
+          className="mt-1 flex gap-3 px-4 py-3 rounded-xl bg-warning/5 border border-warning/20"
         >
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-primary">Insight:</span>{" "}
-            {insightAnswer}
-          </p>
+          <Lightbulb className="size-4 text-warning flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-xs font-bold text-warning mb-1">Key Insight</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {insightAnswer}
+            </p>
+          </div>
         </motion.div>
       )}
     </div>

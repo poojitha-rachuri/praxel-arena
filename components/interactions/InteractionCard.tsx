@@ -48,8 +48,8 @@ export function InteractionCard({
               className={cn(
                 "absolute inset-0 flex items-center justify-center rounded-2xl pointer-events-none z-10",
                 isCorrect
-                  ? "bg-emerald-500/10 dark:bg-emerald-500/15"
-                  : "bg-red-500/10 dark:bg-red-500/15"
+                  ? "bg-success/10 dark:bg-success/15"
+                  : "bg-danger/10 dark:bg-danger/15"
               )}
             >
               <motion.div
@@ -64,8 +64,8 @@ export function InteractionCard({
                 className={cn(
                   "rounded-full p-4",
                   isCorrect
-                    ? "bg-emerald-500/20 text-emerald-400"
-                    : "bg-red-500/20 text-red-400"
+                    ? "bg-success/20 text-success"
+                    : "bg-danger/20 text-danger"
                 )}
               >
                 {isCorrect ? (

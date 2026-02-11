@@ -3,7 +3,7 @@
 import { useState, useCallback, useMemo } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
+import { Lightbulb, PenLine } from "lucide-react";
 import type { InteractionOption } from "@/types";
 
 interface FillTheGapProps {
@@ -65,10 +65,13 @@ export function FillTheGap({
 
   return (
     <div className="flex flex-col gap-6 px-4 py-6">
-      {/* Type Badge */}
-      <Badge variant="secondary" className="self-start text-xs">
-        Fill the Gap
-      </Badge>
+      {/* Type Header */}
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-success/10 border border-success/20">
+          <PenLine className="size-4 text-success" />
+          <span className="text-xs font-bold text-success uppercase tracking-wide">Fill the Gap</span>
+        </div>
+      </div>
 
       {/* Prompt with blank */}
       <div className="space-y-2">
@@ -80,9 +83,9 @@ export function FillTheGap({
               !selected &&
                 "border-primary/40 bg-primary/5 text-muted-foreground",
               revealed && isCorrect &&
-                "border-emerald-500 bg-emerald-500/10 text-emerald-300",
+                "border-success bg-success/10 text-success",
               revealed && !isCorrect &&
-                "border-red-500 bg-red-500/10 text-red-300 line-through"
+                "border-danger bg-danger/10 text-danger line-through"
             )}
           >
             {selectedText ?? "\u00A0____\u00A0"}
@@ -92,7 +95,7 @@ export function FillTheGap({
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="inline-block mx-1 px-2 py-0.5 rounded-md border-b-2 border-emerald-500 bg-emerald-500/10 text-emerald-300"
+              className="inline-block mx-1 px-2 py-0.5 rounded-md border-b-2 border-success bg-success/10 text-success"
             >
               {correctText}
             </motion.span>
@@ -101,8 +104,8 @@ export function FillTheGap({
         </p>
       </div>
 
-      {/* Options */}
-      <div className="grid grid-cols-2 gap-3 mt-2">
+      {/* Option Cards */}
+      <div className="grid grid-cols-2 gap-3 mt-1">
         {options.map((option, index) => {
           const isSelected = selected === option.id;
           const isCorrectOption = correctAnswer === option.id;
@@ -118,23 +121,19 @@ export function FillTheGap({
               onClick={() => handleSelect(option.id)}
               disabled={!!selected || disabled}
               className={cn(
-                "min-h-[44px] px-3 py-3 rounded-xl text-center text-sm font-medium",
-                "border-2 transition-colors duration-150",
+                "min-h-[48px] px-3 py-3 rounded-xl text-center text-sm font-medium",
+                "border transition-all duration-200",
                 "active:scale-[0.97] touch-manipulation",
-                // Default
                 !selected &&
-                  "border-border bg-card text-card-foreground active:border-primary active:bg-primary/5",
-                // Correct
+                  "border-border/60 bg-surface-2/80 text-card-foreground hover:border-border hover:bg-surface-3/60",
                 showAsCorrect &&
-                  "border-emerald-500 bg-emerald-500/10 text-emerald-300",
-                // Incorrect selection
+                  "border-success/50 bg-success/10 text-success ring-1 ring-success/30",
                 showAsIncorrect &&
-                  "border-red-500 bg-red-500/10 text-red-300",
-                // Unselected after reveal
+                  "border-danger/50 bg-danger/10 text-danger",
                 revealed &&
                   !isSelected &&
                   !isCorrectOption &&
-                  "border-border/50 bg-card/50 text-muted-foreground opacity-50",
+                  "border-border/30 bg-card/30 text-muted-foreground opacity-50",
                 (!!selected || disabled) && "cursor-default"
               )}
             >
@@ -144,18 +143,21 @@ export function FillTheGap({
         })}
       </div>
 
-      {/* Insight */}
+      {/* Insight Callout */}
       {revealed && insightAnswer && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.3, delay: 0.2 }}
-          className="mt-2 px-4 py-3 rounded-xl bg-primary/5 border border-primary/20"
+          className="mt-1 flex gap-3 px-4 py-3 rounded-xl bg-warning/5 border border-warning/20"
         >
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            <span className="font-semibold text-primary">Key concept:</span>{" "}
-            {insightAnswer}
-          </p>
+          <Lightbulb className="size-4 text-warning flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-xs font-bold text-warning mb-1">Key Concept</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              {insightAnswer}
+            </p>
+          </div>
         </motion.div>
       )}
     </div>
