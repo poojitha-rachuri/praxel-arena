@@ -1,0 +1,263 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Users ───────────────────────────────────────────────
+
+model User {
+  id                 String            @id @default(cuid())
+  clerkId            String            @unique
+  email              String            @unique
+  name               String?
+  imageUrl           String?
+  onboardingComplete Boolean           @default(false)
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+
+  careerGoals        UserCareerGoal[]
+  skillScores        UserSkillScore[]
+  eloRatings         UserEloRating[]
+  sprintAttempts     SprintAttempt[]
+  leaderboardEntries LeaderboardEntry[]
+  duelsAsPlayer1     Duel[]            @relation("DuelPlayer1")
+  duelsAsPlayer2     Duel[]            @relation("DuelPlayer2")
+  duelsWon           Duel[]            @relation("DuelWinner")
+}
+
+// ─── Careers & Skills ────────────────────────────────────
+
+model CareerOutcome {
+  id          String              @id @default(cuid())
+  name        String              @unique
+  slug        String              @unique
+  description String              @default("")
+  icon        String?
+  createdAt   DateTime            @default(now())
+
+  userGoals   UserCareerGoal[]
+  skillMaps   SkillCareerMap[]
+  sprintLinks SprintCareerOutcome[]
+}
+
+model UserCareerGoal {
+  id              String        @id @default(cuid())
+  userId          String
+  careerOutcomeId String
+  createdAt       DateTime      @default(now())
+
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  careerOutcome   CareerOutcome @relation(fields: [careerOutcomeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, careerOutcomeId])
+  @@index([userId])
+}
+
+model Skill {
+  id          String           @id @default(cuid())
+  name        String           @unique
+  slug        String           @unique
+  icon        String?
+  description String?
+  createdAt   DateTime         @default(now())
+
+  careerMaps  SkillCareerMap[]
+  sprints     Sprint[]
+  interactions Interaction[]
+  skillScores UserSkillScore[]
+  eloRatings  UserEloRating[]
+  duels       Duel[]
+  leaderboard LeaderboardEntry[]
+}
+
+model SkillCareerMap {
+  id              String        @id @default(cuid())
+  skillId         String
+  careerOutcomeId String
+  weight          Float         @default(1.0)
+
+  skill           Skill         @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  careerOutcome   CareerOutcome @relation(fields: [careerOutcomeId], references: [id], onDelete: Cascade)
+
+  @@unique([skillId, careerOutcomeId])
+}
+
+// ─── Sprints & Interactions ──────────────────────────────
+
+enum SprintMode {
+  LEARN
+  PRACTICE
+  COMPETE
+}
+
+enum InteractionType {
+  SPOT_THE_SIGNAL
+  FORCED_TRADEOFF
+  FILL_THE_GAP
+  RANK_AND_PRIORITIZE
+  CURVEBALL
+  TEACH_AND_TEST
+}
+
+model Sprint {
+  id          String              @id @default(cuid())
+  skillId     String
+  mode        SprintMode
+  title       String
+  description String?
+  isGenerated Boolean             @default(false)
+  difficulty  Int                 @default(1) // 1-5
+  createdAt   DateTime            @default(now())
+
+  skill       Skill               @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  interactions Interaction[]
+  attempts    SprintAttempt[]
+  careerLinks SprintCareerOutcome[]
+  duels       Duel[]
+
+  @@index([skillId, mode])
+}
+
+model Interaction {
+  id               String          @id @default(cuid())
+  sprintId         String
+  skillId          String
+  type             InteractionType
+  order            Int
+  prompt           String
+  options          Json            // Array of option objects
+  correctAnswer    String?         // For deterministic scoring
+  insightAnswer    String?         // Best answer explanation
+  teachingPreamble String?         // For TEACH_AND_TEST type
+  priorContext     String?         // For CURVEBALL type
+  timeTarget       Int             @default(15) // seconds
+  createdAt        DateTime        @default(now())
+
+  sprint           Sprint          @relation(fields: [sprintId], references: [id], onDelete: Cascade)
+  skill            Skill           @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@index([sprintId, order])
+}
+
+model SprintCareerOutcome {
+  id              String        @id @default(cuid())
+  sprintId        String
+  careerOutcomeId String
+
+  sprint          Sprint        @relation(fields: [sprintId], references: [id], onDelete: Cascade)
+  careerOutcome   CareerOutcome @relation(fields: [careerOutcomeId], references: [id], onDelete: Cascade)
+
+  @@unique([sprintId, careerOutcomeId])
+}
+
+// ─── Attempts & Scoring ──────────────────────────────────
+
+model SprintAttempt {
+  id          String    @id @default(cuid())
+  userId      String
+  sprintId    String
+  mode        SprintMode
+  responses   Json      // Array of { interactionId, answer, timeSpent }
+  scores      Json?     // DimensionScores: { analyticalThinking, strategicReasoning, quantitativeReasoning, communicationClarity, decisionQuality, creativeProblemSolving }
+  totalScore  Float?
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sprint      Sprint    @relation(fields: [sprintId], references: [id], onDelete: Cascade)
+
+  @@index([userId, completedAt])
+  @@index([sprintId])
+}
+
+model UserSkillScore {
+  id                    String   @id @default(cuid())
+  userId                String
+  skillId               String
+  analyticalThinking    Float    @default(0)
+  strategicReasoning    Float    @default(0)
+  quantitativeReasoning Float    @default(0)
+  communicationClarity  Float    @default(0)
+  decisionQuality       Float    @default(0)
+  creativeProblemSolving Float   @default(0)
+  overallScore          Float    @default(0)
+  sprintCount           Int      @default(0)
+  updatedAt             DateTime @updatedAt
+
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill                 Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, skillId])
+}
+
+// ─── Elo & Competition ───────────────────────────────────
+
+model UserEloRating {
+  id         String   @id @default(cuid())
+  userId     String
+  skillId    String
+  rating     Int      @default(1200)
+  matchCount Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill      Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, skillId])
+}
+
+enum DuelStatus {
+  WAITING
+  IN_PROGRESS
+  EVALUATING
+  COMPLETED
+  CANCELLED
+  FORFEIT
+}
+
+model Duel {
+  id               String     @id @default(cuid())
+  skillId          String
+  sprintId         String?
+  player1Id        String
+  player2Id        String?
+  player1AttemptId String?
+  player2AttemptId String?
+  winnerId         String?
+  status           DuelStatus @default(WAITING)
+  eloChange        Int?
+  evaluation       Json?      // AI head-to-head evaluation result
+  createdAt        DateTime   @default(now())
+  completedAt      DateTime?
+
+  skill            Skill      @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  sprint           Sprint?    @relation(fields: [sprintId], references: [id], onDelete: SetNull)
+  player1          User       @relation("DuelPlayer1", fields: [player1Id], references: [id], onDelete: Cascade)
+  player2          User?      @relation("DuelPlayer2", fields: [player2Id], references: [id], onDelete: SetNull)
+  winner           User?      @relation("DuelWinner", fields: [winnerId], references: [id], onDelete: SetNull)
+
+  @@index([skillId, status])
+  @@index([player1Id])
+  @@index([player2Id])
+  @@index([winnerId])
+}
+
+model LeaderboardEntry {
+  id        String   @id @default(cuid())
+  userId    String
+  skillId   String
+  eloRating Int      @default(1200)
+  rank      Int?
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill     Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, skillId])
+  @@index([skillId, eloRating(sort: Desc)])
+}
