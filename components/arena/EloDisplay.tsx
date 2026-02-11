@@ -59,8 +59,19 @@ export default function EloDisplay({
           !hasChange && "text-foreground"
         )}
         initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+        animate={
+          hasChange
+            ? {
+                scale: [0.8, 1.08, 0.97, 1],
+                opacity: 1,
+              }
+            : { scale: 1, opacity: 1 }
+        }
+        transition={
+          hasChange
+            ? { duration: 0.6, ease: "easeOut", times: [0, 0.4, 0.7, 1] }
+            : { type: "spring", stiffness: 300, damping: 25 }
+        }
         style={{
           textShadow: isPositive
             ? "0 0 20px rgba(52, 211, 153, 0.4)"

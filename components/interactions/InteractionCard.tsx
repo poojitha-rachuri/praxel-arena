@@ -55,11 +55,11 @@ export function InteractionCard({
             >
               <motion.div
                 initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
+                animate={{ scale: [0, 1.15, 0.95, 1.05, 1] }}
                 transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 20,
+                  duration: 0.5,
+                  ease: "easeOut",
+                  times: [0, 0.35, 0.55, 0.75, 1],
                   delay: 0.1,
                 }}
                 className={cn(
