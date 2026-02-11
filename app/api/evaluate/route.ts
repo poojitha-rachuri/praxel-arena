@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
-import { evaluateAttempt } from "@/lib/scoring/evaluate";
+import { evaluateAttempt, evaluateDuel } from "@/lib/scoring/evaluate";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
+import { ELO_INITIAL_RATING } from "@/lib/utils/constants";
 import type { SprintResponse } from "@/types";
 
 export async function POST(request: NextRequest) {
@@ -11,14 +12,18 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  let body: { sprintId?: string; responses?: SprintResponse[] };
+  let body: {
+    sprintId?: string;
+    duelId?: string;
+    responses?: SprintResponse[];
+  };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
-  const { sprintId, responses } = body;
+  const { sprintId, duelId, responses } = body;
 
   if (!sprintId) {
     return NextResponse.json(
@@ -177,6 +182,22 @@ export async function POST(request: NextRequest) {
       return newAttempt;
     });
 
+    // ── Duel completion logic ──
+    if (duelId) {
+      try {
+        await completeDuelAttempt(
+          duelId,
+          user.id,
+          attempt.id,
+          sprint,
+          responses
+        );
+      } catch (duelError) {
+        // Log but don't fail the evaluate response — the attempt is saved
+        console.error("Failed to update duel:", duelError);
+      }
+    }
+
     return NextResponse.json({
       attempt: {
         id: attempt.id,
@@ -194,4 +215,236 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+/**
+ * Link a player's attempt to their duel, and if both players have
+ * completed, run the head-to-head AI evaluation, update Elo ratings,
+ * and finalize the duel.
+ */
+async function completeDuelAttempt(
+  duelId: string,
+  userId: string,
+  attemptId: string,
+  sprint: {
+    id: string;
+    title: string;
+    mode: string;
+    difficulty: number;
+    skillId: string;
+    interactions: {
+      id: string;
+      type: string;
+      order: number;
+      prompt: string;
+      options: unknown;
+      correctAnswer: string | null;
+      insightAnswer: string | null;
+      teachingPreamble: string | null;
+      priorContext: string | null;
+      timeTarget: number;
+    }[];
+  },
+  responses: SprintResponse[]
+) {
+  const duel = await prisma.duel.findUnique({
+    where: { id: duelId },
+  });
+
+  if (!duel || duel.status === "COMPLETED" || duel.status === "CANCELLED") {
+    return;
+  }
+
+  // Determine which player slot this is
+  const isPlayer1 = duel.player1Id === userId;
+  const isPlayer2 = duel.player2Id === userId;
+
+  if (!isPlayer1 && !isPlayer2) {
+    return; // User is not a participant
+  }
+
+  // Update the duel with this player's attempt
+  const updateData: Record<string, string> = {};
+  if (isPlayer1) {
+    updateData.player1AttemptId = attemptId;
+  } else {
+    updateData.player2AttemptId = attemptId;
+  }
+
+  await prisma.duel.update({
+    where: { id: duelId },
+    data: updateData,
+  });
+
+  // Refresh duel to check if both players are done
+  const updatedDuel = await prisma.duel.findUnique({
+    where: { id: duelId },
+  });
+
+  if (
+    !updatedDuel ||
+    !updatedDuel.player1AttemptId ||
+    !updatedDuel.player2AttemptId
+  ) {
+    // Other player hasn't finished yet — set status to EVALUATING if we're the second player
+    // (the first player completing doesn't change status from IN_PROGRESS)
+    return;
+  }
+
+  // Both players done — set to EVALUATING while we run AI evaluation
+  await prisma.duel.update({
+    where: { id: duelId },
+    data: { status: "EVALUATING" },
+  });
+
+  // Load both attempts' responses
+  const [p1Attempt, p2Attempt] = await Promise.all([
+    prisma.sprintAttempt.findUnique({
+      where: { id: updatedDuel.player1AttemptId },
+    }),
+    prisma.sprintAttempt.findUnique({
+      where: { id: updatedDuel.player2AttemptId },
+    }),
+  ]);
+
+  if (!p1Attempt || !p2Attempt) {
+    return;
+  }
+
+  const p1Responses = p1Attempt.responses as unknown as SprintResponse[];
+  const p2Responses = p2Attempt.responses as unknown as SprintResponse[];
+
+  // Get both players' Elo ratings
+  const [p1Elo, p2Elo] = await Promise.all([
+    prisma.userEloRating.findUnique({
+      where: {
+        userId_skillId: {
+          userId: updatedDuel.player1Id,
+          skillId: sprint.skillId,
+        },
+      },
+    }),
+    prisma.userEloRating.findUnique({
+      where: {
+        userId_skillId: {
+          userId: updatedDuel.player2Id!,
+          skillId: sprint.skillId,
+        },
+      },
+    }),
+  ]);
+
+  const player1Rating = p1Elo?.rating ?? ELO_INITIAL_RATING;
+  const player2Rating = p2Elo?.rating ?? ELO_INITIAL_RATING;
+  const player1Matches = p1Elo?.matchCount ?? 0;
+  const player2Matches = p2Elo?.matchCount ?? 0;
+
+  // Build sprint data for the evaluator
+  const sprintData = {
+    title: sprint.title,
+    mode: sprint.mode,
+    difficulty: sprint.difficulty,
+    interactions: sprint.interactions.map((i) => ({
+      id: i.id,
+      type: i.type,
+      order: i.order,
+      prompt: i.prompt,
+      options: i.options as { id: string; text: string }[],
+      correctAnswer: i.correctAnswer,
+      insightAnswer: i.insightAnswer,
+      teachingPreamble: i.teachingPreamble,
+      priorContext: i.priorContext,
+      timeTarget: i.timeTarget,
+    })),
+  };
+
+  // Run the head-to-head AI evaluation
+  const duelResult = await evaluateDuel(
+    sprintData,
+    p1Responses,
+    p2Responses,
+    updatedDuel.player1Id,
+    updatedDuel.player2Id!,
+    player1Rating,
+    player2Rating,
+    player1Matches,
+    player2Matches
+  );
+
+  // Get player names for the evaluation record
+  const [player1, player2] = await Promise.all([
+    prisma.user.findUnique({
+      where: { id: updatedDuel.player1Id },
+      select: { name: true },
+    }),
+    prisma.user.findUnique({
+      where: { id: updatedDuel.player2Id! },
+      select: { name: true },
+    }),
+  ]);
+
+  // Atomic: update duel + Elo ratings in a transaction
+  await prisma.$transaction(async (tx) => {
+    // Finalize the duel
+    await tx.duel.update({
+      where: { id: duelId },
+      data: {
+        status: "COMPLETED",
+        winnerId: duelResult.winnerId,
+        eloChange: duelResult.eloChange,
+        evaluation: {
+          ...duelResult,
+          player1Name: player1?.name ?? "Player 1",
+          player2Name: player2?.name ?? "Player 2",
+        },
+        completedAt: new Date(),
+      },
+    });
+
+    // Update winner's Elo
+    const loserId =
+      duelResult.winnerId === updatedDuel.player1Id
+        ? updatedDuel.player2Id!
+        : updatedDuel.player1Id;
+
+    await tx.userEloRating.upsert({
+      where: {
+        userId_skillId: {
+          userId: duelResult.winnerId,
+          skillId: sprint.skillId,
+        },
+      },
+      create: {
+        userId: duelResult.winnerId,
+        skillId: sprint.skillId,
+        rating: ELO_INITIAL_RATING + duelResult.eloChange,
+        matchCount: 1,
+      },
+      update: {
+        rating: {
+          increment: duelResult.eloChange,
+        },
+        matchCount: { increment: 1 },
+      },
+    });
+
+    // Update loser's Elo
+    await tx.userEloRating.upsert({
+      where: {
+        userId_skillId: { userId: loserId, skillId: sprint.skillId },
+      },
+      create: {
+        userId: loserId,
+        skillId: sprint.skillId,
+        rating: Math.max(ELO_INITIAL_RATING - duelResult.eloChange, 100),
+        matchCount: 1,
+      },
+      update: {
+        rating: {
+          decrement: duelResult.eloChange,
+        },
+        matchCount: { increment: 1 },
+      },
+    });
+  });
 }
