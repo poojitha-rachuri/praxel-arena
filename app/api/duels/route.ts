@@ -1,22 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 import {
   MATCHMAKING_INITIAL_RANGE,
   ELO_INITIAL_RATING,
 } from "@/lib/utils/constants";
 
 export async function GET() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
-    const user = await prisma.user.findUnique({ where: { clerkId } });
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
 
     const duels = await prisma.duel.findMany({
       where: {
@@ -40,8 +36,8 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -53,13 +49,6 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    // Look up user
-    const user = await prisma.user.findUnique({
-      where: { clerkId },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
 
     // JOIN an existing duel
     if (body.duelId) {

@@ -1,13 +1,11 @@
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 import OnboardingFlow from "@/components/onboarding/OnboardingFlow";
 
 export default async function OnboardingPage() {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
-    redirect("/sign-in");
-  }
+  const user = await ensureUser();
+  if (!user) redirect("/sign-in");
 
   // Fetch all careers with their skill mappings
   const careers = await prisma.careerOutcome.findMany({

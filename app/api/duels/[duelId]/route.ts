@@ -1,27 +1,19 @@
 import { NextResponse } from "next/server";
-import { auth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
+import { ensureUser } from "@/lib/auth/ensure-user";
 
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ duelId: string }> }
 ) {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const { duelId } = await params;
 
   try {
-    // Look up user
-    const user = await prisma.user.findUnique({
-      where: { clerkId },
-      select: { id: true },
-    });
-    if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
-    }
 
     const duel = await prisma.duel.findUnique({
       where: { id: duelId },
