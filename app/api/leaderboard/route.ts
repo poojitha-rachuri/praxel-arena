@@ -21,9 +21,10 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Skill not found" }, { status: 404 });
     }
 
-    const entries = await prisma.leaderboardEntry.findMany({
+    // Read directly from UserEloRating (the source of truth for Elo)
+    const eloEntries = await prisma.userEloRating.findMany({
       where: { skillId: skill.id },
-      orderBy: { eloRating: "desc" },
+      orderBy: { rating: "desc" },
       take: 50,
       include: {
         user: {
@@ -31,24 +32,18 @@ export async function GET(request: NextRequest) {
             id: true,
             name: true,
             imageUrl: true,
-            eloRatings: {
-              where: { skillId: skill.id },
-              select: { matchCount: true },
-            },
           },
         },
       },
     });
 
-    // Add computed rank and flatten matchCount
-    const ranked = entries.map((entry, index) => ({
-      id: entry.id,
+    const ranked = eloEntries.map((entry, index) => ({
       rank: index + 1,
-      eloRating: entry.eloRating,
+      eloRating: entry.rating,
       userId: entry.user.id,
       name: entry.user.name,
       imageUrl: entry.user.imageUrl,
-      matchCount: entry.user.eloRatings[0]?.matchCount ?? 0,
+      matchCount: entry.matchCount,
     }));
 
     return NextResponse.json({
