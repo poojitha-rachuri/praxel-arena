@@ -1,9 +1,35 @@
-// TODO: Compete mode - Duel lobby: create or join duels
-export default function CompetePage() {
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/db";
+import AppShell from "@/components/layout/AppShell";
+import CompeteLobby from "@/components/arena/CompeteLobby";
+
+export default async function CompetePage() {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) {
+    redirect("/sign-in");
+  }
+
+  // Get internal user ID
+  const user = await prisma.user.findUnique({
+    where: { clerkId },
+    select: { id: true },
+  });
+
+  // Fetch skills
+  const skills = await prisma.skill.findMany({
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      icon: true,
+    },
+    orderBy: { name: "asc" },
+  });
+
   return (
-    <main className="flex min-h-screen flex-col p-4">
-      <h1 className="text-2xl font-bold">Compete</h1>
-      <p className="mt-2 text-muted-foreground">Challenge other professionals</p>
-    </main>
+    <AppShell>
+      <CompeteLobby skills={skills} userId={user?.id ?? ""} />
+    </AppShell>
   );
 }

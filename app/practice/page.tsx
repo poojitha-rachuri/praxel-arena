@@ -1,9 +1,35 @@
-// TODO: Practice mode - Harder, no teaching preambles, AI debrief
-export default function PracticePage() {
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/db";
+import AppShell from "@/components/layout/AppShell";
+import SkillSprintBrowser from "@/components/layout/SkillSprintBrowser";
+
+export default async function PracticePage() {
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
+  const skills = await prisma.skill.findMany({
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      icon: true,
+      description: true,
+    },
+    orderBy: { name: "asc" },
+  });
+
   return (
-    <main className="flex min-h-screen flex-col p-4">
-      <h1 className="text-2xl font-bold">Practice</h1>
-      <p className="mt-2 text-muted-foreground">Sharpen your skills</p>
-    </main>
+    <AppShell>
+      <SkillSprintBrowser
+        skills={skills}
+        mode="PRACTICE"
+        basePath="/practice"
+        title="Practice"
+        subtitle="Sharpen your skills with harder questions and AI debriefs"
+      />
+    </AppShell>
   );
 }

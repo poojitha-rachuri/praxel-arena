@@ -1,15 +1,58 @@
-// TODO: Onboarding flow
-// 1. Pick 1-3 career goals (CareerSelector)
-// 2. See skill recommendations based on career choices
-// 3. Start first sprint
-// Redirect here if user.onboardingComplete === false
-export default function OnboardingPage() {
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/db";
+import OnboardingFlow from "@/components/onboarding/OnboardingFlow";
+
+export default async function OnboardingPage() {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) {
+    redirect("/sign-in");
+  }
+
+  // Fetch all careers with their skill mappings
+  const careers = await prisma.careerOutcome.findMany({
+    include: {
+      skillMaps: {
+        include: {
+          skill: {
+            select: {
+              id: true,
+              name: true,
+              slug: true,
+              icon: true,
+              description: true,
+            },
+          },
+        },
+      },
+    },
+    orderBy: { name: "asc" },
+  });
+
+  // Format for client component
+  const formattedCareers = careers.map((c) => ({
+    id: c.id,
+    name: c.name,
+    slug: c.slug,
+    description: c.description,
+    icon: c.icon,
+  }));
+
+  // Build skill-by-career lookup
+  const skillsByCareerId: Record<
+    string,
+    { id: string; name: string; slug: string; icon: string | null; description: string | null }[]
+  > = {};
+  for (const career of careers) {
+    skillsByCareerId[career.id] = career.skillMaps.map((sm) => sm.skill);
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4">
-      <h1 className="text-2xl font-bold">Welcome to Praxel Arena</h1>
-      <p className="mt-2 text-muted-foreground">
-        Let&apos;s set up your profile
-      </p>
+    <main className="flex min-h-screen flex-col items-center justify-center bg-background">
+      <OnboardingFlow
+        careers={formattedCareers}
+        skillsByCareerId={skillsByCareerId}
+      />
     </main>
   );
 }

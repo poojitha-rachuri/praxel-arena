@@ -1,9 +1,33 @@
-// TODO: Leaderboard filterable by skill, with tabs
-export default function LeaderboardPage() {
+import { auth } from "@clerk/nextjs/server";
+import { prisma } from "@/lib/db";
+import AppShell from "@/components/layout/AppShell";
+import LeaderboardClient from "./LeaderboardClient";
+
+export default async function LeaderboardPage() {
+  const { userId: clerkId } = await auth();
+
+  // Get current user's internal ID (if authenticated)
+  let currentUserId: string | undefined;
+  if (clerkId) {
+    const user = await prisma.user.findUnique({
+      where: { clerkId },
+      select: { id: true },
+    });
+    currentUserId = user?.id;
+  }
+
+  // Get all skills for the tab filter
+  const skills = await prisma.skill.findMany({
+    orderBy: { name: "asc" },
+    select: { id: true, name: true, slug: true, icon: true },
+  });
+
   return (
-    <main className="flex min-h-screen flex-col p-4">
-      <h1 className="text-2xl font-bold">Leaderboard</h1>
-      <p className="mt-2 text-muted-foreground">Top performers</p>
-    </main>
+    <AppShell>
+      <LeaderboardClient
+        skills={skills}
+        currentUserId={currentUserId}
+      />
+    </AppShell>
   );
 }

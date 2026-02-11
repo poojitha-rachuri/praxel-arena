@@ -1,9 +1,35 @@
-// TODO: Learn mode - Skill grid -> select -> see LEARN sprints -> start
-export default function LearnPage() {
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/db";
+import AppShell from "@/components/layout/AppShell";
+import SkillSprintBrowser from "@/components/layout/SkillSprintBrowser";
+
+export default async function LearnPage() {
+  const { userId } = await auth();
+  if (!userId) {
+    redirect("/sign-in");
+  }
+
+  const skills = await prisma.skill.findMany({
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      icon: true,
+      description: true,
+    },
+    orderBy: { name: "asc" },
+  });
+
   return (
-    <main className="flex min-h-screen flex-col p-4">
-      <h1 className="text-2xl font-bold">Learn</h1>
-      <p className="mt-2 text-muted-foreground">Choose a skill to learn</p>
-    </main>
+    <AppShell>
+      <SkillSprintBrowser
+        skills={skills}
+        mode="LEARN"
+        basePath="/learn"
+        title="Learn"
+        subtitle="Choose a skill and start with guided micro-lessons"
+      />
+    </AppShell>
   );
 }
