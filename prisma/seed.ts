@@ -939,6 +939,534 @@ const LEARN_SPRINTS: SprintSeed[] = [
   },
 ];
 
+// ─── PRACTICE Sprint Data ─────────────────────────────────────────────────────
+
+interface GeneralSprintSeed {
+  title: string;
+  description: string;
+  skillSlug: string;
+  mode: "PRACTICE" | "COMPETE";
+  difficulty: number;
+  interactions: {
+    type: string;
+    order: number;
+    prompt: string;
+    options: { id: string; text: string }[];
+    correctAnswer: string;
+    insightAnswer: string;
+    priorContext?: string;
+    timeTarget: number;
+  }[];
+}
+
+const PRACTICE_SPRINTS: GeneralSprintSeed[] = [
+  {
+    title: "Startup Metrics Gauntlet",
+    description: "Rapid-fire estimation challenges across SaaS, marketplace, and consumer businesses",
+    skillSlug: "guesstimation",
+    mode: "PRACTICE",
+    difficulty: 2,
+    interactions: [
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 0,
+        prompt: "A B2B SaaS shows: MRR $1.2M, YoY growth 85%, net revenue retention 112%, but CAC payback jumped from 8 to 14 months last quarter. What needs immediate attention?",
+        options: [
+          { id: "a", text: "MRR growth is slowing year-over-year" },
+          { id: "b", text: "CAC payback deterioration signals unit economics problem" },
+          { id: "c", text: "NRR above 100% is masking a churn issue" },
+          { id: "d", text: "Growth rate needs to be higher for this stage" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "CAC payback nearly doubling in one quarter means acquisition efficiency is degrading fast — this compounds and threatens runway.",
+        timeTarget: 10,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 1,
+        prompt: "You're estimating TAM for a vertical SaaS serving dentists in the US. Which estimation approach gives the most defensible number?",
+        options: [
+          { id: "a", text: "Top-down: total healthcare IT spend, then dental share" },
+          { id: "b", text: "Bottom-up: number of dentists × annual software budget" },
+          { id: "c", text: "Bottom-up first, then validate with top-down triangulation" },
+          { id: "d", text: "Comparable company revenue multiples" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "Bottom-up gives precision for niche markets. Top-down validates the ceiling. Using both and explaining the gap is what senior analysts do.",
+        timeTarget: 20,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 2,
+        prompt: "In SaaS unit economics, ___ measures how many months of gross profit it takes to recover the cost of acquiring a customer.",
+        options: [
+          { id: "a", text: "LTV:CAC ratio" },
+          { id: "b", text: "CAC payback period" },
+          { id: "c", text: "Gross margin" },
+          { id: "d", text: "Net revenue retention" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "CAC payback period = CAC / (ARPU × Gross Margin). A healthy SaaS targets under 18 months.",
+        timeTarget: 10,
+      },
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 3,
+        prompt: "A food delivery marketplace: GMV $50M/month, take rate 22%, order volume flat for 3 months, but average order value up 15%. What's the most likely explanation?",
+        options: [
+          { id: "a", text: "Customers ordering from premium restaurants" },
+          { id: "b", text: "Platform added delivery surcharges" },
+          { id: "c", text: "Fewer customers placing larger consolidated orders" },
+          { id: "d", text: "Menu price inflation flowing through to GMV" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "Flat orders + rising AOV typically means customer consolidation. But the deepest insight is checking for hidden price inflation — it inflates GMV without real growth.",
+        timeTarget: 10,
+      },
+      {
+        type: "RANK_AND_PRIORITIZE",
+        order: 4,
+        prompt: "Rank these approaches to estimate Spotify's annual podcast ad revenue from most to least reliable:",
+        options: [
+          { id: "a", text: "Spotify's reported ad revenue × podcast share estimate" },
+          { id: "b", text: "Podcast listeners × CPM × estimated ad loads per hour" },
+          { id: "c", text: "Total podcast ad industry × Spotify's market share" },
+          { id: "d", text: "Ad-supported MAUs × estimated ad revenue per user" },
+        ],
+        correctAnswer: "a,b,c,d",
+        insightAnswer: "Company-reported data (A) is the most reliable anchor. Bottom-up user math (B) next. Market share triangulation (C) adds a check. Broad averages (D) are the least precise.",
+        timeTarget: 25,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 5,
+        prompt: "When estimating market size, ___ is the portion of TAM that your product could realistically capture within 3-5 years given current resources and go-to-market.",
+        options: [
+          { id: "a", text: "SAM (Serviceable Addressable Market)" },
+          { id: "b", text: "SOM (Serviceable Obtainable Market)" },
+          { id: "c", text: "TAM (Total Addressable Market)" },
+          { id: "d", text: "ACV (Annual Contract Value)" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "SOM is the realistic capture target. SAM is what you could theoretically serve. TAM is the total opportunity. Investors want all three but care most about SOM credibility.",
+        timeTarget: 10,
+      },
+      {
+        type: "CURVEBALL",
+        order: 6,
+        prompt: "Returning to the food delivery marketplace: you now learn they quietly raised the minimum order from $10 to $20 last quarter. How does this change your interpretation of flat orders + rising AOV?",
+        priorContext: "Earlier data showed GMV $50M/month, flat order volume, but 15% AOV increase over 3 months.",
+        options: [
+          { id: "a", text: "AOV increase is artificial — small orders were eliminated" },
+          { id: "b", text: "It proves the platform is optimizing for profitability" },
+          { id: "c", text: "Actual customer demand is declining, hidden by the minimum" },
+          { id: "d", text: "Both A and C — the minimum created survivor bias in metrics" },
+        ],
+        correctAnswer: "d",
+        insightAnswer: "The minimum order killed low-value orders (inflating AOV) while masking a decline in true demand. This is classic survivor bias — the metrics look stable but the underlying behavior degraded.",
+        timeTarget: 20,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 7,
+        prompt: "Your VC fund evaluates a $10M Series A. Bottom-up TAM says $800M, top-down says $2.4B. The 3x gap matters for your thesis. What do you do?",
+        options: [
+          { id: "a", text: "Average them at $1.6B — truth is in the middle" },
+          { id: "b", text: "Use bottom-up — more rigorous for early markets" },
+          { id: "c", text: "Investigate which assumptions drive the 3x gap and model scenarios" },
+          { id: "d", text: "Use top-down — VCs should invest in large markets" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "The gap itself is the most valuable information. Identifying whether it's driven by adoption rate, pricing, or market definition tells you where the investment risk actually lives.",
+        timeTarget: 20,
+      },
+    ],
+  },
+  {
+    title: "Channel Strategy Battlefield",
+    description: "Navigate GTM channel decisions under pressure with incomplete information",
+    skillSlug: "gtm-strategy",
+    mode: "PRACTICE",
+    difficulty: 2,
+    interactions: [
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 0,
+        prompt: "Your SaaS channel data: Organic search 40% of signups (free), Paid ads 35% ($180 CAC), Partnerships 25% ($90 CAC). But paid ads have 3x higher activation rate than organic. Where should you double investment?",
+        options: [
+          { id: "a", text: "Organic — it's free and highest volume" },
+          { id: "b", text: "Paid ads — higher activation means better effective CAC" },
+          { id: "c", text: "Partnerships — lowest stated CAC wins" },
+          { id: "d", text: "Split evenly across all three channels" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "CAC alone misleads. Paid ads at $180 CAC but 3x activation means effective cost per activated user is lower. Always compare CAC-to-activated, not CAC-to-signup.",
+        timeTarget: 10,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 1,
+        prompt: "Launching a dev tool. Two beta strategies: (A) Product Hunt launch — 10K+ potential signups, broad visibility. (B) Hand-select 50 developers from your waitlist for deep feedback. Which builds better product-market fit?",
+        options: [
+          { id: "a", text: "Product Hunt — volume helps you find signal faster" },
+          { id: "b", text: "Hand-selected 50 — deep ICP feedback beats vanity signups" },
+          { id: "c", text: "Both simultaneously for volume and depth" },
+          { id: "d", text: "Skip beta — launch publicly with content marketing" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "50 deeply engaged ICP users generate more learning than 10K drive-by signups. PH launches optimize for buzz, not PMF. Sequence: deep beta first, then public launch with a refined product.",
+        timeTarget: 20,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 2,
+        prompt: "In product-led growth, the ___ is the moment a new user first experiences the core value that makes them want to continue using the product.",
+        options: [
+          { id: "a", text: "Activation event" },
+          { id: "b", text: "Aha moment" },
+          { id: "c", text: "Conversion trigger" },
+          { id: "d", text: "Retention hook" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "The 'aha moment' is distinct from activation (a measured event) — it's the emotional realization of value. Slack's aha moment is when a team exchanges 2,000 messages; Dropbox's is the first file synced across devices.",
+        timeTarget: 10,
+      },
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 3,
+        prompt: "Content marketing dashboard: Blog traffic up 150% YoY, newsletter subs up 80%, social shares doubled, but demo requests flat. What's the real diagnosis?",
+        options: [
+          { id: "a", text: "SEO is working but content targets wrong intent" },
+          { id: "b", text: "CTAs are broken or poorly positioned" },
+          { id: "c", text: "The growing audience isn't your ICP" },
+          { id: "d", text: "Newsletter nurture sequence needs improvement" },
+        ],
+        correctAnswer: "a",
+        insightAnswer: "The deeper insight: if traffic, shares, and subs all grow but demos don't, the audience itself is wrong. Top-of-funnel content attracts readers, not buyers. Shift to bottom-of-funnel content targeting buyer intent.",
+        timeTarget: 10,
+      },
+      {
+        type: "RANK_AND_PRIORITIZE",
+        order: 4,
+        prompt: "Rank these GTM motions by typical time-to-first-revenue for a new B2B SaaS (fastest first):",
+        options: [
+          { id: "a", text: "Content marketing and SEO" },
+          { id: "b", text: "Outbound sales with SDR team" },
+          { id: "c", text: "Channel partnerships and resellers" },
+          { id: "d", text: "Product-led growth with freemium" },
+        ],
+        correctAnswer: "b,d,c,a",
+        insightAnswer: "Outbound (B) closes in 2-6 weeks. PLG (D) converts in 1-2 months. Partnerships (C) take 3-6 months to activate. Content/SEO (A) takes 6-12 months to compound. Sequence your motions accordingly.",
+        timeTarget: 25,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 5,
+        prompt: "The ___ metric compares lifetime customer value to acquisition cost, and a ratio below 3:1 is generally considered unsustainable for SaaS businesses.",
+        options: [
+          { id: "a", text: "ROAS (Return on Ad Spend)" },
+          { id: "b", text: "LTV:CAC ratio" },
+          { id: "c", text: "NRR (Net Revenue Retention)" },
+          { id: "d", text: "Gross margin percentage" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "LTV:CAC > 3:1 is the standard. Below 3:1, you're spending too much to acquire customers relative to what they pay you. Above 5:1, you might be underinvesting in growth.",
+        timeTarget: 10,
+      },
+      {
+        type: "CURVEBALL",
+        order: 6,
+        prompt: "Your outbound sales team was your fastest channel. But a competitor just raised $50M and is hiring 200 SDRs. Your 10-person team can't match their volume. How do you respond?",
+        priorContext: "Earlier you ranked outbound sales as the fastest GTM motion for time-to-first-revenue.",
+        options: [
+          { id: "a", text: "Raise funding to match their headcount" },
+          { id: "b", text: "Shift entirely to product-led growth" },
+          { id: "c", text: "Double down on targeting and personalization — win on quality" },
+          { id: "d", text: "Build channel partnerships to access customers indirectly" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "Volume wars favor the better-funded competitor. A 10-person team with 8% meeting rate beats a 200-person team with 1% meeting rate on efficiency. Hyper-personalization is the asymmetric advantage.",
+        timeTarget: 20,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 7,
+        prompt: "$200K remaining in Q4 budget. Option A: Sponsor a major industry conference ($200K, 5,000 attendees, your ICP). Option B: Targeted ABM campaign against 200 enterprise accounts ($200K, personalized multi-touch). Which maximizes Q1 pipeline?",
+        options: [
+          { id: "a", text: "Conference — brand visibility and 5,000 potential leads" },
+          { id: "b", text: "ABM — focused spend on named accounts converts better" },
+          { id: "c", text: "Split $100K each for brand and pipeline" },
+          { id: "d", text: "Save it for Q1 when buyers have new budgets" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "For pipeline generation (not brand awareness), ABM consistently outperforms events. $1,000 per account for personalized multi-touch yields 15-30% meeting rates vs. conference's 2-5% lead quality.",
+        timeTarget: 20,
+      },
+    ],
+  },
+  {
+    title: "Tradeoff Bootcamp",
+    description: "Navigate competing priorities with limited resources and imperfect information",
+    skillSlug: "prioritization",
+    mode: "PRACTICE",
+    difficulty: 2,
+    interactions: [
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 0,
+        prompt: "Product backlog: 45 items, 8 flagged critical by customers, avg item age 47 days, 3 items blocking engineering work, last shipped feature increased retention 12%. What should you act on first?",
+        options: [
+          { id: "a", text: "The 8 customer-critical items" },
+          { id: "b", text: "The 3 engineering blockers — unblocking creates capacity" },
+          { id: "c", text: "The stale items — high age signals broken process" },
+          { id: "d", text: "Replicate the retention-boosting feature pattern" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "Engineering blockers are force multipliers — unblocking them creates capacity to tackle everything else. Always clear constraints before optimizing throughput.",
+        timeTarget: 10,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 1,
+        prompt: "Feature A saves 2,000 users 10 min/week each. Feature B saves 5 power users 8 hours/week each. Same engineering effort. Which do you prioritize?",
+        options: [
+          { id: "a", text: "Feature A — 333 hours saved weekly across all users" },
+          { id: "b", text: "Feature B — power users are likely enterprise worth 50x" },
+          { id: "c", text: "Feature A — democratized impact is more defensible" },
+          { id: "d", text: "Need revenue data on affected users before deciding" },
+        ],
+        correctAnswer: "a",
+        insightAnswer: "Feature A's 333 hours/week dwarfs Feature B's 40 hours/week. But the deeper question is revenue-weighted impact — if those 5 power users generate 60% of revenue, B wins. Always ask: hours saved for whom?",
+        timeTarget: 20,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 2,
+        prompt: "The RICE prioritization framework scores features on Reach, Impact, ___, and Effort.",
+        options: [
+          { id: "a", text: "Importance" },
+          { id: "b", text: "Confidence" },
+          { id: "c", text: "Innovation" },
+          { id: "d", text: "Cost" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "Confidence is RICE's secret weapon — it penalizes speculative high-impact features and rewards well-understood improvements. It forces intellectual honesty about what you actually know.",
+        timeTarget: 10,
+      },
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 3,
+        prompt: "Sprint velocity: Weeks 1-4 avg 42 points, Week 5 drops to 28, Weeks 6-8 avg 25 points. Bug reports doubled in Week 5. What happened?",
+        options: [
+          { id: "a", text: "Team burnout — they need recovery time" },
+          { id: "b", text: "Tech debt hit a tipping point — bugs consume capacity" },
+          { id: "c", text: "Scope creep in Week 5 caused cascading delays" },
+          { id: "d", text: "A key contributor left or went on vacation" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "Bug reports doubling coinciding with velocity drop is the classic tech debt tipping point. Bugs create more bugs, and fixing them steals time from features. This pattern demands an immediate debt sprint.",
+        timeTarget: 10,
+      },
+      {
+        type: "RANK_AND_PRIORITIZE",
+        order: 4,
+        prompt: "Rank these startup investments by expected 12-month ROI (highest first):",
+        options: [
+          { id: "a", text: "Second sales rep ($80K, +$400K expected revenue)" },
+          { id: "b", text: "Redesign onboarding (2 weeks eng, +15% activation)" },
+          { id: "c", text: "SOC 2 compliance (3 months, unlocks enterprise)" },
+          { id: "d", text: "Page speed: 4s → 1s (1 week eng, +8% conversion)" },
+        ],
+        correctAnswer: "d,b,a,c",
+        insightAnswer: "Quick wins first: page speed (D) is 1 week for 8% lift. Onboarding (B) is 2 weeks for 15% activation boost. Sales hire (A) delivers ongoing ROI. SOC 2 (C) unlocks long-term enterprise but takes 3 months.",
+        timeTarget: 25,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 5,
+        prompt: "The ___ principle states that optimizing any part of a system other than the bottleneck is an illusion of improvement.",
+        options: [
+          { id: "a", text: "Pareto Principle" },
+          { id: "b", text: "Theory of Constraints" },
+          { id: "c", text: "Lean methodology" },
+          { id: "d", text: "Agile manifesto" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "Goldratt's Theory of Constraints: a chain is only as strong as its weakest link. Improving non-bottleneck steps creates idle inventory, not throughput. Identify your constraint first, always.",
+        timeTarget: 10,
+      },
+      {
+        type: "CURVEBALL",
+        order: 6,
+        prompt: "You chose the page speed fix as top priority (1 week for 8% lift). But your CTO says the issue requires a full architectural migration — 8 weeks, not 1. How do you adjust?",
+        priorContext: "Earlier, you ranked page speed optimization as the #1 quick win based on a 1-week estimate.",
+        options: [
+          { id: "a", text: "Still prioritize it — 8% conversion is worth 8 weeks" },
+          { id: "b", text: "Drop it to #3 — do onboarding and sales hire first" },
+          { id: "c", text: "Find a partial fix (caching, lazy loading) for 60% of the benefit in 1 week" },
+          { id: "d", text: "Negotiate with the vendor causing the bottleneck" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "The 80/20 rule: a partial fix (CDN caching, lazy loading, code splitting) often captures most of the performance benefit at a fraction of the effort. Ship the quick win, then plan the full migration.",
+        timeTarget: 20,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 7,
+        prompt: "End of quarter. Feature X is 90% done (2 days left) but no customers asked for it. Feature Y was requested by 5 top accounts but is only 40% done (needs 8 days, quarter ends in 5). What do you ship?",
+        options: [
+          { id: "a", text: "Feature X — sunk cost is real, finish what you started" },
+          { id: "b", text: "Feature Y partial — even an incomplete version addresses the need" },
+          { id: "c", text: "Neither — ship quality, re-plan next quarter" },
+          { id: "d", text: "Feature X now, then crunch for Feature Y" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "Sunk cost fallacy makes X feel right, but shipping something nobody wants is waste. A partial Feature Y — even 60% scope — shows customers you're listening and buys goodwill. Ship value, not completion.",
+        timeTarget: 20,
+      },
+    ],
+  },
+];
+
+// ─── COMPETE Sprint Data (Pre-cached for demo safety) ─────────────────────────
+
+const COMPETE_SPRINTS: GeneralSprintSeed[] = [
+  {
+    title: "Valuing NovaPay: FinTech Sizing Sprint",
+    description: "Evaluate a $500M Series D investment in a B2B payments startup facing competitive pressure",
+    skillSlug: "guesstimation",
+    mode: "COMPETE",
+    difficulty: 3,
+    interactions: [
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 0,
+        prompt: "NovaPay processes $2B in annual payment volume at a 2.1% take rate. Revenue $42M, gross margin 68%, YoY growth 110%, but Q4 growth decelerated to 80% annualized. What is the key signal?",
+        options: [
+          { id: "a", text: "Revenue growth deceleration from 110% to 80%" },
+          { id: "b", text: "Healthy 68% gross margin validates the model" },
+          { id: "c", text: "$42M revenue is impressive for B2B payments" },
+          { id: "d", text: "2.1% take rate is competitive in payments" },
+        ],
+        correctAnswer: "a",
+        insightAnswer: "Growth deceleration is the single most important signal for growth-stage valuation. A 30-point drop in one quarter compounds — if the trend continues, the company's forward revenue multiple collapses.",
+        timeTarget: 10,
+      },
+      {
+        type: "SPOT_THE_SIGNAL",
+        order: 1,
+        prompt: "NovaPay's cohort data: 2022 cohort retains 95% of payment volume, 2023 retains 88%, 2024 retains only 72% after 6 months. New customer acquisition is 3x higher than 2022. What does the data really say?",
+        options: [
+          { id: "a", text: "Customer quality is declining as they scale acquisition" },
+          { id: "b", text: "2024 cohort needs more time to ramp up" },
+          { id: "c", text: "Net revenue retention is still strong overall" },
+          { id: "d", text: "Normal — newer cohorts always start lower" },
+        ],
+        correctAnswer: "a",
+        insightAnswer: "Declining cohort retention + aggressive acquisition = classic 'growth masking churn.' They're acquiring faster to offset worsening retention. This is unsustainable.",
+        timeTarget: 10,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 2,
+        prompt: "In payments, ___ measures total dollar value of transactions processed and is the standard top-line metric before applying take rate.",
+        options: [
+          { id: "a", text: "GMV (Gross Merchandise Value)" },
+          { id: "b", text: "TPV (Total Payment Volume)" },
+          { id: "c", text: "ARR (Annual Recurring Revenue)" },
+          { id: "d", text: "ATV (Average Transaction Value)" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "TPV is the payments industry standard. GMV is used for marketplaces. Revenue = TPV × take rate. Understanding this conversion is critical for payments valuation.",
+        timeTarget: 10,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 3,
+        prompt: "Two valuation approaches: (A) Revenue multiple — comparable payment cos trade at 15x, giving $630M at $42M revenue. (B) TPV multiple — 0.3x TPV gives $600M on $2B volume. Which is more reliable at this stage?",
+        options: [
+          { id: "a", text: "Revenue multiple — standard for growth-stage" },
+          { id: "b", text: "TPV multiple — captures true economic activity" },
+          { id: "c", text: "Revenue multiple but discount 20% for growth deceleration" },
+          { id: "d", text: "Use both and take the midpoint for triangulation" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "Revenue multiples are standard but must be adjusted for growth trajectory. A company decelerating from 110% to 80% doesn't deserve the same multiple as one accelerating. The 20% discount reflects this.",
+        timeTarget: 20,
+      },
+      {
+        type: "RANK_AND_PRIORITIZE",
+        order: 4,
+        prompt: "Rank NovaPay's growth levers by expected 12-month revenue impact (highest first):",
+        options: [
+          { id: "a", text: "Expand internationally into 10 new markets" },
+          { id: "b", text: "Increase take rate from 2.1% to 2.5% on existing volume" },
+          { id: "c", text: "Cross-sell lending products to merchant base" },
+          { id: "d", text: "Reduce 2024 cohort churn from 28% to 15%" },
+        ],
+        correctAnswer: "b,d,c,a",
+        insightAnswer: "Take rate increase (B) is an immediate 19% revenue uplift on $2B volume. Churn fix (D) saves declining cohorts. Cross-sell (C) requires new products. International (A) has longest lead time and execution risk.",
+        timeTarget: 25,
+      },
+      {
+        type: "FILL_THE_GAP",
+        order: 5,
+        prompt: "A payment company's ___ is calculated as revenue divided by total payment volume, representing its monetization efficiency per dollar processed.",
+        options: [
+          { id: "a", text: "Gross margin" },
+          { id: "b", text: "Conversion rate" },
+          { id: "c", text: "Take rate" },
+          { id: "d", text: "ARPU" },
+        ],
+        correctAnswer: "c",
+        insightAnswer: "Take rate = Revenue / TPV. It measures how effectively a payment company monetizes each dollar flowing through. Stripe's is ~2.9%, PayPal's ~2.2%, wholesale processors ~0.3%.",
+        timeTarget: 10,
+      },
+      {
+        type: "CURVEBALL",
+        order: 6,
+        prompt: "Breaking: Stripe just announced a competing B2B product at 1.5% take rate (vs NovaPay's 2.1%). Your earlier plan to raise take rate to 2.5% is now risky. How does this change the investment thesis?",
+        priorContext: "You previously ranked 'increase take rate from 2.1% to 2.5%' as the #1 growth lever, worth a 19% revenue uplift.",
+        options: [
+          { id: "a", text: "Too risky now — Stripe will crush them on price" },
+          { id: "b", text: "Pivot thesis: retention + cross-sell become primary drivers" },
+          { id: "c", text: "NovaPay should preemptively cut to 1.8% to defend share" },
+          { id: "d", text: "Stripe's entry validates the market — bullish signal" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "With Stripe competing on price, take rate expansion is off the table. The thesis must pivot to retention and cross-sell. If NovaPay's value is just processing, Stripe wins. If it's the merchant relationship, NovaPay can defend.",
+        timeTarget: 20,
+      },
+      {
+        type: "FORCED_TRADEOFF",
+        order: 7,
+        prompt: "Final call: given Stripe's entry, declining cohort quality, and growth deceleration, do you recommend the $500M Series D at 12x forward revenue ($504M valuation)?",
+        options: [
+          { id: "a", text: "Yes — fundamentals are strong, Stripe is manageable" },
+          { id: "b", text: "Yes, but negotiate down to 8x ($336M) for the new risks" },
+          { id: "c", text: "No — deteriorating cohorts + Stripe signal a ceiling" },
+          { id: "d", text: "Pass now, revisit in 6 months after Stripe response" },
+        ],
+        correctAnswer: "b",
+        insightAnswer: "The business has real value but the risk profile changed. Negotiating to 8x prices in the growth deceleration and competitive threat while still capturing the upside. Passing entirely might mean missing the window.",
+        timeTarget: 20,
+      },
+    ],
+  },
+];
+
+// Demo opponent's responses for the pre-cached COMPETE sprint (gets ~5/8 correct — competitive but beatable)
+const DEMO_OPPONENT_RESPONSES = [
+  { interactionIndex: 0, answer: "b", timeSpent: 8 },   // wrong (chose gross margin, not deceleration)
+  { interactionIndex: 1, answer: "a", timeSpent: 7 },   // correct
+  { interactionIndex: 2, answer: "b", timeSpent: 5 },   // correct
+  { interactionIndex: 3, answer: "d", timeSpent: 14 },  // wrong (chose midpoint, not adjusted multiple)
+  { interactionIndex: 4, answer: "b,d,c,a", timeSpent: 18 }, // correct
+  { interactionIndex: 5, answer: "c", timeSpent: 4 },   // correct
+  { interactionIndex: 6, answer: "d", timeSpent: 12 },  // wrong (chose "validates market" instead of pivot)
+  { interactionIndex: 7, answer: "b", timeSpent: 15 },  // correct
+];
+
 // ─── Main Seed Function ─────────────────────────────────────────────────────
 
 async function main() {
@@ -1039,6 +1567,223 @@ async function main() {
     sprintCount++;
   }
   console.log(`  ${sprintCount} LEARN sprints seeded with ${sprintCount * 8} interactions`);
+
+  // Seed PRACTICE sprints
+  let practiceCount = 0;
+  for (const sprintData of PRACTICE_SPRINTS) {
+    const skillId = skillMap.get(sprintData.skillSlug);
+    if (!skillId) {
+      console.warn(`  Skill not found for slug: ${sprintData.skillSlug}, skipping sprint`);
+      continue;
+    }
+
+    const existing = await prisma.sprint.findFirst({
+      where: { skillId, title: sprintData.title, mode: "PRACTICE" },
+    });
+    if (existing) {
+      console.log(`  Sprint "${sprintData.title}" already exists, skipping`);
+      continue;
+    }
+
+    await prisma.sprint.create({
+      data: {
+        skillId,
+        mode: "PRACTICE",
+        title: sprintData.title,
+        description: sprintData.description,
+        isGenerated: false,
+        difficulty: sprintData.difficulty,
+        interactions: {
+          create: sprintData.interactions.map((interaction) => ({
+            skillId,
+            type: interaction.type as "SPOT_THE_SIGNAL" | "FORCED_TRADEOFF" | "FILL_THE_GAP" | "RANK_AND_PRIORITIZE" | "CURVEBALL",
+            order: interaction.order,
+            prompt: interaction.prompt,
+            options: interaction.options,
+            correctAnswer: interaction.correctAnswer,
+            insightAnswer: interaction.insightAnswer,
+            priorContext: interaction.priorContext ?? null,
+            timeTarget: interaction.timeTarget,
+          })),
+        },
+      },
+    });
+    practiceCount++;
+  }
+  console.log(`  ${practiceCount} PRACTICE sprints seeded`);
+
+  // Seed COMPETE sprints (pre-cached for demo safety)
+  let competeCount = 0;
+  const competeSprintIds = new Map<string, string>(); // skillSlug -> sprintId
+  for (const sprintData of COMPETE_SPRINTS) {
+    const skillId = skillMap.get(sprintData.skillSlug);
+    if (!skillId) {
+      console.warn(`  Skill not found for slug: ${sprintData.skillSlug}, skipping sprint`);
+      continue;
+    }
+
+    const existing = await prisma.sprint.findFirst({
+      where: { skillId, title: sprintData.title, mode: "COMPETE" },
+      include: { interactions: { orderBy: { order: "asc" } } },
+    });
+    if (existing) {
+      console.log(`  Sprint "${sprintData.title}" already exists, skipping`);
+      competeSprintIds.set(sprintData.skillSlug, existing.id);
+      continue;
+    }
+
+    const sprint = await prisma.sprint.create({
+      data: {
+        skillId,
+        mode: "COMPETE",
+        title: sprintData.title,
+        description: sprintData.description,
+        isGenerated: false,
+        difficulty: sprintData.difficulty,
+        interactions: {
+          create: sprintData.interactions.map((interaction) => ({
+            skillId,
+            type: interaction.type as "SPOT_THE_SIGNAL" | "FORCED_TRADEOFF" | "FILL_THE_GAP" | "RANK_AND_PRIORITIZE" | "CURVEBALL",
+            order: interaction.order,
+            prompt: interaction.prompt,
+            options: interaction.options,
+            correctAnswer: interaction.correctAnswer,
+            insightAnswer: interaction.insightAnswer,
+            priorContext: interaction.priorContext ?? null,
+            timeTarget: interaction.timeTarget,
+          })),
+        },
+      },
+    });
+    competeSprintIds.set(sprintData.skillSlug, sprint.id);
+    competeCount++;
+  }
+  console.log(`  ${competeCount} COMPETE sprints seeded`);
+
+  // ─── Demo Opponent Setup ─────────────────────────────────────────────────
+  // Create a demo opponent user + pre-completed duel for demo safety.
+  // When the real user hits "Compete" on Guesstimation, they'll match with this
+  // pre-existing WAITING duel where the opponent has already completed the sprint.
+
+  const DEMO_CLERK_ID = "demo_opponent_001";
+  const DEMO_EMAIL = "alex.chen@praxel-arena.demo";
+
+  let demoUser = await prisma.user.findUnique({ where: { clerkId: DEMO_CLERK_ID } });
+  if (!demoUser) {
+    demoUser = await prisma.user.create({
+      data: {
+        clerkId: DEMO_CLERK_ID,
+        email: DEMO_EMAIL,
+        name: "Alex Chen",
+        imageUrl: null,
+        onboardingComplete: true,
+      },
+    });
+    console.log("  Demo opponent user created: Alex Chen");
+  } else {
+    console.log("  Demo opponent user already exists");
+  }
+
+  // Create demo Elo rating for guesstimation (slightly above average)
+  const guesstimationSkillId = skillMap.get("guesstimation");
+  if (guesstimationSkillId) {
+    await prisma.userEloRating.upsert({
+      where: {
+        userId_skillId: { userId: demoUser.id, skillId: guesstimationSkillId },
+      },
+      update: {},
+      create: {
+        userId: demoUser.id,
+        skillId: guesstimationSkillId,
+        rating: 1250,
+        matchCount: 7,
+      },
+    });
+
+    // Create demo skill scores (shows on their profile in MatchResult)
+    await prisma.userSkillScore.upsert({
+      where: {
+        userId_skillId: { userId: demoUser.id, skillId: guesstimationSkillId },
+      },
+      update: {},
+      create: {
+        userId: demoUser.id,
+        skillId: guesstimationSkillId,
+        analyticalThinking: 72,
+        strategicReasoning: 68,
+        quantitativeReasoning: 75,
+        communicationClarity: 65,
+        decisionQuality: 70,
+        creativeProblemSolving: 63,
+        overallScore: 68.8,
+        sprintCount: 7,
+      },
+    });
+
+    // Set up the pre-cached duel if a COMPETE sprint exists
+    const competeSprintId = competeSprintIds.get("guesstimation");
+    if (competeSprintId) {
+      // Check if a demo duel already exists
+      const existingDuel = await prisma.duel.findFirst({
+        where: {
+          player1Id: demoUser.id,
+          skillId: guesstimationSkillId,
+          status: "WAITING",
+        },
+      });
+
+      if (!existingDuel) {
+        // Load the sprint's interactions to build the opponent's responses
+        const sprintWithInteractions = await prisma.sprint.findUnique({
+          where: { id: competeSprintId },
+          include: { interactions: { orderBy: { order: "asc" } } },
+        });
+
+        if (sprintWithInteractions) {
+          // Create the demo opponent's SprintAttempt with pre-determined responses
+          const demoResponses = sprintWithInteractions.interactions.map((interaction, idx) => ({
+            interactionId: interaction.id,
+            answer: DEMO_OPPONENT_RESPONSES[idx]?.answer ?? "a",
+            timeSpent: DEMO_OPPONENT_RESPONSES[idx]?.timeSpent ?? 10,
+          }));
+
+          const demoAttempt = await prisma.sprintAttempt.create({
+            data: {
+              userId: demoUser.id,
+              sprintId: competeSprintId,
+              mode: "COMPETE",
+              responses: demoResponses,
+              scores: {
+                analyticalThinking: 70,
+                strategicReasoning: 65,
+                quantitativeReasoning: 72,
+                communicationClarity: 62,
+                decisionQuality: 68,
+                creativeProblemSolving: 60,
+              },
+              totalScore: 66.2,
+              completedAt: new Date(),
+            },
+          });
+
+          // Create the WAITING duel with the opponent's attempt already linked
+          await prisma.duel.create({
+            data: {
+              skillId: guesstimationSkillId,
+              sprintId: competeSprintId,
+              player1Id: demoUser.id,
+              player1AttemptId: demoAttempt.id,
+              status: "WAITING",
+            },
+          });
+
+          console.log("  Demo duel created: WAITING with pre-completed opponent attempt");
+        }
+      } else {
+        console.log("  Demo duel already exists, skipping");
+      }
+    }
+  }
 
   console.log("Seeding complete.");
 }
