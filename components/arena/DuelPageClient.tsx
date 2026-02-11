@@ -262,16 +262,12 @@ export default function DuelPageClient({ initialDuel }: DuelPageClientProps) {
                   player1={{
                     name: evalData.player1Name ?? "Player 1",
                     scores: evalData.player1Scores ?? {},
-                    isWinner: duel.isPlayer1
-                      ? evalData.winnerId === "player1"
-                      : evalData.winnerId === "player2",
+                    isWinner: evalData.winnerId === "player1",
                   }}
                   player2={{
                     name: evalData.player2Name ?? "Player 2",
                     scores: evalData.player2Scores ?? {},
-                    isWinner: duel.isPlayer1
-                      ? evalData.winnerId === "player2"
-                      : evalData.winnerId === "player1",
+                    isWinner: evalData.winnerId === "player2",
                   }}
                   dimensionWinners={evalData.dimensionWinners ?? {}}
                   eloChange={evalData.eloChange ?? 0}
