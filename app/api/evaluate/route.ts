@@ -84,85 +84,98 @@ export async function POST(request: NextRequest) {
       sprint.mode
     );
 
-    // Create SprintAttempt record
-    const attempt = await prisma.sprintAttempt.create({
-      data: {
-        userId: user.id,
-        sprintId: sprint.id,
-        mode: sprint.mode,
-        responses: JSON.parse(JSON.stringify(responses)),
-        scores: JSON.parse(JSON.stringify(evaluation.scores)),
-        totalScore: evaluation.totalScore,
-        completedAt: new Date(),
-      },
-    });
-
-    // Update UserSkillScore (running average across attempts)
-    const existingScore = await prisma.userSkillScore.findUnique({
-      where: {
-        userId_skillId: {
-          userId: user.id,
-          skillId: sprint.skillId,
-        },
-      },
-    });
-
-    if (existingScore) {
-      // Running average: new_avg = (old_avg * count + new_score) / (count + 1)
-      const count = existingScore.sprintCount;
-      const newCount = count + 1;
-
-      const updateData: Record<string, number> = {
-        sprintCount: newCount,
-      };
-
-      let overallSum = 0;
-      for (const key of DIMENSION_KEYS) {
-        const oldVal = existingScore[key] as number;
-        const newVal = evaluation.scores[key];
-        const avg = (oldVal * count + newVal) / newCount;
-        updateData[key] = Math.round(avg * 10) / 10;
-        overallSum += updateData[key];
+    // Validate response interactionIds belong to this sprint
+    const validIds = new Set(sprint.interactions.map((i) => i.id));
+    for (const r of responses) {
+      if (!validIds.has(r.interactionId)) {
+        return NextResponse.json(
+          { error: "Invalid interaction ID in responses" },
+          { status: 400 }
+        );
       }
-      updateData.overallScore =
-        Math.round((overallSum / DIMENSION_KEYS.length) * 10) / 10;
+    }
 
-      await prisma.userSkillScore.update({
+    // Atomic: create attempt + update skill scores in a transaction
+    const attempt = await prisma.$transaction(async (tx) => {
+      const newAttempt = await tx.sprintAttempt.create({
+        data: {
+          userId: user.id,
+          sprintId: sprint.id,
+          mode: sprint.mode,
+          responses: JSON.parse(JSON.stringify(responses)),
+          scores: JSON.parse(JSON.stringify(evaluation.scores)),
+          totalScore: evaluation.totalScore,
+          completedAt: new Date(),
+        },
+      });
+
+      // Update UserSkillScore (running average across attempts)
+      const existingScore = await tx.userSkillScore.findUnique({
         where: {
           userId_skillId: {
             userId: user.id,
             skillId: sprint.skillId,
           },
         },
-        data: updateData,
       });
-    } else {
-      // First attempt - create fresh score record
-      const overallScore =
-        Math.round(
-          (DIMENSION_KEYS.reduce(
-            (sum, key) => sum + evaluation.scores[key],
-            0
-          ) /
-            DIMENSION_KEYS.length) *
-            10
-        ) / 10;
 
-      await prisma.userSkillScore.create({
-        data: {
-          userId: user.id,
-          skillId: sprint.skillId,
-          analyticalThinking: evaluation.scores.analyticalThinking,
-          strategicReasoning: evaluation.scores.strategicReasoning,
-          quantitativeReasoning: evaluation.scores.quantitativeReasoning,
-          communicationClarity: evaluation.scores.communicationClarity,
-          decisionQuality: evaluation.scores.decisionQuality,
-          creativeProblemSolving: evaluation.scores.creativeProblemSolving,
-          overallScore,
-          sprintCount: 1,
-        },
-      });
-    }
+      if (existingScore) {
+        const count = existingScore.sprintCount;
+        const newCount = count + 1;
+
+        const updateData: Record<string, number> = {
+          sprintCount: newCount,
+        };
+
+        let overallSum = 0;
+        for (const key of DIMENSION_KEYS) {
+          const oldVal = existingScore[key] as number;
+          const newVal = evaluation.scores[key];
+          const avg = (oldVal * count + newVal) / newCount;
+          updateData[key] = Math.round(avg * 10) / 10;
+          overallSum += updateData[key];
+        }
+        updateData.overallScore =
+          Math.round((overallSum / DIMENSION_KEYS.length) * 10) / 10;
+
+        await tx.userSkillScore.update({
+          where: {
+            userId_skillId: {
+              userId: user.id,
+              skillId: sprint.skillId,
+            },
+          },
+          data: updateData,
+        });
+      } else {
+        const overallScore =
+          Math.round(
+            (DIMENSION_KEYS.reduce(
+              (sum, key) => sum + evaluation.scores[key],
+              0
+            ) /
+              DIMENSION_KEYS.length) *
+              10
+          ) / 10;
+
+        await tx.userSkillScore.create({
+          data: {
+            userId: user.id,
+            skillId: sprint.skillId,
+            analyticalThinking: evaluation.scores.analyticalThinking,
+            strategicReasoning: evaluation.scores.strategicReasoning,
+            quantitativeReasoning: evaluation.scores.quantitativeReasoning,
+            communicationClarity: evaluation.scores.communicationClarity,
+            decisionQuality: evaluation.scores.decisionQuality,
+            creativeProblemSolving: evaluation.scores.creativeProblemSolving,
+            overallScore,
+            sprintCount: 1,
+          },
+        });
+      }
+
+      return newAttempt;
+    });
 
     return NextResponse.json({
       attempt: {

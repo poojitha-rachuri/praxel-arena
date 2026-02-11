@@ -67,7 +67,7 @@ export default function Leaderboard({
   const { data, isLoading, error } = useSWR<{ entries: LeaderboardEntryData[] }>(
     `/api/leaderboard?skillSlug=${encodeURIComponent(skillSlug)}`,
     fetcher,
-    { refreshInterval: 5000 }
+    { refreshInterval: 30000 }
   );
 
   const entries = data?.entries ?? [];

@@ -6,6 +6,39 @@ import {
   ELO_INITIAL_RATING,
 } from "@/lib/utils/constants";
 
+export async function GET() {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  try {
+    const user = await prisma.user.findUnique({ where: { clerkId } });
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    const duels = await prisma.duel.findMany({
+      where: {
+        OR: [{ player1Id: user.id }, { player2Id: user.id }],
+      },
+      include: {
+        skill: { select: { name: true, icon: true } },
+      },
+      orderBy: { createdAt: "desc" },
+      take: 20,
+    });
+
+    return NextResponse.json({ duels });
+  } catch (error) {
+    console.error("Failed to fetch duels:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch duels" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(request: NextRequest) {
   const { userId: clerkId } = await auth();
   if (!clerkId) {
@@ -30,60 +63,42 @@ export async function POST(request: NextRequest) {
 
     // JOIN an existing duel
     if (body.duelId) {
-      const duel = await prisma.duel.findUnique({
-        where: { id: body.duelId },
-        include: {
-          skill: true,
-          sprint: {
-            include: {
-              interactions: { orderBy: { order: "asc" } },
+      // Atomic check-and-update: only joins if still WAITING and not own duel
+      try {
+        const updatedDuel = await prisma.duel.update({
+          where: {
+            id: body.duelId,
+            status: "WAITING",
+            player1Id: { not: user.id },
+          },
+          data: {
+            player2Id: user.id,
+            status: "IN_PROGRESS",
+          },
+          include: {
+            skill: true,
+            sprint: {
+              include: {
+                interactions: { orderBy: { order: "asc" } },
+              },
+            },
+            player1: {
+              select: { id: true, name: true, imageUrl: true },
+            },
+            player2: {
+              select: { id: true, name: true, imageUrl: true },
             },
           },
-        },
-      });
+        });
 
-      if (!duel) {
-        return NextResponse.json({ error: "Duel not found" }, { status: 404 });
-      }
-
-      if (duel.status !== "WAITING") {
+        return NextResponse.json({ duel: updatedDuel, action: "joined" });
+      } catch {
+        // Update failed = duel not found, already taken, or is own duel
         return NextResponse.json(
-          { error: "Duel is no longer available to join" },
+          { error: "Duel is not available to join" },
           { status: 400 }
         );
       }
-
-      if (duel.player1Id === user.id) {
-        return NextResponse.json(
-          { error: "Cannot join your own duel" },
-          { status: 400 }
-        );
-      }
-
-      // Set player2 and status to IN_PROGRESS
-      const updatedDuel = await prisma.duel.update({
-        where: { id: duel.id },
-        data: {
-          player2Id: user.id,
-          status: "IN_PROGRESS",
-        },
-        include: {
-          skill: true,
-          sprint: {
-            include: {
-              interactions: { orderBy: { order: "asc" } },
-            },
-          },
-          player1: {
-            select: { id: true, name: true, imageUrl: true },
-          },
-          player2: {
-            select: { id: true, name: true, imageUrl: true },
-          },
-        },
-      });
-
-      return NextResponse.json({ duel: updatedDuel, action: "joined" });
     }
 
     // CREATE a new duel (or find existing match)
@@ -134,6 +149,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Find a waiting duel from another player within Elo range
+    // Batch-fetch player Elo ratings via include to avoid N+1 queries
     const waitingDuels = await prisma.duel.findMany({
       where: {
         skillId: skill.id,
@@ -142,22 +158,26 @@ export async function POST(request: NextRequest) {
       },
       include: {
         player1: {
-          select: { id: true, name: true, imageUrl: true },
+          select: {
+            id: true,
+            name: true,
+            imageUrl: true,
+            eloRatings: {
+              where: { skillId: skill.id },
+              select: { rating: true },
+            },
+          },
         },
       },
     });
 
-    // Find best match within Elo range
+    // Find best match within Elo range (no additional queries needed)
     let bestMatch = null;
     let bestEloDiff = Infinity;
 
     for (const duel of waitingDuels) {
-      const opponentElo = await prisma.userEloRating.findUnique({
-        where: {
-          userId_skillId: { userId: duel.player1Id, skillId: skill.id },
-        },
-      });
-      const opponentRating = opponentElo?.rating ?? ELO_INITIAL_RATING;
+      const opponentRating =
+        duel.player1.eloRatings[0]?.rating ?? ELO_INITIAL_RATING;
       const diff = Math.abs(userRating - opponentRating);
 
       if (diff <= MATCHMAKING_INITIAL_RANGE && diff < bestEloDiff) {
@@ -167,30 +187,34 @@ export async function POST(request: NextRequest) {
     }
 
     if (bestMatch) {
-      // Join the matched duel
-      const updatedDuel = await prisma.duel.update({
-        where: { id: bestMatch.id },
-        data: {
-          player2Id: user.id,
-          status: "IN_PROGRESS",
-        },
-        include: {
-          skill: true,
-          sprint: {
-            include: {
-              interactions: { orderBy: { order: "asc" } },
+      // Atomic join: only succeeds if duel is still WAITING
+      try {
+        const updatedDuel = await prisma.duel.update({
+          where: { id: bestMatch.id, status: "WAITING" },
+          data: {
+            player2Id: user.id,
+            status: "IN_PROGRESS",
+          },
+          include: {
+            skill: true,
+            sprint: {
+              include: {
+                interactions: { orderBy: { order: "asc" } },
+              },
+            },
+            player1: {
+              select: { id: true, name: true, imageUrl: true },
+            },
+            player2: {
+              select: { id: true, name: true, imageUrl: true },
             },
           },
-          player1: {
-            select: { id: true, name: true, imageUrl: true },
-          },
-          player2: {
-            select: { id: true, name: true, imageUrl: true },
-          },
-        },
-      });
+        });
 
-      return NextResponse.json({ duel: updatedDuel, action: "matched" });
+        return NextResponse.json({ duel: updatedDuel, action: "matched" });
+      } catch {
+        // Another user took this duel first -- fall through to create new
+      }
     }
 
     // No match found - find a COMPETE sprint for this skill to use

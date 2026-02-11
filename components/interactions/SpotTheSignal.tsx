@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import type { InteractionOption } from "@/types";
+import { renderBoldPrompt } from "@/lib/utils/safe-html";
 
 interface SpotTheSignalProps {
   id: string;
@@ -51,15 +52,9 @@ export function SpotTheSignal({
 
       {/* Prompt */}
       <div className="space-y-2">
-        <p
-          className="text-lg font-medium text-foreground leading-relaxed"
-          dangerouslySetInnerHTML={{
-            __html: prompt.replace(
-              /\*\*(.*?)\*\*/g,
-              '<strong class="text-primary font-bold">$1</strong>'
-            ),
-          }}
-        />
+        <p className="text-lg font-medium text-foreground leading-relaxed">
+          {renderBoldPrompt(prompt)}
+        </p>
       </div>
 
       {/* Options */}

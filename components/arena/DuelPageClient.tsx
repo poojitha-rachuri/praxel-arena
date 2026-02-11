@@ -104,7 +104,7 @@ export default function DuelPageClient({ initialDuel }: DuelPageClientProps) {
         }));
 
         // If we got a results redirect
-        if (data.attemptId) {
+        if (data.attempt?.id) {
           // Stay on duel page for evaluation state, will redirect when complete
         }
       } catch (err) {

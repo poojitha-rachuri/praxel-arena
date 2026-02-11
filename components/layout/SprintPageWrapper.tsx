@@ -68,8 +68,8 @@ export default function SprintPageWrapper({
         setEvalState("done");
 
         // Navigate to results
-        if (data.attemptId) {
-          router.push(`/results/${data.attemptId}`);
+        if (data.attempt?.id) {
+          router.push(`/results/${data.attempt.id}`);
         } else {
           router.push(`/${sprint.mode.toLowerCase()}`);
         }
