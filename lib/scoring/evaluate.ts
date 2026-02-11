@@ -388,6 +388,104 @@ export async function evaluateDuel(
   player1Matches: number,
   player2Matches: number
 ): Promise<DuelEvaluation> {
+  try {
+    return await evaluateDuelWithAI(
+      sprint,
+      p1Responses,
+      p2Responses,
+      player1Id,
+      player2Id,
+      player1Elo,
+      player2Elo,
+      player1Matches,
+      player2Matches
+    );
+  } catch (error) {
+    console.error(
+      "[evaluateDuel] AI evaluation failed, using deterministic fallback:",
+      error
+    );
+    return evaluateDuelDeterministic(
+      sprint,
+      p1Responses,
+      p2Responses,
+      player1Id,
+      player2Id,
+      player1Elo,
+      player2Elo,
+      player1Matches,
+      player2Matches
+    );
+  }
+}
+
+/**
+ * Deterministic duel evaluation fallback.
+ * Uses correctAnswer matching to compare both players.
+ */
+function evaluateDuelDeterministic(
+  sprint: SprintData,
+  p1Responses: SprintResponse[],
+  p2Responses: SprintResponse[],
+  player1Id: string,
+  player2Id: string,
+  player1Elo: number,
+  player2Elo: number,
+  player1Matches: number,
+  player2Matches: number
+): DuelEvaluation {
+  const p1Scores = distributeToDimensions(sprint.interactions, p1Responses);
+  const p2Scores = distributeToDimensions(sprint.interactions, p2Responses);
+
+  const p1Total = DIMENSION_KEYS.reduce((s, k) => s + p1Scores[k], 0);
+  const p2Total = DIMENSION_KEYS.reduce((s, k) => s + p2Scores[k], 0);
+
+  const winnerId = p1Total >= p2Total ? player1Id : player2Id;
+
+  const dimensionWinners = {} as Record<DimensionKey, string>;
+  for (const key of DIMENSION_KEYS) {
+    dimensionWinners[key] =
+      p1Scores[key] >= p2Scores[key] ? player1Id : player2Id;
+  }
+
+  const winnerElo = winnerId === player1Id ? player1Elo : player2Elo;
+  const loserElo = winnerId === player1Id ? player2Elo : player1Elo;
+  const winnerMatches =
+    winnerId === player1Id ? player1Matches : player2Matches;
+  const loserMatches =
+    winnerId === player1Id ? player2Matches : player1Matches;
+  const { change: eloChange } = calculateElo(
+    winnerElo,
+    loserElo,
+    winnerMatches,
+    loserMatches
+  );
+
+  return {
+    winnerId,
+    player1Scores: p1Scores,
+    player2Scores: p2Scores,
+    dimensionWinners,
+    analysis:
+      "Head-to-head comparison based on accuracy and response quality across all six skill dimensions.",
+    eloChange,
+  };
+}
+
+/**
+ * AI-powered duel evaluation using Claude.
+ */
+async function evaluateDuelWithAI(
+  sprint: SprintData,
+  p1Responses: SprintResponse[],
+  p2Responses: SprintResponse[],
+  player1Id: string,
+  player2Id: string,
+  player1Elo: number,
+  player2Elo: number,
+  player1Matches: number,
+  player2Matches: number
+): Promise<DuelEvaluation> {
   const { system, user } = buildEvaluateDuelPrompt(
     {
       title: sprint.title,
