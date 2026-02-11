@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "motion/react";
 import {
@@ -14,6 +14,7 @@ import RadarChart from "@/components/skill-graph/RadarChart";
 import { Button } from "@/components/ui/button";
 import { CARD_SPRING, SCORE_COUNT_DURATION } from "@/lib/utils/constants";
 import { SCORING_DIMENSIONS } from "@/lib/scoring/dimensions";
+import { useCelebration } from "@/lib/hooks/use-celebration";
 import type { DimensionScores } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -72,15 +73,31 @@ export default function ResultsReveal({
   const router = useRouter();
   const [showChart, setShowChart] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const { onSprintComplete } = useCelebration();
+  const celebratedRef = useRef(false);
 
   useEffect(() => {
     const chartTimer = setTimeout(() => setShowChart(true), 800);
     const detailsTimer = setTimeout(() => setShowDetails(true), 2000);
+
+    // Fire celebration confetti after score count-up
+    if (!celebratedRef.current) {
+      celebratedRef.current = true;
+      const celebrationTimer = setTimeout(() => {
+        onSprintComplete(totalScore);
+      }, 1200);
+      return () => {
+        clearTimeout(chartTimer);
+        clearTimeout(detailsTimer);
+        clearTimeout(celebrationTimer);
+      };
+    }
+
     return () => {
       clearTimeout(chartTimer);
       clearTimeout(detailsTimer);
     };
-  }, []);
+  }, [onSprintComplete, totalScore]);
 
   // Determine strengths and improvements
   const sortedDimensions = [...SCORING_DIMENSIONS].sort(
@@ -91,12 +108,12 @@ export default function ResultsReveal({
 
   const scoreColor =
     totalScore >= 80
-      ? "text-green-400"
+      ? "text-success"
       : totalScore >= 60
-        ? "text-yellow-400"
+        ? "text-warning"
         : totalScore >= 40
-          ? "text-orange-400"
-          : "text-red-400";
+          ? "text-warning"
+          : "text-danger";
 
   return (
     <div className="mx-auto w-full max-w-lg p-4">
@@ -214,10 +231,10 @@ export default function ResultsReveal({
                           className={cn(
                             "h-full rounded-full",
                             score >= 70
-                              ? "bg-green-500"
+                              ? "bg-success"
                               : score >= 50
-                                ? "bg-yellow-500"
-                                : "bg-red-500"
+                                ? "bg-warning"
+                                : "bg-danger"
                           )}
                         />
                       </div>
@@ -233,9 +250,9 @@ export default function ResultsReveal({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2.8 }}
-                className="rounded-xl border border-green-500/20 bg-green-500/5 p-3"
+                className="rounded-xl border border-success/20 bg-success/5 p-3"
               >
-                <h4 className="flex items-center gap-1 text-xs font-semibold text-green-400 mb-2">
+                <h4 className="flex items-center gap-1 text-xs font-semibold text-success mb-2">
                   <TrendingUp className="size-3" />
                   Strengths
                 </h4>
@@ -255,9 +272,9 @@ export default function ResultsReveal({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 3 }}
-                className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-3"
+                className="rounded-xl border border-warning/20 bg-warning/5 p-3"
               >
-                <h4 className="flex items-center gap-1 text-xs font-semibold text-orange-400 mb-2">
+                <h4 className="flex items-center gap-1 text-xs font-semibold text-warning mb-2">
                   <TrendingDown className="size-3" />
                   To Improve
                 </h4>

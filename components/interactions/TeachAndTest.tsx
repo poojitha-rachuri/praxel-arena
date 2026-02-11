@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BookOpen, ArrowRight } from "lucide-react";
+import { BookOpen, ArrowRight, Lightbulb, Check, GraduationCap } from "lucide-react";
 import { SpotTheSignal } from "./SpotTheSignal";
 import { ForcedTradeoff } from "./ForcedTradeoff";
 import { FillTheGap } from "./FillTheGap";
@@ -23,6 +23,11 @@ interface TeachAndTestProps {
   disabled?: boolean;
 }
 
+const STEPS = [
+  { label: "Learn", icon: BookOpen },
+  { label: "Quiz", icon: GraduationCap },
+];
+
 export function TeachAndTest({
   id,
   prompt,
@@ -37,6 +42,8 @@ export function TeachAndTest({
   const [phase, setPhase] = useState<"teach" | "test">(
     teachingPreamble ? "teach" : "test"
   );
+
+  const currentStep = phase === "teach" ? 0 : 1;
 
   const handleGotIt = useCallback(() => {
     setPhase("test");
@@ -58,7 +65,43 @@ export function TeachAndTest({
   };
 
   return (
-    <div className="flex flex-col gap-6 px-4 py-6">
+    <div className="flex flex-col gap-5 px-4 py-6">
+      {/* Step Progress Indicator */}
+      {teachingPreamble && (
+        <div className="flex items-center justify-center gap-3">
+          {STEPS.map((step, i) => {
+            const Icon = step.icon;
+            const isComplete = i < currentStep;
+            const isCurrent = i === currentStep;
+            return (
+              <div key={step.label} className="flex items-center gap-2">
+                <div
+                  className={cn(
+                    "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300",
+                    isComplete && "bg-success/20 text-success",
+                    isCurrent && "bg-primary/20 text-primary ring-2 ring-primary/30",
+                    !isComplete && !isCurrent && "bg-muted text-muted-foreground"
+                  )}
+                >
+                  {isComplete ? (
+                    <Check className="size-3.5" />
+                  ) : (
+                    <Icon className="size-3.5" />
+                  )}
+                  {step.label}
+                </div>
+                {i < STEPS.length - 1 && (
+                  <div className={cn(
+                    "w-8 h-0.5 rounded-full transition-colors",
+                    isComplete ? "bg-success/50" : "bg-border"
+                  )} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+
       <AnimatePresence mode="wait">
         {phase === "teach" && teachingPreamble && (
           <motion.div
@@ -67,28 +110,38 @@ export function TeachAndTest({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-5"
           >
-            {/* Badge */}
-            <Badge variant="secondary" className="self-start text-xs gap-1.5">
-              <BookOpen className="size-3" />
-              Learn
-            </Badge>
-
-            {/* Teaching Content */}
+            {/* Teaching Content Card */}
             <div
               className={cn(
-                "px-5 py-5 rounded-2xl",
-                "bg-gradient-to-br from-primary/5 to-primary/10",
-                "border border-primary/20"
+                "px-5 py-5 rounded-2xl space-y-4",
+                "bg-gradient-to-br from-surface-2 to-surface-1",
+                "border border-border/60"
               )}
             >
+              {/* KEY CONCEPT badge */}
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-1 rounded-md bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-widest">
+                  Key Concept
+                </span>
+              </div>
+
+              {/* Teaching text */}
               <p className="text-base text-foreground leading-relaxed">
                 {teachingPreamble}
               </p>
+
+              {/* Insight section */}
+              <div className="flex gap-3 pt-3 border-t border-border/40">
+                <Lightbulb className="size-4 text-warning flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Read carefully — you&apos;ll be tested on this next!
+                </p>
+              </div>
             </div>
 
-            {/* Got It Button */}
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -97,10 +150,10 @@ export function TeachAndTest({
               <Button
                 onClick={handleGotIt}
                 size="lg"
-                className="w-full min-h-[44px] text-base font-semibold gap-2"
+                className="group w-full min-h-[48px] text-base font-semibold gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white border-0"
               >
-                Got it
-                <ArrowRight className="size-4" />
+                Got it! Take me to the Quiz
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
           </motion.div>

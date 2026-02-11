@@ -10,6 +10,8 @@ import { RankAndPrioritize } from "./RankAndPrioritize";
 import { Curveball } from "./Curveball";
 import { TeachAndTest } from "./TeachAndTest";
 import { ProgressBar } from "./ProgressBar";
+import { StreakBadge } from "@/components/gamification/StreakBadge";
+import { useCelebration } from "@/lib/hooks/use-celebration";
 import type { SprintResponse, InteractionOption } from "@/types";
 
 // ─── Types ──────────────────────────────────────────────
@@ -76,10 +78,13 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const [responses, setResponses] = useState<SprintResponse[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
+  const [streak, setStreak] = useState(0);
 
   // Track when each card starts
   const cardStartTimeRef = useRef<number>(Date.now());
   const sprintStartTimeRef = useRef<number>(Date.now());
+
+  const { onCorrect } = useCelebration();
 
   const currentInteraction = sortedInteractions[currentIndex] ?? null;
   const totalInteractions = sortedInteractions.length;
@@ -114,6 +119,15 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
       setLastCorrect(finalCorrect);
       setShowFeedback(true);
 
+      // Streak tracking + celebration
+      if (finalCorrect === true) {
+        const newStreak = streak + 1;
+        setStreak(newStreak);
+        onCorrect(newStreak);
+      } else if (finalCorrect === false) {
+        setStreak(0);
+      }
+
       const newResponse: SprintResponse = {
         interactionId: currentInteraction.id,
         answer,
@@ -139,7 +153,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         }
       }, feedbackDelay);
     },
-    [currentInteraction, currentIndex, totalInteractions, responses, onComplete]
+    [currentInteraction, currentIndex, totalInteractions, responses, onComplete, streak, onCorrect]
   );
 
   if (!currentInteraction) {
@@ -168,6 +182,9 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         startTime={sprintStartTimeRef.current}
         mode={mode}
       />
+
+      {/* Streak Badge */}
+      <StreakBadge streak={streak} />
 
       {/* Interaction Card with transitions */}
       <AnimatePresence mode="wait">

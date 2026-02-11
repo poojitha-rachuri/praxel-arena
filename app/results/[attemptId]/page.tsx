@@ -1,9 +1,9 @@
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 import AppShell from "@/components/layout/AppShell";
 import ResultsReveal from "@/components/layout/ResultsReveal";
+import { ensureUser } from "@/lib/auth/ensure-user";
 import type { DimensionScores } from "@/types";
 
 export default async function ResultsPage({
@@ -11,8 +11,8 @@ export default async function ResultsPage({
 }: {
   params: Promise<{ attemptId: string }>;
 }) {
-  const { userId: clerkId } = await auth();
-  if (!clerkId) {
+  const user = await ensureUser();
+  if (!user) {
     redirect("/sign-in");
   }
 
@@ -39,7 +39,7 @@ export default async function ResultsPage({
   }
 
   // Ensure this attempt belongs to the requesting user
-  if (attempt.user.clerkId !== clerkId) {
+  if (attempt.user.clerkId !== user.clerkId) {
     notFound();
   }
 

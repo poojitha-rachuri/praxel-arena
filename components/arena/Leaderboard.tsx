@@ -1,6 +1,8 @@
 "use client";
 
 import useSWR from "swr";
+import { motion } from "motion/react";
+import { Medal, Crown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
@@ -44,11 +46,18 @@ function SkeletonRow() {
   );
 }
 
-function getRankDisplay(rank: number): string {
-  if (rank === 1) return "🥇";
-  if (rank === 2) return "🥈";
-  if (rank === 3) return "🥉";
-  return `#${rank}`;
+function RankIcon({ rank }: { rank: number }) {
+  if (rank === 1) return <Crown className="size-5 text-yellow-400" />;
+  if (rank === 2) return <Medal className="size-5 text-slate-300" />;
+  if (rank === 3) return <Medal className="size-5 text-amber-600" />;
+  return <span className="text-sm text-muted-foreground">#{rank}</span>;
+}
+
+function getTierBadge(elo: number): { label: string; className: string } | null {
+  if (elo >= 1800) return { label: "Diamond", className: "bg-info/15 text-info border-info/30" };
+  if (elo >= 1500) return { label: "Gold", className: "bg-warning/15 text-warning border-warning/30" };
+  if (elo >= 1300) return { label: "Silver", className: "bg-muted text-muted-foreground border-border" };
+  return null;
 }
 
 function getInitials(name: string): string {
@@ -73,14 +82,14 @@ export default function Leaderboard({
   const entries = data?.entries ?? [];
 
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full overflow-x-auto rounded-xl border border-border/60 bg-card/50">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-border text-left text-muted-foreground">
-            <th className="py-2 px-3 font-medium w-12">Rank</th>
-            <th className="py-2 px-3 font-medium">Player</th>
-            <th className="py-2 px-3 font-medium text-right w-20">Elo</th>
-            <th className="py-2 px-3 font-medium text-right w-20">Matches</th>
+          <tr className="border-b border-border/60 text-left text-xs uppercase tracking-wider text-muted-foreground">
+            <th className="py-3 px-3 font-medium w-12">Rank</th>
+            <th className="py-3 px-3 font-medium">Player</th>
+            <th className="py-3 px-3 font-medium text-right w-20">Elo</th>
+            <th className="py-3 px-3 font-medium text-right w-20">Matches</th>
           </tr>
         </thead>
         <tbody>
@@ -110,26 +119,24 @@ export default function Leaderboard({
             </tr>
           )}
 
-          {entries.map((entry) => {
+          {entries.map((entry, index) => {
             const isCurrentUser = entry.userId === currentUserId;
             const isProvisional = entry.matchCount < ELO_PROVISIONAL_THRESHOLD;
+            const tier = getTierBadge(entry.eloRating);
 
             return (
-              <tr
+              <motion.tr
                 key={entry.userId}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
                 className={cn(
-                  "border-b border-border/50 transition-colors hover:bg-accent/30",
-                  isCurrentUser && "bg-violet-500/10 hover:bg-violet-500/15"
+                  "border-b border-border/40 transition-colors hover:bg-surface-2/50",
+                  isCurrentUser && "bg-mode-compete/8 hover:bg-mode-compete/12"
                 )}
               >
-                <td className="py-3 px-3 font-medium">
-                  {entry.rank <= 3 ? (
-                    <span className="text-lg">{getRankDisplay(entry.rank)}</span>
-                  ) : (
-                    <span className="text-muted-foreground">
-                      {getRankDisplay(entry.rank)}
-                    </span>
-                  )}
+                <td className="py-3 px-3">
+                  <RankIcon rank={entry.rank} />
                 </td>
                 <td className="py-3 px-3">
                   <div className="flex items-center gap-2">
@@ -144,7 +151,7 @@ export default function Leaderboard({
                     <span
                       className={cn(
                         "truncate",
-                        isCurrentUser && "font-semibold text-violet-400"
+                        isCurrentUser && "font-semibold text-mode-compete"
                       )}
                     >
                       {entry.name}
@@ -154,8 +161,13 @@ export default function Leaderboard({
                         </span>
                       )}
                     </span>
+                    {tier && (
+                      <Badge variant="outline" className={cn("text-[10px] shrink-0", tier.className)}>
+                        {tier.label}
+                      </Badge>
+                    )}
                     {isProvisional && (
-                      <Badge variant="outline" className="text-xs shrink-0">
+                      <Badge variant="outline" className="text-[10px] shrink-0">
                         Provisional
                       </Badge>
                     )}
@@ -167,7 +179,7 @@ export default function Leaderboard({
                 <td className="py-3 px-3 text-right font-mono tabular-nums text-muted-foreground">
                   {entry.matchCount}
                 </td>
-              </tr>
+              </motion.tr>
             );
           })}
         </tbody>

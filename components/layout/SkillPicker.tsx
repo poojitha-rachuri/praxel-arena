@@ -41,19 +41,26 @@ export default function SkillPicker({
             whileTap={{ scale: 0.97 }}
             onClick={() => onSelect(skill.slug)}
             className={cn(
-              "flex flex-col items-start gap-2 rounded-xl border p-4 text-left transition-colors min-h-[100px]",
+              "flex flex-col items-start gap-2.5 rounded-2xl border p-4 text-left transition-all min-h-[100px]",
               isSelected
-                ? "border-primary bg-primary/10 ring-1 ring-primary"
-                : "border-border bg-card hover:border-primary/50"
+                ? "border-primary bg-primary/10 ring-2 ring-primary/30 shadow-[0_0_12px_var(--color-primary)/0.15]"
+                : "border-border/60 bg-surface-1 hover:bg-surface-2 hover:border-primary/40"
             )}
           >
-            <span className="text-2xl">{skill.icon ?? "🎯"}</span>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">{skill.icon ?? "🎯"}</span>
+              {isSelected && (
+                <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                  Selected
+                </span>
+              )}
+            </div>
             <div>
-              <p className="text-sm font-semibold leading-tight">
+              <p className="text-sm font-bold leading-tight">
                 {skill.name}
               </p>
               {skill.description && (
-                <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed line-clamp-2">
                   {skill.description}
                 </p>
               )}

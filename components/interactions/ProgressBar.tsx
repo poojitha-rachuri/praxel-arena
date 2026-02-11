@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import { Timer, Zap } from "lucide-react";
+import { Timer, BookOpen, Target, Swords, Check } from "lucide-react";
 
 interface ProgressBarProps {
   currentIndex: number;
@@ -12,6 +11,12 @@ interface ProgressBarProps {
   startTime: number;
   mode: "LEARN" | "PRACTICE" | "COMPETE";
 }
+
+const MODE_CONFIG = {
+  LEARN: { icon: BookOpen, label: "Learn", colorClass: "text-mode-learn", bgClass: "bg-mode-learn", dotActive: "bg-mode-learn", dotGlow: "shadow-[0_0_8px_var(--mode-learn)]" },
+  PRACTICE: { icon: Target, label: "Practice", colorClass: "text-mode-practice", bgClass: "bg-mode-practice", dotActive: "bg-mode-practice", dotGlow: "shadow-[0_0_8px_var(--mode-practice)]" },
+  COMPETE: { icon: Swords, label: "Compete", colorClass: "text-mode-compete", bgClass: "bg-mode-compete", dotActive: "bg-mode-compete", dotGlow: "shadow-[0_0_8px_var(--mode-compete)]" },
+};
 
 export function ProgressBar({
   currentIndex,
@@ -23,7 +28,6 @@ export function ProgressBar({
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    // Update elapsed time every second
     const update = () => {
       const now = Date.now();
       setElapsed(Math.floor((now - startTime) / 1000));
@@ -45,58 +49,60 @@ export function ProgressBar({
     .toString()
     .padStart(2, "0")}`;
 
-  const progress = totalInteractions > 0
-    ? (currentIndex / totalInteractions) * 100
-    : 0;
+  const config = MODE_CONFIG[mode];
+  const ModeIcon = config.icon;
 
-  const modeColor = {
-    LEARN: "bg-blue-500",
-    PRACTICE: "bg-emerald-500",
-    COMPETE: "bg-amber-500",
-  }[mode];
-
-  const modeLabel = {
-    LEARN: "Learn",
-    PRACTICE: "Practice",
-    COMPETE: "Compete",
-  }[mode];
+  // Timer warning thresholds (based on ~2min per sprint)
+  const isWarning = elapsed > 90;
+  const isCritical = elapsed > 110;
 
   return (
     <div className="w-full px-4 py-3">
-      {/* Top row: mode label, counter, timer */}
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <span
-            className={cn(
-              "flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full",
-              mode === "LEARN" && "bg-blue-500/15 text-blue-400",
-              mode === "PRACTICE" && "bg-emerald-500/15 text-emerald-400",
-              mode === "COMPETE" && "bg-amber-500/15 text-amber-400"
-            )}
-          >
-            <Zap className="size-3" />
-            {modeLabel}
-          </span>
-          <span className="text-sm font-medium text-foreground">
-            {currentIndex + 1}{" "}
-            <span className="text-muted-foreground">/ {totalInteractions}</span>
-          </span>
+      {/* Top row: mode badge, step dots, timer */}
+      <div className="flex items-center justify-between mb-3">
+        {/* Mode badge */}
+        <div className={cn(
+          "flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full",
+          `${config.bgClass}/15 ${config.colorClass}`
+        )}>
+          <ModeIcon className="size-3.5" />
+          {config.label}
         </div>
 
-        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+        {/* Timer */}
+        <div className={cn(
+          "flex items-center gap-1.5 text-sm font-mono tabular-nums",
+          isCritical ? "text-danger font-bold animate-pulse" :
+          isWarning ? "text-warning" :
+          "text-muted-foreground"
+        )}>
           <Timer className="size-3.5" />
-          <span className="font-mono tabular-nums">{timeString}</span>
+          {timeString}
         </div>
       </div>
 
-      {/* Progress bar */}
-      <div className="relative h-1.5 w-full rounded-full bg-muted/50 overflow-hidden">
-        <motion.div
-          className={cn("absolute inset-y-0 left-0 rounded-full", modeColor)}
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        />
+      {/* Step indicator dots */}
+      <div className="flex items-center gap-1.5 justify-center">
+        {Array.from({ length: totalInteractions }).map((_, i) => {
+          const isCompleted = i < currentIndex;
+          const isCurrent = i === currentIndex;
+          const isFuture = i > currentIndex;
+
+          return (
+            <div
+              key={i}
+              className={cn(
+                "rounded-full transition-all duration-300 flex items-center justify-center",
+                isCompleted && `h-2.5 w-2.5 ${config.bgClass}`,
+                isCurrent && `h-3.5 w-3.5 ${config.bgClass} ${config.dotGlow} ring-2 ring-current/20 animate-pulse`,
+                isFuture && "h-2.5 w-2.5 bg-surface-2",
+                isCurrent && config.colorClass
+              )}
+            >
+              {isCompleted && <Check className="size-1.5 text-white" />}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

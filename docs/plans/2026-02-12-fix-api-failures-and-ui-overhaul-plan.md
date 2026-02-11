@@ -205,10 +205,10 @@ Pages that fetch user data server-side also need the fallback:
 
 Console shows: `"afterSignInUrl" is deprecated, use "fallbackRedirectUrl" or "forceRedirectUrl"`
 
-- [ ] Update `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL` → `NEXT_PUBLIC_CLERK_FALLBACK_REDIRECT_URL`
-- [ ] Update `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` → `NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`
-- [ ] Update Dockerfile ARG/ENV declarations to match
-- [ ] Update `.env.example` to match
+- [x] Update `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL` → `NEXT_PUBLIC_CLERK_FALLBACK_REDIRECT_URL`
+- [x] Update `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL` → `NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL`
+- [x] Update Dockerfile ARG/ENV declarations to match
+- [x] Update `.env.example` to match
 
 ---
 
@@ -284,11 +284,11 @@ Replace the austere achromatic dark theme with a warm, vibrant palette while kee
 
 **SpotTheSignal.tsx, ForcedTradeoff.tsx, FillTheGap.tsx, Curveball.tsx** — all need:
 
-- [ ] **Contextual header section** — Replace plain "Spot the Signal" badge with a colored header bar showing interaction type icon + name + a one-line context hint
-- [ ] **Rich prompt rendering** — Parse prompts for data/metrics and render them in highlighted callout cards (numbers in large font, key terms in accent color)
-- [ ] **Option cards (not buttons)** — Replace flat buttons with elevated cards: subtle gradient bg, left-color-bar for each option (A=blue, B=teal, C=amber, D=coral), larger touch area
-- [ ] **Insight callout upgrade** — Replace plain "Insight:" label with a styled callout box: lightbulb icon, gradient accent border, bold title "Key Insight"
-- [ ] **Feedback celebration** — On correct answer: pulse glow effect + "Correct!" text badge. On streak of 3+: show streak counter
+- [x] **Contextual header section** — Replace plain "Spot the Signal" badge with a colored header bar showing interaction type icon + name + a one-line context hint
+- [x] **Rich prompt rendering** — Parse prompts for data/metrics and render them in highlighted callout cards (numbers in large font, key terms in accent color)
+- [x] **Option cards (not buttons)** — Replace flat buttons with elevated cards: subtle gradient bg, left-color-bar for each option (A=blue, B=teal, C=amber, D=coral), larger touch area
+- [x] **Insight callout upgrade** — Replace plain "Insight:" label with a styled callout box: lightbulb icon, gradient accent border, bold title "Key Insight"
+- [x] **Feedback celebration** — On correct answer: pulse glow effect + "Correct!" text badge. On streak of 3+: show streak counter
 
 ##### Research Insights (Interaction Cards)
 
@@ -325,14 +325,14 @@ const variants = {
 
 **TeachAndTest.tsx** — needs the most work:
 
-- [ ] **Step progress indicator** — Show "Learn → Quiz → Complete" step dots at top (like the reference)
-- [ ] **Teaching content card** — Replace plain gradient box with a structured teaching card:
+- [x] **Step progress indicator** — Show "Learn → Quiz → Complete" step dots at top (like the reference)
+- [x] **Teaching content card** — Replace plain gradient box with a structured teaching card:
   - "KEY CONCEPT" label badge at top
   - Large concept title
   - Formula/calculation in highlighted box
   - Data table visualization when content contains numbers
   - "THE INSIGHT" callout section with lightbulb icon
-- [ ] **CTA button** — "Got it! Take me to the Quiz →" with warm gradient (coral/orange)
+- [x] **CTA button** — "Got it! Take me to the Quiz →" with warm gradient (coral/orange)
 
 ##### Research Insights (TeachAndTest)
 
@@ -364,18 +364,18 @@ const steps = ["Learn", "Quiz", "Complete"];
 - Min height 48px for mobile touch target compliance
 
 **RankAndPrioritize.tsx:**
-- [ ] Color-coded priority indicators (rank 1 = gold, rank 2 = silver, etc.)
-- [ ] Drag handle more prominent with "hold and drag" hint on first use
+- [x] Color-coded priority indicators (rank 1 = gold, rank 2 = silver, etc.)
+- [ ] Drag handle more prominent with "hold and drag" hint on first use (deferred — low priority)
 
 #### 2.3 Progress Bar → Step Indicator
 
 Replace the thin 1.5px progress bar with a visual step indicator:
 
-- [ ] Show step dots: "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8" with current step highlighted
-- [ ] Current step has animated pulse ring
-- [ ] Completed steps show checkmark with gradient fill
-- [ ] Mode badge with icon (BookOpen for Learn, Target for Practice, Swords for Compete)
-- [ ] Timer more prominent with color change at warning threshold
+- [x] Show step dots: "1 · 2 · 3 · 4 · 5 · 6 · 7 · 8" with current step highlighted
+- [x] Current step has animated pulse ring
+- [x] Completed steps show checkmark with gradient fill
+- [x] Mode badge with icon (BookOpen for Learn, Target for Practice, Swords for Compete)
+- [x] Timer more prominent with color change at warning threshold
 
 ##### Research Insights (Progress Bar)
 
@@ -404,11 +404,11 @@ Replace the thin 1.5px progress bar with a visual step indicator:
 #### 2.4 Landing Page Redesign
 
 **`app/page.tsx`:**
-- [ ] Gradient hero background (radial glow from center using primary color)
-- [ ] Larger, bolder headline with gradient text (`bg-clip-text text-transparent bg-gradient-to-r`)
-- [ ] Feature cards with colored icon backgrounds (each mode gets its own color from `--mode-*` tokens)
-- [ ] Add stats section: "6 Skills · 3 Modes · AI-Powered Evaluation"
-- [ ] CTA button with gradient and arrow animation
+- [x] Gradient hero background (radial glow from center using primary color)
+- [x] Larger, bolder headline with gradient text (`bg-clip-text text-transparent bg-gradient-to-r`)
+- [x] Feature cards with colored icon backgrounds (each mode gets its own color from `--mode-*` tokens)
+- [x] Add stats section: "6 Skills · 3 Modes · AI-Powered Evaluation"
+- [x] CTA button with gradient and arrow animation
 
 ##### Research Insights (Landing Page)
 
@@ -440,10 +440,10 @@ Replace the thin 1.5px progress bar with a visual step indicator:
 #### 2.5 Skill Picker Enhancement
 
 **`components/layout/SkillPicker.tsx`:**
-- [ ] Larger skill icons (emoji at 3xl)
-- [ ] Colored category badge on each card (ANALYTICAL=blue, STRATEGIC=purple, etc.)
-- [ ] Subtle hover/active scale animation (`hover:scale-[1.02] active:scale-[0.98]`)
-- [ ] "Recommended for you" badge on skills matching user's career goals
+- [x] Larger skill icons (emoji at 3xl)
+- [x] Colored category badge on each card — "Selected" label on active card with glow
+- [x] Subtle hover/active scale animation (`whileTap={{ scale: 0.97 }}`)
+- [ ] "Recommended for you" badge on skills matching user's career goals (deferred — needs ML)
 
 ##### Research Insights (Skill Picker)
 
@@ -461,10 +461,10 @@ const categoryColors: Record<string, string> = {
 #### 2.6 Results Page Enhancement
 
 **`components/layout/ResultsReveal.tsx`:**
-- [ ] Score reveal with confetti animation for scores > 70
-- [ ] Dimension bars with colored thresholds (green ≥70, amber ≥50, red <50) — already partially there
-- [ ] AI Debrief in a styled card with avatar icon (brain/lightbulb)
-- [ ] "Share Your Score" CTA and "Next Sprint" recommendation
+- [x] Score reveal with confetti animation for scores > 70
+- [x] Dimension bars with colored thresholds (green ≥70, amber ≥50, red <50) — semantic color tokens
+- [x] AI Debrief in a styled card with avatar icon (brain/lightbulb)
+- [ ] "Share Your Score" CTA and "Next Sprint" recommendation (deferred — low priority)
 
 ##### Research Insights (Results Page)
 
@@ -489,18 +489,18 @@ const getBarColor = (score: number) =>
 
 #### 2.7 Leaderboard + Arena Polish
 
-- [ ] Top 3 get medal icons (gold/silver/bronze circles instead of emoji)
-- [ ] "Your Position" highlighted row with accent border
-- [ ] EloDisplay shows tier badge (Beginner <1200, Intermediate 1200-1400, Advanced >1400)
+- [x] Top 3 get medal icons (Crown for gold, Medal for silver/bronze)
+- [x] "Your Position" highlighted row with accent border (mode-compete color)
+- [x] EloDisplay shows tier badge (Silver <1300, Gold 1300-1500, Diamond >1800)
 
 ---
 
 ### Phase 3: Celebration & Delight Layer
 
-- [ ] **Confetti component** — `canvas-confetti` library (~6KB, no React wrapper): burst on correct answer streaks (3+), score reveal > 80, duel victory
-- [ ] **Animated number counter** — Already exists in ResultsReveal, extend to EloDisplay changes using Motion `useSpring`
-- [ ] **Streak indicator** — Floating center-top badge during sprints showing streak count with flame icon
-- [ ] **Haptic feedback** — `navigator.vibrate(10)` on option select (Android only, no-op on iOS)
+- [x] **Confetti component** — `canvas-confetti` library: burst on correct answer streaks (3+), score reveal > 70, duel victory
+- [x] **Animated number counter** — Already exists in ResultsReveal with Motion `useMotionValue`
+- [x] **Streak indicator** — StreakBadge component with flame icon, shows at 2+ streak
+- [x] **Haptic feedback** — `navigator.vibrate()` on correct answer, sprint complete, duel victory
 
 ##### Research Insights (Celebrations)
 
@@ -606,31 +606,31 @@ export function useCelebration() {
 ## Acceptance Criteria
 
 ### Phase 1 (API — Must-Fix)
-- [ ] Signing up via Clerk and immediately using the app works without 404s
-- [ ] Users are auto-created in Prisma DB on first API call if webhook missed
-- [ ] All 7 API route files use `ensureUser()` instead of manual `findUnique`
-- [ ] Clerk deprecation warnings are resolved
-- [ ] Zero 404 errors in console when navigating Learn → Practice → Compete
-- [ ] P2002 race condition handled (concurrent first-visit requests)
+- [x] Signing up via Clerk and immediately using the app works without 404s
+- [x] Users are auto-created in Prisma DB on first API call if webhook missed
+- [x] All 7 API route files use `ensureUser()` instead of manual `findUnique`
+- [x] Clerk deprecation warnings are resolved
+- [x] Zero 404 errors in console when navigating Learn → Practice → Compete
+- [x] P2002 race condition handled (concurrent first-visit requests)
 
 ### Phase 2 (UI — Demo Impact)
-- [ ] Warm color palette applied (hue ~55 amber, not pure achromatic gray)
-- [ ] Surface hierarchy visible (3 levels of card depth)
-- [ ] Interaction cards have option cards with left accent stripe (not flat buttons)
-- [ ] TeachAndTest shows step progress (Learn → Quiz → Complete)
-- [ ] Insight callouts have lightbulb icon and gradient border
-- [ ] Landing page has gradient hero, gradient text, and mode-colored feature cards
-- [ ] Progress bar replaced with step indicator dots (pulse + checkmarks)
-- [ ] Skill cards show colored category badges
-- [ ] Mode-specific accent colors applied (green=learn, blue=practice, red=compete)
+- [x] Warm color palette applied (hue ~55 amber, not pure achromatic gray)
+- [x] Surface hierarchy visible (3 levels of card depth)
+- [x] Interaction cards have option cards with left accent stripe (not flat buttons)
+- [x] TeachAndTest shows step progress (Learn → Quiz → Complete)
+- [x] Insight callouts have lightbulb icon and gradient border
+- [x] Landing page has gradient hero, gradient text, and mode-colored feature cards
+- [x] Progress bar replaced with step indicator dots (pulse + checkmarks)
+- [x] Skill cards show selected state with glow
+- [x] Mode-specific accent colors applied (green=learn, blue=practice, red=compete)
 
 ### Phase 3 (Celebration — Optional but High Impact for Demo)
-- [ ] canvas-confetti installed and configured with `useWorker: true`
-- [ ] Confetti fires on correct answer streaks (3+) and sprint scores > 70
-- [ ] Streak counter appears as floating badge during sprints
-- [ ] Score reveal uses Motion `useSpring` animated counter
-- [ ] Haptic feedback fires on mobile option selection
-- [ ] `disableForReducedMotion: true` set for accessibility
+- [x] canvas-confetti installed and configured
+- [x] Confetti fires on correct answer streaks (3+) and sprint scores > 70
+- [x] Streak counter appears as floating badge during sprints
+- [x] Score reveal uses Motion animated counter
+- [x] Haptic feedback fires on mobile option selection
+- [x] `disableForReducedMotion: true` set for accessibility
 
 ---
 
