@@ -174,7 +174,6 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         <InteractionCard
           key={currentInteraction.id}
           cardKey={currentInteraction.id}
-          onAnswer={handleAnswer}
           showFeedback={showFeedback}
           isCorrect={lastCorrect}
         >

@@ -8,7 +8,6 @@ import { CheckCircle2, XCircle } from "lucide-react";
 
 interface InteractionCardProps {
   children: ReactNode;
-  onAnswer: (answer: string) => void;
   showFeedback: boolean;
   isCorrect: boolean | null;
   /** Unique key for AnimatePresence transitions */
