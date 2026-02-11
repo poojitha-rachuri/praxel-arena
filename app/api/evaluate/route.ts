@@ -383,6 +383,20 @@ async function completeDuelAttempt(
     }),
   ]);
 
+  const p1Name = player1?.name ?? "Player 1";
+  const p2Name = player2?.name ?? "Player 2";
+
+  // Map user IDs to "player1"/"player2" labels for the client
+  const winnerLabel =
+    duelResult.winnerId === updatedDuel.player1Id ? "player1" : "player2";
+
+  // Map dimensionWinners from user IDs to player names (for MatchResult component)
+  const dimensionWinnersAsNames: Record<string, string> = {};
+  for (const [key, userId] of Object.entries(duelResult.dimensionWinners)) {
+    dimensionWinnersAsNames[key] =
+      userId === updatedDuel.player1Id ? p1Name : p2Name;
+  }
+
   // Atomic: update duel + Elo ratings in a transaction
   await prisma.$transaction(async (tx) => {
     // Finalize the duel
@@ -393,9 +407,14 @@ async function completeDuelAttempt(
         winnerId: duelResult.winnerId,
         eloChange: duelResult.eloChange,
         evaluation: {
-          ...duelResult,
-          player1Name: player1?.name ?? "Player 1",
-          player2Name: player2?.name ?? "Player 2",
+          winnerId: winnerLabel,
+          player1Scores: duelResult.player1Scores,
+          player2Scores: duelResult.player2Scores,
+          dimensionWinners: dimensionWinnersAsNames,
+          analysis: duelResult.analysis,
+          eloChange: duelResult.eloChange,
+          player1Name: p1Name,
+          player2Name: p2Name,
         },
         completedAt: new Date(),
       },
