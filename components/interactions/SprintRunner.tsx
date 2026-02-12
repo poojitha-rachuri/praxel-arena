@@ -90,6 +90,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const sprintStartTimeRef = useRef<number>(Date.now());
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const submittedRef = useRef(false);
+  const advancingRef = useRef(false);
   // Store latest responses in a ref for use in advance() without stale closures
   const responsesRef = useRef<SprintResponse[]>([]);
 
@@ -116,8 +117,11 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const currentInteraction = sortedInteractions[currentIndex] ?? null;
   const totalInteractions = sortedInteractions.length;
 
-  /** Advance to next card or complete sprint */
+  /** Advance to next card or complete sprint — guarded against double-fire from Continue + auto-advance race */
   const advance = useCallback(() => {
+    if (advancingRef.current) return;
+    advancingRef.current = true;
+
     if (feedbackTimerRef.current) {
       clearTimeout(feedbackTimerRef.current);
       feedbackTimerRef.current = undefined;
@@ -133,6 +137,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
     } else {
       setCurrentIndex((prev) => prev + 1);
       cardStartTimeRef.current = Date.now();
+      advancingRef.current = false;
     }
   }, [currentIndex, totalInteractions, onComplete]);
 
