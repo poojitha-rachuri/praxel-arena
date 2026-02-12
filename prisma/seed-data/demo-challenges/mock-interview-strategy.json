@@ -1,0 +1,27 @@
+{
+  "type": "standalone",
+  "challengeType": "MOCK_INTERVIEW",
+  "skill": "Business Strategy",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Walk me through how you'd evaluate whether a mid-size retailer should expand into e-commerce. You have 2 minutes."
+    },
+    {
+      "role": "user",
+      "content": "I'd start by looking at their current customer base and whether there's demand for online shopping. Then I'd analyze the competitive landscape online."
+    },
+    {
+      "role": "assistant",
+      "content": "Good structure. You mentioned demand and competition. Now tell me: what's the single biggest risk this retailer faces if they DON'T go online?"
+    },
+    {
+      "role": "user",
+      "content": "They risk losing existing customers to competitors who are already online, especially younger demographics."
+    },
+    {
+      "role": "assistant",
+      "content": "Exactly right. The cost of inaction is often higher than the cost of action. You showed solid analytical framing but I'd push you to quantify more: what percentage of revenue is at risk? What's the customer acquisition cost online vs. in-store? Numbers make the argument."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "post-sprint",
+  "skill": "Pricing & Monetization",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "I noticed you chose to price the new SaaS product at $29/month, but your analysis showed the average competitor charges $49/month. What made you go below market rate?"
+    },
+    {
+      "role": "user",
+      "content": "I wanted to capture more market share since we're the new entrant."
+    },
+    {
+      "role": "assistant",
+      "content": "Interesting strategy. But here's the tension: you also selected 'premium positioning' as your brand strategy in the earlier question. How do you reconcile a below-market price with a premium brand?"
+    },
+    {
+      "role": "user",
+      "content": "I could offer a freemium model with the premium tier at $49 to match the market."
+    },
+    {
+      "role": "assistant",
+      "content": "Now you're thinking in layers. A freemium model lets you capture volume at $0, prove value, and then justify premium pricing. The key insight: pricing isn't just a number, it's a signal. Your initial choice signaled 'cheap' when you meant 'accessible.' Next time, consider what your price says about your product before you set it."
+    }
+  ]
+}

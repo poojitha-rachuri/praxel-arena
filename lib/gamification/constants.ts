@@ -91,3 +91,8 @@ export const CREDENTIAL_THRESHOLDS = [
 // ─── Challenges ─────────────────────────────────────────
 
 export const CHALLENGE_XP_DECAY = 0.85;
+
+// ─── AI Challenger ─────────────────────────────────────
+
+export const XP_AI_DEBRIEF = 15; // XP for completing a post-sprint debrief
+export const XP_AI_CHALLENGE = 20; // XP for completing a standalone challenge

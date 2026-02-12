@@ -118,6 +118,23 @@ export function AIChallenger({
     }
   }, [messages]);
 
+  // ─── Mobile keyboard handling ──────────────────────
+
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+
+    const handleResize = () => {
+      chatContainerRef.current?.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: "instant",
+      });
+    };
+
+    viewport.addEventListener("resize", handleResize);
+    return () => viewport.removeEventListener("resize", handleResize);
+  }, []);
+
   // ─── Handle send (with race guard) ────────────────
 
   const handleSend = useCallback(
@@ -258,7 +275,13 @@ export function AIChallenger({
         {/* Error state */}
         {error && (
           <div className="rounded-xl bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
-            Something went wrong. Please try again.
+            <p>
+              {error.message?.includes("429")
+                ? "You've had a great session! Come back in a bit for more challenges."
+                : error.message?.includes("timeout") || error.message?.includes("abort")
+                  ? "AI is taking a moment. Try again."
+                  : "Something went wrong. Please try again."}
+            </p>
           </div>
         )}
 

@@ -1,0 +1,27 @@
+{
+  "type": "standalone",
+  "challengeType": "SCENARIO_DRILL",
+  "skill": "Data Interpretation",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "You're the head of analytics at a fintech startup. It's Monday morning and your dashboard shows user signups jumped 300% over the weekend. Your CEO is ecstatic. What's your first move?"
+    },
+    {
+      "role": "user",
+      "content": "I'd check the source of the traffic to make sure it's organic and not bot traffic or a data error."
+    },
+    {
+      "role": "assistant",
+      "content": "Smart instinct. Plot twist: the traffic is real, but it's coming from a viral TikTok video that mocks your competitor. 80% of these new users haven't completed onboarding. Your CEO wants to send a press release about the growth. What do you tell them?"
+    },
+    {
+      "role": "user",
+      "content": "I'd advise waiting until we see activation rates. Raw signups don't mean real users. We should focus on converting them first."
+    },
+    {
+      "role": "assistant",
+      "content": "You correctly separated vanity metrics from meaningful ones. Many people get caught up in headline numbers. Your instinct to verify the data source and then focus on activation shows mature analytical thinking. The lesson: always ask 'so what?' after every data point. A 300% signup increase means nothing if retention is 5%."
+    }
+  ]
+}
