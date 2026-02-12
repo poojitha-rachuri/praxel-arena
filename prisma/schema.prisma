@@ -19,6 +19,16 @@ model User {
   createdAt          DateTime          @default(now())
   updatedAt          DateTime          @updatedAt
 
+  // Gamification
+  xp                Int               @default(0)
+  level             Int               @default(1)
+  currentStreak     Int               @default(0)
+  longestStreak     Int               @default(0)
+  lastActivityDate  DateTime?
+  leagueTier        Int               @default(0)
+  weeklyXp          Int               @default(0)
+  title             String            @default("Intern")
+
   careerGoals        UserCareerGoal[]
   skillScores        UserSkillScore[]
   eloRatings         UserEloRating[]
@@ -27,6 +37,13 @@ model User {
   duelsAsPlayer1     Duel[]            @relation("DuelPlayer1")
   duelsAsPlayer2     Duel[]            @relation("DuelPlayer2")
   duelsWon           Duel[]            @relation("DuelWinner")
+  xpTransactions     XpTransaction[]
+  challengeAttempts  ChallengeAttempt[]
+  leagueMemberships  LeagueMembership[]
+  seasonStats        UserSeasonStats[]
+  credentials        Credential[]
+
+  @@index([lastActivityDate])
 }
 
 // ─── Careers & Skills ────────────────────────────────────
@@ -73,6 +90,9 @@ model Skill {
   eloRatings  UserEloRating[]
   duels       Duel[]
   leaderboard LeaderboardEntry[]
+  challenges  Challenge[]
+  seasonStats UserSeasonStats[]
+  credentials Credential[]
 }
 
 model SkillCareerMap {
@@ -292,4 +312,177 @@ model LeaderboardEntry {
 
   @@unique([userId, skillId])
   @@index([skillId, eloRating(sort: Desc)])
+}
+
+// ─── Gamification Enums ────────────────────────────────
+
+enum XpSource {
+  SPRINT
+  DUEL_WIN
+  CHALLENGE
+  STREAK_BONUS
+  DAILY_BONUS
+  LEAGUE_REWARD
+  LEVEL_UP
+}
+
+enum ChallengeType {
+  SPEED_ROUND
+  SCORE_ATTACK
+}
+
+enum CredentialType {
+  PRACTITIONER
+  EXPERT
+  MASTER
+  GRANDMASTER
+}
+
+// ─── XP Transactions ──────────────────────────────────
+
+model XpTransaction {
+  id        String   @id @default(cuid())
+  userId    String
+  amount    Int
+  source    XpSource
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([userId, source])
+}
+
+// ─── Challenges ───────────────────────────────────────
+
+model Challenge {
+  id             String        @id @default(cuid())
+  type           ChallengeType
+  templateId     String
+  name           String
+  description    String
+  skillId        String?
+  config         Json
+  startsAt       DateTime
+  endsAt         DateTime
+  isActive       Boolean       @default(true)
+  rewardXpFirst  Int           @default(250)
+  rewardXpTenth  Int           @default(50)
+  createdAt      DateTime      @default(now())
+
+  skill    Skill?             @relation(fields: [skillId], references: [id], onDelete: SetNull)
+  attempts ChallengeAttempt[]
+
+  @@index([isActive, startsAt, endsAt])
+  @@index([type, isActive])
+  @@index([skillId])
+}
+
+model ChallengeAttempt {
+  id          String   @id @default(cuid())
+  userId      String
+  challengeId String
+  score       Float
+  timeSpentMs Int
+  accuracy    Float
+  xpEarned    Int      @default(0)
+  completedAt DateTime @default(now())
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  challenge Challenge @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+
+  @@index([challengeId, score(sort: Desc)])
+  @@index([challengeId, timeSpentMs(sort: Asc)])
+  @@index([userId, challengeId])
+}
+
+// ─── Leagues ──────────────────────────────────────────
+
+model LeagueInstance {
+  id        String   @id @default(cuid())
+  tier      Int
+  weekStart DateTime
+  weekEnd   DateTime
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  memberships LeagueMembership[]
+
+  @@index([tier, isActive])
+  @@index([isActive])
+  @@index([weekStart, weekEnd])
+}
+
+model LeagueMembership {
+  id               String   @id @default(cuid())
+  userId           String
+  leagueInstanceId String
+  weeklyXp         Int      @default(0)
+  finalRank        Int?
+  promoted         Boolean  @default(false)
+  demoted          Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  leagueInstance LeagueInstance @relation(fields: [leagueInstanceId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, leagueInstanceId])
+  @@index([leagueInstanceId, weeklyXp(sort: Desc)])
+}
+
+// ─── Elo Seasons ──────────────────────────────────────
+
+model EloSeason {
+  id          String   @id @default(cuid())
+  month       Int
+  year        Int
+  seasonStart DateTime
+  seasonEnd   DateTime
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  stats UserSeasonStats[]
+
+  @@unique([month, year])
+  @@index([isActive])
+}
+
+model UserSeasonStats {
+  id          String @id @default(cuid())
+  userId      String
+  eloSeasonId String
+  skillId     String
+  startElo    Int    @default(1200)
+  peakElo     Int    @default(1200)
+  endElo      Int    @default(1200)
+  wins        Int    @default(0)
+  losses      Int    @default(0)
+  matchCount  Int    @default(0)
+  xpEarned    Int    @default(0)
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eloSeason EloSeason @relation(fields: [eloSeasonId], references: [id], onDelete: Cascade)
+  skill     Skill     @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, eloSeasonId, skillId])
+  @@index([eloSeasonId, skillId, peakElo(sort: Desc)])
+}
+
+// ─── Credentials ──────────────────────────────────────
+
+model Credential {
+  id               String         @id @default(cuid())
+  userId           String
+  skillId          String
+  type             CredentialType
+  eloAtGrant       Int
+  grantedAt        DateTime       @default(now())
+  verificationCode String         @unique @default(cuid())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skill Skill @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, skillId, type])
+  @@index([verificationCode])
 }

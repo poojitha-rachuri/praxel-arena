@@ -5,6 +5,7 @@ import AppShell from "@/components/layout/AppShell";
 import ModeSelector from "@/components/layout/ModeSelector";
 import CareerProgressBanner from "@/components/layout/CareerProgressBanner";
 import SkillAccordion from "@/components/layout/SkillAccordion";
+import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
 
 export default async function PracticePage({
   searchParams,
@@ -29,6 +30,8 @@ export default async function PracticePage({
             Sharpen your skills with harder questions and AI debriefs
           </p>
         </div>
+
+        <ActiveChallengeBanner />
 
         {data.topCareerMatch && (
           <CareerProgressBanner
