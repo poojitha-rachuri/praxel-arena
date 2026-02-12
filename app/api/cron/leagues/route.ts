@@ -10,7 +10,7 @@ import {
 export async function POST(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -45,6 +45,11 @@ export async function POST(request: NextRequest) {
 
     const total = sorted.length;
 
+    // Calculate ranks and promotion/demotion in-memory, then batch write
+    const completionXp = LEAGUE_COMPLETION_XP[league.tier] ?? 100;
+    const memberUpdates: { id: string; finalRank: number; promoted: boolean; demoted: boolean }[] = [];
+    const userUpdates: { userId: string; newTier: number }[] = [];
+
     for (let i = 0; i < total; i++) {
       const member = sorted[i];
       const rank = i + 1;
@@ -52,7 +57,6 @@ export async function POST(request: NextRequest) {
       let demoted = false;
 
       if (league.tier === 0) {
-        // Rookie: auto-promote if any XP earned
         if (member.weeklyXp > 0) {
           promoted = true;
           promotedCount++;
@@ -70,45 +74,45 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      // Update membership
-      await prisma.leagueMembership.update({
-        where: { id: member.id },
-        data: { finalRank: rank, promoted, demoted },
-      });
-
-      // Update user tier
       const newTier = promoted
         ? Math.min(member.user.leagueTier + 1, 7)
         : demoted
           ? Math.max(member.user.leagueTier - 1, 1)
           : member.user.leagueTier;
 
-      // Award league completion XP
-      const completionXp = LEAGUE_COMPLETION_XP[league.tier] ?? 100;
+      memberUpdates.push({ id: member.id, finalRank: rank, promoted, demoted });
+      userUpdates.push({ userId: member.userId, newTier });
+    }
 
-      await prisma.user.update({
-        where: { id: member.userId },
-        data: {
-          leagueTier: newTier,
-          xp: { increment: completionXp },
-        },
-      });
-
-      await prisma.xpTransaction.create({
-        data: {
-          userId: member.userId,
+    // Batch: update memberships, users, and create XP transactions
+    await prisma.$transaction([
+      ...memberUpdates.map((m) =>
+        prisma.leagueMembership.update({
+          where: { id: m.id },
+          data: { finalRank: m.finalRank, promoted: m.promoted, demoted: m.demoted },
+        })
+      ),
+      ...userUpdates.map((u) =>
+        prisma.user.update({
+          where: { id: u.userId },
+          data: { leagueTier: u.newTier, xp: { increment: completionXp } },
+        })
+      ),
+      prisma.xpTransaction.createMany({
+        data: userUpdates.map((u, i) => ({
+          userId: u.userId,
           amount: completionXp,
-          source: "LEAGUE_REWARD",
+          source: "LEAGUE_REWARD" as const,
           metadata: {
             leagueInstanceId: league.id,
             tier: league.tier,
-            rank,
-            promoted,
-            demoted,
+            rank: memberUpdates[i].finalRank,
+            promoted: memberUpdates[i].promoted,
+            demoted: memberUpdates[i].demoted,
           },
-        },
-      });
-    }
+        })),
+      }),
+    ]);
 
     // Deactivate league
     await prisma.leagueInstance.update({
@@ -147,8 +151,12 @@ export async function POST(request: NextRequest) {
   let leaguesCreated = 0;
 
   for (const [tier, userIds] of tierGroups) {
-    // Shuffle users
-    const shuffled = [...userIds].sort(() => Math.random() - 0.5);
+    // Fisher-Yates shuffle for uniform randomness
+    const shuffled = [...userIds];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
 
     // Split into groups
     const groups: string[][] = [];

@@ -129,7 +129,7 @@ export function challengeXpForRank(
   minXp: number
 ): number {
   if (rank <= 0) return 0;
-  if (rank > 10) return minXp;
+  if (rank > 10) return 0;
   return Math.max(
     minXp,
     Math.floor(maxXp * Math.pow(CHALLENGE_XP_DECAY, rank - 1))

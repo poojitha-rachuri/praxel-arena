@@ -9,7 +9,7 @@ import { SEASON_RESET_FACTOR } from "@/lib/gamification/constants";
 export async function POST(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  if (!cronSecret || authHeader !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -26,26 +26,15 @@ export async function POST(request: NextRequest) {
   let closedSeasonId: string | null = null;
 
   if (activeSeason) {
-    // Update all season stats with final Elo
-    const seasonStats = await prisma.userSeasonStats.findMany({
-      where: { eloSeasonId: activeSeason.id },
-    });
-
-    for (const stat of seasonStats) {
-      const currentRating = await prisma.userEloRating.findUnique({
-        where: {
-          userId_skillId: { userId: stat.userId, skillId: stat.skillId },
-        },
-        select: { rating: true },
-      });
-
-      if (currentRating) {
-        await prisma.userSeasonStats.update({
-          where: { id: stat.id },
-          data: { endElo: currentRating.rating },
-        });
-      }
-    }
+    // Batch update all season stats with final Elo using raw SQL JOIN
+    await prisma.$executeRaw`
+      UPDATE "UserSeasonStats" uss
+      SET "endElo" = uer."rating"
+      FROM "UserEloRating" uer
+      WHERE uss."userId" = uer."userId"
+        AND uss."skillId" = uer."skillId"
+        AND uss."eloSeasonId" = ${activeSeason.id}
+    `;
 
     // Close season
     await prisma.eloSeason.update({
@@ -59,22 +48,15 @@ export async function POST(request: NextRequest) {
   // ── Step 2: Soft reset Elo ──
   // Formula: newElo = 1200 + (currentElo - 1200) * SEASON_RESET_FACTOR
 
-  const allRatings = await prisma.userEloRating.findMany();
-  let ratingsReset = 0;
-
-  for (const rating of allRatings) {
-    const newRating = Math.round(
-      ELO_INITIAL_RATING +
-        (rating.rating - ELO_INITIAL_RATING) * SEASON_RESET_FACTOR
-    );
-    const clampedRating = Math.max(ELO_RATING_FLOOR, newRating);
-
-    await prisma.userEloRating.update({
-      where: { id: rating.id },
-      data: { rating: clampedRating },
-    });
-    ratingsReset++;
-  }
+  // Batch Elo soft reset using raw SQL — avoids N+1 loop
+  const resetResult = await prisma.$executeRaw`
+    UPDATE "UserEloRating"
+    SET "rating" = GREATEST(
+      ${ELO_RATING_FLOOR},
+      ROUND(${ELO_INITIAL_RATING} + ("rating" - ${ELO_INITIAL_RATING}) * ${SEASON_RESET_FACTOR})::int
+    )
+  `;
+  const ratingsReset = resetResult;
 
   // ── Step 3: Create new season ──
 

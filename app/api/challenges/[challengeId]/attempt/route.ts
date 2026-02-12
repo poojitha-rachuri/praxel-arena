@@ -29,9 +29,13 @@ export async function POST(
 
   const { score, timeSpentMs, accuracy } = body;
 
-  if (typeof score !== "number" || typeof timeSpentMs !== "number" || typeof accuracy !== "number") {
+  if (
+    typeof score !== "number" || !Number.isFinite(score) || score < 0 ||
+    typeof timeSpentMs !== "number" || !Number.isFinite(timeSpentMs) || timeSpentMs < 0 ||
+    typeof accuracy !== "number" || !Number.isFinite(accuracy) || accuracy < 0 || accuracy > 1
+  ) {
     return NextResponse.json(
-      { error: "score, timeSpentMs, and accuracy are required numbers" },
+      { error: "score, timeSpentMs, and accuracy must be valid non-negative numbers (accuracy 0-1)" },
       { status: 400 }
     );
   }
@@ -68,86 +72,85 @@ export async function POST(
     });
   }
 
-  // Check if this is their first attempt (XP only on first)
-  const existingAttempt = await prisma.challengeAttempt.findFirst({
-    where: { userId: user.id, challengeId },
-  });
-  const isFirstAttempt = !existingAttempt;
+  // Atomically check first attempt + create + award XP in one transaction
+  const { attempt, isFirstAttempt, xpEarned, rank } = await prisma.$transaction(async (tx) => {
+    const existingAttempt = await tx.challengeAttempt.findFirst({
+      where: { userId: user.id, challengeId },
+    });
+    const isFirst = !existingAttempt;
 
-  // Create attempt
-  const attempt = await prisma.challengeAttempt.create({
-    data: {
-      userId: user.id,
-      challengeId,
-      score,
-      timeSpentMs,
-      accuracy,
-    },
-  });
-
-  // Calculate rank
-  let rank: number;
-  if (challenge.type === "SPEED_ROUND") {
-    rank = await prisma.challengeAttempt.count({
-      where: {
+    const newAttempt = await tx.challengeAttempt.create({
+      data: {
+        userId: user.id,
         challengeId,
-        timeSpentMs: { lt: timeSpentMs },
-        accuracy: { gte: config.accuracyThreshold ?? 0.7 },
+        score,
+        timeSpentMs,
+        accuracy,
       },
     });
-  } else {
-    rank = await prisma.challengeAttempt.count({
-      where: {
-        challengeId,
-        OR: [
-          { score: { gt: score } },
-          { score, timeSpentMs: { lt: timeSpentMs } },
-        ],
-      },
-    });
-  }
-  rank += 1; // 1-indexed
 
-  // Award XP on first completion only
-  let xpEarned = 0;
-  if (isFirstAttempt) {
-    xpEarned = challengeXpForRank(
-      rank,
-      challenge.rewardXpFirst,
-      challenge.rewardXpTenth
-    );
+    // Calculate rank
+    let computedRank: number;
+    if (challenge.type === "SPEED_ROUND") {
+      computedRank = await tx.challengeAttempt.count({
+        where: {
+          challengeId,
+          timeSpentMs: { lt: timeSpentMs },
+          accuracy: { gte: config.accuracyThreshold ?? 0.7 },
+        },
+      });
+    } else {
+      computedRank = await tx.challengeAttempt.count({
+        where: {
+          challengeId,
+          OR: [
+            { score: { gt: score } },
+            { score, timeSpentMs: { lt: timeSpentMs } },
+          ],
+        },
+      });
+    }
+    computedRank += 1; // 1-indexed
 
-    await prisma.challengeAttempt.update({
-      where: { id: attempt.id },
-      data: { xpEarned },
-    });
+    let earned = 0;
+    if (isFirst) {
+      earned = challengeXpForRank(
+        computedRank,
+        challenge.rewardXpFirst,
+        challenge.rewardXpTenth
+      );
 
-    // Award XP to user
-    await prisma.$transaction(async (tx) => {
+      await tx.challengeAttempt.update({
+        where: { id: newAttempt.id },
+        data: { xpEarned: earned },
+      });
+
       await tx.user.update({
         where: { id: user.id },
         data: {
-          xp: { increment: xpEarned },
-          weeklyXp: { increment: xpEarned },
+          xp: { increment: earned },
+          weeklyXp: { increment: earned },
         },
       });
 
       await tx.xpTransaction.create({
         data: {
           userId: user.id,
-          amount: xpEarned,
+          amount: earned,
           source: "CHALLENGE",
           metadata: {
             challengeId,
             challengeName: challenge.name,
-            rank,
+            rank: computedRank,
             score,
             timeSpentMs,
           },
         },
       });
-    });
-  }
+    }
+
+    return { attempt: newAttempt, isFirstAttempt: isFirst, xpEarned: earned, rank: computedRank };
+  });
 
   // Get top 10 for response
   const orderBy =

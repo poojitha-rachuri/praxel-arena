@@ -33,7 +33,7 @@ export function ChallengeLeaderboard({
   challengeId,
   type,
 }: ChallengeLeaderboardProps) {
-  const { data, isLoading } = useSWR(
+  const { data, error, isLoading } = useSWR(
     `/api/challenges/${challengeId}/leaderboard`,
     fetcher,
     { refreshInterval: 15000 }
@@ -50,6 +50,8 @@ export function ChallengeLeaderboard({
       </div>
     );
   }
+
+  if (error) return null;
 
   const entries: LeaderboardEntry[] = data?.leaderboard ?? [];
 

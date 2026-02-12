@@ -42,6 +42,8 @@ model User {
   leagueMemberships  LeagueMembership[]
   seasonStats        UserSeasonStats[]
   credentials        Credential[]
+
+  @@index([lastActivityDate])
 }
 
 // ─── Careers & Skills ────────────────────────────────────
@@ -374,6 +376,7 @@ model Challenge {
 
   @@index([isActive, startsAt, endsAt])
   @@index([type, isActive])
+  @@index([skillId])
 }
 
 model ChallengeAttempt {
@@ -407,6 +410,7 @@ model LeagueInstance {
   memberships LeagueMembership[]
 
   @@index([tier, isActive])
+  @@index([isActive])
   @@index([weekStart, weekEnd])
 }
 

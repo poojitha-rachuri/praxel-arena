@@ -11,9 +11,11 @@ import { StreakDisplay } from "@/components/gamification/StreakDisplay";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function Navbar() {
-  const { data: gam } = useSWR("/api/gamification", fetcher, {
+  const { data: gam, error } = useSWR("/api/gamification", fetcher, {
     refreshInterval: 60000,
   });
+
+  if (error) return null;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex h-12 items-center justify-between border-b border-border/50 bg-background/80 backdrop-blur-md px-4">

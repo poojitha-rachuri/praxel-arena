@@ -60,6 +60,7 @@ export async function processGamification(opts: {
     }
 
     // 3. Daily first sprint bonus
+    // Count uses === 1 because the current attempt is already written before processGamification runs
     const todayStart = new Date();
     todayStart.setUTCHours(0, 0, 0, 0);
     const todayAttempts = await tx.sprintAttempt.count({
@@ -68,7 +69,7 @@ export async function processGamification(opts: {
         completedAt: { gte: todayStart },
       },
     });
-    if (todayAttempts <= 1) {
+    if (todayAttempts === 1) {
       xpBreakdown.push({
         source: "Daily bonus",
         amount: XP_DAILY_FIRST_BONUS,
@@ -91,21 +92,24 @@ export async function processGamification(opts: {
     let newStreak = user.currentStreak;
     let streakMilestone: number | null = null;
 
-    if (!lastDay || lastDay.getTime() < today.getTime()) {
+    if (lastDay && lastDay.getTime() === today.getTime()) {
+      // Same day — preserve current streak, no update needed
+    } else if (!lastDay) {
+      // First ever activity
+      newStreak = 1;
+    } else {
       const yesterday = new Date(today);
       yesterday.setUTCDate(yesterday.getUTCDate() - 1);
 
-      if (lastDay && lastDay.getTime() === yesterday.getTime()) {
+      if (lastDay.getTime() === yesterday.getTime()) {
         newStreak = user.currentStreak + 1;
-      } else if (!lastDay) {
-        newStreak = 1;
       } else {
-        newStreak = 1;
+        newStreak = 1; // streak broken
       }
+    }
 
-      if (STREAK_MILESTONES.includes(newStreak)) {
-        streakMilestone = newStreak;
-      }
+    if (STREAK_MILESTONES.includes(newStreak)) {
+      streakMilestone = newStreak;
     }
 
     const newLongest = Math.max(user.longestStreak, newStreak);

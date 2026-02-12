@@ -12,9 +12,17 @@ type TabType = "all" | "speed" | "score";
 
 export default function ChallengesPage() {
   const [tab, setTab] = useState<TabType>("all");
-  const { data, isLoading } = useSWR("/api/challenges", fetcher, {
+  const { data, error, isLoading } = useSWR("/api/challenges", fetcher, {
     refreshInterval: 30000,
   });
+
+  if (error) {
+    return (
+      <div className="p-4 text-center text-sm text-muted-foreground">
+        Failed to load. Please try again.
+      </div>
+    );
+  }
 
   const challenges = data?.challenges ?? [];
 

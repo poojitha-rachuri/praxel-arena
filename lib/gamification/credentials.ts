@@ -22,16 +22,9 @@ export async function processCredentials(
 
   for (const threshold of CREDENTIAL_THRESHOLDS) {
     if (newElo >= threshold.elo) {
-      const existing = await prisma.credential.findUnique({
-        where: {
-          userId_skillId_type: {
-            userId,
-            skillId,
-            type: threshold.type as CredentialType,
-          },
-        },
-      });
-      if (!existing) {
+      try {
+        // Use create with try/catch to handle race condition (P2002 unique constraint)
+        // instead of check-then-act which allows double creation
         await prisma.credential.create({
           data: {
             userId,
@@ -41,6 +34,12 @@ export async function processCredentials(
           },
         });
         earned.push({ type: threshold.label, skillName: skill.name });
+      } catch (error: unknown) {
+        // P2002 = unique constraint violation — credential already exists, skip
+        if (error && typeof error === "object" && "code" in error && error.code === "P2002") {
+          continue;
+        }
+        throw error;
       }
     }
   }

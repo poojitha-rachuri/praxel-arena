@@ -50,9 +50,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  if (!responses || !Array.isArray(responses) || responses.length === 0) {
+  if (!responses || !Array.isArray(responses) || responses.length === 0 || responses.length > 50) {
     return NextResponse.json(
-      { error: "responses array is required and must not be empty" },
+      { error: "responses array is required, must not be empty, and must have at most 50 items" },
       { status: 400 }
     );
   }
@@ -228,17 +228,26 @@ export async function POST(request: NextRequest) {
 
     // ── Duel completion logic ──
     if (duelId) {
-      try {
-        await completeDuelAttempt(
-          duelId,
-          user.id,
-          attempt.id,
-          sprint,
-          responses
-        );
-      } catch (duelError) {
-        // Log but don't fail the evaluate response — the attempt is saved
-        console.error("Failed to update duel:", duelError);
+      // Validate user is a participant before processing
+      const duel = await prisma.duel.findUnique({
+        where: { id: duelId },
+        select: { player1Id: true, player2Id: true, status: true },
+      });
+
+      if (duel && (duel.player1Id === user.id || duel.player2Id === user.id) &&
+          duel.status !== "COMPLETED" && duel.status !== "CANCELLED") {
+        try {
+          await completeDuelAttempt(
+            duelId,
+            user.id,
+            attempt.id,
+            sprint,
+            responses
+          );
+        } catch (duelError) {
+          // Log but don't fail the evaluate response — the attempt is saved
+          console.error("Failed to update duel:", duelError);
+        }
       }
     }
 
@@ -263,10 +272,13 @@ export async function POST(request: NextRequest) {
       return null;
     });
 
-    // Wait briefly for gamification to complete (up to 200ms) so we can return data
+    // Wait briefly for gamification to complete (up to 500ms) so we can return data
     const gamification = await Promise.race([
       gamificationPromise,
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), 200)),
+      new Promise<null>((resolve) => setTimeout(() => {
+        console.warn("[gamification] Timeout: exceeded 500ms, returning without gamification data");
+        resolve(null);
+      }, 500)),
     ]);
 
     return NextResponse.json({
@@ -328,7 +340,7 @@ async function completeDuelAttempt(
     where: { id: duelId },
   });
 
-  if (!duel || duel.status === "COMPLETED" || duel.status === "CANCELLED") {
+  if (!duel || duel.status === "COMPLETED" || duel.status === "CANCELLED" || duel.status === "EVALUATING") {
     return;
   }
 
@@ -363,16 +375,21 @@ async function completeDuelAttempt(
     !updatedDuel.player1AttemptId ||
     !updatedDuel.player2AttemptId
   ) {
-    // Other player hasn't finished yet — set status to EVALUATING if we're the second player
-    // (the first player completing doesn't change status from IN_PROGRESS)
     return;
   }
 
-  // Both players done — set to EVALUATING while we run AI evaluation
-  await prisma.duel.update({
-    where: { id: duelId },
+  // Atomic status transition to EVALUATING — prevents double evaluation race
+  const claimed = await prisma.duel.updateMany({
+    where: {
+      id: duelId,
+      status: { in: ["IN_PROGRESS", "WAITING"] },
+    },
     data: { status: "EVALUATING" },
   });
+
+  if (claimed.count === 0) {
+    return; // Another request already claimed this duel for evaluation
+  }
 
   // Load both attempts' responses
   const [p1Attempt, p2Attempt] = await Promise.all([

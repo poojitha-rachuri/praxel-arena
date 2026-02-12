@@ -9,9 +9,11 @@ import { cn } from "@/lib/utils";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export function ActiveChallengeBanner() {
-  const { data } = useSWR("/api/challenges", fetcher, {
+  const { data, error } = useSWR("/api/challenges", fetcher, {
     refreshInterval: 60000,
   });
+
+  if (error) return null;
 
   const activeCount = data?.challenges?.length ?? 0;
 

@@ -16,9 +16,17 @@ import { cn } from "@/lib/utils";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 export default function LeaguesPage() {
-  const { data, isLoading } = useSWR("/api/leagues", fetcher, {
+  const { data, error, isLoading } = useSWR("/api/leagues", fetcher, {
     refreshInterval: 30000,
   });
+
+  if (error) {
+    return (
+      <div className="p-4 text-center text-sm text-muted-foreground">
+        Failed to load. Please try again.
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (
