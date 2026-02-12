@@ -3,23 +3,19 @@
 import posthog from "posthog-js";
 import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react";
 import { useEffect } from "react";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 
 function PostHogIdentifier() {
   const { isSignedIn, userId } = useAuth();
-  const { user } = useUser();
   const ph = usePostHog();
 
   useEffect(() => {
     if (isSignedIn && userId && ph) {
-      ph.identify(userId, {
-        email: user?.primaryEmailAddress?.emailAddress,
-        name: user?.fullName,
-      });
+      ph.identify(userId);
     } else if (!isSignedIn && ph) {
       ph.reset();
     }
-  }, [isSignedIn, userId, user, ph]);
+  }, [isSignedIn, userId, ph]);
 
   return null;
 }

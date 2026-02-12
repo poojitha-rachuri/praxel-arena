@@ -484,11 +484,11 @@ async function completeDuelAttempt(
   const [player1, player2] = await Promise.all([
     prisma.user.findUnique({
       where: { id: updatedDuel.player1Id },
-      select: { name: true },
+      select: { name: true, clerkId: true },
     }),
     prisma.user.findUnique({
       where: { id: updatedDuel.player2Id! },
-      select: { name: true },
+      select: { name: true, clerkId: true },
     }),
   ]);
 
@@ -576,18 +576,28 @@ async function completeDuelAttempt(
     });
   });
 
-  // Track duel completion
+  // Track duel completion for both players
   const phServer = getPostHogServer();
-  phServer?.capture({
-    distinctId: updatedDuel.player1Id,
-    event: "duel_completed",
-    properties: {
-      duelId,
-      winnerId: duelResult.winnerId,
-      eloChange: duelResult.eloChange,
-      skillId: sprint.skillId,
-    },
-  });
+  const duelProps = {
+    duelId,
+    winnerId: duelResult.winnerId,
+    eloChange: duelResult.eloChange,
+    skillId: sprint.skillId,
+  };
+  if (player1?.clerkId) {
+    phServer?.capture({
+      distinctId: player1.clerkId,
+      event: "duel_completed",
+      properties: { ...duelProps, role: "player1" },
+    });
+  }
+  if (player2?.clerkId) {
+    phServer?.capture({
+      distinctId: player2.clerkId,
+      event: "duel_completed",
+      properties: { ...duelProps, role: "player2" },
+    });
+  }
 
   // Check credentials for winner (non-blocking)
   const winnerCurrentElo =
@@ -595,7 +605,11 @@ async function completeDuelAttempt(
       ? player1Rating
       : player2Rating;
   const winnerNewElo = winnerCurrentElo + duelResult.eloChange;
-  processCredentials(duelResult.winnerId, sprint.skillId, winnerNewElo).catch(
+  const winnerClerkId =
+    duelResult.winnerId === updatedDuel.player1Id
+      ? player1?.clerkId
+      : player2?.clerkId;
+  processCredentials(duelResult.winnerId, sprint.skillId, winnerNewElo, winnerClerkId).catch(
     (err) => console.error("[credentials] Failed:", err)
   );
 }

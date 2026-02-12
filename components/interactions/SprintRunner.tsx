@@ -203,6 +203,8 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
       responsesRef.current = updatedResponses;
 
       trackEvent("interaction_answered", {
+        sprintId: sprint.id,
+        mode,
         type: currentInteraction.type,
         timeSpent,
         isCorrect: finalCorrect,
