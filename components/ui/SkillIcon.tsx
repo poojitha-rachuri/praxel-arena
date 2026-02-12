@@ -5,6 +5,8 @@ import {
   DollarSign,
   Scale,
   MessageSquare,
+  FileSpreadsheet,
+  Landmark,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,6 +18,8 @@ const SKILL_ICON_MAP: Record<string, { icon: LucideIcon; bg: string; text: strin
   "pricing-monetization": { icon: DollarSign, bg: "bg-violet-500/10", text: "text-violet-600 dark:text-violet-400" },
   "prioritization": { icon: Scale, bg: "bg-rose-500/10", text: "text-rose-600 dark:text-rose-400" },
   "stakeholder-communication": { icon: MessageSquare, bg: "bg-cyan-500/10", text: "text-cyan-600 dark:text-cyan-400" },
+  "financial-statement-analysis": { icon: FileSpreadsheet, bg: "bg-teal-500/10", text: "text-teal-600 dark:text-teal-400" },
+  "valuation": { icon: Landmark, bg: "bg-indigo-500/10", text: "text-indigo-600 dark:text-indigo-400" },
 };
 
 const DEFAULT_ICON = { icon: BarChart3, bg: "bg-muted", text: "text-muted-foreground" };

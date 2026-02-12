@@ -190,5 +190,69 @@
     "description": "Board decks, metrics storytelling, fundraising narratives, Q&A prep",
     "order": 4,
     "icon": "🎤"
+  },
+  {
+    "skillSlug": "financial-statement-analysis",
+    "slug": "balance-sheet-fundamentals",
+    "name": "Balance Sheet Fundamentals",
+    "description": "Assets, liabilities, equity, working capital, liquidity analysis",
+    "order": 1,
+    "icon": "📊"
+  },
+  {
+    "skillSlug": "financial-statement-analysis",
+    "slug": "income-statement-profitability",
+    "name": "Income Statement & Profitability",
+    "description": "Revenue recognition, gross/operating margins, EBITDA, earnings quality",
+    "order": 2,
+    "icon": "📈"
+  },
+  {
+    "skillSlug": "financial-statement-analysis",
+    "slug": "cash-flow-analysis",
+    "name": "Cash Flow Analysis",
+    "description": "Operating/investing/financing activities, free cash flow, burn rate analysis",
+    "order": 3,
+    "icon": "💸"
+  },
+  {
+    "skillSlug": "financial-statement-analysis",
+    "slug": "financial-ratio-analysis",
+    "name": "Financial Ratio Analysis",
+    "description": "Liquidity, solvency, efficiency, and profitability ratios for decision-making",
+    "order": 4,
+    "icon": "🔢"
+  },
+  {
+    "skillSlug": "valuation",
+    "slug": "dcf-intrinsic-valuation",
+    "name": "DCF & Intrinsic Valuation",
+    "description": "Discount rates, terminal value, WACC, sensitivity analysis",
+    "order": 1,
+    "icon": "🧮"
+  },
+  {
+    "skillSlug": "valuation",
+    "slug": "comparable-company-analysis",
+    "name": "Comparable Company Analysis",
+    "description": "Trading multiples, peer selection, benchmarking, relative valuation",
+    "order": 2,
+    "icon": "⚖️"
+  },
+  {
+    "skillSlug": "valuation",
+    "slug": "precedent-transactions",
+    "name": "Precedent Transactions",
+    "description": "M&A comps, control premiums, synergy analysis, transaction multiples",
+    "order": 3,
+    "icon": "🤝"
+  },
+  {
+    "skillSlug": "valuation",
+    "slug": "startup-growth-valuation",
+    "name": "Startup & Growth Valuation",
+    "description": "VC methods, revenue multiples, TAM-based sizing, pre/post-money mechanics",
+    "order": 4,
+    "icon": "🚀"
   }
 ]
