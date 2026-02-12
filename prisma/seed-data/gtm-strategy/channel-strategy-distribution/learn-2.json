@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "channel-strategy-distribution",
+  "mode": "LEARN",
+  "title": "Optimizing CAC Across Distribution Channels",
+  "description": "Learn to analyze, compare, and optimize customer acquisition costs across different go-to-market channels.",
+  "difficulty": 3,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which metric best captures a channel's true cost efficiency for customer acquisition?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total marketing spend divided by impressions"
+        },
+        {
+          "id": "b",
+          "text": "Fully loaded CAC including sales, onboarding, and channel fees"
+        },
+        {
+          "id": "c",
+          "text": "Cost per click on paid advertising"
+        },
+        {
+          "id": "d",
+          "text": "Monthly channel subscription or platform fee"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Customer Acquisition Cost (CAC) varies dramatically by channel—HubSpot reported that inbound channels average $942 CAC in SaaS while outbound averages $1,876. But many teams undercount by excluding onboarding, partner commissions, and sales time. Fully loaded CAC captures all costs to convert a prospect into a paying customer through a given channel.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A B2B SaaS company tracks Q3 results: Paid Search CAC $320 (LTV $1,200), Partner Referrals CAC $180 (LTV $2,800), Outbound SDR CAC $750 (LTV $3,500), Content/SEO CAC $95 (LTV $600). Which channel has the best LTV:CAC ratio?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Paid Search at 3.75x"
+        },
+        {
+          "id": "b",
+          "text": "Partner Referrals at 15.6x"
+        },
+        {
+          "id": "c",
+          "text": "Content/SEO at 6.3x"
+        },
+        {
+          "id": "d",
+          "text": "Outbound SDR at 4.7x"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Why is blended CAC often misleading when evaluating channel performance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It only works for enterprise sales motions"
+        },
+        {
+          "id": "b",
+          "text": "It hides underperforming channels behind efficient ones"
+        },
+        {
+          "id": "c",
+          "text": "It overestimates the cost of organic channels"
+        },
+        {
+          "id": "d",
+          "text": "It doesn't account for annual recurring revenue"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Many companies report a single blended CAC—total spend divided by total customers. Shopify's early growth team discovered that breaking CAC by channel revealed their partner/app ecosystem acquired merchants at 1/5th the cost of paid ads. Blended CAC masks this, letting expensive channels hide behind cheap ones, which leads to misallocated budgets.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When a channel's marginal CAC starts rising sharply while volume increases only slightly, the channel is likely hitting its ____ ceiling.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Saturation"
+        },
+        {
+          "id": "b",
+          "text": "Revenue"
+        },
+        {
+          "id": "c",
+          "text": "Conversion"
+        },
+        {
+          "id": "d",
+          "text": "Pricing"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your SaaS startup has $200K quarterly budget. Channel A (Google Ads) delivers 400 customers at $250 CAC but is saturating—next $50K would yield only 80 more. Channel B (partner program) delivers 100 customers at $400 CAC but LTV is 3x higher and scaling. Where do you shift the next $50K?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep investing in Google Ads for predictable volume"
+        },
+        {
+          "id": "b",
+          "text": "Shift $50K to partner program for higher LTV returns"
+        },
+        {
+          "id": "c",
+          "text": "Split evenly between both channels"
+        },
+        {
+          "id": "d",
+          "text": "Hold the $50K and test a new third channel"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "What is CAC payback period, and why does it matter more than raw CAC for channel decisions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It measures brand awareness ROI over a fiscal year"
+        },
+        {
+          "id": "b",
+          "text": "It shows months to recoup acquisition cost, revealing cash flow impact"
+        },
+        {
+          "id": "c",
+          "text": "It calculates total revenue a customer generates over their lifetime"
+        },
+        {
+          "id": "d",
+          "text": "It tracks the number of touchpoints before conversion"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Slack's enterprise channel had a higher raw CAC ($15K+) than self-serve ($200), but enterprise deals paid back in 8 months vs. 14 months for self-serve because of larger contract values. CAC payback period—months of revenue needed to recover acquisition cost—reveals which channels strain or fuel your cash position, which is critical for capital-constrained startups.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A Series B fintech is choosing channels for SMB expansion. Rank these from most to least important criteria for channel investment decisions: (a) Lowest raw CAC, (b) Best LTV:CAC ratio with payback under 12 months, (c) Highest volume potential regardless of cost, (d) Strongest channel-market fit for target SMB segment.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lowest raw CAC"
+        },
+        {
+          "id": "b",
+          "text": "Best LTV:CAC ratio with payback under 12 months"
+        },
+        {
+          "id": "c",
+          "text": "Highest volume potential regardless of cost"
+        },
+        {
+          "id": "d",
+          "text": "Strongest channel-market fit for target SMB segment"
+        }
+      ],
+      "correctAnswer": "d,b,a,c",
+      "insightAnswer": "d,b,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your top partner channel (40% of new customers, $180 CAC, 18x LTV:CAC) just informed you they're launching a competing product in 6 months. What's your best immediate channel strategy move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Immediately cut the partner and absorb the volume loss"
+        },
+        {
+          "id": "b",
+          "text": "Accelerate two alternative channels while negotiating transition terms with partner"
+        },
+        {
+          "id": "c",
+          "text": "Ignore the threat since 6 months is a long time"
+        },
+        {
+          "id": "d",
+          "text": "Double investment in the partner channel to lock in customers now"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you identified partner referrals as your highest-performing channel with the best LTV:CAC ratio and were scaling investment there. Now that partner is becoming a competitor, creating critical channel concentration risk.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "frameworks-mental-models",
+  "mode": "PRACTICE",
+  "title": "Applying RICE, MoSCoW & Weighted Scoring",
+  "description": "Practice using popular prioritization frameworks to make faster, more confident product and business decisions.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "In the RICE scoring framework, the four factors are Reach, Impact, Confidence, and ____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Effort"
+        },
+        {
+          "id": "b",
+          "text": "Efficiency"
+        },
+        {
+          "id": "c",
+          "text": "Expense"
+        },
+        {
+          "id": "d",
+          "text": "Engagement"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 2,
+      "prompt": "A Shopify PM scores three features: Feature A (RICE: 120), Feature B (RICE: 85), Feature C (RICE: 200). Feature C has only 50% confidence. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Feature C is clearly the best choice regardless"
+        },
+        {
+          "id": "b",
+          "text": "Feature A should be prioritized since it's most balanced"
+        },
+        {
+          "id": "c",
+          "text": "Feature C's low confidence means its true score may be much lower"
+        },
+        {
+          "id": "d",
+          "text": "Feature B should be eliminated immediately"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're a product lead at Slack. You can ship a 'Must Have' bug fix affecting 10% of users or a 'Should Have' feature requested by your largest enterprise client worth $2M ARR. Which do you prioritize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ship the bug fix — Must Haves always come first in MoSCoW"
+        },
+        {
+          "id": "b",
+          "text": "Ship the enterprise feature — revenue impact outweighs category labels"
+        },
+        {
+          "id": "c",
+          "text": "Do both simultaneously by splitting the team evenly"
+        },
+        {
+          "id": "d",
+          "text": "Delay both and gather more data first"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Stripe's team calculates Cost of Delay: Project X loses $50K/week if delayed, takes 4 weeks. Project Y loses $30K/week if delayed, takes 1 week. Which metric matters most here?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total cost of delay favors Project X"
+        },
+        {
+          "id": "b",
+          "text": "Cost of Delay Divided by Duration (CD3) favors Project Y"
+        },
+        {
+          "id": "c",
+          "text": "Both projects have equal urgency"
+        },
+        {
+          "id": "d",
+          "text": "Weekly delay cost is the only factor that matters"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Using MoSCoW, rank these Airbnb feature requests from highest to lowest priority: (a) 'Nice to Have' dark mode theme, (b) 'Must Have' payment processing fix, (c) 'Won't Have' AR room tours, (d) 'Should Have' improved search filters.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dark mode theme — Nice to Have"
+        },
+        {
+          "id": "b",
+          "text": "Payment processing fix — Must Have"
+        },
+        {
+          "id": "c",
+          "text": "AR room tours — Won't Have"
+        },
+        {
+          "id": "d",
+          "text": "Improved search filters — Should Have"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "You're using weighted scoring at HubSpot with criteria: Revenue Impact (40%), Customer Satisfaction (35%), Engineering Effort (25%). Feature A scores 8, 6, 3. Feature B scores 5, 9, 7. Which do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Feature A — higher revenue impact score wins with 40% weight"
+        },
+        {
+          "id": "b",
+          "text": "Feature B — its weighted total (7.10) beats Feature A (5.85)"
+        },
+        {
+          "id": "c",
+          "text": "They're essentially tied, flip a coin"
+        },
+        {
+          "id": "d",
+          "text": "Neither — scores below 8 weighted average shouldn't ship"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these four Notion features by ICE score (Impact × Confidence × Ease, each 1-10): (a) Impact 9, Confidence 4, Ease 3, (b) Impact 7, Confidence 8, Ease 7, (c) Impact 10, Confidence 3, Ease 2, (d) Impact 6, Confidence 9, Ease 8.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ICE = 108"
+        },
+        {
+          "id": "b",
+          "text": "ICE = 392"
+        },
+        {
+          "id": "c",
+          "text": "ICE = 60"
+        },
+        {
+          "id": "d",
+          "text": "ICE = 432"
+        }
+      ],
+      "correctAnswer": "d,b,a,c",
+      "insightAnswer": "d,b,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your CEO just announced Notion is pivoting to focus on enterprise clients. The feature with ICE score 432 (Impact 6, Confidence 9, Ease 8) was designed for individual users. How does this change your priority?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep it top priority — the ICE score doesn't change"
+        },
+        {
+          "id": "b",
+          "text": "Drop its Impact score significantly since the target market shifted"
+        },
+        {
+          "id": "c",
+          "text": "Only adjust Confidence downward, keep Impact and Ease the same"
+        },
+        {
+          "id": "d",
+          "text": "Remove it entirely — individual user features are now irrelevant"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you ranked four Notion features by ICE score. The top-ranked feature (ICE 432) targeted individual users. Now the company is pivoting to enterprise clients, changing strategic alignment.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "market-sizing-fundamentals",
+  "mode": "PRACTICE",
+  "title": "TAM SAM SOM: Sizing Any Market",
+  "description": "Practice breaking down markets using TAM, SAM, and SOM frameworks with real-world scenarios.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "The total revenue opportunity if 100% of the world's potential customers bought your product is called the ____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serviceable Addressable Market (SAM)"
+        },
+        {
+          "id": "b",
+          "text": "Total Addressable Market (TAM)"
+        },
+        {
+          "id": "c",
+          "text": "Serviceable Obtainable Market (SOM)"
+        },
+        {
+          "id": "d",
+          "text": "Market Penetration Rate"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 2,
+      "prompt": "A pet food startup reports: US pet food market = $50B (TAM), premium organic segment = $8B (SAM), Year 1 target = $12M (SOM). Their SOM is 0.15% of SAM. What stands out?",
+      "options": [
+        {
+          "id": "a",
+          "text": "TAM is too large to be useful"
+        },
+        {
+          "id": "b",
+          "text": "SOM at 0.15% of SAM is a realistic Year 1 target"
+        },
+        {
+          "id": "c",
+          "text": "SAM should be larger than $8B"
+        },
+        {
+          "id": "d",
+          "text": "They should target the full TAM immediately"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're sizing the US electric scooter market for investors. You have limited time. Do you start top-down from transportation spend data, or bottom-up from individual rider behavior and unit economics?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Top-down: faster, gives a credible ballpark from industry data"
+        },
+        {
+          "id": "b",
+          "text": "Bottom-up: more defensible, shows you understand the business"
+        },
+        {
+          "id": "c",
+          "text": "Skip sizing and focus on competitor revenue benchmarks"
+        },
+        {
+          "id": "d",
+          "text": "Use both approaches and triangulate for a stronger estimate"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Two analysts size the US meditation app market. Analyst A: 330M people × 10% meditate × $100/yr = $3.3B. Analyst B: 50M smartphone wellness users × 8% pay × $80/yr = $320M. Which is SAM vs TAM?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A is closer to TAM; B is closer to SAM"
+        },
+        {
+          "id": "b",
+          "text": "A is SAM; B is SOM"
+        },
+        {
+          "id": "c",
+          "text": "Both are calculating TAM differently"
+        },
+        {
+          "id": "d",
+          "text": "B is TAM; A is SAM"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these market sizing steps in the correct order when building a bottom-up estimate for a new coffee subscription service.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multiply by average revenue per subscriber per year"
+        },
+        {
+          "id": "b",
+          "text": "Identify the target customer segment (e.g., urban millennials)"
+        },
+        {
+          "id": "c",
+          "text": "Estimate realistic conversion rate from segment to paying customers"
+        },
+        {
+          "id": "d",
+          "text": "Calculate total addressable population in your launch geography"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Your team is pitching a B2B SaaS tool for dentists. Marketing says TAM is $15B (all healthcare SaaS). Sales says SAM is $400M (dental practices only). Which number leads the pitch deck?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lead with $15B TAM — investors want big markets"
+        },
+        {
+          "id": "b",
+          "text": "Lead with $400M SAM — it's credible and specific to your product"
+        },
+        {
+          "id": "c",
+          "text": "Show both but anchor on SAM with a clear path to expand"
+        },
+        {
+          "id": "d",
+          "text": "Show only SOM to appear conservative and trustworthy"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these data sources from MOST to LEAST reliable when sizing the US online tutoring market top-down.",
+      "options": [
+        {
+          "id": "a",
+          "text": "A competitor's self-reported press release claiming market leadership"
+        },
+        {
+          "id": "b",
+          "text": "US Census data on school-age population and household income"
+        },
+        {
+          "id": "c",
+          "text": "IBISWorld or Statista industry report on online education spending"
+        },
+        {
+          "id": "d",
+          "text": "A Quora thread estimating the tutoring market"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Post-COVID, remote work becomes permanent for 30% of US workers. Your commuter coffee cart business had a SOM of $2M based on downtown foot traffic. How do you adjust?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduce SOM by ~30% to reflect lower downtown foot traffic"
+        },
+        {
+          "id": "b",
+          "text": "Keep SOM the same — coffee demand doesn't change"
+        },
+        {
+          "id": "c",
+          "text": "Resize SAM to include suburban/home delivery, then re-estimate SOM"
+        },
+        {
+          "id": "d",
+          "text": "Abandon the market entirely since it's shrinking"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "You originally sized the commuter coffee cart market assuming pre-COVID foot traffic in downtown business districts. Now 30% of workers are permanently remote, fundamentally changing where your customers are.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

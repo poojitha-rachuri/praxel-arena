@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "launch-execution-playbooks",
+  "mode": "LEARN",
+  "title": "Building Your Launch Playbook",
+  "description": "Master the core frameworks for planning, timing, and measuring successful product launches.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the primary purpose of a launch playbook?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Replace the product roadmap with marketing milestones"
+        },
+        {
+          "id": "b",
+          "text": "Coordinate cross-functional teams around shared timelines and deliverables"
+        },
+        {
+          "id": "c",
+          "text": "Document every feature for the engineering team"
+        },
+        {
+          "id": "d",
+          "text": "Provide investors with a financial forecast"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A launch playbook is a single source of truth that aligns marketing, sales, product, and support around who does what and by when. When Slack launched its enterprise product, it used a detailed playbook coordinating 12 teams across a 90-day window to ensure messaging, enablement, and infrastructure were all ready simultaneously.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company's beta program shows: 200 sign-ups, 45% activation rate, 12% weekly retention at week 4, and NPS of 62. Which metric is the biggest concern before a full launch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sign-ups are too low to draw conclusions"
+        },
+        {
+          "id": "b",
+          "text": "Activation rate below 50% signals onboarding friction"
+        },
+        {
+          "id": "c",
+          "text": "12% weekly retention suggests users aren't finding lasting value"
+        },
+        {
+          "id": "d",
+          "text": "NPS of 62 is below the SaaS benchmark"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When should a company typically begin its beta program relative to the planned general availability date?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1–2 weeks before GA to build last-minute buzz"
+        },
+        {
+          "id": "b",
+          "text": "6–12 weeks before GA to iterate on feedback"
+        },
+        {
+          "id": "c",
+          "text": "Only after GA if initial metrics disappoint"
+        },
+        {
+          "id": "d",
+          "text": "12–18 months before GA to lock in pricing"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Beta programs serve as a controlled stress test with real users before you commit to a public launch. Figma ran a 10-week private beta for its Dev Mode feature, gathering feedback from 500 design teams, which led to three major UX changes before general availability — changes that would have been far costlier post-launch.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "The three standard launch tiers used in most GTM playbooks are soft launch, ____, and hard launch.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Limited release"
+        },
+        {
+          "id": "b",
+          "text": "Beta release"
+        },
+        {
+          "id": "c",
+          "text": "Stealth launch"
+        },
+        {
+          "id": "d",
+          "text": "Pre-launch"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your fintech product is ready for launch, but a major competitor just announced a similar feature releasing in 3 weeks. You can launch now with minimal PR support, or wait 4 weeks for a full campaign. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Launch now to establish first-mover positioning in the market"
+        },
+        {
+          "id": "b",
+          "text": "Wait 4 weeks for the full campaign and stronger differentiation"
+        },
+        {
+          "id": "c",
+          "text": "Do a soft launch now, then a hard launch in 4 weeks"
+        },
+        {
+          "id": "d",
+          "text": "Delay 8 weeks to add more features and outperform the competitor"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which launch metric best indicates whether your go-to-market messaging is resonating with your target audience?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total website traffic on launch day"
+        },
+        {
+          "id": "b",
+          "text": "Landing page visitor-to-signup conversion rate"
+        },
+        {
+          "id": "c",
+          "text": "Number of press mentions received"
+        },
+        {
+          "id": "d",
+          "text": "Social media follower count increase"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Launch metrics fall into three categories: awareness (reach, impressions), engagement (conversion rates, activation), and retention (DAU/MAU, churn). Dropbox famously tracked its landing page conversion rate during its MVP launch — a 35% visitor-to-waitlist rate validated that the value proposition resonated, even before the product was fully built.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're building a launch playbook for a B2B analytics tool. Rank these workstreams from earliest to latest in your timeline: (a) Sales enablement training, (b) Beta user recruitment, (c) Press embargo and PR outreach, (d) Launch day war room and monitoring.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sales enablement training"
+        },
+        {
+          "id": "b",
+          "text": "Beta user recruitment"
+        },
+        {
+          "id": "c",
+          "text": "Press embargo and PR outreach"
+        },
+        {
+          "id": "d",
+          "text": "Launch day war room and monitoring"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your beta just surfaced that enterprise users love the product but SMBs churn within a week. Your playbook targets both segments with a single launch. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Launch for enterprise only and delay the SMB go-to-market"
+        },
+        {
+          "id": "b",
+          "text": "Proceed with the unified launch as planned"
+        },
+        {
+          "id": "c",
+          "text": "Cancel the launch entirely until SMB retention improves"
+        },
+        {
+          "id": "d",
+          "text": "Launch for SMBs first since they need more market validation"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Your original playbook assumed a single launch targeting both enterprise and SMB segments simultaneously. Beta data now reveals a sharp divergence: enterprise users show 80% retention while SMB users drop to 15% by week two.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

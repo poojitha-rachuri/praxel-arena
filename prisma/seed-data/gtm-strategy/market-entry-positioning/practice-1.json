@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "market-entry-positioning",
+  "mode": "PRACTICE",
+  "title": "Defining Your ICP and Market Position",
+  "description": "Practice identifying ideal customer profiles, crafting value propositions, and making competitive positioning decisions.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A B2B SaaS startup sees these trial-to-paid rates: SMBs 3%, Mid-market 14%, Enterprise 6%. Support tickets are 5x higher for Enterprise. What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enterprise is too expensive to support"
+        },
+        {
+          "id": "b",
+          "text": "Mid-market is the strongest ICP based on conversion"
+        },
+        {
+          "id": "c",
+          "text": "SMBs should be abandoned immediately"
+        },
+        {
+          "id": "d",
+          "text": "The product needs more enterprise features"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "An Ideal Customer Profile describes the type of ____ most likely to buy and retain, while a buyer persona describes the individual decision-maker.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company or account"
+        },
+        {
+          "id": "b",
+          "text": "Industry vertical"
+        },
+        {
+          "id": "c",
+          "text": "Geographic region"
+        },
+        {
+          "id": "d",
+          "text": "Marketing channel"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You're launching a project management tool. Asana and Monday.com dominate the general market. You can either target all teams broadly with lower pricing, or focus narrowly on construction teams with tailored workflows.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Go broad with lower pricing to maximize addressable market"
+        },
+        {
+          "id": "b",
+          "text": "Focus on construction teams for defensible niche positioning"
+        },
+        {
+          "id": "c",
+          "text": "Build for both and let the market decide"
+        },
+        {
+          "id": "d",
+          "text": "Wait until competitors show a gap before choosing"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Competitor analysis shows: Competitor A charges $50/seat (general HR), Competitor B charges $120/seat (enterprise compliance). Neither serves healthcare-specific compliance. Your product handles HIPAA workflows natively. What matters most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Price your product between $50 and $120 per seat"
+        },
+        {
+          "id": "b",
+          "text": "The unserved healthcare compliance need is your positioning wedge"
+        },
+        {
+          "id": "c",
+          "text": "Competitor B's high price means the market is overpriced"
+        },
+        {
+          "id": "d",
+          "text": "General HR is the bigger market opportunity"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "You're defining your ICP for a new expense management tool. Rank these steps in the correct order from first to last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Write messaging that speaks to the ICP's pain points"
+        },
+        {
+          "id": "b",
+          "text": "Analyze which existing customers have highest retention and LTV"
+        },
+        {
+          "id": "c",
+          "text": "Identify common firmographic traits (size, industry, tech stack)"
+        },
+        {
+          "id": "d",
+          "text": "Validate the ICP hypothesis with 10-15 prospect interviews"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Your value proposition testing shows: Message A ('Save 10 hours/week on reporting') gets 22% click-through. Message B ('The only analytics platform built for DTC brands') gets 15% click-through but 3x higher demo conversion. Which do you lead with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Message A — higher click-through means broader market appeal"
+        },
+        {
+          "id": "b",
+          "text": "Message B — higher demo conversion signals stronger purchase intent"
+        },
+        {
+          "id": "c",
+          "text": "Combine both messages into one headline"
+        },
+        {
+          "id": "d",
+          "text": "Test five more messages before deciding anything"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "You're entering a new market with a cybersecurity product. Rank these positioning activities from most to least important for initial market entry.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build a competitive battlecard against top 3 incumbents"
+        },
+        {
+          "id": "b",
+          "text": "Define your unique differentiator vs. existing solutions"
+        },
+        {
+          "id": "c",
+          "text": "Create a brand awareness campaign on social media"
+        },
+        {
+          "id": "d",
+          "text": "Identify the specific buyer pain point competitors underserve"
+        }
+      ],
+      "correctAnswer": "d,b,a,c",
+      "insightAnswer": "d,b,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your largest competitor just launched a free tier targeting the same mid-market ICP you validated. Your paid product costs $30/seat/month. How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Match with your own free tier immediately"
+        },
+        {
+          "id": "b",
+          "text": "Double down on differentiated value and target upmarket slightly"
+        },
+        {
+          "id": "c",
+          "text": "Cut price to $10/seat to undercut them"
+        },
+        {
+          "id": "d",
+          "text": "Pivot to a completely different customer segment"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously validated mid-market as your strongest ICP with 14% trial-to-paid conversion. Now the market leader has introduced a free tier directly targeting your segment, changing the competitive landscape.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "valuation-investment-cases",
+  "mode": "LEARN",
+  "title": "Investment Sizing & Comparable Valuation",
+  "description": "Master advanced techniques for sizing investments, triangulating valuations with comparables, and stress-testing deal logic under uncertainty.",
+  "difficulty": 5,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS company has $80M ARR growing 40% YoY with 75% gross margins. Using the 'Rule of 40' premium framework, what's a reasonable EV/Revenue multiple?",
+      "options": [
+        {
+          "id": "a",
+          "text": "~8x — moderate growth doesn't justify premium"
+        },
+        {
+          "id": "b",
+          "text": "~15x — Rule of 40 score of 115 commands top-decile multiple"
+        },
+        {
+          "id": "c",
+          "text": "~25x — growth rate alone drives the multiple"
+        },
+        {
+          "id": "d",
+          "text": "~4x — gross margins are irrelevant to revenue multiples"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The 'Rule of 40' says revenue growth rate + profit margin should exceed 40% for healthy SaaS. Companies scoring well above 40 (like growth + margin = 115) historically trade at 15-20x revenue. But the real power is using this as a guesstimation anchor: score above 40 → premium multiple; below → discount.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Datadog trades at 18x EV/Revenue, CrowdStrike at 20x, and Snowflake at 30x. All grow 35-50% YoY. A private cybersecurity startup growing 45% YoY seeks a $2B valuation on $100M ARR. What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "20x is fair — matches CrowdStrike's public comparable directly"
+        },
+        {
+          "id": "b",
+          "text": "Apply a 25-35% illiquidity discount to public comps, targeting ~13-15x"
+        },
+        {
+          "id": "c",
+          "text": "Use Snowflake's 30x since growth rates are similar"
+        },
+        {
+          "id": "d",
+          "text": "Public comps are irrelevant for private valuations"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're sizing a Series B investment in a fintech with $15M ARR. The fund targets 3x gross return in 5 years. If you assume a 15x exit multiple and 30% dilution from future rounds, what should today's post-money valuation cap be?",
+      "options": [
+        {
+          "id": "a",
+          "text": "~$225M — just multiply ARR by 15x"
+        },
+        {
+          "id": "b",
+          "text": "~$53M — back-solve from exit, accounting for dilution and return target"
+        },
+        {
+          "id": "c",
+          "text": "~$150M — exit value divided by 3x return target"
+        },
+        {
+          "id": "d",
+          "text": "~$105M — exit value divided by return, adjusted for dilution"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": "Sophisticated investors back-solve entry valuations from target returns. If a company will be worth $X at exit, you divide by your target return multiple, then adjust for dilution from future funding rounds. This 'venture math' framework: Exit Value ÷ Return Target × (1 - Dilution) = Max Entry Valuation. Here: exit ~$450M (assuming ARR triples to $45M × 15x), ÷ 3x = $150M, × 0.70 for dilution = ~$105M.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In a leveraged buyout, if you acquire a company at 8x EBITDA with 60% debt and the exit multiple remains 8x, the primary driver of equity returns is ____ rather than multiple expansion.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue growth from new market entry"
+        },
+        {
+          "id": "b",
+          "text": "Debt paydown from free cash flow generation"
+        },
+        {
+          "id": "c",
+          "text": "Reducing the cost of capital via refinancing"
+        },
+        {
+          "id": "d",
+          "text": "Increasing the dividend payout ratio over time"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You can invest $50M at a $200M pre-money in Company A (marketplace, 80% take rate, 3x YoY growth, -40% margins) or Company B (B2B SaaS, 90% gross margins, 60% YoY growth, +10% margins). Same TAM estimate of $15B. Which do you choose and why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company A — hypergrowth marketplaces with high take rates dominate winner-take-all markets"
+        },
+        {
+          "id": "b",
+          "text": "Company B — profitable growth de-risks the investment and signals capital efficiency"
+        },
+        {
+          "id": "c",
+          "text": "Company A — but negotiate a 1.5x liquidation preference to hedge burn risk"
+        },
+        {
+          "id": "d",
+          "text": "Company B — but only with a ratchet clause tied to growth maintaining 50%+"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A PE firm evaluates acquiring a $500M revenue industrial company. Public comps trade at 12x EV/EBITDA, precedent transactions closed at 15x, and a DCF (10% WACC, 2% terminal growth) yields 13x implied. What's the best estimate for a fair offer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "12x — always anchor to where public markets trade today"
+        },
+        {
+          "id": "b",
+          "text": "15x — precedent transactions reflect real control premiums paid"
+        },
+        {
+          "id": "c",
+          "text": "13-14x — triangulate methods, weighting DCF and precedents over trading comps"
+        },
+        {
+          "id": "d",
+          "text": "10x — apply a discount for current macro uncertainty"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Professional valuations triangulate across three methods: trading comparables (public market mood), precedent transactions (what acquirers actually paid, including control premiums), and DCF (intrinsic value). The key guesstimation insight: precedent transactions typically run 20-40% above trading comps due to control premiums and synergies. A weighted blend — heavier on DCF and precedents for M&A — gives the most defensible range.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're estimating the valuation of a pre-revenue biotech with a Phase 2 drug candidate. Rank these valuation approaches from most to least appropriate for this specific situation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "EV/Revenue multiples from comparable public biotechs"
+        },
+        {
+          "id": "b",
+          "text": "Risk-adjusted NPV of expected drug cash flows by phase probability"
+        },
+        {
+          "id": "c",
+          "text": "Sum-of-parts using comparable licensing deal values per indication"
+        },
+        {
+          "id": "d",
+          "text": "Standard DCF with 5-year revenue projections and terminal value"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Interest rates just spiked 200bps. Your target's DCF used a 10% WACC. The PE fund's LBO model assumed 5% senior debt. How does your bid strategy change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lower bid 15-20% — higher WACC crushes DCF and debt costs erode LBO returns"
+        },
+        {
+          "id": "b",
+          "text": "Maintain bid but restructure with more equity and less leverage"
+        },
+        {
+          "id": "c",
+          "text": "Walk away — rate spikes make all acquisitions uninvestable"
+        },
+        {
+          "id": "d",
+          "text": "Increase bid to lock in the deal before rates rise further"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Previously you triangulated a 13-14x EBITDA offer using a 10% WACC DCF, 12x trading comps, and 15x precedent transactions. Now rates have spiked 200bps, raising your WACC to ~12% and senior debt costs to ~7%, fundamentally changing both intrinsic value and leveraged return math.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "stakeholder-alignment",
+  "mode": "LEARN",
+  "title": "Mapping Stakeholders to Drive Alignment",
+  "description": "Learn to map stakeholders by power and interest so you can prioritize who to align first.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which quadrant should receive the MOST engagement effort?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High power, high interest"
+        },
+        {
+          "id": "b",
+          "text": "High power, low interest"
+        },
+        {
+          "id": "c",
+          "text": "Low power, high interest"
+        },
+        {
+          "id": "d",
+          "text": "Low power, low interest"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "A Power-Interest Matrix is a 2×2 grid that plots stakeholders by their authority (power) and their engagement level (interest) in your project. At Spotify, product managers use this matrix before every major launch to decide who needs a deep briefing versus a simple update. The goal is to focus your limited time on stakeholders who can make or break your initiative.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A project lead at Shopify logged stakeholder interactions: CFO (2 meetings, blocked budget twice), Head of Design (8 meetings, no decision authority), VP Engineering (1 email, approved all past roadmaps). Who is the most under-engaged high-power stakeholder?",
+      "options": [
+        {
+          "id": "a",
+          "text": "CFO — high interaction already, just disagreeing"
+        },
+        {
+          "id": "b",
+          "text": "Head of Design — most meetings means most important"
+        },
+        {
+          "id": "c",
+          "text": "VP Engineering — approval power but barely contacted"
+        },
+        {
+          "id": "d",
+          "text": "All three are equally engaged"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "What is the primary purpose of identifying a stakeholder's underlying interest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To manipulate them into agreement"
+        },
+        {
+          "id": "b",
+          "text": "To find common ground and reduce conflicts"
+        },
+        {
+          "id": "c",
+          "text": "To document their weaknesses for leverage"
+        },
+        {
+          "id": "d",
+          "text": "To assign them less important tasks"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Stakeholder conflicts often arise not from opposing goals but from different underlying interests. When Airbnb's trust & safety team clashed with growth teams over verification requirements, a facilitator discovered both cared about long-term retention — they just defined it differently. Mapping what stakeholders truly care about (not just what they say) lets you find alignment opportunities.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In stakeholder mapping, you should 'manage closely' those with high ____ and high interest, while simply 'monitoring' those low in both.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Salary"
+        },
+        {
+          "id": "b",
+          "text": "Power"
+        },
+        {
+          "id": "c",
+          "text": "Seniority"
+        },
+        {
+          "id": "d",
+          "text": "Availability"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're launching a new CRM integration at HubSpot. The VP of Sales (high power) wants a quick rollout by Q2. The IT Security lead (high power) demands a 3-month audit first. You can't do both on time. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Side with VP Sales — revenue always wins"
+        },
+        {
+          "id": "b",
+          "text": "Side with IT Security — compliance is non-negotiable"
+        },
+        {
+          "id": "c",
+          "text": "Propose a phased rollout: limited launch with parallel security audit"
+        },
+        {
+          "id": "d",
+          "text": "Escalate to CEO and let them decide"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Why should you engage 'keep satisfied' stakeholders (high power, low interest) differently from 'manage closely' ones?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They need frequent detailed updates to stay engaged"
+        },
+        {
+          "id": "b",
+          "text": "They can block you if surprised, but don't want heavy involvement"
+        },
+        {
+          "id": "c",
+          "text": "They have no real influence on outcomes"
+        },
+        {
+          "id": "d",
+          "text": "They should be treated exactly the same way"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Not every powerful stakeholder wants to be in every meeting. At Microsoft, when the Azure team launched a new pricing model, the CFO had veto power but no desire to attend weekly standups. The team sent concise monthly briefs instead. Over-engaging these stakeholders wastes their time and yours; under-engaging them risks a late-stage veto that derails everything.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're a PM at Stripe prioritizing stakeholder alignment for a new fraud detection feature. Rank these stakeholders from FIRST to engage to LAST: (a) Legal team — high power, low interest, slow to respond; (b) CEO — high power, high interest, quarterly check-in scheduled; (c) Merchant support team — low power, high interest, vocal advocates; (d) External payment partner — low power, low interest, contractual dependency only.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Legal — high power, low interest, slow responder"
+        },
+        {
+          "id": "b",
+          "text": "CEO — high power, high interest"
+        },
+        {
+          "id": "c",
+          "text": "Merchant support — low power, high interest"
+        },
+        {
+          "id": "d",
+          "text": "External partner — low power, low interest"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your Stripe fraud feature, the external payment partner announces they're building a competing fraud tool and threatens to end the partnership. How do you reprioritize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ignore them — they were low priority on your map"
+        },
+        {
+          "id": "b",
+          "text": "Immediately elevate the partner to 'manage closely' and schedule alignment talks"
+        },
+        {
+          "id": "c",
+          "text": "Ask the merchant support team to handle the relationship"
+        },
+        {
+          "id": "d",
+          "text": "Cancel your fraud feature to avoid conflict"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously the external payment partner was mapped as low power, low interest. Now they've announced a competing product and threatened the partnership, dramatically shifting their power and interest levels on your stakeholder map.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "valuation-investment-cases",
+  "mode": "PRACTICE",
+  "title": "DCF, Multiples & Quick Valuation Math",
+  "description": "Practice rapid valuation reasoning using DCF mechanics, trading multiples, and investment sizing under time pressure.",
+  "difficulty": 5,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS company has $80M ARR growing 40% YoY, 75% gross margins, and trades at 18x revenue. Comparable peers at similar growth trade at 25x. What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Growth rate is unsustainable at 40%"
+        },
+        {
+          "id": "b",
+          "text": "The stock is ~28% undervalued vs. growth-matched peers"
+        },
+        {
+          "id": "c",
+          "text": "Gross margins are too high to be credible"
+        },
+        {
+          "id": "d",
+          "text": "Revenue multiple is already stretched at 18x"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "A firm generates $50M FCF growing at 5% perpetually with a 10% WACC. Its terminal value is $____ million.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$500M"
+        },
+        {
+          "id": "b",
+          "text": "$1,000M"
+        },
+        {
+          "id": "c",
+          "text": "$1,050M"
+        },
+        {
+          "id": "d",
+          "text": "$525M"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You're sizing a Series B investment. Company A: $20M ARR, 90% net retention, 30x multiple but needs $60M. Company B: $35M ARR, 110% net retention, 20x multiple, needs $40M. You have $50M to deploy.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Invest in A — higher growth ceiling justifies premium"
+        },
+        {
+          "id": "b",
+          "text": "Invest in B — superior retention and cheaper entry"
+        },
+        {
+          "id": "c",
+          "text": "Split $25M into each for diversification"
+        },
+        {
+          "id": "d",
+          "text": "Pass on both — neither shows capital efficiency"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Uber's 2019 IPO: $14B revenue, -$8.5B operating loss, priced at ~$75B. Lyft at $3.6B revenue, -$0.9B loss, priced at ~$20B. Uber had 65% US rideshare. What matters most for the valuation gap?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Uber's diversified business lines justified a platform premium"
+        },
+        {
+          "id": "b",
+          "text": "Lyft was actually cheaper on a revenue multiple basis"
+        },
+        {
+          "id": "c",
+          "text": "Both were equally overvalued given operating losses"
+        },
+        {
+          "id": "d",
+          "text": "Market share alone explains the entire difference"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these DCF assumptions by their impact on a high-growth tech company's valuation, from MOST to LEAST sensitive.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Terminal growth rate (3% vs. 5%)"
+        },
+        {
+          "id": "b",
+          "text": "Revenue growth rate years 1-5 (25% vs. 35%)"
+        },
+        {
+          "id": "c",
+          "text": "WACC (9% vs. 12%)"
+        },
+        {
+          "id": "d",
+          "text": "Long-term operating margin (20% vs. 25%)"
+        }
+      ],
+      "correctAnswer": "c,b,a,d",
+      "insightAnswer": "c,b,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "You're valuing a pre-profit marketplace. Your DCF gives $2.4B, EV/GMV comps suggest $1.6B, and a recent acquisition of a peer implies $3.1B. Management wants the highest defensible number for fundraising.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use $3.1B — transaction comps reflect actual willingness to pay"
+        },
+        {
+          "id": "b",
+          "text": "Use $2.4B — DCF captures your specific unit economics"
+        },
+        {
+          "id": "c",
+          "text": "Use $1.6B — conservative builds investor trust"
+        },
+        {
+          "id": "d",
+          "text": "Triangulate at ~$2.4B weighting DCF and transaction comp higher"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "You're selecting comparable companies for valuing a $500M-revenue B2B cybersecurity firm. Rank these comp criteria from MOST to LEAST important for accurate multiples.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Similar revenue growth trajectory and guidance"
+        },
+        {
+          "id": "b",
+          "text": "Same industry sub-sector (endpoint vs. cloud security)"
+        },
+        {
+          "id": "c",
+          "text": "Comparable revenue scale ($300M–$800M range)"
+        },
+        {
+          "id": "d",
+          "text": "Similar margin profile and Rule of 40 score"
+        }
+      ],
+      "correctAnswer": "a,d,b,c",
+      "insightAnswer": "a,d,b,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Interest rates just jumped 200bps and your target's customers are mid-market enterprises now delaying software purchases. How does your valuation thesis change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "WACC rises ~2%, but near-term growth slows more — double hit to DCF"
+        },
+        {
+          "id": "b",
+          "text": "Higher rates don't matter for high-growth — maintain original valuation"
+        },
+        {
+          "id": "c",
+          "text": "Only discount rate changes; revenue assumptions stay intact"
+        },
+        {
+          "id": "d",
+          "text": "Switch entirely to asset-based valuation instead of DCF"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "You previously valued the B2B cybersecurity firm at $5.2B using a 10% WACC and 30% revenue growth. Macro conditions have now shifted dramatically.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

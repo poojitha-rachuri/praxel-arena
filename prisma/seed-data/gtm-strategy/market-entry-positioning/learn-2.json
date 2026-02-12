@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "market-entry-positioning",
+  "mode": "LEARN",
+  "title": "Competitive Positioning and Value Props",
+  "description": "Learn how to craft competitive positioning and compelling value propositions that differentiate your product in the market.",
+  "difficulty": 2,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the primary purpose of a positioning statement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Define how your product is uniquely different in customers' minds"
+        },
+        {
+          "id": "b",
+          "text": "List every feature your product offers"
+        },
+        {
+          "id": "c",
+          "text": "Describe your company's internal mission and culture"
+        },
+        {
+          "id": "d",
+          "text": "Set pricing relative to the cheapest competitor"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Competitive positioning is how you define your product's unique place in the market relative to alternatives. When Slack launched, it didn't position as 'email replacement' — it positioned as 'where work happens,' carving a distinct mental category. A strong positioning statement clarifies who you serve, what you offer, and why you're different.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A B2B analytics startup surveys 200 prospects. 68% say 'ease of setup' matters most, 14% say 'advanced features,' 12% say 'price,' and 6% say 'brand reputation.' What's the key positioning insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lead with low pricing to win budget-conscious buyers"
+        },
+        {
+          "id": "b",
+          "text": "Position around simplicity and fast time-to-value"
+        },
+        {
+          "id": "c",
+          "text": "Invest heavily in building brand awareness first"
+        },
+        {
+          "id": "d",
+          "text": "Prioritize building the most advanced feature set possible"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Which value proposition framework element answers 'Why should I choose you over alternatives?'",
+      "options": [
+        {
+          "id": "a",
+          "text": "Target customer description"
+        },
+        {
+          "id": "b",
+          "text": "Product feature list"
+        },
+        {
+          "id": "c",
+          "text": "Differentiated benefit tied to a specific proof point"
+        },
+        {
+          "id": "d",
+          "text": "Company founding story and vision"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "A value proposition has three core layers: the target customer (who), the key benefit (what outcome you deliver), and the differentiation (why you, not them). Stripe's value prop isn't just 'payment processing' — it's 'developer-first payments infrastructure that takes minutes to integrate,' with proof points like 7-line code snippets and 135+ supported currencies.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "A strong positioning statement follows this structure: For [target customer] who [need], our product is a [category] that [key benefit] unlike [competitors] because ____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "We have the largest engineering team"
+        },
+        {
+          "id": "b",
+          "text": "We offer a unique differentiator competitors cannot easily replicate"
+        },
+        {
+          "id": "c",
+          "text": "We were founded first in this market"
+        },
+        {
+          "id": "d",
+          "text": "We have the most funding from top-tier investors"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're launching a project management tool. Asana dominates mid-market. You can position as the cheapest option for small teams OR as the AI-native tool for remote-first companies at a premium price. Which do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cheapest option — price is the easiest way to win customers"
+        },
+        {
+          "id": "b",
+          "text": "AI-native for remote teams — differentiated positioning avoids a price war"
+        },
+        {
+          "id": "c",
+          "text": "Copy Asana's positioning exactly but with better marketing"
+        },
+        {
+          "id": "d",
+          "text": "Avoid positioning entirely and let the market decide"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "When mapping competitors on a positioning matrix, what two axes should you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue and employee headcount of each competitor"
+        },
+        {
+          "id": "b",
+          "text": "The two attributes your ICP values most when choosing a solution"
+        },
+        {
+          "id": "c",
+          "text": "Year founded and total funding raised"
+        },
+        {
+          "id": "d",
+          "text": "Number of features and number of integrations offered"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A competitive positioning matrix (or perceptual map) plots competitors on two dimensions that matter most to buyers. When HubSpot entered CRM, the landscape mapped on 'ease of use' vs. 'enterprise power.' Salesforce owned powerful-but-complex. HubSpot deliberately claimed the easy-and-free quadrant, finding open space where no strong competitor existed.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're building a go-to-market positioning strategy from scratch. Rank these steps in the correct order: (a) Write the positioning statement, (b) Research what your ICP values most, (c) Map competitors on key dimensions, (d) Test positioning with real prospects and iterate.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Write the positioning statement"
+        },
+        {
+          "id": "b",
+          "text": "Research what your ICP values most"
+        },
+        {
+          "id": "c",
+          "text": "Map competitors on key dimensions"
+        },
+        {
+          "id": "d",
+          "text": "Test positioning with real prospects and iterate"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your AI-native remote project management tool just launched. Two months in, Microsoft announces Teams is adding identical AI features for free to all Office 365 users. How do you adapt your positioning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Panic and pivot to a completely different product category"
+        },
+        {
+          "id": "b",
+          "text": "Double down on deep remote-first workflows Microsoft can't prioritize"
+        },
+        {
+          "id": "c",
+          "text": "Drop prices to zero and compete on cost alone"
+        },
+        {
+          "id": "d",
+          "text": "Keep current positioning unchanged and hope customers don't notice"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you positioned as an AI-native tool for remote-first companies at a premium. Now a tech giant is bundling similar AI features for free, threatening your core differentiator.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

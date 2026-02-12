@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "growth-forecasting",
+  "mode": "LEARN",
+  "title": "Compounding Growth and Forecasting Fundamentals",
+  "description": "Master the intuition behind compound growth rates, the Rule of 72, trend extrapolation, and cohort-based forecasting.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS startup grows revenue at 15% per quarter. Roughly how long until revenue doubles?",
+      "options": [
+        {
+          "id": "a",
+          "text": "About 3 quarters"
+        },
+        {
+          "id": "b",
+          "text": "About 5 quarters"
+        },
+        {
+          "id": "c",
+          "text": "About 7 quarters"
+        },
+        {
+          "id": "d",
+          "text": "About 10 quarters"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The Rule of 72 says doubling time ≈ 72 / growth rate. It works for any compounding period — annual, quarterly, or monthly. For example, at 10% annual growth, revenue doubles in roughly 7.2 years.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Spotify reported 180M subscribers in 2022, 220M in 2023, and 260M in mid-2024. What's the most important signal for forecasting 2025?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Absolute growth is steady at ~40M per year"
+        },
+        {
+          "id": "b",
+          "text": "The percentage growth rate is decelerating each period"
+        },
+        {
+          "id": "c",
+          "text": "Spotify will hit 300M by end of 2025 easily"
+        },
+        {
+          "id": "d",
+          "text": "Growth is accelerating based on recent momentum"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A D2C brand acquires 10,000 customers/month. Month-1 retention is 40%, and each subsequent month retains 90% of the prior month's cohort. Approximately how many active customers exist after 12 months of operation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "About 25,000"
+        },
+        {
+          "id": "b",
+          "text": "About 45,000"
+        },
+        {
+          "id": "c",
+          "text": "About 75,000"
+        },
+        {
+          "id": "d",
+          "text": "About 120,000"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Cohort analysis tracks groups of users acquired at the same time and measures how they behave over time. The key insight: total active users equals the sum of surviving members across all cohorts, not just the latest acquisition number.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When a company's revenue grows 20% year-over-year but its growth rate drops by 3 percentage points each year, naive linear extrapolation will ____ future revenue compared to the decelerating trend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underestimate"
+        },
+        {
+          "id": "b",
+          "text": "Overestimate"
+        },
+        {
+          "id": "c",
+          "text": "Accurately predict"
+        },
+        {
+          "id": "d",
+          "text": "Have no consistent bias on"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're estimating a fintech's 2027 revenue. You have two data sources: a 5-year CAGR of 35% from a small base, or analyst consensus showing growth decelerating from 35% to 18% over the next 3 years. Which approach do you anchor on?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use the 35% CAGR — proven historical track record"
+        },
+        {
+          "id": "b",
+          "text": "Use decelerating analyst estimates — growth slows with scale"
+        },
+        {
+          "id": "c",
+          "text": "Average both for a balanced middle-ground estimate"
+        },
+        {
+          "id": "d",
+          "text": "Ignore both and estimate from market size top-down"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Company A grows at 50% CAGR from $10M revenue. Company B grows at 25% CAGR from $40M. Roughly when does Company A overtake Company B?",
+      "options": [
+        {
+          "id": "a",
+          "text": "In about 2 years"
+        },
+        {
+          "id": "b",
+          "text": "In about 4 years"
+        },
+        {
+          "id": "c",
+          "text": "In about 7 years"
+        },
+        {
+          "id": "d",
+          "text": "In about 10 years"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "When comparing two compounding trajectories, the crossover point depends on both the starting base and the growth rate differential. You can estimate it by solving 10×1.5^t = 40×1.25^t, or approximate by noting the ratio (4x) must be closed by the ~20 percentage point growth gap.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these factors from MOST to LEAST important when forecasting a marketplace's GMV three years out: (a) current monthly growth rate, (b) retention curves by cohort, (c) total addressable market ceiling, (d) last quarter's marketing spend.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Current monthly growth rate"
+        },
+        {
+          "id": "b",
+          "text": "Retention curves by cohort"
+        },
+        {
+          "id": "c",
+          "text": "Total addressable market ceiling"
+        },
+        {
+          "id": "d",
+          "text": "Last quarter's marketing spend"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You projected 260M subscribers for Spotify by 2025 using steady ~40M/year adds. Now a major competitor launches free ad-supported music in 15 emerging markets. How should you adjust your forecast methodology?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the forecast — Spotify's brand moat is strong enough"
+        },
+        {
+          "id": "b",
+          "text": "Model two scenarios: one with retained growth, one with 30-50% slower net adds"
+        },
+        {
+          "id": "c",
+          "text": "Cut the forecast in half to be conservative"
+        },
+        {
+          "id": "d",
+          "text": "Switch entirely to a top-down TAM share model"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Earlier you analyzed Spotify's subscriber trajectory at ~40M net adds per year with decelerating percentage growth. Now a major competitive shock has entered the market, requiring you to reassess your extrapolation assumptions.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

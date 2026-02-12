@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "unit-economics-revenue-models",
+  "mode": "LEARN",
+  "title": "Foundations of Unit Economics",
+  "description": "Master the core metrics—LTV, CAC, ARPU, and payback period—that drive business profitability decisions.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "If a SaaS company charges $50/month and the average customer stays 24 months, what is the customer's LTV?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$50"
+        },
+        {
+          "id": "b",
+          "text": "$600"
+        },
+        {
+          "id": "c",
+          "text": "$1,200"
+        },
+        {
+          "id": "d",
+          "text": "$2,400"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Customer Lifetime Value (LTV) is the total revenue you expect from one customer over their entire relationship with your business. It's calculated simply as ARPU × average customer lifespan. For example, Netflix earns roughly $15/month per subscriber—if a subscriber stays 3 years, their LTV is about $540.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A meal-kit startup reports: ARPU $80/month, avg lifespan 5 months, CAC $250, monthly churn 20%. Which metric is the biggest red flag?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ARPU is too low for meal kits"
+        },
+        {
+          "id": "b",
+          "text": "CAC exceeds the $400 LTV by a healthy margin"
+        },
+        {
+          "id": "c",
+          "text": "LTV is only $400, making the LTV:CAC ratio just 1.6x"
+        },
+        {
+          "id": "d",
+          "text": "20% monthly churn means losing customers too fast"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A fitness app spends $500K on ads and acquires 10,000 users. Each user pays $10/month and stays 8 months on average. What is the LTV:CAC ratio?",
+      "options": [
+        {
+          "id": "a",
+          "text": "0.6x"
+        },
+        {
+          "id": "b",
+          "text": "1.6x"
+        },
+        {
+          "id": "c",
+          "text": "3.0x"
+        },
+        {
+          "id": "d",
+          "text": "8.0x"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Customer Acquisition Cost (CAC) is the total spent on sales and marketing divided by the number of new customers acquired. The gold standard in SaaS is an LTV:CAC ratio of 3:1 or higher—meaning every dollar spent acquiring a customer returns three dollars. Shopify, for instance, has historically maintained an LTV:CAC ratio above 3x, signaling efficient growth.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "If a company's CAC is $200 and its monthly gross profit per customer is $40, the CAC payback period is ____ months.",
+      "options": [
+        {
+          "id": "a",
+          "text": "3 months"
+        },
+        {
+          "id": "b",
+          "text": "5 months"
+        },
+        {
+          "id": "c",
+          "text": "8 months"
+        },
+        {
+          "id": "d",
+          "text": "12 months"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your startup has a 1.5x LTV:CAC ratio and 14-month payback period. Cash runway is 10 months. You must choose one lever to pull immediately.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Double ad spend to grow faster and attract investors"
+        },
+        {
+          "id": "b",
+          "text": "Cut CAC by shifting to organic and referral channels"
+        },
+        {
+          "id": "c",
+          "text": "Raise prices 30% and accept some churn increase"
+        },
+        {
+          "id": "d",
+          "text": "Launch an annual plan with upfront payment discounts"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Spotify has ~230M premium subscribers paying ~$7 average per month (after family/student plans). What's a reasonable estimate for Spotify's annual premium ARPU?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$48"
+        },
+        {
+          "id": "b",
+          "text": "$84"
+        },
+        {
+          "id": "c",
+          "text": "$120"
+        },
+        {
+          "id": "d",
+          "text": "$156"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Average Revenue Per User (ARPU) is total revenue divided by total users over a given period. It's a vital health metric because it captures pricing power and mix effects. When companies like Spotify offer student or family discounts, the blended ARPU drops well below the headline price—Spotify's actual average is roughly $7/month per premium subscriber, not the $10.99 individual rate.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A B2B SaaS startup wants to improve profitability. Rank these actions from highest to lowest impact on unit economics, assuming equal effort.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduce monthly churn from 5% to 3%"
+        },
+        {
+          "id": "b",
+          "text": "Increase ARPU by 10% with upsells"
+        },
+        {
+          "id": "c",
+          "text": "Cut CAC by 25% through better targeting"
+        },
+        {
+          "id": "d",
+          "text": "Redesign the company logo and website"
+        }
+      ],
+      "correctAnswer": "a,c,b,d",
+      "insightAnswer": "a,c,b,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "A recession hits and your B2B customers start downgrading plans. Monthly churn doubles from 3% to 6% and ARPU drops 20%. Which metric should you recalculate first to guide your response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total addressable market size"
+        },
+        {
+          "id": "b",
+          "text": "LTV, since both lifespan and revenue per user changed"
+        },
+        {
+          "id": "c",
+          "text": "CAC, because ads get cheaper in recessions"
+        },
+        {
+          "id": "d",
+          "text": "Gross margin percentage on your product"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you analyzed a healthy B2B SaaS with 3% churn and strong unit economics. Now a recession has doubled churn and compressed ARPU, fundamentally changing the business outlook.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

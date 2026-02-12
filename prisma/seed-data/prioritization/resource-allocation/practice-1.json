@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "resource-allocation",
+  "mode": "PRACTICE",
+  "title": "Allocating Scarce Resources Under Real Constraints",
+  "description": "Practice making advanced resource allocation decisions involving capacity limits, opportunity costs, and strategic sequencing.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS company has 3 engineering teams. Team A: 95% utilized, 12% revenue impact. Team B: 60% utilized, 41% revenue impact. Team C: 80% utilized, 47% revenue impact. Which is the biggest allocation red flag?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Team A is over-utilized on low-impact work"
+        },
+        {
+          "id": "b",
+          "text": "Team B has idle capacity on highest-impact work"
+        },
+        {
+          "id": "c",
+          "text": "Team C needs more headcount immediately"
+        },
+        {
+          "id": "d",
+          "text": "All teams are properly allocated"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "Your logistics startup has $400K left this quarter. Option 1: Hire 4 warehouse ops staff to cut fulfillment delays by 30%. Option 2: Build an AI routing tool (6-month payoff) projected to cut costs 22% annually. You're losing 8% of customers monthly to slow delivery.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hire all 4 ops staff now to stop customer bleeding"
+        },
+        {
+          "id": "b",
+          "text": "Build the AI tool for larger long-term savings"
+        },
+        {
+          "id": "c",
+          "text": "Hire 2 ops staff, allocate remaining $200K to AI tool"
+        },
+        {
+          "id": "d",
+          "text": "Outsource fulfillment temporarily and invest fully in AI"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 3,
+      "prompt": "When a team is at 100% utilization with no slack, the hidden cost is lost ____, because they cannot respond to urgent high-value opportunities without dropping existing commitments.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Option value"
+        },
+        {
+          "id": "b",
+          "text": "Sunk cost"
+        },
+        {
+          "id": "c",
+          "text": "Fixed overhead"
+        },
+        {
+          "id": "d",
+          "text": "Variable margin"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 4,
+      "prompt": "Stripe's platform team has capacity for only 2 of 4 projects this quarter. Rank by allocation priority: (a) Refactor legacy payments API (tech debt, saves 15 eng-hrs/week), (b) Launch enterprise dashboard (pipeline: $8M ARR, 3-month build), (c) Fix recurring checkout bug (2% cart abandonment impact), (d) Build partner integration (signed LOI worth $3M ARR, 6-week build).",
+      "options": [
+        {
+          "id": "a",
+          "text": "Refactor legacy payments API"
+        },
+        {
+          "id": "b",
+          "text": "Launch enterprise dashboard"
+        },
+        {
+          "id": "c",
+          "text": "Fix recurring checkout bug"
+        },
+        {
+          "id": "d",
+          "text": "Build partner integration"
+        }
+      ],
+      "correctAnswer": "d,c,b,a",
+      "insightAnswer": "d,c,b,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 5,
+      "prompt": "A CPG brand allocates marketing spend: Digital ads ($500K, ROAS 4.2x), TV ($1.2M, ROAS 1.8x), Influencers ($300K, ROAS 5.1x), Trade promos ($700K, ROAS 2.3x). Total budget is fixed at $2.7M. What should change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cut TV spend and redistribute to digital and influencers"
+        },
+        {
+          "id": "b",
+          "text": "Double down on TV for broader brand awareness"
+        },
+        {
+          "id": "c",
+          "text": "Eliminate trade promos entirely"
+        },
+        {
+          "id": "d",
+          "text": "Allocate equally across all four channels"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 6,
+      "prompt": "You lead product at a fintech with 12 engineers. A regulator just mandated a compliance feature (requires 5 engineers, 8 weeks). You're mid-sprint on a growth feature (7 engineers, 4 weeks left) projected to add $1.2M ARR. Compliance deadline is 10 weeks out.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pause growth feature, shift all 12 engineers to compliance"
+        },
+        {
+          "id": "b",
+          "text": "Finish growth feature in 4 weeks, then pivot all to compliance"
+        },
+        {
+          "id": "c",
+          "text": "Split: keep 5 on growth, move 7 to compliance now"
+        },
+        {
+          "id": "d",
+          "text": "Outsource compliance to a contractor team entirely"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "A hospital system must sequence four capital projects with a $10M annual budget: (a) New MRI machine ($3M, 14-month ROI, aging current unit), (b) ER expansion ($5M, reduces wait times 40%, 3-year ROI), (c) Cybersecurity upgrade ($1.5M, audit flagged critical vulnerabilities), (d) Telehealth platform ($2M, projected 20% patient volume increase, 18-month ROI). Rank by optimal sequencing.",
+      "options": [
+        {
+          "id": "a",
+          "text": "New MRI machine"
+        },
+        {
+          "id": "b",
+          "text": "ER expansion"
+        },
+        {
+          "id": "c",
+          "text": "Cybersecurity upgrade"
+        },
+        {
+          "id": "d",
+          "text": "Telehealth platform"
+        }
+      ],
+      "correctAnswer": "c,a,d,b",
+      "insightAnswer": "c,a,d,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your largest customer (18% of revenue) just threatened to churn in 60 days unless you deliver a custom analytics module. Your engineering team is fully committed to the compliance and growth roadmap you just sequenced. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pull engineers off growth to build the custom module"
+        },
+        {
+          "id": "b",
+          "text": "Negotiate a partial solution using existing features plus a contractor"
+        },
+        {
+          "id": "c",
+          "text": "Let the customer churn to protect your roadmap"
+        },
+        {
+          "id": "d",
+          "text": "Delay the compliance deadline to free up capacity"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously decided to finish your growth feature in 4 weeks then pivot all engineers to a mandatory compliance build. Your team is at full capacity with zero slack. Now a major revenue-critical customer demands custom work on the same timeline.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

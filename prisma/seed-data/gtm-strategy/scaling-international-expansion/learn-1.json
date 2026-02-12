@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "scaling-international-expansion",
+  "mode": "LEARN",
+  "title": "Unit Economics and Playbooks for Global Scale",
+  "description": "Master the frameworks for evaluating international market entry, localization tradeoffs, and maintaining unit economics at scale.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which metric best indicates whether a SaaS company can profitably scale into a new international market?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total addressable market size in the target country"
+        },
+        {
+          "id": "b",
+          "text": "Localized LTV:CAC ratio after adjusting for market-specific costs"
+        },
+        {
+          "id": "c",
+          "text": "Number of inbound leads from that geography"
+        },
+        {
+          "id": "d",
+          "text": "Competitor revenue in the target market"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "When Spotify expanded from Sweden to 60+ markets, they discovered that global TAM was misleading — what mattered was whether localized customer acquisition costs and lifetime values made each market independently viable. A scaling playbook starts with unit economics, not market size. The localized LTV:CAC ratio accounts for translation costs, local payment processing, regulatory compliance, and region-specific churn rates.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A B2B SaaS firm expanding to Germany sees: CAC €420 (vs. €280 US), LTV €2,100 (vs. €3,400 US), payback period 9 months (vs. 5 US), gross margin 71% (vs. 78% US). What's the most critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "CAC is 50% higher, making the market unprofitable"
+        },
+        {
+          "id": "b",
+          "text": "LTV dropped 38% while CAC rose 50%, compressing LTV:CAC to 5:1"
+        },
+        {
+          "id": "c",
+          "text": "Gross margin erosion of 7 points signals localization cost drag"
+        },
+        {
+          "id": "d",
+          "text": "Payback period nearly doubled, threatening cash runway"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Shopify used a 'land and expand' model entering Japan. What defines the 'land' phase in a scaling playbook?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Launch full product suite with local partnerships immediately"
+        },
+        {
+          "id": "b",
+          "text": "Enter with a narrow ICP and minimal viable localization"
+        },
+        {
+          "id": "c",
+          "text": "Hire a full local team before acquiring first customer"
+        },
+        {
+          "id": "d",
+          "text": "Replicate the home market playbook exactly as-is"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Scaling playbooks typically follow a 'land, learn, expand' cadence. When Shopify entered Japan, they didn't localize everything — they started with a narrow ideal customer profile (English-comfortable D2C brands), validated product-market fit, then layered on Japanese-language support and local payment integrations. The 'land' phase deliberately constrains scope to test assumptions cheaply before committing heavy resources.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In international expansion, the '____' measures how much additional revenue each dollar of incremental investment in a new market generates, and it typically declines as you move past early adopters.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Marginal market efficiency ratio"
+        },
+        {
+          "id": "b",
+          "text": "Incremental revenue multiplier"
+        },
+        {
+          "id": "c",
+          "text": "Market expansion efficiency score"
+        },
+        {
+          "id": "d",
+          "text": "Capital efficiency ratio"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your fintech startup has $8M to expand internationally. Brazil offers 3x TAM but requires banking license (12-month timeline, $3M cost). Singapore offers 1.5x TAM with regulatory fast-track (3 months, $500K). You can only choose one now.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Brazil — larger TAM justifies the investment and timeline"
+        },
+        {
+          "id": "b",
+          "text": "Singapore — faster time-to-revenue preserves optionality for Brazil later"
+        },
+        {
+          "id": "c",
+          "text": "Split budget: $3M Brazil licensing now, $5M Singapore launch"
+        },
+        {
+          "id": "d",
+          "text": "Delay both and invest $8M in deepening home market penetration"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Why do many companies see unit economics degrade during the 'messy middle' of international scaling, even when individual markets look profitable?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Exchange rate fluctuations eliminate all margin gains"
+        },
+        {
+          "id": "b",
+          "text": "Shared cost allocation across markets obscures true per-market profitability"
+        },
+        {
+          "id": "c",
+          "text": "Customers in new markets always have lower willingness to pay"
+        },
+        {
+          "id": "d",
+          "text": "International markets require 3x the sales headcount"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "When Uber scaled to 70+ countries, each market appeared viable in isolation. But the 'messy middle' — operating in 15-40 markets simultaneously — created hidden costs: duplicated engineering for localization, multi-region compliance teams, and management overhead that couldn't be cleanly allocated. Fully-loaded unit economics (including allocated shared costs like platform engineering and central ops) often tell a very different story than contribution-margin-only views.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A PLG SaaS company with 200K free users globally is building its first international scaling playbook. Rank these actions from first to last priority.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hire regional sales teams in top 5 markets"
+        },
+        {
+          "id": "b",
+          "text": "Analyze user data to identify highest-conversion geographies"
+        },
+        {
+          "id": "c",
+          "text": "Build localized pricing and payment infrastructure for top markets"
+        },
+        {
+          "id": "d",
+          "text": "Localize product UI and support for the #1 identified market"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Six months into your Singapore launch (performing at plan), the government introduces a new data sovereignty law requiring all customer data stored locally within 90 days. Compliance infrastructure costs $1.2M. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Exit Singapore and redirect resources to another APAC market"
+        },
+        {
+          "id": "b",
+          "text": "Invest $1.2M — this infrastructure enables expansion across APAC"
+        },
+        {
+          "id": "c",
+          "text": "Negotiate a compliance extension and evaluate the market meanwhile"
+        },
+        {
+          "id": "d",
+          "text": "Pause new customer acquisition until you assess full regulatory trajectory"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you chose Singapore over Brazil for its regulatory fast-track and faster time-to-revenue. Now a new data sovereignty regulation has emerged, changing the cost structure of your Singapore entry and testing whether the market still justifies investment.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}
