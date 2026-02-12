@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
-import { BookOpen, Target, Swords, Trophy, User } from "lucide-react";
+import { BookOpen, Target, Swords, Brain, Trophy, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 
@@ -11,7 +11,7 @@ const tabs = [
   { href: "/learn", label: "Learn", icon: BookOpen },
   { href: "/practice", label: "Practice", icon: Target },
   { href: "/compete", label: "Compete", icon: Swords },
-  { href: "/challenges", label: "Challenges", icon: Trophy },
+  { href: "/challenge", label: "Challenge", icon: Brain },
   { href: "/profile", label: "Profile", icon: User },
 ] as const;
 
