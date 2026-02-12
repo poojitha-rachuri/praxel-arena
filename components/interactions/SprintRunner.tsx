@@ -223,15 +223,19 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
 
   const options = parseOptions(currentInteraction.options);
 
-  // Resolve insightAnswer: if it's just an option ID (e.g. "a"), show that option's text instead
+  // Resolve insightAnswer: suppress when it's just the correctAnswer ID (adds no value),
+  // resolve ranking IDs to option text, pass through real insight strings
   const resolvedInsight = useMemo(() => {
     const raw = currentInteraction.insightAnswer;
     if (!raw) return null;
-    // If it's a single option ID or a comma-separated ranking (e.g. "b,a,d,c"), resolve to option text
+    // If insight is a single option ID that matches correctAnswer, suppress it —
+    // the correct option is already highlighted, repeating it as "Key Insight" is noise
     if (/^[a-d]$/.test(raw)) {
+      if (raw === currentInteraction.correctAnswer) return null;
       const match = options.find((o) => o.id === raw);
       return match ? match.text : raw;
     }
+    // For rankings (e.g. "b,a,d,c"), resolve to option text chain
     if (/^[a-d](,[a-d]){1,}$/.test(raw)) {
       return raw
         .split(",")
@@ -242,7 +246,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
         .join(" → ");
     }
     return raw;
-  }, [currentInteraction.insightAnswer, options]);
+  }, [currentInteraction.insightAnswer, currentInteraction.correctAnswer, options]);
 
   // In COMPETE mode, hide insight text (just show correct/incorrect flash)
   const displayInsight = mode === "COMPETE" ? null : resolvedInsight;

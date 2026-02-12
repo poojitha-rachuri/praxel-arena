@@ -116,20 +116,10 @@ export function SpotTheSignal({
                       "bg-muted/50 text-muted-foreground/50"
                   )}
                 >
-                  {String.fromCharCode(65 + index)}
+                  {showAsCorrect ? "✓" : showAsIncorrect ? "✗" : String.fromCharCode(65 + index)}
                 </span>
                 <span className="flex-1 leading-snug">{option.text}</span>
               </span>
-              {/* Correct badge */}
-              {showAsCorrect && (
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-success bg-success/10 px-2 py-0.5 rounded-full"
-                >
-                  Correct!
-                </motion.span>
-              )}
             </motion.button>
           );
         })}
