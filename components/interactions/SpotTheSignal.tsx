@@ -41,11 +41,7 @@ export function SpotTheSignal({
       if (selected || disabled) return;
       setSelected(optionId);
       setRevealed(true);
-
-      // Brief delay for feedback then advance
-      setTimeout(() => {
-        onAnswer(optionId);
-      }, 800);
+      onAnswer(optionId);
     },
     [selected, disabled, onAnswer]
   );

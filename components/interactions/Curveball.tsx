@@ -36,10 +36,7 @@ export function Curveball({
       if (selected || disabled) return;
       setSelected(optionId);
       setRevealed(true);
-
-      setTimeout(() => {
-        onAnswer(optionId);
-      }, 1000);
+      onAnswer(optionId);
     },
     [selected, disabled, onAnswer]
   );

@@ -55,10 +55,7 @@ export function FillTheGap({
       if (selected || disabled) return;
       setSelected(optionId);
       setRevealed(true);
-
-      setTimeout(() => {
-        onAnswer(optionId);
-      }, 800);
+      onAnswer(optionId);
     },
     [selected, disabled, onAnswer]
   );

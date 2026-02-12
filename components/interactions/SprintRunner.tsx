@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useMemo, useEffect } from "react";
-import { AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { InteractionCard } from "./InteractionCard";
 import { SpotTheSignal } from "./SpotTheSignal";
 import { ForcedTradeoff } from "./ForcedTradeoff";
@@ -12,6 +12,9 @@ import { TeachAndTest } from "./TeachAndTest";
 import { ProgressBar } from "./ProgressBar";
 import { StreakBadge } from "@/components/gamification/StreakBadge";
 import { useCelebration } from "@/lib/hooks/use-celebration";
+import { calculateFeedbackDuration } from "@/lib/utils/feedback-timing";
+import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 import type { SprintResponse, InteractionOption } from "@/types";
 
 // ─── Types ──────────────────────────────────────────────
@@ -78,6 +81,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const [responses, setResponses] = useState<SprintResponse[]>([]);
   const [showFeedback, setShowFeedback] = useState(false);
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
+  const [waitingForContinue, setWaitingForContinue] = useState(false);
   const [streak, setStreak] = useState(0);
   const streakRef = useRef(0);
 
@@ -86,18 +90,51 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   const sprintStartTimeRef = useRef<number>(Date.now());
   const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const submittedRef = useRef(false);
+  // Store latest responses in a ref for use in advance() without stale closures
+  const responsesRef = useRef<SprintResponse[]>([]);
 
   const { onCorrect } = useCelebration();
 
-  // Clear feedback timer on unmount
+  // Clear feedback timer on unmount + pause on tab hide
   useEffect(() => {
+    const handleVisibility = () => {
+      if (document.hidden && feedbackTimerRef.current) {
+        // Pause: clear timer but keep feedback visible — user will see Continue or timer resumes on return
+        clearTimeout(feedbackTimerRef.current);
+        feedbackTimerRef.current = undefined;
+        // Switch to manual continue so feedback doesn't vanish when user returns
+        setWaitingForContinue(true);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibility);
       if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
     };
   }, []);
 
   const currentInteraction = sortedInteractions[currentIndex] ?? null;
   const totalInteractions = sortedInteractions.length;
+
+  /** Advance to next card or complete sprint */
+  const advance = useCallback(() => {
+    if (feedbackTimerRef.current) {
+      clearTimeout(feedbackTimerRef.current);
+      feedbackTimerRef.current = undefined;
+    }
+    setShowFeedback(false);
+    setLastCorrect(null);
+    setWaitingForContinue(false);
+    submittedRef.current = false;
+
+    const latest = responsesRef.current;
+    if (currentIndex + 1 >= totalInteractions) {
+      onComplete(latest);
+    } else {
+      setCurrentIndex((prev) => prev + 1);
+      cardStartTimeRef.current = Date.now();
+    }
+  }, [currentIndex, totalInteractions, onComplete]);
 
   const handleAnswer = useCallback(
     (answer: string) => {
@@ -151,25 +188,22 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
 
       const updatedResponses = [...responses, newResponse];
       setResponses(updatedResponses);
+      responsesRef.current = updatedResponses;
 
-      // After feedback delay, advance or complete
-      const feedbackDelay = 400;
-      feedbackTimerRef.current = setTimeout(() => {
-        setShowFeedback(false);
-        setLastCorrect(null);
-        submittedRef.current = false;
+      // Mode-dependent feedback timing
+      const insightText = currentInteraction.insightAnswer;
+      const feedbackDuration = calculateFeedbackDuration(insightText, mode);
 
-        if (currentIndex + 1 >= totalInteractions) {
-          // Sprint complete
-          onComplete(updatedResponses);
-        } else {
-          // Next card
-          setCurrentIndex((prev) => prev + 1);
-          cardStartTimeRef.current = Date.now();
-        }
-      }, feedbackDelay);
+      if (feedbackDuration === null) {
+        // LEARN mode: show Continue button, no auto-advance
+        setWaitingForContinue(true);
+      } else {
+        // PRACTICE / COMPETE: auto-advance after calculated duration
+        setWaitingForContinue(false);
+        feedbackTimerRef.current = setTimeout(advance, feedbackDuration);
+      }
     },
-    [currentInteraction, currentIndex, totalInteractions, responses, onComplete, onCorrect]
+    [currentInteraction, responses, onCorrect, mode, advance]
   );
 
   if (!currentInteraction) {
@@ -199,13 +233,16 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
     return raw;
   }, [currentInteraction.insightAnswer, options]);
 
+  // In COMPETE mode, hide insight text (just show correct/incorrect flash)
+  const displayInsight = mode === "COMPETE" ? null : resolvedInsight;
+
   // Shared props for all interaction types
   const sharedProps = {
     id: currentInteraction.id,
     prompt: currentInteraction.prompt,
     options,
     correctAnswer: currentInteraction.correctAnswer,
-    insightAnswer: resolvedInsight,
+    insightAnswer: displayInsight,
     timeTarget: currentInteraction.timeTarget,
     onAnswer: handleAnswer,
   };
@@ -261,6 +298,36 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
             />
           )}
         </InteractionCard>
+      </AnimatePresence>
+
+      {/* Continue Button — visible in LEARN mode (manual advance) and PRACTICE mode (tap to skip timer) */}
+      <AnimatePresence>
+        {showFeedback && (waitingForContinue || mode === "PRACTICE") && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            className="mt-4 px-4"
+          >
+            <button
+              onClick={advance}
+              className={cn(
+                "w-full min-h-[48px] rounded-xl text-base font-semibold",
+                "flex items-center justify-center gap-2 transition-colors",
+                "active:scale-[0.98] touch-manipulation",
+                lastCorrect === true
+                  ? "bg-success text-success-foreground"
+                  : lastCorrect === false
+                  ? "bg-danger text-danger-foreground"
+                  : "bg-primary text-primary-foreground"
+              )}
+            >
+              Continue
+              <ArrowRight className="size-4" />
+            </button>
+          </motion.div>
+        )}
       </AnimatePresence>
     </div>
   );
