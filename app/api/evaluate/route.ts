@@ -4,6 +4,8 @@ import { ensureUser } from "@/lib/auth/ensure-user";
 import { evaluateAttempt, evaluateDuel } from "@/lib/scoring/evaluate";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
 import { ELO_INITIAL_RATING, EVALUATION_RATE_LIMIT } from "@/lib/utils/constants";
+import { processGamification } from "@/lib/gamification/xp";
+import { processCredentials } from "@/lib/gamification/credentials";
 import type { SprintResponse } from "@/types";
 import crypto from "crypto";
 
@@ -248,6 +250,25 @@ export async function POST(request: NextRequest) {
       ),
     };
 
+    // Process gamification (non-blocking — fire and forget)
+    const gamificationPromise = processGamification({
+      userId: user.id,
+      mode: sprint.mode,
+      totalScore: evaluation.totalScore,
+      skillId: sprint.skillId,
+      sprintId: sprint.id,
+      duelId: duelId ?? undefined,
+    }).catch((err) => {
+      console.error("[gamification] Failed to process:", err);
+      return null;
+    });
+
+    // Wait briefly for gamification to complete (up to 200ms) so we can return data
+    const gamification = await Promise.race([
+      gamificationPromise,
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), 200)),
+    ]);
+
     return NextResponse.json({
       attempt: {
         id: attempt.id,
@@ -257,6 +278,7 @@ export async function POST(request: NextRequest) {
         completedAt: attempt.completedAt,
       },
       evaluation: sanitizedEvaluation,
+      gamification: gamification ?? undefined,
     });
   } catch (error) {
     const errorId = crypto.randomUUID();
@@ -521,4 +543,14 @@ async function completeDuelAttempt(
       },
     });
   });
+
+  // Check credentials for winner (non-blocking)
+  const winnerCurrentElo =
+    duelResult.winnerId === updatedDuel.player1Id
+      ? player1Rating
+      : player2Rating;
+  const winnerNewElo = winnerCurrentElo + duelResult.eloChange;
+  processCredentials(duelResult.winnerId, sprint.skillId, winnerNewElo).catch(
+    (err) => console.error("[credentials] Failed:", err)
+  );
 }

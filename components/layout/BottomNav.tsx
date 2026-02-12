@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
-import { BookOpen, Target, Swords, User } from "lucide-react";
+import { BookOpen, Target, Swords, Trophy, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const tabs = [
   { href: "/learn", label: "Learn", icon: BookOpen },
   { href: "/practice", label: "Practice", icon: Target },
   { href: "/compete", label: "Compete", icon: Swords },
+  { href: "/challenges", label: "Challenges", icon: Trophy },
   { href: "/profile", label: "Profile", icon: User },
 ] as const;
 
@@ -27,7 +28,7 @@ export default function BottomNav() {
               key={href}
               href={href}
               className={cn(
-                "relative flex flex-col items-center justify-center gap-1 px-3 py-1 min-w-[64px] min-h-[44px] transition-colors",
+                "relative flex flex-col items-center justify-center gap-1 px-2 py-1 min-w-[56px] min-h-[44px] transition-colors",
                 isActive
                   ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"

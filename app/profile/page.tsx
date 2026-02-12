@@ -3,6 +3,11 @@ import { prisma } from "@/lib/db";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
 import { computeCareerMatches } from "@/lib/scoring/career-match";
+import {
+  xpForLevel,
+  titleForLevel,
+  LEAGUE_TIERS,
+} from "@/lib/gamification/constants";
 import AppShell from "@/components/layout/AppShell";
 import ProfileClient from "./ProfileClient";
 
@@ -10,8 +15,8 @@ export default async function ProfilePage() {
   const baseUser = await ensureUser();
   if (!baseUser) redirect("/sign-in");
 
-  // Run user data and recent attempts queries in parallel
-  const [user, recentAttempts] = await Promise.all([
+  // Run user data, recent attempts, and credentials queries in parallel
+  const [user, recentAttempts, credentials] = await Promise.all([
     prisma.user.findUnique({
       where: { id: baseUser.id },
       include: {
@@ -60,6 +65,11 @@ export default async function ProfilePage() {
           },
         },
       },
+    }),
+    prisma.credential.findMany({
+      where: { userId: baseUser.id },
+      include: { skill: { select: { name: true, slug: true, icon: true } } },
+      orderBy: { grantedAt: "desc" },
     }),
   ]);
 
@@ -133,6 +143,38 @@ export default async function ProfilePage() {
     }))
   );
 
+  // Gamification data
+  const currentLevelXp = xpForLevel(user.level);
+  const nextLevelXp = xpForLevel(user.level + 1);
+  const xpProgress = user.xp - currentLevelXp;
+  const xpNeeded = nextLevelXp - currentLevelXp;
+  const tierConfig = LEAGUE_TIERS[user.leagueTier];
+
+  const gamification = {
+    xp: user.xp,
+    level: user.level,
+    title: user.title ?? titleForLevel(user.level),
+    xpProgress,
+    xpNeeded,
+    progressPercent:
+      xpNeeded > 0 ? Math.round((xpProgress / xpNeeded) * 100) : 100,
+    currentStreak: user.currentStreak,
+    longestStreak: user.longestStreak,
+    leagueTier: user.leagueTier,
+    leagueTierName: tierConfig?.name ?? "Rookie",
+    weeklyXp: user.weeklyXp,
+    credentials: credentials.map((c) => ({
+      id: c.id,
+      type: c.type,
+      skillName: c.skill.name,
+      skillSlug: c.skill.slug,
+      skillIcon: c.skill.icon,
+      eloAtGrant: c.eloAtGrant,
+      grantedAt: c.grantedAt.toISOString(),
+      verificationCode: c.verificationCode,
+    })),
+  };
+
   return (
     <AppShell>
       <ProfileClient
@@ -145,6 +187,7 @@ export default async function ProfilePage() {
         careerMatches={careerMatches}
         attemptHistory={attemptHistory}
         attemptCursor={attemptCursor}
+        gamification={gamification}
         isOwnProfile
       />
     </AppShell>

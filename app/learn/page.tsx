@@ -5,6 +5,7 @@ import AppShell from "@/components/layout/AppShell";
 import ModeSelector from "@/components/layout/ModeSelector";
 import CareerProgressBanner from "@/components/layout/CareerProgressBanner";
 import SkillAccordion from "@/components/layout/SkillAccordion";
+import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
 
 export default async function LearnPage({
   searchParams,
@@ -29,6 +30,8 @@ export default async function LearnPage({
             Choose a skill and start with guided micro-lessons
           </p>
         </div>
+
+        <ActiveChallengeBanner />
 
         {data.topCareerMatch && (
           <CareerProgressBanner

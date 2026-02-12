@@ -6,6 +6,9 @@ import RadarChart from "@/components/skill-graph/RadarChart";
 import SkillCard from "@/components/skill-graph/SkillCard";
 import CareerMatchBar from "@/components/skill-graph/CareerMatchBar";
 import AttemptHistory from "@/components/profile/AttemptHistory";
+import { XpBar } from "@/components/gamification/XpBar";
+import { StreakDisplay } from "@/components/gamification/StreakDisplay";
+import { CredentialBadge } from "@/components/gamification/CredentialBadge";
 import dynamic from "next/dynamic";
 
 const ProgressCharts = dynamic(
@@ -22,6 +25,7 @@ const ProgressCharts = dynamic(
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Crown, Flame } from "lucide-react";
 import { useState } from "react";
 
 interface AttemptSummary {
@@ -33,6 +37,30 @@ interface AttemptSummary {
   mode: string;
   totalScore: number;
   completedAt: string | null;
+}
+
+interface GamificationData {
+  xp: number;
+  level: number;
+  title: string;
+  xpProgress: number;
+  xpNeeded: number;
+  progressPercent: number;
+  currentStreak: number;
+  longestStreak: number;
+  leagueTier: number;
+  leagueTierName: string;
+  weeklyXp: number;
+  credentials: {
+    id: string;
+    type: string;
+    skillName: string;
+    skillSlug: string;
+    skillIcon: string | null;
+    eloAtGrant: number;
+    grantedAt: string;
+    verificationCode: string;
+  }[];
 }
 
 interface ProfileClientProps {
@@ -55,6 +83,7 @@ interface ProfileClientProps {
   }[];
   attemptHistory?: AttemptSummary[];
   attemptCursor?: string | null;
+  gamification?: GamificationData;
   isOwnProfile?: boolean;
 }
 
@@ -75,6 +104,7 @@ export default function ProfileClient({
   careerMatches,
   attemptHistory = [],
   attemptCursor = null,
+  gamification,
   isOwnProfile = false,
 }: ProfileClientProps) {
   const router = useRouter();
@@ -116,6 +146,75 @@ export default function ProfileClient({
           </Button>
         )}
       </motion.div>
+
+      {/* Gamification Stats */}
+      {gamification && isOwnProfile && (
+        <>
+          <Separator className="my-6" />
+          <section className="w-full space-y-4">
+            <XpBar
+              level={gamification.level}
+              xp={gamification.xp}
+              xpProgress={gamification.xpProgress}
+              xpNeeded={gamification.xpNeeded}
+              progressPercent={gamification.progressPercent}
+              title={gamification.title}
+            />
+
+            <div className="grid grid-cols-2 gap-3">
+              <StreakDisplay streak={gamification.currentStreak} />
+
+              <div className="flex items-center gap-2 rounded-xl bg-muted/50 px-4 py-2.5">
+                <Crown className="size-5 text-primary" />
+                <div>
+                  <div className="text-sm font-bold">
+                    {gamification.leagueTierName}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {gamification.weeklyXp.toLocaleString()} XP this week
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {gamification.longestStreak > 0 && (
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Flame className="size-3" />
+                <span>
+                  Longest streak: {gamification.longestStreak} days
+                </span>
+              </div>
+            )}
+          </section>
+        </>
+      )}
+
+      {/* Credentials */}
+      {gamification && gamification.credentials.length > 0 && (
+        <>
+          <Separator className="my-6" />
+          <section className="w-full space-y-3">
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Credentials
+            </h2>
+            <div className="grid grid-cols-2 gap-2">
+              {gamification.credentials.map((cred, i) => (
+                <motion.div
+                  key={cred.id}
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <CredentialBadge
+                    type={cred.type as "PRACTITIONER" | "EXPERT" | "MASTER" | "GRANDMASTER"}
+                    skillName={cred.skillName}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
 
       <Separator className="my-6" />
 

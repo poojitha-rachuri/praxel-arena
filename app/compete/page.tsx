@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import AppShell from "@/components/layout/AppShell";
 import CompeteLobby from "@/components/arena/CompeteLobby";
+import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
 
 export default async function CompetePage() {
   const user = await ensureUser();
@@ -21,6 +22,9 @@ export default async function CompetePage() {
 
   return (
     <AppShell>
+      <div className="p-4">
+        <ActiveChallengeBanner />
+      </div>
       <CompeteLobby skills={skills} userId={user.id} />
     </AppShell>
   );
