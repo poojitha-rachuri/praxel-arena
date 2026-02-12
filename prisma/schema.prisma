@@ -144,6 +144,7 @@ model Sprint {
   careerLinks SprintCareerOutcome[]
   duels       Duel[]
 
+  @@unique([skillId, title, mode])
   @@index([skillId, mode, level, order])
   @@index([topicId, mode, order])
 }

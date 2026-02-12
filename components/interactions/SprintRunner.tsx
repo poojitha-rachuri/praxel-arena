@@ -178,13 +178,34 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
 
   const options = parseOptions(currentInteraction.options);
 
+  // Resolve insightAnswer: if it's just an option ID (e.g. "a"), show that option's text instead
+  const resolvedInsight = useMemo(() => {
+    const raw = currentInteraction.insightAnswer;
+    if (!raw) return null;
+    // If it's a single option ID or a comma-separated ranking (e.g. "b,a,d,c"), resolve to option text
+    if (/^[a-d]$/.test(raw)) {
+      const match = options.find((o) => o.id === raw);
+      return match ? match.text : raw;
+    }
+    if (/^[a-d](,[a-d]){1,}$/.test(raw)) {
+      return raw
+        .split(",")
+        .map((id) => {
+          const match = options.find((o) => o.id === id.trim());
+          return match ? match.text : id;
+        })
+        .join(" → ");
+    }
+    return raw;
+  }, [currentInteraction.insightAnswer, options]);
+
   // Shared props for all interaction types
   const sharedProps = {
     id: currentInteraction.id,
     prompt: currentInteraction.prompt,
     options,
     correctAnswer: currentInteraction.correctAnswer,
-    insightAnswer: currentInteraction.insightAnswer,
+    insightAnswer: resolvedInsight,
     timeTarget: currentInteraction.timeTarget,
     onAnswer: handleAnswer,
   };

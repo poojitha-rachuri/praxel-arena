@@ -14,6 +14,7 @@ export const MATCHMAKING_ANY_AFTER_SECONDS = 120;
 // Sprint
 export const SPRINT_INTERACTIONS_COUNT = 8;
 export const SPRINT_GENERATION_RATE_LIMIT = 5; // per user per hour
+export const EVALUATION_RATE_LIMIT = 30; // per user per hour
 
 // Duel timeouts
 export const DUEL_WAITING_TIMEOUT_MINUTES = 15;

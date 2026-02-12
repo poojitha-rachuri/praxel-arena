@@ -3,7 +3,11 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
-import { z } from "zod";
+import {
+  sprintFileSchema,
+  topicsFileSchema,
+  type SprintFile,
+} from "../lib/validation/content-schema";
 
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
@@ -166,7 +170,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
     interactions: [
       {
         type: "SPOT_THE_SIGNAL",
-        order: 0,
+        order: 1,
         prompt: "NovaPay processes $2B in annual payment volume at a 2.1% take rate. Revenue $42M, gross margin 68%, YoY growth 110%, but Q4 growth decelerated to 80% annualized. What is the key signal?",
         options: [
           { id: "a", text: "Revenue growth deceleration from 110% to 80%" },
@@ -180,7 +184,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "SPOT_THE_SIGNAL",
-        order: 1,
+        order: 2,
         prompt: "NovaPay's cohort data: 2022 cohort retains 95% of payment volume, 2023 retains 88%, 2024 retains only 72% after 6 months. New customer acquisition is 3x higher than 2022. What does the data really say?",
         options: [
           { id: "a", text: "Customer quality is declining as they scale acquisition" },
@@ -194,7 +198,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "FILL_THE_GAP",
-        order: 2,
+        order: 3,
         prompt: "In payments, ___ measures total dollar value of transactions processed and is the standard top-line metric before applying take rate.",
         options: [
           { id: "a", text: "GMV (Gross Merchandise Value)" },
@@ -208,7 +212,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "FORCED_TRADEOFF",
-        order: 3,
+        order: 4,
         prompt: "Two valuation approaches: (A) Revenue multiple — comparable payment cos trade at 15x, giving $630M at $42M revenue. (B) TPV multiple — 0.3x TPV gives $600M on $2B volume. Which is more reliable at this stage?",
         options: [
           { id: "a", text: "Revenue multiple — standard for growth-stage" },
@@ -222,7 +226,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "RANK_AND_PRIORITIZE",
-        order: 4,
+        order: 5,
         prompt: "Rank NovaPay's growth levers by expected 12-month revenue impact (highest first):",
         options: [
           { id: "a", text: "Expand internationally into 10 new markets" },
@@ -236,7 +240,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "FILL_THE_GAP",
-        order: 5,
+        order: 6,
         prompt: "A payment company's ___ is calculated as revenue divided by total payment volume, representing its monetization efficiency per dollar processed.",
         options: [
           { id: "a", text: "Gross margin" },
@@ -250,7 +254,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "CURVEBALL",
-        order: 6,
+        order: 7,
         prompt: "Breaking: Stripe just announced a competing B2B product at 1.5% take rate (vs NovaPay's 2.1%). Your earlier plan to raise take rate to 2.5% is now risky. How does this change the investment thesis?",
         priorContext: "You previously ranked 'increase take rate from 2.1% to 2.5%' as the #1 growth lever, worth a 19% revenue uplift.",
         options: [
@@ -265,7 +269,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       },
       {
         type: "FORCED_TRADEOFF",
-        order: 7,
+        order: 8,
         prompt: "Final call: given Stripe's entry, declining cohort quality, and growth deceleration, do you recommend the $500M Series D at 12x forward revenue ($504M valuation)?",
         options: [
           { id: "a", text: "Yes — fundamentals are strong, Stripe is manageable" },
@@ -293,55 +297,7 @@ const DEMO_OPPONENT_RESPONSES = [
   { interactionIndex: 7, answer: "b", timeSpent: 15 },
 ];
 
-// ─── Zod Schema for Sprint JSON Files ───────────────────────────────────────
-
-const optionSchema = z.object({
-  id: z.enum(["a", "b", "c", "d"]),
-  text: z.string().min(1),
-});
-
-const interactionSchema = z.object({
-  type: z.enum([
-    "TEACH_AND_TEST",
-    "SPOT_THE_SIGNAL",
-    "FORCED_TRADEOFF",
-    "FILL_THE_GAP",
-    "RANK_AND_PRIORITIZE",
-    "CURVEBALL",
-  ]),
-  order: z.number().int().min(1).max(8),
-  prompt: z.string().min(1),
-  options: z.array(optionSchema).length(4),
-  correctAnswer: z.string().min(1),
-  insightAnswer: z.string().min(1).nullable(),
-  teachingPreamble: z.string().nullable().optional(),
-  priorContext: z.string().nullable().optional(),
-  timeTarget: z.number().int().min(5).max(60),
-});
-
-const sprintFileSchema = z.object({
-  skillSlug: z.string().min(1),
-  topicSlug: z.string().min(1),
-  mode: z.enum(["LEARN", "PRACTICE"]),
-  title: z.string().min(1),
-  description: z.string().optional(),
-  difficulty: z.number().int().min(1).max(5),
-  sprintOrder: z.number().int().min(1),
-  interactions: z.array(interactionSchema).min(1),
-});
-
-const topicFileSchema = z.array(
-  z.object({
-    skillSlug: z.string().min(1),
-    slug: z.string().min(1),
-    name: z.string().min(1),
-    description: z.string().optional(),
-    order: z.number().int().min(1),
-    icon: z.string().optional(),
-  })
-);
-
-type SprintFileData = z.infer<typeof sprintFileSchema>;
+// Zod schemas imported from lib/validation/content-schema.ts (single source of truth)
 
 // ─── File System Helpers ────────────────────────────────────────────────────
 
@@ -352,7 +308,7 @@ function loadTopics() {
     return [];
   }
   const raw = JSON.parse(fs.readFileSync(topicsPath, "utf-8"));
-  const result = topicFileSchema.safeParse(raw);
+  const result = topicsFileSchema.safeParse(raw);
   if (!result.success) {
     console.error("  topics.json validation failed:", result.error.issues);
     return [];
@@ -360,8 +316,8 @@ function loadTopics() {
   return result.data;
 }
 
-function loadSprintFiles(): SprintFileData[] {
-  const sprints: SprintFileData[] = [];
+function loadSprintFiles(): SprintFile[] {
+  const sprints: SprintFile[] = [];
 
   if (!fs.existsSync(SEED_DATA_DIR)) return sprints;
 
@@ -502,24 +458,25 @@ async function main() {
     const topicKey = `${sprintData.skillSlug}/${sprintData.topicSlug}`;
     const topicId = topicMap.get(topicKey) ?? null;
 
-    // Check if sprint already exists
-    const existing = await prisma.sprint.findFirst({
-      where: { skillId, title: sprintData.title, mode: sprintData.mode },
-    });
-    if (existing) {
-      continue;
-    }
+    const sprintWhere = {
+      skillId_title_mode: { skillId, title: sprintData.title, mode: sprintData.mode },
+    };
+    const sprintPayload = {
+      skillId,
+      topicId,
+      mode: sprintData.mode,
+      title: sprintData.title,
+      description: sprintData.description ?? null,
+      isGenerated: false,
+      difficulty: sprintData.difficulty,
+      order: sprintData.sprintOrder,
+    };
 
-    await prisma.sprint.create({
-      data: {
-        skillId,
-        topicId,
-        mode: sprintData.mode,
-        title: sprintData.title,
-        description: sprintData.description ?? null,
-        isGenerated: false,
-        difficulty: sprintData.difficulty,
-        order: sprintData.sprintOrder,
+    const sprint = await prisma.sprint.upsert({
+      where: sprintWhere,
+      update: { topicId, description: sprintPayload.description, difficulty: sprintPayload.difficulty, order: sprintPayload.order },
+      create: {
+        ...sprintPayload,
         interactions: {
           create: sprintData.interactions.map((interaction) => ({
             skillId,
@@ -552,17 +509,12 @@ async function main() {
     const skillId = skillMap.get(sprintData.skillSlug);
     if (!skillId) continue;
 
-    const existing = await prisma.sprint.findFirst({
-      where: { skillId, title: sprintData.title, mode: "COMPETE" },
-      include: { interactions: { orderBy: { order: "asc" } } },
-    });
-    if (existing) {
-      competeSprintIds.set(sprintData.skillSlug, existing.id);
-      continue;
-    }
-
-    const sprint = await prisma.sprint.create({
-      data: {
+    const sprint = await prisma.sprint.upsert({
+      where: {
+        skillId_title_mode: { skillId, title: sprintData.title, mode: "COMPETE" },
+      },
+      update: { description: sprintData.description, difficulty: sprintData.difficulty },
+      create: {
         skillId,
         mode: "COMPETE",
         title: sprintData.title,
