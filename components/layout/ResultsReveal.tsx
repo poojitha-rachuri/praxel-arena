@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { CARD_SPRING, SCORE_COUNT_DURATION } from "@/lib/utils/constants";
 import { SCORING_DIMENSIONS } from "@/lib/scoring/dimensions";
 import { useCelebration } from "@/lib/hooks/use-celebration";
+import { PostSprintDebrief } from "@/components/ai-challenger/PostSprintDebrief";
 import type { DimensionScores, EnrichedResponse } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -345,11 +346,20 @@ export default function ResultsReveal({
               </motion.div>
             )}
 
+            {/* AI Challenger Debrief */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 3.5 }}
+            >
+              <PostSprintDebrief attemptId={attemptId} />
+            </motion.div>
+
             {/* CTAs */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 3.6 }}
+              transition={{ delay: 3.8 }}
               className="flex flex-col gap-2 sm:flex-row sm:justify-center"
             >
               <Button

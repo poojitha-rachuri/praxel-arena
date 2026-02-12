@@ -127,7 +127,7 @@ export async function POST(req: NextRequest) {
       model: anthropic(AI_MODEL_EVALUATION),
       system: systemPrompt,
       messages: await convertToModelMessages(messages as UIMessage[]),
-      maxTokens: 300,
+      maxOutputTokens: 300,
       abortSignal: AbortSignal.timeout(15_000),
     });
 
