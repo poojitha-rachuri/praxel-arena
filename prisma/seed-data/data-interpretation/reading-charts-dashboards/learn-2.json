@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "reading-charts-dashboards",
+  "mode": "LEARN",
+  "title": "Spotting Misleading Charts & Axes",
+  "description": "Learn to identify common tricks that make charts misleading and how to read axes critically.",
+  "difficulty": 2,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A bar chart shows Company A revenue at $102M and Company B at $100M, but Company A's bar looks 3x taller. What's most likely wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The y-axis doesn't start at zero"
+        },
+        {
+          "id": "b",
+          "text": "The bars are different colors"
+        },
+        {
+          "id": "c",
+          "text": "The chart is using the wrong type"
+        },
+        {
+          "id": "d",
+          "text": "The data is probably incorrect"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "One of the most common ways charts mislead is by truncating the y-axis — starting it at a number other than zero. This can make tiny differences look dramatic. For example, a cable news network once showed a bar chart where a 1% change looked like a 50% jump simply by starting the y-axis at 99%.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A Shopify dashboard shows monthly orders: Jan 10,200 → Feb 10,800 → Mar 11,050. The line chart's y-axis runs from 10,000 to 11,200. What should you notice first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Growth is accelerating rapidly month over month"
+        },
+        {
+          "id": "b",
+          "text": "The narrow y-axis range exaggerates a modest 8% total increase"
+        },
+        {
+          "id": "c",
+          "text": "Orders are essentially flat and not growing"
+        },
+        {
+          "id": "d",
+          "text": "The data is unreliable because the axis is wrong"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A pie chart in a Nike quarterly report shows 8 product categories. Why might this be a poor chart choice?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pie charts can't show percentages"
+        },
+        {
+          "id": "b",
+          "text": "Too many slices make it hard to compare similar-sized segments"
+        },
+        {
+          "id": "c",
+          "text": "Pie charts only work for exactly four categories"
+        },
+        {
+          "id": "d",
+          "text": "Nike's data is too complex for any chart"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Pie charts work best with 2–4 categories where differences are obvious. When you have many slices of similar size, the human eye struggles to compare arc lengths accurately. A horizontal bar chart is almost always a better choice for comparing multiple categories — it's why data teams at companies like Google and Amazon default to bar charts in internal dashboards.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "A chart that uses two different y-axes (dual-axis chart) can be misleading because the creator can ____ the scales to imply a false correlation between two metrics.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Independently manipulate"
+        },
+        {
+          "id": "b",
+          "text": "Randomly generate"
+        },
+        {
+          "id": "c",
+          "text": "Permanently lock"
+        },
+        {
+          "id": "d",
+          "text": "Automatically standardize"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're presenting Slack adoption data to executives. You have 12 months of daily active users showing steady growth. Do you use a line chart with a y-axis starting at zero (growth looks modest) or start the y-axis at your baseline (growth looks impressive)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Start at zero — accuracy builds long-term trust with leadership"
+        },
+        {
+          "id": "b",
+          "text": "Start at baseline — executives need to see the growth clearly"
+        },
+        {
+          "id": "c",
+          "text": "Show both versions side by side for full context"
+        },
+        {
+          "id": "d",
+          "text": "Skip the chart and just show the percentage increase"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A KPI dashboard at HubSpot shows churn rate dropping from 5.2% to 4.8%. The sparkline chart next to it uses a 3-month moving average. Why use a moving average?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It makes the number look better for investors"
+        },
+        {
+          "id": "b",
+          "text": "It smooths out short-term noise to reveal the real trend"
+        },
+        {
+          "id": "c",
+          "text": "It hides months where churn increased"
+        },
+        {
+          "id": "d",
+          "text": "It's required by financial reporting standards"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "KPI dashboards often use smoothing techniques like moving averages to help decision-makers focus on trends rather than reacting to daily or weekly fluctuations. A single bad week might spike a metric, but a 3-month moving average shows whether the overall direction is improving. However, you should always be able to drill into the raw data — smoothing can sometimes mask real problems.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're reviewing an unfamiliar dashboard for the first time. Rank these steps from what you should do first to last to correctly interpret the data.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Draw conclusions and recommend actions"
+        },
+        {
+          "id": "b",
+          "text": "Check axes, scales, and date ranges on each chart"
+        },
+        {
+          "id": "c",
+          "text": "Identify what KPIs and metrics are being tracked"
+        },
+        {
+          "id": "d",
+          "text": "Look for trends, outliers, and relationships between metrics"
+        }
+      ],
+      "correctAnswer": "c,b,d,a",
+      "insightAnswer": "c,b,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your colleague points out the dashboard's revenue chart uses a logarithmic y-axis instead of linear. The growth that looked steady is actually exponential. How does this change your recommendation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Logarithmic axes are always wrong — switch to linear immediately"
+        },
+        {
+          "id": "b",
+          "text": "Exponential growth means capacity planning is more urgent than expected"
+        },
+        {
+          "id": "c",
+          "text": "It doesn't matter — the trend direction is the same either way"
+        },
+        {
+          "id": "d",
+          "text": "Ignore the chart and rely only on the raw numbers"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you reviewed a KPI dashboard and interpreted revenue as growing steadily. Now you discover the y-axis is logarithmic, meaning equal visual distances represent multiplicative (not additive) changes — steady-looking growth is actually accelerating exponentially.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

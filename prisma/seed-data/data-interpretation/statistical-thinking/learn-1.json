@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "statistical-thinking",
+  "mode": "LEARN",
+  "title": "Averages, Medians, and Data Traps",
+  "description": "Learn to avoid common statistical pitfalls when interpreting business metrics like averages, medians, and correlations.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A startup's 10 employees earn $50K each, but the CEO earns $950K. Which metric best represents a typical salary?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mean ($130K), because it includes all earners"
+        },
+        {
+          "id": "b",
+          "text": "Median ($50K), because it resists the CEO outlier"
+        },
+        {
+          "id": "c",
+          "text": "Mode ($50K), but only because the sample is small"
+        },
+        {
+          "id": "d",
+          "text": "Range ($900K), because it shows full spread"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The average (mean) adds everything up and divides equally, but a single extreme value can distort it dramatically. The median is the middle value when you line up all numbers — it's far more resistant to outliers, making it the go-to metric when data is skewed.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Shopify reports that its merchants' mean monthly revenue is $12,400 but median monthly revenue is $2,100. What does this gap tell you?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Most merchants earn close to $12,400"
+        },
+        {
+          "id": "b",
+          "text": "A small number of high-revenue merchants skew the mean upward"
+        },
+        {
+          "id": "c",
+          "text": "The data was collected incorrectly"
+        },
+        {
+          "id": "d",
+          "text": "Revenue is evenly distributed across merchants"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Cities with more ice cream shops also have higher crime rates. What should you conclude?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ice cream shops cause crime"
+        },
+        {
+          "id": "b",
+          "text": "Crime causes ice cream shops to open"
+        },
+        {
+          "id": "c",
+          "text": "A third factor like population size likely drives both"
+        },
+        {
+          "id": "d",
+          "text": "The correlation must be a data error"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Correlation means two things move together, but causation means one actually causes the other. In business, confusing the two leads to costly mistakes — like assuming a marketing campaign drove sales when a seasonal trend was the real driver. Always ask: could a hidden third variable explain both?",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When a dataset has extreme outliers pulling the mean away from most values, the distribution is said to be ____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Normal"
+        },
+        {
+          "id": "b",
+          "text": "Skewed"
+        },
+        {
+          "id": "c",
+          "text": "Correlated"
+        },
+        {
+          "id": "d",
+          "text": "Randomized"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your DTC brand tested a new homepage. Version B showed a 15% conversion lift, but only 80 visitors were in the test. Do you ship the change or keep testing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ship it — a 15% lift is too big to ignore"
+        },
+        {
+          "id": "b",
+          "text": "Keep testing — 80 visitors is far too small to trust"
+        },
+        {
+          "id": "c",
+          "text": "Ship it but monitor results closely for a week"
+        },
+        {
+          "id": "d",
+          "text": "Discard the test entirely and redesign from scratch"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Netflix surveys 50 users and finds 80% love a new feature. Should they confidently roll it out to 230 million subscribers?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes — 80% approval is overwhelmingly positive"
+        },
+        {
+          "id": "b",
+          "text": "No — 50 users can't reliably represent 230 million"
+        },
+        {
+          "id": "c",
+          "text": "Yes — surveys are always representative of the population"
+        },
+        {
+          "id": "d",
+          "text": "No — they should only use internal employee feedback"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Sample size determines how trustworthy your findings are. A small sample can produce dramatic-looking results purely by chance. As a rule of thumb, larger and more representative samples give you more confidence that your results reflect reality — not random noise.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Your team is evaluating whether a pricing change boosted revenue. Rank these checks from most to least important for trusting the result.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Check if the sample size was large enough"
+        },
+        {
+          "id": "b",
+          "text": "Confirm no other changes happened during the test period"
+        },
+        {
+          "id": "c",
+          "text": "Verify if mean or median revenue is being reported"
+        },
+        {
+          "id": "d",
+          "text": "Look at the visual design of the chart used"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You now learn the pricing test ran during Black Friday week. With this new context, what's your biggest concern about the revenue increase?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The seasonal spike makes it impossible to isolate the pricing effect"
+        },
+        {
+          "id": "b",
+          "text": "Black Friday customers are more price-sensitive than average"
+        },
+        {
+          "id": "c",
+          "text": "The sample size was probably too small during a holiday"
+        },
+        {
+          "id": "d",
+          "text": "Revenue always goes up in Q4 regardless of pricing"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Previously, your team was evaluating whether a pricing change boosted revenue and confirmed the sample size and metric type. Now you discover the test ran during Black Friday week — a major confounding variable.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

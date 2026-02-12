@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "difficult-conversations",
+  "mode": "LEARN",
+  "title": "Managing Expectations and Constructive Feedback",
+  "description": "Master advanced techniques for resetting stakeholder expectations and delivering constructive feedback that drives behavioral change.",
+  "difficulty": 4,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which approach best resets expectations without destroying stakeholder trust?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delay the conversation until you have a complete solution"
+        },
+        {
+          "id": "b",
+          "text": "Reframe the gap as a revised path with clear milestones"
+        },
+        {
+          "id": "c",
+          "text": "Blame external factors and promise to recover next quarter"
+        },
+        {
+          "id": "d",
+          "text": "Present only the positive metrics and minimize the shortfall"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "When Salesforce missed enterprise adoption targets in 2016, leadership didn't hide the gap—they reframed the timeline with a revised strategy and intermediate proof points. The 'expectation reset' technique works by acknowledging reality, explaining the revised trajectory, and anchoring stakeholders to new, credible milestones rather than dwelling on the miss.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Your team promised 40% cost reduction. After Q2: actual savings are 18%, vendor renegotiations stalled at 12% of contracts, and internal adoption is at 55%. What's the most critical signal to address with your CFO first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The 22-point gap between promised and actual savings"
+        },
+        {
+          "id": "b",
+          "text": "Low vendor renegotiation rate blocking future savings"
+        },
+        {
+          "id": "c",
+          "text": "Adoption at 55% suggests the root cause is internal"
+        },
+        {
+          "id": "d",
+          "text": "Q2 timing means you still have two quarters to recover"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "What makes the SBI model particularly effective for senior stakeholders?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It avoids confrontation by focusing only on positive behaviors"
+        },
+        {
+          "id": "b",
+          "text": "It removes subjectivity by grounding feedback in observable evidence"
+        },
+        {
+          "id": "c",
+          "text": "It lets the manager dictate exactly what changes are needed"
+        },
+        {
+          "id": "d",
+          "text": "It delays the conversation until annual performance reviews"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The SBI (Situation-Behavior-Impact) model is used at companies like Google and Netflix for high-stakes feedback. Instead of saying 'Your presentations are weak,' you say: 'In Monday's board meeting [Situation], you skipped the risk section [Behavior], which left directors questioning our due diligence [Impact].' This specificity makes feedback actionable and harder to dismiss defensively.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When resetting expectations, the most credible leaders pair the revised target with a ____ that explains why the new number is achievable.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leading indicator framework"
+        },
+        {
+          "id": "b",
+          "text": "Competitive benchmark comparison"
+        },
+        {
+          "id": "c",
+          "text": "Historical precedent or analogy"
+        },
+        {
+          "id": "d",
+          "text": "Causal analysis and evidence base"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your VP of Engineering is a top performer but regularly steamrolls peers in cross-functional meetings, causing two product managers to request transfers. Do you address this now—risking his departure during a critical launch—or wait until post-launch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Address now; talent attrition compounds faster than launch delays"
+        },
+        {
+          "id": "b",
+          "text": "Wait until post-launch to avoid destabilizing the team"
+        },
+        {
+          "id": "c",
+          "text": "Address now but frame it as coaching, not corrective feedback"
+        },
+        {
+          "id": "d",
+          "text": "Escalate to HR and let them handle timing"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A board member says your revised revenue forecast 'feels sandbagged.' What's the strongest response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Show the sensitivity analysis with upside, base, and downside scenarios"
+        },
+        {
+          "id": "b",
+          "text": "Raise the forecast slightly to satisfy the board's expectations"
+        },
+        {
+          "id": "c",
+          "text": "Remind them the previous forecast was wrong too"
+        },
+        {
+          "id": "d",
+          "text": "Defer to the CFO to handle the pushback"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "When expectations are challenged, amateurs defend their number—experts defend their methodology. Airbnb's CFO famously navigated post-IPO expectation resets by presenting scenario-based forecasts with clear assumptions behind each. This 'transparent range' approach lets stakeholders see you've stress-tested your thinking, making even conservative estimates feel rigorous rather than sandbagged.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You must reset Q4 guidance from $42M to $35M with your investor syndicate. Rank these conversation elements from first to last in your meeting structure.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Present the revised $35M forecast with scenario ranges"
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge the miss and own the root cause analysis"
+        },
+        {
+          "id": "c",
+          "text": "Outline specific corrective actions and leading indicators to track"
+        },
+        {
+          "id": "d",
+          "text": "Reaffirm long-term thesis and 18-month strategic milestones"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your expectation-reset presentation, your largest investor interrupts: 'We've heard from another portfolio company that your CTO is interviewing elsewhere.' How do you handle this in the room?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deny it categorically to maintain confidence in leadership stability"
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge you can't control rumors, then pivot to succession depth"
+        },
+        {
+          "id": "c",
+          "text": "Promise to investigate and circle back after the meeting"
+        },
+        {
+          "id": "d",
+          "text": "Confirm the CTO is leaving to get ahead of the narrative"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You were executing a structured expectation-reset meeting about revised Q4 guidance when an investor introduced an unexpected leadership risk question, forcing you to manage two difficult conversations simultaneously while maintaining credibility.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

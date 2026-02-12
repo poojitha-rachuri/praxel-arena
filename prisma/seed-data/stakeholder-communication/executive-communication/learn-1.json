@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "executive-communication",
+  "mode": "LEARN",
+  "title": "BLUF: Lead With Your Bottom Line",
+  "description": "Master the BLUF method to communicate clearly and concisely with executives and senior stakeholders.",
+  "difficulty": 1,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which of the following best demonstrates the BLUF method?",
+      "options": [
+        {
+          "id": "a",
+          "text": "We need $50K more budget—here's why it drives 3x ROI."
+        },
+        {
+          "id": "b",
+          "text": "Let me walk you through the history of this project first."
+        },
+        {
+          "id": "c",
+          "text": "There are several things I'd like to discuss with you today."
+        },
+        {
+          "id": "d",
+          "text": "I've been analyzing data for weeks and found interesting trends."
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "BLUF stands for Bottom Line Up Front—a communication method borrowed from military briefings. You state your key message, recommendation, or ask in the very first sentence, then provide supporting details. Busy executives at companies like Amazon use this approach because it respects the reader's time and makes decisions faster.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A VP receives three Slack messages. Message A: 'Q3 revenue hit $4.2M, 18% above target—no action needed.' Message B: 'Wanted to share some revenue thoughts.' Message C: 'Let's schedule time to discuss numbers.' Which message lets the VP act fastest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Message A—it leads with the data and the conclusion."
+        },
+        {
+          "id": "b",
+          "text": "Message B—it signals the topic is about revenue."
+        },
+        {
+          "id": "c",
+          "text": "Message C—scheduling a meeting ensures alignment."
+        },
+        {
+          "id": "d",
+          "text": "All three are equally effective for a busy VP."
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "What makes a status update 'data-driven' rather than just descriptive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It uses long paragraphs to explain every detail thoroughly."
+        },
+        {
+          "id": "b",
+          "text": "It includes specific metrics, comparisons, and trends to support claims."
+        },
+        {
+          "id": "c",
+          "text": "It avoids numbers because executives prefer qualitative summaries."
+        },
+        {
+          "id": "d",
+          "text": "It lists every task the team completed that week."
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Data-driven narratives pair numbers with context to tell a clear story. Instead of saying 'Sales are going well,' a Shopify product manager might write 'Merchant sign-ups grew 12% MoM to 14,200, driven by our new onboarding flow.' The number anchors the claim, the comparison (MoM) shows direction, and the cause gives the executive something actionable.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "A strong executive status update follows the pattern: ____, key metrics, risks, and next steps.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Project history"
+        },
+        {
+          "id": "b",
+          "text": "Team introductions"
+        },
+        {
+          "id": "c",
+          "text": "Bottom-line summary"
+        },
+        {
+          "id": "d",
+          "text": "Detailed methodology"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're emailing Stripe's CFO about a budget overrun. You have detailed root-cause analysis but the email is already 400 words. Do you keep the full analysis or cut it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep it—completeness prevents follow-up questions."
+        },
+        {
+          "id": "b",
+          "text": "Cut it—lead with the ask, link the full analysis as an appendix."
+        },
+        {
+          "id": "c",
+          "text": "Send the analysis first, then a separate email with the ask."
+        },
+        {
+          "id": "d",
+          "text": "Schedule a meeting instead of sending any written communication."
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which element is essential in a decision memo that the other options are not?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A clear recommendation with a specific action for the reader."
+        },
+        {
+          "id": "b",
+          "text": "A timeline of every meeting held about the topic."
+        },
+        {
+          "id": "c",
+          "text": "Biographies of each team member who contributed research."
+        },
+        {
+          "id": "d",
+          "text": "A summary of competitor press releases from the past year."
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "A decision memo is a short document that helps a leader say yes, no, or choose between options. At Amazon, these are the famous 6-page memos. At their core, every decision memo needs: the decision to be made, 2-3 options with tradeoffs, a clear recommendation, and supporting data. The goal isn't to show all your work—it's to make it easy for the reader to decide.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're writing a one-page decision memo for HubSpot's COO on whether to expand into a new market. Rank these sections in the order they should appear, top to bottom.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Three options with projected ROI and risk levels"
+        },
+        {
+          "id": "b",
+          "text": "Recommendation: Expand to APAC with $2M pilot in Q2"
+        },
+        {
+          "id": "c",
+          "text": "Appendix: detailed market research and methodology"
+        },
+        {
+          "id": "d",
+          "text": "Context: Current revenue is 90% North America, growth slowing"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through the meeting, the COO says: 'I only have 2 minutes left—what do you need from me right now?' How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask to reschedule so you can present the full memo properly."
+        },
+        {
+          "id": "b",
+          "text": "State your recommendation and the single biggest data point supporting it."
+        },
+        {
+          "id": "c",
+          "text": "Speed-read through all your slides to cover everything quickly."
+        },
+        {
+          "id": "d",
+          "text": "Say you'll send an email later with the details instead."
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You prepared a polished decision memo on APAC expansion for HubSpot's COO and were 3 minutes into a 15-minute presentation when the COO got pulled into an urgent issue.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

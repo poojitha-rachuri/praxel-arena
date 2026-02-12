@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "price-optimization",
+  "mode": "LEARN",
+  "title": "Mastering Price Elasticity and Anchoring",
+  "description": "Learn to use elasticity analysis, willingness-to-pay research, A/B pricing tests, and anchoring to optimize prices.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "If a 10% price increase causes a 20% drop in units sold, what is the price elasticity of demand?",
+      "options": [
+        {
+          "id": "a",
+          "text": "-2.0 (elastic)"
+        },
+        {
+          "id": "b",
+          "text": "-0.5 (inelastic)"
+        },
+        {
+          "id": "c",
+          "text": "-1.0 (unit elastic)"
+        },
+        {
+          "id": "d",
+          "text": "2.0 (perfectly elastic)"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Price elasticity of demand measures how sensitive customer purchasing is to price changes. It's calculated as % change in quantity demanded ÷ % change in price. When Netflix raised its U.S. streaming price from $9.99 to $10.99 in 2017, subscriber growth barely slowed — a sign of inelastic demand.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company tests three price points: $29/mo (1,200 signups), $39/mo (1,050 signups), $49/mo (620 signups). Total revenue is $34,800, $40,950, and $30,380 respectively. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Demand is perfectly linear across all three prices"
+        },
+        {
+          "id": "b",
+          "text": "$39 maximizes revenue; demand drops sharply above it"
+        },
+        {
+          "id": "c",
+          "text": "$29 is optimal because it drives the most customers"
+        },
+        {
+          "id": "d",
+          "text": "All three prices generate roughly equal profit"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Which method best captures willingness-to-pay without directly asking customers to name a price?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Open-ended survey: 'What would you pay?'"
+        },
+        {
+          "id": "b",
+          "text": "Van Westendorp price sensitivity meter with four threshold questions"
+        },
+        {
+          "id": "c",
+          "text": "Conjoint analysis using feature tradeoff scenarios"
+        },
+        {
+          "id": "d",
+          "text": "Competitor price benchmarking from public websites"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Willingness-to-pay (WTP) research uncovers how much customers will actually spend. Direct questions ('What would you pay?') are notoriously unreliable — people understate to get lower prices. Companies like Porsche and HubSpot use conjoint analysis, which presents tradeoff scenarios between features and prices, forcing respondents to reveal true preferences indirectly.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In A/B pricing tests, showing different prices to different users at the same time risks ____ backlash if customers discover the discrepancy, as Amazon learned in 2000.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Price discrimination"
+        },
+        {
+          "id": "b",
+          "text": "Regulatory compliance"
+        },
+        {
+          "id": "c",
+          "text": "Inventory shortage"
+        },
+        {
+          "id": "d",
+          "text": "Brand dilution"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're launching a project management tool. Conjoint analysis shows WTP of $15/user/mo, but your closest competitor Asana charges $10.99. Do you:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Price at $10.49 to undercut and win market share"
+        },
+        {
+          "id": "b",
+          "text": "Price at $14.99 anchored to your WTP data with premium positioning"
+        },
+        {
+          "id": "c",
+          "text": "Launch free forever and monetize with ads"
+        },
+        {
+          "id": "d",
+          "text": "Match Asana at $10.99 and compete on features alone"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A luxury hotel lists a $1,200/night penthouse suite at the top of its booking page. How does this primarily affect the perception of a $350/night standard room?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It makes the $350 room feel like a bargain by comparison"
+        },
+        {
+          "id": "b",
+          "text": "It confuses customers and increases bounce rates"
+        },
+        {
+          "id": "c",
+          "text": "It signals the hotel is overpriced across all tiers"
+        },
+        {
+          "id": "d",
+          "text": "It has no effect since customers only compare competitors"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Anchoring is a cognitive bias where the first number people see heavily influences their judgment of subsequent numbers. The Economist famously offered a print-only subscription at $125, a web-only at $59, and print+web at $125 — the 'useless' middle option anchored buyers toward the combo deal, boosting revenue by 43% in Dan Ariely's study.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're optimizing pricing for a B2B analytics platform with no prior pricing data. Rank these steps from first to last in a sound price optimization process.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Run A/B tests on the top two candidate price points"
+        },
+        {
+          "id": "b",
+          "text": "Conduct conjoint analysis to measure customer WTP"
+        },
+        {
+          "id": "c",
+          "text": "Analyze elasticity from live sales data after launch"
+        },
+        {
+          "id": "d",
+          "text": "Design tiered packages with anchoring-optimized positioning"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your WTP research pointed to $39/mo and A/B tests confirmed it. But a new competitor just launched a free tier with 80% of your features. How should you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Drop to $19/mo immediately to stay competitive on price"
+        },
+        {
+          "id": "b",
+          "text": "Keep $39/mo, add a limited free tier, and anchor upgrades aggressively"
+        },
+        {
+          "id": "c",
+          "text": "Match them with a fully free product and pivot to enterprise sales"
+        },
+        {
+          "id": "d",
+          "text": "Ignore the competitor since your WTP data is already validated"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you validated $39/mo through conjoint analysis and A/B testing with strong conversion. Now a well-funded competitor has launched a free tier covering most of your core features, shifting the competitive landscape and potentially resetting customer price expectations.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "reading-charts-dashboards",
+  "mode": "LEARN",
+  "title": "Chart Basics: Reading Data Visually",
+  "description": "Learn to identify common chart types, read axes correctly, and spot misleading visualizations in business dashboards.",
+  "difficulty": 1,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which chart type would best show Spotify's monthly subscriber count over the past 12 months?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pie chart"
+        },
+        {
+          "id": "b",
+          "text": "Line chart"
+        },
+        {
+          "id": "c",
+          "text": "Scatter plot"
+        },
+        {
+          "id": "d",
+          "text": "Treemap"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Different chart types serve different purposes. Line charts show how a single metric changes over time — the x-axis is time and the y-axis is your metric. For example, Netflix uses line charts to track daily active users across quarters.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A bar chart shows Shopify merchant revenue by region: North America $4.2B, Europe $1.8B, Asia $1.1B, Other $0.4B. What's the key takeaway?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue is evenly distributed globally"
+        },
+        {
+          "id": "b",
+          "text": "North America generates more than all other regions combined"
+        },
+        {
+          "id": "c",
+          "text": "Asia is the fastest-growing region"
+        },
+        {
+          "id": "d",
+          "text": "Europe and Asia are roughly equal"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A chart shows Tesla's quarterly deliveries but the y-axis starts at 400,000 instead of zero. What effect does this have?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It makes differences between quarters look larger than they are"
+        },
+        {
+          "id": "b",
+          "text": "It makes all quarters look identical"
+        },
+        {
+          "id": "c",
+          "text": "It has no effect on interpretation"
+        },
+        {
+          "id": "d",
+          "text": "It only affects the x-axis reading"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "One of the most common tricks in misleading charts is a truncated y-axis — starting the axis at a number other than zero. This visually exaggerates small differences. A bar going from 400K to 420K looks like a huge jump when the bottom of the chart is 400K, even though it's only a 5% increase.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "A pie chart is best used to show how individual parts relate to a ____, such as market share percentages across competitors.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trend over time"
+        },
+        {
+          "id": "b",
+          "text": "Whole or total"
+        },
+        {
+          "id": "c",
+          "text": "Correlation between variables"
+        },
+        {
+          "id": "d",
+          "text": "Geographic distribution on a map"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're building a dashboard for Airbnb's CEO. You can only display 4 KPIs on the main screen. Do you prioritize breadth (one metric per business area) or depth (multiple metrics for the most critical area)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Breadth — one KPI per area gives a balanced health check"
+        },
+        {
+          "id": "b",
+          "text": "Depth — focus on bookings since it drives everything else"
+        },
+        {
+          "id": "c",
+          "text": "Depth — focus on customer complaints to reduce churn"
+        },
+        {
+          "id": "d",
+          "text": "Skip the dashboard and use a spreadsheet instead"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A dashboard shows Amazon's conversion rate as a single large number: 13.2%. What type of dashboard element is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A sparkline"
+        },
+        {
+          "id": "b",
+          "text": "A KPI scorecard or metric card"
+        },
+        {
+          "id": "c",
+          "text": "A heat map"
+        },
+        {
+          "id": "d",
+          "text": "A waterfall chart"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "KPI dashboards use different visual elements to communicate at a glance. A metric card (or scorecard) displays a single key number prominently, often with a small arrow or color indicating if it's trending up or down. These are the first things executives look at when opening a dashboard.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these steps in the correct order when reading an unfamiliar business chart for the first time: (a) Draw your conclusion, (b) Read the chart title and axis labels, (c) Look for the overall trend or pattern, (d) Check the scale and units on each axis.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Draw your conclusion"
+        },
+        {
+          "id": "b",
+          "text": "Read the chart title and axis labels"
+        },
+        {
+          "id": "c",
+          "text": "Look for the overall trend or pattern"
+        },
+        {
+          "id": "d",
+          "text": "Check the scale and units on each axis"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your colleague points out the y-axis is labeled in 'thousands' but one data point was entered in raw units. The chart shows Uber's January rides at 12 while other months show 8,500–9,200. What should you do first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delete the January data point entirely"
+        },
+        {
+          "id": "b",
+          "text": "Assume January was a bad month and present as-is"
+        },
+        {
+          "id": "c",
+          "text": "Verify the raw data source to confirm if it's a labeling error"
+        },
+        {
+          "id": "d",
+          "text": "Change the y-axis to raw units for all months"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "Previously you learned to always check axis labels and scales before drawing conclusions. Now a real-world data entry inconsistency has made one data point appear wildly off — the chart looks correct at first glance but the underlying data may be mislabeled.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

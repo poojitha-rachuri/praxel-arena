@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "cross-functional-alignment",
+  "mode": "LEARN",
+  "title": "RACI and Cross-Functional Communication Basics",
+  "description": "Learn how to use RACI matrices, working agreements, and async communication to align cross-functional teams.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "In a RACI matrix, which role has final sign-off authority on a deliverable?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Responsible — the person doing the work"
+        },
+        {
+          "id": "b",
+          "text": "Accountable — the person who approves the outcome"
+        },
+        {
+          "id": "c",
+          "text": "Consulted — the subject matter expert giving input"
+        },
+        {
+          "id": "d",
+          "text": "Informed — the person notified after completion"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A RACI matrix clarifies roles on cross-functional projects by assigning each person as Responsible, Accountable, Consulted, or Informed. For example, when Spotify launches a new feature, the product manager is typically Accountable (final sign-off), while engineers are Responsible (doing the build). Mixing these up is one of the top causes of project delays.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A project RACI shows 4 people marked 'Accountable' for the same deliverable, 2 marked 'Responsible,' and 0 'Consulted.' The project is 3 weeks behind schedule. What's the most likely root cause?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Too few people are doing the actual work"
+        },
+        {
+          "id": "b",
+          "text": "No subject matter experts were consulted"
+        },
+        {
+          "id": "c",
+          "text": "Multiple Accountable owners created unclear decision authority"
+        },
+        {
+          "id": "d",
+          "text": "Not enough people were kept informed"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "What is the primary purpose of a cross-functional working agreement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To legally bind teams to project deadlines"
+        },
+        {
+          "id": "b",
+          "text": "To set shared norms for communication, decisions, and escalation"
+        },
+        {
+          "id": "c",
+          "text": "To replace the need for regular standup meetings"
+        },
+        {
+          "id": "d",
+          "text": "To assign blame when deliverables are missed"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Working agreements are lightweight team contracts that define how people collaborate — things like response times, meeting norms, and escalation paths. At Atlassian, cross-functional squads create working agreements at project kickoff, covering topics like 'Slack messages get a response within 4 hours during business hours.' These agreements reduce friction by making expectations explicit before conflicts arise.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In async communication best practices, a message should include context, the specific ____, and a clear deadline for response.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask or decision needed"
+        },
+        {
+          "id": "b",
+          "text": "Project budget update"
+        },
+        {
+          "id": "c",
+          "text": "Team member's job title"
+        },
+        {
+          "id": "d",
+          "text": "Meeting calendar invite"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your cross-functional team spans 3 time zones (New York, London, Tokyo). You need a weekly sync to unblock dependencies. Do you optimize for maximum live attendance or go fully async?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rotate meeting times weekly so each timezone shares the burden"
+        },
+        {
+          "id": "b",
+          "text": "Pick the one overlapping hour and keep it consistent"
+        },
+        {
+          "id": "c",
+          "text": "Go fully async with a structured Slack/Loom update format"
+        },
+        {
+          "id": "d",
+          "text": "Hold two identical meetings so everyone attends a convenient one"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which standup format is best for surfacing cross-functional blockers quickly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Each person gives a 5-minute detailed progress report"
+        },
+        {
+          "id": "b",
+          "text": "Focus on blockers first, then quick progress and plans"
+        },
+        {
+          "id": "c",
+          "text": "Only the project manager speaks and assigns tasks"
+        },
+        {
+          "id": "d",
+          "text": "Skip standups entirely and use a shared spreadsheet"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Daily standups in cross-functional teams serve a different purpose than single-team standups — the goal is to surface dependencies and blockers between functions. At Shopify, cross-functional pods use a 'blockers-first' format: each person leads with what's stuck, then spends 15 seconds on progress. This keeps the meeting under 10 minutes and ensures the most critical alignment issues get airtime.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're kicking off a new cross-functional project with Engineering, Design, Marketing, and Legal. Rank these alignment activities from what you should do first to last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set up a recurring standup cadence"
+        },
+        {
+          "id": "b",
+          "text": "Define the RACI for key deliverables"
+        },
+        {
+          "id": "c",
+          "text": "Create an async communication channel with norms"
+        },
+        {
+          "id": "d",
+          "text": "Draft a working agreement on decisions and escalations"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Legal just flagged a compliance risk that requires sign-off before launch. No one on the RACI owns regulatory approval. Who should you escalate to, and what's your immediate action?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ask the engineering lead to handle it since they own the build"
+        },
+        {
+          "id": "b",
+          "text": "Escalate to the Accountable person to update the RACI and assign ownership"
+        },
+        {
+          "id": "c",
+          "text": "Pause the entire project until Legal resolves the issue independently"
+        },
+        {
+          "id": "d",
+          "text": "Add everyone on the team as Consulted for compliance"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You had a clean RACI and working agreement in place, but a new compliance requirement surfaced mid-project that no existing role covers. The launch date is in 2 weeks.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

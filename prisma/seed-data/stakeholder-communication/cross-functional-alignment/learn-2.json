@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "cross-functional-alignment",
+  "mode": "LEARN",
+  "title": "Working Agreements and Async Alignment",
+  "description": "Master working agreements, async communication protocols, and standup optimization for cross-functional teams.",
+  "difficulty": 3,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the primary purpose of a cross-functional working agreement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Define explicit norms for how teams collaborate and resolve conflicts"
+        },
+        {
+          "id": "b",
+          "text": "Assign individual performance goals across departments"
+        },
+        {
+          "id": "c",
+          "text": "Replace the need for regular standup meetings"
+        },
+        {
+          "id": "d",
+          "text": "Establish a strict hierarchy between functional teams"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "A working agreement is a documented set of norms that cross-functional teams co-create to define how they'll communicate, make decisions, and handle disagreements. When Spotify scaled its squad model, each squad established explicit working agreements covering response times, escalation paths, and meeting cadences — reducing inter-team friction by 40%.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company tracks cross-functional project metrics: avg Slack response time 6.2 hrs, meeting load 18 hrs/week per IC, async doc completion rate 34%, decision escalation rate 72%. Which metric most signals a broken working agreement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Slack response time is too slow for real-time work"
+        },
+        {
+          "id": "b",
+          "text": "Meeting load is excessive but common in cross-functional work"
+        },
+        {
+          "id": "c",
+          "text": "72% escalation rate shows teams can't resolve decisions themselves"
+        },
+        {
+          "id": "d",
+          "text": "34% async doc completion suggests low engagement"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When should a cross-functional team default to async communication over a synchronous meeting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "When team members span more than two time zones"
+        },
+        {
+          "id": "b",
+          "text": "When the topic requires status updates or information sharing"
+        },
+        {
+          "id": "c",
+          "text": "When there is active conflict between two team leads"
+        },
+        {
+          "id": "d",
+          "text": "When a VP requests a weekly project briefing"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "GitLab, a fully remote company with 1,500+ employees across 65 countries, codified an async-first protocol: meetings are reserved for real-time debate and relationship-building, while status updates, FYIs, and reviews happen via docs and recorded Loom videos. This reduced their meeting load by 35% while improving cross-functional throughput by 20%.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In async-first teams, a ____ is used to set the maximum acceptable delay before a teammate must acknowledge or respond to a cross-functional request.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Service-level agreement (SLA)"
+        },
+        {
+          "id": "b",
+          "text": "Response time norm"
+        },
+        {
+          "id": "c",
+          "text": "Escalation matrix"
+        },
+        {
+          "id": "d",
+          "text": "Communication charter"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your product launch team spans Engineering, Marketing, and Legal across 3 time zones. Standups keep getting skipped because no single time works. You must choose one approach immediately.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rotate standup times weekly so the burden is shared"
+        },
+        {
+          "id": "b",
+          "text": "Replace standups with async video updates and a shared board"
+        },
+        {
+          "id": "c",
+          "text": "Hold two duplicate standups at different times daily"
+        },
+        {
+          "id": "d",
+          "text": "Cancel standups and rely on weekly sync meetings instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "What distinguishes a high-performing cross-functional standup from a status-reporting meeting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It focuses on surfacing blockers and cross-team dependencies"
+        },
+        {
+          "id": "b",
+          "text": "Each person reports what they did yesterday in detail"
+        },
+        {
+          "id": "c",
+          "text": "The project manager asks each team member for updates"
+        },
+        {
+          "id": "d",
+          "text": "It lasts exactly 15 minutes regardless of team size"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "When Stripe's payments team restructured their cross-functional standups, they shifted from 'what did you do' to 'what's blocked and who needs to unblock it.' They introduced a pre-standup async check-in where members flagged dependencies, so the live 12-minute sync focused purely on resolution. Cycle time on cross-team deliverables dropped 28% in one quarter.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're establishing a working agreement for a new cross-functional pod at a fintech startup. Rank these elements from most to least critical to define first.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Preferred tools for async updates (Slack channels, Notion, Loom)"
+        },
+        {
+          "id": "b",
+          "text": "Decision rights: who can approve, who must be consulted"
+        },
+        {
+          "id": "c",
+          "text": "Response time norms for cross-team requests"
+        },
+        {
+          "id": "d",
+          "text": "Meeting cadence and agenda ownership for recurring syncs"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your CEO just acquired a 50-person European team. They operate on a 6-hour timezone gap and use Jira instead of your Notion-based async system. How do you adapt your working agreement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mandate the European team migrate to Notion within 30 days"
+        },
+        {
+          "id": "b",
+          "text": "Create a bridging protocol with shared norms and tool-agnostic handoffs"
+        },
+        {
+          "id": "c",
+          "text": "Let each team keep their own system and sync weekly"
+        },
+        {
+          "id": "d",
+          "text": "Hire a dedicated integration PM to manage all communication"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously your working agreement assumed a single-tool async system and overlapping US time zones. Now a major acquisition introduces a European team with different tools and a 6-hour gap, forcing you to rethink your alignment approach.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

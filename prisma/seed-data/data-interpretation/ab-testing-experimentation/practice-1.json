@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "ab-testing-experimentation",
+  "mode": "PRACTICE",
+  "title": "Experiment Design Under Real-World Pressure",
+  "description": "Practice navigating advanced A/B testing decisions involving statistical rigor, experiment pitfalls, and strategic tradeoffs.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Spotify tests a new playlist algorithm. After 3 days on a 14-day test, variant B shows +12% engagement (p=0.03). Control had a known seasonal dip yesterday. What's the key concern?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The p-value is too low to be believable"
+        },
+        {
+          "id": "b",
+          "text": "Peeking at results early inflates false positive rate"
+        },
+        {
+          "id": "c",
+          "text": "Sample size is always sufficient after 3 days"
+        },
+        {
+          "id": "d",
+          "text": "Seasonal effects and early stopping both threaten validity"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "Your e-commerce team can run one experiment this quarter. Option A: test a checkout redesign (high revenue impact, 8-week runtime needed). Option B: test homepage banner copy (lower impact, 2-week runtime, frees capacity for 3 more tests). Revenue targets are aggressive.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Run the checkout redesign — maximize expected revenue impact"
+        },
+        {
+          "id": "b",
+          "text": "Run the banner test and use remaining time for more experiments"
+        },
+        {
+          "id": "c",
+          "text": "Run both simultaneously to save time"
+        },
+        {
+          "id": "d",
+          "text": "Skip testing and ship the checkout redesign based on UX research"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 3,
+      "prompt": "When multiple metrics are tested in one experiment, the probability of at least one false positive increases — this is called the ____ problem.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Multiple comparisons"
+        },
+        {
+          "id": "b",
+          "text": "Simpson's paradox"
+        },
+        {
+          "id": "c",
+          "text": "Selection bias"
+        },
+        {
+          "id": "d",
+          "text": "Regression to the mean"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 4,
+      "prompt": "Airbnb's pricing experiment shows: Variant A lifts booking rate by +5% (p=0.04) but average revenue per booking drops -3% (p=0.09). Control: 10% booking rate, $150 avg booking. What matters most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Booking rate is significant so ship Variant A immediately"
+        },
+        {
+          "id": "b",
+          "text": "Neither metric is significant enough to act on"
+        },
+        {
+          "id": "c",
+          "text": "Evaluate net revenue impact — the composite metric drives the decision"
+        },
+        {
+          "id": "d",
+          "text": "The revenue drop isn't significant so it can be ignored"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these steps for designing a rigorous A/B test from FIRST to LAST: (a) Calculate required sample size, (b) Define primary metric and hypothesis, (c) Decide on significance threshold and power, (d) Launch experiment and monitor guardrail metrics.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate required sample size"
+        },
+        {
+          "id": "b",
+          "text": "Define primary metric and hypothesis"
+        },
+        {
+          "id": "c",
+          "text": "Decide on significance threshold and power"
+        },
+        {
+          "id": "d",
+          "text": "Launch experiment and monitor guardrail metrics"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "DoorDash runs a delivery fee experiment. At 80% power, you need 4 weeks. Leadership wants results in 2 weeks. You can either reduce minimum detectable effect from 2% to 5%, or switch to a less precise proxy metric with faster signal. Which tradeoff do you accept?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accept larger MDE — only detect big effects but keep true metric"
+        },
+        {
+          "id": "b",
+          "text": "Switch to proxy metric for speed and validate later"
+        },
+        {
+          "id": "c",
+          "text": "Run for 2 weeks and accept low power on original design"
+        },
+        {
+          "id": "d",
+          "text": "Push back on leadership and insist on 4 weeks"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "An A/B test concluded with p=0.048 and a 3% conversion lift. Rank these post-analysis checks from MOST to LEAST critical: (a) Check for sample ratio mismatch, (b) Segment results by device type, (c) Verify no overlapping experiments contaminated results, (d) Compute confidence interval width around the effect.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Check for sample ratio mismatch"
+        },
+        {
+          "id": "b",
+          "text": "Segment results by device type"
+        },
+        {
+          "id": "c",
+          "text": "Verify no overlapping experiment contamination"
+        },
+        {
+          "id": "d",
+          "text": "Compute confidence interval width around effect size"
+        }
+      ],
+      "correctAnswer": "a,c,d,b",
+      "insightAnswer": "a,c,d,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Post-launch monitoring reveals the winning variant's lift has decayed from +5% to +1.2% over 4 weeks. Power users adapted quickly but new users still show a +4.8% lift. How should you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Roll back — the novelty effect invalidates the experiment entirely"
+        },
+        {
+          "id": "b",
+          "text": "Keep the variant but redesign for power user engagement separately"
+        },
+        {
+          "id": "c",
+          "text": "Ignore the decay — the original test was statistically valid"
+        },
+        {
+          "id": "d",
+          "text": "Rerun the full experiment from scratch with longer duration"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously shipped a winning A/B test variant for Netflix's recommendation UI with a +5% watch-time lift at p=0.02 after a properly powered 3-week experiment. Now real-world performance is diverging from test results.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

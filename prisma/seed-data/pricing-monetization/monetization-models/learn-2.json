@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "monetization-models",
+  "mode": "LEARN",
+  "title": "Hybrid Models and Monetization Tradeoffs",
+  "description": "Master the strategic tradeoffs between hybrid monetization models and learn when to combine pricing approaches.",
+  "difficulty": 3,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the primary strategic advantage of a hybrid monetization model over a single-model approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It eliminates the need for customer segmentation entirely"
+        },
+        {
+          "id": "b",
+          "text": "It captures value from multiple customer segments with different willingness to pay"
+        },
+        {
+          "id": "c",
+          "text": "It always generates higher revenue than any single model"
+        },
+        {
+          "id": "d",
+          "text": "It reduces operational complexity compared to single models"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Hybrid monetization models combine two or more pricing approaches—like Slack's freemium + per-seat subscription, or AWS mixing subscription reserved instances with usage-based on-demand pricing. The key insight is that different customer segments value products differently, and a single model often leaves money on the table or locks out potential users.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A B2B SaaS company reports: Freemium users: 500K (2% convert to paid). Usage-based revenue: $4M/yr from enterprise. Subscription revenue: $12M/yr from mid-market. Enterprise churn: 3%, mid-market churn: 11%. What's the most critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Freemium conversion rate is below industry average"
+        },
+        {
+          "id": "b",
+          "text": "Usage-based enterprise segment has far lower churn and higher growth potential"
+        },
+        {
+          "id": "c",
+          "text": "Subscription revenue is 3x usage-based, so double down on subscriptions"
+        },
+        {
+          "id": "d",
+          "text": "500K freemium users represent untapped advertising revenue"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Why did Spotify choose to keep its free ad-supported tier even after reaching 200M+ paid subscribers?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ad revenue exceeds subscription revenue per user"
+        },
+        {
+          "id": "b",
+          "text": "The free tier serves as a low-friction acquisition funnel for paid conversion"
+        },
+        {
+          "id": "c",
+          "text": "Music licensing costs are the same regardless of tier"
+        },
+        {
+          "id": "d",
+          "text": "Regulators required them to maintain a free option"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Freemium models aren't just about free users—they're an acquisition engine. Spotify's free tier costs them roughly €0.50/user/month in licensing, but converts ~27% of free users to premium over time at €10.99/month. The economic math works because the lifetime value of converted users vastly exceeds the cost of subsidizing the free tier.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In a usage-based model, revenue scales with customer ____, which naturally aligns vendor success with customer value but creates ____ in revenue forecasting.",
+      "options": [
+        {
+          "id": "a",
+          "text": "consumption; volatility"
+        },
+        {
+          "id": "b",
+          "text": "headcount; simplicity"
+        },
+        {
+          "id": "c",
+          "text": "satisfaction; accuracy"
+        },
+        {
+          "id": "d",
+          "text": "contracts; predictability"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You run a project management tool with 80% SMB customers on $29/mo subscriptions. Enterprise prospects want usage-based pricing tied to projects. Adding usage-based pricing risks SMB confusion. What's your move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep flat subscriptions only—SMBs are your core and simplicity drives growth"
+        },
+        {
+          "id": "b",
+          "text": "Launch a separate enterprise product with usage-based pricing under a different brand"
+        },
+        {
+          "id": "c",
+          "text": "Add an enterprise tier with usage-based pricing while keeping SMB plans unchanged"
+        },
+        {
+          "id": "d",
+          "text": "Migrate all customers to usage-based pricing for consistency"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "What is the biggest risk when a marketplace like Uber shifts from a pure take-rate model to adding a subscription (Uber One)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Subscribers may cannibalize high-margin on-demand rides with discounted trips"
+        },
+        {
+          "id": "b",
+          "text": "Drivers will refuse to serve subscription customers"
+        },
+        {
+          "id": "c",
+          "text": "Subscription models are illegal in marketplace businesses"
+        },
+        {
+          "id": "d",
+          "text": "Subscribers always churn faster than on-demand users"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "When marketplaces add subscriptions, they're betting that predictable recurring revenue and increased frequency will offset margin compression. Uber One subscribers take 4x more rides but at lower per-ride margins. The math only works if the subscription drives incremental trips—not just discounting rides customers would have taken anyway. This cannibalization risk is the central tension in marketplace hybrid models.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A cloud analytics startup wants to transition from pure subscription to a hybrid model. Rank these steps from first to last in implementation priority.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Launch usage-based pricing to all new customers simultaneously"
+        },
+        {
+          "id": "b",
+          "text": "Instrument product to track granular usage metrics per customer"
+        },
+        {
+          "id": "c",
+          "text": "Analyze existing usage data to identify which metric correlates with customer value"
+        },
+        {
+          "id": "d",
+          "text": "Pilot hybrid pricing with 10-15 willing customers and measure impact"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your hybrid freemium + subscription API platform just learned that a major competitor is going fully open-source with a usage-based hosted option at 40% lower cost. How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Match competitor pricing across all tiers immediately to prevent churn"
+        },
+        {
+          "id": "b",
+          "text": "Double down on enterprise features, SLAs, and support as premium differentiators"
+        },
+        {
+          "id": "c",
+          "text": "Open-source your core product too and compete purely on hosted pricing"
+        },
+        {
+          "id": "d",
+          "text": "Eliminate the free tier to focus resources on paying customers only"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you had a stable hybrid model with freemium driving developer adoption and subscriptions driving revenue. Now a well-funded competitor has disrupted the market by open-sourcing their core and undercutting on price, threatening your acquisition funnel and your paid conversion rates.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

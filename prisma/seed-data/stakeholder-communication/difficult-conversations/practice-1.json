@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "difficult-conversations",
+  "mode": "PRACTICE",
+  "title": "Navigating High-Stakes Difficult Conversations",
+  "description": "Practice structuring and delivering difficult messages to senior stakeholders under pressure with strategic precision.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Your team's quarterly engagement survey shows: eNPS dropped from 42 to 18, voluntary attrition rose from 8% to 14%, and 67% of comments cite 'lack of transparency from leadership.' You need to brief your VP. What's the critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attrition is the urgent problem requiring immediate hiring action"
+        },
+        {
+          "id": "b",
+          "text": "eNPS decline is severe but likely seasonal fluctuation"
+        },
+        {
+          "id": "c",
+          "text": "Transparency perception is the root cause driving both eNPS and attrition"
+        },
+        {
+          "id": "d",
+          "text": "All three metrics are equally important and need parallel action"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "You're CFO at a Series D startup. Revenue missed forecast by 22%, and your board meeting is in 48 hours. Your CEO wants to present an optimistic recovery narrative; your data suggests a 2-quarter correction. How do you approach the board?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Support CEO's optimistic narrative to maintain board confidence"
+        },
+        {
+          "id": "b",
+          "text": "Present the data-backed 2-quarter correction with a clear action plan"
+        },
+        {
+          "id": "c",
+          "text": "Delay the board meeting to buy time for better numbers"
+        },
+        {
+          "id": "d",
+          "text": "Present both scenarios and let the board decide which is realistic"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 3,
+      "prompt": "When delivering bad news to a senior stakeholder, the most effective structure is: lead with the ____, then provide context, then present the path forward—never bury the headline.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Impact on their priorities"
+        },
+        {
+          "id": "b",
+          "text": "Historical background and root cause"
+        },
+        {
+          "id": "c",
+          "text": "Key decision you need from them"
+        },
+        {
+          "id": "d",
+          "text": "Worst-case scenario to anchor expectations"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 4,
+      "prompt": "You must inform a key client (Deloitte) that your SaaS platform migration will be delayed by 6 weeks, impacting their Q4 audit cycle. Rank these conversation elements from first to last in your call.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Explain the technical root cause of the delay"
+        },
+        {
+          "id": "b",
+          "text": "State the delay and its specific impact on their Q4 timeline"
+        },
+        {
+          "id": "c",
+          "text": "Present your mitigation plan with interim workarounds and new dates"
+        },
+        {
+          "id": "d",
+          "text": "Acknowledge the relationship value and invite their input on priorities"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 5,
+      "prompt": "You gave a high-performing director constructive feedback about her cross-functional collaboration. Two weeks later: her output quality is unchanged, she's stopped attending optional leadership meetings, and her Slack messages to peers dropped 40%. What signal matters most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Output is unchanged so the feedback had no negative effect"
+        },
+        {
+          "id": "b",
+          "text": "Reduced peer communication signals defensive withdrawal from the feedback"
+        },
+        {
+          "id": "c",
+          "text": "Skipping optional meetings shows healthy time management prioritization"
+        },
+        {
+          "id": "d",
+          "text": "She needs a formal PIP to address the collaboration gap"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 6,
+      "prompt": "You're SVP at Salesforce. Your division must cut $12M in budget, eliminating either the 30-person innovation lab (long-term R&D) or the 25-person client success team (drives 18% of renewals worth $40M ARR). You must announce the decision at an all-hands in 3 days.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cut the innovation lab and frame it as protecting current customers"
+        },
+        {
+          "id": "b",
+          "text": "Cut client success and frame it as investing in future growth"
+        },
+        {
+          "id": "c",
+          "text": "Split cuts across both teams to share the burden equally"
+        },
+        {
+          "id": "d",
+          "text": "Propose a third option: defer the decision pending deeper analysis"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "Your startup's Series C lead investor just learned your CAC increased 35% while LTV decreased 12%. Rank the order you address these points in a difficult investor call.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Specific initiatives already underway to reverse the CAC/LTV trend"
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge the metrics honestly with precise numbers and timeline"
+        },
+        {
+          "id": "c",
+          "text": "Request specific support or decisions needed from the investor"
+        },
+        {
+          "id": "d",
+          "text": "Explain market context and competitive dynamics driving the shift"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your prepared budget-cut announcement, a senior engineer publicly asks: 'Did leadership take any pay cuts before eliminating 30 jobs?' The room goes silent. 200 employees are watching. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deflect by saying compensation details are confidential and move on"
+        },
+        {
+          "id": "b",
+          "text": "Answer directly—state what leadership sacrificed, or honestly say they haven't yet"
+        },
+        {
+          "id": "c",
+          "text": "Thank them for the question and promise to follow up via email"
+        },
+        {
+          "id": "d",
+          "text": "Reframe the question toward the support packages for affected employees"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You were delivering the Salesforce innovation lab budget cut announcement at the all-hands when an unexpected public challenge disrupted your prepared remarks, testing your ability to maintain credibility under live pressure.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}
