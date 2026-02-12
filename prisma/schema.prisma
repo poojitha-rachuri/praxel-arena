@@ -66,6 +66,7 @@ model Skill {
   createdAt   DateTime         @default(now())
 
   careerMaps  SkillCareerMap[]
+  topics      Topic[]
   sprints     Sprint[]
   interactions Interaction[]
   skillScores UserSkillScore[]
@@ -84,6 +85,25 @@ model SkillCareerMap {
   careerOutcome   CareerOutcome @relation(fields: [careerOutcomeId], references: [id], onDelete: Cascade)
 
   @@unique([skillId, careerOutcomeId])
+}
+
+// ─── Topics ─────────────────────────────────────────────
+
+model Topic {
+  id          String   @id @default(cuid())
+  skillId     String
+  name        String
+  slug        String
+  description String?
+  order       Int      @default(0)
+  icon        String?
+  createdAt   DateTime @default(now())
+
+  skill       Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  sprints     Sprint[]
+
+  @@unique([skillId, slug])
+  @@index([skillId, order])
 }
 
 // ─── Sprints & Interactions ──────────────────────────────
@@ -106,6 +126,7 @@ enum InteractionType {
 model Sprint {
   id          String              @id @default(cuid())
   skillId     String
+  topicId     String?
   mode        SprintMode
   title       String
   description String?
@@ -117,12 +138,14 @@ model Sprint {
   createdAt   DateTime            @default(now())
 
   skill       Skill               @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  topic       Topic?              @relation(fields: [topicId], references: [id], onDelete: SetNull)
   interactions Interaction[]
   attempts    SprintAttempt[]
   careerLinks SprintCareerOutcome[]
   duels       Duel[]
 
   @@index([skillId, mode, level, order])
+  @@index([topicId, mode, order])
 }
 
 model Interaction {
