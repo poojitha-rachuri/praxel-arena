@@ -1,12 +1,13 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
+import { BookOpen, Target, Swords } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const modes = [
-  { value: "learn", label: "Learn" },
-  { value: "practice", label: "Practice" },
-  { value: "compete", label: "Compete" },
+  { value: "learn", label: "Learn", icon: BookOpen },
+  { value: "practice", label: "Practice", icon: Target },
+  { value: "compete", label: "Compete", icon: Swords },
 ] as const;
 
 export default function ModeSelector() {
@@ -23,9 +24,10 @@ export default function ModeSelector() {
       className="w-full"
     >
       <TabsList className="w-full">
-        {modes.map((mode) => (
-          <TabsTrigger key={mode.value} value={mode.value} className="flex-1">
-            {mode.label}
+        {modes.map(({ value, label, icon: Icon }) => (
+          <TabsTrigger key={value} value={value} className="flex-1 gap-1.5">
+            <Icon className="size-3.5" />
+            {label}
           </TabsTrigger>
         ))}
       </TabsList>
