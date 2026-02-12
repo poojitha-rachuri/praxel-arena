@@ -1,10 +1,22 @@
-import { redirect } from "next/navigation";
+import { redirect, notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { notFound } from "next/navigation";
 import AppShell from "@/components/layout/AppShell";
 import ResultsReveal from "@/components/layout/ResultsReveal";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import type { DimensionScores, EnrichedResponse } from "@/types";
+
+/** Runtime type guard for enriched responses stored as JSON in the DB */
+function isEnrichedResponseArray(value: unknown): value is EnrichedResponse[] {
+  if (!Array.isArray(value) || value.length === 0) return false;
+  const first = value[0];
+  return (
+    typeof first === "object" &&
+    first !== null &&
+    "interactionId" in first &&
+    "isCorrect" in first &&
+    "score" in first
+  );
+}
 
 export default async function ResultsPage({
   params,
@@ -53,11 +65,10 @@ export default async function ResultsPage({
   const improvements = (attempt.improvements as string[] | null) ?? [];
 
   // Parse enriched responses (may be missing for old attempts pre-migration)
-  const rawResponses = attempt.responses as unknown[];
-  const enrichedResponses: EnrichedResponse[] | null =
-    Array.isArray(rawResponses) && rawResponses.length > 0 && typeof (rawResponses[0] as Record<string, unknown>).isCorrect === "boolean"
-      ? (rawResponses as unknown as EnrichedResponse[])
-      : null;
+  const rawResponses = attempt.responses;
+  const enrichedResponses: EnrichedResponse[] | null = isEnrichedResponseArray(rawResponses)
+    ? rawResponses
+    : null;
 
   return (
     <AppShell hideBottomNav>

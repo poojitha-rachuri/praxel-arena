@@ -203,6 +203,7 @@ model SprintAttempt {
   @@index([userId, completedAt])
   @@index([userId, mode])
   @@index([sprintId])
+  @@index([userId, sprintId, completedAt])
 }
 
 model UserSkillScore {

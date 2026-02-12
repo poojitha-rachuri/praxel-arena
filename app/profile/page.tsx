@@ -10,38 +10,58 @@ export default async function ProfilePage() {
   const baseUser = await ensureUser();
   if (!baseUser) redirect("/sign-in");
 
-  const user = await prisma.user.findUnique({
-    where: { id: baseUser.id },
-    include: {
-      skillScores: {
-        include: {
-          skill: {
-            select: { id: true, name: true, slug: true, icon: true },
+  // Run user data and recent attempts queries in parallel
+  const [user, recentAttempts] = await Promise.all([
+    prisma.user.findUnique({
+      where: { id: baseUser.id },
+      include: {
+        skillScores: {
+          include: {
+            skill: {
+              select: { id: true, name: true, slug: true, icon: true },
+            },
           },
         },
-      },
-      eloRatings: {
-        include: {
-          skill: {
-            select: { id: true, name: true, slug: true },
+        eloRatings: {
+          include: {
+            skill: {
+              select: { id: true, name: true, slug: true },
+            },
           },
         },
-      },
-      careerGoals: {
-        include: {
-          careerOutcome: {
-            include: {
-              skillMaps: {
-                include: {
-                  skill: { select: { id: true } },
+        careerGoals: {
+          include: {
+            careerOutcome: {
+              include: {
+                skillMaps: {
+                  include: {
+                    skill: { select: { id: true } },
+                  },
                 },
               },
             },
           },
         },
       },
-    },
-  });
+    }),
+    prisma.sprintAttempt.findMany({
+      where: { userId: baseUser.id, completedAt: { not: null } },
+      orderBy: { completedAt: "desc" },
+      take: 6, // +1 for cursor detection
+      select: {
+        id: true,
+        mode: true,
+        totalScore: true,
+        completedAt: true,
+        sprint: {
+          select: {
+            title: true,
+            skill: { select: { name: true, slug: true, icon: true } },
+          },
+        },
+      },
+    }),
+  ]);
 
   if (!user) redirect("/onboarding");
 
@@ -77,25 +97,6 @@ export default async function ProfilePage() {
       score: Math.round(ss.overallScore),
       eloRating: elo?.rating ?? undefined,
     };
-  });
-
-  // Fetch recent attempts for history section (initial 5)
-  const recentAttempts = await prisma.sprintAttempt.findMany({
-    where: { userId: user.id, completedAt: { not: null } },
-    orderBy: { completedAt: "desc" },
-    take: 6, // +1 for cursor detection
-    select: {
-      id: true,
-      mode: true,
-      totalScore: true,
-      completedAt: true,
-      sprint: {
-        select: {
-          title: true,
-          skill: { select: { name: true, slug: true, icon: true } },
-        },
-      },
-    },
   });
 
   const hasMoreAttempts = recentAttempts.length > 5;

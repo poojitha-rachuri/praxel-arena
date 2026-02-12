@@ -6,7 +6,19 @@ import RadarChart from "@/components/skill-graph/RadarChart";
 import SkillCard from "@/components/skill-graph/SkillCard";
 import CareerMatchBar from "@/components/skill-graph/CareerMatchBar";
 import AttemptHistory from "@/components/profile/AttemptHistory";
-import ProgressCharts from "@/components/profile/ProgressCharts";
+import dynamic from "next/dynamic";
+
+const ProgressCharts = dynamic(
+  () => import("@/components/profile/ProgressCharts"),
+  {
+    loading: () => (
+      <div className="flex items-center justify-center h-48 text-sm text-muted-foreground">
+        Loading progress...
+      </div>
+    ),
+    ssr: false,
+  }
+);
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";

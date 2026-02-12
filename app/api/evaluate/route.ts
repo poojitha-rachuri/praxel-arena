@@ -240,6 +240,14 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Strip correctAnswer/insightAnswer from enriched responses to prevent answer leaks
+    const sanitizedEvaluation = {
+      ...evaluation,
+      enrichedResponses: evaluation.enrichedResponses?.map(
+        ({ correctAnswer, insightAnswer, ...rest }) => rest
+      ),
+    };
+
     return NextResponse.json({
       attempt: {
         id: attempt.id,
@@ -248,7 +256,7 @@ export async function POST(request: NextRequest) {
         totalScore: evaluation.totalScore,
         completedAt: attempt.completedAt,
       },
-      evaluation,
+      evaluation: sanitizedEvaluation,
     });
   } catch (error) {
     const errorId = crypto.randomUUID();

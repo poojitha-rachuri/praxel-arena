@@ -99,7 +99,10 @@ export default function ProgressCharts({ skills }: ProgressChartsProps) {
         : `/api/progress?skill=${encodeURIComponent(selectedSkill)}`;
 
     fetch(url)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`Progress fetch failed: ${res.status}`);
+        return res.json();
+      })
       .then((json) => {
         if (!cancelled) {
           setData(json);

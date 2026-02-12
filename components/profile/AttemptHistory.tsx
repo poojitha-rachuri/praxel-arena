@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import { Clock, ChevronDown, BookOpen, Target, Swords } from "lucide-react";
@@ -132,9 +132,11 @@ export default function AttemptHistory({
   const [attempts, setAttempts] = useState(initialAttempts);
   const [cursor, setCursor] = useState(initialCursor);
   const [loading, setLoading] = useState(false);
+  const loadingRef = useRef(false);
 
   const loadMore = useCallback(async () => {
-    if (!cursor || loading) return;
+    if (!cursor || loadingRef.current) return;
+    loadingRef.current = true;
     setLoading(true);
     try {
       const res = await fetch(`/api/attempts?limit=20&cursor=${encodeURIComponent(cursor)}`);
@@ -143,9 +145,10 @@ export default function AttemptHistory({
       setAttempts((prev) => [...prev, ...data.attempts]);
       setCursor(data.nextCursor);
     } finally {
+      loadingRef.current = false;
       setLoading(false);
     }
-  }, [cursor, loading]);
+  }, [cursor]);
 
   if (attempts.length === 0) {
     return (
