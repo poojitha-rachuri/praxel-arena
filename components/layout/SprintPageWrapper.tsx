@@ -5,32 +5,21 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { SprintRunner } from "@/components/interactions/SprintRunner";
+import type { Sprint } from "@/components/interactions/SprintRunner";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import type { SprintResponse } from "@/types";
 
-interface Interaction {
-  id: string;
-  type: string;
-  order: number;
-  prompt: string;
-  options: unknown;
-  correctAnswer: string | null;
-  insightAnswer: string | null;
-  teachingPreamble: string | null;
-  priorContext: string | null;
-  timeTarget: number;
-}
-
-interface Sprint {
-  id: string;
-  title: string;
-  description: string | null;
-  mode: string;
-  difficulty: number;
-  interactions: Interaction[];
-}
-
 interface SprintPageWrapperProps {
-  sprint: Sprint;
+  sprint: Required<Sprint>;
   skillSlug: string;
 }
 
@@ -43,6 +32,18 @@ export default function SprintPageWrapper({
   const router = useRouter();
   const [evalState, setEvalState] = useState<EvalState>("running");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [showExitDialog, setShowExitDialog] = useState(false);
+
+  const handleExitRequest = useCallback(() => {
+    // Don't allow exit during evaluation
+    if (evalState !== "running") return;
+    setShowExitDialog(true);
+  }, [evalState]);
+
+  const handleExitConfirm = useCallback(() => {
+    setShowExitDialog(false);
+    router.push(`/${sprint.mode.toLowerCase()}`);
+  }, [router, sprint.mode]);
 
   const handleComplete = useCallback(
     async (responses: SprintResponse[]) => {
@@ -99,6 +100,8 @@ export default function SprintPageWrapper({
               sprint={sprint}
               onComplete={handleComplete}
               mode={sprint.mode as "LEARN" | "PRACTICE" | "COMPETE"}
+              onExit={handleExitRequest}
+              exitPending={showExitDialog}
             />
           </motion.div>
         )}
@@ -157,6 +160,24 @@ export default function SprintPageWrapper({
           </motion.div>
         )}
       </AnimatePresence>
+
+      <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Leave this sprint?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Your progress won&apos;t be saved. You can restart this sprint
+              anytime.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Keep going</AlertDialogCancel>
+            <AlertDialogAction onClick={handleExitConfirm}>
+              Leave sprint
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

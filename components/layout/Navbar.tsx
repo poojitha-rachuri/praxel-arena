@@ -7,8 +7,7 @@ import useSWR from "swr";
 import ThemeToggle from "./ThemeToggle";
 import { XpBar } from "@/components/gamification/XpBar";
 import { StreakDisplay } from "@/components/gamification/StreakDisplay";
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+import { fetcher } from "@/lib/swr/fetcher";
 
 export default function Navbar() {
   const { data: gam, error } = useSWR("/api/gamification", fetcher, {

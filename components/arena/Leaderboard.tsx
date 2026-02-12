@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { ELO_PROVISIONAL_THRESHOLD } from "@/lib/utils/constants";
+import { fetcher } from "@/lib/swr/fetcher";
 
 interface LeaderboardProps {
   skillSlug: string;
@@ -21,8 +22,6 @@ interface LeaderboardEntryData {
   eloRating: number;
   matchCount: number;
 }
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 function SkeletonRow() {
   return (

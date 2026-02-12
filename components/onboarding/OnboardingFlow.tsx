@@ -7,6 +7,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import CareerSelector, { type Career } from "./CareerSelector";
 import { Button } from "@/components/ui/button";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface SkillMapping {
   id: string;
@@ -165,7 +166,7 @@ export default function OnboardingFlow({
                   }}
                   className="flex items-center gap-3 rounded-xl border border-border bg-card p-3"
                 >
-                  <span className="text-xl">{skill.icon ?? "🎯"}</span>
+                  <SkillIcon slug={skill.slug} size="sm" />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold">{skill.name}</p>
                     {skill.description && (

@@ -5,12 +5,12 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Trophy, Timer, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+import { fetcher } from "@/lib/swr/fetcher";
 
 export function ActiveChallengeBanner() {
   const { data, error } = useSWR("/api/challenges", fetcher, {
-    refreshInterval: 60000,
+    refreshInterval: 300000,
+    revalidateOnFocus: false,
   });
 
   if (error) return null;

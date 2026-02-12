@@ -4,6 +4,7 @@ import useSWR from "swr";
 import { motion } from "motion/react";
 import { Trophy, Timer, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { fetcher } from "@/lib/swr/fetcher";
 
 interface LeaderboardEntry {
   rank: number;
@@ -19,8 +20,6 @@ interface ChallengeLeaderboardProps {
   challengeId: string;
   type: "SPEED_ROUND" | "SCORE_ATTACK";
 }
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 function formatTime(ms: number): string {
   const secs = Math.floor(ms / 1000);

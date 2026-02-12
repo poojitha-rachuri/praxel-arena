@@ -5,18 +5,9 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronRight, Check, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 import Link from "next/link";
 import type { ModePageSkill, TopicMeta, SprintMeta } from "@/lib/data/mode-page-data";
-
-// Skill accent colors for left border
-const SKILL_ACCENTS: Record<string, string> = {
-  guesstimation: "border-l-amber-500",
-  "data-interpretation": "border-l-sky-500",
-  "gtm-strategy": "border-l-emerald-500",
-  "pricing-monetization": "border-l-violet-500",
-  prioritization: "border-l-rose-500",
-  "stakeholder-communication": "border-l-teal-500",
-};
 
 interface SkillAccordionProps {
   skills: ModePageSkill[];
@@ -37,10 +28,15 @@ export default function SkillAccordion({
   initialSkill,
   completedSprints = {},
 }: SkillAccordionProps) {
-  // Validate initialSkill against known slugs
+  // Validate initialSkill against known slugs; auto-expand first skill for new users
   const validSlugs = new Set(skills.map((s) => s.slug));
+  const hasCompletions = Object.keys(completedSprints).length > 0;
   const [expandedSlug, setExpandedSlug] = useState<string | undefined>(
-    initialSkill && validSlugs.has(initialSkill) ? initialSkill : undefined
+    initialSkill && validSlugs.has(initialSkill)
+      ? initialSkill
+      : !hasCompletions && skills.length > 0
+        ? skills[0].slug
+        : undefined
   );
   const expandedRef = useRef<HTMLDivElement>(null);
 
@@ -108,8 +104,6 @@ export default function SkillAccordion({
           (s) => s.id in completedSprints
         ).length;
         const totalCount = skillSprints.length;
-        const accentClass =
-          SKILL_ACCENTS[skill.slug] ?? "border-l-primary";
         const skillTopics = topicsBySkillId.get(skill.id) ?? [];
         const orphanSprints = sprintsBySkillNoTopic.get(skill.id) ?? [];
         const hasContent = totalCount > 0 || skillTopics.length > 0;
@@ -131,8 +125,7 @@ export default function SkillAccordion({
             <button
               onClick={() => toggleSkill(skill.slug)}
               className={cn(
-                "w-full flex items-center gap-3 rounded-xl px-4 py-3 min-h-[56px] text-left transition-all border-l-[3px]",
-                accentClass,
+                "w-full flex items-center gap-3 rounded-xl px-4 py-3 min-h-[56px] text-left transition-all",
                 isExpanded
                   ? "bg-surface-1 ring-1 ring-border"
                   : "bg-surface-1 hover:bg-surface-2"
@@ -143,9 +136,7 @@ export default function SkillAccordion({
                   : "inset 0 0 0 1px oklch(1 0 0 / 8%)",
               }}
             >
-              <span className="text-xl shrink-0">
-                {skill.icon ?? "🎯"}
-              </span>
+              <SkillIcon slug={skill.slug} />
 
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold leading-tight truncate">

@@ -658,6 +658,69 @@ async function main() {
     }
   }
 
+  // ─── Seed Challenges ────────────────────────────────────────────────────────
+
+  const now = new Date();
+  const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
+  const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+  const challengeSeeds = [
+    {
+      templateId: "quick-fire",
+      type: "SPEED_ROUND" as const,
+      name: "Quick Fire",
+      description: "Answer 20 interactions in 5 minutes. Speed + accuracy wins.",
+      config: { interactionCount: 20, timeLimitMs: 300000, accuracyThreshold: 0.7 },
+      startsAt: now,
+      endsAt: tomorrow,
+      rewardXpFirst: 250,
+      rewardXpTenth: 50,
+    },
+    {
+      templateId: "daily-spotlight",
+      type: "SCORE_ATTACK" as const,
+      name: "Daily Spotlight",
+      description: "Beat the high score on today's featured sprint.",
+      config: { timeLimitMs: 300000 },
+      startsAt: now,
+      endsAt: tomorrow,
+      rewardXpFirst: 300,
+      rewardXpTenth: 75,
+    },
+    {
+      templateId: "weekly-master",
+      type: "SCORE_ATTACK" as const,
+      name: "Weekly Master",
+      description: "Advanced difficulty, highest score wins. Resets weekly.",
+      config: { timeLimitMs: 300000, difficulty: 3 },
+      startsAt: now,
+      endsAt: nextWeek,
+      rewardXpFirst: 300,
+      rewardXpTenth: 75,
+    },
+  ];
+
+  let challengeCount = 0;
+  // Pick a random skill for each challenge
+  const skillIds = [...skillMap.values()];
+
+  for (const seed of challengeSeeds) {
+    const existing = await prisma.challenge.findFirst({
+      where: { templateId: seed.templateId, isActive: true },
+    });
+    if (existing) continue;
+
+    await prisma.challenge.create({
+      data: {
+        ...seed,
+        skillId: skillIds[challengeCount % skillIds.length],
+        isActive: true,
+      },
+    });
+    challengeCount++;
+  }
+  console.log(`  ${challengeCount} challenges seeded`);
+
   console.log("Seeding complete.");
 }
 

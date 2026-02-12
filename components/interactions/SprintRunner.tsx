@@ -53,6 +53,8 @@ interface SprintRunnerProps {
   sprint: Sprint;
   onComplete: (responses: SprintResponse[]) => void;
   mode: "LEARN" | "PRACTICE" | "COMPETE";
+  onExit?: () => void;
+  exitPending?: boolean;
 }
 
 // ─── Helper: parse options from DB JSON ─────────────────
@@ -70,7 +72,7 @@ function parseOptions(raw: InteractionOption[] | unknown): InteractionOption[] {
 
 // ─── Sprint Runner ──────────────────────────────────────
 
-export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
+export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: SprintRunnerProps) {
   // Sort interactions by order
   const sortedInteractions = useMemo(
     () => [...sprint.interactions].sort((a, b) => a.order - b.order),
@@ -120,6 +122,8 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
   /** Advance to next card or complete sprint — guarded against double-fire from Continue + auto-advance race */
   const advance = useCallback(() => {
     if (advancingRef.current) return;
+    // Block timer-driven advance while exit dialog is open
+    if (exitPending) return;
     advancingRef.current = true;
 
     if (feedbackTimerRef.current) {
@@ -139,11 +143,13 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
       cardStartTimeRef.current = Date.now();
       advancingRef.current = false;
     }
-  }, [currentIndex, totalInteractions, onComplete]);
+  }, [currentIndex, totalInteractions, onComplete, exitPending]);
 
   const handleAnswer = useCallback(
     (answer: string) => {
       if (!currentInteraction) return;
+      // Guard: prevent answer while exit dialog is open
+      if (exitPending) return;
       // Double-tap guard: prevent submitting twice for same interaction
       if (submittedRef.current) return;
       submittedRef.current = true;
@@ -191,7 +197,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         timeSpent,
       };
 
-      const updatedResponses = [...responses, newResponse];
+      const updatedResponses = [...responsesRef.current, newResponse];
       setResponses(updatedResponses);
       responsesRef.current = updatedResponses;
 
@@ -208,7 +214,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         feedbackTimerRef.current = setTimeout(advance, feedbackDuration);
       }
     },
-    [currentInteraction, responses, onCorrect, mode, advance]
+    [currentInteraction, exitPending, onCorrect, mode, advance]
   );
 
   if (!currentInteraction) {
@@ -260,6 +266,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         totalInteractions={totalInteractions}
         startTime={sprintStartTimeRef.current}
         mode={mode}
+        onExit={onExit}
       />
 
       {/* Streak Badge */}

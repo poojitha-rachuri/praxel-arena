@@ -37,7 +37,7 @@ export async function GET() {
         OR: [{ player1Id: user.id }, { player2Id: user.id }],
       },
       include: {
-        skill: { select: { name: true, icon: true } },
+        skill: { select: { name: true, slug: true, icon: true } },
       },
       orderBy: { createdAt: "desc" },
       take: 20,
