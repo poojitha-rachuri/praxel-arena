@@ -42,6 +42,7 @@ export default async function LearnPage({
 
         <SkillAccordion
           skills={data.skills}
+          topics={data.topics}
           sprints={data.sprints}
           mode="LEARN"
           basePath="/learn"

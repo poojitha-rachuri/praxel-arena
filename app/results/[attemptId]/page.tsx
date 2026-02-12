@@ -63,6 +63,7 @@ export default async function ResultsPage({
         dimensionFeedback={dimensionFeedback}
         sprintTitle={attempt.sprint.title}
         skillName={attempt.sprint.skill.name}
+        skillSlug={attempt.sprint.skill.slug}
         mode={attempt.mode}
       />
     </AppShell>

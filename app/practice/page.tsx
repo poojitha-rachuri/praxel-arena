@@ -42,6 +42,7 @@ export default async function PracticePage({
 
         <SkillAccordion
           skills={data.skills}
+          topics={data.topics}
           sprints={data.sprints}
           mode="PRACTICE"
           basePath="/practice"
