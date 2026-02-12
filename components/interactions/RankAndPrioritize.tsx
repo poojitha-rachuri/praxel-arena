@@ -8,11 +8,13 @@ import { Button } from "@/components/ui/button";
 import {
   DndContext,
   closestCenter,
+  DragOverlay,
   KeyboardSensor,
   PointerSensor,
   TouchSensor,
   useSensor,
   useSensors,
+  type DragStartEvent,
   type DragEndEvent,
 } from "@dnd-kit/core";
 import {
@@ -23,6 +25,10 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import {
+  restrictToVerticalAxis,
+  restrictToParentElement,
+} from "@dnd-kit/modifiers";
 import { GripVertical, Lock } from "lucide-react";
 import type { InteractionOption } from "@/types";
 
@@ -48,30 +54,29 @@ function SortableItem({ id, text, rank, isLocked }: SortableItemProps) {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+    opacity: isDragging ? 0.4 : 1,
   };
 
   return (
-    <motion.div
+    <div
       ref={setNodeRef}
       style={style}
-      layout
       className={cn(
         "flex items-center gap-3 min-h-[56px] px-4 py-3 rounded-xl border-2",
-        "bg-card text-card-foreground touch-manipulation",
-        isDragging &&
-          "border-primary bg-primary/10 shadow-lg shadow-primary/20 z-50 scale-[1.02]",
+        "bg-card text-card-foreground",
         !isDragging && !isLocked && "border-border",
         isLocked && "border-border/50 opacity-70 cursor-default"
       )}
     >
-      {/* Drag Handle */}
+      {/* Drag Handle — touch-action: none prevents browser stealing touch events */}
       <button
         {...attributes}
         {...listeners}
         disabled={isLocked}
         className={cn(
-          "flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg",
-          "touch-manipulation active:bg-muted",
+          "flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-lg",
+          "touch-none active:bg-muted",
+          "focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none",
           isLocked && "cursor-default"
         )}
         aria-label={`Drag to reorder: ${text}`}
@@ -99,7 +104,22 @@ function SortableItem({ id, text, rank, isLocked }: SortableItemProps) {
 
       {/* Text */}
       <span className="flex-1 text-sm font-medium leading-snug">{text}</span>
-    </motion.div>
+    </div>
+  );
+}
+
+/** Rendered inside DragOverlay — elevated visual for the item being dragged */
+function DragOverlayItem({ text, rank }: { text: string; rank: number }) {
+  return (
+    <div className="flex items-center gap-3 min-h-[56px] px-4 py-3 rounded-xl border-2 border-primary bg-primary/10 shadow-lg shadow-primary/20 scale-[1.02]">
+      <div className="flex-shrink-0 w-11 h-11 flex items-center justify-center rounded-lg">
+        <GripVertical className="size-5 text-primary" />
+      </div>
+      <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold bg-primary/20 text-primary">
+        {rank}
+      </span>
+      <span className="flex-1 text-sm font-medium leading-snug">{text}</span>
+    </div>
   );
 }
 
@@ -127,21 +147,27 @@ export function RankAndPrioritize({
   const [items, setItems] = useState(() => options.map((o) => o.id));
   const [isLocked, setIsLocked] = useState(false);
   const [showResult, setShowResult] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor, {
-      activationConstraint: { distance: 5 },
+      activationConstraint: { distance: 8 },
     }),
     useSensor(TouchSensor, {
-      activationConstraint: { delay: 150, tolerance: 5 },
+      activationConstraint: { delay: 250, tolerance: 5 },
     }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
 
+  const handleDragStart = useCallback((event: DragStartEvent) => {
+    setActiveId(String(event.active.id));
+  }, []);
+
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
+      setActiveId(null);
       const { active, over } = event;
       if (!over || active.id === over.id) return;
 
@@ -160,10 +186,7 @@ export function RankAndPrioritize({
     setShowResult(true);
 
     const answer = items.join(",");
-
-    setTimeout(() => {
-      onAnswer(answer);
-    }, 1200);
+    onAnswer(answer);
   }, [isLocked, disabled, items, onAnswer]);
 
   // Check if ranking matches correct answer
@@ -194,6 +217,8 @@ export function RankAndPrioritize({
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
+        modifiers={[restrictToVerticalAxis, restrictToParentElement]}
+        onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
       >
         <SortableContext items={items} strategy={verticalListSortingStrategy}>
@@ -213,6 +238,14 @@ export function RankAndPrioritize({
             })}
           </div>
         </SortableContext>
+        <DragOverlay>
+          {activeId ? (
+            <DragOverlayItem
+              text={optionMap.get(activeId)?.text ?? ""}
+              rank={items.indexOf(activeId) + 1}
+            />
+          ) : null}
+        </DragOverlay>
       </DndContext>
 
       {/* Lock In Button */}
