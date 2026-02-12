@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import AppShell from "@/components/layout/AppShell";
 import ResultsReveal from "@/components/layout/ResultsReveal";
 import { ensureUser } from "@/lib/auth/ensure-user";
-import type { DimensionScores } from "@/types";
+import type { DimensionScores, EnrichedResponse } from "@/types";
 
 export default async function ResultsPage({
   params,
@@ -47,11 +47,17 @@ export default async function ResultsPage({
   const scores = (attempt.scores ?? {}) as DimensionScores;
   const totalScore = attempt.totalScore ?? 0;
 
-  // Parse feedback from scores JSON (may include feedback fields)
-  const rawScores = attempt.scores as Record<string, unknown> | null;
-  const feedback = (rawScores?.feedback as string) ?? null;
-  const dimensionFeedback =
-    (rawScores?.dimensionFeedback as Partial<Record<string, string>>) ?? null;
+  // Read feedback fields directly from the attempt record
+  const feedback = attempt.feedback ?? null;
+  const highlights = (attempt.highlights as string[] | null) ?? [];
+  const improvements = (attempt.improvements as string[] | null) ?? [];
+
+  // Parse enriched responses (may be missing for old attempts pre-migration)
+  const rawResponses = attempt.responses as unknown[];
+  const enrichedResponses: EnrichedResponse[] | null =
+    Array.isArray(rawResponses) && rawResponses.length > 0 && typeof (rawResponses[0] as Record<string, unknown>).isCorrect === "boolean"
+      ? (rawResponses as unknown as EnrichedResponse[])
+      : null;
 
   return (
     <AppShell hideBottomNav>
@@ -60,7 +66,9 @@ export default async function ResultsPage({
         totalScore={Math.round(totalScore)}
         scores={scores}
         feedback={feedback}
-        dimensionFeedback={dimensionFeedback}
+        highlights={highlights}
+        improvements={improvements}
+        enrichedResponses={enrichedResponses}
         sprintTitle={attempt.sprint.title}
         skillName={attempt.sprint.skill.name}
         skillSlug={attempt.sprint.skill.slug}

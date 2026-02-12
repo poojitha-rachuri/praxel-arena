@@ -5,10 +5,23 @@ import { motion } from "motion/react";
 import RadarChart from "@/components/skill-graph/RadarChart";
 import SkillCard from "@/components/skill-graph/SkillCard";
 import CareerMatchBar from "@/components/skill-graph/CareerMatchBar";
+import AttemptHistory from "@/components/profile/AttemptHistory";
+import ProgressCharts from "@/components/profile/ProgressCharts";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
+
+interface AttemptSummary {
+  id: string;
+  sprintTitle: string;
+  skillName: string;
+  skillSlug: string;
+  skillIcon: string | null;
+  mode: string;
+  totalScore: number;
+  completedAt: string | null;
+}
 
 interface ProfileClientProps {
   user: {
@@ -28,6 +41,8 @@ interface ProfileClientProps {
     icon: string | null;
     matchPercentage: number;
   }[];
+  attemptHistory?: AttemptSummary[];
+  attemptCursor?: string | null;
   isOwnProfile?: boolean;
 }
 
@@ -46,6 +61,8 @@ export default function ProfileClient({
   aggregateScores,
   skills,
   careerMatches,
+  attemptHistory = [],
+  attemptCursor = null,
   isOwnProfile = false,
 }: ProfileClientProps) {
   const router = useRouter();
@@ -163,6 +180,37 @@ export default function ProfileClient({
                 </motion.div>
               ))}
             </div>
+          </section>
+        </>
+      )}
+
+      {/* Progress Charts */}
+      {isOwnProfile && (
+        <>
+          <Separator className="my-6" />
+          <section className="w-full space-y-3">
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Progress
+            </h2>
+            <ProgressCharts
+              skills={skills.map((s) => ({ name: s.name, slug: s.slug }))}
+            />
+          </section>
+        </>
+      )}
+
+      {/* Attempt History */}
+      {isOwnProfile && (
+        <>
+          <Separator className="my-6" />
+          <section className="w-full space-y-3">
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Recent Attempts
+            </h2>
+            <AttemptHistory
+              initialAttempts={attemptHistory}
+              initialCursor={attemptCursor}
+            />
           </section>
         </>
       )}

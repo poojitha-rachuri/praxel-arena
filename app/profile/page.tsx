@@ -79,6 +79,43 @@ export default async function ProfilePage() {
     };
   });
 
+  // Fetch recent attempts for history section (initial 5)
+  const recentAttempts = await prisma.sprintAttempt.findMany({
+    where: { userId: user.id, completedAt: { not: null } },
+    orderBy: { completedAt: "desc" },
+    take: 6, // +1 for cursor detection
+    select: {
+      id: true,
+      mode: true,
+      totalScore: true,
+      completedAt: true,
+      sprint: {
+        select: {
+          title: true,
+          skill: { select: { name: true, slug: true, icon: true } },
+        },
+      },
+    },
+  });
+
+  const hasMoreAttempts = recentAttempts.length > 5;
+  const displayAttempts = hasMoreAttempts ? recentAttempts.slice(0, 5) : recentAttempts;
+  const attemptCursor =
+    hasMoreAttempts && displayAttempts.length > 0
+      ? `${displayAttempts[displayAttempts.length - 1].completedAt?.toISOString()}_${displayAttempts[displayAttempts.length - 1].id}`
+      : null;
+
+  const attemptHistory = displayAttempts.map((a) => ({
+    id: a.id,
+    sprintTitle: a.sprint.title,
+    skillName: a.sprint.skill.name,
+    skillSlug: a.sprint.skill.slug,
+    skillIcon: a.sprint.skill.icon,
+    mode: a.mode,
+    totalScore: Math.round(a.totalScore ?? 0),
+    completedAt: a.completedAt?.toISOString() ?? null,
+  }));
+
   // Career match percentages (using shared utility)
   const careerMatches = computeCareerMatches(
     user.skillScores.map((ss) => ({
@@ -105,6 +142,8 @@ export default async function ProfilePage() {
         aggregateScores={aggregateScores}
         skills={skills}
         careerMatches={careerMatches}
+        attemptHistory={attemptHistory}
+        attemptCursor={attemptCursor}
         isOwnProfile
       />
     </AppShell>

@@ -184,18 +184,21 @@ model SprintCareerOutcome {
 // ─── Attempts & Scoring ──────────────────────────────────
 
 model SprintAttempt {
-  id          String    @id @default(cuid())
-  userId      String
-  sprintId    String
-  mode        SprintMode
-  responses   Json      // Array of { interactionId, answer, timeSpent }
-  scores      Json?     // DimensionScores: { analyticalThinking, strategicReasoning, quantitativeReasoning, communicationClarity, decisionQuality, creativeProblemSolving }
-  totalScore  Float?
-  startedAt   DateTime  @default(now())
-  completedAt DateTime?
+  id           String     @id @default(cuid())
+  userId       String
+  sprintId     String
+  mode         SprintMode
+  responses    Json       // Array of enriched responses (interactionId, answer, timeSpent, isCorrect, score, correctAnswer, prompt, options, insightAnswer, interactionType)
+  scores       Json?      // DimensionScores: { analyticalThinking, strategicReasoning, quantitativeReasoning, communicationClarity, decisionQuality, creativeProblemSolving }
+  totalScore   Float?
+  feedback     String?    // AI-generated or deterministic feedback text
+  highlights   Json?      // Array of strength strings: ["Strong analytical thinking...", ...]
+  improvements Json?      // Array of improvement strings: ["Consider time management...", ...]
+  startedAt    DateTime   @default(now())
+  completedAt  DateTime?
 
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  sprint      Sprint    @relation(fields: [sprintId], references: [id], onDelete: Cascade)
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sprint       Sprint     @relation(fields: [sprintId], references: [id], onDelete: Cascade)
 
   @@index([userId, completedAt])
   @@index([userId, mode])

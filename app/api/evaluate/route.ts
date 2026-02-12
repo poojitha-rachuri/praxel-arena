@@ -134,7 +134,9 @@ export async function POST(request: NextRequest) {
     );
 
     // Deep clone outside the transaction — JSON round-trip produces Prisma-compatible JsonValue
-    const responsesJson = JSON.parse(JSON.stringify(responses));
+    const enrichedJson = JSON.parse(
+      JSON.stringify(evaluation.enrichedResponses ?? responses)
+    );
     const scoresJson = JSON.parse(JSON.stringify(evaluation.scores));
 
     // Atomic: create attempt + update skill scores in a transaction
@@ -144,9 +146,12 @@ export async function POST(request: NextRequest) {
           userId: user.id,
           sprintId: sprint.id,
           mode: sprint.mode,
-          responses: responsesJson,
+          responses: enrichedJson,
           scores: scoresJson,
           totalScore: evaluation.totalScore,
+          feedback: evaluation.feedback ?? null,
+          highlights: evaluation.highlights ?? [],
+          improvements: evaluation.improvements ?? [],
           completedAt: new Date(),
         },
       });

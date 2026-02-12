@@ -3,6 +3,7 @@ import { buildEvaluateAttemptPrompt } from "@/lib/ai/prompts/evaluate-attempt";
 import { buildEvaluateDuelPrompt } from "@/lib/ai/prompts/evaluate-duel";
 import {
   DIMENSION_KEYS,
+  SCORING_DIMENSIONS,
   type DimensionKey,
   type DimensionScores,
 } from "@/lib/scoring/dimensions";
@@ -11,6 +12,7 @@ import type {
   EvaluationResult,
   DuelEvaluation,
   SprintResponse,
+  EnrichedResponse,
 } from "@/types";
 
 // ─── Types for Sprint data passed in ────────────────────────
@@ -265,6 +267,98 @@ function buildDeterministicFeedback(
   }
 }
 
+// ─── Enriched Responses Builder ────────────────────────────
+
+/**
+ * Build enriched responses array with per-interaction scoring data.
+ * Stores prompt, options, correctness, and insight for deletion-resistant replay.
+ */
+function buildEnrichedResponses(
+  interactions: SprintInteraction[],
+  responses: SprintResponse[]
+): EnrichedResponse[] {
+  return interactions.map((interaction) => {
+    const response = responses.find(
+      (r) => r.interactionId === interaction.id
+    );
+    const { score, isCorrect } = scoreInteractionDeterministic(
+      interaction,
+      response
+    );
+
+    return {
+      interactionId: interaction.id,
+      answer: response?.answer ?? "",
+      timeSpent: response?.timeSpent ?? 0,
+      isCorrect,
+      score,
+      correctAnswer: interaction.correctAnswer ?? "",
+      prompt: interaction.prompt,
+      options: (interaction.options ?? []) as { id: string; text: string }[],
+      insightAnswer: interaction.insightAnswer ?? undefined,
+      interactionType: interaction.type,
+    };
+  });
+}
+
+/**
+ * Build structured highlights and improvements from deterministic scoring.
+ */
+function buildDeterministicHighlights(
+  interactions: SprintInteraction[],
+  responses: SprintResponse[]
+): { highlights: string[]; improvements: string[] } {
+  const highlights: string[] = [];
+  const improvements: string[] = [];
+
+  // Analyze per-dimension performance
+  const scores = distributeToDimensions(interactions, responses);
+  const sorted = [...DIMENSION_KEYS].sort(
+    (a, b) => scores[b] - scores[a]
+  );
+
+  const topDims = sorted.slice(0, 2);
+  const bottomDims = sorted.slice(-2);
+
+  const dimLabels: Record<string, string> = {};
+  for (const d of SCORING_DIMENSIONS) {
+    dimLabels[d.key] = d.label;
+  }
+
+  for (const key of topDims) {
+    if (scores[key] >= 70) {
+      highlights.push(`Strong ${dimLabels[key]} (${scores[key]}%)`);
+    }
+  }
+
+  for (const key of bottomDims) {
+    if (scores[key] < 70) {
+      improvements.push(`Focus on ${dimLabels[key]} (${scores[key]}%)`);
+    }
+  }
+
+  // Analyze time management
+  let fastCount = 0;
+  let slowCount = 0;
+  for (const interaction of interactions) {
+    const response = responses.find(
+      (r) => r.interactionId === interaction.id
+    );
+    if (!response) continue;
+    if (response.timeSpent <= interaction.timeTarget) fastCount++;
+    else slowCount++;
+  }
+
+  if (fastCount >= interactions.length * 0.75) {
+    highlights.push("Excellent time management across interactions");
+  }
+  if (slowCount >= interactions.length * 0.5) {
+    improvements.push("Work on response speed — many answers exceeded time targets");
+  }
+
+  return { highlights, improvements };
+}
+
 // ─── Public API ────────────────────────────────────────────
 
 /**
@@ -273,17 +367,27 @@ function buildDeterministicFeedback(
  * For LEARN/PRACTICE modes: uses deterministic scoring based on correctAnswer matching.
  * For COMPETE mode: calls Claude AI for nuanced, mentorship-quality evaluation.
  *
- * @returns EvaluationResult with 6-dimension scores, totalScore, and feedback
+ * @returns EvaluationResult with 6-dimension scores, totalScore, feedback, and enriched responses
  */
 export async function evaluateAttempt(
   sprint: SprintData,
   responses: SprintResponse[],
   mode: string
 ): Promise<EvaluationResult> {
+  // Build enriched responses for all modes (uses deterministic scoring per interaction)
+  const enrichedResponses = buildEnrichedResponses(
+    sprint.interactions,
+    responses
+  );
+
   // ── COMPETE mode: AI evaluation ──
   if (mode === "COMPETE") {
     try {
-      return await evaluateAttemptWithAI(sprint, responses);
+      const aiResult = await evaluateAttemptWithAI(sprint, responses);
+      return {
+        ...aiResult,
+        enrichedResponses,
+      };
     } catch (error) {
       console.error(
         "[evaluateAttempt] AI evaluation failed, falling back to deterministic:",
@@ -300,11 +404,18 @@ export async function evaluateAttempt(
       DIMENSION_KEYS.length
   );
   const feedback = buildDeterministicFeedback(sprint.interactions, responses);
+  const { highlights, improvements } = buildDeterministicHighlights(
+    sprint.interactions,
+    responses
+  );
 
   return {
     scores,
     totalScore,
     feedback,
+    highlights,
+    improvements,
+    enrichedResponses,
   };
 }
 
@@ -347,25 +458,12 @@ async function evaluateAttemptWithAI(
       DIMENSION_KEYS.length
   );
 
-  // Compose feedback: main feedback + highlights and improvements
-  const feedbackParts: string[] = [result.feedback || "Evaluation complete."];
-
-  if (result.highlights && result.highlights.length > 0) {
-    feedbackParts.push(
-      `Strengths: ${result.highlights.join(". ")}.`
-    );
-  }
-
-  if (result.improvements && result.improvements.length > 0) {
-    feedbackParts.push(
-      `Areas to improve: ${result.improvements.join(". ")}.`
-    );
-  }
-
   return {
     scores,
     totalScore,
-    feedback: feedbackParts.join(" "),
+    feedback: result.feedback || "Evaluation complete.",
+    highlights: result.highlights ?? [],
+    improvements: result.improvements ?? [],
   };
 }
 

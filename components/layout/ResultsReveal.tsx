@@ -11,11 +11,13 @@ import {
   Sparkles,
 } from "lucide-react";
 import RadarChart from "@/components/skill-graph/RadarChart";
+import InteractionReview from "@/components/results/InteractionReview";
+import ScoringExplainer from "@/components/results/ScoringExplainer";
 import { Button } from "@/components/ui/button";
 import { CARD_SPRING, SCORE_COUNT_DURATION } from "@/lib/utils/constants";
 import { SCORING_DIMENSIONS } from "@/lib/scoring/dimensions";
 import { useCelebration } from "@/lib/hooks/use-celebration";
-import type { DimensionScores } from "@/types";
+import type { DimensionScores, EnrichedResponse } from "@/types";
 import { cn } from "@/lib/utils";
 
 interface ResultsRevealProps {
@@ -23,7 +25,9 @@ interface ResultsRevealProps {
   totalScore: number;
   scores: DimensionScores;
   feedback: string | null;
-  dimensionFeedback: Partial<Record<string, string>> | null;
+  highlights: string[];
+  improvements: string[];
+  enrichedResponses?: EnrichedResponse[] | null;
   sprintTitle: string;
   skillName: string;
   skillSlug: string;
@@ -69,7 +73,9 @@ export default function ResultsReveal({
   totalScore,
   scores,
   feedback,
-  dimensionFeedback,
+  highlights,
+  improvements,
+  enrichedResponses,
   sprintTitle,
   skillName,
   skillSlug,
@@ -101,12 +107,23 @@ export default function ResultsReveal({
     };
   }, [onSprintComplete, totalScore]);
 
-  // Determine strengths and improvements
-  const sortedDimensions = [...SCORING_DIMENSIONS].sort(
-    (a, b) => (scores[b.key] ?? 0) - (scores[a.key] ?? 0)
-  );
-  const strengths = sortedDimensions.slice(0, 2);
-  const improvements = sortedDimensions.slice(-2).reverse();
+  // Fallback: derive from dimension scores when backend highlights are empty
+  const displayHighlights =
+    highlights.length > 0
+      ? highlights
+      : [...SCORING_DIMENSIONS]
+          .sort((a, b) => (scores[b.key] ?? 0) - (scores[a.key] ?? 0))
+          .slice(0, 2)
+          .filter((d) => (scores[d.key] ?? 0) >= 50)
+          .map((d) => `Strong ${d.label}`);
+  const displayImprovements =
+    improvements.length > 0
+      ? improvements
+      : [...SCORING_DIMENSIONS]
+          .sort((a, b) => (scores[a.key] ?? 0) - (scores[b.key] ?? 0))
+          .slice(0, 2)
+          .filter((d) => (scores[d.key] ?? 0) < 70)
+          .map((d) => `Focus on ${d.label}`);
 
   const scoreColor =
     totalScore >= 80
@@ -199,7 +216,10 @@ export default function ResultsReveal({
           >
             {/* Dimension Bars */}
             <div className="rounded-xl border border-border bg-card p-4">
-              <h3 className="text-sm font-semibold mb-3">Skill Breakdown</h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-sm font-semibold">Skill Breakdown</h3>
+                <ScoringExplainer />
+              </div>
               <div className="flex flex-col gap-2.5">
                 {SCORING_DIMENSIONS.map((dim, index) => {
                   const score = scores[dim.key] ?? 0;
@@ -248,49 +268,47 @@ export default function ResultsReveal({
 
             {/* Highlights + Improvements */}
             <div className="grid grid-cols-2 gap-3">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2.8 }}
-                className="rounded-xl border border-success/20 bg-success/5 p-3"
-              >
-                <h4 className="flex items-center gap-1 text-xs font-semibold text-success mb-2">
-                  <TrendingUp className="size-3" />
-                  Strengths
-                </h4>
-                <div className="flex flex-col gap-1">
-                  {strengths.map((dim) => (
-                    <p
-                      key={dim.key}
-                      className="text-xs text-muted-foreground"
-                    >
-                      {dim.label}
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
+              {displayHighlights.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.8 }}
+                  className="rounded-xl border border-success/20 bg-success/5 p-3"
+                >
+                  <h4 className="flex items-center gap-1 text-xs font-semibold text-success mb-2">
+                    <TrendingUp className="size-3" />
+                    Strengths
+                  </h4>
+                  <div className="flex flex-col gap-1.5">
+                    {displayHighlights.map((text, i) => (
+                      <p key={i} className="text-xs text-muted-foreground">
+                        {text}
+                      </p>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 3 }}
-                className="rounded-xl border border-warning/20 bg-warning/5 p-3"
-              >
-                <h4 className="flex items-center gap-1 text-xs font-semibold text-warning mb-2">
-                  <TrendingDown className="size-3" />
-                  To Improve
-                </h4>
-                <div className="flex flex-col gap-1">
-                  {improvements.map((dim) => (
-                    <p
-                      key={dim.key}
-                      className="text-xs text-muted-foreground"
-                    >
-                      {dim.label}
-                    </p>
-                  ))}
-                </div>
-              </motion.div>
+              {displayImprovements.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 3 }}
+                  className="rounded-xl border border-warning/20 bg-warning/5 p-3"
+                >
+                  <h4 className="flex items-center gap-1 text-xs font-semibold text-warning mb-2">
+                    <TrendingDown className="size-3" />
+                    To Improve
+                  </h4>
+                  <div className="flex flex-col gap-1.5">
+                    {displayImprovements.map((text, i) => (
+                      <p key={i} className="text-xs text-muted-foreground">
+                        {text}
+                      </p>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
             </div>
 
             {/* AI Feedback */}
@@ -311,36 +329,21 @@ export default function ResultsReveal({
               </motion.div>
             )}
 
-            {/* Dimension-level feedback */}
-            {dimensionFeedback &&
-              Object.keys(dimensionFeedback).length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 3.4 }}
-                  className="rounded-xl border border-border bg-card p-4"
-                >
-                  <h3 className="text-sm font-semibold mb-3">
-                    Dimension Insights
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    {SCORING_DIMENSIONS.map((dim) => {
-                      const fb = dimensionFeedback[dim.key];
-                      if (!fb) return null;
-                      return (
-                        <div key={dim.key}>
-                          <p className="text-xs font-medium text-foreground">
-                            {dim.label}
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-0.5">
-                            {fb}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </motion.div>
-              )}
+            {/* Per-Interaction Review */}
+            {enrichedResponses && enrichedResponses.length > 0 ? (
+              <InteractionReview responses={enrichedResponses} />
+            ) : (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 3.4 }}
+                className="rounded-xl border border-border bg-card p-4 text-center"
+              >
+                <p className="text-xs text-muted-foreground">
+                  Detailed answer review is not available for this attempt.
+                </p>
+              </motion.div>
+            )}
 
             {/* CTAs */}
             <motion.div
