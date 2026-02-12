@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "precedent-transactions",
+  "mode": "PRACTICE",
+  "title": "Precedent Transactions: M&A Comps Mastery",
+  "description": "Practice selecting, adjusting, and interpreting precedent transaction multiples in complex M&A scenarios.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Five SaaS precedent transactions show EV/Revenue multiples of 4.2x, 4.5x, 11.8x, 4.9x, and 4.7x. The 11.8x deal involved a bidding war between Salesforce and Microsoft. What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "SaaS valuations are rising rapidly across the board"
+        },
+        {
+          "id": "b",
+          "text": "The 11.8x outlier reflects competitive auction dynamics, not intrinsic value"
+        },
+        {
+          "id": "c",
+          "text": "Average the five multiples for the most accurate benchmark"
+        },
+        {
+          "id": "d",
+          "text": "Microsoft and Salesforce always overpay for acquisitions"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "When analyzing precedent transactions, the difference between the offer price and the target's unaffected share price is called the ____, which typically ranges from 20-40% for public company acquisitions.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Synergy discount"
+        },
+        {
+          "id": "b",
+          "text": "Control premium"
+        },
+        {
+          "id": "c",
+          "text": "Liquidity adjustment"
+        },
+        {
+          "id": "d",
+          "text": "Acquisition spread"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You're advising a pharma acquirer on a $3B target. You have 12 precedent transactions: 8 from 2018-2020 (pre-COVID) and 4 from 2023-2024 at significantly higher multiples. The deal closes in Q2 2025. Which set do you emphasize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use all 12 equally to maximize sample size"
+        },
+        {
+          "id": "b",
+          "text": "Weight recent 4 transactions more heavily given current market conditions"
+        },
+        {
+          "id": "c",
+          "text": "Use only the 8 older transactions for a larger, more stable sample"
+        },
+        {
+          "id": "d",
+          "text": "Discard precedent transactions entirely and rely only on DCF"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Rank these adjustments from MOST to LEAST critical when normalizing precedent transaction multiples for a mid-cap industrial target: (a) Adjusting for different deal structures (stock vs. cash), (b) Removing transactions with distressed sellers, (c) Accounting for size differences between precedent targets, (d) Adjusting for geographic differences in tax regimes.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adjusting for different deal structures (stock vs. cash)"
+        },
+        {
+          "id": "b",
+          "text": "Removing transactions with distressed sellers"
+        },
+        {
+          "id": "c",
+          "text": "Accounting for size differences between precedent targets"
+        },
+        {
+          "id": "d",
+          "text": "Adjusting for geographic differences in tax regimes"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 5,
+      "prompt": "In a precedent transaction analysis for a specialty chemicals company, you find: Deal A (strategic buyer, EV/EBITDA 12.5x), Deal B (PE buyer, 9.1x), Deal C (strategic buyer, 11.8x), Deal D (PE buyer, 8.7x). Your client is a strategic acquirer. What's the critical insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "PE deals are always undervalued and should be excluded"
+        },
+        {
+          "id": "b",
+          "text": "Strategic buyers paid ~35% premiums over PE, reflecting synergy expectations"
+        },
+        {
+          "id": "c",
+          "text": "Average all four deals for a balanced valuation range"
+        },
+        {
+          "id": "d",
+          "text": "The PE deals indicate the true standalone value of targets"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 6,
+      "prompt": "Your precedent transaction analysis implies an EV/EBITDA range of 10-12x for a target, but $150M in estimated cost synergies would push the acquirer's effective multiple down to 7.5x. The target's board demands 13x. Do you advise your acquirer client to:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Walk away—13x exceeds precedent range and sets a bad market signal"
+        },
+        {
+          "id": "b",
+          "text": "Pay 13x since synergy-adjusted multiple of ~9x still creates shareholder value"
+        },
+        {
+          "id": "c",
+          "text": "Counter at 11x and risk losing the deal to a competing bidder"
+        },
+        {
+          "id": "d",
+          "text": "Offer 13x but restructure as mostly stock to limit cash outflow"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "Midway through your engagement, antitrust regulators block a key comparable transaction (Deal C at 11.8x) retroactively, and the deal unwinds. How does this change your precedent transaction analysis and valuation range?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Remove Deal C entirely—unwound deals are not valid precedents"
+        },
+        {
+          "id": "b",
+          "text": "Keep Deal C but add a regulatory risk discount to the overall range"
+        },
+        {
+          "id": "c",
+          "text": "Replace Deal C with a comparable transaction from an adjacent industry"
+        },
+        {
+          "id": "d",
+          "text": "Keep Deal C at agreed price since it reflects willing buyer-seller dynamics"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Previously you were using four specialty chemicals precedent deals including Deal C (strategic buyer at 11.8x EV/EBITDA). Now regulators have blocked and unwound Deal C, reducing your comparable set and potentially lowering the implied valuation range.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    },
+    {
+      "order": 8,
+      "prompt": "You're presenting a precedent transaction analysis to a skeptical board. Rank these elements from MOST to LEAST persuasive in defending your valuation range: (a) Showing the synergy-adjusted effective multiple, (b) Demonstrating tight clustering of comparable multiples, (c) Citing a single high-profile deal by a respected acquirer, (d) Cross-referencing with DCF and trading comps for triangulation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Showing the synergy-adjusted effective multiple"
+        },
+        {
+          "id": "b",
+          "text": "Demonstrating tight clustering of comparable multiples"
+        },
+        {
+          "id": "c",
+          "text": "Citing a single high-profile deal by a respected acquirer"
+        },
+        {
+          "id": "d",
+          "text": "Cross-referencing with DCF and trading comps for triangulation"
+        }
+      ],
+      "correctAnswer": "d,b,a,c",
+      "insightAnswer": "d,b,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    }
+  ]
+}

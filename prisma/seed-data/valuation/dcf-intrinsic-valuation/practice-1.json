@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "dcf-intrinsic-valuation",
+  "mode": "PRACTICE",
+  "title": "DCF Fundamentals: Your First Valuation",
+  "description": "Practice building blocks of DCF valuation including discount rates, terminal value, and WACC components.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "In a DCF model, future cash flows are converted to present value using a ____ rate that reflects the riskiness of those cash flows.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Growth"
+        },
+        {
+          "id": "b",
+          "text": "Discount"
+        },
+        {
+          "id": "c",
+          "text": "Tax"
+        },
+        {
+          "id": "d",
+          "text": "Inflation"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 2,
+      "prompt": "Nike's WACC inputs: risk-free rate 4.2%, equity risk premium 5.5%, beta 1.1, cost of debt 4.8%, tax rate 21%, debt/capital 15%. What's the most critical observation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nike's capital structure is heavily equity-weighted at 85%"
+        },
+        {
+          "id": "b",
+          "text": "The cost of debt is higher than the risk-free rate"
+        },
+        {
+          "id": "c",
+          "text": "Beta above 1.0 means Nike is riskier than the market"
+        },
+        {
+          "id": "d",
+          "text": "The tax rate seems too low for a US company"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're valuing Starbucks and must choose a terminal value method. The company is mature with stable margins but exploring new formats. Which approach do you prefer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gordon Growth Model with a 2.5% perpetuity growth rate"
+        },
+        {
+          "id": "b",
+          "text": "Exit multiple based on current EV/EBITDA comparables"
+        },
+        {
+          "id": "c",
+          "text": "No terminal value — project cash flows for 50 years instead"
+        },
+        {
+          "id": "d",
+          "text": "Use book value of assets as terminal value"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "A DCF for Target Corp shows: terminal value = 78% of total enterprise value, explicit forecast period = 22%. The WACC is 8.5% and terminal growth is 3%. What's the red flag?",
+      "options": [
+        {
+          "id": "a",
+          "text": "WACC of 8.5% is too high for a retailer"
+        },
+        {
+          "id": "b",
+          "text": "Terminal value dominates — the model is overly sensitive to assumptions"
+        },
+        {
+          "id": "c",
+          "text": "Terminal growth of 3% is unreasonably high"
+        },
+        {
+          "id": "d",
+          "text": "The forecast period cash flows are being underestimated"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these WACC components from most to least impactful on a typical company's WACC calculation, assuming 70% equity / 30% debt capital structure.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost of equity (driven by beta and market risk premium)"
+        },
+        {
+          "id": "b",
+          "text": "Risk-free rate (impacts both cost of equity and debt)"
+        },
+        {
+          "id": "c",
+          "text": "After-tax cost of debt"
+        },
+        {
+          "id": "d",
+          "text": "Marginal tax rate applied to debt"
+        }
+      ],
+      "correctAnswer": "a,b,c,d",
+      "insightAnswer": "a,b,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Your DCF for Johnson & Johnson yields $175/share but the stock trades at $155. A colleague says the market is wrong. What's your best next step?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recommend buying immediately since DCF shows 13% upside"
+        },
+        {
+          "id": "b",
+          "text": "Run sensitivity analysis on WACC and growth to test your assumptions"
+        },
+        {
+          "id": "c",
+          "text": "Discard the DCF and rely on market price instead"
+        },
+        {
+          "id": "d",
+          "text": "Increase the discount rate until the DCF matches market price"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "When performing a sensitivity analysis on a DCF, rank these variable pairs from most to least impact on the final valuation output.",
+      "options": [
+        {
+          "id": "a",
+          "text": "WACC and terminal growth rate"
+        },
+        {
+          "id": "b",
+          "text": "Revenue growth rate and operating margin"
+        },
+        {
+          "id": "c",
+          "text": "Depreciation method and capex timing"
+        },
+        {
+          "id": "d",
+          "text": "Working capital changes and tax rate"
+        }
+      ],
+      "correctAnswer": "a,b,d,c",
+      "insightAnswer": "a,b,d,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The Fed unexpectedly raises rates by 150bps. Your DCF for Microsoft used a WACC of 9%. How should you adjust your valuation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep WACC at 9% since Microsoft's business hasn't changed"
+        },
+        {
+          "id": "b",
+          "text": "Raise WACC to reflect higher risk-free rate, lowering your valuation"
+        },
+        {
+          "id": "c",
+          "text": "Lower terminal growth to offset the rate increase"
+        },
+        {
+          "id": "d",
+          "text": "Switch to a comparable company analysis instead of DCF"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously built a DCF for Microsoft at WACC 9% with a risk-free rate of 4%. Now rates have spiked 150bps, changing the cost of equity and debt in your model.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

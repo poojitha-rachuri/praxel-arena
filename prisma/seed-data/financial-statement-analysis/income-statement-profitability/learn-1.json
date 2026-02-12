@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "income-statement-profitability",
+  "mode": "LEARN",
+  "title": "Reading the Income Statement Top to Bottom",
+  "description": "Learn how revenue flows through gross margin, operating margin, and EBITDA to reveal a company's true profitability.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS company signs a $120K annual contract on January 1. How much revenue should it recognize in Q1?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$120,000 — the full contract value"
+        },
+        {
+          "id": "b",
+          "text": "$30,000 — three months of the annual contract"
+        },
+        {
+          "id": "c",
+          "text": "$0 — revenue is recognized only at year-end"
+        },
+        {
+          "id": "d",
+          "text": "$60,000 — half upfront, half at delivery"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Revenue recognition determines when a company can count money as earned. Under accrual accounting, revenue is recognized as the service is delivered, not necessarily when cash is received. For example, Salesforce recognizes subscription revenue monthly over the contract term, even if the customer pays the full year upfront.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Nike reports revenue of $51B, cost of goods sold of $29B, and operating expenses of $10B. Which metric signals the strongest insight about Nike's product pricing power?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue of $51B shows massive scale"
+        },
+        {
+          "id": "b",
+          "text": "Gross margin of 43% shows strong pricing power"
+        },
+        {
+          "id": "c",
+          "text": "Operating expenses of $10B seem well-controlled"
+        },
+        {
+          "id": "d",
+          "text": "COGS of $29B is the largest single line item"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A retailer has 40% gross margin but only 5% operating margin. What is the most likely explanation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The company has very low cost of goods sold"
+        },
+        {
+          "id": "b",
+          "text": "Heavy spending on rent, marketing, and corporate overhead"
+        },
+        {
+          "id": "c",
+          "text": "The company is paying too much in taxes"
+        },
+        {
+          "id": "d",
+          "text": "Interest payments on debt are consuming profits"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Gross margin measures profit after subtracting the direct cost of making products (COGS), while operating margin also subtracts selling, general, and administrative expenses (SG&A). The gap between the two reveals how much overhead a company carries. Target, for instance, often shows a 28% gross margin but only a 6% operating margin because of massive store operations and labor costs.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "EBITDA stands for Earnings Before Interest, Taxes, ____, and Amortization, and it strips out non-cash charges to approximate operating cash generation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Depreciation"
+        },
+        {
+          "id": "b",
+          "text": "Dividends"
+        },
+        {
+          "id": "c",
+          "text": "Deductions"
+        },
+        {
+          "id": "d",
+          "text": "Derivatives"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're evaluating two food delivery startups. Company A has 45% gross margins but -10% operating margin due to heavy marketing spend. Company B has 25% gross margins but +3% operating margin. Which would you fund for long-term growth?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company A — higher gross margins fund future profitability at scale"
+        },
+        {
+          "id": "b",
+          "text": "Company B — it's already profitable and lower risk"
+        },
+        {
+          "id": "c",
+          "text": "Neither — food delivery margins are too thin"
+        },
+        {
+          "id": "d",
+          "text": "Need more info on customer retention and unit economics"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A company reports rising net income but its cash from operations is declining for three straight years. What does this most likely indicate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The company is efficiently reinvesting cash into growth"
+        },
+        {
+          "id": "b",
+          "text": "Aggressive accounting may be inflating reported earnings"
+        },
+        {
+          "id": "c",
+          "text": "Tax benefits are temporarily boosting net income"
+        },
+        {
+          "id": "d",
+          "text": "The company is buying back shares to increase EPS"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Earnings quality measures how well reported profits reflect actual cash generation. High-quality earnings are backed by real cash flow, while low-quality earnings may rely on aggressive revenue recognition, one-time gains, or accounting estimates. Before its collapse, WorldCom showed growing earnings while capitalizing ordinary expenses — a classic earnings quality red flag that analysts could have caught by comparing net income to operating cash flow.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're screening companies for investment quality. Rank these income statement checks from most important (first) to least important when assessing long-term profitability health.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Consistent gross margin trends over 5 years"
+        },
+        {
+          "id": "b",
+          "text": "Net income growing in line with operating cash flow"
+        },
+        {
+          "id": "c",
+          "text": "Revenue growing faster than the industry average"
+        },
+        {
+          "id": "d",
+          "text": "One-time gains boosting this quarter's EPS"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The company just announced it is switching from recognizing multi-year software licenses upfront to ratably over the contract term. How does this change your profitability analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue and margins will appear to drop short-term"
+        },
+        {
+          "id": "b",
+          "text": "EBITDA will spike due to deferred cost recognition"
+        },
+        {
+          "id": "c",
+          "text": "No impact — accounting changes don't affect real economics"
+        },
+        {
+          "id": "d",
+          "text": "Net income will increase because costs are spread out"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Earlier you learned that SaaS companies recognize subscription revenue over the contract period. Now imagine you've been analyzing a software company that previously booked large multi-year license deals entirely upfront, inflating current-period revenue and margins. Management just changed its revenue recognition policy.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

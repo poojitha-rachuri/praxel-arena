@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "precedent-transactions",
+  "mode": "LEARN",
+  "title": "M&A Comps and Transaction Multiples",
+  "description": "Master how to select, analyze, and adjust precedent transactions to value acquisition targets.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Why do precedent transaction multiples typically exceed trading multiples for comparable public companies?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acquirers pay a control premium for ownership rights"
+        },
+        {
+          "id": "b",
+          "text": "Public markets always undervalue companies"
+        },
+        {
+          "id": "c",
+          "text": "Transaction data is reported with a time lag"
+        },
+        {
+          "id": "d",
+          "text": "Investment banks inflate deal prices for higher fees"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Precedent transaction analysis values a company by examining prices paid in comparable M&A deals. When Microsoft acquired Activision Blizzard for $68.7B in 2022, it paid roughly 30% above Activision's pre-deal trading price. This premium over market price—called a control premium—reflects the value of owning and directing the entire business.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Three recent SaaS acquisitions show EV/Revenue multiples: Deal A (2021 bull market) 18x, Deal B (2023 downturn) 8x, Deal C (2023 downturn) 9x. What's the most critical adjustment before using these as comps?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Average all three for the most reliable estimate"
+        },
+        {
+          "id": "b",
+          "text": "Use only Deal A since it's the highest value"
+        },
+        {
+          "id": "c",
+          "text": "Adjust for market conditions—Deal A reflects a different cycle"
+        },
+        {
+          "id": "d",
+          "text": "Discard all deals older than six months"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "An acquirer expects $200M in annual cost synergies from a deal. The target's standalone EV/EBITDA is 10x. What does the synergy-adjusted multiple roughly become if the target has $800M EBITDA?",
+      "options": [
+        {
+          "id": "a",
+          "text": "8x, because synergies reduce the effective price paid"
+        },
+        {
+          "id": "b",
+          "text": "12x, because synergies increase the target's value"
+        },
+        {
+          "id": "c",
+          "text": "10x, synergies don't affect the transaction multiple"
+        },
+        {
+          "id": "d",
+          "text": "15x, synergies are always added to the purchase price"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Synergies—cost savings or revenue gains from combining two businesses—are a key driver of M&A premiums. When Kraft merged with Heinz in 2015, the deal thesis centered on $1.5B in cost synergies. Analysts separate the 'price paid for the standalone business' from the 'price paid for synergies' to understand if acquirers overpaid—EV of $8B ÷ ($800M EBITDA + $200M synergies) = 8x.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In precedent transactions, the ____ premium measures the percentage above the target's unaffected share price that the acquirer pays to gain full ownership.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Liquidity"
+        },
+        {
+          "id": "b",
+          "text": "Control"
+        },
+        {
+          "id": "c",
+          "text": "Synergy"
+        },
+        {
+          "id": "d",
+          "text": "Minority"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're valuing a mid-cap healthcare target. You have 3 highly comparable deals from 2019 and 8 loosely comparable deals from the last 12 months. Which set do you anchor your analysis on?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The 3 highly comparable deals despite being older"
+        },
+        {
+          "id": "b",
+          "text": "The 8 recent deals to capture current market conditions"
+        },
+        {
+          "id": "c",
+          "text": "Use recent deals as primary, older deals as a check"
+        },
+        {
+          "id": "d",
+          "text": "Discard both and rely solely on DCF"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A target was acquired for $5B EV with LTM EBITDA of $400M and NTM EBITDA of $500M. Which multiple pairing best reveals whether the acquirer paid for growth?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compare LTM 12.5x vs NTM 10.0x—the gap signals growth value"
+        },
+        {
+          "id": "b",
+          "text": "Only use NTM 10.0x since forward metrics are more accurate"
+        },
+        {
+          "id": "c",
+          "text": "Only use LTM 12.5x since it reflects actual performance"
+        },
+        {
+          "id": "d",
+          "text": "Average them to get 11.25x for the best estimate"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Transaction multiples can be calculated on last-twelve-months (LTM) or next-twelve-months (NTM) financials. When Salesforce acquired Slack for $27.7B, the LTM revenue multiple was ~26x but the NTM multiple was ~20x, reflecting Slack's rapid growth. Comparing LTM and NTM multiples side by side reveals how much of the purchase price is attributable to expected growth versus current performance.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these factors from MOST to LEAST important when selecting comparable precedent transactions for a U.S. specialty chemicals acquisition: (a) Deal size, (b) Industry sub-sector match, (c) Geographic market, (d) Transaction date recency.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deal size similarity"
+        },
+        {
+          "id": "b",
+          "text": "Industry sub-sector match"
+        },
+        {
+          "id": "c",
+          "text": "Geographic market overlap"
+        },
+        {
+          "id": "d",
+          "text": "Transaction date recency"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your precedent transaction set showed a median EV/EBITDA of 11x. News breaks that two of your five comp deals involved distressed sellers accepting below-market offers. How should you adjust?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Remove distressed deals; median likely rises to 12-13x"
+        },
+        {
+          "id": "b",
+          "text": "Keep all five deals for the largest possible sample"
+        },
+        {
+          "id": "c",
+          "text": "Flag distressed deals but show both adjusted and unadjusted ranges"
+        },
+        {
+          "id": "d",
+          "text": "Replace them with public trading comps instead"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "You previously built a precedent transaction analysis with five comparable deals showing a clean median of 11x EV/EBITDA. Now you learn that two sellers were under financial distress, meaning those transaction prices may not reflect fair market value and could be dragging your median down.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

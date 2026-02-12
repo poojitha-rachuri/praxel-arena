@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "cash-flow-analysis",
+  "mode": "LEARN",
+  "title": "Free Cash Flow and Burn Rate Mastery",
+  "description": "Master free cash flow calculation, burn rate analysis, and advanced cash flow interpretation for strategic decision-making.",
+  "difficulty": 4,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A company has OCF of $180M, capex of $55M, and interest expense of $12M. What is its free cash flow to firm (FCFF)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$125M — subtract only capex from OCF"
+        },
+        {
+          "id": "b",
+          "text": "$113M — subtract capex and interest from OCF"
+        },
+        {
+          "id": "c",
+          "text": "$137M — add back interest tax shield to FCFE"
+        },
+        {
+          "id": "d",
+          "text": "$125M plus after-tax interest add-back"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": "Free Cash Flow to Firm (FCFF) represents cash available to all capital providers — both debt and equity holders. Unlike FCFE (free cash flow to equity), FCFF adds back after-tax interest expense to OCF minus capex because interest is a payment to debt holders, not a true operating cost. Tesla's 2023 FCFF exceeded its FCFE by roughly $300M due to this interest add-back.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Shopify Q3 2023: OCF $200M, capex $35M, stock-based compensation $120M, acquisitions $0. Adjusted FCF excluding SBC is $45M. What's the critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strong free cash flow generation at $165M"
+        },
+        {
+          "id": "b",
+          "text": "SBC is 60% of OCF, massively inflating reported cash flow"
+        },
+        {
+          "id": "c",
+          "text": "Low capex suggests underinvestment in infrastructure"
+        },
+        {
+          "id": "d",
+          "text": "No acquisitions means organic growth is strong"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A SaaS startup has $24M cash, monthly operating expenses of $3.2M, and monthly revenue of $1.4M. What is the net burn rate and implied runway?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3.2M burn rate, 7.5 months runway"
+        },
+        {
+          "id": "b",
+          "text": "$1.8M net burn, approximately 13.3 months runway"
+        },
+        {
+          "id": "c",
+          "text": "$1.4M burn rate, 17.1 months runway"
+        },
+        {
+          "id": "d",
+          "text": "$1.8M net burn, approximately 24 months runway"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Burn rate comes in two flavors: gross burn (total monthly cash outflows) and net burn (outflows minus inflows). Runway = cash balance ÷ net burn rate. WeWork's 2019 implosion was partly because its reported metrics obscured a $219M monthly net burn rate against $2.5B in reserves — just 11 months of runway while pursuing an IPO at a $47B valuation.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When a company's operating cash flow consistently exceeds net income, the most common driver is high ____ charges, which reduce earnings but don't consume cash.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Depreciation and amortization"
+        },
+        {
+          "id": "b",
+          "text": "Interest expense"
+        },
+        {
+          "id": "c",
+          "text": "Tax provision"
+        },
+        {
+          "id": "d",
+          "text": "Cost of goods sold"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're CFO of a mid-cap manufacturer with $80M FCF. The board demands capital allocation: pay down $200M in debt at 7.5% maturing in 3 years, or fund a $80M factory expansion projected to generate $18M annual FCF starting in 2 years. Credit markets are tightening.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pay down debt — tightening credit makes refinancing risky"
+        },
+        {
+          "id": "b",
+          "text": "Fund expansion — 22.5% IRR far exceeds 7.5% debt cost"
+        },
+        {
+          "id": "c",
+          "text": "Split 50/50 between debt paydown and partial expansion"
+        },
+        {
+          "id": "d",
+          "text": "Delay both — hoard cash given macro uncertainty"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Company X reports: OCF $50M, capex $20M, debt repayments $30M, dividends $15M, new borrowings $25M. What is the levered free cash flow and is the dividend sustainable from organic cash generation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "LFCF is $30M; dividends are fully sustainable"
+        },
+        {
+          "id": "b",
+          "text": "LFCF is $0M; dividends require new borrowing"
+        },
+        {
+          "id": "c",
+          "text": "LFCF is $30M; but debt service makes dividends unsustainable"
+        },
+        {
+          "id": "d",
+          "text": "LFCF is $5M; dividends exceed organic cash generation"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Levered Free Cash Flow (LFCF) = OCF minus capex, representing cash after operations and maintenance but before financing decisions. However, sustainability analysis requires looking at total obligations. GE's dividend cut in 2017 came despite seemingly adequate LFCF because mandatory debt service and pension obligations consumed cash that headline FCF metrics didn't capture.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A PE firm is evaluating a target's cash flow quality. Rank these red flags from most concerning (first) to least concerning (last): (a) Rising DSO from 45 to 72 days, (b) Capex declining 40% while revenue grows 20%, (c) OCF negative while net income is positive for 3 consecutive years, (d) One-time asset sale boosting investing cash flows.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rising DSO from 45 to 72 days"
+        },
+        {
+          "id": "b",
+          "text": "Capex declining 40% while revenue grows 20%"
+        },
+        {
+          "id": "c",
+          "text": "OCF negative with positive net income for 3 years"
+        },
+        {
+          "id": "d",
+          "text": "One-time asset sale boosting investing cash flows"
+        }
+      ],
+      "correctAnswer": "c,b,a,d",
+      "insightAnswer": "c,b,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The SaaS startup from earlier just lost its largest customer (18% of revenue). Monthly revenue drops to $1.15M while expenses remain $3.2M. The CEO proposes an aggressive pivot requiring $5M upfront investment. With $24M cash remaining, what's the best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fund the pivot — new runway of ~9 months is sufficient"
+        },
+        {
+          "id": "b",
+          "text": "Cut expenses 30% first, then evaluate the pivot affordability"
+        },
+        {
+          "id": "c",
+          "text": "Raise emergency funding immediately before burn rate worsens"
+        },
+        {
+          "id": "d",
+          "text": "Fund pivot and raise simultaneously to extend runway"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously, this SaaS startup had $24M cash, $3.2M monthly expenses, and $1.4M revenue giving 13.3 months runway. Now their largest customer churned, dropping revenue to $1.15M and increasing net burn to $2.05M — just 11.7 months runway before any pivot investment.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

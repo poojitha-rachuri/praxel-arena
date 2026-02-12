@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "comparable-company-analysis",
+  "mode": "LEARN",
+  "title": "Comparable Company Analysis Fundamentals",
+  "description": "Learn how to value companies by comparing them to similar publicly traded peers using trading multiples.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What does the EV/EBITDA multiple measure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enterprise value relative to operating cash earnings"
+        },
+        {
+          "id": "b",
+          "text": "Stock price relative to net income per share"
+        },
+        {
+          "id": "c",
+          "text": "Total debt relative to annual revenue"
+        },
+        {
+          "id": "d",
+          "text": "Market cap relative to book value of equity"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Comparable company analysis (or \"comps\") values a business by comparing it to similar public companies using trading multiples. The most common multiple is EV/EBITDA, which divides a company's enterprise value (equity + debt − cash) by its earnings before interest, taxes, depreciation, and amortization. For example, if Chipotle trades at 20x EV/EBITDA while McDonald's trades at 15x, the market is pricing Chipotle's growth potential more aggressively.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Three SaaS companies: Datadog (EV/Revenue 18x, 25% growth), Splunk (EV/Revenue 7x, 12% growth), Snowflake (EV/Revenue 30x, 50% growth). Which company looks potentially overvalued relative to its growth?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Datadog — its multiple is moderate but growth is strong"
+        },
+        {
+          "id": "b",
+          "text": "Splunk — lowest multiple suggests the market is bearish"
+        },
+        {
+          "id": "c",
+          "text": "Snowflake — highest multiple but growth may not justify 30x"
+        },
+        {
+          "id": "d",
+          "text": "All three are fairly valued based on these numbers"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Which factor is MOST important when selecting comparable companies for a comps analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Companies must be headquartered in the same country"
+        },
+        {
+          "id": "b",
+          "text": "Similar business model, growth profile, and end market"
+        },
+        {
+          "id": "c",
+          "text": "Exact same market capitalization range"
+        },
+        {
+          "id": "d",
+          "text": "Identical number of employees and office locations"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Peer selection is the most critical step in comps. You need companies with similar business models, growth rates, margins, and risk profiles. When Goldman Sachs valued Spotify's IPO in 2018, they chose peers like Pandora and Netflix — not Apple or Amazon — because those companies shared a subscription-based digital media model with similar revenue growth trajectories.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In a comps analysis, the ____ is calculated as market cap plus total debt minus cash and equivalents.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Book value"
+        },
+        {
+          "id": "b",
+          "text": "Enterprise value"
+        },
+        {
+          "id": "c",
+          "text": "Net income"
+        },
+        {
+          "id": "d",
+          "text": "Free cash flow"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're valuing a mid-size cybersecurity firm. You can use 4 large-cap peers with excellent data coverage, or 4 small-cap peers with similar growth but limited analyst coverage. Which peer set do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Large-cap peers for better data quality and reliability"
+        },
+        {
+          "id": "b",
+          "text": "Small-cap peers for closer business comparability"
+        },
+        {
+          "id": "c",
+          "text": "Combine both sets and use the median of all eight"
+        },
+        {
+          "id": "d",
+          "text": "Skip comps entirely and only use a DCF model"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Why do analysts typically use the MEDIAN rather than the MEAN of peer multiples?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The median is always higher, producing better valuations"
+        },
+        {
+          "id": "b",
+          "text": "The median reduces the distortion caused by extreme outliers"
+        },
+        {
+          "id": "c",
+          "text": "The mean is only used in precedent transaction analysis"
+        },
+        {
+          "id": "d",
+          "text": "SEC regulations require the use of median multiples"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "After selecting peers and gathering their multiples, analysts benchmark the target company against the group's central tendency. Consider five software peers with EV/EBITDA multiples of 12x, 14x, 15x, 16x, and 45x. The mean is 20.4x, heavily skewed by the outlier, while the median of 15x better represents the typical peer. This is why Wall Street analysts almost always anchor on the median.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these steps of a comparable company analysis in the correct order, from first to last: (a) Calculate implied valuation range, (b) Select appropriate peer companies, (c) Determine relevant multiples to use, (d) Spread the comps and compute peer statistics.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate implied valuation range for the target"
+        },
+        {
+          "id": "b",
+          "text": "Select appropriate peer companies"
+        },
+        {
+          "id": "c",
+          "text": "Determine which multiples are most relevant"
+        },
+        {
+          "id": "d",
+          "text": "Spread the comps and compute median and mean"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your peer group median EV/EBITDA was 14x, but the target company just announced it's pivoting from hardware sales to a recurring SaaS subscription model. How should you adjust your analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the same peers — the pivot hasn't happened yet"
+        },
+        {
+          "id": "b",
+          "text": "Add SaaS peers and use EV/Revenue instead of EV/EBITDA"
+        },
+        {
+          "id": "c",
+          "text": "Simply double the 14x multiple to account for SaaS premium"
+        },
+        {
+          "id": "d",
+          "text": "Abandon comps and switch entirely to a DCF approach"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously built a comps analysis using hardware peers with a median EV/EBITDA of 14x. Now the target company is pivoting to a SaaS model, which changes the relevant peer set and likely the most appropriate valuation multiple, since early-stage SaaS companies often lack meaningful EBITDA.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

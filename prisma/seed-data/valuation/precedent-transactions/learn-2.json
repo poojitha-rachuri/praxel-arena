@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "precedent-transactions",
+  "mode": "LEARN",
+  "title": "Control Premiums and Synergy Adjustments",
+  "description": "Master how control premiums and synergy values distort precedent transaction multiples and learn to normalize them for accurate valuation.",
+  "difficulty": 4,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "If a target's unaffected share price implies 8x EV/EBITDA and the deal closes at 10.4x, what is the implied control premium on an enterprise value basis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "23%"
+        },
+        {
+          "id": "b",
+          "text": "30%"
+        },
+        {
+          "id": "c",
+          "text": "35%"
+        },
+        {
+          "id": "d",
+          "text": "20%"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Control premiums reflect the extra price acquirers pay above a target's unaffected trading value to gain control. In Microsoft's $69B Activision deal, the offer represented a ~45% premium to the unaffected price. Premiums vary by sector and strategic rationale, typically ranging 20–50%.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Three recent healthcare deals show EV/EBITDA multiples of 14.2x, 18.7x, and 15.1x. The 18.7x deal involved a bidding war between CVS and Cigna. Which data point is the most critical signal when setting your valuation range?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use the median of all three transactions"
+        },
+        {
+          "id": "b",
+          "text": "The 18.7x outlier likely reflects auction dynamics, not intrinsic value"
+        },
+        {
+          "id": "c",
+          "text": "Average all three for a balanced view"
+        },
+        {
+          "id": "d",
+          "text": "Discard the lowest multiple as it undervalues targets"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When building a precedent transaction analysis, why is it critical to distinguish between revenue synergies and cost synergies embedded in the deal price?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue synergies are easier to achieve and more certain"
+        },
+        {
+          "id": "b",
+          "text": "Cost synergies are typically more certain, so they inflate multiples more predictably"
+        },
+        {
+          "id": "c",
+          "text": "Both synergy types affect multiples equally in practice"
+        },
+        {
+          "id": "d",
+          "text": "Synergies don't materially impact precedent transaction multiples"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Synergies baked into deal prices inflate precedent transaction multiples above standalone value. When Kraft acquired Cadbury for $19B, roughly $675M in annual cost synergies justified paying 13x EBITDA vs. Cadbury's 10x trading multiple. Analysts must estimate how much of the premium is synergy-driven to avoid overpaying.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "To normalize a precedent transaction multiple for synergies, analysts calculate the deal's EV divided by the target's ____ EBITDA plus estimated synergies, producing a lower 'synergy-adjusted' multiple.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pro forma combined"
+        },
+        {
+          "id": "b",
+          "text": "Last twelve months standalone"
+        },
+        {
+          "id": "c",
+          "text": "Forward projected acquirer"
+        },
+        {
+          "id": "d",
+          "text": "Consensus street estimate"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're advising a PE firm on acquiring a SaaS company. Your precedent set includes five strategic buyer deals (avg 15x EBITDA) and two sponsor-to-sponsor deals (avg 11x). The PE firm asks for a fair offer price.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Weight toward 15x since strategic deals set the competitive clearing price"
+        },
+        {
+          "id": "b",
+          "text": "Weight toward 11x since sponsor deals better reflect financial buyer economics"
+        },
+        {
+          "id": "c",
+          "text": "Average all seven deals equally for the broadest dataset"
+        },
+        {
+          "id": "d",
+          "text": "Exclude sponsor deals entirely since strategic deals dominate the market"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A target's unaffected price was $42. The deal announced at $58. But rumors leaked 3 weeks prior, pushing the stock to $49. What premium should you report and why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "38% premium to $42—use the truly unaffected price before any leak"
+        },
+        {
+          "id": "b",
+          "text": "18% premium to $49—the market-adjusted price is more current"
+        },
+        {
+          "id": "c",
+          "text": "Report both premiums with context on the leak timeline"
+        },
+        {
+          "id": "d",
+          "text": "Use the 52-week average price as the most neutral baseline"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Selecting the correct 'unaffected' date is one of the trickiest parts of precedent analysis. When Elon Musk's Twitter bid leaked, the stock jumped 27% before formal announcement. Best practice is to report premiums at multiple reference points—1-day, 1-week, and 30-day pre-announcement—flagging any information leakage.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these adjustments from most to least impactful when normalizing a precedent transaction set for a mid-cap industrial acquisition: (a) adjusting for deal-specific earnouts, (b) removing outlier auction-driven premiums, (c) normalizing for cyclical EBITDA peaks, (d) converting LTM to NTM multiples.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adjusting for deal-specific earnouts and contingent consideration"
+        },
+        {
+          "id": "b",
+          "text": "Removing outlier multiples driven by competitive bidding dynamics"
+        },
+        {
+          "id": "c",
+          "text": "Normalizing target EBITDA for cyclical peaks or troughs"
+        },
+        {
+          "id": "d",
+          "text": "Converting LTM multiples to NTM for consistency"
+        }
+      ],
+      "correctAnswer": "c,b,d,a",
+      "insightAnswer": "c,b,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your board just learned the target is now being courted by a second strategic bidder with significant cross-selling synergies. How does this change your precedent-based valuation approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shift precedent weighting toward contested auction transactions with higher premiums"
+        },
+        {
+          "id": "b",
+          "text": "Keep your original analysis unchanged—fundamentals haven't shifted"
+        },
+        {
+          "id": "c",
+          "text": "Abandon precedent analysis entirely and rely solely on DCF"
+        },
+        {
+          "id": "d",
+          "text": "Lower your bid to maintain return discipline regardless of competition"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Previously you were advising on a single-bidder acquisition using a precedent set weighted toward negotiated deals. Now a competitive auction dynamic has emerged, fundamentally changing the expected premium and relevant comparable transactions.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "financial-ratio-analysis",
+  "mode": "LEARN",
+  "title": "Mastering Ratios for Strategic Decisions",
+  "description": "Learn to calculate, interpret, and apply liquidity, solvency, efficiency, and profitability ratios to real business decisions.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A retailer has a current ratio of 1.1 but a quick ratio of 0.3. What does this gap most likely indicate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The company holds excessive inventory relative to liquid assets"
+        },
+        {
+          "id": "b",
+          "text": "Accounts receivable are inflating the current ratio"
+        },
+        {
+          "id": "c",
+          "text": "The company has strong short-term liquidity"
+        },
+        {
+          "id": "d",
+          "text": "Long-term debt is being misclassified as current"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "The current ratio (current assets ÷ current liabilities) measures broad liquidity, while the quick ratio strips out inventory and prepaid expenses. When there's a large gap between the two, it signals that inventory is a dominant component of current assets — a red flag for companies where inventory can be slow to convert to cash, like retailers facing demand shifts.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Ford Motor Co. reports: Debt-to-Equity 3.8, Interest Coverage 2.1, Current Ratio 1.2, Return on Equity 18%. Which metric is the most critical warning sign for a credit analyst?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Current ratio of 1.2 suggests tight liquidity"
+        },
+        {
+          "id": "b",
+          "text": "Interest coverage of 2.1 signals thin margin for debt servicing"
+        },
+        {
+          "id": "c",
+          "text": "ROE of 18% is artificially inflated by extreme leverage"
+        },
+        {
+          "id": "d",
+          "text": "Debt-to-equity of 3.8 alone disqualifies the company"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Costco's inventory turnover is 12.4x versus Target's 6.2x. What is the most accurate strategic interpretation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Costco's products are higher quality than Target's"
+        },
+        {
+          "id": "b",
+          "text": "Costco's bulk membership model drives faster inventory cycling"
+        },
+        {
+          "id": "c",
+          "text": "Target is more profitable because it holds inventory longer"
+        },
+        {
+          "id": "d",
+          "text": "Costco has supply chain problems requiring frequent restocking"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Efficiency ratios like inventory turnover (COGS ÷ average inventory) and receivables turnover (revenue ÷ average receivables) reveal how well a company converts assets into revenue. However, these ratios must be interpreted within business model context — a warehouse club like Costco intentionally stocks fewer SKUs at high volume, naturally producing higher turnover than a general merchandise retailer.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "The DuPont decomposition breaks ROE into three drivers: net profit margin × ____ × equity multiplier.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Asset turnover"
+        },
+        {
+          "id": "b",
+          "text": "Inventory turnover"
+        },
+        {
+          "id": "c",
+          "text": "Interest coverage"
+        },
+        {
+          "id": "d",
+          "text": "Current ratio"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're the CFO of a mid-cap SaaS company. Investors are pushing for higher ROE, currently at 11%. You can either take on debt to buy back shares (raising equity multiplier) or invest aggressively in sales to improve asset turnover. Which path do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leverage up via buybacks for immediate ROE boost"
+        },
+        {
+          "id": "b",
+          "text": "Invest in sales growth for sustainable asset turnover improvement"
+        },
+        {
+          "id": "c",
+          "text": "Cut operating costs to widen net margin instead"
+        },
+        {
+          "id": "d",
+          "text": "Do both equally to diversify the ROE improvement approach"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Company A has an operating margin of 22% but a free cash flow margin of 6%. Company B has an operating margin of 15% but a free cash flow margin of 14%. Which conclusion is most defensible?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company A is more profitable and therefore a better investment"
+        },
+        {
+          "id": "b",
+          "text": "Company B converts earnings to cash more efficiently, suggesting higher quality"
+        },
+        {
+          "id": "c",
+          "text": "Both companies are equally attractive given different margin profiles"
+        },
+        {
+          "id": "d",
+          "text": "Company A's gap means it likely committed accounting fraud"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Profitability ratios like gross margin, operating margin, and net margin tell you about accounting earnings, but they don't reveal cash generation quality. Advanced analysts compare accrual-based margins to free cash flow margins. A persistent gap between operating profit and free cash flow often signals heavy capital expenditure requirements, aggressive revenue recognition, or poor working capital management — all of which degrade true economic profitability.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A PE firm is evaluating a leveraged buyout of a manufacturing company. Rank these ratios from most critical to least critical for the acquisition decision: (a) Gross margin trend, (b) Fixed charge coverage ratio, (c) Return on invested capital, (d) Days sales outstanding.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gross margin trend"
+        },
+        {
+          "id": "b",
+          "text": "Fixed charge coverage ratio"
+        },
+        {
+          "id": "c",
+          "text": "Return on invested capital"
+        },
+        {
+          "id": "d",
+          "text": "Days sales outstanding"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The Fed just raised rates by 150 bps unexpectedly. The manufacturing target's variable-rate debt is 60% of total debt. How does this change your LBO ratio analysis priorities?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shift focus to interest coverage and debt service coverage ratios"
+        },
+        {
+          "id": "b",
+          "text": "Prioritize inventory turnover to free up cash faster"
+        },
+        {
+          "id": "c",
+          "text": "Focus on gross margin since input costs will also rise"
+        },
+        {
+          "id": "d",
+          "text": "No change — the original ratio priority ranking still holds"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "In the previous interaction, you ranked fixed charge coverage as the top ratio for an LBO analysis. Now a sudden 150 bps rate hike dramatically increases the cost of the target's variable-rate debt, which represents 60% of its capital structure. The assumptions underpinning your original debt servicing projections have materially changed.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

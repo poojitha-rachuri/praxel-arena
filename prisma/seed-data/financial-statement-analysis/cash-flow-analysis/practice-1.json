@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "cash-flow-analysis",
+  "mode": "PRACTICE",
+  "title": "Advanced Cash Flow Pattern Recognition",
+  "description": "Master the art of diagnosing company health through complex cash flow statement analysis and free cash flow interpretation.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS company reports: Operating CF +$12M, Investing CF -$45M, Financing CF +$38M. Net income is $18M. What's the most critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strong profitability with net income exceeding operating cash flow"
+        },
+        {
+          "id": "b",
+          "text": "Heavy investment funded by external capital, not operations"
+        },
+        {
+          "id": "c",
+          "text": "Healthy balance since total net cash flow is positive"
+        },
+        {
+          "id": "d",
+          "text": "Operating cash flow trails net income, suggesting accrual issues"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "Peloton's Q3 2022 data: Operating CF -$746M, CapEx $70M, stock-based comp $145M. Revenue declined 24% YoY. Cash on hand: $879M. What demands immediate attention?",
+      "options": [
+        {
+          "id": "a",
+          "text": "CapEx is relatively low compared to operating losses"
+        },
+        {
+          "id": "b",
+          "text": "Stock-based comp inflates non-cash charges, masking real performance"
+        },
+        {
+          "id": "c",
+          "text": "Cash burn rate suggests roughly 12 months of runway remaining"
+        },
+        {
+          "id": "d",
+          "text": "Revenue decline is the primary issue, not cash flow"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're CFO of a $200M revenue manufacturer. Operating CF is $30M but declining 15% annually. You can either invest $25M in automation (payback 3 years) or use it to retire high-interest debt at 9%. Which do you prioritize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Invest in automation to reverse the operating CF decline trend"
+        },
+        {
+          "id": "b",
+          "text": "Retire debt to reduce $2.25M annual interest and preserve flexibility"
+        },
+        {
+          "id": "c",
+          "text": "Split 50/50 between automation and debt retirement"
+        },
+        {
+          "id": "d",
+          "text": "Do neither; hoard cash given the declining CF trajectory"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "When a company's operating cash flow consistently exceeds net income, the most likely driver is high ____ expenses that reduce reported earnings without consuming cash.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Interest"
+        },
+        {
+          "id": "b",
+          "text": "Depreciation and amortization"
+        },
+        {
+          "id": "c",
+          "text": "Tax"
+        },
+        {
+          "id": "d",
+          "text": "Restructuring"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these cash flow warning signs from MOST to LEAST urgent for a pre-profit biotech with 18 months of runway: (a) Rising accounts receivable days, (b) Negative free cash flow widening 40% QoQ, (c) Increasing reliance on convertible debt issuance, (d) CapEx exceeding original guidance by 10%.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rising accounts receivable days"
+        },
+        {
+          "id": "b",
+          "text": "Negative FCF widening 40% quarter over quarter"
+        },
+        {
+          "id": "c",
+          "text": "Increasing reliance on convertible debt issuance"
+        },
+        {
+          "id": "d",
+          "text": "CapEx exceeding original guidance by 10%"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "A retail chain generates $50M operating CF but reports -$15M free cash flow due to $65M in store expansion CapEx. Activist investors demand positive FCF. Cutting CapEx to $40M would close 30% of planned new stores. What's your call?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Maintain full CapEx; growth-phase FCF negativity is justified strategically"
+        },
+        {
+          "id": "b",
+          "text": "Cut CapEx to $40M to show positive FCF and satisfy investors"
+        },
+        {
+          "id": "c",
+          "text": "Compromise at $55M CapEx with a clear FCF-positive timeline communicated"
+        },
+        {
+          "id": "d",
+          "text": "Shift to sale-leaseback model to reduce CapEx while maintaining expansion"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "An acquirer evaluating a target company should rank these cash flow quality adjustments from MOST to LEAST impactful: (a) One-time legal settlement received of $8M, (b) Aggressive revenue recognition inflating operating CF by $20M, (c) Maintenance CapEx deferred by $5M over 2 years, (d) Working capital benefit from stretching payables 15 days.",
+      "options": [
+        {
+          "id": "a",
+          "text": "One-time legal settlement of $8M"
+        },
+        {
+          "id": "b",
+          "text": "Aggressive revenue recognition inflating OCF by $20M"
+        },
+        {
+          "id": "c",
+          "text": "Maintenance CapEx deferred $5M over two years"
+        },
+        {
+          "id": "d",
+          "text": "Working capital benefit from stretching payables 15 days"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The Fed just raised rates 75bps. The company's $38M financing CF relied on a revolving credit facility at SOFR+200bps. With $120M drawn, how does this change your assessment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Minimal impact; $900K added interest cost is manageable annually"
+        },
+        {
+          "id": "b",
+          "text": "Refinancing risk is critical; the revolver may face covenant pressure"
+        },
+        {
+          "id": "c",
+          "text": "Operating CF must absorb higher interest, accelerating the cash burn"
+        },
+        {
+          "id": "d",
+          "text": "Switch immediately to fixed-rate debt to lock in current levels"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "Earlier you analyzed a company relying on $38M in financing activities to fund $45M in investment spending while generating only $12M in operating cash flow. Now macroeconomic conditions have shifted dramatically.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}
