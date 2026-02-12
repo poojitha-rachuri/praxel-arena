@@ -8,6 +8,7 @@ import { processGamification } from "@/lib/gamification/xp";
 import { processCredentials } from "@/lib/gamification/credentials";
 import type { SprintResponse } from "@/types";
 import crypto from "crypto";
+import { getPostHogServer } from "@/lib/posthog";
 
 export async function POST(request: NextRequest) {
   const user = await ensureUser();
@@ -224,6 +225,20 @@ export async function POST(request: NextRequest) {
       }
 
       return newAttempt;
+    });
+
+    // Track sprint evaluation
+    const ph = getPostHogServer();
+    ph?.capture({
+      distinctId: user.clerkId,
+      event: "sprint_evaluated",
+      properties: {
+        sprintId: sprint.id,
+        mode: sprint.mode,
+        skillSlug: sprint.skill.slug,
+        totalScore: evaluation.totalScore,
+        interactionCount: sprint.interactions.length,
+      },
     });
 
     // ── Duel completion logic ──
@@ -559,6 +574,19 @@ async function completeDuelAttempt(
         matchCount: { increment: 1 },
       },
     });
+  });
+
+  // Track duel completion
+  const phServer = getPostHogServer();
+  phServer?.capture({
+    distinctId: updatedDuel.player1Id,
+    event: "duel_completed",
+    properties: {
+      duelId,
+      winnerId: duelResult.winnerId,
+      eloChange: duelResult.eloChange,
+      skillId: sprint.skillId,
+    },
   });
 
   // Check credentials for winner (non-blocking)
