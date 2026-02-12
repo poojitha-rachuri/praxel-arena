@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "startup-growth-valuation",
+  "mode": "LEARN",
+  "title": "VC Valuation: Pre-Money to Exit",
+  "description": "Master the mechanics of VC valuation including pre/post-money, revenue multiples, and return-driven pricing.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A VC invests $5M at a $15M pre-money valuation. What percentage of the company do they own?",
+      "options": [
+        {
+          "id": "a",
+          "text": "25% — $5M of $20M post-money"
+        },
+        {
+          "id": "b",
+          "text": "33% — $5M of $15M pre-money"
+        },
+        {
+          "id": "c",
+          "text": "20% — $5M of $25M post-money"
+        },
+        {
+          "id": "d",
+          "text": "30% — blended pre and post calculation"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Pre-money valuation is what the company is worth before new investment; post-money equals pre-money plus the investment amount. Ownership percentage is always calculated against post-money: Investment ÷ Post-Money = Ownership %. For example, when Stripe raised its Series A, investors' stakes were determined by dividing their check size by the post-money valuation.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A Series B SaaS company shows: ARR $12M growing 110% YoY, gross margin 78%, net revenue retention 135%, burn multiple 1.8x. Comparable public SaaS companies at similar growth trade at 20-30x ARR. What's the most critical signal for justifying the upper end of that range?",
+      "options": [
+        {
+          "id": "a",
+          "text": "78% gross margin is strong but standard for SaaS"
+        },
+        {
+          "id": "b",
+          "text": "135% NRR signals compounding revenue without new customers"
+        },
+        {
+          "id": "c",
+          "text": "110% growth alone justifies premium multiples"
+        },
+        {
+          "id": "d",
+          "text": "1.8x burn multiple shows capital efficiency"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A VC targets 3x on a $10M Series B and expects exit in 5 years at 10x revenue. The startup currently has $8M ARR growing 60% YoY. Using the VC method, which factor most directly sets the required pre-money valuation today?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Current ARR of $8M determines today's value"
+        },
+        {
+          "id": "b",
+          "text": "Projected exit value discounted by the target return multiple"
+        },
+        {
+          "id": "c",
+          "text": "Comparable company multiples applied to current revenue"
+        },
+        {
+          "id": "d",
+          "text": "TAM penetration rate at time of exit"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The VC method works backward from exit. You estimate the terminal value at exit (e.g., projected revenue × exit multiple), then divide by the target return multiple to get the post-money valuation today. This is fundamentally different from DCF—VCs price rounds based on what return they need, not a cost-of-capital discount rate. Sequoia famously uses variants of this approach to back into acceptable entry prices.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In the VC method, if a startup's projected exit value is $600M and the fund requires a 10x return, the maximum ____ valuation the VC should pay is $60M.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-money"
+        },
+        {
+          "id": "b",
+          "text": "Post-money"
+        },
+        {
+          "id": "c",
+          "text": "Enterprise"
+        },
+        {
+          "id": "d",
+          "text": "Liquidation"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're leading a Series A for a fintech doing $4M ARR (growing 150% YoY) with 18 months of runway. Founder wants $80M pre-money (20x ARR). A competitor term sheet offers $60M pre-money. Do you match, counter, or walk?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Match at $80M — 150% growth justifies premium, losing deal is worse"
+        },
+        {
+          "id": "b",
+          "text": "Counter at $65M — slight premium over competitor, preserves return math"
+        },
+        {
+          "id": "c",
+          "text": "Walk away — $80M pre-money destroys Series B step-up economics"
+        },
+        {
+          "id": "d",
+          "text": "Offer $80M but with 2x liquidation preference to protect downside"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A marketplace startup claims $2B TAM. Their current GMV is $50M with a 15% take rate ($7.5M net revenue). An investor models 5% TAM penetration at maturity. What's the flaw in using this TAM figure to back into a valuation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "TAM should use GMV not net revenue as the base"
+        },
+        {
+          "id": "b",
+          "text": "5% penetration is unrealistically conservative for venture returns"
+        },
+        {
+          "id": "c",
+          "text": "TAM is likely top-down and doesn't reflect serviceable obtainable market"
+        },
+        {
+          "id": "d",
+          "text": "Take rate will increase so $7.5M understates current revenue"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "TAM-based valuation sizes the opportunity ceiling, but investors frequently confuse Total Addressable Market with Serviceable Obtainable Market (SOM). A $2B TAM might yield only a $200M SOM after filtering for geography, customer segment, and competitive dynamics. Uber's early pitch cited a $4B global taxi market—their actual addressable opportunity was far larger because they redefined the market, illustrating how TAM framing can mislead in both directions.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these inputs by their impact on a growth-stage SaaS company's valuation multiple, from MOST to LEAST impactful: (a) Gross margin improvement from 72% to 80%, (b) Revenue growth acceleration from 80% to 130% YoY, (c) TAM expansion from $5B to $8B, (d) Net revenue retention improvement from 110% to 140%.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gross margin: 72% → 80%"
+        },
+        {
+          "id": "b",
+          "text": "Revenue growth: 80% → 130% YoY"
+        },
+        {
+          "id": "c",
+          "text": "TAM expansion: $5B → $8B"
+        },
+        {
+          "id": "d",
+          "text": "Net revenue retention: 110% → 140%"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The macro environment shifts: interest rates jump 300bps and public SaaS multiples compress from 25x to 12x ARR. Your portfolio company was valued at $200M post-money (25x on $8M ARR) just 9 months ago and now needs to raise a Series C. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raise a flat round at $200M to avoid a down round signal"
+        },
+        {
+          "id": "b",
+          "text": "Accept a down round at 15x ARR to get clean capital in"
+        },
+        {
+          "id": "c",
+          "text": "Extend runway via bridge note, delay pricing until multiples recover"
+        },
+        {
+          "id": "d",
+          "text": "Push for 20x ARR with heavy structured terms and preferences"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "Previously, the company raised at 25x ARR in a favorable market. Now public SaaS multiples have compressed by over 50% due to a 300bps rate hike, fundamentally changing the comparable valuation framework and making the prior round's pricing look aggressive.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

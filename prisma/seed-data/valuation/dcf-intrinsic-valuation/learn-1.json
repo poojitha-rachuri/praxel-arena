@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "dcf-intrinsic-valuation",
+  "mode": "LEARN",
+  "title": "DCF Fundamentals: Your First Valuation",
+  "description": "Master the core building blocks of Discounted Cash Flow analysis including discount rates, WACC, and terminal value.",
+  "difficulty": 1,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the core idea behind a DCF valuation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A dollar today is worth more than a dollar tomorrow"
+        },
+        {
+          "id": "b",
+          "text": "Companies are worth their total revenue"
+        },
+        {
+          "id": "c",
+          "text": "Stock price always reflects true value"
+        },
+        {
+          "id": "d",
+          "text": "Past earnings determine future value"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "A Discounted Cash Flow (DCF) model values a company by estimating all the cash it will generate in the future, then discounting those amounts back to today's dollars. Think of it like this: if someone offered you $100 today or $100 in five years, you'd take it today — because you could invest that money and grow it. DCF applies this same logic to value entire businesses like Apple or Tesla.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A startup projects free cash flows of $1M, $2M, and $5M over the next three years, using a 10% discount rate. Year 3's $5M discounted to today is roughly $3.76M. What does this tell you?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The startup is overvalued by $1.24M"
+        },
+        {
+          "id": "b",
+          "text": "Waiting 3 years for $5M costs you about $1.24M in value"
+        },
+        {
+          "id": "c",
+          "text": "A 10% discount rate is too high for startups"
+        },
+        {
+          "id": "d",
+          "text": "The company should collect all cash upfront instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "WACC represents the blended cost of a company's financing. What does it blend together?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue and expenses"
+        },
+        {
+          "id": "b",
+          "text": "Cost of debt and cost of equity"
+        },
+        {
+          "id": "c",
+          "text": "Operating costs and capital expenditures"
+        },
+        {
+          "id": "d",
+          "text": "Short-term and long-term liabilities"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "WACC stands for Weighted Average Cost of Capital. Companies fund themselves with two main sources — debt (loans, bonds) and equity (shareholders' money). Each has a cost: debt has interest payments, and equity investors expect returns for their risk. WACC blends these two costs based on how much of each the company uses. For example, Coca-Cola's WACC is roughly 7%, meaning every dollar of capital costs them about 7 cents per year.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In a DCF model, the ____ is used as the discount rate to convert future cash flows into present value.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gross margin"
+        },
+        {
+          "id": "b",
+          "text": "WACC"
+        },
+        {
+          "id": "c",
+          "text": "P/E ratio"
+        },
+        {
+          "id": "d",
+          "text": "Dividend yield"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're building a DCF for a stable utility company like Duke Energy (WACC ~6%) versus a high-growth tech firm like Palantir (WACC ~12%). Using a lower discount rate increases present value. Which company likely has a higher share of its DCF value from cash flows far in the future?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Duke Energy — low WACC discounts distant cash flows less severely"
+        },
+        {
+          "id": "b",
+          "text": "Palantir — high growth means bigger future cash flows dominate"
+        },
+        {
+          "id": "c",
+          "text": "Both would be roughly equal"
+        },
+        {
+          "id": "d",
+          "text": "Neither — distant cash flows are always negligible"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Why do analysts calculate terminal value in a DCF?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To estimate the company's liquidation price"
+        },
+        {
+          "id": "b",
+          "text": "To capture value beyond the explicit forecast period"
+        },
+        {
+          "id": "c",
+          "text": "To replace the need for a discount rate"
+        },
+        {
+          "id": "d",
+          "text": "To account for inflation in the first five years"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A DCF typically forecasts cash flows for 5–10 years, but companies don't just stop existing after that. Terminal value captures all the value from year 11 onward into infinity. It's often calculated using a perpetuity growth formula: Terminal Value = Final Year Cash Flow × (1 + growth rate) ÷ (WACC – growth rate). In practice, terminal value frequently accounts for 60–80% of a company's total DCF value, which is why getting this number right matters enormously.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these DCF inputs from MOST to LEAST impact on the final valuation of a typical company like Microsoft. Consider how sensitive the output is to small changes in each.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tax rate assumption"
+        },
+        {
+          "id": "b",
+          "text": "WACC (discount rate)"
+        },
+        {
+          "id": "c",
+          "text": "Terminal growth rate"
+        },
+        {
+          "id": "d",
+          "text": "Year 1 free cash flow estimate"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You've built a DCF for a retail chain using an 8% WACC and 2% terminal growth rate. The Fed just raised interest rates by 1.5%. Without changing any cash flow forecasts, what likely happens to your valuation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Valuation increases — higher rates signal a strong economy"
+        },
+        {
+          "id": "b",
+          "text": "Valuation drops significantly — WACC rises, discounting is heavier"
+        },
+        {
+          "id": "c",
+          "text": "Valuation stays flat — cash flows didn't change"
+        },
+        {
+          "id": "d",
+          "text": "Valuation increases — terminal growth rate rises with rates"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously built a DCF with an 8% WACC and 2% terminal growth rate for a retail chain. Now interest rates have jumped 1.5%, which raises both the cost of debt and the risk-free rate embedded in cost of equity, pushing WACC higher.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -237,13 +237,13 @@ export default function LandingPage() {
             >
               <div className="flex items-center gap-1.5">
                 <Sparkles className="size-3.5 text-warning" />
-                <span className="font-semibold text-foreground">72</span>{" "}
+                <span className="font-semibold text-foreground">96</span>{" "}
                 Sprints
               </div>
               <div className="h-3 w-px bg-border" />
               <div className="flex items-center gap-1.5">
                 <Award className="size-3.5 text-primary" />
-                <span className="font-semibold text-foreground">6</span> Skills
+                <span className="font-semibold text-foreground">8</span> Skills
               </div>
               <div className="h-3 w-px bg-border" />
               <div className="flex items-center gap-1.5">
@@ -530,7 +530,7 @@ const STEPS = [
   {
     num: "01",
     title: "Choose a Skill",
-    desc: "Pick from 6 business skills — GTM Strategy, Pricing & Monetization, Data Interpretation, and more.",
+    desc: "Pick from 8 business skills — from GTM Strategy to Financial Statement Analysis, Valuation, and more.",
     icon: Award,
   },
   {

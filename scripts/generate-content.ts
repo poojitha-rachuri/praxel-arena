@@ -73,6 +73,18 @@ const SKILLS: Record<string, SkillDef> = {
     description:
       "Executive communication, cross-functional alignment, difficult conversations, and investor relations",
   },
+  "financial-statement-analysis": {
+    slug: "financial-statement-analysis",
+    name: "Financial Statement Analysis",
+    description:
+      "Reading balance sheets, income statements, cash flow; ratios, working capital, profitability analysis",
+  },
+  valuation: {
+    slug: "valuation",
+    name: "Valuation",
+    description:
+      "DCF, comparable company analysis, precedent transactions, startup valuation methods",
+  },
 };
 
 // ─── Topic + Sprint Config ──────────────────────────────

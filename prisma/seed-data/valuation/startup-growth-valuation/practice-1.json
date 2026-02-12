@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "startup-growth-valuation",
+  "mode": "PRACTICE",
+  "title": "VC Valuation: Pre-Money to Exit",
+  "description": "Master advanced VC valuation mechanics including pre/post-money calculations, option pool shuffles, and multi-round dilution analysis.",
+  "difficulty": 5,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Series B term sheet: $20M investment, $80M pre-money, 20% unallocated option pool to be created pre-close. Founders currently own 60% of 10M shares. What's the real effective pre-money valuation for existing shareholders?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$80M — the stated pre-money is the effective valuation"
+        },
+        {
+          "id": "b",
+          "text": "$64M — option pool reduces effective pre-money by $16M"
+        },
+        {
+          "id": "c",
+          "text": "$60M — founders' share defines the effective valuation"
+        },
+        {
+          "id": "d",
+          "text": "$100M — you should use post-money as the reference"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "You're a Series A lead. A SaaS startup has $3M ARR growing 3x YoY but 18-month runway at current burn. They want $50M pre-money. A competitor offers $40M pre-money with full ratchet anti-dilution. Which term do you counter with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$45M pre-money with broad-based weighted average anti-dilution"
+        },
+        {
+          "id": "b",
+          "text": "$50M pre-money with 2x participating preferred and pay-to-play"
+        },
+        {
+          "id": "c",
+          "text": "$40M pre-money with no anti-dilution but 1x non-participating preferred"
+        },
+        {
+          "id": "d",
+          "text": "$50M pre-money with full ratchet matching the competitor's offer"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 3,
+      "prompt": "In the VC method, if a startup's expected exit value is $500M in 5 years and the VC targets 10x gross return, the implied ____ valuation today is $50M, but after a 15% option pool expansion pre-money the effective founder valuation drops to $____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "post-money; $42.5M"
+        },
+        {
+          "id": "b",
+          "text": "pre-money; $42.5M"
+        },
+        {
+          "id": "c",
+          "text": "post-money; $35M"
+        },
+        {
+          "id": "d",
+          "text": "pre-money; $35M"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 4,
+      "prompt": "Fintech startup metrics: $8M ARR, 140% net revenue retention, 70% gross margin, -$5M FCF, $2B TAM. Comparable public companies trade at 15x NTM revenue. Recent private round comps show 20-25x for similar growth. Which data point most warrants a premium or discount to comps?",
+      "options": [
+        {
+          "id": "a",
+          "text": "70% gross margin is standard — neutral impact on multiple"
+        },
+        {
+          "id": "b",
+          "text": "140% NRR signals exceptional expansion — justifies premium to comps"
+        },
+        {
+          "id": "c",
+          "text": "$2B TAM limits upside — warrants a discount to comps"
+        },
+        {
+          "id": "d",
+          "text": "Negative FCF indicates unsustainable model — apply steep discount"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these factors from MOST to LEAST important when determining a Series C valuation for a $30M ARR enterprise SaaS company preparing for IPO in 18 months.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Comparable public company NTM revenue multiples"
+        },
+        {
+          "id": "b",
+          "text": "Expected IPO discount and time-to-liquidity adjustment"
+        },
+        {
+          "id": "c",
+          "text": "Historical private round step-up ratios"
+        },
+        {
+          "id": "d",
+          "text": "Rule of 40 score (growth rate + FCF margin)"
+        }
+      ],
+      "correctAnswer": "a,d,b,c",
+      "insightAnswer": "a,d,b,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "A D2C brand at $15M revenue (growing 80% YoY) needs $25M. Offer A: $100M pre-money from a top-tier fund with 1x participating preferred + 3x cap. Offer B: $75M pre-money from a strategic acquirer (major retailer) with standard 1x non-participating preferred. Which maximizes founder outcome at a $400M exit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Offer A — higher valuation offsets participation at $400M exit"
+        },
+        {
+          "id": "b",
+          "text": "Offer B — non-participating converts; founders keep more above preference"
+        },
+        {
+          "id": "c",
+          "text": "Offer A — participating preferred capped at 3x limits investor take"
+        },
+        {
+          "id": "d",
+          "text": "Offer B — strategic partner accelerates exit likelihood enough to compensate"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "The public SaaS index drops 40% over 3 months. Your portfolio company's Series C is mid-process at $500M pre-money based on 25x NTM revenue. The lead investor now proposes a structured deal: $500M headline but with 1.5x liquidation preference and ratchet to IPO. How should you advise the founder?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accept — headline valuation protects signaling for future rounds"
+        },
+        {
+          "id": "b",
+          "text": "Counter at $350M clean terms — avoid structure that punishes downside"
+        },
+        {
+          "id": "c",
+          "text": "Accept structure but negotiate ratchet to narrow-based weighted average"
+        },
+        {
+          "id": "d",
+          "text": "Pause fundraise entirely and extend runway with bridge debt"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously the company was raising at $500M pre-money in a strong market. Public SaaS multiples have now compressed 40%, making the original valuation unjustifiable on comps. The lead investor is offering structure to bridge the gap.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    },
+    {
+      "order": 8,
+      "prompt": "A pre-revenue biotech startup claims a $10B TAM. Rank these valuation approaches from MOST to LEAST appropriate for its Series A pricing.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Risk-adjusted DCF of pipeline with probability-weighted outcomes"
+        },
+        {
+          "id": "b",
+          "text": "Comparable precedent transaction multiples for similar-stage biotechs"
+        },
+        {
+          "id": "c",
+          "text": "VC method using peak revenue scenario and target return"
+        },
+        {
+          "id": "d",
+          "text": "TAM penetration model with revenue multiple on projected Year 5 sales"
+        }
+      ],
+      "correctAnswer": "a,b,c,d",
+      "insightAnswer": "a,b,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    }
+  ]
+}

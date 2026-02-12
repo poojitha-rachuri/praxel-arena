@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "income-statement-profitability",
+  "mode": "LEARN",
+  "title": "Margins, EBITDA & Earnings Quality",
+  "description": "Master how to evaluate profitability depth using margin analysis, EBITDA adjustments, and earnings quality signals.",
+  "difficulty": 3,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A retailer has 40% gross margin but only 8% operating margin. What does the 32-point gap most likely indicate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High SG&A spending relative to revenue"
+        },
+        {
+          "id": "b",
+          "text": "Excessive cost of goods sold"
+        },
+        {
+          "id": "c",
+          "text": "Unusually low tax rates inflating profit"
+        },
+        {
+          "id": "d",
+          "text": "Strong pricing power eroding over time"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Gross margin measures profitability after direct costs (COGS), while operating margin subtracts all operating expenses like SG&A, R&D, and depreciation. A large gap between the two reveals how much overhead is consuming your gross profit—common in retail chains with heavy store costs and marketing spend.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Peloton FY2022: Revenue $3.58B (down 11%), Gross Margin 19.2% (was 35.4%), Operating Margin -68.7%, EBITDA Margin -52.1%. What is the most critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue decline is the primary concern"
+        },
+        {
+          "id": "b",
+          "text": "Gross margin collapse shows broken unit economics"
+        },
+        {
+          "id": "c",
+          "text": "Negative EBITDA suggests only a cash flow timing issue"
+        },
+        {
+          "id": "d",
+          "text": "Operating losses are normal for growth companies"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Why do analysts often prefer EBITDA over net income when comparing companies across different countries and capital structures?",
+      "options": [
+        {
+          "id": "a",
+          "text": "EBITDA includes all cash and non-cash items"
+        },
+        {
+          "id": "b",
+          "text": "It removes effects of financing, taxes, and depreciation policies"
+        },
+        {
+          "id": "c",
+          "text": "EBITDA is an official GAAP metric with strict rules"
+        },
+        {
+          "id": "d",
+          "text": "It always equals operating cash flow"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "EBITDA (Earnings Before Interest, Taxes, Depreciation & Amortization) strips out financing decisions (interest), tax jurisdictions, and accounting choices around asset depreciation. This makes it useful for apples-to-apples comparisons—for example, comparing a debt-heavy LBO target in Germany with an equity-funded competitor in the U.S.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When a company's net income grows faster than its operating cash flow for multiple years, analysts should investigate ____ quality.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Earnings"
+        },
+        {
+          "id": "b",
+          "text": "Revenue"
+        },
+        {
+          "id": "c",
+          "text": "Dividend"
+        },
+        {
+          "id": "d",
+          "text": "Asset"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're evaluating two acquisition targets. Company A: 45% gross margin, 20% operating margin, stable. Company B: 60% gross margin, 12% operating margin, growing fast. Budget allows only one. Which do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company A—proven operational efficiency with strong flow-through"
+        },
+        {
+          "id": "b",
+          "text": "Company B—higher gross margin means more room to optimize operations"
+        },
+        {
+          "id": "c",
+          "text": "Neither—the operating margin gap in B is a red flag"
+        },
+        {
+          "id": "d",
+          "text": "Delay decision until both show identical margin profiles"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A software firm reports $200M revenue, $160M cash collected, and $40M in unbilled receivables recognized under ASC 606. What earnings quality concern does this raise?",
+      "options": [
+        {
+          "id": "a",
+          "text": "None—ASC 606 requires recognizing revenue at contract signing"
+        },
+        {
+          "id": "b",
+          "text": "Aggressive revenue recognition may be front-loading future periods"
+        },
+        {
+          "id": "c",
+          "text": "The $40M gap proves fraud is occurring"
+        },
+        {
+          "id": "d",
+          "text": "Unbilled receivables only matter for manufacturing firms"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Earnings quality measures how well reported profits reflect actual economic performance. Key red flags include: net income consistently exceeding operating cash flow, growing accruals (like unbilled receivables), frequent 'one-time' adjustments, and aggressive revenue recognition under ASC 606 where performance obligations may be debatable.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these earnings quality warning signs from most severe (first) to least severe when evaluating a potential investment in a mid-cap industrial company.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Operating cash flow trails net income for 4 consecutive years"
+        },
+        {
+          "id": "b",
+          "text": "Company changed depreciation method, boosting EPS by 3%"
+        },
+        {
+          "id": "c",
+          "text": "Accounts receivable growing 2x faster than revenue growth"
+        },
+        {
+          "id": "d",
+          "text": "Three consecutive years of large 'non-recurring' restructuring charges"
+        }
+      ],
+      "correctAnswer": "a,c,d,b",
+      "insightAnswer": "a,c,d,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You just learned the industrial company from your analysis has announced it will begin capitalizing $50M of previously expensed R&D costs, boosting operating income by 15%. How does this change your assessment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Positive—higher operating income means improved profitability"
+        },
+        {
+          "id": "b",
+          "text": "Neutral—this is a standard accounting update with no real impact"
+        },
+        {
+          "id": "c",
+          "text": "Concerning—it artificially inflates margins without changing cash flows"
+        },
+        {
+          "id": "d",
+          "text": "Positive—capitalized R&D always signals stronger innovation investment"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "Previously you identified multiple earnings quality red flags at this industrial company including persistent cash flow shortfalls and fast-growing receivables. Now management has made an accounting policy change that further boosts reported earnings without any operational improvement.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "financial-ratio-analysis",
+  "mode": "PRACTICE",
+  "title": "Ratio Forensics Under Stress Conditions",
+  "description": "Diagnose complex financial health scenarios using advanced ratio interplay, stress signals, and strategic tradeoff analysis.",
+  "difficulty": 5,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A mid-cap retailer reports: current ratio 2.4, quick ratio 0.6, inventory turnover dropped from 8x to 4x YoY, and DSO held steady at 32 days. What's the most critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Healthy liquidity given the strong current ratio"
+        },
+        {
+          "id": "b",
+          "text": "Massive inventory buildup masking severe liquidity risk"
+        },
+        {
+          "id": "c",
+          "text": "Receivables management is deteriorating rapidly"
+        },
+        {
+          "id": "d",
+          "text": "Solvency risk from excessive long-term debt load"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "Pfizer shows: ROIC 14%, WACC 9%, debt-to-equity 1.8, interest coverage 3.2x (down from 6.1x two years ago), and free cash flow yield 7%. Which metric combination demands immediate attention?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ROIC exceeds WACC, so value creation is fine"
+        },
+        {
+          "id": "b",
+          "text": "FCF yield is strong enough to offset all concerns"
+        },
+        {
+          "id": "c",
+          "text": "Rapidly declining interest coverage with high leverage signals covenant risk"
+        },
+        {
+          "id": "d",
+          "text": "Debt-to-equity alone indicates imminent distress"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're CFO of a capital-intensive manufacturer. ROIC is 11% vs. 10% WACC. You can either aggressively pay down debt (D/E from 2.1 to 1.2) reducing interest coverage risk, or reinvest in automation projected to lift ROIC to 16%. Cash supports only one.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pay down debt to secure solvency and lower refinancing risk"
+        },
+        {
+          "id": "b",
+          "text": "Reinvest in automation to widen the ROIC-WACC spread"
+        },
+        {
+          "id": "c",
+          "text": "Do half of each to balance risk and return"
+        },
+        {
+          "id": "d",
+          "text": "Issue equity to fund both initiatives simultaneously"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "When a company's cash conversion cycle lengthens while revenue grows, but operating cash flow declines, the most likely cause is ____ outpacing top-line gains, which the DuPont decomposition would surface through deteriorating ____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Working capital consumption; asset turnover"
+        },
+        {
+          "id": "b",
+          "text": "Depreciation expense; equity multiplier"
+        },
+        {
+          "id": "c",
+          "text": "Tax burden increase; net profit margin"
+        },
+        {
+          "id": "d",
+          "text": "Capital expenditure; financial leverage ratio"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "A PE firm evaluating an acquisition target must sequence its ratio analysis. Rank these from most to least critical for initial due diligence: (a) Gross margin trend vs. peers, (b) Altman Z-score and interest coverage, (c) Free cash flow to firm yield, (d) Inventory and receivable turnover trends.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gross margin trend vs. peers"
+        },
+        {
+          "id": "b",
+          "text": "Altman Z-score and interest coverage"
+        },
+        {
+          "id": "c",
+          "text": "Free cash flow to firm yield"
+        },
+        {
+          "id": "d",
+          "text": "Inventory and receivable turnover trends"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Two acquisition targets in specialty chemicals: Target A has ROE 22% (driven by 3.5x equity multiplier, 4% net margin), Target B has ROE 15% (1.2x equity multiplier, 11% net margin). Both have similar revenue. Which is the stronger long-term acquisition?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Target A — higher ROE means superior shareholder returns"
+        },
+        {
+          "id": "b",
+          "text": "Target B — margin-driven ROE is more sustainable and less fragile"
+        },
+        {
+          "id": "c",
+          "text": "Target A — high leverage signals management confidence in cash flows"
+        },
+        {
+          "id": "d",
+          "text": "Neither — ROE alone is insufficient to differentiate them"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "A distressed airline's board must prioritize ratio improvements to avoid covenant breach. Rank from most urgent to least: (a) Improve asset turnover via fleet optimization, (b) Restore interest coverage above 2.0x, (c) Extend current ratio above covenant minimum 1.1x, (d) Lift EBITDA margin through route cuts.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Improve asset turnover via fleet optimization"
+        },
+        {
+          "id": "b",
+          "text": "Restore interest coverage above 2.0x"
+        },
+        {
+          "id": "c",
+          "text": "Extend current ratio above covenant minimum 1.1x"
+        },
+        {
+          "id": "d",
+          "text": "Lift EBITDA margin through route cuts"
+        }
+      ],
+      "correctAnswer": "c,b,d,a",
+      "insightAnswer": "c,b,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The Fed unexpectedly raises rates 150bps. The manufacturer's floating-rate debt is 60% of total debt. With EBIT unchanged, interest coverage drops from 4.2x to 2.1x. What's your immediate priority as CFO?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Swap floating-rate exposure to fixed via interest rate swaps"
+        },
+        {
+          "id": "b",
+          "text": "Accelerate receivables collection to boost operating cash flow"
+        },
+        {
+          "id": "c",
+          "text": "Cut the dividend to preserve cash and signal fiscal discipline"
+        },
+        {
+          "id": "d",
+          "text": "Negotiate covenant relief with lenders before next reporting date"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": "Previously you chose to reinvest in automation over deleveraging, leaving D/E at 2.1. Now a sudden rate shock halves your interest coverage, and your next covenant test is in 6 weeks.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

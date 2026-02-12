@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "comparable-company-analysis",
+  "mode": "LEARN",
+  "title": "Refining Peer Groups and Adjusting Multiples",
+  "description": "Learn how to select meaningful peer groups, normalize multiples, and handle common pitfalls in comparable company analysis.",
+  "difficulty": 3,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "When building a comp set for Chipotle, which factor should most heavily influence peer selection?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Similar market cap and geographic footprint"
+        },
+        {
+          "id": "b",
+          "text": "Similar business model, growth profile, and margins"
+        },
+        {
+          "id": "c",
+          "text": "Same SIC code classification only"
+        },
+        {
+          "id": "d",
+          "text": "Companies with the closest stock price"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Peer selection goes beyond industry classification. The best comps share similar business models, growth rates, margin profiles, and capital intensity. Chipotle's fast-casual model and 15%+ unit growth make it more comparable to high-growth restaurant concepts than traditional QSR chains like McDonald's.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Your SaaS comp set shows these EV/Revenue multiples: Snowflake 18x, Datadog 15x, CrowdStrike 14x, Palantir 12x, Zoom 5x. All have 25%+ revenue growth except Zoom at 3%. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Zoom is undervalued relative to the group"
+        },
+        {
+          "id": "b",
+          "text": "Zoom's low growth makes it a poor comp—remove or footnote it"
+        },
+        {
+          "id": "c",
+          "text": "The median multiple is the most reliable figure"
+        },
+        {
+          "id": "d",
+          "text": "All five companies are valid comps regardless of growth"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Company A reports EBITDA of $200M but includes a $30M one-time litigation settlement gain. What normalized EBITDA should you use for the EV/EBITDA multiple?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$200M—reported EBITDA is the standard"
+        },
+        {
+          "id": "b",
+          "text": "$230M—add back the settlement for consistency"
+        },
+        {
+          "id": "c",
+          "text": "$170M—subtract the non-recurring gain"
+        },
+        {
+          "id": "d",
+          "text": "$185M—subtract half since it may recur"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Normalizing financials is critical for apples-to-apples comparisons. Non-recurring items like litigation gains, restructuring charges, or asset write-downs should be stripped out. If a company's reported EBITDA includes a one-time $30M gain, you subtract it to reflect ongoing earning power.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When a comp trades at a premium due to a pending acquisition bid, analysts typically ____ that company from the peer set to avoid distorting the valuation range.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Double-weight"
+        },
+        {
+          "id": "b",
+          "text": "Exclude or footnote"
+        },
+        {
+          "id": "c",
+          "text": "Use the pre-announcement price for"
+        },
+        {
+          "id": "d",
+          "text": "Average with the sector median for"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're valuing a mid-cap industrial company. You can use a set of 12 comps with diverse sub-industries for statistical reliability, or 4 tightly matched peers with nearly identical business models. Which approach do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "12 comps—larger sample reduces outlier impact"
+        },
+        {
+          "id": "b",
+          "text": "4 comps—precision of match matters more than sample size"
+        },
+        {
+          "id": "c",
+          "text": "Use all 12 but weight the 4 closest peers more heavily"
+        },
+        {
+          "id": "d",
+          "text": "Split the difference and pick 8 reasonably close peers"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A European comp trades at 8x EV/EBITDA while US peers average 12x. After investigation, you find the European firm has similar growth and margins. What most likely explains the discount?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Currency translation errors in the data"
+        },
+        {
+          "id": "b",
+          "text": "Country risk premium, liquidity discount, or governance differences"
+        },
+        {
+          "id": "c",
+          "text": "European companies always trade at lower multiples"
+        },
+        {
+          "id": "d",
+          "text": "The European firm must have hidden off-balance-sheet liabilities"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Cross-border comps introduce complexity. Even when fundamentals match, multiples can diverge due to country risk premiums, lower trading liquidity on foreign exchanges, differences in corporate governance standards, or varying accounting frameworks (IFRS vs. US GAAP). Analysts must adjust or clearly disclose these factors.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these steps in the correct order when performing a comparable company analysis from start to finish: (a) Calculate and normalize trading multiples, (b) Select the peer universe, (c) Apply the valuation range to the target, (d) Benchmark and interpret the spread of multiples.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate and normalize trading multiples"
+        },
+        {
+          "id": "b",
+          "text": "Select the peer universe"
+        },
+        {
+          "id": "c",
+          "text": "Apply the valuation range to the target"
+        },
+        {
+          "id": "d",
+          "text": "Benchmark and interpret the spread of multiples"
+        }
+      ],
+      "correctAnswer": "b,a,d,c",
+      "insightAnswer": "b,a,d,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your top comp just announced it will spin off its high-growth cloud division next quarter, retaining only its legacy hardware business. How should you adjust your analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep the comp unchanged until the spinoff officially closes"
+        },
+        {
+          "id": "b",
+          "text": "Remove the comp entirely from the peer set"
+        },
+        {
+          "id": "c",
+          "text": "Use sum-of-the-parts to isolate the comparable segment's multiple"
+        },
+        {
+          "id": "d",
+          "text": "Replace it with the spun-off cloud entity's projected multiples"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "You had built a tight 5-company peer set for a cloud infrastructure target. The highest-weighted comp just announced a spinoff that will separate its cloud and hardware businesses, meaning its consolidated multiples no longer reflect a pure-play comparable.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

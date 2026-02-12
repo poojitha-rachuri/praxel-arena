@@ -21,14 +21,31 @@ const SEED_DATA_DIR = path.resolve(__dirname, "seed-data");
 
 // ─── Static Data ────────────────────────────────────────────────────────────
 
-const SKILLS = [
+interface CareerWeight {
+  slug: string;
+  weight: number;
+}
+
+interface SkillSeed {
+  name: string;
+  slug: string;
+  description: string;
+  icon: string;
+  careers: CareerWeight[];
+}
+
+const SKILLS: SkillSeed[] = [
   {
     name: "Guesstimation",
     slug: "guesstimation",
     description:
       "Market sizing, Fermi estimates, and quantitative reasoning under uncertainty",
     icon: "🎯",
-    careers: ["consulting", "product-management", "founder"],
+    careers: [
+      { slug: "consulting", weight: 1.0 },
+      { slug: "product-management", weight: 0.3 },
+      { slug: "founder", weight: 0.8 },
+    ],
   },
   {
     name: "GTM Strategy",
@@ -36,7 +53,13 @@ const SKILLS = [
     description:
       "Go-to-market planning, channel strategy, launch sequencing, and market entry",
     icon: "🚀",
-    careers: ["marketing", "product-management", "founder", "growth"],
+    careers: [
+      { slug: "marketing", weight: 1.0 },
+      { slug: "founder", weight: 0.9 },
+      { slug: "growth", weight: 0.7 },
+      { slug: "product-management", weight: 0.6 },
+      { slug: "sales-strategy", weight: 0.5 },
+    ],
   },
   {
     name: "Pricing & Monetization",
@@ -45,10 +68,12 @@ const SKILLS = [
       "Pricing models, willingness-to-pay, unit economics, and packaging strategy",
     icon: "💰",
     careers: [
-      "product-management",
-      "founder",
-      "consulting",
-      "sales-strategy",
+      { slug: "sales-strategy", weight: 1.0 },
+      { slug: "founder", weight: 0.8 },
+      { slug: "consulting", weight: 0.6 },
+      { slug: "product-management", weight: 0.5 },
+      { slug: "growth", weight: 0.5 },
+      { slug: "marketing", weight: 0.4 },
     ],
   },
   {
@@ -58,10 +83,12 @@ const SKILLS = [
       "Reading dashboards, identifying signals in noise, drawing conclusions from metrics",
     icon: "📊",
     careers: [
-      "product-management",
-      "growth",
-      "consulting",
-      "business-operations",
+      { slug: "growth", weight: 1.0 },
+      { slug: "business-operations", weight: 1.0 },
+      { slug: "product-management", weight: 0.8 },
+      { slug: "consulting", weight: 0.8 },
+      { slug: "marketing", weight: 0.5 },
+      { slug: "founder", weight: 0.5 },
     ],
   },
   {
@@ -71,10 +98,10 @@ const SKILLS = [
       "Frameworks for tradeoff decisions, resource allocation, and saying no",
     icon: "⚖️",
     careers: [
-      "product-management",
-      "consulting",
-      "founder",
-      "business-operations",
+      { slug: "product-management", weight: 1.0 },
+      { slug: "business-operations", weight: 0.8 },
+      { slug: "consulting", weight: 0.7 },
+      { slug: "founder", weight: 0.7 },
     ],
   },
   {
@@ -84,10 +111,40 @@ const SKILLS = [
       "Structuring arguments, executive communication, persuasion, and alignment",
     icon: "🗣️",
     careers: [
-      "product-management",
-      "consulting",
-      "marketing",
-      "sales-strategy",
+      { slug: "consulting", weight: 0.8 },
+      { slug: "sales-strategy", weight: 0.8 },
+      { slug: "product-management", weight: 0.7 },
+      { slug: "marketing", weight: 0.7 },
+      { slug: "founder", weight: 0.5 },
+      { slug: "business-operations", weight: 0.4 },
+    ],
+  },
+  {
+    name: "Financial Statement Analysis",
+    slug: "financial-statement-analysis",
+    description:
+      "Reading balance sheets, income statements, cash flow; ratios, working capital, profitability analysis",
+    icon: "📑",
+    careers: [
+      { slug: "consulting", weight: 0.7 },
+      { slug: "founder", weight: 0.7 },
+      { slug: "business-operations", weight: 0.6 },
+      { slug: "sales-strategy", weight: 0.4 },
+      { slug: "product-management", weight: 0.3 },
+      { slug: "growth", weight: 0.3 },
+    ],
+  },
+  {
+    name: "Valuation",
+    slug: "valuation",
+    description:
+      "DCF, comparable company analysis, precedent transactions, startup valuation methods",
+    icon: "🏦",
+    careers: [
+      { slug: "consulting", weight: 0.6 },
+      { slug: "founder", weight: 0.6 },
+      { slug: "sales-strategy", weight: 0.3 },
+      { slug: "product-management", weight: 0.2 },
     ],
   },
 ];
@@ -387,7 +444,7 @@ async function main() {
     });
     skillMap.set(skill.slug, record.id);
 
-    for (const careerSlug of careers) {
+    for (const { slug: careerSlug, weight } of careers) {
       const careerOutcomeId = careerMap.get(careerSlug);
       if (!careerOutcomeId) continue;
 
@@ -398,11 +455,11 @@ async function main() {
             careerOutcomeId,
           },
         },
-        update: {},
+        update: { weight },
         create: {
           skillId: record.id,
           careerOutcomeId,
-          weight: 1.0,
+          weight,
         },
       });
     }

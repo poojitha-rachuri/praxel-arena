@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "income-statement-profitability",
+  "mode": "PRACTICE",
+  "title": "Margins, Revenue Quality & EBITDA in Practice",
+  "description": "Practice analyzing profitability metrics, revenue recognition signals, and earnings quality using realistic business scenarios.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS company reports: Revenue up 30% YoY, but deferred revenue declined 15% YoY and accounts receivable doubled. What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strong growth justifies the receivable increase"
+        },
+        {
+          "id": "b",
+          "text": "Revenue quality is suspect—future revenue pipeline is shrinking"
+        },
+        {
+          "id": "c",
+          "text": "The company is shifting from subscriptions to one-time sales"
+        },
+        {
+          "id": "d",
+          "text": "Cash collection timing is slightly delayed but normal"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "EBITDA equals operating income plus ____ plus amortization, making it a proxy for operating cash generation before reinvestment.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Interest expense"
+        },
+        {
+          "id": "b",
+          "text": "Depreciation"
+        },
+        {
+          "id": "c",
+          "text": "Tax expense"
+        },
+        {
+          "id": "d",
+          "text": "Capital expenditures"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You're evaluating two retailers. Company A has 42% gross margin but 5% operating margin. Company B has 28% gross margin but 12% operating margin. Which is the better-run business and why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A—higher gross margin means stronger pricing power and brand"
+        },
+        {
+          "id": "b",
+          "text": "B—converts more gross profit into operating profit, showing cost discipline"
+        },
+        {
+          "id": "c",
+          "text": "A—gross margin is the most reliable profitability indicator"
+        },
+        {
+          "id": "d",
+          "text": "Neither—you need net income to compare operational quality"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Nike reports Q3: Revenue $12.4B (up 5%), gross margin expanded 150bps to 45.0%, but SG&A grew 12% to $4.1B. Operating margin fell 80bps. What matters most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gross margin expansion shows strong product pricing momentum"
+        },
+        {
+          "id": "b",
+          "text": "SG&A growth outpacing revenue is eroding operating leverage"
+        },
+        {
+          "id": "c",
+          "text": "Revenue growth of 5% is the primary concern"
+        },
+        {
+          "id": "d",
+          "text": "Operating margin decline is temporary and seasonally normal"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these earnings quality red flags from MOST concerning (first) to LEAST concerning when analyzing a manufacturer's income statement.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue growing while cash from operations declines for three years"
+        },
+        {
+          "id": "b",
+          "text": "One-time restructuring charge of 2% of revenue"
+        },
+        {
+          "id": "c",
+          "text": "Changing revenue recognition policy to recognize sales earlier"
+        },
+        {
+          "id": "d",
+          "text": "Gross margin declined 50bps due to raw material inflation"
+        }
+      ],
+      "correctAnswer": "a,c,b,d",
+      "insightAnswer": "a,c,b,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "A PE firm is acquiring a software company. The target reports $80M EBITDA but capitalizes $18M of software development costs annually (amortized over 5 years). A comparable company expenses all development. How should you adjust?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use reported EBITDA—capitalization follows GAAP rules correctly"
+        },
+        {
+          "id": "b",
+          "text": "Reduce EBITDA by $18M to ~$62M for apples-to-apples comparison"
+        },
+        {
+          "id": "c",
+          "text": "Add back amortization, raising EBITDA further above $80M"
+        },
+        {
+          "id": "d",
+          "text": "Ignore EBITDA entirely and use only free cash flow"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "You're assessing a hospital chain's profitability sustainability. Rank these income statement analyses from MOST to LEAST important for predicting future margins.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Trend in payer mix between Medicare, Medicaid, and commercial insurance"
+        },
+        {
+          "id": "b",
+          "text": "Year-over-year change in depreciation expense"
+        },
+        {
+          "id": "c",
+          "text": "Operating margin trend over the past five years by segment"
+        },
+        {
+          "id": "d",
+          "text": "Labor cost as a percentage of revenue versus peers"
+        }
+      ],
+      "correctAnswer": "c,a,d,b",
+      "insightAnswer": "c,a,d,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The software target just disclosed that 40% of its $200M revenue comes from a single government contract expiring in 14 months with no renewal guarantee. How does this change your profitability analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "No change—analyze current profitability and assume contract renews"
+        },
+        {
+          "id": "b",
+          "text": "Stress-test margins assuming $80M revenue loss and high fixed cost base"
+        },
+        {
+          "id": "c",
+          "text": "Exclude the contract revenue entirely from valuation"
+        },
+        {
+          "id": "d",
+          "text": "Reduce EBITDA margin by 40% proportionally across all line items"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you valued a software company at $80M adjusted EBITDA on $200M revenue. Now a major customer concentration risk has been revealed.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

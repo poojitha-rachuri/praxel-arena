@@ -1,0 +1,235 @@
+{
+  "skillSlug": "valuation",
+  "topicSlug": "dcf-intrinsic-valuation",
+  "mode": "LEARN",
+  "title": "WACC, Terminal Value & Sensitivity",
+  "description": "Master how discount rates, terminal value, and sensitivity analysis shape a DCF valuation.",
+  "difficulty": 2,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What does WACC represent in a DCF model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The blended cost of a company's debt and equity financing"
+        },
+        {
+          "id": "b",
+          "text": "The company's expected revenue growth rate"
+        },
+        {
+          "id": "c",
+          "text": "The inflation-adjusted return on assets"
+        },
+        {
+          "id": "d",
+          "text": "The maximum return shareholders can expect"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "WACC (Weighted Average Cost of Capital) blends the cost of debt and equity based on a company's capital structure. For example, if Apple funds itself 80% with equity costing 10% and 20% with debt costing 3% after tax, its WACC is about 8.6%. WACC is the discount rate used to convert future cash flows into today's dollars.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A mid-size retailer has: Cost of equity 12%, Cost of debt (after-tax) 4%, Debt-to-total-capital 50%, Equity-to-total-capital 50%. What's the most important takeaway about their WACC?",
+      "options": [
+        {
+          "id": "a",
+          "text": "WACC is 12% because equity always dominates"
+        },
+        {
+          "id": "b",
+          "text": "WACC is 8%, meaning heavy debt use lowers the discount rate"
+        },
+        {
+          "id": "c",
+          "text": "WACC is 4% since debt is cheapest"
+        },
+        {
+          "id": "d",
+          "text": "WACC cannot be calculated without revenue data"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "In a DCF, why do we calculate a terminal value?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To estimate the company's liquidation proceeds"
+        },
+        {
+          "id": "b",
+          "text": "To capture the value of all cash flows beyond the forecast period"
+        },
+        {
+          "id": "c",
+          "text": "To adjust for inflation in the early projection years"
+        },
+        {
+          "id": "d",
+          "text": "To replace the need for a discount rate entirely"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A DCF typically projects free cash flows for 5–10 years, but a company doesn't stop operating after that. Terminal value captures everything beyond the forecast period—and often represents 60–80% of total enterprise value. The two common methods are the Gordon Growth Model (perpetuity growth) and the Exit Multiple method.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In the Gordon Growth Model, terminal value equals the final year's free cash flow × (1 + g) divided by ____ minus g, where g is the long-term growth rate.",
+      "options": [
+        {
+          "id": "a",
+          "text": "EBITDA"
+        },
+        {
+          "id": "b",
+          "text": "WACC"
+        },
+        {
+          "id": "c",
+          "text": "Revenue"
+        },
+        {
+          "id": "d",
+          "text": "Net income"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're valuing a stable utility company. You can use a 2% perpetuity growth rate (conservative) or a 4% rate (optimistic). The WACC is 7%. Which approach is more defensible, and why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "4%—utilities have monopoly pricing power supporting high growth"
+        },
+        {
+          "id": "b",
+          "text": "2%—it's near long-term GDP/inflation, appropriate for stable businesses"
+        },
+        {
+          "id": "c",
+          "text": "4%—higher growth always yields a more accurate valuation"
+        },
+        {
+          "id": "d",
+          "text": "Neither matters—terminal value is insignificant in utility DCFs"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "In a sensitivity analysis, which pair of inputs should you test first and why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue growth and tax rate—taxes drive all value"
+        },
+        {
+          "id": "b",
+          "text": "WACC and terminal growth rate—they most impact enterprise value"
+        },
+        {
+          "id": "c",
+          "text": "Depreciation and capex—they are hardest to forecast"
+        },
+        {
+          "id": "d",
+          "text": "Working capital and debt balance—they change every quarter"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Sensitivity analysis tests how your valuation changes when key assumptions shift. Analysts build data tables showing enterprise value across different WACC and terminal growth rate combinations. For instance, Netflix's implied value per share might range from $350 to $600 just by moving WACC from 8% to 10% and growth from 2% to 4%.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these factors by their typical impact on a DCF's final enterprise value, from MOST impactful to LEAST impactful: (a) Year-1 free cash flow estimate, (b) Terminal growth rate assumption, (c) WACC / discount rate, (d) Year-3 capex forecast.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Year-1 free cash flow estimate"
+        },
+        {
+          "id": "b",
+          "text": "Terminal growth rate assumption"
+        },
+        {
+          "id": "c",
+          "text": "WACC / discount rate"
+        },
+        {
+          "id": "d",
+          "text": "Year-3 capex forecast"
+        }
+      ],
+      "correctAnswer": "c,b,a,d",
+      "insightAnswer": "c,b,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You just learned the Fed raised interest rates by 150 basis points. How does this most likely change your DCF valuation of a consumer goods company?",
+      "options": [
+        {
+          "id": "a",
+          "text": "WACC rises, lowering the present value of future cash flows"
+        },
+        {
+          "id": "b",
+          "text": "Terminal growth rate increases, boosting enterprise value"
+        },
+        {
+          "id": "c",
+          "text": "No effect—DCF uses company-specific data, not market rates"
+        },
+        {
+          "id": "d",
+          "text": "Free cash flows increase because consumers spend more"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "You had previously built a DCF with a WACC of 8% and terminal growth of 2.5%, producing a fair value of $45 per share. Now the macroeconomic environment has shifted dramatically with a major rate hike.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

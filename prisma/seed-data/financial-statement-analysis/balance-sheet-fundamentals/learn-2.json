@@ -1,0 +1,235 @@
+{
+  "skillSlug": "financial-statement-analysis",
+  "topicSlug": "balance-sheet-fundamentals",
+  "mode": "LEARN",
+  "title": "Working Capital and Liquidity Basics",
+  "description": "Learn how to calculate working capital and assess a company's short-term financial health using liquidity ratios.",
+  "difficulty": 2,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "If a retailer has $500K in current assets and $300K in current liabilities, what is its working capital?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$800K"
+        },
+        {
+          "id": "b",
+          "text": "$200K"
+        },
+        {
+          "id": "c",
+          "text": "$300K"
+        },
+        {
+          "id": "d",
+          "text": "-$200K"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Working capital measures whether a company can cover its short-term obligations. It's calculated as Current Assets minus Current Liabilities. Positive working capital means the company has a cushion; negative means potential trouble paying bills.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Target reports: Current Assets $18.1B, Current Liabilities $19.5B, Total Assets $53.3B. What's the most important takeaway from these numbers?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Target is a large company with over $53B in assets"
+        },
+        {
+          "id": "b",
+          "text": "Target has negative working capital of -$1.4B"
+        },
+        {
+          "id": "c",
+          "text": "Target's current assets are nearly $20B"
+        },
+        {
+          "id": "d",
+          "text": "Target's total assets far exceed current liabilities"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "A furniture company has $240K in current assets and $120K in current liabilities. What is its current ratio?",
+      "options": [
+        {
+          "id": "a",
+          "text": "0.5"
+        },
+        {
+          "id": "b",
+          "text": "1.0"
+        },
+        {
+          "id": "c",
+          "text": "2.0"
+        },
+        {
+          "id": "d",
+          "text": "$120K"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "The current ratio is Current Assets divided by Current Liabilities. It tells you how many dollars of short-term assets cover each dollar of short-term debt. A ratio above 1.0 means the company can cover its near-term obligations; most healthy companies target 1.5 to 2.0.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "The quick ratio excludes ____ from current assets because it cannot be easily converted to cash in a short timeframe.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cash and cash equivalents"
+        },
+        {
+          "id": "b",
+          "text": "Accounts receivable"
+        },
+        {
+          "id": "c",
+          "text": "Inventory"
+        },
+        {
+          "id": "d",
+          "text": "Short-term investments"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're CFO of a mid-size manufacturer. Cash is tight, but a supplier offers a 10% discount for buying $2M of raw materials upfront. This would drop your current ratio from 1.8 to 1.1. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Take the deal—10% savings is too valuable to pass up"
+        },
+        {
+          "id": "b",
+          "text": "Negotiate a smaller bulk order to balance savings and liquidity"
+        },
+        {
+          "id": "c",
+          "text": "Decline—protecting your liquidity cushion is more important"
+        },
+        {
+          "id": "d",
+          "text": "Take the deal but arrange a credit line to restore liquidity"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Company A has a current ratio of 3.5 with $8M in slow-moving inventory. Company B has a current ratio of 1.6 with mostly cash and receivables. Which company likely has stronger real liquidity?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company A—higher current ratio always means better liquidity"
+        },
+        {
+          "id": "b",
+          "text": "Company B—its assets are more readily convertible to cash"
+        },
+        {
+          "id": "c",
+          "text": "Both are equal since both ratios exceed 1.0"
+        },
+        {
+          "id": "d",
+          "text": "Neither—you need the debt-to-equity ratio instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A high current ratio can be misleading if current assets are dominated by hard-to-sell inventory. The quick ratio (excluding inventory) reveals true liquidity. For example, Peloton once showed a healthy current ratio, but much of it was unsold bikes sitting in warehouses.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these liquidity warning signs from most urgent (first) to least urgent (last) for a small business owner reviewing their quarterly balance sheet.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Current ratio declined from 1.8 to 1.2 over two quarters"
+        },
+        {
+          "id": "b",
+          "text": "Cash balance dropped 70% while payables are due next week"
+        },
+        {
+          "id": "c",
+          "text": "Inventory levels grew 15% faster than revenue this quarter"
+        },
+        {
+          "id": "d",
+          "text": "Working capital is positive but has been slowly shrinking"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "A recession hits and customers start paying 60 days late instead of 30. Your accounts receivable doubles overnight. How does this change your liquidity assessment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Current ratio improves because receivables are current assets"
+        },
+        {
+          "id": "b",
+          "text": "Quick ratio improves since receivables are included in it"
+        },
+        {
+          "id": "c",
+          "text": "Ratios look stable but real cash availability has worsened sharply"
+        },
+        {
+          "id": "d",
+          "text": "No impact—receivables will eventually convert to cash anyway"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "Earlier you learned that the current and quick ratios measure liquidity using current assets vs. current liabilities. Now assume a recession has doubled your receivables collection time from 30 to 60 days.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}
