@@ -26,6 +26,7 @@ interface ResultsRevealProps {
   dimensionFeedback: Partial<Record<string, string>> | null;
   sprintTitle: string;
   skillName: string;
+  skillSlug: string;
   mode: string;
 }
 
@@ -71,6 +72,7 @@ export default function ResultsReveal({
   dimensionFeedback,
   sprintTitle,
   skillName,
+  skillSlug,
   mode,
 }: ResultsRevealProps) {
   const router = useRouter();
@@ -349,11 +351,13 @@ export default function ResultsReveal({
             >
               <Button
                 onClick={() =>
-                  router.push(`/${mode.toLowerCase()}`)
+                  router.push(
+                    `/${mode.toLowerCase()}?skill=${skillSlug}`
+                  )
                 }
                 className="gap-2"
               >
-                Try Another Sprint
+                Continue
                 <ArrowRight className="size-4" />
               </Button>
               <Button

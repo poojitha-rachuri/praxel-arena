@@ -1,0 +1,194 @@
+[
+  {
+    "skillSlug": "guesstimation",
+    "slug": "market-sizing-fundamentals",
+    "name": "Market Sizing Fundamentals",
+    "description": "TAM/SAM/SOM, population-based sizing, top-down vs bottom-up approaches",
+    "order": 1,
+    "icon": "📐"
+  },
+  {
+    "skillSlug": "guesstimation",
+    "slug": "unit-economics-revenue-models",
+    "name": "Unit Economics & Revenue Models",
+    "description": "LTV, CAC, ARPU, revenue modeling, payback period",
+    "order": 2,
+    "icon": "💰"
+  },
+  {
+    "skillSlug": "guesstimation",
+    "slug": "growth-forecasting",
+    "name": "Growth & Forecasting",
+    "description": "Growth rates, trend extrapolation, cohort analysis, compounding",
+    "order": 3,
+    "icon": "📈"
+  },
+  {
+    "skillSlug": "guesstimation",
+    "slug": "valuation-investment-cases",
+    "name": "Valuation & Investment Cases",
+    "description": "DCF basics, multiples, investment sizing, market comparables",
+    "order": 4,
+    "icon": "🏦"
+  },
+  {
+    "skillSlug": "gtm-strategy",
+    "slug": "market-entry-positioning",
+    "name": "Market Entry & Positioning",
+    "description": "ICP definition, competitive positioning, value proposition",
+    "order": 1,
+    "icon": "🎯"
+  },
+  {
+    "skillSlug": "gtm-strategy",
+    "slug": "channel-strategy-distribution",
+    "name": "Channel Strategy & Distribution",
+    "description": "Channel selection, partnerships, CAC by channel, channel-market fit",
+    "order": 2,
+    "icon": "🔗"
+  },
+  {
+    "skillSlug": "gtm-strategy",
+    "slug": "launch-execution-playbooks",
+    "name": "Launch Execution & Playbooks",
+    "description": "Launch planning, beta programs, go-to-market timing, launch metrics",
+    "order": 3,
+    "icon": "🚀"
+  },
+  {
+    "skillSlug": "gtm-strategy",
+    "slug": "scaling-international-expansion",
+    "name": "Scaling & International Expansion",
+    "description": "Market expansion, localization, scaling playbooks, unit economics at scale",
+    "order": 4,
+    "icon": "🌍"
+  },
+  {
+    "skillSlug": "prioritization",
+    "slug": "frameworks-mental-models",
+    "name": "Frameworks & Mental Models",
+    "description": "RICE, ICE, MoSCoW, weighted scoring, cost of delay",
+    "order": 1,
+    "icon": "🧩"
+  },
+  {
+    "skillSlug": "prioritization",
+    "slug": "stakeholder-alignment",
+    "name": "Stakeholder Alignment",
+    "description": "Stakeholder mapping, influence matrix, conflict resolution, buy-in",
+    "order": 2,
+    "icon": "🤝"
+  },
+  {
+    "skillSlug": "prioritization",
+    "slug": "resource-allocation",
+    "name": "Resource Allocation",
+    "description": "Capacity planning, trade-off analysis, opportunity cost, sequencing",
+    "order": 3,
+    "icon": "⚖️"
+  },
+  {
+    "skillSlug": "prioritization",
+    "slug": "strategic-saying-no",
+    "name": "Strategic Saying No",
+    "description": "Feature request triage, scope management, sunk cost fallacy, debt tracking",
+    "order": 4,
+    "icon": "🚫"
+  },
+  {
+    "skillSlug": "data-interpretation",
+    "slug": "reading-charts-dashboards",
+    "name": "Reading Charts & Dashboards",
+    "description": "Chart types, axis interpretation, misleading visualizations, KPI dashboards",
+    "order": 1,
+    "icon": "📊"
+  },
+  {
+    "skillSlug": "data-interpretation",
+    "slug": "statistical-thinking",
+    "name": "Statistical Thinking",
+    "description": "Distributions, averages vs medians, correlation vs causation, sample size",
+    "order": 2,
+    "icon": "🔢"
+  },
+  {
+    "skillSlug": "data-interpretation",
+    "slug": "ab-testing-experimentation",
+    "name": "A/B Testing & Experimentation",
+    "description": "Hypothesis design, significance, confidence intervals, experiment pitfalls",
+    "order": 3,
+    "icon": "🧪"
+  },
+  {
+    "skillSlug": "data-interpretation",
+    "slug": "data-storytelling",
+    "name": "Data Storytelling",
+    "description": "Narrative structure, audience framing, insight extraction, recommendation",
+    "order": 4,
+    "icon": "📖"
+  },
+  {
+    "skillSlug": "pricing-monetization",
+    "slug": "pricing-fundamentals",
+    "name": "Pricing Fundamentals",
+    "description": "Cost-plus, value-based, competitive pricing, price sensitivity",
+    "order": 1,
+    "icon": "🏷️"
+  },
+  {
+    "skillSlug": "pricing-monetization",
+    "slug": "monetization-models",
+    "name": "Monetization Models",
+    "description": "Subscription, freemium, usage-based, marketplace, hybrid models",
+    "order": 2,
+    "icon": "💳"
+  },
+  {
+    "skillSlug": "pricing-monetization",
+    "slug": "price-optimization",
+    "name": "Price Optimization",
+    "description": "Elasticity, willingness-to-pay research, A/B pricing, anchoring",
+    "order": 3,
+    "icon": "📉"
+  },
+  {
+    "skillSlug": "pricing-monetization",
+    "slug": "packaging-bundling-strategy",
+    "name": "Packaging & Bundling Strategy",
+    "description": "Tier design, feature gating, upsell paths, enterprise vs self-serve",
+    "order": 4,
+    "icon": "📦"
+  },
+  {
+    "skillSlug": "stakeholder-communication",
+    "slug": "executive-communication",
+    "name": "Executive Communication",
+    "description": "BLUF method, data-driven narratives, status updates, decision memos",
+    "order": 1,
+    "icon": "📝"
+  },
+  {
+    "skillSlug": "stakeholder-communication",
+    "slug": "cross-functional-alignment",
+    "name": "Cross-Functional Alignment",
+    "description": "RACI matrices, working agreements, async communication, standups",
+    "order": 2,
+    "icon": "🔄"
+  },
+  {
+    "skillSlug": "stakeholder-communication",
+    "slug": "difficult-conversations",
+    "name": "Difficult Conversations",
+    "description": "Delivering bad news, managing expectations, constructive feedback",
+    "order": 3,
+    "icon": "💬"
+  },
+  {
+    "skillSlug": "stakeholder-communication",
+    "slug": "board-investor-communication",
+    "name": "Board & Investor Communication",
+    "description": "Board decks, metrics storytelling, fundraising narratives, Q&A prep",
+    "order": 4,
+    "icon": "🎤"
+  }
+]

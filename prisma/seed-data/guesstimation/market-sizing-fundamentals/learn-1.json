@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "market-sizing-fundamentals",
+  "mode": "LEARN",
+  "title": "TAM SAM SOM: Sizing Any Market",
+  "description": "Learn to estimate market sizes using TAM/SAM/SOM frameworks and top-down vs bottom-up approaches.",
+  "difficulty": 1,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A startup sells premium dog food in Texas. Which term describes ALL global spending on dog food?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total Addressable Market (TAM)"
+        },
+        {
+          "id": "b",
+          "text": "Serviceable Addressable Market (SAM)"
+        },
+        {
+          "id": "c",
+          "text": "Serviceable Obtainable Market (SOM)"
+        },
+        {
+          "id": "d",
+          "text": "Target Revenue Market (TRM)"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Market sizing starts with three concentric circles: TAM, SAM, and SOM. TAM (Total Addressable Market) is the total global demand for your product category — the biggest circle, representing everyone who could theoretically buy what you sell. Think of it as the entire ocean, even if you only fish in one pond.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A pitch deck shows: Global pet food TAM = $120B. US premium dog food SAM = $8B. Year-1 SOM = $12B. What's the red flag?",
+      "options": [
+        {
+          "id": "a",
+          "text": "TAM is too large to be meaningful"
+        },
+        {
+          "id": "b",
+          "text": "SAM should be larger than TAM"
+        },
+        {
+          "id": "c",
+          "text": "SOM exceeds SAM, which is impossible"
+        },
+        {
+          "id": "d",
+          "text": "All three numbers look reasonable"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "An analyst estimates the US yoga mat market by starting with US population, then filtering by demographics and purchase rates. Which approach is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Top-down approach starting from industry reports"
+        },
+        {
+          "id": "b",
+          "text": "Bottom-up approach building from unit-level data"
+        },
+        {
+          "id": "c",
+          "text": "Population-based top-down approach using demographic filters"
+        },
+        {
+          "id": "d",
+          "text": "Competitive benchmarking approach"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "There are two main ways to size a market. Top-down starts big (total population or industry revenue) and narrows using filters like demographics and adoption rates. Bottom-up starts small — counting individual customers, transactions, or stores — and multiplies upward. Population-based sizing is a common top-down technique: start with a population, then apply percentage filters step by step.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In market sizing, TAM > SAM > ____. This smallest circle represents the market share you can realistically capture.",
+      "options": [
+        {
+          "id": "a",
+          "text": "SOM (Serviceable Obtainable Market)"
+        },
+        {
+          "id": "b",
+          "text": "TRM (Total Revenue Model)"
+        },
+        {
+          "id": "c",
+          "text": "NRM (Net Reachable Market)"
+        },
+        {
+          "id": "d",
+          "text": "CAM (Capturable Addressable Market)"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're pitching investors on a new meal-kit delivery service in Chicago. You have limited time to prepare. Should you use a quick top-down estimate or a detailed bottom-up analysis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Top-down only — fast, credible, uses published industry data"
+        },
+        {
+          "id": "b",
+          "text": "Bottom-up only — shows deep understanding of unit economics"
+        },
+        {
+          "id": "c",
+          "text": "Both approaches to triangulate and build investor confidence"
+        },
+        {
+          "id": "d",
+          "text": "Skip sizing and focus on the product demo instead"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A bottom-up estimate counts 4,200 gyms in New York, assumes 80% would buy a SaaS tool at $200/month. What's the annual SAM for this gym software in New York?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$8.1 million per year"
+        },
+        {
+          "id": "b",
+          "text": "$10.1 million per year"
+        },
+        {
+          "id": "c",
+          "text": "$840,000 per year"
+        },
+        {
+          "id": "d",
+          "text": "$80.6 million per year"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Bottom-up sizing builds estimates from granular, countable units. You identify the number of potential customers, estimate what percentage would realistically buy, multiply by price, and scale over time. This approach is especially powerful for B2B products where you can count potential buyers. The math: number of customers × adoption rate × price per unit × time period.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these steps for a top-down market sizing of electric scooter sales in Germany, from first to last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Apply average scooter purchase price to get market value"
+        },
+        {
+          "id": "b",
+          "text": "Start with total German population (84 million)"
+        },
+        {
+          "id": "c",
+          "text": "Filter to urban adults aged 18-45 likely to buy"
+        },
+        {
+          "id": "d",
+          "text": "Estimate the percentage who would buy an e-scooter annually"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "New regulation bans e-scooters on sidewalks in major German cities, cutting viable riding areas by 60%. How does this change your market sizing approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduce TAM by 60% across the board"
+        },
+        {
+          "id": "b",
+          "text": "Keep TAM the same but sharply reduce SAM and SOM"
+        },
+        {
+          "id": "c",
+          "text": "Ignore it — regulations rarely affect actual purchasing behavior"
+        },
+        {
+          "id": "d",
+          "text": "Eliminate Germany from the analysis entirely"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you estimated the German e-scooter market using a top-down approach starting with 84M population and filtering by demographics and purchase likelihood. Now a major regulatory change restricts where scooters can be ridden.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

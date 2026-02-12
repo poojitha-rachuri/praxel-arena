@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "data-storytelling",
+  "mode": "PRACTICE",
+  "title": "Structuring High-Stakes Data Narratives",
+  "description": "Master the craft of transforming complex datasets into compelling executive narratives that drive strategic decisions.",
+  "difficulty": 5,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Shopify's Q3 report shows: GMV up 22%, merchant count up 31%, but revenue per merchant down 14% YoY. ARPU declined in 5 of 6 regions. Which signal anchors the strongest data story for the board?",
+      "options": [
+        {
+          "id": "a",
+          "text": "GMV growth proves platform health and market dominance"
+        },
+        {
+          "id": "b",
+          "text": "Merchant growth is diluting revenue quality at scale"
+        },
+        {
+          "id": "c",
+          "text": "Regional ARPU decline suggests pricing model weakness"
+        },
+        {
+          "id": "d",
+          "text": "Revenue per merchant drop is a temporary onboarding lag"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "A DoorDash data team presents: delivery time down 8%, customer NPS up 12 points, but dasher churn rose 23% and dasher satisfaction fell 19 points. The CFO asks for the real story. What's the critical narrative tension?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customer gains are being subsidized by unsustainable labor pressure"
+        },
+        {
+          "id": "b",
+          "text": "Operational efficiency is improving across all customer-facing metrics"
+        },
+        {
+          "id": "c",
+          "text": "Dasher churn is normal seasonal variance not worth highlighting"
+        },
+        {
+          "id": "d",
+          "text": "NPS gains will self-correct dasher retention over time"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're presenting Stripe's fraud detection results to non-technical regulators. Your model reduced false positives by 40% but uses a complex ensemble method. You have 10 minutes. How do you frame it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lead with the model architecture to establish credibility first"
+        },
+        {
+          "id": "b",
+          "text": "Anchor on customer harm prevented, use one simplified analogy for method"
+        },
+        {
+          "id": "c",
+          "text": "Present full statistical validation then translate to business outcomes"
+        },
+        {
+          "id": "d",
+          "text": "Skip methodology entirely and only discuss dollar impact"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "In advanced data storytelling, the 'So What → Now What' bridge fails when the analyst presents a statistically significant finding without connecting it to a ____ that the audience has authority to act on.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Decision or resource allocation"
+        },
+        {
+          "id": "b",
+          "text": "Visualization or dashboard"
+        },
+        {
+          "id": "c",
+          "text": "Confidence interval"
+        },
+        {
+          "id": "d",
+          "text": "Historical benchmark"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're structuring a data narrative for Airbnb's CEO about declining host acquisition in Europe. Rank these narrative elements from first to last in your presentation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Detailed cohort analysis of host churn by European market segment"
+        },
+        {
+          "id": "b",
+          "text": "Strategic context: Europe host growth vs. global targets and competitive threat"
+        },
+        {
+          "id": "c",
+          "text": "Three prioritized recommendations with projected ROI and resource needs"
+        },
+        {
+          "id": "d",
+          "text": "Root cause synthesis: pricing, regulation, and onboarding friction ranked by impact"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Your A/B test at Netflix shows a new recommendation algorithm lifts engagement 6% overall but decreases engagement 11% among the top-spending 8% of subscribers. The VP of Product wants one clear recommendation. What do you present?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recommend full rollout since 92% of users benefit significantly"
+        },
+        {
+          "id": "b",
+          "text": "Recommend rollout with a carve-out preserving the old algorithm for top spenders"
+        },
+        {
+          "id": "c",
+          "text": "Recommend killing the experiment until the algorithm improves for all segments"
+        },
+        {
+          "id": "d",
+          "text": "Present both sides equally and let the VP decide without recommendation"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "A skeptical CFO at Peloton has rejected your last two data presentations. Rank these narrative repair strategies from most to least effective for rebuilding credibility.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-align on her top three questions and structure the narrative around them"
+        },
+        {
+          "id": "b",
+          "text": "Add more charts and granular data to demonstrate analytical rigor"
+        },
+        {
+          "id": "c",
+          "text": "Lead with the limitations and uncertainty ranges before presenting conclusions"
+        },
+        {
+          "id": "d",
+          "text": "Open with a financial impact number she hasn't seen, tied to her OKRs"
+        }
+      ],
+      "correctAnswer": "a,d,c,b",
+      "insightAnswer": "a,d,c,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your presentation, the CEO reveals Uber is in acquisition talks for a last-mile logistics startup—making your organic growth narrative obsolete. With 5 minutes left, how do you pivot your data story?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Finish the original narrative since the data is still valid"
+        },
+        {
+          "id": "b",
+          "text": "Reframe your data as a due diligence baseline for evaluating the acquisition target"
+        },
+        {
+          "id": "c",
+          "text": "Abandon the presentation and ask to reschedule entirely"
+        },
+        {
+          "id": "d",
+          "text": "Pivot to showing only the competitive threat data as justification for acquiring"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You were presenting Uber's organic last-mile delivery growth strategy with 18 months of cohort data and a $200M investment recommendation. The CEO just disclosed confidential acquisition talks that could replace the entire organic approach.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

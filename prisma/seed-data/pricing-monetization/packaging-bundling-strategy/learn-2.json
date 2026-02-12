@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "packaging-bundling-strategy",
+  "mode": "LEARN",
+  "title": "Bundle Economics and Self-Serve to Enterprise Bridges",
+  "description": "Master advanced bundling economics, cannibalization analysis, and designing self-serve to enterprise conversion paths.",
+  "difficulty": 5,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which metric best reveals whether your bundle is destroying value rather than creating it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bundle attach rate exceeding 60% of new deals"
+        },
+        {
+          "id": "b",
+          "text": "Negative incremental revenue per bundle vs à la carte mix"
+        },
+        {
+          "id": "c",
+          "text": "High NPS scores among bundle purchasers"
+        },
+        {
+          "id": "d",
+          "text": "Bundle SKU becoming the top-selling package"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Bundle cannibalization occurs when customers who would have paid more à la carte switch to a discounted bundle, destroying margin. Microsoft found that early Office 365 bundles cannibalized higher-margin standalone Exchange and SharePoint deals before rebalancing tier composition. The key diagnostic is measuring whether incremental revenue per customer is positive or negative versus the counterfactual product mix.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A B2B SaaS company launched a 3-product bundle at 25% discount. Pre-bundle ARPU: $142. Post-bundle ARPU: $131. New customer acquisition rose 18%. Existing customer bundle adoption: 41%. What's the critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "New customer growth justifies the ARPU decline"
+        },
+        {
+          "id": "b",
+          "text": "41% existing adoption signals heavy cannibalization outweighing acquisition gains"
+        },
+        {
+          "id": "c",
+          "text": "The 25% discount is standard and acceptable"
+        },
+        {
+          "id": "d",
+          "text": "ARPU will recover naturally as customers expand usage"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When designing a self-serve to enterprise bridge, what is the most effective structural mechanism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hard paywalling all collaboration features behind enterprise tier"
+        },
+        {
+          "id": "b",
+          "text": "Usage-based triggers that create natural friction points requiring sales contact"
+        },
+        {
+          "id": "c",
+          "text": "Offering enterprise discounts to any customer who requests them"
+        },
+        {
+          "id": "d",
+          "text": "Removing the self-serve tier entirely after 12 months"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Slack's self-serve to enterprise bridge is a masterclass: teams grow organically on free/pro tiers, but governance needs (SSO, compliance, cross-workspace discovery) create natural friction as organizations scale past ~200 users. Datadog similarly uses usage-based metering where infrastructure monitoring costs scale predictably until a threshold triggers enterprise negotiation. The best bridges feel like natural progressions, not artificial walls.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In bundle pricing theory, the 'reservation price ____' effect explains why bundling works: customers' willingness-to-pay for individual products varies, but bundled WTP has lower variance, enabling higher average capture.",
+      "options": [
+        {
+          "id": "a",
+          "text": "averaging"
+        },
+        {
+          "id": "b",
+          "text": "anchoring"
+        },
+        {
+          "id": "c",
+          "text": "maximizing"
+        },
+        {
+          "id": "d",
+          "text": "stacking"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your PLG SaaS has 12,000 self-serve accounts. Enterprise sales wants to gate SSO and audit logs behind a $50K/yr enterprise tier. Product argues this punishes security-conscious SMBs and increases churn. Which path do you take?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Gate SSO/audit fully behind enterprise—it's the strongest conversion lever"
+        },
+        {
+          "id": "b",
+          "text": "Include basic SSO in mid-tier; gate advanced compliance and admin controls"
+        },
+        {
+          "id": "c",
+          "text": "Make SSO free for all tiers to maximize adoption and reduce churn"
+        },
+        {
+          "id": "d",
+          "text": "Offer SSO as a standalone $5K/yr add-on across all tiers"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A company with 3 tiers sees 72% of revenue from the middle tier. What is the most strategically concerning implication?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The top tier lacks differentiated value; enterprise upsell path is broken"
+        },
+        {
+          "id": "b",
+          "text": "The bottom tier is priced too low and should be eliminated"
+        },
+        {
+          "id": "c",
+          "text": "Middle tier concentration is ideal and indicates strong product-market fit"
+        },
+        {
+          "id": "d",
+          "text": "The company should add a fourth tier between middle and top"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Healthy tier distributions typically follow a pattern where 10-20% of revenue comes from the entry tier (acquisition), 40-50% from mid-tier (core), and 30-40% from the top tier (expansion). When HubSpot noticed over-concentration in their Professional tier, they redesigned Enterprise with exclusive features like custom objects and sandboxes—shifting 15% of revenue upward within two quarters. Extreme mid-tier concentration signals a broken upsell narrative.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Your analytics platform is redesigning its packaging. Rank these initiatives by expected revenue impact for a company with strong PLG motion and 800 enterprise prospects in pipeline: (a) Restructure bundles to reduce cannibalization, (b) Build usage-based enterprise conversion triggers, (c) Add a new premium add-on for advanced AI features, (d) Simplify self-serve tier from 4 tiers to 2.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Restructure bundles to reduce cannibalization"
+        },
+        {
+          "id": "b",
+          "text": "Build usage-based enterprise conversion triggers"
+        },
+        {
+          "id": "c",
+          "text": "Add premium AI feature add-on"
+        },
+        {
+          "id": "d",
+          "text": "Simplify self-serve from 4 tiers to 2"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your largest competitor just made their equivalent of your gated enterprise features completely free. Enterprise pipeline conversion drops 30% in two weeks. How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Match competitor—ungating enterprise features and competing on service and support"
+        },
+        {
+          "id": "b",
+          "text": "Shift enterprise value prop to outcomes: dedicated CSM, SLAs, custom integrations"
+        },
+        {
+          "id": "c",
+          "text": "Aggressively discount enterprise tier by 40% to win back pipeline"
+        },
+        {
+          "id": "d",
+          "text": "Acquire a complementary product to create a differentiated bundle competitor can't match"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you designed usage-based enterprise conversion triggers and gated advanced compliance features behind your enterprise tier. Now a competitor has made equivalent features free, undermining your gating strategy.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

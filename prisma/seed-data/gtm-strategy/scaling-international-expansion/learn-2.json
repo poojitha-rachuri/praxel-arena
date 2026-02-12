@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "scaling-international-expansion",
+  "mode": "LEARN",
+  "title": "Localization Strategy and Market Entry Sequencing",
+  "description": "Master advanced frameworks for sequencing international market entry and building localization-driven competitive moats.",
+  "difficulty": 5,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which sequencing strategy best describes Uber's approach to international expansion?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Waterfall: fully localize one market before entering the next"
+        },
+        {
+          "id": "b",
+          "text": "Spray-and-pray: launch in 50+ cities simultaneously with minimal localization"
+        },
+        {
+          "id": "c",
+          "text": "Beachhead blitz: rapid multi-market entry, then double down on winners"
+        },
+        {
+          "id": "d",
+          "text": "Partnership-first: enter only through joint ventures with local operators"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Market entry sequencing determines how fast and where you expand. The 'beachhead blitz' model—entering many markets quickly, measuring traction, then concentrating resources on winners—was pioneered by companies like Uber, which launched in 100+ cities globally, then exited or merged in markets (e.g., China, Southeast Asia) where local competitors dominated. This contrasts with waterfall approaches used by companies like IKEA, which spent years localizing each market.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company expanding into DACH sees: Germany CAC €180 (LTV:CAC 4.2x), Austria CAC €95 (LTV:CAC 2.1x), Switzerland CAC €310 (LTV:CAC 5.8x). Marketing budget is constrained. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Austria is most efficient—lowest CAC means best market"
+        },
+        {
+          "id": "b",
+          "text": "Switzerland yields highest absolute return per customer despite high CAC"
+        },
+        {
+          "id": "c",
+          "text": "Germany should be prioritized due to market size alone"
+        },
+        {
+          "id": "d",
+          "text": "All three markets should receive equal budget allocation"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When Spotify entered India in 2019, what was the most critical localization lever for achieving 1M users in 5 days?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Translating the UI into 12 Indian languages"
+        },
+        {
+          "id": "b",
+          "text": "Pricing at ₹119/month (~$1.50) with deep local content curation"
+        },
+        {
+          "id": "c",
+          "text": "Partnering exclusively with Jio for distribution"
+        },
+        {
+          "id": "d",
+          "text": "Replicating the exact European freemium model unchanged"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Deep localization goes beyond translation—it requires rearchitecting your value proposition for local willingness-to-pay and content preferences. Spotify's India launch combined aggressive price localization (₹119/month vs. $9.99 in the US—a 85% discount) with curating 3B+ streams of local Bollywood and regional music. This 'value prop localization' framework means adapting pricing, content, and distribution simultaneously rather than treating localization as a surface-level translation exercise.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In international GTM, the ____ framework evaluates markets by scoring attractiveness (TAM, growth rate, competitive intensity) against organizational ____ (regulatory expertise, local partnerships, cultural proximity).",
+      "options": [
+        {
+          "id": "a",
+          "text": "Market-Readiness Matrix; readiness"
+        },
+        {
+          "id": "b",
+          "text": "Porter's Five Forces; profitability"
+        },
+        {
+          "id": "c",
+          "text": "BCG Growth-Share; investment capacity"
+        },
+        {
+          "id": "d",
+          "text": "PESTLE Analysis; compliance"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your B2B fintech has $8M for expansion. Japan offers $40M TAM with 18-month regulatory approval and requires local data residency infrastructure. Brazil offers $25M TAM with 4-month approval and your existing AWS São Paulo region. You need revenue growth within 2 quarters to hit Series C targets.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Go Japan-first; larger TAM justifies the longer timeline"
+        },
+        {
+          "id": "b",
+          "text": "Go Brazil-first; faster time-to-revenue protects your fundraising timeline"
+        },
+        {
+          "id": "c",
+          "text": "Split budget 50/50 and pursue both simultaneously"
+        },
+        {
+          "id": "d",
+          "text": "Delay both and double down on existing markets instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "What is the primary risk of the 'copy-paste scaling' anti-pattern when expanding internationally?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It's too slow because each market requires full rebuilds"
+        },
+        {
+          "id": "b",
+          "text": "It assumes home-market PMF transfers, ignoring local value chain differences"
+        },
+        {
+          "id": "c",
+          "text": "It over-invests in localization before validating demand"
+        },
+        {
+          "id": "d",
+          "text": "It only works for consumer products, never for B2B"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The 'copy-paste scaling' anti-pattern occurs when companies replicate their home-market playbook without re-validating product-market fit locally. Groupon famously scaled to 48 countries in 18 months by cloning its US model, only to retreat from most markets when local deal economics, merchant relationships, and consumer behavior diverged sharply. The antidote is treating each new market as a 'PMF re-discovery' exercise—running lean validation sprints before committing full GTM resources, even when the core product is proven elsewhere.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Your enterprise HR-tech platform is entering Southeast Asia. Rank these market entry activities from first to last: (a) Hire country-level sales teams in all 6 ASEAN markets, (b) Run demand validation campaigns in 2-3 pilot markets, (c) Build local payment and compliance integrations, (d) Establish regional channel partnerships with Big 4 consultancies.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hire country-level sales teams across all 6 ASEAN markets"
+        },
+        {
+          "id": "b",
+          "text": "Run demand validation campaigns in 2-3 pilot markets"
+        },
+        {
+          "id": "c",
+          "text": "Build local payment and compliance integrations"
+        },
+        {
+          "id": "d",
+          "text": "Establish regional channel partnerships with Big 4 consultancies"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Six months into your Brazil expansion, a new regulation requires all fintech customer data to be processed by locally-licensed entities—your current AWS-based architecture doesn't qualify. Your biggest enterprise prospect (Itaú bank) pauses their $2M contract pending compliance. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pause all Brazil sales and redirect budget to other markets"
+        },
+        {
+          "id": "b",
+          "text": "Acquire or partner with a locally-licensed data processor to unblock Itaú fast"
+        },
+        {
+          "id": "c",
+          "text": "Lobby the regulator for a grace period while building in-house infrastructure"
+        },
+        {
+          "id": "d",
+          "text": "Offer Itaú an on-premise deployment as a one-off workaround"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you chose Brazil for fast time-to-revenue based on existing infrastructure and 4-month regulatory approval. Now a new data sovereignty regulation has emerged that invalidates your compliance assumption, threatening your anchor enterprise deal and Series C timeline.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

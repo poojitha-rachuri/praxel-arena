@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "board-investor-communication",
+  "mode": "LEARN",
+  "title": "Mastering Board Decks and Metrics Storytelling",
+  "description": "Learn to craft compelling board presentations, frame metrics narratives, and prepare for tough investor Q&A.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the most effective opening structure for a board deck?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lead with the ask, then provide supporting context"
+        },
+        {
+          "id": "b",
+          "text": "Start with detailed financials and work backward to strategy"
+        },
+        {
+          "id": "c",
+          "text": "Open with company history to set the stage"
+        },
+        {
+          "id": "d",
+          "text": "Begin with competitive landscape analysis before internal metrics"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Top-performing board decks follow a 'pyramid principle'—leading with the key conclusion or ask, then layering in supporting data. When Airbnb's CFO presented to their board pre-IPO, decks opened with the strategic decision needed, followed by 3-4 supporting metrics slides. Board members have limited attention; front-loading the ask ensures alignment before diving into details.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company's board deck shows: Revenue up 40% YoY, but net revenue retention dropped from 125% to 108%, and CAC payback extended from 14 to 22 months. What's the critical signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue growth is strong enough to overshadow other concerns"
+        },
+        {
+          "id": "b",
+          "text": "Growth is increasingly fueled by new logos, not expansion—a durability risk"
+        },
+        {
+          "id": "c",
+          "text": "CAC payback is still within acceptable SaaS benchmarks"
+        },
+        {
+          "id": "d",
+          "text": "The company should immediately cut sales headcount"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When presenting a metric that missed target, which framing approach builds the most board credibility?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Minimize the miss by emphasizing other metrics that exceeded plan"
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge the miss, diagnose root cause, present corrective actions with timeline"
+        },
+        {
+          "id": "c",
+          "text": "Redefine the metric to show a more favorable interpretation"
+        },
+        {
+          "id": "d",
+          "text": "Defer discussion to a follow-up email after the meeting"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Board trust is built through intellectual honesty, not spin. When Shopify missed commerce growth targets in 2022, their leadership team presented a transparent 'miss-diagnose-fix' framework: acknowledge the gap quantitatively, attribute root causes with data, and share a corrective roadmap with measurable milestones. Boards penalize surprises far more than misses—experienced directors expect 30-40% of metrics to underperform in any given quarter.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In fundraising narratives, the most compelling pitch decks frame market size using a ____ approach—starting from actual customer data and unit economics rather than top-down TAM estimates.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bottom-up"
+        },
+        {
+          "id": "b",
+          "text": "Top-down"
+        },
+        {
+          "id": "c",
+          "text": "Comparative"
+        },
+        {
+          "id": "d",
+          "text": "Aspirational"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're preparing a Series C deck. Your gross margins improved from 62% to 71%, but you achieved this partly by cutting customer success, and churn ticked up 1.5 points. How do you present this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Highlight margin improvement as operational excellence, omit churn detail"
+        },
+        {
+          "id": "b",
+          "text": "Present margin gains alongside churn increase, showing net unit economics impact"
+        },
+        {
+          "id": "c",
+          "text": "Lead with the churn problem and frame margins as a temporary byproduct"
+        },
+        {
+          "id": "d",
+          "text": "Wait until investors ask about churn before addressing the tradeoff"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which Q&A preparation technique is most effective for high-stakes board or investor meetings?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Memorize scripted answers to the 20 most likely questions"
+        },
+        {
+          "id": "b",
+          "text": "Build a 'question tree' mapping each metric to its failure modes and responses"
+        },
+        {
+          "id": "c",
+          "text": "Rely on deep domain knowledge and answer spontaneously for authenticity"
+        },
+        {
+          "id": "d",
+          "text": "Prepare only for questions about the current quarter's performance"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Elite investor communicators use 'question trees'—for every key metric in their deck, they map 2-3 adversarial questions a skeptical board member might ask, and pre-build data-backed responses. Stripe's leadership reportedly maintains a living Q&A document that maps each KPI to its vulnerabilities, bear-case interpretations, and counter-evidence. This method beats scripted answers because it teaches flexible reasoning, not memorized lines.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You have 30 minutes for a board meeting update. Rank these sections by the order they should appear for maximum strategic impact: (a) Detailed product roadmap, (b) Key decisions needed from the board, (c) Financial performance vs. plan, (d) Top 3 risks and mitigation strategies.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Detailed product roadmap with feature timelines"
+        },
+        {
+          "id": "b",
+          "text": "Key decisions and approvals needed from the board"
+        },
+        {
+          "id": "c",
+          "text": "Financial performance vs. plan with variance analysis"
+        },
+        {
+          "id": "d",
+          "text": "Top 3 risks and mitigation strategies"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your board presentation, a lead investor interrupts: 'Your competitor just raised $200M and is offering free pilots to your enterprise customers.' How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dismiss the competitor and redirect to your prepared slides"
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge the threat, pivot to your retention data and switching costs analysis"
+        },
+        {
+          "id": "c",
+          "text": "Propose immediately matching the competitor's free pilot offer"
+        },
+        {
+          "id": "d",
+          "text": "Ask to table the discussion and follow up after the meeting"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You had prepared a standard board update focused on growth metrics and product milestones. A breaking competitive development has shifted the board's attention away from your planned narrative, and you must demonstrate strategic composure and data fluency in real time.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

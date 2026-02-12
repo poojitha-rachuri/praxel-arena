@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "data-storytelling",
+  "mode": "LEARN",
+  "title": "Crafting Data Narratives That Drive Action",
+  "description": "Master the narrative structure, audience framing, and insight extraction techniques that transform raw data into compelling business stories.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which narrative structure element should always come first when presenting data insights to executives?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Detailed methodology and data sources"
+        },
+        {
+          "id": "b",
+          "text": "The bottom-line finding and its business impact"
+        },
+        {
+          "id": "c",
+          "text": "A chronological walkthrough of the analysis"
+        },
+        {
+          "id": "d",
+          "text": "Caveats and limitations of the dataset"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Effective data stories follow an inverted pyramid: lead with the 'so what,' then support with evidence. When McKinsey analyzed 500+ executive presentations, those opening with a clear business implication received 3.2x faster decision-making versus those that started with methodology. This is sometimes called the 'Minto Pyramid Principle'—answer first, argument second.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Spotify's Q3 report shows: MAU up 23% YoY, premium subscribers up 14% YoY, ARPU down 6% YoY, and ad revenue per free user up 31% YoY. Which insight best anchors a data story for the CFO?",
+      "options": [
+        {
+          "id": "a",
+          "text": "MAU growth signals strong brand health"
+        },
+        {
+          "id": "b",
+          "text": "Free-tier monetization is outpacing premium revenue growth"
+        },
+        {
+          "id": "c",
+          "text": "Subscriber growth is positive at 14%"
+        },
+        {
+          "id": "d",
+          "text": "All four metrics should be presented equally"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "You're presenting churn data to a product team vs. the board. What is the most important framing adjustment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use simpler charts for the board"
+        },
+        {
+          "id": "b",
+          "text": "Show the same data but change the recommended actions and granularity"
+        },
+        {
+          "id": "c",
+          "text": "Only share positive metrics with the board"
+        },
+        {
+          "id": "d",
+          "text": "Add more data points for the product team"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Audience framing means reshaping the same data story for different decision-makers. The board needs churn framed as revenue risk and strategic trajectory—'We're losing $4.2M ARR from mid-market accounts.' The product team needs it framed as actionable feature signals—'Users who skip onboarding step 3 churn at 2.4x the rate.' Same data, different narrative lens, different call to action.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In data storytelling, the 'tension arc' is created by showing the gap between ____ and ____, which motivates the audience to act on your recommendation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Current performance and the target or benchmark"
+        },
+        {
+          "id": "b",
+          "text": "Historical data and future projections"
+        },
+        {
+          "id": "c",
+          "text": "Your company and a competitor"
+        },
+        {
+          "id": "d",
+          "text": "Qualitative feedback and quantitative metrics"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You've found that Shopify merchants using your analytics tool have 18% higher GMV but also 22% higher support costs. Your CEO wants a single-slide story for investors. Do you:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lead with GMV lift and footnote the support cost increase"
+        },
+        {
+          "id": "b",
+          "text": "Present net unit economics showing ROI despite higher support costs"
+        },
+        {
+          "id": "c",
+          "text": "Focus only on GMV since investors care about growth"
+        },
+        {
+          "id": "d",
+          "text": "Split into two slides to give each metric equal weight"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which technique best prevents 'data storytelling' from becoming 'data cherry-picking'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Include every available metric for full transparency"
+        },
+        {
+          "id": "b",
+          "text": "Pre-register your hypothesis before exploring the data"
+        },
+        {
+          "id": "c",
+          "text": "Explicitly address counterevidence and competing interpretations in your narrative"
+        },
+        {
+          "id": "d",
+          "text": "Let the audience draw their own conclusions without recommendations"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "The ethical boundary of data storytelling is where narrative discipline meets intellectual honesty. Amazon's internal '6-pager' culture requires authors to include 'risks and counterarguments' sections precisely because a persuasive narrative can easily omit inconvenient data. The strongest data stories gain credibility by explicitly surfacing the strongest counterpoint and explaining why the core insight still holds despite it.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're building a data story for DoorDash's VP of Operations about declining driver satisfaction scores. Rank these narrative elements in the order they should appear in your presentation:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Detailed breakdown of satisfaction drivers by market and cohort"
+        },
+        {
+          "id": "b",
+          "text": "Headline: driver satisfaction dropped 15pts, threatening delivery capacity"
+        },
+        {
+          "id": "c",
+          "text": "Recommended intervention with projected ROI and timeline"
+        },
+        {
+          "id": "d",
+          "text": "Root cause analysis linking pay structure changes to score decline"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your presentation, the VP reveals that DoorDash is about to acquire a competitor with happier drivers. She asks how this changes your recommendation. What's the strongest pivot?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Abandon the recommendation since acquired drivers solve the problem"
+        },
+        {
+          "id": "b",
+          "text": "Reframe: fixing satisfaction now prevents culture clash post-acquisition"
+        },
+        {
+          "id": "c",
+          "text": "Ask to pause and re-analyze with the new information"
+        },
+        {
+          "id": "d",
+          "text": "Suggest waiting until post-acquisition data is available to decide"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You had just presented a data story recommending pay structure changes to improve DoorDash driver satisfaction. The VP now reveals a pending acquisition of a competitor with higher driver satisfaction, fundamentally changing the strategic context of your recommendation.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

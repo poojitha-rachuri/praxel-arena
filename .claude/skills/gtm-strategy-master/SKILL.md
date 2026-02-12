@@ -43,12 +43,12 @@ Show market data/metrics, user picks the key insight. 10s target.
     "insightAnswer": "C",
     "explanation": "1-2 sentences. Why this signal matters for GTM.",
     "scoringRubric": {
-      "strategicThinking": 0.3,
-      "analyticalRigor": 0.2,
-      "prioritization": 0.1,
-      "commercialAcumen": 0.3,
-      "communication": 0.0,
-      "adaptability": 0.1
+      "strategicReasoning": 0.3,
+      "analyticalThinking": 0.2,
+      "decisionQuality": 0.1,
+      "quantitativeReasoning": 0.3,
+      "communicationClarity": 0.0,
+      "creativeProblemSolving": 0.1
     }
   }
 }
@@ -66,7 +66,7 @@ Choose between GTM approaches with real tradeoffs. 15-20s target.
     "correctAnswer": "B",
     "insightAnswer": "B",
     "explanation": "Why this GTM approach shows strategic depth.",
-    "scoringRubric": { "strategicThinking": 0.4, "analyticalRigor": 0.1, "prioritization": 0.2, "commercialAcumen": 0.2, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.4, "analyticalThinking": 0.1, "decisionQuality": 0.2, "quantitativeReasoning": 0.2, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -83,7 +83,7 @@ GTM knowledge check, fill in the blank. 10s target.
     "correctAnswer": "A",
     "insightAnswer": "A",
     "explanation": "Why this GTM concept matters.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.1, "prioritization": 0.1, "commercialAcumen": 0.4, "communication": 0.1, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.1, "decisionQuality": 0.1, "quantitativeReasoning": 0.4, "communicationClarity": 0.1, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -99,7 +99,7 @@ Rank 4 GTM activities in priority order. 15-25s target.
     "items": ["Activity A", "Activity B", "Activity C", "Activity D"],
     "correctAnswer": "B,D,A,C",
     "explanation": "Why this sequencing maximizes GTM impact.",
-    "scoringRubric": { "strategicThinking": 0.3, "analyticalRigor": 0.1, "prioritization": 0.4, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.3, "analyticalThinking": 0.1, "decisionQuality": 0.4, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -117,7 +117,7 @@ Market conditions changed -- adapt your GTM. 10-20s target.
     "correctAnswer": "D",
     "insightAnswer": "D",
     "explanation": "Why adapting GTM to this change matters.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.1, "prioritization": 0.2, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.4 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.1, "decisionQuality": 0.2, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.4 }
   }
 }
 ```
@@ -135,7 +135,7 @@ Mini-lesson then immediate test. 20-30s target.
     "correctAnswer": "C",
     "insightAnswer": "C",
     "explanation": "Reinforces the GTM teaching point.",
-    "scoringRubric": { "strategicThinking": 0.3, "analyticalRigor": 0.1, "prioritization": 0.1, "commercialAcumen": 0.3, "communication": 0.1, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.3, "analyticalThinking": 0.1, "decisionQuality": 0.1, "quantitativeReasoning": 0.3, "communicationClarity": 0.1, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -144,14 +144,14 @@ Mini-lesson then immediate test. 20-30s target.
 
 | Dimension | What It Measures | GTM Strategy Weight |
 |---|---|---|
-| strategicThinking | Root cause ID, systems thinking | HIGH |
-| analyticalRigor | Data-driven reasoning | Medium |
-| prioritization | Tradeoff quality, sequencing | Medium-High |
-| commercialAcumen | Market understanding, pricing | HIGH |
-| communication | Messaging clarity, positioning | Medium |
-| adaptability | Response to market changes | Medium |
+| analyticalThinking | Breaking down complex problems into components | Medium |
+| strategicReasoning | Evaluating long-term implications and tradeoffs | HIGH |
+| quantitativeReasoning | Working with numbers, estimates, and data | Medium |
+| communicationClarity | Expressing ideas clearly and persuasively | Medium |
+| decisionQuality | Making sound decisions under uncertainty | Medium-High |
+| creativeProblemSolving | Finding novel approaches to challenges | Medium |
 
-For GTM Strategy, `strategicThinking` and `commercialAcumen` should generally be weighted highest.
+For GTM Strategy, `strategicReasoning` and `quantitativeReasoning` should generally be weighted highest.
 
 ## LEARN Sprint Generation
 
@@ -194,35 +194,42 @@ When generating PRACTICE interactions:
 ## Output Format
 
 ### LEARN Sprint Output
-Write to: `prisma/seed-data/learn-sprints/gtm-strategy-<N>.json`
+Write to: `prisma/seed-data/gtm-strategy/<topicSlug>/learn-<N>.json`
 
 ```json
 {
   "skillSlug": "gtm-strategy",
+  "topicSlug": "market-entry-positioning",
   "mode": "LEARN",
   "title": "Launch Day Decisions",
   "description": "Master the art of go-to-market planning",
   "difficulty": 1,
+  "sprintOrder": 1,
   "interactions": [
-    { "type": "TEACH_AND_TEST", "orderIndex": 0, "content": { ... } },
-    ...
+    {
+      "type": "TEACH_AND_TEST",
+      "order": 1,
+      "teachingPreamble": "2-3 sentences teaching a concept...",
+      "prompt": "Test question...",
+      "options": [
+        { "id": "a", "text": "Option A" },
+        { "id": "b", "text": "Option B" },
+        { "id": "c", "text": "Option C" },
+        { "id": "d", "text": "Option D" }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "priorContext": null,
+      "timeTarget": 25
+    }
   ]
 }
 ```
 
-### PRACTICE Pool Output
-Write to: `prisma/seed-data/practice-interactions/gtm-strategy.json`
+### PRACTICE Sprint Output
+Write to: `prisma/seed-data/gtm-strategy/<topicSlug>/practice-<N>.json`
 
-```json
-{
-  "skillSlug": "gtm-strategy",
-  "mode": "PRACTICE",
-  "interactions": [
-    { "type": "SPOT_THE_SIGNAL", "difficulty": 3, "content": { ... } },
-    ...
-  ]
-}
-```
+Same format as LEARN but with `"mode": "PRACTICE"`, no `teachingPreamble`, higher difficulty (2-4), and mixed interaction types (no TEACH_AND_TEST).
 
 ## Quality Rules
 

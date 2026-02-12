@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { evaluateAttempt, evaluateDuel } from "@/lib/scoring/evaluate";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
-import { ELO_INITIAL_RATING } from "@/lib/utils/constants";
+import { ELO_INITIAL_RATING, EVALUATION_RATE_LIMIT } from "@/lib/utils/constants";
 import type { SprintResponse } from "@/types";
 import crypto from "crypto";
 
@@ -11,6 +11,21 @@ export async function POST(request: NextRequest) {
   const user = await ensureUser();
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // Rate limit: max evaluations per user per hour
+  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
+  const recentEvals = await prisma.sprintAttempt.count({
+    where: {
+      userId: user.id,
+      completedAt: { gte: oneHourAgo },
+    },
+  });
+  if (recentEvals >= EVALUATION_RATE_LIMIT) {
+    return NextResponse.json(
+      { error: "Rate limit exceeded. Please try again later.", retryAfter: 3600 },
+      { status: 429 }
+    );
   }
 
   let body: {

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "gtm-strategy",
+  "topicSlug": "launch-execution-playbooks",
+  "mode": "LEARN",
+  "title": "Beta Programs & Launch Timing Mastery",
+  "description": "Master beta program design, go-to-market timing decisions, and launch metrics that predict commercial success.",
+  "difficulty": 4,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the primary strategic purpose of a structured beta program before a full product launch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Generate early revenue to fund the launch campaign"
+        },
+        {
+          "id": "b",
+          "text": "Validate product-market fit signals and de-risk the launch"
+        },
+        {
+          "id": "c",
+          "text": "Build a complete feature set based on all user requests"
+        },
+        {
+          "id": "d",
+          "text": "Create legal protection against post-launch liability claims"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "When Figma ran its beta from 2015-2016, it didn't just fix bugs—it validated that design teams would actually collaborate in-browser, a critical product-market fit signal. Structured betas use cohort-based enrollment, success criteria gates, and predefined kill/proceed metrics to systematically de-risk launches before committing full GTM resources.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A B2B SaaS beta shows: 340 sign-ups, 42% activated (used core feature), 18% retained at Week 4, NPS of 62 among retained users. Which metric is the biggest red flag for launch readiness?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sign-up volume is too low for statistical significance"
+        },
+        {
+          "id": "b",
+          "text": "Activation-to-retention drop (42% → 18%) signals a value gap"
+        },
+        {
+          "id": "c",
+          "text": "NPS of 62 is below the threshold for viral growth"
+        },
+        {
+          "id": "d",
+          "text": "All metrics look healthy for a B2B beta program"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When should a company use a 'rolling thunder' launch strategy instead of a single big-bang launch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "When the product has only one target segment"
+        },
+        {
+          "id": "b",
+          "text": "When budget constraints prevent any large-scale marketing spend"
+        },
+        {
+          "id": "c",
+          "text": "When multiple segments or geographies require sequenced market entry"
+        },
+        {
+          "id": "d",
+          "text": "When competitors have already launched an identical product"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Slack's 2014 launch used a rolling thunder approach—invite-only waves across teams of increasing size—which let them scale infrastructure and refine onboarding between waves. Rolling thunder launches sequence market entry across segments, geographies, or use cases, allowing teams to apply learnings from each wave to the next while building sustained momentum rather than a single spike.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In launch metrics, the ratio of activated users to acquired users is called the ____ rate, and improving it typically has 2-3x more revenue impact than increasing top-of-funnel volume.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Conversion"
+        },
+        {
+          "id": "b",
+          "text": "Activation"
+        },
+        {
+          "id": "c",
+          "text": "Retention"
+        },
+        {
+          "id": "d",
+          "text": "Adoption"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your enterprise product launch is 3 weeks out. Engineering just flagged that the API integration with Salesforce (requested by 70% of beta users) needs 4 more weeks. You can launch on time without it or delay. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delay launch 4 weeks to ship the full integration"
+        },
+        {
+          "id": "b",
+          "text": "Launch on time with a manual workaround and fast-follow integration"
+        },
+        {
+          "id": "c",
+          "text": "Launch on time, remove Salesforce users from target segment entirely"
+        },
+        {
+          "id": "d",
+          "text": "Split into two launches: non-Salesforce now, Salesforce users later"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which launch metric best predicts long-term commercial viability within the first 30 days post-launch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Total sign-ups or downloads in the first week"
+        },
+        {
+          "id": "b",
+          "text": "Day-1 media coverage volume and sentiment score"
+        },
+        {
+          "id": "c",
+          "text": "Cohort retention curves and time-to-value for early adopters"
+        },
+        {
+          "id": "d",
+          "text": "Social media mention count and share of voice"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Superhuman famously used a 'product-market fit engine' measuring how disappointed users would be if the product disappeared, tracked by weekly cohort. Research from Amplitude across 12,000 products shows that Week-1 and Week-4 retention cohort curves are the strongest early predictor of long-term success—far more than vanity metrics like downloads or press hits.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're 6 weeks from launching a new fintech product. Rank these launch workstreams in order of when they should be finalized (earliest first): (a) PR embargo and media briefings, (b) Beta exit criteria and go/no-go gate, (c) Sales enablement materials and demo scripts, (d) Day-1 paid acquisition campaign creative.",
+      "options": [
+        {
+          "id": "a",
+          "text": "PR embargo and media briefings"
+        },
+        {
+          "id": "b",
+          "text": "Beta exit criteria and go/no-go gate"
+        },
+        {
+          "id": "c",
+          "text": "Sales enablement materials and demo scripts"
+        },
+        {
+          "id": "d",
+          "text": "Day-1 paid acquisition campaign creative"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your biggest competitor just announced a nearly identical product launching 2 weeks before your planned date. Your beta metrics are strong but sales enablement is only 70% ready. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accelerate launch to beat them, accept incomplete sales readiness"
+        },
+        {
+          "id": "b",
+          "text": "Hold your date, differentiate on messaging and superior beta proof points"
+        },
+        {
+          "id": "c",
+          "text": "Delay 4 weeks to add differentiating features they don't have"
+        },
+        {
+          "id": "d",
+          "text": "Pivot to a completely different target segment to avoid competition"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you were planning a standard launch timeline with strong beta metrics. Now a major competitor has announced a near-identical product launching before you, creating urgency pressure that could lead to rushing an under-prepared GTM.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

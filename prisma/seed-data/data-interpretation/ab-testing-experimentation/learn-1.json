@@ -1,0 +1,235 @@
+{
+  "skillSlug": "data-interpretation",
+  "topicSlug": "ab-testing-experimentation",
+  "mode": "LEARN",
+  "title": "A/B Testing Foundations: From Hypothesis to Decision",
+  "description": "Master the core mechanics of A/B testing including hypothesis design, statistical significance, confidence intervals, and common experiment pitfalls.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What is the null hypothesis in Spotify's test?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The new layout will increase engagement significantly"
+        },
+        {
+          "id": "b",
+          "text": "There is no difference in engagement between the two layouts"
+        },
+        {
+          "id": "c",
+          "text": "The old layout is better than the new one"
+        },
+        {
+          "id": "d",
+          "text": "Users prefer whichever layout they see first"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Every A/B test starts with a null hypothesis — the assumption that there's no difference between your control and variant. For example, Spotify might test a new playlist layout by assuming it won't change user engagement. The goal of the experiment is to gather enough evidence to reject this null hypothesis.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Airbnb runs a booking flow test: Control converts at 3.2% (n=50,000), Variant at 3.4% (n=50,000). The p-value is 0.12. What's the key takeaway?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The variant is clearly better — ship it immediately"
+        },
+        {
+          "id": "b",
+          "text": "The result is not statistically significant; we can't confirm a real difference"
+        },
+        {
+          "id": "c",
+          "text": "The sample size was too small to detect anything"
+        },
+        {
+          "id": "d",
+          "text": "A 0.2% lift is never worth pursuing"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "If Netflix uses a 95% confidence interval of [+1.2%, +3.8%] for a new recommendation algorithm's lift, what does this mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "There's a 95% chance the true lift is between 1.2% and 3.8%"
+        },
+        {
+          "id": "b",
+          "text": "Exactly 95% of users experienced a lift in that range"
+        },
+        {
+          "id": "c",
+          "text": "The test will be significant 95% of the time it's repeated"
+        },
+        {
+          "id": "d",
+          "text": "The algorithm works for 95% of users"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "A confidence interval gives you a range of plausible values for the true effect of your change. When Netflix tests a new recommendation algorithm and gets a 95% CI of [+1.2%, +3.8%], it means they're 95% confident the real impact falls within that range. If the interval doesn't cross zero, the result is statistically significant.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In A/B testing, a ____ error means concluding a variant wins when it actually doesn't — also called a false positive.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Type I"
+        },
+        {
+          "id": "b",
+          "text": "Type II"
+        },
+        {
+          "id": "c",
+          "text": "Sampling"
+        },
+        {
+          "id": "d",
+          "text": "Standard"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your e-commerce team's A/B test on a new checkout flow shows a +5% conversion lift after 3 days, with p=0.04. But the pre-registered test duration was 14 days. Do you ship early or wait?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ship now — p<0.05 proves the variant wins"
+        },
+        {
+          "id": "b",
+          "text": "Wait the full 14 days to avoid peeking bias"
+        },
+        {
+          "id": "c",
+          "text": "Ship to 50% of traffic as a compromise"
+        },
+        {
+          "id": "d",
+          "text": "Restart the test with a larger sample size"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Why is this a problem for DoorDash's experiment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It makes the test run too long"
+        },
+        {
+          "id": "b",
+          "text": "Heavy users skew results, masking the experience of typical customers"
+        },
+        {
+          "id": "c",
+          "text": "It reduces the total sample size available"
+        },
+        {
+          "id": "d",
+          "text": "It always inflates conversion rates in the control group"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Sample Ratio Mismatch (SRM) and selection bias are silent killers of experiments. Imagine DoorDash tests a new delivery ETA display, but power users who order 5x per week generate disproportionate data compared to occasional users. This creates a biased sample where conclusions are driven by a non-representative subset of your audience.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're designing an A/B test for Slack's new onboarding flow. Rank these steps in the correct order from first to last.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Analyze results and check for statistical significance"
+        },
+        {
+          "id": "b",
+          "text": "Define your hypothesis and choose a primary metric"
+        },
+        {
+          "id": "c",
+          "text": "Calculate required sample size and set test duration"
+        },
+        {
+          "id": "d",
+          "text": "Randomize users into control and variant groups"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Halfway through your 14-day test, engineering deploys a site-wide performance upgrade that cuts page load time by 40% for all users. What should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Continue the test — both groups are equally affected"
+        },
+        {
+          "id": "b",
+          "text": "Stop and restart the test to isolate your variable cleanly"
+        },
+        {
+          "id": "c",
+          "text": "Analyze only the data collected before the deployment"
+        },
+        {
+          "id": "d",
+          "text": "Extend the test duration by another 14 days"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You had a well-designed 14-day A/B test running on a checkout flow redesign. Now a major external change — a 40% site-wide speed improvement — has been introduced mid-experiment, potentially changing baseline user behavior and invalidating the controlled conditions you established.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "resource-allocation",
+  "mode": "LEARN",
+  "title": "Capacity Constraints and Sequencing Under Scarcity",
+  "description": "Master advanced techniques for sequencing initiatives and allocating constrained capacity across competing strategic priorities.",
+  "difficulty": 4,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which approach best captures the true cost of committing your team to Project Alpha?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate Alpha's direct labor and infrastructure costs"
+        },
+        {
+          "id": "b",
+          "text": "Measure the value of the best forgone alternative"
+        },
+        {
+          "id": "c",
+          "text": "Estimate Alpha's expected ROI in isolation"
+        },
+        {
+          "id": "d",
+          "text": "Compare Alpha's cost to the department's total budget"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Opportunity cost isn't what you spend—it's what you sacrifice. When Stripe chose to dedicate 40% of its engineering capacity to payment infrastructure in 2018 instead of lending products, the true cost was the delayed revenue from lending, not the engineering salaries. Advanced resource allocation requires evaluating every commitment against the next-best use of those same resources.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS firm has 3 projects competing for 12 engineers: Project X (8 engineers, $4M NPV), Project Y (6 engineers, $3.5M NPV), Project Z (5 engineers, $2.8M NPV). Y and Z together need 11 engineers. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Project X has the highest individual NPV, pick it"
+        },
+        {
+          "id": "b",
+          "text": "Y+Z combined yield $6.3M with 11 engineers, beating X alone"
+        },
+        {
+          "id": "c",
+          "text": "All three projects should be partially funded"
+        },
+        {
+          "id": "d",
+          "text": "Pick the project with the fewest engineers needed"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Using WSJF, which initiative should be sequenced first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Initiative with highest total value regardless of duration"
+        },
+        {
+          "id": "b",
+          "text": "Initiative with lowest cost of delay divided by duration"
+        },
+        {
+          "id": "c",
+          "text": "Initiative with highest cost of delay divided by duration"
+        },
+        {
+          "id": "d",
+          "text": "Initiative with shortest duration regardless of value"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Weighted Shortest Job First (WSJF) is a sequencing framework used by companies like Spotify and SAFe-adopting enterprises. It calculates priority as Cost of Delay divided by Job Duration. A feature worth $500K/month delayed that takes 2 months (WSJF=250) should be sequenced before one worth $800K/month delayed that takes 5 months (WSJF=160), even though the second has higher absolute value.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When capacity is fixed, adding a new initiative without removing an existing one creates ____, where all projects slow down and total output decreases.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scope creep"
+        },
+        {
+          "id": "b",
+          "text": "Context-switching overhead"
+        },
+        {
+          "id": "c",
+          "text": "Resource thrashing"
+        },
+        {
+          "id": "d",
+          "text": "Budget variance"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're VP of Product at a fintech with 20 engineers. A regulator just mandated a compliance feature (10 engineers, 3 months, no revenue). You have a revenue-critical launch (12 engineers, 2 months, $6M ARR). You can't hire fast enough. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Split engineers 10/10, accepting both projects will slip"
+        },
+        {
+          "id": "b",
+          "text": "Compliance first with all 20, then pivot to revenue launch"
+        },
+        {
+          "id": "c",
+          "text": "Dedicate 10 to compliance, 10 to a descoped revenue MVP"
+        },
+        {
+          "id": "d",
+          "text": "Negotiate a compliance deadline extension and launch revenue first"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A team running at 95% utilization has a 3-week task added. Based on queuing theory, what's the most likely outcome?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The task completes in roughly 3 weeks as estimated"
+        },
+        {
+          "id": "b",
+          "text": "Wait time explodes, likely taking 8-12 weeks total"
+        },
+        {
+          "id": "c",
+          "text": "The team absorbs it with minor 1-week delay"
+        },
+        {
+          "id": "d",
+          "text": "Only tasks with lower priority get delayed"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Queuing theory—proven in manufacturing at Toyota and applied at Amazon's infrastructure teams—shows that wait times grow exponentially as utilization approaches 100%. At 80% utilization, a new task might wait 4x its processing time. At 95%, that same task could wait 19x. This is why elite teams like Google's SRE group deliberately maintain 20-30% slack capacity—not as waste, but as the capacity to respond to high-value opportunities.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You lead platform engineering at Shopify. Rank these by WSJF priority (highest first): (a) API migration—$200K/mo delay cost, 4 months; (b) Security patch—$900K/mo delay cost, 1 month; (c) New merchant dashboard—$400K/mo delay cost, 3 months; (d) Performance optimization—$300K/mo delay cost, 2 months.",
+      "options": [
+        {
+          "id": "a",
+          "text": "API migration: $200K/mo cost of delay, 4 months"
+        },
+        {
+          "id": "b",
+          "text": "Security patch: $900K/mo cost of delay, 1 month"
+        },
+        {
+          "id": "c",
+          "text": "New merchant dashboard: $400K/mo cost of delay, 3 months"
+        },
+        {
+          "id": "d",
+          "text": "Performance optimization: $300K/mo cost of delay, 2 months"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through the security patch, your top 2 security engineers get poached by a competitor. The patch now takes 3 months instead of 1. How does this change your sequencing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep security first—regulatory risk still dominates all others"
+        },
+        {
+          "id": "b",
+          "text": "Recalculate WSJF; performance optimization now sequences first"
+        },
+        {
+          "id": "c",
+          "text": "Pause security, do all three others, then return to it"
+        },
+        {
+          "id": "d",
+          "text": "Split the security work across non-specialist engineers to maintain speed"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously, you ranked the security patch first using WSJF (900/1=900). With the duration tripled to 3 months, its WSJF drops to 300—now equal to performance optimization (300/2=150... wait, still higher). Recalculating: Security=900/3=300, Perf=300/2=150, Dashboard=400/3=133, API=200/4=50. Security still leads, but the gap has closed dramatically, making this a genuine re-evaluation moment.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

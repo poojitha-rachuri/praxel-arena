@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "pricing-fundamentals",
+  "mode": "LEARN",
+  "title": "Three Core Pricing Strategies Explained",
+  "description": "Learn the fundamentals of cost-plus, value-based, and competitive pricing and when to use each approach.",
+  "difficulty": 1,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A bakery spends $2 on ingredients and labor per cupcake and adds a 50% markup. What pricing method is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost-plus pricing"
+        },
+        {
+          "id": "b",
+          "text": "Value-based pricing"
+        },
+        {
+          "id": "c",
+          "text": "Competitive pricing"
+        },
+        {
+          "id": "d",
+          "text": "Dynamic pricing"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Cost-plus pricing is the simplest method: calculate your total cost, then add a fixed percentage markup to determine the price. For example, a furniture manufacturer that spends $200 to build a table and applies a 40% markup would price it at $280.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS tool costs $5/month to host per user. Company A charges $15/user, Company B charges $50/user. Company B's customers report 3x higher productivity gains. What explains the price gap?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Company B has higher hosting costs"
+        },
+        {
+          "id": "b",
+          "text": "Company B uses value-based pricing tied to customer outcomes"
+        },
+        {
+          "id": "c",
+          "text": "Company A is using value-based pricing"
+        },
+        {
+          "id": "d",
+          "text": "Company B is overcharging and will lose customers"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Salesforce prices its CRM based on how much revenue it helps customers generate, not its development cost. What strategy is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost-plus pricing with high margins"
+        },
+        {
+          "id": "b",
+          "text": "Competitive pricing to match rivals"
+        },
+        {
+          "id": "c",
+          "text": "Value-based pricing anchored to customer benefit"
+        },
+        {
+          "id": "d",
+          "text": "Penetration pricing to gain market share"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Value-based pricing sets prices according to how much value the customer perceives or receives, not what it costs to produce. Pharmaceutical companies often use this approach — a cancer drug that extends life by years can be priced far above its manufacturing cost because the value to patients is enormous.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When Burger King sets its Whopper price by looking at what McDonald's charges for a Big Mac, this is called ____ pricing.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost-plus"
+        },
+        {
+          "id": "b",
+          "text": "Competitive"
+        },
+        {
+          "id": "c",
+          "text": "Value-based"
+        },
+        {
+          "id": "d",
+          "text": "Premium"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're launching a new project management tool. Asana charges $11/user/month and Monday.com charges $9/user/month. Your cost is $3/user. Do you price at $8 to undercut competitors, or $14 because your AI features save teams 5 hours/week?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Price at $8 — win customers fast with a lower price"
+        },
+        {
+          "id": "b",
+          "text": "Price at $14 — capture value from unique AI time savings"
+        },
+        {
+          "id": "c",
+          "text": "Price at $3.50 — just cover costs and grow volume"
+        },
+        {
+          "id": "d",
+          "text": "Price at $10 — split the difference between competitors"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Netflix raised prices by $2/month and lost only 0.1% of subscribers. What does this tell you about their customers' price sensitivity?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customers are highly price sensitive"
+        },
+        {
+          "id": "b",
+          "text": "Customers have low price sensitivity (inelastic demand)"
+        },
+        {
+          "id": "c",
+          "text": "Netflix underpriced by exactly $2"
+        },
+        {
+          "id": "d",
+          "text": "Customers didn't notice the price change"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Price sensitivity measures how much customer demand changes when you raise or lower prices. When customers see few alternatives or deeply value your product, they're less price sensitive — economists call this inelastic demand. Luxury brands like Rolex thrive on low price sensitivity, while commodity products like generic paper towels face very high price sensitivity.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these products from MOST price sensitive (customers will switch over small price changes) to LEAST price sensitive: (a) Generic bottled water, (b) Insulin medication, (c) Starbucks coffee, (d) Gasoline at a highway rest stop with no other stations.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Generic bottled water"
+        },
+        {
+          "id": "b",
+          "text": "Insulin medication"
+        },
+        {
+          "id": "c",
+          "text": "Starbucks coffee"
+        },
+        {
+          "id": "d",
+          "text": "Gasoline at an isolated highway rest stop"
+        }
+      ],
+      "correctAnswer": "a,c,d,b",
+      "insightAnswer": "a,c,d,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You've been using cost-plus pricing at a 40% markup on your handmade candles ($7 cost, $9.80 price). A viral TikTok review calls your candles 'the best stress-relief product under $20' and demand triples overnight. What should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep $9.80 — your costs haven't changed"
+        },
+        {
+          "id": "b",
+          "text": "Raise to $16.99 — shift to value-based pricing on perceived benefit"
+        },
+        {
+          "id": "c",
+          "text": "Lower price to $7.50 to maximize the viral moment"
+        },
+        {
+          "id": "d",
+          "text": "Raise to $25 — charge as much as possible while trending"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you were using cost-plus pricing for a simple handmade candle business. Now a viral social media moment has dramatically increased perceived value and demand, forcing you to reconsider your pricing strategy.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

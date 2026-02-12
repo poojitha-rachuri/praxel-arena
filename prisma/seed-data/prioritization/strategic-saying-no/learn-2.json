@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "strategic-saying-no",
+  "mode": "LEARN",
+  "title": "Sunk Costs, Scope Creep, and Debt Tradeoffs",
+  "description": "Master advanced frameworks for killing zombie projects, managing scope boundaries, and tracking the true cost of technical and product debt.",
+  "difficulty": 5,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Shopify's VP of Product killed a 14-month internal tool rebuild after discovering this pattern. What's the strongest signal you're in a sunk cost trap?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The team has invested significant time and morale"
+        },
+        {
+          "id": "b",
+          "text": "Future expected value is negative regardless of past spend"
+        },
+        {
+          "id": "c",
+          "text": "Stakeholders are emotionally attached to the project"
+        },
+        {
+          "id": "d",
+          "text": "The original business case assumptions have shifted"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The sunk cost fallacy becomes most dangerous at the executive level, where large investments create psychological commitment traps. The diagnostic test is simple: if you had zero dollars invested today, would you greenlight this project at its current projected ROI? Shopify reportedly killed a major internal platform rebuild mid-flight when prospective ROI turned negative—saving $20M+ in further spend.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company tracks its feature pipeline: 42 requests from Enterprise ($8.2M ARR), 187 requests from SMB ($3.1M ARR), 23 requests from a single prospect worth $1.4M ARR. Engineering capacity: 2 features per quarter. What's the critical insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "SMB volume signals stronger product-market fit opportunity"
+        },
+        {
+          "id": "b",
+          "text": "The single prospect creates dangerous concentration and scope risk"
+        },
+        {
+          "id": "c",
+          "text": "Enterprise requests should dominate based on ARR weight"
+        },
+        {
+          "id": "d",
+          "text": "Two features per quarter is too low for this pipeline"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Atlassian uses a 'scope debt register' that quantifies deferred scope in dollars. What makes scope debt fundamentally different from technical debt?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scope debt compounds through customer expectations, not codebase degradation"
+        },
+        {
+          "id": "b",
+          "text": "Scope debt is always more expensive than technical debt"
+        },
+        {
+          "id": "c",
+          "text": "Scope debt is visible to customers while tech debt is internal"
+        },
+        {
+          "id": "d",
+          "text": "Scope debt can be eliminated entirely with better planning"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Debt tracking isn't just for engineering. Product teams at companies like Atlassian and Stripe maintain 'scope debt registers'—catalogs of deferred commitments with estimated carrying costs. The key distinction: technical debt compounds through increasing maintenance burden, while scope debt compounds through escalating customer expectations and competitive gaps. Both require explicit interest payments, but scope debt is harder to measure because the 'interest' is opportunity cost and churn risk.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When triaging feature requests, the ____ test asks: 'If we launched this and it failed, would we learn something that changes our strategy?'",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reversibility"
+        },
+        {
+          "id": "b",
+          "text": "Information value"
+        },
+        {
+          "id": "c",
+          "text": "Opportunity cost"
+        },
+        {
+          "id": "d",
+          "text": "Regret minimization"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're CPO at a Series C fintech. Your largest customer (18% of revenue) demands a custom compliance module. Building it creates 6 months of tech debt and delays your platform roadmap. Saying no risks losing them at renewal in 90 days.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build it—18% revenue loss would crater next funding round"
+        },
+        {
+          "id": "b",
+          "text": "Negotiate a paid services engagement to fund it without roadmap impact"
+        },
+        {
+          "id": "c",
+          "text": "Say no and accelerate pipeline to reduce concentration risk before renewal"
+        },
+        {
+          "id": "d",
+          "text": "Build a minimal version, accept some debt, and renegotiate contract terms"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Stripe's product team uses a 'kill criteria' framework—predefined conditions that automatically trigger project cancellation. What's the primary advantage over periodic review-based killing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It removes political negotiation from cancellation decisions"
+        },
+        {
+          "id": "b",
+          "text": "It saves time by eliminating unnecessary review meetings"
+        },
+        {
+          "id": "c",
+          "text": "It ensures projects always have clear success metrics"
+        },
+        {
+          "id": "d",
+          "text": "It prevents scope creep by locking requirements at launch"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "The hardest 'no' is killing your own project mid-flight. Best-in-class product organizations pre-commit to kill criteria—quantitative thresholds set at project kickoff that trigger automatic cancellation. Stripe and Amazon both use variants of this approach. The power lies in temporal separation: you define the exit conditions when you're rational (before investment), so the decision executes when you're biased (after months of sunk costs). This converts an emotional political decision into a mechanical trigger.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Your B2B platform has capacity for 1 major initiative. Rank these from highest to lowest strategic value using a debt-adjusted prioritization lens: (a) Rebuild authentication system—3 security incidents in 6 months, (b) Custom analytics dashboard requested by top 3 accounts worth $4.2M combined, (c) Reduce API latency from 800ms to 200ms—affects all 340 customers, (d) Build integration requested by a partner promising $2M in referrals.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rebuild authentication—existential security risk, compounding debt"
+        },
+        {
+          "id": "b",
+          "text": "Custom analytics for top 3 accounts—$4.2M retention"
+        },
+        {
+          "id": "c",
+          "text": "API latency reduction—platform-wide impact, 340 customers"
+        },
+        {
+          "id": "d",
+          "text": "Partner integration—$2M speculative referral revenue"
+        }
+      ],
+      "correctAnswer": "a,c,b,d",
+      "insightAnswer": "a,c,b,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your CEO just announced at a conference that the partner integration (the item you deprioritized) will launch in Q2. The partner's stock jumped 4% on the news. How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accelerate the integration—CEO's public commitment is now a constraint"
+        },
+        {
+          "id": "b",
+          "text": "Present the debt-adjusted analysis to the CEO and renegotiate the timeline publicly"
+        },
+        {
+          "id": "c",
+          "text": "Scope a minimal viable integration that honors the commitment without derailing priorities"
+        },
+        {
+          "id": "d",
+          "text": "Build it as announced and push the auth rebuild to Q3"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "You had ranked the partner integration last in priority due to speculative revenue and higher-value alternatives. Now the CEO has made a public commitment, creating a new external constraint that changes the political and reputational calculus without changing the underlying strategic analysis.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

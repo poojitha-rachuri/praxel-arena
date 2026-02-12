@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "monetization-models",
+  "mode": "PRACTICE",
+  "title": "Choosing the Right Monetization Model",
+  "description": "Practice selecting and evaluating monetization models using real-world business scenarios and metrics.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A B2B analytics tool shows: 40% of free users hit the usage cap weekly, paid conversion is 2.1%, and churned paid users cite 'not enough value beyond free tier.' What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The free tier is too generous, cannibalizing paid conversions"
+        },
+        {
+          "id": "b",
+          "text": "The usage cap needs to be raised for free users"
+        },
+        {
+          "id": "c",
+          "text": "Paid tier doesn't deliver enough differentiated value"
+        },
+        {
+          "id": "d",
+          "text": "The product needs more marketing to drive conversions"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "In a usage-based model like AWS or Twilio, revenue scales with customer ____, aligning the vendor's incentive with the customer's growth.",
+      "options": [
+        {
+          "id": "a",
+          "text": "consumption"
+        },
+        {
+          "id": "b",
+          "text": "headcount"
+        },
+        {
+          "id": "c",
+          "text": "satisfaction"
+        },
+        {
+          "id": "d",
+          "text": "retention"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You're launching a project management tool for SMBs. You can either offer a freemium model with a generous free tier to maximize adoption, or a low-cost subscription from day one to validate willingness to pay. Budget supports only one approach.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Freemium—build a large user base and convert later"
+        },
+        {
+          "id": "b",
+          "text": "Low-cost subscription—validate paying demand early"
+        },
+        {
+          "id": "c",
+          "text": "Usage-based pricing tied to number of projects"
+        },
+        {
+          "id": "d",
+          "text": "Free trial only with 14-day expiration"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "A marketplace like Etsy reports: GMV up 25% YoY, but take rate dropped from 6.5% to 5.2% due to seller fee promotions. Net revenue grew only 8%. What matters most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "GMV growth proves the marketplace is healthy"
+        },
+        {
+          "id": "b",
+          "text": "Take rate compression is eroding revenue growth despite volume gains"
+        },
+        {
+          "id": "c",
+          "text": "Seller promotions should be increased to drive more GMV"
+        },
+        {
+          "id": "d",
+          "text": "The marketplace should switch to a subscription model for sellers"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "A SaaS startup is evaluating monetization models. Rank these factors from most to least important when choosing between subscription vs. usage-based pricing.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Predictability of revenue for fundraising and planning"
+        },
+        {
+          "id": "b",
+          "text": "How variable customer usage patterns are"
+        },
+        {
+          "id": "c",
+          "text": "Competitor pricing structures in the market"
+        },
+        {
+          "id": "d",
+          "text": "Ease of implementation for the billing system"
+        }
+      ],
+      "correctAnswer": "b,a,c,d",
+      "insightAnswer": "b,a,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Your developer tools company (like Datadog) sees enterprise clients requesting annual contracts with committed spend, while startups prefer pure pay-as-you-go. Supporting both adds billing complexity. Which approach do you prioritize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pure usage-based for all segments to keep it simple"
+        },
+        {
+          "id": "b",
+          "text": "Hybrid: committed contracts for enterprise, usage-based for startups"
+        },
+        {
+          "id": "c",
+          "text": "Annual subscriptions only with tiered usage limits"
+        },
+        {
+          "id": "d",
+          "text": "Freemium for startups, custom enterprise pricing only"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "A fitness app is shifting from one-time purchase to subscription. Rank these actions from first to last for a successful transition.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grandfather existing users on a discounted legacy plan"
+        },
+        {
+          "id": "b",
+          "text": "Build recurring content pipeline to justify ongoing subscription"
+        },
+        {
+          "id": "c",
+          "text": "Test subscription pricing with new user cohorts first"
+        },
+        {
+          "id": "d",
+          "text": "Announce full migration and sunset the one-time model"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your largest enterprise client (30% of ARR) now demands pure usage-based pricing or they'll leave. But your investors just praised your predictable subscription revenue. How do you respond?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Switch the whole company to usage-based pricing"
+        },
+        {
+          "id": "b",
+          "text": "Offer this client a hybrid: base commitment plus usage overages"
+        },
+        {
+          "id": "c",
+          "text": "Refuse and accept the risk of losing them"
+        },
+        {
+          "id": "d",
+          "text": "Give them usage-based pricing secretly with a custom contract"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you chose a hybrid model supporting both enterprise contracts and startup usage-based pricing. Now your biggest client is pushing back against any committed spend, threatening your revenue concentration.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

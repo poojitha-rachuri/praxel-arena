@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "packaging-bundling-strategy",
+  "mode": "LEARN",
+  "title": "Designing Tiers, Gates, and Upsell Paths",
+  "description": "Master the architecture of multi-tier packaging, feature gating logic, and self-serve vs enterprise upsell design.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which metric most reliably signals where to draw the boundary between a mid-tier and enterprise tier?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Number of features customers request in support tickets"
+        },
+        {
+          "id": "b",
+          "text": "The usage threshold where customers' willingness-to-pay jumps discontinuously"
+        },
+        {
+          "id": "c",
+          "text": "Competitor pricing at equivalent tiers"
+        },
+        {
+          "id": "d",
+          "text": "Average revenue per user across all segments"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Effective tier boundaries are drawn at natural value inflection points—usage levels where a customer segment derives dramatically more value and willingness-to-pay spikes. Slack discovered this when teams crossing ~50 users shifted from cost-conscious buyers to strategic purchasers willing to pay for admin controls and SSO, creating a clean tier break between Pro and Enterprise Grid.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS analytics tool has three tiers. Free: 42K users, 2.1% convert to $29/mo Starter. Starter: 882 users, 18% convert to $149/mo Pro. Pro: 159 users, but 31% request features only available via custom enterprise deals. What's the key signal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Free-to-Starter conversion is too low; fix onboarding"
+        },
+        {
+          "id": "b",
+          "text": "Starter-to-Pro conversion is healthy; no changes needed"
+        },
+        {
+          "id": "c",
+          "text": "31% of Pro users hitting the ceiling signals a missing fourth tier"
+        },
+        {
+          "id": "d",
+          "text": "The $29 price point is too low relative to $149"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When designing feature gates, what is the primary risk of gating a 'must-have' workflow feature behind a premium tier?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Users perceive the product as incomplete and churn before upgrading"
+        },
+        {
+          "id": "b",
+          "text": "It always increases upgrade rates due to urgency"
+        },
+        {
+          "id": "c",
+          "text": "Support costs rise because users need help finding the feature"
+        },
+        {
+          "id": "d",
+          "text": "It violates standard SaaS pricing conventions"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "Feature gating works best when gated features are 'more-of' or 'better-at' capabilities—not core workflow blockers. HubSpot learned this the hard way: early gates on essential CRM reporting drove frustration and churn. They restructured so the free CRM was fully functional, gating advanced automation and attribution instead—features power users craved after experiencing core value.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In packaging strategy, features that help users experience core value belong in ____ tiers, while features that help users scale or govern belong in ____ tiers.",
+      "options": [
+        {
+          "id": "a",
+          "text": "premium / free"
+        },
+        {
+          "id": "b",
+          "text": "lower / higher"
+        },
+        {
+          "id": "c",
+          "text": "enterprise / self-serve"
+        },
+        {
+          "id": "d",
+          "text": "bundled / unbundled"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your $99/mo project management tool has strong SMB traction but enterprise prospects demand SSO, audit logs, and custom roles. You can either add an enterprise tier at $45/seat/mo with a 10-seat minimum, or bundle enterprise features into the existing plan at $149/mo flat. Which do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Per-seat enterprise tier—captures value as organizations scale up"
+        },
+        {
+          "id": "b",
+          "text": "Flat $149/mo—simpler packaging retains self-serve conversion advantage"
+        },
+        {
+          "id": "c",
+          "text": "Keep current tier and offer enterprise features as individual add-ons"
+        },
+        {
+          "id": "d",
+          "text": "Offer both options and let customers self-select"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "When should a company maintain separate self-serve and sales-led (enterprise) motions rather than funneling all users through a single path?",
+      "options": [
+        {
+          "id": "a",
+          "text": "When average deal sizes across segments differ by less than 2x"
+        },
+        {
+          "id": "b",
+          "text": "When CAC-to-LTV ratios justify different acquisition economics for each segment"
+        },
+        {
+          "id": "c",
+          "text": "Only when the product has more than five pricing tiers"
+        },
+        {
+          "id": "d",
+          "text": "When competitors use a dual-motion approach in the same market"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Dual-motion strategies (self-serve + sales-led) are justified when segments have fundamentally different unit economics. Atlassian famously ran pure self-serve for years, but introduced enterprise sales when they found deals above $50K had 3x higher LTV-to-CAC ratios despite higher acquisition costs. The key test: does the sales-assisted path generate enough incremental LTV to justify the added cost structure?",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A B2B design tool is restructuring from 2 tiers to 4. Rank these packaging decisions in the order they should be made: (a) Set price points for each tier, (b) Define the value metric that scales across tiers, (c) Map features to tiers using willingness-to-pay data, (d) Design the upsell triggers and upgrade nudges in-product.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set price points for each tier"
+        },
+        {
+          "id": "b",
+          "text": "Define the value metric that scales across tiers"
+        },
+        {
+          "id": "c",
+          "text": "Map features to tiers using willingness-to-pay data"
+        },
+        {
+          "id": "d",
+          "text": "Design upsell triggers and upgrade nudges in-product"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your CEO just announced a PLG pivot. Enterprise sales is being cut by 60%, and all tiers must support self-serve purchase within 90 days. Your current enterprise tier requires a demo and 3-week procurement process. What's your most critical first move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Eliminate the enterprise tier entirely and raise Pro pricing"
+        },
+        {
+          "id": "b",
+          "text": "Create a self-serve enterprise tier with automated provisioning and usage-based pricing"
+        },
+        {
+          "id": "c",
+          "text": "Gate enterprise features behind a free trial to maintain deal flow"
+        },
+        {
+          "id": "d",
+          "text": "Keep enterprise pricing but replace sales calls with recorded demos"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you designed a 4-tier structure with a sales-assisted enterprise motion justified by superior LTV-to-CAC ratios. Now the go-to-market is shifting to product-led growth, eliminating most of the sales team and requiring self-serve purchasing across all tiers within 90 days.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

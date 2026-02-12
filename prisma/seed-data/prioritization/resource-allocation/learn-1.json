@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "resource-allocation",
+  "mode": "LEARN",
+  "title": "Mastering Resource Allocation Tradeoffs",
+  "description": "Learn to evaluate opportunity costs, plan capacity, and sequence initiatives to maximize strategic value.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "What does opportunity cost measure in a resource allocation decision?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The total budget spent on the chosen project"
+        },
+        {
+          "id": "b",
+          "text": "The value of the best alternative you gave up"
+        },
+        {
+          "id": "c",
+          "text": "The risk of the project failing entirely"
+        },
+        {
+          "id": "d",
+          "text": "The sunk cost already invested before deciding"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Opportunity cost is the value of the next-best alternative you forgo when making a choice. When Spotify allocated its engineering team to podcasts in 2019, the opportunity cost was the music features those engineers could have built instead. Understanding opportunity cost ensures you're not just picking good options—you're picking the best one relative to what you sacrifice.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A product team has three initiatives: Project A (ROI 140%, 6 engineers, 4 months), Project B (ROI 95%, 2 engineers, 2 months), Project C (ROI 120%, 6 engineers, 3 months). You only have 6 engineers. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Project A has the highest ROI, so pick it"
+        },
+        {
+          "id": "b",
+          "text": "Project B frees capacity fastest, enabling a second project"
+        },
+        {
+          "id": "c",
+          "text": "Project C is best because it's shorter than A"
+        },
+        {
+          "id": "d",
+          "text": "All three should run in parallel with shared resources"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Why is capacity utilization above 85% generally considered risky for knowledge-work teams?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It violates most labor regulations in the US"
+        },
+        {
+          "id": "b",
+          "text": "It leaves no slack for unexpected urgent work or delays"
+        },
+        {
+          "id": "c",
+          "text": "Workers become less creative above 60% utilization"
+        },
+        {
+          "id": "d",
+          "text": "It always leads to employee turnover within weeks"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Capacity planning isn't just about filling every hour—it's about maintaining strategic flexibility. Amazon Web Services deliberately keeps engineering teams at roughly 70-80% allocation so they can absorb urgent customer escalations and experiment with innovations. When utilization exceeds ~85%, queuing theory shows wait times for new work spike exponentially, creating bottlenecks across the organization.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In capacity planning, the principle of ____ means that a system running near full utilization experiences exponentially longer wait times for new work.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Diminishing returns"
+        },
+        {
+          "id": "b",
+          "text": "Queuing theory"
+        },
+        {
+          "id": "c",
+          "text": "Pareto efficiency"
+        },
+        {
+          "id": "d",
+          "text": "Comparative advantage"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're VP of Engineering at a fintech startup. You can allocate your 12-person team to either: (1) rebuild the payment infrastructure to reduce outages costing $200K/quarter, or (2) launch a new lending product projected to generate $500K/quarter in 6 months. Which do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lending product—the revenue upside is significantly higher"
+        },
+        {
+          "id": "b",
+          "text": "Infrastructure rebuild—reliability is the foundation for all growth"
+        },
+        {
+          "id": "c",
+          "text": "Split the team 6/6 across both projects"
+        },
+        {
+          "id": "d",
+          "text": "Outsource the infrastructure work to a contractor team"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A team can do Project X ($300K value, 3 months) or Project Y ($200K value, 1 month). Using value-per-unit-time, which is the better allocation and why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Project X—higher total value wins every time"
+        },
+        {
+          "id": "b",
+          "text": "Project Y—$200K/month throughput beats X's $100K/month"
+        },
+        {
+          "id": "c",
+          "text": "Neither—you need ROI percentage, not absolute value"
+        },
+        {
+          "id": "d",
+          "text": "Both—run them in parallel to maximize output"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Sequencing decisions should consider value delivery rate, not just total value. Weighted Shortest Job First (WSJF), popularized by SAFe and used by companies like John Deere, divides the cost of delay by job duration. This means a smaller, faster project can be strategically superior to a larger one because it unlocks value sooner and frees capacity for the next initiative.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You lead product at a SaaS company with one 8-person team. Rank these initiatives from highest to lowest priority using value-per-unit-time and strategic risk: (a) Security compliance audit—$0 direct revenue, 2 months, required by Q3 or lose enterprise clients worth $1.2M/year. (b) AI feature—$400K/year revenue, 4 months build. (c) Onboarding redesign—$250K/year in reduced churn, 1 month. (d) Mobile app—$600K/year revenue, 8 months build.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Security compliance audit—regulatory, 2 months"
+        },
+        {
+          "id": "b",
+          "text": "AI feature—$400K/year, 4 months"
+        },
+        {
+          "id": "c",
+          "text": "Onboarding redesign—$250K/year churn reduction, 1 month"
+        },
+        {
+          "id": "d",
+          "text": "Mobile app—$600K/year, 8 months"
+        }
+      ],
+      "correctAnswer": "c,a,b,d",
+      "insightAnswer": "c,a,b,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your largest enterprise client just informed you they're evaluating a competitor and need the AI feature demo in 6 weeks or they'll switch. This client represents 30% of your annual revenue. How do you reallocate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pause onboarding redesign and shift entire team to AI feature"
+        },
+        {
+          "id": "b",
+          "text": "Build a limited AI prototype with 4 people, keep 4 on compliance"
+        },
+        {
+          "id": "c",
+          "text": "Stay the course—no single client should dictate your roadmap"
+        },
+        {
+          "id": "d",
+          "text": "Negotiate a 3-month extension with the client instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Previously you ranked onboarding first, then compliance, then AI feature, then mobile app. Now your largest client (30% of revenue) threatens to leave unless they see the AI feature in 6 weeks, forcing you to re-evaluate sequencing under new constraints while still managing the compliance deadline.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

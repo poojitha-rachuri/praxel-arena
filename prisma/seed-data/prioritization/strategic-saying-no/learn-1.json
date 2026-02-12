@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "strategic-saying-no",
+  "mode": "LEARN",
+  "title": "Saying No With Data and Discipline",
+  "description": "Master frameworks for declining feature requests, escaping sunk cost traps, and managing scope with strategic rigor.",
+  "difficulty": 4,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "When triaging this backlog, which criterion most directly separates strategic yes from strategic no?",
+      "options": [
+        {
+          "id": "a",
+          "text": "How loudly the requesting customer escalates"
+        },
+        {
+          "id": "b",
+          "text": "Alignment to current strategic objectives and ICPs"
+        },
+        {
+          "id": "c",
+          "text": "How quickly engineers estimate they can build it"
+        },
+        {
+          "id": "d",
+          "text": "Whether the feature exists in a competitor's product"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Basecamp famously maintained a lean product by rejecting thousands of feature requests annually. Their filter: does this request align with our core strategic bets and ideal customer profile, or does it pull us toward a different product? Strategic saying-no starts with a clear decision filter tied to your current objectives, not volume of requests or competitive mimicry.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS PM reviews Q3 data: 312 feature requests received, 74% from non-ICP accounts, top 3 requests by volume each serve <5% of ARR, and the #8-ranked request impacts 38% of ARR. What's the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Volume-based prioritization would misallocate resources away from core revenue"
+        },
+        {
+          "id": "b",
+          "text": "The team should build the top 3 requests to satisfy the most users"
+        },
+        {
+          "id": "c",
+          "text": "Non-ICP accounts should be ignored entirely going forward"
+        },
+        {
+          "id": "d",
+          "text": "312 requests means the product has serious quality problems"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Your team spent 4 months and $280K building a custom analytics module. Usage is 3%. Leadership wants to double down. What's the best response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Invest more since $280K is already spent and shouldn't be wasted"
+        },
+        {
+          "id": "b",
+          "text": "Evaluate only the future cost-to-value ratio, ignoring sunk investment"
+        },
+        {
+          "id": "c",
+          "text": "Ship it to more users to justify the original spend"
+        },
+        {
+          "id": "d",
+          "text": "Quietly shelve it without telling stakeholders to avoid conflict"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The sunk cost fallacy is one of the most expensive cognitive biases in product development. Concorde's governments kept funding the supersonic jet for decades despite clear evidence it would never be profitable — because they'd already invested so much. In scope management, the only rational question is: given what we know now, does the next dollar of investment yield positive expected value? Past spend is irrelevant to that calculation.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In scope management, tracking ____ debt helps teams quantify the hidden cost of every 'yes' by measuring accumulated maintenance burden and opportunity cost.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Technical"
+        },
+        {
+          "id": "b",
+          "text": "Financial"
+        },
+        {
+          "id": "c",
+          "text": "Feature"
+        },
+        {
+          "id": "d",
+          "text": "Organizational"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Stripe's PM team faces a choice: build a deeply-requested integration for their #1 enterprise client ($2.4M ARR) that conflicts with their platform strategy, or say no and risk churn. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Build it — losing $2.4M ARR is unacceptable risk"
+        },
+        {
+          "id": "b",
+          "text": "Say no, offer a workaround, and invest in platform extensibility instead"
+        },
+        {
+          "id": "c",
+          "text": "Build a half-version to partially satisfy without full commitment"
+        },
+        {
+          "id": "d",
+          "text": "Delay the decision for two quarters to see if they churn anyway"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "Which framework best structures a 'strategic no' communication to a senior stakeholder requesting a low-priority feature?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Simply say the team is too busy right now"
+        },
+        {
+          "id": "b",
+          "text": "Show the explicit tradeoff: what you'd stop doing to accommodate"
+        },
+        {
+          "id": "c",
+          "text": "Agree to build it but quietly deprioritize it later"
+        },
+        {
+          "id": "d",
+          "text": "Escalate to their manager to avoid the confrontation"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "Amazon's two-pizza teams use a 'tradeoff transparency' principle: every yes has an explicit cost. When Andy Jassy's AWS team receives internal requests, they respond with a displacement analysis — here's what we'd need to stop or delay to accommodate this. This reframes 'no' from a rejection into a visible resource allocation choice, putting the burden of the tradeoff decision back on the requester and preserving the relationship.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A B2B product team has capacity for one initiative. Rank these from highest to lowest strategic priority: (a) Fix onboarding drop-off losing 22% of new signups, (b) Build a feature requested by 3 non-ICP prospects, (c) Reduce feature debt by sunsetting 4 low-usage modules, (d) Add an integration that accelerates expansion in your #1 ICP segment.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fix onboarding drop-off (22% new signup loss)"
+        },
+        {
+          "id": "b",
+          "text": "Build feature for 3 non-ICP prospects"
+        },
+        {
+          "id": "c",
+          "text": "Sunset 4 low-usage modules to reduce feature debt"
+        },
+        {
+          "id": "d",
+          "text": "Add integration accelerating #1 ICP segment expansion"
+        }
+      ],
+      "correctAnswer": "a,d,c,b",
+      "insightAnswer": "a,d,c,b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your CEO just publicly committed to the non-ICP feature at a conference keynote. The board expects delivery in Q1. How do you adapt your prioritization?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accept the commitment fully and reprioritize everything around it"
+        },
+        {
+          "id": "b",
+          "text": "Present the CEO a displacement analysis showing what Q1 delivery costs"
+        },
+        {
+          "id": "c",
+          "text": "Build a minimal version and redirect remaining capacity to strategic priorities"
+        },
+        {
+          "id": "d",
+          "text": "Ignore the keynote and proceed with your original plan"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "You previously ranked the non-ICP feature request as lowest priority. Now a public CEO commitment has created external expectations and board-level accountability, changing the political and reputational calculus while the strategic logic remains the same.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

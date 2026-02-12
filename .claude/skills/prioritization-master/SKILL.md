@@ -45,12 +45,12 @@ Show competing priorities/data, user picks the key insight. 10s target.
     "insightAnswer": "C",
     "explanation": "Why this signal should drive the priority call.",
     "scoringRubric": {
-      "strategicThinking": 0.3,
-      "analyticalRigor": 0.2,
-      "prioritization": 0.3,
-      "commercialAcumen": 0.1,
-      "communication": 0.0,
-      "adaptability": 0.1
+      "strategicReasoning": 0.3,
+      "analyticalThinking": 0.2,
+      "decisionQuality": 0.3,
+      "quantitativeReasoning": 0.1,
+      "communicationClarity": 0.0,
+      "creativeProblemSolving": 0.1
     }
   }
 }
@@ -68,7 +68,7 @@ Choose between competing priorities. 15-20s target.
     "correctAnswer": "B",
     "insightAnswer": "B",
     "explanation": "Why this tradeoff resolution shows the best judgment.",
-    "scoringRubric": { "strategicThinking": 0.3, "analyticalRigor": 0.1, "prioritization": 0.4, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.3, "analyticalThinking": 0.1, "decisionQuality": 0.4, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -85,7 +85,7 @@ Prioritization knowledge check. 10s target.
     "correctAnswer": "A",
     "insightAnswer": "A",
     "explanation": "Why this framework/concept matters.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.2, "prioritization": 0.3, "commercialAcumen": 0.1, "communication": 0.1, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.2, "decisionQuality": 0.3, "quantitativeReasoning": 0.1, "communicationClarity": 0.1, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -101,7 +101,7 @@ Rank 4 competing initiatives. 15-25s target.
     "items": ["Initiative A", "Initiative B", "Initiative C", "Initiative D"],
     "correctAnswer": "B,D,A,C",
     "explanation": "Why this priority ordering maximizes value.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.1, "prioritization": 0.5, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.1, "decisionQuality": 0.5, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -118,8 +118,8 @@ Priorities just shifted -- adapt. 10-20s target.
     "options": ["A) ...", "B) ...", "C) ...", "D) ..."],
     "correctAnswer": "D",
     "insightAnswer": "D",
-    "explanation": "Why re-prioritizing this way shows adaptability.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.1, "prioritization": 0.3, "commercialAcumen": 0.0, "communication": 0.0, "adaptability": 0.4 }
+    "explanation": "Why re-prioritizing this way shows creativeProblemSolving.",
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.1, "decisionQuality": 0.3, "quantitativeReasoning": 0.0, "communicationClarity": 0.0, "creativeProblemSolving": 0.4 }
   }
 }
 ```
@@ -137,7 +137,7 @@ Mini-lesson then immediate test. 20-30s target.
     "correctAnswer": "C",
     "insightAnswer": "C",
     "explanation": "Reinforces the prioritization teaching point.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.2, "prioritization": 0.3, "commercialAcumen": 0.1, "communication": 0.1, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.2, "decisionQuality": 0.3, "quantitativeReasoning": 0.1, "communicationClarity": 0.1, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -146,14 +146,14 @@ Mini-lesson then immediate test. 20-30s target.
 
 | Dimension | What It Measures | Prioritization Weight |
 |---|---|---|
-| strategicThinking | Systems thinking, root cause | Medium-High |
-| analyticalRigor | Data-driven decisions | Medium |
-| prioritization | Tradeoff quality, resource allocation | HIGHEST |
-| commercialAcumen | Business impact understanding | Medium |
-| communication | Justifying priorities to stakeholders | Medium |
-| adaptability | Re-prioritizing under pressure | Medium-High |
+| analyticalThinking | Breaking down complex problems into components | Medium |
+| strategicReasoning | Evaluating long-term implications and tradeoffs | Medium-High |
+| quantitativeReasoning | Working with numbers, estimates, and data | Medium |
+| communicationClarity | Expressing ideas clearly and persuasively | Medium |
+| decisionQuality | Making sound decisions under uncertainty | HIGHEST |
+| creativeProblemSolving | Finding novel approaches to challenges | Medium-High |
 
-For Prioritization, `prioritization` dimension should be weighted highest, with `strategicThinking` and `adaptability` close behind.
+For Prioritization, `prioritization` dimension should be weighted highest, with `strategicReasoning` and `creativeProblemSolving` close behind.
 
 ## LEARN Sprint Generation
 
@@ -196,35 +196,42 @@ When generating PRACTICE interactions:
 ## Output Format
 
 ### LEARN Sprint Output
-Write to: `prisma/seed-data/learn-sprints/prioritization-<N>.json`
+Write to: `prisma/seed-data/prioritization/<topicSlug>/learn-<N>.json`
 
 ```json
 {
   "skillSlug": "prioritization",
+  "topicSlug": "frameworks-mental-models",
   "mode": "LEARN",
   "title": "The Art of Saying No",
   "description": "Master frameworks for making tough priority calls",
   "difficulty": 1,
+  "sprintOrder": 1,
   "interactions": [
-    { "type": "TEACH_AND_TEST", "orderIndex": 0, "content": { ... } },
-    ...
+    {
+      "type": "TEACH_AND_TEST",
+      "order": 1,
+      "teachingPreamble": "2-3 sentences teaching a concept...",
+      "prompt": "Test question...",
+      "options": [
+        { "id": "a", "text": "Option A" },
+        { "id": "b", "text": "Option B" },
+        { "id": "c", "text": "Option C" },
+        { "id": "d", "text": "Option D" }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "priorContext": null,
+      "timeTarget": 25
+    }
   ]
 }
 ```
 
-### PRACTICE Pool Output
-Write to: `prisma/seed-data/practice-interactions/prioritization.json`
+### PRACTICE Sprint Output
+Write to: `prisma/seed-data/prioritization/<topicSlug>/practice-<N>.json`
 
-```json
-{
-  "skillSlug": "prioritization",
-  "mode": "PRACTICE",
-  "interactions": [
-    { "type": "SPOT_THE_SIGNAL", "difficulty": 3, "content": { ... } },
-    ...
-  ]
-}
-```
+Same format as LEARN but with `"mode": "PRACTICE"`, no `teachingPreamble`, higher difficulty (2-4), and mixed interaction types (no TEACH_AND_TEST).
 
 ## Quality Rules
 

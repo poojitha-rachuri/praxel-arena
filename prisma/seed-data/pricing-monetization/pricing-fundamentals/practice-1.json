@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "pricing-fundamentals",
+  "mode": "PRACTICE",
+  "title": "Applying Core Pricing Methods in Practice",
+  "description": "Practice identifying and applying cost-plus, value-based, and competitive pricing strategies in realistic business scenarios.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A bakery's cupcakes cost $1.50 to make. They price at $3.75. A competitor sells similar cupcakes at $3.00. What pricing signal matters most here?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They're using value-based pricing tied to brand perception"
+        },
+        {
+          "id": "b",
+          "text": "They're using cost-plus pricing with a 150% markup"
+        },
+        {
+          "id": "c",
+          "text": "They're underpricing relative to competitor benchmarks"
+        },
+        {
+          "id": "d",
+          "text": "They're pricing above competitors, risking lost volume"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "When a SaaS company prices its product based on how much time and money it saves customers, it is using ____ pricing.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost-plus"
+        },
+        {
+          "id": "b",
+          "text": "Competitive"
+        },
+        {
+          "id": "c",
+          "text": "Value-based"
+        },
+        {
+          "id": "d",
+          "text": "Penetration"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You're launching a new coffee brand. Starbucks charges $5 for a latte, local shops charge $3.50. Your costs are $1.20. Do you price at $3.25 or $4.50?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3.25 — undercut competitors to build volume quickly"
+        },
+        {
+          "id": "b",
+          "text": "$4.50 — position between premium and local for credibility"
+        },
+        {
+          "id": "c",
+          "text": "$3.25 — match local shops and compete on convenience"
+        },
+        {
+          "id": "d",
+          "text": "$4.50 — higher price signals quality to justify the brand"
+        }
+      ],
+      "correctAnswer": "d",
+      "insightAnswer": "d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "Slack's free tier has 10K message history. When surveyed, 68% of teams say they'd pay to avoid losing messages. Only 22% cite advanced features as their reason to upgrade. What's the key pricing insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Slack should lower its price to convert more free users"
+        },
+        {
+          "id": "b",
+          "text": "Pain of data loss drives willingness to pay, not features"
+        },
+        {
+          "id": "c",
+          "text": "Slack should add more features to justify premium pricing"
+        },
+        {
+          "id": "d",
+          "text": "Most users will never convert so free tier should shrink"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "A startup selling project management software needs to set its initial price. Rank these steps from first to last in a sound pricing process.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate your unit costs and desired margin"
+        },
+        {
+          "id": "b",
+          "text": "Research competitor pricing and positioning"
+        },
+        {
+          "id": "c",
+          "text": "Survey target customers on willingness to pay"
+        },
+        {
+          "id": "d",
+          "text": "Set and test your final price in the market"
+        }
+      ],
+      "correctAnswer": "a,b,c,d",
+      "insightAnswer": "a,b,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "Your B2B analytics tool costs $8/user to deliver. Enterprise clients say it saves them $200/user/month in analyst time. You currently charge $25/user. A competitor just launched at $20/user. What do you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Drop to $19/user to undercut the new competitor"
+        },
+        {
+          "id": "b",
+          "text": "Stay at $25 — your value delivered far exceeds the price"
+        },
+        {
+          "id": "c",
+          "text": "Raise to $50 — capture more of the $200 value created"
+        },
+        {
+          "id": "d",
+          "text": "Match at $20 and add a premium tier at $40"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "A luxury skincare brand is evaluating pricing factors. Rank these from most to least important for their pricing decision.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raw material and production costs"
+        },
+        {
+          "id": "b",
+          "text": "Perceived brand prestige and exclusivity"
+        },
+        {
+          "id": "c",
+          "text": "Price sensitivity of target affluent customers"
+        },
+        {
+          "id": "d",
+          "text": "Competitor pricing at drugstore brands"
+        }
+      ],
+      "correctAnswer": "b,c,a,d",
+      "insightAnswer": "b,c,a,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "A sudden tariff doubles your raw material costs overnight. Your $50 product now costs $35 to make instead of $18. Your competitor hasn't raised prices yet. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Immediately raise to $67 to preserve your original margin"
+        },
+        {
+          "id": "b",
+          "text": "Hold price, absorb the hit, and wait for competitors to move"
+        },
+        {
+          "id": "c",
+          "text": "Raise modestly to $60, communicate the tariff transparently"
+        },
+        {
+          "id": "d",
+          "text": "Cut features to reduce costs back to $18 per unit"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": "You previously set your price at $50 using cost-plus with a healthy margin on $18 costs. Now a tariff has nearly doubled your costs to $35, compressing your margin to just $15 while competitors haven't adjusted yet.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

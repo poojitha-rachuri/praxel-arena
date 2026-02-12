@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "frameworks-mental-models",
+  "mode": "LEARN",
+  "title": "Scoring Frameworks: RICE, ICE & Beyond",
+  "description": "Learn how to apply RICE, ICE, and weighted scoring models to prioritize projects with confidence.",
+  "difficulty": 2,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "In the RICE framework, which factor measures how many people a feature will affect in a given time period?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reach"
+        },
+        {
+          "id": "b",
+          "text": "Impact"
+        },
+        {
+          "id": "c",
+          "text": "Confidence"
+        },
+        {
+          "id": "d",
+          "text": "Effort"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": "RICE stands for Reach, Impact, Confidence, and Effort. It was popularized by Intercom to score product features. The formula is (Reach × Impact × Confidence) ÷ Effort, giving you a single score to compare projects.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Feature A: Reach 5,000, Impact 3, Confidence 80%, Effort 4 person-months. Feature B: Reach 12,000, Impact 2, Confidence 50%, Effort 3 person-months. Which has the higher RICE score?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Feature A scores higher at 3,000"
+        },
+        {
+          "id": "b",
+          "text": "Feature B scores higher at 4,000"
+        },
+        {
+          "id": "c",
+          "text": "They score exactly the same"
+        },
+        {
+          "id": "d",
+          "text": "Cannot calculate without more data"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "How does the ICE framework differ most from RICE?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ICE uses revenue instead of reach"
+        },
+        {
+          "id": "b",
+          "text": "ICE replaces Reach with a simpler 1-10 scale approach"
+        },
+        {
+          "id": "c",
+          "text": "ICE adds a time-based urgency factor"
+        },
+        {
+          "id": "d",
+          "text": "ICE removes the confidence component entirely"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "ICE stands for Impact, Confidence, and Ease. Unlike RICE, it drops the Reach metric and scores each factor on a simple 1-10 scale. Sean Ellis at GrowthHackers created ICE for fast experimentation where you need quick, gut-informed scoring without detailed data.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In weighted scoring, you assign each criterion a ____ so that factors like revenue impact can count more heavily than ease of implementation.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Weight or percentage"
+        },
+        {
+          "id": "b",
+          "text": "Color code"
+        },
+        {
+          "id": "c",
+          "text": "Due date"
+        },
+        {
+          "id": "d",
+          "text": "Team owner"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "Your startup has 6 weeks of runway pressure. You need to prioritize 20 feature ideas fast. Your data team says they need 2 weeks to gather Reach numbers for a proper RICE analysis. What do you use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wait for RICE data — precision matters most"
+        },
+        {
+          "id": "b",
+          "text": "Use ICE scoring now — speed beats precision here"
+        },
+        {
+          "id": "c",
+          "text": "Skip frameworks and let the CEO decide"
+        },
+        {
+          "id": "d",
+          "text": "Build a custom weighted model from scratch"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "A Shopify PM labels a checkout redesign as 'Must Have' and dark mode as 'Won't Have this time.' Which framework is she using?",
+      "options": [
+        {
+          "id": "a",
+          "text": "RICE"
+        },
+        {
+          "id": "b",
+          "text": "ICE"
+        },
+        {
+          "id": "c",
+          "text": "MoSCoW"
+        },
+        {
+          "id": "d",
+          "text": "Weighted scoring"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "MoSCoW categorizes items into Must Have, Should Have, Could Have, and Won't Have. Unlike numeric scoring, it groups work into priority buckets. It's especially popular in agile projects where teams need clear agreement on what's non-negotiable versus nice-to-have.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "A fintech team uses weighted scoring (criteria: Revenue Impact 40%, Customer Retention 30%, Effort 30%). Rank these features highest to lowest priority: (a) Revenue 6, Retention 8, Effort 3; (b) Revenue 9, Retention 7, Effort 5; (c) Revenue 4, Retention 5, Effort 9; (d) Revenue 8, Retention 9, Effort 4.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revenue 6, Retention 8, Effort 3"
+        },
+        {
+          "id": "b",
+          "text": "Revenue 9, Retention 7, Effort 5"
+        },
+        {
+          "id": "c",
+          "text": "Revenue 4, Retention 5, Effort 9"
+        },
+        {
+          "id": "d",
+          "text": "Revenue 8, Retention 9, Effort 4"
+        }
+      ],
+      "correctAnswer": "d,b,a,c",
+      "insightAnswer": "d,b,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your competitor just launched a near-identical feature to your top-ranked item, eliminating its differentiation value. Your RICE score assumed high impact from being first-to-market. What should you do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ship it anyway — the RICE score still holds"
+        },
+        {
+          "id": "b",
+          "text": "Re-score the Impact and Confidence factors, then re-rank"
+        },
+        {
+          "id": "c",
+          "text": "Drop it entirely and start over with new ideas"
+        },
+        {
+          "id": "d",
+          "text": "Switch from RICE to MoSCoW to avoid the problem"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously ranked features using RICE and selected a top project based on first-mover advantage. Now a competitor has launched the same feature, fundamentally changing the Impact and Confidence assumptions in your original score.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

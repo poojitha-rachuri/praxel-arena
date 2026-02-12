@@ -1,0 +1,235 @@
+{
+  "skillSlug": "pricing-monetization",
+  "topicSlug": "monetization-models",
+  "mode": "LEARN",
+  "title": "Core Monetization Models Explained",
+  "description": "Learn to identify and distinguish the five major monetization models used by today's leading companies.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which monetization model does Netflix primarily use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Freemium with ad-supported tier"
+        },
+        {
+          "id": "b",
+          "text": "Subscription with recurring monthly or annual fees"
+        },
+        {
+          "id": "c",
+          "text": "Usage-based charging per movie watched"
+        },
+        {
+          "id": "d",
+          "text": "Marketplace connecting content creators and viewers"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A subscription model charges customers a recurring fee—monthly or annually—for continuous access to a product or service. Netflix charges ~$15/month for unlimited streaming, generating predictable recurring revenue that now exceeds $33 billion annually. The key advantage is revenue predictability, which makes forecasting and investment planning much easier.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "Spotify reports: 615M total users, 239M paying subscribers, $13.2B revenue. Free users generate $1.5B from ads. What's the most important signal about their monetization?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Most users are free, so ads drive the business"
+        },
+        {
+          "id": "b",
+          "text": "Paid subscribers are under 40% but generate ~89% of revenue"
+        },
+        {
+          "id": "c",
+          "text": "Total user count is the key growth metric"
+        },
+        {
+          "id": "d",
+          "text": "Ad revenue is growing faster than subscriptions"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "What is the primary business goal of offering a free tier in a freemium model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Maximizing ad revenue from free users"
+        },
+        {
+          "id": "b",
+          "text": "Reducing customer support costs significantly"
+        },
+        {
+          "id": "c",
+          "text": "Acquiring users cheaply then converting them to paid"
+        },
+        {
+          "id": "d",
+          "text": "Competing on price with open-source alternatives"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "The freemium model gives users a basic product for free while charging for premium features. Dropbox famously grew to 700M users by offering 2GB free storage, then converting ~4% to paid plans starting at $12/month. The free tier acts as a massive acquisition funnel—lowering the barrier to try your product so you can demonstrate value before asking for payment.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In a ____ model, customers pay based on how much they consume, like AWS charging per compute hour or Twilio charging per API call.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Subscription"
+        },
+        {
+          "id": "b",
+          "text": "Freemium"
+        },
+        {
+          "id": "c",
+          "text": "Usage-based"
+        },
+        {
+          "id": "d",
+          "text": "Marketplace"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're launching a B2B analytics tool for SMBs. Usage varies wildly—some clients run 10 reports/month, others run 10,000. Which model best balances fairness, simplicity, and revenue?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pure usage-based: charge per report generated"
+        },
+        {
+          "id": "b",
+          "text": "Flat subscription: one price for unlimited reports"
+        },
+        {
+          "id": "c",
+          "text": "Tiered subscription: plans with report volume ranges"
+        },
+        {
+          "id": "d",
+          "text": "Freemium: free up to 50 reports, then pay per report"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "What makes a marketplace model fundamentally different from the other monetization models?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It always requires a subscription fee from buyers"
+        },
+        {
+          "id": "b",
+          "text": "The company creates value by connecting buyers and sellers"
+        },
+        {
+          "id": "c",
+          "text": "Revenue comes only from advertising to users"
+        },
+        {
+          "id": "d",
+          "text": "It eliminates the need for customer acquisition"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A marketplace model generates revenue by facilitating transactions between two or more parties, typically taking a commission or fee per transaction. Airbnb charges hosts a 3% fee and guests up to 14.2%, earning $9.9B in 2023 revenue without owning a single property. The challenge is the 'chicken-and-egg' problem: you need both supply and demand to create value.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "Rank these monetization models from MOST to LEAST predictable monthly revenue for the business: (a) Usage-based like AWS, (b) Annual subscription like Salesforce, (c) Marketplace commission like Uber, (d) Freemium like Slack.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Usage-based (AWS)"
+        },
+        {
+          "id": "b",
+          "text": "Annual subscription (Salesforce)"
+        },
+        {
+          "id": "c",
+          "text": "Marketplace commission (Uber)"
+        },
+        {
+          "id": "d",
+          "text": "Freemium (Slack)"
+        }
+      ],
+      "correctAnswer": "b,d,a,c",
+      "insightAnswer": "b,d,a,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Your SaaS analytics tool with tiered subscriptions just lost 30% of enterprise clients to a competitor offering pure usage-based pricing. Remaining clients say your mid-tier feels too expensive for light months. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Switch entirely to usage-based pricing immediately"
+        },
+        {
+          "id": "b",
+          "text": "Add a hybrid model: base subscription plus usage overages"
+        },
+        {
+          "id": "c",
+          "text": "Lower all tier prices by 30% to retain customers"
+        },
+        {
+          "id": "d",
+          "text": "Offer a freemium tier to attract new small customers"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "Earlier you chose tiered subscriptions for your B2B analytics tool. Now enterprise clients are leaving because rigid tiers don't match their variable usage patterns, forcing you to reconsider your monetization approach.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

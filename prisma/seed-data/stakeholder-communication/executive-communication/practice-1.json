@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "executive-communication",
+  "mode": "PRACTICE",
+  "title": "Sharpen Your Executive Updates and Memos",
+  "description": "Practice structuring status updates, decision memos, and data-driven executive communications using the BLUF method.",
+  "difficulty": 2,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Your weekly status email to the VP starts: 'So last Tuesday we met with the vendor, then on Wednesday we revised the scope, and by Friday we realized we need $50K more budget.' What's the core problem with this update?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It uses too many specific dates"
+        },
+        {
+          "id": "b",
+          "text": "The key ask ($50K budget increase) is buried at the end"
+        },
+        {
+          "id": "c",
+          "text": "It mentions a vendor which is unnecessary detail"
+        },
+        {
+          "id": "d",
+          "text": "It should have been a phone call instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "The BLUF method stands for Bottom Line Up ____. It means stating your conclusion or request before providing supporting details.",
+      "options": [
+        {
+          "id": "a",
+          "text": "First"
+        },
+        {
+          "id": "b",
+          "text": "Front"
+        },
+        {
+          "id": "c",
+          "text": "Fast"
+        },
+        {
+          "id": "d",
+          "text": "Flat"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "You need approval from Shopify's CFO to extend a contract by $200K. You have 5 minutes in her schedule. What do you lead with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A timeline of the vendor relationship over 3 years"
+        },
+        {
+          "id": "b",
+          "text": "The $200K ask, expected ROI, and your recommendation"
+        },
+        {
+          "id": "c",
+          "text": "Detailed competitive analysis of four alternative vendors"
+        },
+        {
+          "id": "d",
+          "text": "Team sentiment survey results showing vendor satisfaction"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "A decision memo for Stripe's leadership shows: Option A saves $1.2M/year but requires 6-month migration. Option B saves $400K/year with no downtime. The memo's recommendation section is blank. What's the biggest issue?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It should include more than two options"
+        },
+        {
+          "id": "b",
+          "text": "The cost figures need decimal precision"
+        },
+        {
+          "id": "c",
+          "text": "A decision memo without a clear recommendation wastes executive time"
+        },
+        {
+          "id": "d",
+          "text": "Migration timelines should be in weeks, not months"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "Rank these elements of a status update email to your CEO from FIRST to LAST in order of appearance, using BLUF principles.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Background context and project history"
+        },
+        {
+          "id": "b",
+          "text": "Bottom line: project status and any decision needed"
+        },
+        {
+          "id": "c",
+          "text": "Key metrics supporting your summary (2-3 data points)"
+        },
+        {
+          "id": "d",
+          "text": "Detailed next steps and timeline"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "You're writing a decision memo for HubSpot's COO about switching CRM platforms. You have strong quantitative data but also compelling customer quotes. Space is limited to one page. What do you prioritize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fill the page with customer quotes for emotional impact"
+        },
+        {
+          "id": "b",
+          "text": "Lead with data; add one quote as supporting evidence"
+        },
+        {
+          "id": "c",
+          "text": "Split evenly between quotes and data for balance"
+        },
+        {
+          "id": "d",
+          "text": "Skip both and just state your recommendation plainly"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "You're preparing a data-driven narrative for Atlassian's board. Rank these steps from FIRST to LAST in your preparation process.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Design polished slides with charts and formatting"
+        },
+        {
+          "id": "b",
+          "text": "Identify the one decision or action the board must take"
+        },
+        {
+          "id": "c",
+          "text": "Select 2-3 metrics that directly support your recommendation"
+        },
+        {
+          "id": "d",
+          "text": "Anticipate likely objections and prepare responses"
+        }
+      ],
+      "correctAnswer": "b,c,d,a",
+      "insightAnswer": "b,c,d,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "The CFO just replied to your memo saying she only has 60 seconds to discuss it in the elevator. How do you adapt your $200K contract extension request?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reschedule — important decisions can't happen in elevators"
+        },
+        {
+          "id": "b",
+          "text": "State the ask, the ROI number, and request a yes or follow-up"
+        },
+        {
+          "id": "c",
+          "text": "Quickly summarize all three vendor comparison options"
+        },
+        {
+          "id": "d",
+          "text": "Hand her the full printed memo to read later"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously prepared a detailed decision memo for Shopify's CFO requesting a $200K contract extension, structured with BLUF and supporting data. Now your planned 5-minute meeting has shrunk to a 60-second elevator conversation.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

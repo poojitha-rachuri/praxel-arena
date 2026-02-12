@@ -1,0 +1,235 @@
+{
+  "skillSlug": "prioritization",
+  "topicSlug": "stakeholder-alignment",
+  "mode": "LEARN",
+  "title": "Resolving Stakeholder Conflicts and Building Buy-In",
+  "description": "Master techniques for resolving stakeholder conflicts, navigating competing priorities, and securing strategic buy-in.",
+  "difficulty": 3,
+  "sprintOrder": 2,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Which approach best resolves a conflict between two high-influence stakeholders with opposing priorities?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Escalate immediately to the CEO for a final decision"
+        },
+        {
+          "id": "b",
+          "text": "Identify shared objectives and reframe the conflict around mutual value"
+        },
+        {
+          "id": "c",
+          "text": "Side with the stakeholder who has the larger budget"
+        },
+        {
+          "id": "d",
+          "text": "Delay the decision until one stakeholder loses interest"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "When high-influence stakeholders clash, the most effective resolution isn't picking a winner—it's reframing the problem. At Spotify, product and engineering leaders often disagreed on feature scope, but PMs who surfaced shared goals (like user retention) found compromises 3x faster. This technique is called interest-based negotiation.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A SaaS company surveyed 12 stakeholders on a platform migration. Results: Engineering (8/10 support), Sales (3/10), Finance (9/10), Customer Success (4/10). What's the critical insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engineering and Finance alignment means the project should proceed immediately"
+        },
+        {
+          "id": "b",
+          "text": "Customer-facing teams have low buy-in, risking adoption and execution failure"
+        },
+        {
+          "id": "c",
+          "text": "The average score of 6/10 indicates moderate overall support"
+        },
+        {
+          "id": "d",
+          "text": "Sales and Customer Success scores cancel out the high scores"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "When should you use a RACI matrix during stakeholder alignment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only after a project is fully approved and funded"
+        },
+        {
+          "id": "b",
+          "text": "When stakeholders disagree about who owns which decisions"
+        },
+        {
+          "id": "c",
+          "text": "Exclusively for projects with more than 50 stakeholders"
+        },
+        {
+          "id": "d",
+          "text": "As a replacement for the stakeholder influence matrix"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "A RACI matrix (Responsible, Accountable, Consulted, Informed) clarifies decision rights before conflict erupts. When Atlassian rolled out a new pricing model, overlapping ownership between Product and Revenue teams caused six weeks of delays. Implementing RACI early reduced decision cycle time by 40% in subsequent launches.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "In stakeholder conflict resolution, focusing on ____ rather than positions helps uncover solutions that satisfy multiple parties.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underlying interests"
+        },
+        {
+          "id": "b",
+          "text": "Org chart hierarchy"
+        },
+        {
+          "id": "c",
+          "text": "Historical precedent"
+        },
+        {
+          "id": "d",
+          "text": "Budget constraints"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're leading a product launch at Shopify. The VP of Engineering wants to delay 8 weeks for technical debt, while the VP of Sales needs the launch for Q3 pipeline. You can only fully satisfy one. What do you prioritize?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Full delay—technical debt compounds and creates larger future costs"
+        },
+        {
+          "id": "b",
+          "text": "Launch on time with a scoped-down MVP and a committed debt sprint post-launch"
+        },
+        {
+          "id": "c",
+          "text": "Launch on time as planned, ignoring technical debt concerns entirely"
+        },
+        {
+          "id": "d",
+          "text": "Split the difference with a 4-week delay and hope both sides accept"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "What is the most effective way to secure buy-in from a resistant but influential stakeholder?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Present overwhelming data until they agree with your position"
+        },
+        {
+          "id": "b",
+          "text": "Go around them by building a coalition with their peers"
+        },
+        {
+          "id": "c",
+          "text": "Co-create the solution by incorporating their constraints into the design"
+        },
+        {
+          "id": "d",
+          "text": "Offer a personal incentive tied to the project's success"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": "Resistant stakeholders often aren't opposed to the goal—they're opposed to feeling excluded from the solution. Research from Harvard Business Review found that stakeholders who co-designed even 15% of a proposal were 4x more likely to champion it. At Microsoft, PMs who invited skeptical VPs into early design sprints saw approval rates jump from 35% to 78%.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're an operations lead at Stripe rolling out a new compliance process. Rank these stakeholder alignment actions from first to last: (a) Send a company-wide announcement, (b) Map stakeholders by influence and impact, (c) Run a pilot with one supportive team to generate proof points, (d) Hold 1:1s with the top 3 resistant stakeholders to co-design the rollout.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Send a company-wide announcement about the new process"
+        },
+        {
+          "id": "b",
+          "text": "Map stakeholders by influence and impact"
+        },
+        {
+          "id": "c",
+          "text": "Run a pilot with one supportive team for proof points"
+        },
+        {
+          "id": "d",
+          "text": "Hold 1:1s with top resistant stakeholders to co-design rollout"
+        }
+      ],
+      "correctAnswer": "b,d,c,a",
+      "insightAnswer": "b,d,c,a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "Midway through your Stripe compliance rollout, the CFO—previously supportive—reverses position after a board meeting focused on cost reduction. She now wants to shelve the project. What's your best move?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accept the decision and shelve the project immediately"
+        },
+        {
+          "id": "b",
+          "text": "Reframe compliance as a cost-avoidance investment using regulatory penalty data"
+        },
+        {
+          "id": "c",
+          "text": "Escalate to the CEO to override the CFO's new position"
+        },
+        {
+          "id": "d",
+          "text": "Continue the rollout quietly and present results later as proof"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": "You previously mapped stakeholders and the CFO was a key champion. After a board meeting shifted company focus to cost reduction, the CFO reversed her support. Your pilot results are strong but the political landscape has changed.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "skillSlug": "stakeholder-communication",
+  "topicSlug": "difficult-conversations",
+  "mode": "LEARN",
+  "title": "Delivering Bad News with Clarity and Impact",
+  "description": "Master frameworks for delivering difficult messages, managing stakeholder expectations, and giving constructive feedback that drives action.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "Using the situation-impact-path forward framework, what should come immediately after delivering the bad news?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Apologize repeatedly to show empathy"
+        },
+        {
+          "id": "b",
+          "text": "Quantify the specific business impact with data"
+        },
+        {
+          "id": "c",
+          "text": "Immediately pivot to proposed solutions"
+        },
+        {
+          "id": "d",
+          "text": "Ask the stakeholder how they feel about it"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "The most effective framework for delivering bad news is Situation-Impact-Path Forward (SIP). You state the situation factually, quantify the impact so stakeholders understand the stakes, then present a clear path forward. When Cisco's Chuck Robbins announced a $600M restructuring in 2014, he led with the competitive landscape shift, quantified the financial impact, then outlined the transformation plan—earning analyst confidence despite the bad news.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 2,
+      "prompt": "A product launch survey shows: 78% of customers who received early, transparent delay notifications maintained their orders, while only 41% retained when told at the original ship date. NPS dropped 12 points in the transparent group vs. 38 points in the late-notice group. What's the key takeaway?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customers don't mind delays if the product improves"
+        },
+        {
+          "id": "b",
+          "text": "Early transparent communication nearly doubles retention and halves NPS damage"
+        },
+        {
+          "id": "c",
+          "text": "NPS is an unreliable metric for measuring communication"
+        },
+        {
+          "id": "d",
+          "text": "Both groups lost customers so timing doesn't matter"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 3,
+      "prompt": "Your team missed Q3 revenue targets by 15%. Using the accountability-without-blame approach, which opening is most effective with your CEO?",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"The market downturn made it impossible to hit targets\""
+        },
+        {
+          "id": "b",
+          "text": "\"We fell 15% short—here's what we've identified and are changing\""
+        },
+        {
+          "id": "c",
+          "text": "\"Several team members underperformed against their individual quotas\""
+        },
+        {
+          "id": "d",
+          "text": "\"I'd like to revisit whether the targets were realistic\""
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "High-trust leaders practice 'accountability without blame'—they own the result, diagnose the root cause, and present corrective action. Research from Harvard Business School shows executives who lead with ownership when delivering bad news are rated 32% more trustworthy by boards than those who lead with external explanations. Satya Nadella modeled this at Microsoft by publicly owning the Windows Phone failure before pivoting resources to cloud—building immense credibility.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 4,
+      "prompt": "When delivering constructive feedback, the most effective sequence is: specific ____, measurable impact, and actionable next step.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Behavior observed"
+        },
+        {
+          "id": "b",
+          "text": "Character trait"
+        },
+        {
+          "id": "c",
+          "text": "Emotional reaction"
+        },
+        {
+          "id": "d",
+          "text": "Peer comparison"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 5,
+      "prompt": "You're VP of Engineering at Stripe. A critical payments API has a security vulnerability requiring 3 weeks of downtime for enterprise clients. You can notify all 2,400 clients now with incomplete remediation details, or wait 5 days until you have a full fix timeline. Which do you choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Notify immediately with known facts and promise updates within 48 hours"
+        },
+        {
+          "id": "b",
+          "text": "Wait 5 days to deliver a complete, confidence-building message"
+        },
+        {
+          "id": "c",
+          "text": "Notify only the top 50 enterprise clients now, others later"
+        },
+        {
+          "id": "d",
+          "text": "Let the security team handle all client communications directly"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 6,
+      "prompt": "You need to tell your cross-functional partner their team's deliverable is blocking a $4M deal. Using the 'shared problem' reframe, which approach best maintains alignment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "\"Your team's delay is putting $4M at risk\""
+        },
+        {
+          "id": "b",
+          "text": "\"We have a $4M deal at risk—what do we need to unblock together?\""
+        },
+        {
+          "id": "c",
+          "text": "\"I need to escalate unless this is resolved by Friday\""
+        },
+        {
+          "id": "d",
+          "text": "\"Can you explain why your team hasn't delivered on time?\""
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": "In cross-functional difficult conversations, the 'shared problem' reframe converts adversarial dynamics into collaborative ones. Instead of 'your problem is hurting me,' you frame it as 'we have a shared problem to solve.' When Shopify's leadership identified friction between engineering and sales, they mandated 'we language' in all escalations—resulting in a 27% faster resolution time on cross-team blockers and measurably higher internal trust scores.",
+      "priorContext": null,
+      "timeTarget": 25,
+      "type": "TEACH_AND_TEST"
+    },
+    {
+      "order": 7,
+      "prompt": "You're CFO at a mid-stage startup and must announce a 20% budget cut to department heads. Rank these communication steps in optimal order: (a) Present the revised budget allocations per team, (b) Share the market data and runway analysis driving the decision, (c) Open a structured Q&A to address concerns, (d) Outline the 90-day review process and success metrics.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Present the revised budget allocations per team"
+        },
+        {
+          "id": "b",
+          "text": "Share market data and runway analysis driving the decision"
+        },
+        {
+          "id": "c",
+          "text": "Open a structured Q&A to address concerns"
+        },
+        {
+          "id": "d",
+          "text": "Outline the 90-day review process and success metrics"
+        }
+      ],
+      "correctAnswer": "b,a,d,c",
+      "insightAnswer": "b,a,d,c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "You followed the plan—shared data, presented cuts, outlined the review process. But midway through Q&A, your Head of Sales reveals to the room that a competitor just acquired your second-largest client. The mood shifts to panic. What's your best immediate response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acknowledge the news and commit to a focused follow-up session tomorrow"
+        },
+        {
+          "id": "b",
+          "text": "Pause the meeting entirely and reconvene once you have more information"
+        },
+        {
+          "id": "c",
+          "text": "Absorb it, reframe the budget cuts as even more necessary, and continue"
+        },
+        {
+          "id": "d",
+          "text": "Ask the Head of Sales to hold that topic for a private conversation"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "You were executing a well-structured budget cut announcement to department heads using the SIP framework. The data-driven rationale had landed well and the Q&A was productive—until unexpected competitive news surfaced mid-meeting, creating a compounding crisis and emotional escalation.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}

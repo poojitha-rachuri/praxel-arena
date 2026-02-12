@@ -11,6 +11,16 @@ export interface ModePageSkill {
   description: string | null;
 }
 
+export interface TopicMeta {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  order: number;
+  icon: string | null;
+  skillId: string;
+}
+
 export interface SprintMeta {
   id: string;
   title: string;
@@ -20,11 +30,13 @@ export interface SprintMeta {
   levelLabel: string | null;
   order: number;
   skillId: string;
+  topicId: string | null;
   interactionCount: number;
 }
 
 export interface ModePageData {
   skills: ModePageSkill[];
+  topics: TopicMeta[];
   sprints: SprintMeta[];
   completedSprints: Record<string, number>; // sprintId -> totalScore
   topCareerMatch: CareerMatch | null;
@@ -40,7 +52,7 @@ export async function getModePageData(
   userId: string,
   mode: SprintMode
 ): Promise<ModePageData> {
-  const [skills, sprints, attempts, userData] = await Promise.all([
+  const [skills, sprints, topics, attempts, userData] = await Promise.all([
     prisma.skill.findMany({
       select: {
         id: true,
@@ -54,7 +66,7 @@ export async function getModePageData(
     prisma.sprint.findMany({
       where: {
         mode,
-        ...(mode === "LEARN" ? { isGenerated: false } : {}),
+        ...(mode !== "COMPETE" ? { isGenerated: false } : {}),
       },
       select: {
         id: true,
@@ -65,9 +77,22 @@ export async function getModePageData(
         levelLabel: true,
         order: true,
         skillId: true,
+        topicId: true,
         _count: { select: { interactions: true } },
       },
-      orderBy: [{ level: "asc" }, { order: "asc" }, { createdAt: "asc" }],
+      orderBy: [{ order: "asc" }, { createdAt: "asc" }],
+    }),
+    prisma.topic.findMany({
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        description: true,
+        order: true,
+        icon: true,
+        skillId: true,
+      },
+      orderBy: [{ skillId: "asc" }, { order: "asc" }],
     }),
     prisma.sprintAttempt.findMany({
       where: { userId, mode, completedAt: { not: null } },
@@ -108,7 +133,19 @@ export async function getModePageData(
     levelLabel: s.levelLabel,
     order: s.order,
     skillId: s.skillId,
+    topicId: s.topicId,
     interactionCount: s._count.interactions,
+  }));
+
+  // Map topics
+  const topicMetas: TopicMeta[] = topics.map((t) => ({
+    id: t.id,
+    name: t.name,
+    slug: t.slug,
+    description: t.description,
+    order: t.order,
+    icon: t.icon,
+    skillId: t.skillId,
   }));
 
   // Build completion map (sprintId -> best totalScore)
@@ -148,6 +185,7 @@ export async function getModePageData(
 
   return {
     skills,
+    topics: topicMetas,
     sprints: sprintMetas,
     completedSprints,
     topCareerMatch,

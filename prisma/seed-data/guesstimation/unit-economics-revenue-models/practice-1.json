@@ -1,0 +1,235 @@
+{
+  "skillSlug": "guesstimation",
+  "topicSlug": "unit-economics-revenue-models",
+  "mode": "PRACTICE",
+  "title": "LTV, CAC & Revenue Model Reasoning",
+  "description": "Practice estimating and interpreting unit economics metrics like LTV, CAC, ARPU, and payback periods in realistic scenarios.",
+  "difficulty": 3,
+  "sprintOrder": 1,
+  "interactions": [
+    {
+      "order": 1,
+      "prompt": "A SaaS startup reports: ARPU $50/mo, gross margin 80%, average customer lifespan 25 months, CAC $600. Which metric signals the biggest concern?",
+      "options": [
+        {
+          "id": "a",
+          "text": "LTV:CAC ratio is too low at 1.67:1"
+        },
+        {
+          "id": "b",
+          "text": "ARPU is below typical SaaS benchmarks"
+        },
+        {
+          "id": "c",
+          "text": "Gross margin is unhealthy for a SaaS company"
+        },
+        {
+          "id": "d",
+          "text": "Customer lifespan of 25 months is too short"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 2,
+      "prompt": "If a subscription business has ARPU of $30/month, gross margin of 70%, and average customer lifespan of 36 months, the LTV is ____.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$756"
+        },
+        {
+          "id": "b",
+          "text": "$1,080"
+        },
+        {
+          "id": "c",
+          "text": "$630"
+        },
+        {
+          "id": "d",
+          "text": "$2,160"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "FILL_THE_GAP"
+    },
+    {
+      "order": 3,
+      "prompt": "Your D2C brand has CAC of $80 and LTV of $240. You can either spend $500K on brand marketing (cuts CAC to $55, no LTV change) or invest $500K in a loyalty program (raises LTV to $320, no CAC change). Which delivers more value per customer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Brand marketing — improving CAC has faster payback"
+        },
+        {
+          "id": "b",
+          "text": "Loyalty program — higher LTV creates more total value"
+        },
+        {
+          "id": "c",
+          "text": "Split evenly between both initiatives"
+        },
+        {
+          "id": "d",
+          "text": "Neither — reinvest in product instead"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 4,
+      "prompt": "A meal-kit company shows: CAC $120, first-order AOV $60, monthly orders 2.5, contribution margin 35%, payback period 5.5 months. Churn is 12%/month. What's the critical insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AOV needs to increase to improve margins"
+        },
+        {
+          "id": "b",
+          "text": "High churn means most customers leave before payback"
+        },
+        {
+          "id": "c",
+          "text": "Contribution margin of 35% is strong for meal-kits"
+        },
+        {
+          "id": "d",
+          "text": "Monthly order frequency is above average"
+        }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 10,
+      "type": "SPOT_THE_SIGNAL"
+    },
+    {
+      "order": 5,
+      "prompt": "A B2B SaaS company with 18-month payback period and LTV:CAC of 2.5:1 wants to improve unit economics. Rank these levers from highest to lowest expected impact on profitability.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduce churn from 5% to 3% monthly"
+        },
+        {
+          "id": "b",
+          "text": "Increase ARPU 20% via upsell features"
+        },
+        {
+          "id": "c",
+          "text": "Cut CAC 15% by optimizing ad spend"
+        },
+        {
+          "id": "d",
+          "text": "Improve gross margin from 72% to 78%"
+        }
+      ],
+      "correctAnswer": "a,b,c,d",
+      "insightAnswer": "a,b,c,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 6,
+      "prompt": "You're launching a fintech app. Model A: freemium with 3% conversion to $15/mo premium. Model B: $5/mo subscription for all users, no free tier. User acquisition is 4x easier with a free tier. Which model likely yields better unit economics at scale?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model A — massive funnel offsets low conversion"
+        },
+        {
+          "id": "b",
+          "text": "Model B — every user pays, cleaner economics"
+        },
+        {
+          "id": "c",
+          "text": "Model A only if free-tier serving costs are near zero"
+        },
+        {
+          "id": "d",
+          "text": "Model B only if retention exceeds 90% monthly"
+        }
+      ],
+      "correctAnswer": "c",
+      "insightAnswer": "c",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 15,
+      "type": "FORCED_TRADEOFF"
+    },
+    {
+      "order": 7,
+      "prompt": "An e-commerce company estimates LTV at $400 with CAC of $100. Rank these risks from most to least dangerous to the accuracy of that LTV estimate.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cohort data only covers 6 months of history"
+        },
+        {
+          "id": "b",
+          "text": "Discount rate not applied to future revenues"
+        },
+        {
+          "id": "c",
+          "text": "Return rate assumed at 5% but trending to 12%"
+        },
+        {
+          "id": "d",
+          "text": "Shipping cost inflation not modeled"
+        }
+      ],
+      "correctAnswer": "a,c,b,d",
+      "insightAnswer": "a,c,b,d",
+      "teachingPreamble": null,
+      "priorContext": null,
+      "timeTarget": 20,
+      "type": "RANK_AND_PRIORITIZE"
+    },
+    {
+      "order": 8,
+      "prompt": "A competitor launches a free alternative. Your monthly churn doubles from 4% to 8%, and CAC rises 40% due to ad competition. With original ARPU of $40/mo and gross margin of 75%, what's the new LTV:CAC ratio if original CAC was $200?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Roughly 1.3:1 — dangerously close to breakeven"
+        },
+        {
+          "id": "b",
+          "text": "Roughly 2.1:1 — still healthy enough to sustain"
+        },
+        {
+          "id": "c",
+          "text": "Roughly 0.8:1 — company is losing money per customer"
+        },
+        {
+          "id": "d",
+          "text": "Roughly 1.7:1 — below target but manageable"
+        }
+      ],
+      "correctAnswer": "a",
+      "insightAnswer": "a",
+      "teachingPreamble": null,
+      "priorContext": "Previously you analyzed a SaaS company with stable 4% churn and $200 CAC. Now a competitor has disrupted the market, doubling churn and inflating acquisition costs by 40%.",
+      "timeTarget": 15,
+      "type": "CURVEBALL"
+    }
+  ]
+}
