@@ -41,12 +41,12 @@ Show data/metrics, user picks the key insight. 10s target.
     "insightAnswer": "C",
     "explanation": "1-2 sentences. Why this answer demonstrates analytical rigor.",
     "scoringRubric": {
-      "strategicThinking": 0.2,
-      "analyticalRigor": 0.5,
-      "prioritization": 0.1,
-      "commercialAcumen": 0.1,
-      "communication": 0.0,
-      "adaptability": 0.1
+      "strategicReasoning": 0.2,
+      "analyticalThinking": 0.5,
+      "decisionQuality": 0.1,
+      "quantitativeReasoning": 0.1,
+      "communicationClarity": 0.0,
+      "creativeProblemSolving": 0.1
     }
   }
 }
@@ -64,7 +64,7 @@ Choose between strategic options with real tradeoffs. 15-20s target.
     "correctAnswer": "B",
     "insightAnswer": "B",
     "explanation": "Why B shows the deepest thinking.",
-    "scoringRubric": { "strategicThinking": 0.4, "analyticalRigor": 0.2, "prioritization": 0.2, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.4, "analyticalThinking": 0.2, "decisionQuality": 0.2, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -81,7 +81,7 @@ Knowledge check, fill in the blank. 10s target.
     "correctAnswer": "A",
     "insightAnswer": "A",
     "explanation": "Why this is the correct fill.",
-    "scoringRubric": { "strategicThinking": 0.1, "analyticalRigor": 0.4, "prioritization": 0.1, "commercialAcumen": 0.3, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.1, "analyticalThinking": 0.4, "decisionQuality": 0.1, "quantitativeReasoning": 0.3, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -97,7 +97,7 @@ Rank 4 items in priority order. 15-25s target.
     "items": ["Item A description", "Item B description", "Item C description", "Item D description"],
     "correctAnswer": "B,D,A,C",
     "explanation": "Why this ordering is optimal.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.2, "prioritization": 0.4, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.2, "decisionQuality": 0.4, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -115,7 +115,7 @@ Something changed -- react to new information. 10-20s target.
     "correctAnswer": "D",
     "insightAnswer": "D",
     "explanation": "Why adapting to this change matters.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.2, "prioritization": 0.1, "commercialAcumen": 0.1, "communication": 0.0, "adaptability": 0.4 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.2, "decisionQuality": 0.1, "quantitativeReasoning": 0.1, "communicationClarity": 0.0, "creativeProblemSolving": 0.4 }
   }
 }
 ```
@@ -133,7 +133,7 @@ Mini-lesson then immediate test. 20-30s target.
     "correctAnswer": "C",
     "insightAnswer": "C",
     "explanation": "Reinforces the teaching point.",
-    "scoringRubric": { "strategicThinking": 0.2, "analyticalRigor": 0.3, "prioritization": 0.1, "commercialAcumen": 0.2, "communication": 0.1, "adaptability": 0.1 }
+    "scoringRubric": { "strategicReasoning": 0.2, "analyticalThinking": 0.3, "decisionQuality": 0.1, "quantitativeReasoning": 0.2, "communicationClarity": 0.1, "creativeProblemSolving": 0.1 }
   }
 }
 ```
@@ -142,14 +142,14 @@ Mini-lesson then immediate test. 20-30s target.
 
 | Dimension | What It Measures | Guesstimation Weight |
 |---|---|---|
-| strategicThinking | Root cause ID, systems thinking | Medium |
-| analyticalRigor | Data-driven reasoning, quantitative accuracy | HIGH |
-| prioritization | Tradeoff quality, resource allocation | Medium |
-| commercialAcumen | Pricing, unit economics, market understanding | Medium-High |
-| communication | Clarity, structure | Low |
-| adaptability | Response to curveballs, pivoting | Medium |
+| analyticalThinking | Breaking down complex problems into components | HIGH |
+| strategicReasoning | Evaluating long-term implications and tradeoffs | Medium |
+| quantitativeReasoning | Working with numbers, estimates, and data | HIGH |
+| communicationClarity | Expressing ideas clearly and persuasively | Low |
+| decisionQuality | Making sound decisions under uncertainty | Medium |
+| creativeProblemSolving | Finding novel approaches to challenges | Medium |
 
-For guesstimation, `analyticalRigor` and `commercialAcumen` should generally be weighted highest.
+For guesstimation, `analyticalThinking` and `quantitativeReasoning` should generally be weighted highest.
 
 ## LEARN Sprint Generation
 
@@ -164,7 +164,7 @@ When generating a LEARN sprint:
    - 5: FORCED_TRADEOFF -- Apply concepts to real decision
    - 6: TEACH_AND_TEST -- Advanced concept
    - 7: RANK_AND_PRIORITIZE -- Synthesize learning
-   - 8: CURVEBALL -- Test adaptability with a twist
+   - 8: CURVEBALL -- Test creativeProblemSolving with a twist
 3. **Teaching preambles** build on each other (sprint tells a learning story)
 4. **Difficulty**: 1-2 (beginner-friendly, it's LEARN mode)
 5. All `teachingPreamble` fields present on TEACH_AND_TEST types
@@ -192,36 +192,42 @@ When generating PRACTICE interactions:
 ## Output Format
 
 ### LEARN Sprint Output
-Write to: `prisma/seed-data/learn-sprints/guesstimation-<N>.json`
+Write to: `prisma/seed-data/guesstimation/<topicSlug>/learn-<N>.json`
 
 ```json
 {
   "skillSlug": "guesstimation",
+  "topicSlug": "market-sizing-fundamentals",
   "mode": "LEARN",
-  "title": "The Market Sizing Masterclass",
+  "title": "Fermi Fundamentals: Market Sizing from Scratch",
   "description": "Master the art of Fermi estimation and market sizing",
   "difficulty": 1,
+  "sprintOrder": 1,
   "interactions": [
-    { "type": "TEACH_AND_TEST", "orderIndex": 0, "content": { ... } },
-    { "type": "SPOT_THE_SIGNAL", "orderIndex": 1, "content": { ... } },
-    ...
+    {
+      "type": "TEACH_AND_TEST",
+      "order": 1,
+      "teachingPreamble": "2-3 sentences teaching a concept...",
+      "prompt": "Test question...",
+      "options": [
+        { "id": "a", "text": "Option A" },
+        { "id": "b", "text": "Option B" },
+        { "id": "c", "text": "Option C" },
+        { "id": "d", "text": "Option D" }
+      ],
+      "correctAnswer": "b",
+      "insightAnswer": "b",
+      "priorContext": null,
+      "timeTarget": 25
+    }
   ]
 }
 ```
 
-### PRACTICE Pool Output
-Write to: `prisma/seed-data/practice-interactions/guesstimation.json`
+### PRACTICE Sprint Output
+Write to: `prisma/seed-data/guesstimation/<topicSlug>/practice-<N>.json`
 
-```json
-{
-  "skillSlug": "guesstimation",
-  "mode": "PRACTICE",
-  "interactions": [
-    { "type": "SPOT_THE_SIGNAL", "difficulty": 3, "content": { ... } },
-    ...
-  ]
-}
-```
+Same format as LEARN but with `"mode": "PRACTICE"`, no `teachingPreamble`, higher difficulty (2-4), and mixed interaction types (no TEACH_AND_TEST).
 
 ## Quality Rules
 
