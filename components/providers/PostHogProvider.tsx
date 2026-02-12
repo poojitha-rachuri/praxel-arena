@@ -5,6 +5,16 @@ import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react";
 import { useEffect } from "react";
 import { useAuth } from "@clerk/nextjs";
 
+if (typeof window !== "undefined" && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    api_host: "/ingest",
+    ui_host: "https://us.i.posthog.com",
+    capture_pageview: true,
+    capture_pageleave: true,
+    person_profiles: "identified_only",
+  });
+}
+
 function PostHogIdentifier() {
   const { isSignedIn, userId } = useAuth();
   const ph = usePostHog();
@@ -25,18 +35,6 @@ export default function PostHogProvider({
 }: {
   children: React.ReactNode;
 }) {
-  useEffect(() => {
-    if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
-      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-        api_host: "/ingest",
-        ui_host: "https://us.i.posthog.com",
-        capture_pageview: true,
-        capture_pageleave: true,
-        person_profiles: "identified_only",
-      });
-    }
-  }, []);
-
   if (!process.env.NEXT_PUBLIC_POSTHOG_KEY) {
     return <>{children}</>;
   }
