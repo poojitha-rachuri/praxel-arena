@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 
 export interface SkillPickerSkill {
   id: string;
@@ -48,7 +49,7 @@ export default function SkillPicker({
             )}
           >
             <div className="flex items-center gap-2">
-              <span className="text-2xl">{skill.icon ?? "🎯"}</span>
+              <SkillIcon slug={skill.slug} size="sm" />
               {isSelected && (
                 <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
                   Selected

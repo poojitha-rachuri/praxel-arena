@@ -146,7 +146,7 @@ export default async function ProfilePage() {
   // Gamification data
   const currentLevelXp = xpForLevel(user.level);
   const nextLevelXp = xpForLevel(user.level + 1);
-  const xpProgress = user.xp - currentLevelXp;
+  const xpProgress = Math.max(0, user.xp - currentLevelXp);
   const xpNeeded = nextLevelXp - currentLevelXp;
   const tierConfig = LEAGUE_TIERS[user.leagueTier];
 

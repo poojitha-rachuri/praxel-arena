@@ -53,6 +53,7 @@ interface SprintRunnerProps {
   sprint: Sprint;
   onComplete: (responses: SprintResponse[]) => void;
   mode: "LEARN" | "PRACTICE" | "COMPETE";
+  onExit?: () => void;
 }
 
 // ─── Helper: parse options from DB JSON ─────────────────
@@ -70,7 +71,7 @@ function parseOptions(raw: InteractionOption[] | unknown): InteractionOption[] {
 
 // ─── Sprint Runner ──────────────────────────────────────
 
-export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
+export function SprintRunner({ sprint, onComplete, mode, onExit }: SprintRunnerProps) {
   // Sort interactions by order
   const sortedInteractions = useMemo(
     () => [...sprint.interactions].sort((a, b) => a.order - b.order),
@@ -260,6 +261,7 @@ export function SprintRunner({ sprint, onComplete, mode }: SprintRunnerProps) {
         totalInteractions={totalInteractions}
         startTime={sprintStartTimeRef.current}
         mode={mode}
+        onExit={onExit}
       />
 
       {/* Streak Badge */}

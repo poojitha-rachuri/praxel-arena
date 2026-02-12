@@ -19,8 +19,9 @@ export const XP_STREAK_MULTIPLIER_THRESHOLD = 7; // days
 
 // ─── Level Curve ────────────────────────────────────────
 
-/** XP required to reach level n: floor(100 * n^1.5) */
+/** XP required to reach level n: floor(100 * n^1.5). Level 1 starts at 0 XP. */
 export function xpForLevel(level: number): number {
+  if (level <= 1) return 0;
   return Math.floor(100 * Math.pow(level, 1.5));
 }
 

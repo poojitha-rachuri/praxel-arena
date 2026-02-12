@@ -6,9 +6,9 @@ import { motion } from "motion/react";
 import { Swords, Loader2, Clock, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import ModeSelector from "@/components/layout/ModeSelector";
 import { CARD_SPRING } from "@/lib/utils/constants";
 import { cn } from "@/lib/utils";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface Skill {
   id: string;
@@ -20,7 +20,7 @@ interface Skill {
 interface Duel {
   id: string;
   status: string;
-  skill: { name: string; icon: string | null };
+  skill: { name: string; slug: string; icon: string | null };
   createdAt: string;
   completedAt: string | null;
   winnerId: string | null;
@@ -97,8 +97,6 @@ export default function CompeteLobby({ skills, userId }: CompeteLobbyProps) {
 
   return (
     <div className="flex flex-col gap-6 p-4">
-      <ModeSelector />
-
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Compete</h1>
         <p className="mt-1 text-sm text-muted-foreground">
@@ -134,7 +132,7 @@ export default function CompeteLobby({ skills, userId }: CompeteLobbyProps) {
                   <Loader2 className="size-5 animate-spin" />
                 ) : (
                   <>
-                    <span className="text-xl">{skill.icon ?? "🎯"}</span>
+                    <SkillIcon slug={skill.slug} size="sm" />
                     <span className="text-xs font-medium">{skill.name}</span>
                   </>
                 )}
@@ -171,7 +169,7 @@ export default function CompeteLobby({ skills, userId }: CompeteLobbyProps) {
                 onClick={() => router.push(`/compete/${duel.id}`)}
                 className="flex items-center gap-3 rounded-xl border border-border bg-card p-3 text-left transition-colors hover:border-primary/50 min-h-[56px]"
               >
-                <span className="text-lg">{duel.skill.icon ?? "🎯"}</span>
+                <SkillIcon slug={duel.skill.slug} size="sm" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium truncate">
                     {duel.skill.name} Duel

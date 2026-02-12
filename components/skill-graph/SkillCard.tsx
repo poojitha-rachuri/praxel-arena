@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface SkillCardProps {
   skill: {
@@ -33,9 +34,7 @@ export default function SkillCard({ skill, onClick }: SkillCardProps) {
       <CardContent className="flex items-center gap-4 py-3">
         {/* Icon + Name */}
         <div className="flex items-center gap-3 min-w-0 flex-1">
-          <span className="text-2xl shrink-0" role="img" aria-label={skill.name}>
-            {skill.icon ?? "📊"}
-          </span>
+          <SkillIcon slug={skill.slug} />
           <div className="min-w-0">
             <p className="font-medium text-sm truncate">{skill.name}</p>
             <div className="flex items-center gap-2 mt-0.5">

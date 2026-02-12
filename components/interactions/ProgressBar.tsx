@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { Timer, BookOpen, Target, Swords, Check } from "lucide-react";
+import { Timer, BookOpen, Target, Swords, Check, X } from "lucide-react";
 
 interface ProgressBarProps {
   currentIndex: number;
@@ -10,6 +10,7 @@ interface ProgressBarProps {
   /** Start time as Date or timestamp */
   startTime: number;
   mode: "LEARN" | "PRACTICE" | "COMPETE";
+  onExit?: () => void;
 }
 
 const MODE_CONFIG = {
@@ -23,6 +24,7 @@ export function ProgressBar({
   totalInteractions,
   startTime,
   mode,
+  onExit,
 }: ProgressBarProps) {
   const [elapsed, setElapsed] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -58,8 +60,19 @@ export function ProgressBar({
 
   return (
     <div className="w-full px-4 py-3">
-      {/* Top row: mode badge, step dots, timer */}
+      {/* Top row: exit button, mode badge, step dots, timer */}
       <div className="flex items-center justify-between mb-3">
+        {/* Exit button */}
+        {onExit && (
+          <button
+            onClick={onExit}
+            className="flex items-center justify-center size-8 rounded-full hover:bg-surface-2 transition-colors -ml-1 mr-1"
+            aria-label="Exit sprint"
+          >
+            <X className="size-4 text-muted-foreground" />
+          </button>
+        )}
+
         {/* Mode badge */}
         <div className={cn(
           "flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full",
