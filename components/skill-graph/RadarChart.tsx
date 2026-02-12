@@ -49,25 +49,15 @@ export default function RadarChart({
   const chart = (
     <ResponsiveContainer width="100%" height={size}>
       <RechartsRadarChart cx="50%" cy="50%" outerRadius="75%" data={data}>
-        <defs>
-          <linearGradient id="radarGradientPrimary" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.8} />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.4} />
-          </linearGradient>
-          <linearGradient id="radarGradientCompare" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#f59e0b" stopOpacity={0.7} />
-            <stop offset="100%" stopColor="#ef4444" stopOpacity={0.3} />
-          </linearGradient>
-        </defs>
         <PolarGrid
-          stroke="#333"
-          strokeOpacity={0.6}
+          stroke="var(--border)"
+          strokeOpacity={0.8}
           gridType="polygon"
         />
         <PolarAngleAxis
           dataKey="dimension"
           tick={{
-            fill: "#e2e8f0",
+            fill: "var(--foreground)",
             fontSize: 11,
             fontWeight: 500,
           }}
@@ -76,21 +66,21 @@ export default function RadarChart({
         <PolarRadiusAxis
           angle={90}
           domain={[0, 100]}
-          tick={{ fill: "#666", fontSize: 9 }}
+          tick={{ fill: "var(--muted-foreground)", fontSize: 9 }}
           axisLine={false}
           tickCount={5}
         />
         <Radar
           name={label}
           dataKey={label}
-          stroke="#8b5cf6"
+          stroke="var(--primary)"
           strokeWidth={2}
-          fill="url(#radarGradientPrimary)"
-          fillOpacity={0.4}
+          fill="var(--primary)"
+          fillOpacity={0.15}
           dot={{
             r: 3,
-            fill: "#8b5cf6",
-            stroke: "#8b5cf6",
+            fill: "var(--primary)",
+            stroke: "var(--primary)",
             strokeWidth: 1,
           }}
           animationDuration={animated ? 1200 : 0}
@@ -100,14 +90,14 @@ export default function RadarChart({
           <Radar
             name={comparisonLabel}
             dataKey={comparisonLabel}
-            stroke="#f59e0b"
+            stroke="var(--mode-compete)"
             strokeWidth={2}
-            fill="url(#radarGradientCompare)"
-            fillOpacity={0.3}
+            fill="var(--mode-compete)"
+            fillOpacity={0.1}
             dot={{
               r: 3,
-              fill: "#f59e0b",
-              stroke: "#f59e0b",
+              fill: "var(--mode-compete)",
+              stroke: "var(--mode-compete)",
               strokeWidth: 1,
             }}
             animationDuration={animated ? 1200 : 0}

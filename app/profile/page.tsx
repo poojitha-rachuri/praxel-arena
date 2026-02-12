@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
+import { computeCareerMatches } from "@/lib/scoring/career-match";
 import AppShell from "@/components/layout/AppShell";
 import ProfileClient from "./ProfileClient";
 
@@ -78,34 +79,21 @@ export default async function ProfilePage() {
     };
   });
 
-  // Career match percentages
-  const scoreLookup = new Map(
-    user.skillScores.map((ss) => [ss.skillId, ss.overallScore])
+  // Career match percentages (using shared utility)
+  const careerMatches = computeCareerMatches(
+    user.skillScores.map((ss) => ({
+      skillId: ss.skillId,
+      overallScore: ss.overallScore,
+    })),
+    user.careerGoals.map((goal) => ({
+      name: goal.careerOutcome.name,
+      icon: goal.careerOutcome.icon,
+      skillMaps: goal.careerOutcome.skillMaps.map((m) => ({
+        skillId: m.skillId,
+        weight: m.weight,
+      })),
+    }))
   );
-
-  const careerMatches = user.careerGoals.map((goal) => {
-    const career = goal.careerOutcome;
-    const mappings = career.skillMaps;
-
-    if (mappings.length === 0) {
-      return { name: career.name, icon: career.icon, matchPercentage: 0 };
-    }
-
-    let weightedSum = 0;
-    let careerWeight = 0;
-
-    for (const mapping of mappings) {
-      const score = scoreLookup.get(mapping.skillId) ?? 0;
-      weightedSum += score * mapping.weight;
-      careerWeight += mapping.weight;
-    }
-
-    return {
-      name: career.name,
-      icon: career.icon,
-      matchPercentage: careerWeight > 0 ? Math.round(weightedSum / careerWeight) : 0,
-    };
-  });
 
   return (
     <AppShell>

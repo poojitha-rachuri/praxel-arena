@@ -5,6 +5,7 @@ import { evaluateAttempt, evaluateDuel } from "@/lib/scoring/evaluate";
 import { DIMENSION_KEYS } from "@/lib/scoring/dimensions";
 import { ELO_INITIAL_RATING } from "@/lib/utils/constants";
 import type { SprintResponse } from "@/types";
+import crypto from "crypto";
 
 export async function POST(request: NextRequest) {
   const user = await ensureUser();
@@ -37,6 +38,17 @@ export async function POST(request: NextRequest) {
       { error: "responses array is required and must not be empty" },
       { status: 400 }
     );
+  }
+
+  // Validate and coerce response shapes
+  for (const r of responses) {
+    if (typeof r.answer !== "string") {
+      return NextResponse.json(
+        { error: "Each response must have a string 'answer'" },
+        { status: 400 }
+      );
+    }
+    r.timeSpent = Number(r.timeSpent) || 0;
   }
 
   try {
@@ -92,6 +104,24 @@ export async function POST(request: NextRequest) {
       sprint.mode
     );
 
+    // Clamp all dimension scores to valid numbers before DB write
+    for (const key of DIMENSION_KEYS) {
+      const val = evaluation.scores[key];
+      if (typeof val !== "number" || !Number.isFinite(val)) {
+        evaluation.scores[key] = 0;
+      }
+    }
+
+    // Recalculate totalScore from clamped values
+    evaluation.totalScore = Math.round(
+      DIMENSION_KEYS.reduce((sum, key) => sum + evaluation.scores[key], 0) /
+        DIMENSION_KEYS.length
+    );
+
+    // Deep clone outside the transaction — JSON round-trip produces Prisma-compatible JsonValue
+    const responsesJson = JSON.parse(JSON.stringify(responses));
+    const scoresJson = JSON.parse(JSON.stringify(evaluation.scores));
+
     // Atomic: create attempt + update skill scores in a transaction
     const attempt = await prisma.$transaction(async (tx) => {
       const newAttempt = await tx.sprintAttempt.create({
@@ -99,8 +129,8 @@ export async function POST(request: NextRequest) {
           userId: user.id,
           sprintId: sprint.id,
           mode: sprint.mode,
-          responses: JSON.parse(JSON.stringify(responses)),
-          scores: JSON.parse(JSON.stringify(evaluation.scores)),
+          responses: responsesJson,
+          scores: scoresJson,
           totalScore: evaluation.totalScore,
           completedAt: new Date(),
         },
@@ -201,9 +231,14 @@ export async function POST(request: NextRequest) {
       evaluation,
     });
   } catch (error) {
-    console.error("Failed to evaluate sprint:", error);
+    const errorId = crypto.randomUUID();
+    console.error(`[${errorId}] Failed to evaluate sprint:`, {
+      error: error instanceof Error ? { message: error.message, stack: error.stack, name: error.name } : error,
+      sprintId,
+      responseCount: responses?.length,
+    });
     return NextResponse.json(
-      { error: "Failed to evaluate sprint" },
+      { error: "Failed to evaluate sprint", errorId },
       { status: 500 }
     );
   }

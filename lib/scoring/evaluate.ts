@@ -85,8 +85,10 @@ function scoreInteractionDeterministic(
     return { score: 0, isCorrect: false };
   }
 
-  const { answer, timeSpent } = response;
-  const { correctAnswer, timeTarget, type } = interaction;
+  const { answer } = response;
+  const timeSpent = Number(response.timeSpent) || 0;
+  const { correctAnswer, type } = interaction;
+  const timeTarget = Number(interaction.timeTarget) || 10;
 
   // For RANK_AND_PRIORITIZE, check partial correctness
   if (type === "RANK_AND_PRIORITIZE" && correctAnswer) {
@@ -128,9 +130,11 @@ function scoreInteractionDeterministic(
 function scoreRanking(
   answer: string,
   correctAnswer: string,
-  timeSpent: number,
-  timeTarget: number
+  rawTimeSpent: number,
+  rawTimeTarget: number
 ): { score: number; isCorrect: boolean } {
+  const timeSpent = Number(rawTimeSpent) || 0;
+  const timeTarget = Number(rawTimeTarget) || 10;
   const playerOrder = answer.split(",").map((s) => s.trim());
   const correctOrder = correctAnswer.split(",").map((s) => s.trim());
 
@@ -240,7 +244,9 @@ function buildDeterministicFeedback(
     totalTimeTarget += interaction.timeTarget;
   }
 
-  const accuracy = Math.round((correctCount / interactions.length) * 100);
+  const accuracy = interactions.length > 0
+    ? Math.round((correctCount / interactions.length) * 100)
+    : 0;
   const timeEfficiency =
     totalTime <= totalTimeTarget
       ? "ahead of pace"

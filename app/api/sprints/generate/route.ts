@@ -96,7 +96,13 @@ export async function POST(request: NextRequest) {
       });
 
       if (fallbackSprint) {
-        return NextResponse.json({ sprint: fallbackSprint, generated: false });
+        const sanitized = {
+          ...fallbackSprint,
+          interactions: fallbackSprint.interactions.map(
+            ({ correctAnswer, insightAnswer, ...rest }) => rest
+          ),
+        };
+        return NextResponse.json({ sprint: sanitized, generated: false });
       }
 
       // If no fallback exists either, return the AI error
@@ -137,7 +143,13 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    return NextResponse.json({ sprint, generated: true });
+    const sanitizedSprint = {
+      ...sprint,
+      interactions: sprint.interactions.map(
+        ({ correctAnswer, insightAnswer, ...rest }) => rest
+      ),
+    };
+    return NextResponse.json({ sprint: sanitizedSprint, generated: true });
   } catch (error) {
     console.error("Failed to generate sprint:", error);
     return NextResponse.json(

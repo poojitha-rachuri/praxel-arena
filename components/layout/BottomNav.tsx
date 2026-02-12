@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 import { BookOpen, Target, Swords, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,7 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background pb-[env(safe-area-inset-bottom)]">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/50 bg-background/80 backdrop-blur-md pb-[env(safe-area-inset-bottom)]">
       <div className="flex h-[60px] items-center justify-around">
         {tabs.map(({ href, label, icon: Icon }) => {
           const isActive =
@@ -26,7 +27,7 @@ export default function BottomNav() {
               key={href}
               href={href}
               className={cn(
-                "flex flex-col items-center justify-center gap-1 px-3 py-1 min-w-[64px] min-h-[44px] transition-colors",
+                "relative flex flex-col items-center justify-center gap-1 px-3 py-1 min-w-[64px] min-h-[44px] transition-colors",
                 isActive
                   ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"
@@ -36,6 +37,13 @@ export default function BottomNav() {
               <span className="text-[10px] font-medium leading-none">
                 {label}
               </span>
+              {isActive && (
+                <motion.div
+                  layoutId="bottomnav-indicator"
+                  className="absolute -bottom-0.5 h-0.5 w-6 rounded-full bg-primary"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
             </Link>
           );
         })}

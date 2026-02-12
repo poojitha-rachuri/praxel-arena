@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { ensureUser } from "@/lib/auth/ensure-user";
-import type { SprintMode } from "@/app/generated/prisma/client";
+import type { SprintMode, Prisma } from "@/app/generated/prisma/client";
 
 export async function GET(request: NextRequest) {
   const user = await ensureUser();
@@ -38,27 +38,45 @@ export async function GET(request: NextRequest) {
     }
 
     // Build query filter
-    const where: Record<string, unknown> = {
+    const where: Prisma.SprintWhereInput = {
       skillId: skill.id,
       mode,
+      ...(mode === "LEARN" ? { isGenerated: false } : {}),
     };
-
-    // For LEARN mode, only return static (non-generated) sprints
-    if (mode === "LEARN") {
-      where.isGenerated = false;
-    }
 
     const sprints = await prisma.sprint.findMany({
       where,
-      include: {
-        interactions: {
-          orderBy: { order: "asc" },
-        },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        difficulty: true,
+        level: true,
+        levelLabel: true,
+        order: true,
+        _count: { select: { interactions: true } },
       },
-      orderBy: { createdAt: "asc" },
+      orderBy: [{ level: "asc" }, { order: "asc" }, { createdAt: "asc" }],
     });
 
-    return NextResponse.json({ sprints });
+    // Group by level for structured response
+    const levels: { level: number; label: string; sprints: typeof sprints }[] = [];
+    const levelMap = new Map<number, (typeof levels)[number]>();
+
+    for (const sprint of sprints) {
+      if (!levelMap.has(sprint.level)) {
+        const entry = {
+          level: sprint.level,
+          label: sprint.levelLabel ?? `Level ${sprint.level}`,
+          sprints: [] as typeof sprints,
+        };
+        levelMap.set(sprint.level, entry);
+        levels.push(entry);
+      }
+      levelMap.get(sprint.level)!.sprints.push(sprint);
+    }
+
+    return NextResponse.json({ levels });
   } catch (error) {
     console.error("Failed to fetch sprints:", error);
     return NextResponse.json(

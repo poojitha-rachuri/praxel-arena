@@ -72,7 +72,11 @@ export default function OnboardingFlow({
   };
 
   const handleStart = () => {
-    router.push("/learn");
+    if (topSkill) {
+      router.push(`/learn?skill=${encodeURIComponent(topSkill.slug)}`);
+    } else {
+      router.push("/learn");
+    }
   };
 
   return (
