@@ -5,8 +5,7 @@ import { motion } from "motion/react";
 import { Timer, Zap, Trophy, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface ChallengeCardProps {
-  id: string;
+export interface ChallengeCardProps {
   type: "SPEED_ROUND" | "SCORE_ATTACK";
   name: string;
   description: string;

@@ -51,7 +51,10 @@ export default function CompeteLobby({ skills, userId }: CompeteLobbyProps) {
     let cancelled = false;
 
     fetch("/api/duels")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+        return res.json();
+      })
       .then((data) => {
         if (!cancelled) {
           setDuels(data.duels ?? []);
@@ -78,16 +81,14 @@ export default function CompeteLobby({ skills, userId }: CompeteLobbyProps) {
         body: JSON.stringify({ skillSlug }),
       });
 
-      if (res.ok) {
-        const data = await res.json();
-        if (data.duel?.id) {
-          router.push(`/compete/${data.duel.id}`);
-          return;
-        }
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.duel?.id) {
+        router.push(`/compete/${data.duel.id}`);
+        return;
       }
 
-      const errData = await res.json().catch(() => ({}));
-      console.error("Failed to create duel:", errData);
+      console.error("Failed to create duel:", data);
     } catch (error) {
       console.error("Failed to create duel:", error);
     } finally {

@@ -67,7 +67,7 @@ components/
   skill-graph/     RadarChart, SkillCard, CareerMatchBar
   arena/           DuelCard, EloDisplay, MatchResult, Leaderboard
   onboarding/      CareerSelector, OnboardingFlow
-  layout/          Navbar, BottomNav, ModeSelector
+  layout/          Navbar, BottomNav, SkillAccordion
 
 lib/
   ai/              Claude API client + prompt templates

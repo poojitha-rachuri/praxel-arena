@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Loader2, CheckCircle2 } from "lucide-react";
 import { SprintRunner } from "@/components/interactions/SprintRunner";
+import type { Sprint } from "@/components/interactions/SprintRunner";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,30 +18,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import type { SprintResponse } from "@/types";
 
-interface Interaction {
-  id: string;
-  type: string;
-  order: number;
-  prompt: string;
-  options: unknown;
-  correctAnswer: string | null;
-  insightAnswer: string | null;
-  teachingPreamble: string | null;
-  priorContext: string | null;
-  timeTarget: number;
-}
-
-interface Sprint {
-  id: string;
-  title: string;
-  description: string | null;
-  mode: string;
-  difficulty: number;
-  interactions: Interaction[];
-}
-
 interface SprintPageWrapperProps {
-  sprint: Sprint;
+  sprint: Required<Sprint>;
   skillSlug: string;
 }
 
@@ -122,6 +101,7 @@ export default function SprintPageWrapper({
               onComplete={handleComplete}
               mode={sprint.mode as "LEARN" | "PRACTICE" | "COMPETE"}
               onExit={handleExitRequest}
+              exitPending={showExitDialog}
             />
           </motion.div>
         )}

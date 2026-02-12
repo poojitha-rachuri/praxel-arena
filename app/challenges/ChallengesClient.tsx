@@ -2,13 +2,17 @@
 
 import { useState } from "react";
 import useSWR from "swr";
-import { ChallengeCard } from "@/components/gamification/ChallengeCard";
+import { ChallengeCard, type ChallengeCardProps } from "@/components/gamification/ChallengeCard";
 import { Trophy, Timer, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+import { fetcher } from "@/lib/swr/fetcher";
 
 type TabType = "all" | "speed" | "score";
+
+type ChallengeResponse = Omit<ChallengeCardProps, "skillName" | "index"> & {
+  id: string;
+  skill?: { name: string } | null;
+};
 
 export default function ChallengesClient() {
   const [tab, setTab] = useState<TabType>("all");
@@ -31,7 +35,7 @@ export default function ChallengesClient() {
     tab === "all"
       ? challenges
       : challenges.filter(
-          (c: { type: string }) =>
+          (c: ChallengeResponse) =>
             (tab === "speed" && c.type === "SPEED_ROUND") ||
             (tab === "score" && c.type === "SCORE_ATTACK")
         );
@@ -74,7 +78,7 @@ export default function ChallengesClient() {
 
       {isLoading ? (
         <div className="grid gap-4 sm:grid-cols-2">
-          {[...Array(4)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <div
               key={i}
               className="h-48 animate-pulse rounded-xl bg-muted"
@@ -90,29 +94,9 @@ export default function ChallengesClient() {
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">
-          {filtered.map(
-            (
-              challenge: {
-                id: string;
-                type: "SPEED_ROUND" | "SCORE_ATTACK";
-                name: string;
-                description: string;
-                skill?: { name: string } | null;
-                endsAt: string;
-                rewardXpFirst: number;
-                rewardXpTenth: number;
-                attemptCount: number;
-                userBestAttempt?: {
-                  score: number;
-                  timeSpentMs: number;
-                  xpEarned: number;
-                } | null;
-              },
-              i: number
-            ) => (
+          {filtered.map((challenge: ChallengeResponse, i: number) => (
               <ChallengeCard
                 key={challenge.id}
-                id={challenge.id}
                 type={challenge.type}
                 name={challenge.name}
                 description={challenge.description}
@@ -124,8 +108,7 @@ export default function ChallengesClient() {
                 userBestAttempt={challenge.userBestAttempt}
                 index={i}
               />
-            )
-          )}
+          ))}
         </div>
       )}
     </div>

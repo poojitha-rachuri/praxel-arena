@@ -12,8 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+import { fetcher } from "@/lib/swr/fetcher";
 
 export default function LeaguesPage() {
   const { data, error, isLoading } = useSWR("/api/leagues", fetcher, {
