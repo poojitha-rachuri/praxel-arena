@@ -14,6 +14,7 @@ import { X } from "lucide-react";
 import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
 import { CountdownTimer } from "./CountdownTimer";
+import { VoiceToggle } from "./VoiceToggle";
 import { cn } from "@/lib/utils";
 
 // ─── Types ──────────────────────────────────────────────
@@ -64,6 +65,7 @@ export function AIChallenger({
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const [ended, setEnded] = useState(false);
+  const [inputMode, setInputMode] = useState<"text" | "voice">("text");
 
   // Transport configured to send to our challenge API with the context
   const transport = useMemo(
@@ -142,6 +144,23 @@ export function AIChallenger({
     handleEnd();
   }, [handleEnd]);
 
+  // ─── Voice mode handlers ──────────────────────────
+
+  const handleVoiceStateChange = useCallback(
+    (active: boolean) => {
+      setInputMode(active ? "voice" : "text");
+    },
+    []
+  );
+
+  const handleVoiceTranscript = useCallback(
+    (_role: "user" | "assistant", _content: string) => {
+      // Voice transcripts appear in the chat via the VoiceToggle's onMessage callback
+      // For now, they're visual-only (the voice conversation is handled by ElevenLabs)
+    },
+    []
+  );
+
   // ─── Render messages ──────────────────────────────
 
   const renderedMessages = useMemo(() => {
@@ -186,13 +205,21 @@ export function AIChallenger({
             {exchangeCount} of {maxExchanges} exchanges
           </div>
         </div>
-        <button
-          onClick={handleEnd}
-          className="flex size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-          aria-label="End conversation"
-        >
-          <X className="size-4" />
-        </button>
+        <div className="flex items-center gap-2">
+          <VoiceToggle
+            onTranscript={handleVoiceTranscript}
+            onStateChange={handleVoiceStateChange}
+            systemPrompt=""
+            disabled={ended}
+          />
+          <button
+            onClick={handleEnd}
+            className="flex size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            aria-label="End conversation"
+          >
+            <X className="size-4" />
+          </button>
+        </div>
       </div>
 
       {/* Messages */}
@@ -253,7 +280,7 @@ export function AIChallenger({
       </div>
 
       {/* Input */}
-      {!ended && (
+      {!ended && inputMode === "text" && (
         <ChatInput
           onSend={handleSend}
           disabled={
@@ -267,6 +294,20 @@ export function AIChallenger({
               : "Type your response..."
           }
         />
+      )}
+
+      {/* Voice active indicator */}
+      {!ended && inputMode === "voice" && (
+        <div className="flex items-center justify-center gap-2 border-t border-border px-4 py-4">
+          <div className="flex gap-1">
+            <span className="size-2 rounded-full bg-red-500 animate-pulse" />
+            <span className="size-2 rounded-full bg-red-500 animate-pulse [animation-delay:150ms]" />
+            <span className="size-2 rounded-full bg-red-500 animate-pulse [animation-delay:300ms]" />
+          </div>
+          <span className="text-sm text-muted-foreground">
+            Voice mode active — speak to respond
+          </span>
+        </div>
       )}
 
       {/* Close button when ended */}
