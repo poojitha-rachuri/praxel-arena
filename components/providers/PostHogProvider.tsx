@@ -1,7 +1,7 @@
 "use client";
 
 import posthog from "posthog-js";
-import { PostHogProvider as PHProvider, usePostHog } from "@posthog/react";
+import { PostHogProvider as PHProvider, usePostHog } from "posthog-js/react";
 import { useEffect } from "react";
 import { useAuth, useUser } from "@clerk/nextjs";
 
