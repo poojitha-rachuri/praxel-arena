@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db";
 import { CREDENTIAL_THRESHOLDS } from "./constants";
 import type { CredentialType } from "@/app/generated/prisma/client";
+import { getPostHogServer } from "@/lib/posthog";
 
 /**
  * Check if a user's new Elo crosses any credential thresholds.
@@ -10,7 +11,8 @@ import type { CredentialType } from "@/app/generated/prisma/client";
 export async function processCredentials(
   userId: string,
   skillId: string,
-  newElo: number
+  newElo: number,
+  clerkId?: string | null
 ): Promise<{ type: string; skillName: string }[]> {
   const earned: { type: string; skillName: string }[] = [];
 
@@ -19,6 +21,8 @@ export async function processCredentials(
     select: { name: true },
   });
   if (!skill) return earned;
+
+  const ph = clerkId ? getPostHogServer() : null;
 
   for (const threshold of CREDENTIAL_THRESHOLDS) {
     if (newElo >= threshold.elo) {
@@ -34,6 +38,19 @@ export async function processCredentials(
           },
         });
         earned.push({ type: threshold.label, skillName: skill.name });
+
+        if (clerkId) {
+          ph?.capture({
+            distinctId: clerkId,
+            event: "credential_earned",
+            properties: {
+              credentialType: threshold.type,
+              skillName: skill.name,
+              skillId,
+              eloAtGrant: newElo,
+            },
+          });
+        }
       } catch (error: unknown) {
         // P2002 = unique constraint violation — credential already exists, skip
         if (error && typeof error === "object" && "code" in error && error.code === "P2002") {

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { BookOpen, Target, Swords, Trophy, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 const tabs = [
   { href: "/learn", label: "Learn", icon: BookOpen },
@@ -27,6 +28,11 @@ export default function BottomNav() {
             <Link
               key={href}
               href={href}
+              onClick={() => {
+                if (!isActive) {
+                  trackEvent("mode_selected", { mode: label });
+                }
+              }}
               className={cn(
                 "relative flex flex-col items-center justify-center gap-1 px-2 py-1 min-w-[56px] min-h-[44px] transition-colors",
                 isActive

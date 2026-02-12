@@ -16,6 +16,7 @@ import { calculateFeedbackDuration } from "@/lib/utils/feedback-timing";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import type { SprintResponse, InteractionOption } from "@/types";
+import { trackEvent } from "@/lib/analytics";
 
 // ─── Types ──────────────────────────────────────────────
 
@@ -200,6 +201,16 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
       const updatedResponses = [...responsesRef.current, newResponse];
       setResponses(updatedResponses);
       responsesRef.current = updatedResponses;
+
+      trackEvent("interaction_answered", {
+        sprintId: sprint.id,
+        mode,
+        type: currentInteraction.type,
+        timeSpent,
+        isCorrect: finalCorrect,
+        cardIndex: currentIndex,
+        totalCards: totalInteractions,
+      });
 
       // Mode-dependent feedback timing
       const insightText = currentInteraction.insightAnswer;

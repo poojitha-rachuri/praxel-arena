@@ -7,6 +7,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import CareerSelector, { type Career } from "./CareerSelector";
 import { Button } from "@/components/ui/button";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { trackEvent } from "@/lib/analytics";
 import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface SkillMapping {
@@ -73,6 +74,10 @@ export default function OnboardingFlow({
   };
 
   const handleStart = () => {
+    trackEvent("onboarding_completed", {
+      careerCount: selectedCareerIds.length,
+      skillCount: recommendedSkills.length,
+    });
     if (topSkill) {
       router.push(`/learn?skill=${encodeURIComponent(topSkill.slug)}`);
     } else {

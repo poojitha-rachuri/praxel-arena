@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Loader2, CheckCircle2 } from "lucide-react";
@@ -17,6 +17,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import type { SprintResponse } from "@/types";
+import { trackEvent } from "@/lib/analytics";
 
 interface SprintPageWrapperProps {
   sprint: Required<Sprint>;
@@ -33,6 +34,16 @@ export default function SprintPageWrapper({
   const [evalState, setEvalState] = useState<EvalState>("running");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [showExitDialog, setShowExitDialog] = useState(false);
+  const sprintStartRef = useRef<number>(Date.now());
+
+  // Track sprint start on mount
+  useEffect(() => {
+    trackEvent("sprint_started", {
+      sprintId: sprint.id,
+      skillSlug,
+      mode: sprint.mode,
+    });
+  }, [sprint.id, sprint.mode, skillSlug]);
 
   const handleExitRequest = useCallback(() => {
     // Don't allow exit during evaluation
@@ -41,9 +52,15 @@ export default function SprintPageWrapper({
   }, [evalState]);
 
   const handleExitConfirm = useCallback(() => {
+    trackEvent("sprint_abandoned", {
+      sprintId: sprint.id,
+      skillSlug,
+      mode: sprint.mode,
+      timeSpent: Math.round((Date.now() - sprintStartRef.current) / 1000),
+    });
     setShowExitDialog(false);
     router.push(`/${sprint.mode.toLowerCase()}`);
-  }, [router, sprint.mode]);
+  }, [router, sprint.id, sprint.mode, skillSlug]);
 
   const handleComplete = useCallback(
     async (responses: SprintResponse[]) => {
@@ -66,6 +83,13 @@ export default function SprintPageWrapper({
         }
 
         const data = await res.json();
+        trackEvent("sprint_completed", {
+          sprintId: sprint.id,
+          skillSlug,
+          mode: sprint.mode,
+          totalScore: data.attempt?.totalScore,
+          timeSpent: Math.round((Date.now() - sprintStartRef.current) / 1000),
+        });
         setEvalState("done");
 
         // Navigate to results

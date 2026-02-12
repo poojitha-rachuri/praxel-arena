@@ -8,6 +8,7 @@ import { processGamification } from "@/lib/gamification/xp";
 import { processCredentials } from "@/lib/gamification/credentials";
 import type { SprintResponse } from "@/types";
 import crypto from "crypto";
+import { getPostHogServer } from "@/lib/posthog";
 
 export async function POST(request: NextRequest) {
   const user = await ensureUser();
@@ -224,6 +225,20 @@ export async function POST(request: NextRequest) {
       }
 
       return newAttempt;
+    });
+
+    // Track sprint evaluation
+    const ph = getPostHogServer();
+    ph?.capture({
+      distinctId: user.clerkId,
+      event: "sprint_evaluated",
+      properties: {
+        sprintId: sprint.id,
+        mode: sprint.mode,
+        skillSlug: sprint.skill.slug,
+        totalScore: evaluation.totalScore,
+        interactionCount: sprint.interactions.length,
+      },
     });
 
     // ── Duel completion logic ──
@@ -469,11 +484,11 @@ async function completeDuelAttempt(
   const [player1, player2] = await Promise.all([
     prisma.user.findUnique({
       where: { id: updatedDuel.player1Id },
-      select: { name: true },
+      select: { name: true, clerkId: true },
     }),
     prisma.user.findUnique({
       where: { id: updatedDuel.player2Id! },
-      select: { name: true },
+      select: { name: true, clerkId: true },
     }),
   ]);
 
@@ -561,13 +576,40 @@ async function completeDuelAttempt(
     });
   });
 
+  // Track duel completion for both players
+  const phServer = getPostHogServer();
+  const duelProps = {
+    duelId,
+    winnerId: duelResult.winnerId,
+    eloChange: duelResult.eloChange,
+    skillId: sprint.skillId,
+  };
+  if (player1?.clerkId) {
+    phServer?.capture({
+      distinctId: player1.clerkId,
+      event: "duel_completed",
+      properties: { ...duelProps, role: "player1" },
+    });
+  }
+  if (player2?.clerkId) {
+    phServer?.capture({
+      distinctId: player2.clerkId,
+      event: "duel_completed",
+      properties: { ...duelProps, role: "player2" },
+    });
+  }
+
   // Check credentials for winner (non-blocking)
   const winnerCurrentElo =
     duelResult.winnerId === updatedDuel.player1Id
       ? player1Rating
       : player2Rating;
   const winnerNewElo = winnerCurrentElo + duelResult.eloChange;
-  processCredentials(duelResult.winnerId, sprint.skillId, winnerNewElo).catch(
+  const winnerClerkId =
+    duelResult.winnerId === updatedDuel.player1Id
+      ? player1?.clerkId
+      : player2?.clerkId;
+  processCredentials(duelResult.winnerId, sprint.skillId, winnerNewElo, winnerClerkId).catch(
     (err) => console.error("[credentials] Failed:", err)
   );
 }
