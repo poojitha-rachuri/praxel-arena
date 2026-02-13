@@ -10,7 +10,7 @@ export default async function HomePage() {
       where: { clerkId },
       select: { onboardingComplete: true },
     });
-    if (user && !user.onboardingComplete) {
+    if (!user || !user.onboardingComplete) {
       redirect("/onboarding");
     }
     redirect("/learn");

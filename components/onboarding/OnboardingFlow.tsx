@@ -99,12 +99,14 @@ export default function OnboardingFlow({
 
       if (!res.ok) {
         console.error("Failed to save career selections");
+        return;
       }
+
+      setStep(3);
     } catch (error) {
       console.error("Failed to save career selections:", error);
     } finally {
       setLoading(false);
-      setStep(3);
     }
   };
 
