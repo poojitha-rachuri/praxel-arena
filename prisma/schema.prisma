@@ -29,6 +29,10 @@ model User {
   weeklyXp          Int               @default(0)
   title             String            @default("Intern")
 
+  // Referral
+  referralCode      String?           @unique
+  referredBy        String?
+
   careerGoals        UserCareerGoal[]
   skillScores        UserSkillScore[]
   eloRatings         UserEloRating[]

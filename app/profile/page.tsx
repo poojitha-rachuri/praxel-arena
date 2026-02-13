@@ -144,6 +144,17 @@ export default async function ProfilePage() {
     }))
   );
 
+  // Ensure referral code exists
+  let referralCode = user.referralCode;
+  if (!referralCode) {
+    const code = `PA-${user.id.slice(-6).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { referralCode: code },
+    });
+    referralCode = code;
+  }
+
   // Gamification data
   const currentLevelXp = xpForLevel(user.level);
   const nextLevelXp = xpForLevel(user.level + 1);
@@ -182,6 +193,7 @@ export default async function ProfilePage() {
         user={{
           name: user.name,
           imageUrl: user.imageUrl,
+          id: user.id,
         }}
         aggregateScores={aggregateScores}
         skills={skills}
@@ -190,6 +202,7 @@ export default async function ProfilePage() {
         attemptCursor={attemptCursor}
         gamification={gamification}
         isOwnProfile
+        referralCode={referralCode}
       />
     </AppShell>
   );
