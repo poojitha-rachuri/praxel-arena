@@ -70,6 +70,9 @@ export function AIChallenger({
 
   const [ended, setEnded] = useState(false);
   const [inputMode, setInputMode] = useState<"text" | "voice">("text");
+  const [voiceTranscripts, setVoiceTranscripts] = useState<
+    Array<{ id: string; role: "user" | "assistant"; content: string }>
+  >([]);
 
   // Transport configured to send to our challenge API with the context
   const transport = useMemo(
@@ -186,30 +189,60 @@ export function AIChallenger({
     []
   );
 
+  const handleVoiceTranscript = useCallback(
+    (message: string, source: "user" | "ai") => {
+      setVoiceTranscripts((prev) => [
+        ...prev,
+        {
+          id: `voice-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+          role: source === "user" ? "user" : "assistant",
+          content: message,
+        },
+      ]);
+    },
+    []
+  );
+
   // ─── Render messages ──────────────────────────────
 
   const renderedMessages = useMemo(() => {
-    return messages.map((msg, i) => {
-      const text = getMessageText(msg.parts as Array<{ type: string; text?: string }>);
-      if (!text) return null;
+    // Combine text chat messages and voice transcripts
+    const textMsgs = messages
+      .map((msg, i) => {
+        const text = getMessageText(msg.parts as Array<{ type: string; text?: string }>);
+        if (!text) return null;
+        // For the initial trigger message, skip rendering it
+        if (i === 0 && msg.role === "user") return null;
 
-      // For the initial trigger message, skip rendering it
-      if (i === 0 && msg.role === "user") return null;
+        const isLastMessage = i === messages.length - 1;
+        const isStreamingThis =
+          isLastMessage && msg.role === "assistant" && isStreaming;
 
-      const isLastMessage = i === messages.length - 1;
-      const isStreamingThis =
-        isLastMessage && msg.role === "assistant" && isStreaming;
+        return (
+          <ChatMessage
+            key={msg.id}
+            role={msg.role as "user" | "assistant"}
+            content={text}
+            isStreaming={isStreamingThis && !text}
+          />
+        );
+      })
+      .filter(Boolean);
 
-      return (
-        <ChatMessage
-          key={msg.id}
-          role={msg.role as "user" | "assistant"}
-          content={text}
-          isStreaming={isStreamingThis && !text}
-        />
-      );
-    });
-  }, [messages, isStreaming]);
+    const voiceMsgs = voiceTranscripts.map((vt) => (
+      <ChatMessage
+        key={vt.id}
+        role={vt.role}
+        content={vt.content}
+        isStreaming={false}
+      />
+    ));
+
+    // In voice mode, show voice transcripts; in text mode, show text messages
+    return inputMode === "voice" && voiceMsgs.length > 0
+      ? [...textMsgs, ...voiceMsgs]
+      : textMsgs;
+  }, [messages, isStreaming, voiceTranscripts, inputMode]);
 
   return (
     <motion.div
@@ -234,6 +267,7 @@ export function AIChallenger({
         <div className="flex items-center gap-2">
           <VoiceToggle
             onStateChange={handleVoiceStateChange}
+            onTranscript={handleVoiceTranscript}
             disabled={ended}
             challengeContext={
               context.type === "standalone"

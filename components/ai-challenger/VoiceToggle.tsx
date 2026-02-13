@@ -18,6 +18,7 @@ type VoiceState =
 
 interface VoiceToggleProps {
   onStateChange: (active: boolean) => void;
+  onTranscript?: (message: string, source: "user" | "ai") => void;
   disabled?: boolean;
   challengeContext?: {
     skillId: string;
@@ -27,6 +28,7 @@ interface VoiceToggleProps {
 
 export function VoiceToggle({
   onStateChange,
+  onTranscript,
   disabled,
   challengeContext,
 }: VoiceToggleProps) {
@@ -34,6 +36,8 @@ export function VoiceToggle({
   const cooldownTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const onStateChangeRef = useRef(onStateChange);
   onStateChangeRef.current = onStateChange;
+  const onTranscriptRef = useRef(onTranscript);
+  onTranscriptRef.current = onTranscript;
 
   const conversation = useConversation({
     onConnect: (_props: { conversationId: string }) => {
@@ -58,8 +62,8 @@ export function VoiceToggle({
         onStateChangeRef.current(false);
       }, 2000);
     },
-    onMessage: (_props: { message: string; source: "user" | "ai" }) => {
-      // Voice transcripts handled by ElevenLabs agent directly
+    onMessage: (props: { message: string; source: "user" | "ai" }) => {
+      onTranscriptRef.current?.(props.message, props.source);
     },
   });
 
@@ -74,6 +78,16 @@ export function VoiceToggle({
     if (voiceState !== "idle") return;
 
     setVoiceState("requesting");
+
+    // Check microphone permission before proceeding
+    try {
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      trackEvent("voice_mic_denied");
+      setVoiceState("error");
+      setTimeout(() => setVoiceState("idle"), 2000);
+      return;
+    }
 
     try {
       const res = await fetch("/api/elevenlabs/signed-url", {
