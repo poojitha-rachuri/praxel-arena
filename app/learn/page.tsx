@@ -2,59 +2,45 @@ import { redirect } from "next/navigation";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { getModePageData } from "@/lib/data/mode-page-data";
 import AppShell from "@/components/layout/AppShell";
-import CareerProgressBanner from "@/components/layout/CareerProgressBanner";
-import SkillAccordion from "@/components/layout/SkillAccordion";
+import SkillCardsGrid from "@/components/layout/SkillCardsGrid";
 import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
-import ModeWelcomeBanner from "@/components/layout/ModeWelcomeBanner";
 
-export default async function LearnPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ skill?: string }>;
-}) {
+export default async function LearnPage() {
   const user = await ensureUser();
   if (!user) redirect("/sign-in");
   if (!user.onboardingComplete) redirect("/onboarding");
-
-  const { skill: initialSkill } = await searchParams;
 
   const data = await getModePageData(user.id, "LEARN");
 
   return (
     <AppShell>
-      <div className="flex flex-col gap-4 p-4">
+      <div className="flex flex-col gap-3 p-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Learn</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Choose a skill and start with guided micro-lessons
+          <h1 className="text-xl font-bold tracking-tight">Learn</h1>
+          <p className="text-xs text-muted-foreground">
+            Guided micro-lessons across 6 business skills
           </p>
         </div>
-
-        <ModeWelcomeBanner
-          mode="LEARN"
-          hasCompletions={Object.keys(data.completedSprints).length > 0}
-        />
 
         <ActiveChallengeBanner />
 
         {data.topCareerMatch && (
-          <CareerProgressBanner
-            careerName={data.topCareerMatch.name}
-            careerIcon={data.topCareerMatch.icon}
-            matchPercentage={data.topCareerMatch.matchPercentage}
-            completedSkills={data.completedSkillCount}
-            totalSkills={data.totalSkillCount}
-          />
+          <div className="flex items-center gap-2 rounded-xl border border-border/50 bg-primary/5 px-3 py-2">
+            <span className="text-sm">{data.topCareerMatch.icon || "🎯"}</span>
+            <span className="flex-1 truncate text-xs font-medium">
+              Path to {data.topCareerMatch.name}
+            </span>
+            <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary tabular-nums">
+              {data.topCareerMatch.matchPercentage}%
+            </span>
+          </div>
         )}
 
-        <SkillAccordion
+        <SkillCardsGrid
           skills={data.skills}
-          topics={data.topics}
           sprints={data.sprints}
-          mode="LEARN"
-          basePath="/learn"
-          initialSkill={initialSkill}
           completedSprints={data.completedSprints}
+          basePath="/learn"
         />
       </div>
     </AppShell>

@@ -40,6 +40,7 @@ export interface ModePageData {
   sprints: SprintMeta[];
   completedSprints: Record<string, number>; // sprintId -> totalScore
   topCareerMatch: CareerMatch | null;
+  allCareerMatches: CareerMatch[];
   completedSkillCount: number;
   totalSkillCount: number;
 }
@@ -189,6 +190,7 @@ export async function getModePageData(
     sprints: sprintMetas,
     completedSprints,
     topCareerMatch,
+    allCareerMatches: careerMatches,
     completedSkillCount: attemptedSkillIds.size,
     totalSkillCount: skills.length,
   };
