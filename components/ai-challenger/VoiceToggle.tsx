@@ -81,7 +81,9 @@ export function VoiceToggle({
 
     // Check microphone permission before proceeding
     try {
-      await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // Release the mic immediately — we only needed to check permission
+      stream.getTracks().forEach((t) => t.stop());
     } catch {
       trackEvent("voice_mic_denied");
       setVoiceState("error");

@@ -96,10 +96,14 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // In duel context, always use COMPETE scoring even if the underlying sprint
+    // is a PRACTICE fallback (time bonuses/penalties should apply in duels)
+    const effectiveMode = duelId ? "COMPETE" : sprint.mode;
+
     // Build SprintData for the evaluator
     const sprintData = {
       title: sprint.title,
-      mode: sprint.mode,
+      mode: effectiveMode,
       difficulty: sprint.difficulty,
       interactions: sprint.interactions.map((i) => ({
         id: i.id,
@@ -119,7 +123,7 @@ export async function POST(request: NextRequest) {
     const evaluation = await evaluateAttempt(
       sprintData,
       responses,
-      sprint.mode,
+      effectiveMode,
       sprint.skill.slug
     );
 
@@ -149,7 +153,7 @@ export async function POST(request: NextRequest) {
         data: {
           userId: user.id,
           sprintId: sprint.id,
-          mode: sprint.mode,
+          mode: effectiveMode,
           responses: enrichedJson,
           scores: scoresJson,
           totalScore: evaluation.totalScore,
@@ -449,10 +453,10 @@ async function completeDuelAttempt(
   const player1Matches = p1Elo?.matchCount ?? 0;
   const player2Matches = p2Elo?.matchCount ?? 0;
 
-  // Build sprint data for the evaluator
+  // Build sprint data for the evaluator — always COMPETE since this is duel context
   const sprintData = {
     title: sprint.title,
-    mode: sprint.mode,
+    mode: "COMPETE",
     difficulty: sprint.difficulty,
     interactions: sprint.interactions.map((i) => ({
       id: i.id,

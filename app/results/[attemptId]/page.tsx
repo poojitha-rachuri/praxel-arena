@@ -74,19 +74,23 @@ export default async function ResultsPage({
   let showRadar = false;
   const topicId = attempt.sprint.topicId;
   if (topicId) {
-    const [topicSprintCount, completedSprintCount] = await Promise.all([
+    const [topicSprintCount, completedSprints] = await Promise.all([
       prisma.sprint.count({
         where: { topicId, mode: attempt.mode as "LEARN" | "PRACTICE" | "COMPETE" },
       }),
-      prisma.sprintAttempt.count({
+      // Count distinct sprints attempted (not total attempts) to prevent
+      // re-attempts of the same sprint from prematurely unlocking the radar
+      prisma.sprintAttempt.findMany({
         where: {
           userId: attempt.userId,
           mode: attempt.mode,
           sprint: { topicId },
         },
+        distinct: ["sprintId"],
+        select: { sprintId: true },
       }),
     ]);
-    showRadar = completedSprintCount >= topicSprintCount;
+    showRadar = completedSprints.length >= topicSprintCount;
   }
 
   return (

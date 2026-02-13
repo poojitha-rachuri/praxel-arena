@@ -8,11 +8,14 @@ import {
   DUEL_CREATION_RATE_LIMIT,
 } from "@/lib/utils/constants";
 
-/** Strip correctAnswer/insightAnswer from COMPETE sprint interactions before sending to client */
+/** Strip correctAnswer/insightAnswer from sprint interactions before sending to client.
+ *  Always sanitize in duel context regardless of sprint mode (PRACTICE fallback sprints
+ *  must also have answers stripped to prevent cheating). */
 function sanitizeDuelForClient(duel: Record<string, unknown>) {
   const sprint = duel.sprint as Record<string, unknown> | null;
-  if (!sprint || sprint.mode !== "COMPETE") return duel;
-  const interactions = sprint.interactions as Record<string, unknown>[];
+  if (!sprint) return duel;
+  const interactions = sprint.interactions as Record<string, unknown>[] | undefined;
+  if (!interactions) return duel;
   return {
     ...duel,
     sprint: {
