@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ChevronDown, Lock, Check, Play, RotateCcw } from "lucide-react";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 import type { TopicMeta, SprintMeta } from "@/lib/data/mode-page-data";
 
 interface SkillNodePathProps {
@@ -178,7 +179,7 @@ export default function SkillNodePath({
         >
           <ArrowLeft className="size-4" />
         </button>
-        <span className="text-lg">{skill.icon || "📊"}</span>
+        <SkillIcon slug={skill.slug} size="sm" />
         <div className="flex-1">
           <h1 className="text-sm font-semibold">{skill.name}</h1>
           <p className="text-[10px] text-muted-foreground">

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 import type { ModePageSkill, SprintMeta } from "@/lib/data/mode-page-data";
 
 interface SkillCardsGridProps {
@@ -74,9 +75,7 @@ export default function SkillCardsGrid({
                   />
                 )}
               </svg>
-              <span className="text-2xl" role="img" aria-label={skill.name}>
-                {skill.icon || "📊"}
-              </span>
+              <SkillIcon slug={skill.slug} size="md" />
             </div>
 
             {/* Skill name */}

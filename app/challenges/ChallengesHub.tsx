@@ -23,6 +23,7 @@ import {
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
 import { fetcher } from "@/lib/swr/fetcher";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 
 // ─── Types ──────────────────────────────────────────────
 
@@ -132,7 +133,7 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
                     : "border-border hover:border-foreground/20 hover:bg-muted/50"
                 )}
               >
-                <span className="text-base">{skill.icon || "📊"}</span>
+                <SkillIcon slug={skill.slug} size="sm" className="size-6" />
                 <span className="text-xs font-medium truncate">{skill.name}</span>
               </button>
             ))}
@@ -205,14 +206,14 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
         </motion.button>
       </section>
 
-      {/* ─── Divider ──────────────────────────────────── */}
+      {/* ─── Timed Challenges (hidden — seed data expires, feature not demo-ready) ─── */}
+      {false && (<>
       <div className="flex items-center gap-3">
         <div className="h-px flex-1 bg-border" />
         <span className="text-xs font-medium text-muted-foreground">Daily Challenges</span>
         <div className="h-px flex-1 bg-border" />
       </div>
 
-      {/* ─── Daily/Timed Challenges ───────────────────── */}
       <section>
         <div className="mb-4 flex items-center gap-2">
           <div className="flex size-8 items-center justify-center rounded-lg bg-amber-500/10">
@@ -263,6 +264,7 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
           </div>
         )}
       </section>
+      </>)}
     </div>
   );
 }

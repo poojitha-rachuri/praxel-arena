@@ -123,7 +123,7 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
                   : "border-border bg-card hover:border-primary/30 hover:bg-primary/5"
               )}
             >
-              <span className="text-sm">{skill.icon || "📊"}</span>
+              <SkillIcon slug={skill.slug} size="sm" className="size-6" />
               <span>{skill.name}</span>
             </motion.button>
           ))}
