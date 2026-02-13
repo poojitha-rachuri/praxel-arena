@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, BookOpen, Target, Swords } from "lucide-react";
 import CareerSelector, { type Career } from "./CareerSelector";
 import { Button } from "@/components/ui/button";
 import { CARD_SPRING } from "@/lib/utils/constants";
@@ -19,11 +19,48 @@ interface SkillMapping {
 }
 
 interface OnboardingFlowProps {
+  userName: string | null;
   careers: Career[];
   skillsByCareerId: Record<string, SkillMapping[]>;
 }
 
+const TOTAL_STEPS = 4;
+
+const MODE_CARDS = [
+  {
+    mode: "Learn",
+    icon: BookOpen,
+    color: "var(--mode-learn)",
+    borderClass: "border-mode-learn/40",
+    bgClass: "bg-mode-learn/10",
+    iconClass: "text-mode-learn",
+    description:
+      "Guided micro-lessons. Concepts taught, then tested. ~2 min each.",
+  },
+  {
+    mode: "Practice",
+    icon: Target,
+    color: "var(--mode-practice)",
+    borderClass: "border-mode-practice/40",
+    bgClass: "bg-mode-practice/10",
+    iconClass: "text-mode-practice",
+    description:
+      "Timed challenges. Faster pace, AI debriefs your weak spots.",
+  },
+  {
+    mode: "Compete",
+    icon: Swords,
+    color: "var(--mode-compete)",
+    borderClass: "border-mode-compete/40",
+    bgClass: "bg-mode-compete/10",
+    iconClass: "text-mode-compete",
+    description:
+      "Head-to-head duels. Same sprint, compared by AI. Earn credentials.",
+  },
+] as const;
+
 export default function OnboardingFlow({
+  userName,
   careers,
   skillsByCareerId,
 }: OnboardingFlowProps) {
@@ -32,7 +69,6 @@ export default function OnboardingFlow({
   const [selectedCareerIds, setSelectedCareerIds] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Derive the unique skills from selected careers
   const recommendedSkills = (() => {
     const seen = new Set<string>();
     const skills: SkillMapping[] = [];
@@ -55,7 +91,6 @@ export default function OnboardingFlow({
     setLoading(true);
 
     try {
-      // Save career selections to profile
       const res = await fetch("/api/profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -69,7 +104,7 @@ export default function OnboardingFlow({
       console.error("Failed to save career selections:", error);
     } finally {
       setLoading(false);
-      setStep(2);
+      setStep(3);
     }
   };
 
@@ -85,34 +120,98 @@ export default function OnboardingFlow({
     }
   };
 
+  const springTransition = {
+    type: "spring" as const,
+    stiffness: CARD_SPRING.stiffness,
+    damping: CARD_SPRING.damping,
+  };
+
+  const firstName = userName?.split(" ")[0] ?? null;
+
   return (
     <div className="mx-auto w-full max-w-lg px-4 py-8">
       {/* Step indicator */}
       <div className="mb-8 flex items-center justify-center gap-2">
-        {[1, 2].map((s) => (
+        {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map((s) => (
           <div
             key={s}
             className={`h-1.5 rounded-full transition-all ${
-              s <= step
-                ? "w-8 bg-primary"
-                : "w-4 bg-muted"
+              s <= step ? "w-8 bg-primary" : "w-4 bg-muted"
             }`}
           />
         ))}
       </div>
 
       <AnimatePresence mode="wait">
+        {/* Step 1: Welcome */}
         {step === 1 && (
           <motion.div
             key="step-1"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            transition={{
-              type: "spring",
-              stiffness: CARD_SPRING.stiffness,
-              damping: CARD_SPRING.damping,
-            }}
+            transition={springTransition}
+            className="flex flex-col items-center gap-6 text-center"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ ...springTransition, delay: 0.1 }}
+              className="flex size-16 items-center justify-center rounded-2xl bg-primary/10"
+            >
+              <Sparkles className="size-8 text-primary" />
+            </motion.div>
+
+            <div>
+              <motion.h1
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-2xl font-bold tracking-tight"
+              >
+                {firstName
+                  ? `Hi ${firstName}, ready to build your business edge?`
+                  : "Ready to build your business edge?"}
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.35 }}
+                className="mt-3 text-sm text-muted-foreground"
+              >
+                Praxel Arena helps you master business skills through
+                interactive sprints, AI feedback, and head-to-head competition.
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+            >
+              <Button
+                size="lg"
+                onClick={() => {
+                  trackEvent("onboarding_step_viewed", { step: 2 });
+                  setStep(2);
+                }}
+                className="w-full max-w-xs gap-2"
+              >
+                Let&apos;s Go
+                <ArrowRight className="size-4" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Step 2: Career Goals */}
+        {step === 2 && (
+          <motion.div
+            key="step-2"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={springTransition}
           >
             <CareerSelector
               careers={careers}
@@ -122,17 +221,94 @@ export default function OnboardingFlow({
           </motion.div>
         )}
 
-        {step === 2 && (
+        {/* Step 3: How It Works */}
+        {step === 3 && (
           <motion.div
-            key="step-2"
+            key="step-3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={springTransition}
+            className="flex flex-col gap-6"
+          >
+            <div className="text-center">
+              <h1 className="text-2xl font-bold tracking-tight">
+                How It Works
+              </h1>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Three modes, one goal: sharpen your business skills
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              {MODE_CARDS.map((card, index) => {
+                const Icon = card.icon;
+                return (
+                  <motion.div
+                    key={card.mode}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      ...springTransition,
+                      delay: 0.1 + index * 0.1,
+                    }}
+                    className={`flex items-start gap-3 rounded-xl border p-4 ${card.borderClass}`}
+                  >
+                    <div
+                      className={`flex size-10 shrink-0 items-center justify-center rounded-lg ${card.bgClass}`}
+                    >
+                      <Icon className={`size-5 ${card.iconClass}`} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold">{card.mode}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {card.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45 }}
+              className="text-center text-xs text-muted-foreground"
+            >
+              Every skill is built from <strong>sprints</strong> — short sets of
+              interactive cards you swipe through.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+              className="flex flex-col items-center"
+            >
+              <Button
+                size="lg"
+                onClick={() => {
+                  trackEvent("onboarding_step_viewed", { step: 4 });
+                  setStep(4);
+                }}
+                className="w-full max-w-xs gap-2"
+              >
+                Show Me My Skills
+                <ArrowRight className="size-4" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Step 4: Your Skill Map */}
+        {step === 4 && (
+          <motion.div
+            key="step-4"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            transition={{
-              type: "spring",
-              stiffness: CARD_SPRING.stiffness,
-              damping: CARD_SPRING.damping,
-            }}
+            transition={springTransition}
             className="flex flex-col gap-6"
           >
             <div className="text-center">
@@ -164,9 +340,7 @@ export default function OnboardingFlow({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    type: "spring",
-                    stiffness: CARD_SPRING.stiffness,
-                    damping: CARD_SPRING.damping,
+                    ...springTransition,
                     delay: 0.15 + index * 0.08,
                   }}
                   className="flex items-center gap-3 rounded-xl border border-border bg-card p-3"

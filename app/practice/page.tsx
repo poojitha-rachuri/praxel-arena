@@ -5,6 +5,7 @@ import AppShell from "@/components/layout/AppShell";
 import CareerProgressBanner from "@/components/layout/CareerProgressBanner";
 import SkillAccordion from "@/components/layout/SkillAccordion";
 import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
+import ModeWelcomeBanner from "@/components/layout/ModeWelcomeBanner";
 
 export default async function PracticePage({
   searchParams,
@@ -13,6 +14,7 @@ export default async function PracticePage({
 }) {
   const user = await ensureUser();
   if (!user) redirect("/sign-in");
+  if (!user.onboardingComplete) redirect("/onboarding");
 
   const { skill: initialSkill } = await searchParams;
 
@@ -27,6 +29,11 @@ export default async function PracticePage({
             Sharpen your skills with harder questions and AI debriefs
           </p>
         </div>
+
+        <ModeWelcomeBanner
+          mode="PRACTICE"
+          hasCompletions={Object.keys(data.completedSprints).length > 0}
+        />
 
         <ActiveChallengeBanner />
 

@@ -48,6 +48,7 @@ export default async function OnboardingPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background">
       <OnboardingFlow
+        userName={user.name}
         careers={formattedCareers}
         skillsByCareerId={skillsByCareerId}
       />
