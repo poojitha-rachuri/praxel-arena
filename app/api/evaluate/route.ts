@@ -142,7 +142,7 @@ export async function POST(request: NextRequest) {
         DIMENSION_KEYS.length
     );
 
-    // Deep clone outside the transaction — JSON round-trip produces Prisma-compatible JsonValue
+    // Deep clone outside the transaction  -  JSON round-trip produces Prisma-compatible JsonValue
     const enrichedJson = JSON.parse(
       JSON.stringify(evaluation.enrichedResponses ?? responses)
     );
@@ -266,7 +266,7 @@ export async function POST(request: NextRequest) {
             responses
           );
         } catch (duelError) {
-          // Log but don't fail the evaluate response — the attempt is saved
+          // Log but don't fail the evaluate response  -  the attempt is saved
           console.error("Failed to update duel:", duelError);
         }
       }
@@ -280,7 +280,7 @@ export async function POST(request: NextRequest) {
       ),
     };
 
-    // Process gamification (non-blocking — fire and forget)
+    // Process gamification (non-blocking  -  fire and forget)
     const gamificationPromise = processGamification({
       userId: user.id,
       mode: sprint.mode,
@@ -399,7 +399,7 @@ async function completeDuelAttempt(
     return;
   }
 
-  // Atomic status transition to EVALUATING — prevents double evaluation race
+  // Atomic status transition to EVALUATING  -  prevents double evaluation race
   const claimed = await prisma.duel.updateMany({
     where: {
       id: duelId,
@@ -454,7 +454,7 @@ async function completeDuelAttempt(
   const player1Matches = p1Elo?.matchCount ?? 0;
   const player2Matches = p2Elo?.matchCount ?? 0;
 
-  // Build sprint data for the evaluator — always COMPETE since this is duel context
+  // Build sprint data for the evaluator  -  always COMPETE since this is duel context
   const sprintData = {
     title: sprint.title,
     mode: "COMPETE",

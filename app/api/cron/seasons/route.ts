@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
   // ── Step 2: Soft reset Elo ──
   // Formula: newElo = 1200 + (currentElo - 1200) * SEASON_RESET_FACTOR
 
-  // Batch Elo soft reset using raw SQL — avoids N+1 loop
+  // Batch Elo soft reset using raw SQL  -  avoids N+1 loop
   const resetResult = await prisma.$executeRaw`
     UPDATE "UserEloRating"
     SET "rating" = GREATEST(

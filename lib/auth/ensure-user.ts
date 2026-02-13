@@ -18,7 +18,7 @@ export async function ensureUser(): Promise<User | null> {
   const existing = await prisma.user.findUnique({ where: { clerkId } });
   if (existing) return existing;
 
-  // Slow path: user not in DB — fetch from Clerk Backend API (one-time cost)
+  // Slow path: user not in DB  -  fetch from Clerk Backend API (one-time cost)
   const clerkUser = await currentUser();
   if (!clerkUser) return null;
 
@@ -53,7 +53,7 @@ async function upsertWithRetry(
       error instanceof Prisma.PrismaClientKnownRequestError &&
       error.code === "P2002"
     ) {
-      // Unique constraint race — retry once, the row now exists
+      // Unique constraint race  -  retry once, the row now exists
       return await prisma.user.upsert({
         where: { clerkId },
         update: { email, name, imageUrl },

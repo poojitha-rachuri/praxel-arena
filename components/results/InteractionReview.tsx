@@ -140,7 +140,7 @@ function ReviewItem({
                 </div>
               )}
 
-              {/* Insight — only show if it's real explanatory text, not a raw option letter */}
+              {/* Insight  -  only show if it's real explanatory text, not a raw option letter */}
               {response.insightAnswer && response.insightAnswer.length > 10 && (
                 <div className="flex gap-1.5 rounded-lg bg-primary/5 border border-primary/10 p-2">
                   <Info className="size-3 text-primary shrink-0 mt-0.5" />

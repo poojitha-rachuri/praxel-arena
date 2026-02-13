@@ -93,7 +93,7 @@ export async function processGamification(opts: {
     let streakMilestone: number | null = null;
 
     if (lastDay && lastDay.getTime() === today.getTime()) {
-      // Same day — preserve current streak, no update needed
+      // Same day  -  preserve current streak, no update needed
     } else if (!lastDay) {
       // First ever activity
       newStreak = 1;

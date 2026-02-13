@@ -196,7 +196,7 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
         </motion.button>
       </section>
 
-      {/* ─── Timed Challenges (hidden — seed data expires, feature not demo-ready) ─── */}
+      {/* ─── Timed Challenges (hidden  -  seed data expires, feature not demo-ready) ─── */}
       {/* TODO: Re-enable when timed challenge feature is ready. Previous implementation
           used useSWR("/api/challenges") with ChallengeCard grid. See git history. */}
     </div>

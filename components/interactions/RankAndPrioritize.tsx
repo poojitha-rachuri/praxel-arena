@@ -69,7 +69,7 @@ function SortableItem({ id, text, rank, isLocked }: SortableItemProps) {
         isLocked && "border-border/50 opacity-70 cursor-default"
       )}
     >
-      {/* Drag Handle — touch-action: none prevents browser stealing touch events */}
+      {/* Drag Handle  -  touch-action: none prevents browser stealing touch events */}
       <button
         {...attributes}
         {...listeners}
@@ -109,7 +109,7 @@ function SortableItem({ id, text, rank, isLocked }: SortableItemProps) {
   );
 }
 
-/** Rendered inside DragOverlay — elevated visual for the item being dragged */
+/** Rendered inside DragOverlay  -  elevated visual for the item being dragged */
 function DragOverlayItem({ text, rank }: { text: string; rank: number }) {
   return (
     <div className="flex items-center gap-3 min-h-[56px] px-4 py-3 rounded-xl border-2 border-primary bg-primary/10 shadow-lg shadow-primary/20 scale-[1.02]">

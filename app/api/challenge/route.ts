@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Build system prompt — server fetches all context data
+  // Build system prompt  -  server fetches all context data
   // Rate limiting is enforced at session creation (/api/challenge/sessions)
   let systemPrompt: string;
 
@@ -130,7 +130,7 @@ export async function POST(req: NextRequest) {
     });
 
     const response = result.toUIMessageStreamResponse();
-    // Railway proxy compatibility — prevents response buffering
+    // Railway proxy compatibility  -  prevents response buffering
     response.headers.set("X-Accel-Buffering", "no");
     response.headers.set("Cache-Control", "no-cache, no-store");
     return response;

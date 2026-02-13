@@ -58,7 +58,7 @@ export default function CareerSelector({
           transition={{ delay: 0.15 }}
           className="mt-1 text-sm text-muted-foreground"
         >
-          Select 1–3 career goals
+          Select 1-3 career goals
         </motion.p>
       </div>
 

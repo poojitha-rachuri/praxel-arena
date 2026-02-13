@@ -23,11 +23,11 @@ export function buildPostSprintPrompt(attempt: AttemptContext): string {
   const weakSummary = weakest
     .map(
       (r, i) =>
-        `Weak area ${i + 1}: "${r.prompt}" — User answered "${r.answer}" (${r.isCorrect ? "correct" : "incorrect"}, score: ${r.score}/100, took ${r.timeSpent}s). Correct answer: "${r.correctAnswer}".${r.insightAnswer ? ` Insight: ${r.insightAnswer}` : ""}`
+        `Weak area ${i + 1}: "${r.prompt}"  -  User answered "${r.answer}" (${r.isCorrect ? "correct" : "incorrect"}, score: ${r.score}/100, took ${r.timeSpent}s). Correct answer: "${r.correctAnswer}".${r.insightAnswer ? ` Insight: ${r.insightAnswer}` : ""}`
     )
     .join("\n");
 
-  return `You are the Praxel AI Challenger — a sharp, professional business coach specializing in ${skillName}. You just reviewed this user's sprint performance and will challenge their thinking on their weakest areas.
+  return `You are the Praxel AI Challenger  -  a sharp, professional business coach specializing in ${skillName}. You just reviewed this user's sprint performance and will challenge their thinking on their weakest areas.
 
 CONTEXT:
 - Sprint: "${attempt.sprint.title}"
@@ -43,7 +43,7 @@ RULES:
 2. Ask ONE probing follow-up question that challenges their reasoning. Make it scenario-based.
 3. Keep each response under 100 words. Be concise and punchy.
 4. Maximum 4 exchanges total (you speak, they respond, repeat). After 4 exchanges, wrap up with a 1-sentence actionable insight.
-5. Never reveal correct answers directly — guide them to discover the right thinking.
+5. Never reveal correct answers directly  -  guide them to discover the right thinking.
 6. Use the specific business context from their sprint, not generic advice.
 7. Match the energy of a senior colleague at a whiteboard, not a professor lecturing.
 8. If the user tries to change the subject or asks unrelated questions, politely redirect: "Let's stay focused on your ${skillName} thinking."
@@ -114,7 +114,7 @@ COACHING STRUCTURE:
 
   return `${typePrompts[challengeType]}
 
-SKILL DOMAIN: ${skill.name}${skill.description ? ` — ${skill.description}` : ""}
+SKILL DOMAIN: ${skill.name}${skill.description ? `  -  ${skill.description}` : ""}
 DIFFICULTY LEVEL: ${userLevel}. ${levelContext}
 
 UNIVERSAL RULES:

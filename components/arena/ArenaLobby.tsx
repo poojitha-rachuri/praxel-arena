@@ -33,7 +33,7 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
   const [inviteLink, setInviteLink] = useState<string | null>(null);
   const [inviteCopied, setInviteCopied] = useState(false);
 
-  /** Shared duel creation — returns the new duel data or null on failure */
+  /** Shared duel creation  -  returns the new duel data or null on failure */
   const createDuel = useCallback(async (skillSlug: string): Promise<{ id: string } | null> => {
     const res = await fetch("/api/duels", {
       method: "POST",
@@ -79,7 +79,7 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
               url: link,
             });
           } catch {
-            // User cancelled — link is still visible
+            // User cancelled  -  link is still visible
           }
         }
       }
@@ -117,11 +117,11 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
       <div className="flex items-start gap-2.5 rounded-xl border border-border/50 bg-muted/30 px-3 py-2.5">
         <Info className="size-4 shrink-0 text-primary mt-0.5" />
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Pick a skill, then find a random opponent or challenge a friend. You both answer the same sprint — highest score wins Elo points.
+          Pick a skill, then find a random opponent or challenge a friend. You both answer the same sprint  -  highest score wins Elo points.
         </p>
       </div>
 
-      {/* Skill selector — 2-column grid */}
+      {/* Skill selector  -  2-column grid */}
       <div>
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           Choose your arena

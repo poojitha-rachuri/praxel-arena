@@ -433,7 +433,7 @@ function buildDeterministicHighlights(
     highlights.push("Excellent time management across interactions");
   }
   if (slowCount >= interactions.length * 0.5) {
-    improvements.push("Work on response speed — many answers exceeded time targets");
+    improvements.push("Work on response speed  -  many answers exceeded time targets");
   }
 
   return { highlights, improvements };

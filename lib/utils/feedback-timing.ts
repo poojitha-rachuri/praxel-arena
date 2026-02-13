@@ -10,7 +10,7 @@ const LEARN_CORRECT_MS = 1500;
  * - LEARN + correct:   1.5s green flash then auto-advance
  * - LEARN + incorrect: returns null → manual "Continue" (read insight)
  * - LEARN + null:      returns null → manual "Continue" (tradeoff-type)
- * - PRACTICE:          reading-speed-based duration (2–8s depending on text length)
+ * - PRACTICE:          reading-speed-based duration (2-8s depending on text length)
  * - COMPETE:           fast 1.2s flash
  */
 export function calculateFeedbackDuration(

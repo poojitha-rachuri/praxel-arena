@@ -82,7 +82,7 @@ export function ProgressBar({
           {config.label}
         </div>
 
-        {/* Timer — only visible in COMPETE mode */}
+        {/* Timer  -  only visible in COMPETE mode */}
         {mode === "COMPETE" ? (
           <div className={cn(
             "flex items-center gap-1.5 text-sm font-mono tabular-nums",

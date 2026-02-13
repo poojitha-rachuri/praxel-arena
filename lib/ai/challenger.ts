@@ -16,7 +16,7 @@ export function findWeakestInteractions(
 
   const allCorrect = responses.every((r) => r.isCorrect);
   if (allCorrect) {
-    // All correct — pick most time-consuming (most uncertain)
+    // All correct  -  pick most time-consuming (most uncertain)
     return [...responses]
       .sort((a, b) => b.timeSpent - a.timeSpent)
       .slice(0, count);

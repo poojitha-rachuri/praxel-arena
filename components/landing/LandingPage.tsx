@@ -68,8 +68,8 @@ const DEMO_CARDS: DemoCard[] = [
     question:
       "Ship Feature A (high revenue, low retention) or Feature B (low revenue, high retention)?",
     options: [
-      { letter: "A", text: "Feature A — Maximize short-term revenue" },
-      { letter: "B", text: "Feature B — Build long-term retention", selected: true },
+      { letter: "A", text: "Feature A  -  Maximize short-term revenue" },
+      { letter: "B", text: "Feature B  -  Build long-term retention", selected: true },
     ],
   },
   {
@@ -280,7 +280,7 @@ export default function LandingPage() {
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
-   CARD PREVIEW — Auto-cycling demo of interaction types
+   CARD PREVIEW  -  Auto-cycling demo of interaction types
    ═════════════════════════════════════════════════════════════════════════════ */
 
 function CardPreview() {
@@ -417,7 +417,7 @@ function CardPreview() {
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
-   MODES SECTION — Three distinctive mode cards
+   MODES SECTION  -  Three distinctive mode cards
    ═════════════════════════════════════════════════════════════════════════════ */
 
 const MODE_DATA = [
@@ -523,14 +523,14 @@ function ModesSection() {
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
-   HOW IT WORKS — 3-step flow
+   HOW IT WORKS  -  3-step flow
    ═════════════════════════════════════════════════════════════════════════════ */
 
 const STEPS = [
   {
     num: "01",
     title: "Choose a Skill",
-    desc: "Pick from 8 business skills — from GTM Strategy to Financial Statement Analysis, Valuation, and more.",
+    desc: "Pick from 8 business skills  -  from GTM Strategy to Financial Statement Analysis, Valuation, and more.",
     icon: Award,
   },
   {

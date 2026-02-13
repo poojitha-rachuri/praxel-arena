@@ -7,6 +7,7 @@ import { Clock, ChevronDown, BookOpen, Target, Swords } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface AttemptSummary {
   id: string;
@@ -80,7 +81,7 @@ function AttemptCard({ attempt }: { attempt: AttemptSummary }) {
     >
       <div className="flex items-start justify-between gap-2 mb-1.5">
         <div className="flex items-center gap-2 min-w-0">
-          <span className="text-sm">{attempt.skillIcon ?? "📊"}</span>
+          <SkillIcon slug={attempt.skillSlug} size="sm" className="size-7" />
           <span className="text-xs font-medium truncate">
             {attempt.skillName}
           </span>

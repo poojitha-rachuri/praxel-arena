@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { getModePageData } from "@/lib/data/mode-page-data";
 import AppShell from "@/components/layout/AppShell";
-import SkillAccordion from "@/components/layout/SkillAccordion";
+import SkillCardsGrid from "@/components/layout/SkillCardsGrid";
 import CareerCarousel from "@/components/layout/CareerCarousel";
 
 export default async function LearnPage() {
@@ -26,12 +26,10 @@ export default async function LearnPage() {
           <CareerCarousel careers={data.allCareerMatches} />
         )}
 
-        <SkillAccordion
+        <SkillCardsGrid
           skills={data.skills}
-          topics={data.topics}
           sprints={data.sprints}
           completedSprints={data.completedSprints}
-          mode="LEARN"
           basePath="/learn"
         />
       </div>

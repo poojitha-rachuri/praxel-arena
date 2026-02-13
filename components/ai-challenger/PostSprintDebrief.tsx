@@ -67,12 +67,11 @@ export function PostSprintDebrief({ attemptId }: PostSprintDebriefProps) {
           <AIChallenger
             context={{ type: "post-sprint", attemptId }}
             onClose={() => setState("done")}
-            timeLimit={90}
           />
         </motion.div>
       )}
 
-      {/* When done or skipped, render nothing — the results page CTAs are below */}
+      {/* When done or skipped, render nothing  -  the results page CTAs are below */}
     </AnimatePresence>
   );
 }

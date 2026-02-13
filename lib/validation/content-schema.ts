@@ -14,6 +14,7 @@ const baseInteraction = z.object({
   teachingPreamble: z.string().nullable(),
   priorContext: z.string().nullable(),
   timeTarget: z.number().int().min(5).max(60),
+  chartData: z.unknown().optional(),
 });
 
 const interactionSchema = z.discriminatedUnion("type", [

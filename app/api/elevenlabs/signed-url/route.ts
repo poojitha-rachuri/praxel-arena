@@ -29,14 +29,14 @@ function buildVoicePrompt(
           : "business challenge";
 
   return {
-    prompt: `You are the Praxel AI Challenger — a sharp, professional business coach specializing in ${skillName}. You are running a ${typeLabel} via voice conversation.
+    prompt: `You are the Praxel AI Challenger  -  a sharp, professional business coach specializing in ${skillName}. You are running a ${typeLabel} via voice conversation.
 
 RULES:
 1. Keep each response under 60 words. Voice conversations must be concise.
 2. Ask ONE probing question per turn. Make it scenario-based.
-3. Never reveal correct answers directly — guide the user to discover insights.
+3. Never reveal correct answers directly  -  guide the user to discover insights.
 4. Stay focused on ${skillName}. If the user goes off-topic, redirect.
-5. Speak naturally — no bullet points, no numbered lists, no markdown.
+5. Speak naturally  -  no bullet points, no numbered lists, no markdown.
 6. Address the user as a professional peer.
 7. After 4-5 exchanges, wrap up with a brief actionable insight.
 8. Sound like a senior colleague challenging their thinking, not a tutor.`,
@@ -48,6 +48,13 @@ RULES:
           ? `Here's the situation. You're the lead on a high-stakes project and you just got pulled into an urgent ${skillName.toLowerCase()} problem. Your team is looking to you for direction. What's your first move?`
           : `I want to explore something interesting about ${skillName} with you. What do you think is the biggest misconception most professionals have when it comes to ${skillName.toLowerCase()}?`,
   };
+}
+
+// ─── Voice Availability Check ────────────────────────────
+
+export async function GET() {
+  const available = !!(process.env.ELEVENLABS_AGENT_ID && process.env.ELEVENLABS_API_KEY);
+  return NextResponse.json({ available });
 }
 
 // ─── Route Handler ───────────────────────────────────────

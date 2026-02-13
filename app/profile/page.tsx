@@ -174,7 +174,7 @@ export default async function ProfilePage() {
       if (updated.count > 0) {
         referralCode = code;
       } else {
-        // Another request set it first — re-fetch
+        // Another request set it first  -  re-fetch
         const refreshed = await prisma.user.findUnique({
           where: { id: user.id },
           select: { referralCode: true },
@@ -182,7 +182,7 @@ export default async function ProfilePage() {
         referralCode = refreshed?.referralCode ?? code;
       }
     } catch {
-      // Another request generated the code concurrently — re-fetch it
+      // Another request generated the code concurrently  -  re-fetch it
       const refreshed = await prisma.user.findUnique({
         where: { id: user.id },
         select: { referralCode: true },

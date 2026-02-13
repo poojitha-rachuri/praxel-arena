@@ -137,7 +137,7 @@ export function TeachAndTest({
               <div className="flex gap-3 pt-3 border-t border-border/40">
                 <Lightbulb className="size-4 text-warning flex-shrink-0 mt-0.5" />
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Read carefully — you&apos;ll be tested on this next!
+                  Read carefully  -  you&apos;ll be tested on this next!
                 </p>
               </div>
             </div>

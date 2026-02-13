@@ -104,7 +104,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
   useEffect(() => {
     const handleVisibility = () => {
       if (document.hidden && feedbackTimerRef.current) {
-        // Pause: clear timer but keep feedback visible — user will see Continue or timer resumes on return
+        // Pause: clear timer but keep feedback visible  -  user will see Continue or timer resumes on return
         clearTimeout(feedbackTimerRef.current);
         feedbackTimerRef.current = undefined;
         // Switch to manual continue so feedback doesn't vanish when user returns
@@ -121,7 +121,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
   const currentInteraction = sortedInteractions[currentIndex] ?? null;
   const totalInteractions = sortedInteractions.length;
 
-  /** Advance to next card or complete sprint — guarded against double-fire from Continue + auto-advance race */
+  /** Advance to next card or complete sprint  -  guarded against double-fire from Continue + auto-advance race */
   const advance = useCallback(() => {
     if (advancingRef.current) return;
     // Block timer-driven advance while exit dialog is open
@@ -240,7 +240,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
   const resolvedInsight = useMemo(() => {
     const raw = currentInteraction.insightAnswer;
     if (!raw) return null;
-    // If insight is a single option ID that matches correctAnswer, suppress it —
+    // If insight is a single option ID that matches correctAnswer, suppress it  - 
     // the correct option is already highlighted, repeating it as "Key Insight" is noise
     if (/^[a-d]$/.test(raw)) {
       if (raw === currentInteraction.correctAnswer) return null;
@@ -333,7 +333,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
         </InteractionCard>
       </AnimatePresence>
 
-      {/* Continue Button — fixed at bottom, visible in LEARN mode (manual advance) and PRACTICE mode (tap to skip timer) */}
+      {/* Continue Button  -  fixed at bottom, visible in LEARN mode (manual advance) and PRACTICE mode (tap to skip timer) */}
       <AnimatePresence>
         {showFeedback && (waitingForContinue || mode === "PRACTICE") && (
           <motion.div

@@ -10,15 +10,14 @@ import {
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { motion, AnimatePresence } from "motion/react";
-import { X } from "lucide-react";
+import { X, Clock } from "lucide-react";
 import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
-import { CountdownTimer } from "./CountdownTimer";
 import { VoiceToggle } from "./VoiceToggle";
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
 
-// ─── Types ──────────────────────────────────────────────
+// --- Types ---
 
 export type PostSprintContext = {
   type: "post-sprint";
@@ -34,13 +33,13 @@ export type StandaloneContext = {
 export type ChallengerContext = PostSprintContext | StandaloneContext;
 
 interface AIChallengerProps {
-  sessionId?: string; // present for standalone sessions, used to persist completion
+  sessionId?: string;
   context: ChallengerContext;
   onClose: () => void;
-  timeLimit?: number; // seconds, default 90 for post-sprint, 120 for standalone
+  lockedMode?: "TEXT" | "VOICE"; // If set, mode is locked from start
 }
 
-// ─── Helper: extract text from UIMessage parts ──────────
+// --- Helper: extract text from UIMessage parts ---
 
 function getMessageText(
   parts: Array<{ type: string; text?: string }>
@@ -51,28 +50,53 @@ function getMessageText(
     .join("");
 }
 
-// ─── Component ──────────────────────────────────────────
+// --- Elapsed time display ---
+
+function ElapsedTime({ startTime }: { startTime: number }) {
+  const [elapsed, setElapsed] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setElapsed(Math.floor((Date.now() - startTime) / 1000));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [startTime]);
+
+  const mins = Math.floor(elapsed / 60);
+  const secs = elapsed % 60;
+
+  return (
+    <span className="flex items-center gap-1 text-xs text-muted-foreground tabular-nums">
+      <Clock className="size-3" />
+      {mins}:{String(secs).padStart(2, "0")}
+    </span>
+  );
+}
+
+// --- Component ---
 
 export function AIChallenger({
   sessionId,
   context,
   onClose,
-  timeLimit,
+  lockedMode,
 }: AIChallengerProps) {
-  const defaultTime = context.type === "post-sprint" ? 90 : 120;
-  const seconds = timeLimit ?? defaultTime;
-
-  // Race condition guards (matching SprintRunner patterns)
+  // Race condition guards
   const endingRef = useRef(false);
   const mountedRef = useRef(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const startTimeRef = useRef(Date.now());
 
   const [ended, setEnded] = useState(false);
-  const [inputMode, setInputMode] = useState<"text" | "voice">("text");
+  const [inputMode, setInputMode] = useState<"text" | "voice">(
+    lockedMode === "VOICE" ? "voice" : "text"
+  );
   const [voiceTranscripts, setVoiceTranscripts] = useState<
     Array<{ id: string; role: "user" | "assistant"; content: string }>
   >([]);
+
+  const isVoiceLocked = lockedMode === "VOICE";
+  const isTextLocked = lockedMode === "TEXT";
 
   // Transport configured to send to our challenge API with the context
   const transport = useMemo(
@@ -81,7 +105,6 @@ export function AIChallenger({
         api: "/api/challenge",
         body: { context },
       }),
-    // Context should be stable for the lifetime of the component
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
   );
@@ -91,16 +114,20 @@ export function AIChallenger({
   const isStreaming = status === "streaming" || status === "submitted";
 
   // Count user exchanges
-  const exchangeCount = messages.filter((m) => m.role === "user").length;
+  const exchangeCount = isVoiceLocked
+    ? voiceTranscripts.filter((t) => t.role === "user").length
+    : messages.filter((m) => m.role === "user").length;
   const maxExchanges = context.type === "post-sprint" ? 4 : 5;
 
-  // ─── Auto-send initial AI message ──────────────────
+  // --- Auto-send initial AI message (text mode only) ---
 
   useEffect(() => {
-    if (mountedRef.current) return; // Prevent double-mount in StrictMode
+    if (mountedRef.current) return;
     mountedRef.current = true;
 
-    // Send an initial user message to trigger the AI's opening
+    // In voice-locked mode, skip the text init - ElevenLabs has its own firstMessage
+    if (isVoiceLocked) return;
+
     sendMessage({
       text:
         context.type === "post-sprint"
@@ -114,7 +141,7 @@ export function AIChallenger({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // ─── Auto-scroll to bottom ────────────────────────
+  // --- Auto-scroll to bottom ---
 
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -123,9 +150,9 @@ export function AIChallenger({
         behavior: isStreaming ? "instant" : "smooth",
       });
     }
-  }, [messages, isStreaming]);
+  }, [messages, isStreaming, voiceTranscripts]);
 
-  // ─── Mobile keyboard handling ──────────────────────
+  // --- Mobile keyboard handling ---
 
   useEffect(() => {
     const viewport = window.visualViewport;
@@ -142,7 +169,7 @@ export function AIChallenger({
     return () => viewport.removeEventListener("resize", handleResize);
   }, []);
 
-  // ─── Handle send (with race guard) ────────────────
+  // --- Handle send (with race guard) ---
 
   const handleSend = useCallback(
     (content: string) => {
@@ -154,14 +181,13 @@ export function AIChallenger({
     [ended, exchangeCount, maxExchanges, sendMessage]
   );
 
-  // ─── Handle end ───────────────────────────────────
+  // --- Handle end ---
 
   const handleEnd = useCallback(() => {
     if (endingRef.current) return;
     endingRef.current = true;
     setEnded(true);
 
-    // Persist session completion for standalone sessions
     if (sessionId) {
       const durationSeconds = Math.round(
         (Date.now() - startTimeRef.current) / 1000
@@ -175,18 +201,29 @@ export function AIChallenger({
           durationSeconds,
         }),
       }).catch(() => {
-        // Best-effort persistence — don't block the UI
+        // Best-effort persistence
       });
     }
   }, [sessionId, exchangeCount]);
 
-  // ─── Voice mode handler ──────────────────────────
+  // --- Auto-end when max exchanges reached ---
+
+  useEffect(() => {
+    if (exchangeCount >= maxExchanges && !ended && !endingRef.current) {
+      // Small delay so the last AI response can render
+      const timer = setTimeout(handleEnd, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [exchangeCount, maxExchanges, ended, handleEnd]);
+
+  // --- Voice mode handler ---
 
   const handleVoiceStateChange = useCallback(
     (active: boolean) => {
+      if (isTextLocked || isVoiceLocked) return; // Don't allow switching if locked
       setInputMode(active ? "voice" : "text");
     },
-    []
+    [isTextLocked, isVoiceLocked]
   );
 
   const handleVoiceTranscript = useCallback(
@@ -203,15 +240,13 @@ export function AIChallenger({
     []
   );
 
-  // ─── Render messages ──────────────────────────────
+  // --- Render messages ---
 
   const renderedMessages = useMemo(() => {
-    // Combine text chat messages and voice transcripts
     const textMsgs = messages
       .map((msg, i) => {
         const text = getMessageText(msg.parts as Array<{ type: string; text?: string }>);
         if (!text) return null;
-        // For the initial trigger message, skip rendering it
         if (i === 0 && msg.role === "user") return null;
 
         const isLastMessage = i === messages.length - 1;
@@ -238,11 +273,11 @@ export function AIChallenger({
       />
     ));
 
-    // In voice mode, show voice transcripts; in text mode, show text messages
+    if (isVoiceLocked) return voiceMsgs;
     return inputMode === "voice" && voiceMsgs.length > 0
       ? [...textMsgs, ...voiceMsgs]
       : textMsgs;
-  }, [messages, isStreaming, voiceTranscripts, inputMode]);
+  }, [messages, isStreaming, voiceTranscripts, inputMode, isVoiceLocked]);
 
   return (
     <motion.div
@@ -256,25 +291,25 @@ export function AIChallenger({
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-border">
         <div className="flex items-center gap-3">
-          <CountdownTimer
-            totalSeconds={seconds}
-            onExpire={handleEnd}
-          />
+          <ElapsedTime startTime={startTimeRef.current} />
           <div className="text-xs text-muted-foreground">
             {exchangeCount} of {maxExchanges} exchanges
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <VoiceToggle
-            onStateChange={handleVoiceStateChange}
-            onTranscript={handleVoiceTranscript}
-            disabled={ended}
-            challengeContext={
-              context.type === "standalone"
-                ? { skillId: context.skillId, challengeType: context.challengeType }
-                : undefined
-            }
-          />
+          {/* Only show voice toggle if not locked to a specific mode */}
+          {!isTextLocked && !isVoiceLocked && (
+            <VoiceToggle
+              onStateChange={handleVoiceStateChange}
+              onTranscript={handleVoiceTranscript}
+              disabled={ended}
+              challengeContext={
+                context.type === "standalone"
+                  ? { skillId: context.skillId, challengeType: context.challengeType }
+                  : undefined
+              }
+            />
+          )}
           <button
             onClick={handleEnd}
             className="flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors min-h-[44px] min-w-[44px]"
@@ -297,7 +332,7 @@ export function AIChallenger({
           {renderedMessages}
         </AnimatePresence>
 
-        {/* Streaming indicator when AI is thinking but no text yet */}
+        {/* Streaming indicator */}
         {isStreaming &&
           messages.length > 0 &&
           messages[messages.length - 1].role === "user" && (
@@ -349,8 +384,8 @@ export function AIChallenger({
         )}
       </div>
 
-      {/* Input */}
-      {!ended && inputMode === "text" && (
+      {/* Input - text mode */}
+      {!ended && inputMode === "text" && !isVoiceLocked && (
         <ChatInput
           onSend={handleSend}
           disabled={
@@ -367,7 +402,7 @@ export function AIChallenger({
       )}
 
       {/* Voice active indicator */}
-      {!ended && inputMode === "voice" && (
+      {!ended && (inputMode === "voice" || isVoiceLocked) && (
         <div className="flex items-center justify-center gap-2 border-t border-border px-4 py-4">
           <div className="flex gap-1">
             <span className="size-2 rounded-full bg-red-500 animate-pulse" />
@@ -375,7 +410,7 @@ export function AIChallenger({
             <span className="size-2 rounded-full bg-red-500 animate-pulse [animation-delay:300ms]" />
           </div>
           <span className="text-sm text-muted-foreground">
-            Voice mode active — speak to respond
+            Voice mode active - speak to respond
           </span>
         </div>
       )}

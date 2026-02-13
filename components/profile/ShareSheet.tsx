@@ -198,7 +198,7 @@ export default function ShareSheet({
                         {referralCode}
                       </p>
                       <p className="text-[10px] text-muted-foreground">
-                        Share this code — you both earn 500 XP!
+                        Share this code  -  you both earn 500 XP!
                       </p>
                     </div>
                     <button

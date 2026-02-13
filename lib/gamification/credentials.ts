@@ -52,7 +52,7 @@ export async function processCredentials(
           });
         }
       } catch (error: unknown) {
-        // P2002 = unique constraint violation — credential already exists, skip
+        // P2002 = unique constraint violation  -  credential already exists, skip
         if (error && typeof error === "object" && "code" in error && error.code === "P2002") {
           continue;
         }

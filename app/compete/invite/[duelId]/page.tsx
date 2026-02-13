@@ -19,7 +19,7 @@ export default async function InvitePage({
 
   const { userId: clerkId } = await auth();
 
-  // Fetch duel info (public — anyone with the link can see the invite)
+  // Fetch duel info (public  -  anyone with the link can see the invite)
   const duel = await prisma.duel.findUnique({
     where: { id: duelId },
     include: {

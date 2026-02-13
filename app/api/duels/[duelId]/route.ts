@@ -47,7 +47,7 @@ export async function GET(
       (isPlayer1 && !!duel.player1AttemptId) ||
       (isPlayer2 && !!duel.player2AttemptId);
 
-    // Serialize sprint for client — always strip answers in duel context
+    // Serialize sprint for client  -  always strip answers in duel context
     // (PRACTICE fallback sprints must also be sanitized to prevent cheating)
     const sprintData = duel.sprint
       ? {

@@ -236,7 +236,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
           { id: "d", text: "2.1% take rate is competitive in payments" },
         ],
         correctAnswer: "a",
-        insightAnswer: "Growth deceleration is the single most important signal for growth-stage valuation. A 30-point drop in one quarter compounds — if the trend continues, the company's forward revenue multiple collapses.",
+        insightAnswer: "Growth deceleration is the single most important signal for growth-stage valuation. A 30-point drop in one quarter compounds  -  if the trend continues, the company's forward revenue multiple collapses.",
         timeTarget: 10,
       },
       {
@@ -247,7 +247,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
           { id: "a", text: "Customer quality is declining as they scale acquisition" },
           { id: "b", text: "2024 cohort needs more time to ramp up" },
           { id: "c", text: "Net revenue retention is still strong overall" },
-          { id: "d", text: "Normal — newer cohorts always start lower" },
+          { id: "d", text: "Normal  -  newer cohorts always start lower" },
         ],
         correctAnswer: "a",
         insightAnswer: "Declining cohort retention + aggressive acquisition = classic 'growth masking churn.' They're acquiring faster to offset worsening retention. This is unsustainable.",
@@ -270,10 +270,10 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
       {
         type: "FORCED_TRADEOFF",
         order: 4,
-        prompt: "Two valuation approaches: (A) Revenue multiple — comparable payment cos trade at 15x, giving $630M at $42M revenue. (B) TPV multiple — 0.3x TPV gives $600M on $2B volume. Which is more reliable at this stage?",
+        prompt: "Two valuation approaches: (A) Revenue multiple  -  comparable payment cos trade at 15x, giving $630M at $42M revenue. (B) TPV multiple  -  0.3x TPV gives $600M on $2B volume. Which is more reliable at this stage?",
         options: [
-          { id: "a", text: "Revenue multiple — standard for growth-stage" },
-          { id: "b", text: "TPV multiple — captures true economic activity" },
+          { id: "a", text: "Revenue multiple  -  standard for growth-stage" },
+          { id: "b", text: "TPV multiple  -  captures true economic activity" },
           { id: "c", text: "Revenue multiple but discount 20% for growth deceleration" },
           { id: "d", text: "Use both and take the midpoint for triangulation" },
         ],
@@ -315,10 +315,10 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
         prompt: "Breaking: Stripe just announced a competing B2B product at 1.5% take rate (vs NovaPay's 2.1%). Your earlier plan to raise take rate to 2.5% is now risky. How does this change the investment thesis?",
         priorContext: "You previously ranked 'increase take rate from 2.1% to 2.5%' as the #1 growth lever, worth a 19% revenue uplift.",
         options: [
-          { id: "a", text: "Too risky now — Stripe will crush them on price" },
+          { id: "a", text: "Too risky now  -  Stripe will crush them on price" },
           { id: "b", text: "Pivot thesis: retention + cross-sell become primary drivers" },
           { id: "c", text: "NovaPay should preemptively cut to 1.8% to defend share" },
-          { id: "d", text: "Stripe's entry validates the market — bullish signal" },
+          { id: "d", text: "Stripe's entry validates the market  -  bullish signal" },
         ],
         correctAnswer: "b",
         insightAnswer: "With Stripe competing on price, take rate expansion is off the table. The thesis must pivot to retention and cross-sell. If NovaPay's value is just processing, Stripe wins. If it's the merchant relationship, NovaPay can defend.",
@@ -329,9 +329,9 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
         order: 8,
         prompt: "Final call: given Stripe's entry, declining cohort quality, and growth deceleration, do you recommend the $500M Series D at 12x forward revenue ($504M valuation)?",
         options: [
-          { id: "a", text: "Yes — fundamentals are strong, Stripe is manageable" },
+          { id: "a", text: "Yes  -  fundamentals are strong, Stripe is manageable" },
           { id: "b", text: "Yes, but negotiate down to 8x ($336M) for the new risks" },
-          { id: "c", text: "No — deteriorating cohorts + Stripe signal a ceiling" },
+          { id: "c", text: "No  -  deteriorating cohorts + Stripe signal a ceiling" },
           { id: "d", text: "Pass now, revisit in 6 months after Stripe response" },
         ],
         correctAnswer: "b",
@@ -342,7 +342,7 @@ const COMPETE_SPRINTS: CompeteSprintSeed[] = [
   },
 ];
 
-// Demo opponent's responses (gets ~5/8 correct — competitive but beatable)
+// Demo opponent's responses (gets ~5/8 correct  -  competitive but beatable)
 const DEMO_OPPONENT_RESPONSES = [
   { interactionIndex: 0, answer: "b", timeSpent: 8 },
   { interactionIndex: 1, answer: "a", timeSpent: 7 },
@@ -540,7 +540,7 @@ async function main() {
       teachingPreamble: interaction.teachingPreamble ?? null,
       priorContext: interaction.priorContext ?? null,
       timeTarget: interaction.timeTarget,
-      chartData: (interaction as Record<string, unknown>).chartData ?? undefined,
+      chartData: interaction.chartData ?? undefined,
     }));
 
     const sprint = await prisma.sprint.upsert({
@@ -587,7 +587,7 @@ async function main() {
       insightAnswer: interaction.insightAnswer,
       priorContext: interaction.priorContext ?? null,
       timeTarget: interaction.timeTarget,
-      chartData: (interaction as Record<string, unknown>).chartData ?? undefined,
+      chartData: (interaction as Record<string, unknown>).chartData ?? undefined, // COMPETE data is inline, not Zod-parsed
     }));
 
     const sprint = await prisma.sprint.upsert({

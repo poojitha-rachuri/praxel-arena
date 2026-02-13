@@ -43,7 +43,7 @@ export const ChatMessage = memo(function ChatMessage({
             : "bg-primary text-primary-foreground"
         )}
       >
-        {/* Render as plain text — never dangerouslySetInnerHTML */}
+        {/* Render as plain text  -  never dangerouslySetInnerHTML */}
         <p className="whitespace-pre-wrap break-words">{content}</p>
 
         {isStreaming && (

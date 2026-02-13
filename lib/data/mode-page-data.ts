@@ -47,7 +47,7 @@ export interface ModePageData {
 
 /**
  * Fetch all data needed for Learn/Practice mode pages in parallel.
- * Server-only function — eliminates N+1 client API calls.
+ * Server-only function  -  eliminates N+1 client API calls.
  */
 export async function getModePageData(
   userId: string,
