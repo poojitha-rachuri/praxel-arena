@@ -78,6 +78,7 @@ interface ProfileClientProps {
   }[];
   careerMatches: {
     name: string;
+    slug: string;
     icon: string | null;
     matchPercentage: number;
   }[];

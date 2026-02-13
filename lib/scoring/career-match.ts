@@ -10,12 +10,14 @@ interface SkillScoreInput {
 
 interface CareerMappingInput {
   name: string;
+  slug: string;
   icon: string | null;
   skillMaps: { skillId: string; weight: number }[];
 }
 
 export interface CareerMatch {
   name: string;
+  slug: string;
   icon: string | null;
   matchPercentage: number;
 }
@@ -32,7 +34,7 @@ export function computeCareerMatches(
     const mappings = career.skillMaps;
 
     if (mappings.length === 0) {
-      return { name: career.name, icon: career.icon, matchPercentage: 0 };
+      return { name: career.name, slug: career.slug, icon: career.icon, matchPercentage: 0 };
     }
 
     let weightedSum = 0;
@@ -46,6 +48,7 @@ export function computeCareerMatches(
 
     return {
       name: career.name,
+      slug: career.slug,
       icon: career.icon,
       matchPercentage:
         careerWeight > 0 ? Math.round(weightedSum / careerWeight) : 0,

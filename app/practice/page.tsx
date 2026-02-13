@@ -4,6 +4,7 @@ import { getModePageData } from "@/lib/data/mode-page-data";
 import AppShell from "@/components/layout/AppShell";
 import SkillCardsGrid from "@/components/layout/SkillCardsGrid";
 import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
+import { getCareerIcon } from "@/lib/utils/career-icons";
 
 export default async function PracticePage() {
   const user = await ensureUser();
@@ -24,17 +25,20 @@ export default async function PracticePage() {
 
         <ActiveChallengeBanner />
 
-        {data.topCareerMatch && (
-          <div className="flex items-center gap-2 rounded-xl border border-border/50 bg-primary/5 px-3 py-2">
-            <span className="text-sm">{data.topCareerMatch.icon || "🎯"}</span>
-            <span className="flex-1 truncate text-xs font-medium">
-              Path to {data.topCareerMatch.name}
-            </span>
-            <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary tabular-nums">
-              {data.topCareerMatch.matchPercentage}%
-            </span>
-          </div>
-        )}
+        {data.topCareerMatch && (() => {
+          const CareerIcon = getCareerIcon(data.topCareerMatch.slug);
+          return (
+            <div className="flex items-center gap-2 rounded-xl border border-border/50 bg-primary/5 px-3 py-2">
+              <CareerIcon className="size-4 text-primary" />
+              <span className="flex-1 truncate text-xs font-medium">
+                Path to {data.topCareerMatch.name}
+              </span>
+              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary tabular-nums">
+                {data.topCareerMatch.matchPercentage}%
+              </span>
+            </div>
+          );
+        })()}
 
         <SkillCardsGrid
           skills={data.skills}

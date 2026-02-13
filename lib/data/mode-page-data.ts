@@ -112,6 +112,7 @@ export async function getModePageData(
             careerOutcome: {
               select: {
                 name: true,
+                slug: true,
                 icon: true,
                 skillMaps: {
                   select: { skillId: true, weight: true },
@@ -160,6 +161,7 @@ export async function getModePageData(
   // Career match computation
   const careerGoals = (userData?.careerGoals ?? []).map((g) => ({
     name: g.careerOutcome.name,
+    slug: g.careerOutcome.slug,
     icon: g.careerOutcome.icon,
     skillMaps: g.careerOutcome.skillMaps,
   }));

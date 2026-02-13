@@ -90,7 +90,7 @@ export default async function PublicProfilePage({
     const mappings = career.skillMaps;
 
     if (mappings.length === 0) {
-      return { name: career.name, icon: career.icon, matchPercentage: 0 };
+      return { name: career.name, slug: career.slug, icon: career.icon, matchPercentage: 0 };
     }
 
     let weightedSum = 0;
@@ -104,6 +104,7 @@ export default async function PublicProfilePage({
 
     return {
       name: career.name,
+      slug: career.slug,
       icon: career.icon,
       matchPercentage: careerWeight > 0 ? Math.round(weightedSum / careerWeight) : 0,
     };

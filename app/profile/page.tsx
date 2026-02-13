@@ -135,6 +135,7 @@ export default async function ProfilePage() {
     })),
     user.careerGoals.map((goal) => ({
       name: goal.careerOutcome.name,
+      slug: goal.careerOutcome.slug,
       icon: goal.careerOutcome.icon,
       skillMaps: goal.careerOutcome.skillMaps.map((m) => ({
         skillId: m.skillId,
