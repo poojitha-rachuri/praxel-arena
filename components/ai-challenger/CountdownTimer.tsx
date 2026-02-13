@@ -1,12 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 interface CountdownTimerProps {
   totalSeconds: number;
   onExpire: () => void;
   className?: string;
+}
+
+function formatTime(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
 export function CountdownTimer({
@@ -20,22 +26,23 @@ export function CountdownTimer({
   onExpireRef.current = onExpire;
   const expiredRef = useRef(false);
 
-  const formatTime = useCallback((seconds: number) => {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    return `${m}:${s.toString().padStart(2, "0")}`;
-  }, []);
-
   useEffect(() => {
     startTimeRef.current = Date.now();
     expiredRef.current = false;
+    let lastSecond = totalSeconds;
 
     const tick = () => {
       const elapsed = Math.floor(
         (Date.now() - startTimeRef.current) / 1000
       );
       const left = Math.max(0, totalSeconds - elapsed);
-      setRemaining(left);
+
+      // Only trigger re-render when the displayed second changes
+      if (left !== lastSecond) {
+        lastSecond = left;
+        setRemaining(left);
+      }
+
       if (left > 0) {
         rafId = requestAnimationFrame(tick);
       } else if (!expiredRef.current) {

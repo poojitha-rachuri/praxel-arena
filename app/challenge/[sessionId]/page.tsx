@@ -27,13 +27,13 @@ export default async function ChallengeSessionPage({
 
   // If already completed, redirect back to challenge page
   if (session.completed) {
-    redirect("/challenge");
+    redirect("/challenges");
   }
 
   return (
     <AppShell hideBottomNav>
       <ChallengeSessionClient
-        sessionId={session.id}
+        sessionId={sessionId}
         skillId={session.skill.id}
         skillName={session.skill.name}
         challengeType={

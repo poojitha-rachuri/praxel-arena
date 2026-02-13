@@ -45,10 +45,6 @@ const RequestSchema = z.object({
   context: z.discriminatedUnion("type", [PostSprintContext, ChallengeContext]),
 });
 
-// ─── Rate Limiting ──────────────────────────────────────
-
-const CHALLENGE_RATE_LIMIT = 10; // per user per hour
-
 // ─── Route Handler ──────────────────────────────────────
 
 export async function POST(req: NextRequest) {
@@ -71,58 +67,47 @@ export async function POST(req: NextRequest) {
 
   if (!parsed.success) {
     return NextResponse.json(
-      { error: "Invalid request", details: parsed.error.flatten() },
+      { error: "Invalid request" },
       { status: 400 }
     );
   }
 
   const { messages, context } = parsed.data;
 
-  // Rate limit check
-  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
-  const recentSessions = await prisma.challengeSession.count({
-    where: { userId: user.id, createdAt: { gte: oneHourAgo } },
-  });
-  if (recentSessions >= CHALLENGE_RATE_LIMIT) {
-    return NextResponse.json(
-      { error: "Rate limit exceeded. Try again later." },
-      { status: 429 }
-    );
-  }
-
   // Build system prompt — server fetches all context data
+  // Rate limiting is enforced at session creation (/api/challenge/sessions)
   let systemPrompt: string;
 
-  if (context.type === "post-sprint") {
-    const attempt = await prisma.sprintAttempt.findUnique({
-      where: { id: context.attemptId, userId: user.id },
-      include: { sprint: { include: { skill: true } } },
-    });
-    if (!attempt) {
-      return NextResponse.json(
-        { error: "Attempt not found" },
-        { status: 404 }
-      );
-    }
-    systemPrompt = buildPostSprintPrompt(attempt);
-  } else {
-    const skill = await prisma.skill.findUnique({
-      where: { id: context.skillId },
-    });
-    if (!skill) {
-      return NextResponse.json(
-        { error: "Skill not found" },
-        { status: 404 }
-      );
-    }
-    systemPrompt = buildChallengePrompt(
-      skill,
-      context.challengeType,
-      "intermediate"
-    );
-  }
-
   try {
+    if (context.type === "post-sprint") {
+      const attempt = await prisma.sprintAttempt.findUnique({
+        where: { id: context.attemptId, userId: user.id },
+        include: { sprint: { include: { skill: true } } },
+      });
+      if (!attempt) {
+        return NextResponse.json(
+          { error: "Attempt not found" },
+          { status: 404 }
+        );
+      }
+      systemPrompt = buildPostSprintPrompt(attempt);
+    } else {
+      const skill = await prisma.skill.findUnique({
+        where: { id: context.skillId },
+      });
+      if (!skill) {
+        return NextResponse.json(
+          { error: "Skill not found" },
+          { status: 404 }
+        );
+      }
+      systemPrompt = buildChallengePrompt(
+        skill,
+        context.challengeType,
+        "intermediate"
+      );
+    }
+
     const result = streamText({
       model: anthropic(AI_MODEL_EVALUATION),
       system: systemPrompt,
@@ -137,7 +122,7 @@ export async function POST(req: NextRequest) {
     response.headers.set("Cache-Control", "no-cache, no-store");
     return response;
   } catch (error) {
-    const correlationId = `challenge-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const correlationId = crypto.randomUUID();
     console.error(`[${correlationId}] Challenge API error:`, {
       error:
         error instanceof Error

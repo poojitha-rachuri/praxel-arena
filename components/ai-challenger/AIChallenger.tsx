@@ -16,6 +16,7 @@ import { ChatInput } from "./ChatInput";
 import { CountdownTimer } from "./CountdownTimer";
 import { VoiceToggle } from "./VoiceToggle";
 import { cn } from "@/lib/utils";
+import { CARD_SPRING } from "@/lib/utils/constants";
 
 // ─── Types ──────────────────────────────────────────────
 
@@ -33,6 +34,7 @@ export type StandaloneContext = {
 export type ChallengerContext = PostSprintContext | StandaloneContext;
 
 interface AIChallengerProps {
+  sessionId?: string; // present for standalone sessions, used to persist completion
   context: ChallengerContext;
   onClose: () => void;
   timeLimit?: number; // seconds, default 90 for post-sprint, 120 for standalone
@@ -52,6 +54,7 @@ function getMessageText(
 // ─── Component ──────────────────────────────────────────
 
 export function AIChallenger({
+  sessionId,
   context,
   onClose,
   timeLimit,
@@ -63,6 +66,7 @@ export function AIChallenger({
   const endingRef = useRef(false);
   const mountedRef = useRef(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const startTimeRef = useRef(Date.now());
 
   const [ended, setEnded] = useState(false);
   const [inputMode, setInputMode] = useState<"text" | "voice">("text");
@@ -113,10 +117,10 @@ export function AIChallenger({
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTo({
         top: chatContainerRef.current.scrollHeight,
-        behavior: "smooth",
+        behavior: isStreaming ? "instant" : "smooth",
       });
     }
-  }, [messages]);
+  }, [messages, isStreaming]);
 
   // ─── Mobile keyboard handling ──────────────────────
 
@@ -144,7 +148,7 @@ export function AIChallenger({
 
       sendMessage({ text: content });
     },
-    [endingRef, ended, exchangeCount, maxExchanges, sendMessage]
+    [ended, exchangeCount, maxExchanges, sendMessage]
   );
 
   // ─── Handle end ───────────────────────────────────
@@ -153,27 +157,31 @@ export function AIChallenger({
     if (endingRef.current) return;
     endingRef.current = true;
     setEnded(true);
-  }, []);
 
-  // ─── Handle timer expire ──────────────────────────
+    // Persist session completion for standalone sessions
+    if (sessionId) {
+      const durationSeconds = Math.round(
+        (Date.now() - startTimeRef.current) / 1000
+      );
+      fetch(`/api/challenge/sessions/${sessionId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          completed: true,
+          exchangeCount,
+          durationSeconds,
+        }),
+      }).catch(() => {
+        // Best-effort persistence — don't block the UI
+      });
+    }
+  }, [sessionId, exchangeCount]);
 
-  const handleTimerExpire = useCallback(() => {
-    handleEnd();
-  }, [handleEnd]);
-
-  // ─── Voice mode handlers ──────────────────────────
+  // ─── Voice mode handler ──────────────────────────
 
   const handleVoiceStateChange = useCallback(
     (active: boolean) => {
       setInputMode(active ? "voice" : "text");
-    },
-    []
-  );
-
-  const handleVoiceTranscript = useCallback(
-    (_role: "user" | "assistant", _content: string) => {
-      // Voice transcripts appear in the chat via the VoiceToggle's onMessage callback
-      // For now, they're visual-only (the voice conversation is handled by ElevenLabs)
     },
     []
   );
@@ -208,6 +216,7 @@ export function AIChallenger({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
+      transition={{ type: "spring", ...CARD_SPRING }}
       className="flex flex-col rounded-2xl border border-border bg-card overflow-hidden"
       style={{ maxHeight: "70vh" }}
     >
@@ -216,7 +225,7 @@ export function AIChallenger({
         <div className="flex items-center gap-3">
           <CountdownTimer
             totalSeconds={seconds}
-            onExpire={handleTimerExpire}
+            onExpire={handleEnd}
           />
           <div className="text-xs text-muted-foreground">
             {exchangeCount} of {maxExchanges} exchanges
@@ -224,14 +233,12 @@ export function AIChallenger({
         </div>
         <div className="flex items-center gap-2">
           <VoiceToggle
-            onTranscript={handleVoiceTranscript}
             onStateChange={handleVoiceStateChange}
-            systemPrompt=""
             disabled={ended}
           />
           <button
             onClick={handleEnd}
-            className="flex size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            className="flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors min-h-[44px] min-w-[44px]"
             aria-label="End conversation"
           >
             <X className="size-4" />
@@ -290,6 +297,7 @@ export function AIChallenger({
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", ...CARD_SPRING }}
             className="rounded-xl bg-primary/10 border border-primary/20 p-4 text-center"
           >
             <p className="text-sm font-medium text-primary">

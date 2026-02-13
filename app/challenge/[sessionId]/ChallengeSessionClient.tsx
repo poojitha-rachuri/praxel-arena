@@ -27,7 +27,7 @@ export default function ChallengeSessionClient({
   const config = CHALLENGE_TYPE_CONFIG[challengeType as AIChallengeTypeName];
 
   const handleClose = useCallback(() => {
-    router.push("/challenge");
+    router.push("/challenges");
   }, [router]);
 
   return (
@@ -40,7 +40,7 @@ export default function ChallengeSessionClient({
       >
         <button
           onClick={handleClose}
-          className="flex size-8 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+          className="flex size-11 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors min-h-[44px] min-w-[44px]"
           aria-label="Back to challenges"
         >
           <ArrowLeft className="size-4" />
@@ -53,6 +53,7 @@ export default function ChallengeSessionClient({
 
       {/* Chat */}
       <AIChallenger
+        sessionId={sessionId}
         context={{
           type: "standalone",
           skillId,

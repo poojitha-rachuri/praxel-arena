@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { prisma } from "@/lib/db";
+import { AI_CHALLENGE_RATE_LIMIT } from "@/lib/utils/constants";
 
 const CreateSessionSchema = z.object({
   skillId: z.string(),
@@ -12,7 +13,7 @@ const CreateSessionSchema = z.object({
   ]),
 });
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const user = await ensureUser();
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -30,39 +31,50 @@ export async function POST(req: Request) {
 
   if (!body.success) {
     return NextResponse.json(
-      { error: "Invalid request", details: body.error.flatten() },
+      { error: "Invalid request" },
       { status: 400 }
     );
   }
 
   const { skillId, challengeType } = body.data;
 
-  // Verify skill exists
-  const skill = await prisma.skill.findUnique({ where: { id: skillId } });
-  if (!skill) {
-    return NextResponse.json({ error: "Skill not found" }, { status: 404 });
-  }
+  try {
+    // Verify skill exists and check rate limit in parallel
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
+    const [skill, recentCount] = await Promise.all([
+      prisma.skill.findUnique({ where: { id: skillId } }),
+      prisma.challengeSession.count({
+        where: { userId: user.id, createdAt: { gte: oneHourAgo } },
+      }),
+    ]);
 
-  // Rate limit: 10 AI sessions per hour
-  const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
-  const recentCount = await prisma.challengeSession.count({
-    where: { userId: user.id, createdAt: { gte: oneHourAgo } },
-  });
-  if (recentCount >= 10) {
+    if (!skill) {
+      return NextResponse.json({ error: "Skill not found" }, { status: 404 });
+    }
+
+    if (recentCount >= AI_CHALLENGE_RATE_LIMIT) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded. Try again later.", retryAfter: 3600 },
+        { status: 429 }
+      );
+    }
+
+    const session = await prisma.challengeSession.create({
+      data: {
+        userId: user.id,
+        skillId,
+        challengeType,
+        messages: [],
+      },
+    });
+
+    return NextResponse.json({ sessionId: session.id });
+  } catch (error) {
+    const correlationId = crypto.randomUUID();
+    console.error(`[${correlationId}] Session creation error:`, error);
     return NextResponse.json(
-      { error: "Rate limit exceeded. Try again later." },
-      { status: 429 }
+      { error: "Failed to create session", correlationId },
+      { status: 500 }
     );
   }
-
-  const session = await prisma.challengeSession.create({
-    data: {
-      userId: user.id,
-      skillId,
-      challengeType,
-      messages: [],
-    },
-  });
-
-  return NextResponse.json({ sessionId: session.id });
 }

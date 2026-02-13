@@ -521,7 +521,7 @@ model ChallengeSession {
   completedAt     DateTime?
 
   user    User           @relation(fields: [userId], references: [id], onDelete: Cascade)
-  skill   Skill          @relation(fields: [skillId], references: [id])
+  skill   Skill          @relation(fields: [skillId], references: [id], onDelete: Cascade)
   attempt SprintAttempt? @relation(fields: [attemptId], references: [id], onDelete: SetNull)
 
   @@index([userId, createdAt])

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { prisma } from "@/lib/db";
-
-const VOICE_RATE_LIMIT = 5; // per user per hour
+import { AI_VOICE_RATE_LIMIT } from "@/lib/utils/constants";
 
 export async function GET() {
   const user = await ensureUser();
@@ -30,7 +29,7 @@ export async function GET() {
     },
   });
 
-  if (recentVoiceSessions >= VOICE_RATE_LIMIT) {
+  if (recentVoiceSessions >= AI_VOICE_RATE_LIMIT) {
     return NextResponse.json(
       { error: "Voice rate limit exceeded. Try again later." },
       { status: 429 }

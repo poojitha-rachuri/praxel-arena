@@ -16,23 +16,17 @@ type VoiceState =
   | "cooldown"; // Just ended, prevent rapid re-toggle
 
 interface VoiceToggleProps {
-  onTranscript: (role: "user" | "assistant", content: string) => void;
   onStateChange: (active: boolean) => void;
-  systemPrompt: string;
   disabled?: boolean;
 }
 
 export function VoiceToggle({
-  onTranscript,
   onStateChange,
-  systemPrompt,
   disabled,
 }: VoiceToggleProps) {
   const [voiceState, setVoiceState] = useState<VoiceState>("idle");
   const cooldownTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const onTranscriptRef = useRef(onTranscript);
   const onStateChangeRef = useRef(onStateChange);
-  onTranscriptRef.current = onTranscript;
   onStateChangeRef.current = onStateChange;
 
   const conversation = useConversation({
@@ -55,13 +49,8 @@ export function VoiceToggle({
         onStateChangeRef.current(false);
       }, 2000);
     },
-    onMessage: (props: { message: string; source: "user" | "ai" }) => {
-      if (props.message) {
-        onTranscriptRef.current(
-          props.source === "ai" ? "assistant" : "user",
-          props.message
-        );
-      }
+    onMessage: (_props: { message: string; source: "user" | "ai" }) => {
+      // Voice transcripts handled by ElevenLabs agent directly
     },
   });
 
@@ -90,14 +79,8 @@ export function VoiceToggle({
       const { signedUrl } = await res.json();
       setVoiceState("connecting");
 
-      await conversation.startSession({
-        signedUrl,
-        overrides: {
-          agent: {
-            prompt: { prompt: systemPrompt },
-          },
-        },
-      });
+      // No client-side prompt overrides — agent prompt configured server-side via ElevenLabs dashboard
+      await conversation.startSession({ signedUrl });
     } catch (err) {
       console.error("[voice] Failed to start:", err);
       setVoiceState("error");
@@ -106,7 +89,7 @@ export function VoiceToggle({
         onStateChangeRef.current(false);
       }, 2000);
     }
-  }, [voiceState, conversation, systemPrompt]);
+  }, [voiceState, conversation]);
 
   const stopVoice = useCallback(async () => {
     if (voiceState !== "active") return;
