@@ -119,7 +119,8 @@ export async function POST(request: NextRequest) {
     const evaluation = await evaluateAttempt(
       sprintData,
       responses,
-      sprint.mode
+      sprint.mode,
+      sprint.skill.slug
     );
 
     // Clamp all dimension scores to valid numbers before DB write

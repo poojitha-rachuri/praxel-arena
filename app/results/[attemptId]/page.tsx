@@ -70,6 +70,25 @@ export default async function ResultsPage({
     ? rawResponses
     : null;
 
+  // Check if user has completed all sprints in this topic (module-based radar)
+  let showRadar = false;
+  const topicId = attempt.sprint.topicId;
+  if (topicId) {
+    const [topicSprintCount, completedSprintCount] = await Promise.all([
+      prisma.sprint.count({
+        where: { topicId, mode: attempt.mode as "LEARN" | "PRACTICE" | "COMPETE" },
+      }),
+      prisma.sprintAttempt.count({
+        where: {
+          userId: attempt.userId,
+          mode: attempt.mode,
+          sprint: { topicId },
+        },
+      }),
+    ]);
+    showRadar = completedSprintCount >= topicSprintCount;
+  }
+
   return (
     <AppShell hideBottomNav>
       <ResultsReveal
@@ -84,6 +103,7 @@ export default async function ResultsPage({
         skillName={attempt.sprint.skill.name}
         skillSlug={attempt.sprint.skill.slug}
         mode={attempt.mode}
+        showRadar={showRadar}
       />
     </AppShell>
   );

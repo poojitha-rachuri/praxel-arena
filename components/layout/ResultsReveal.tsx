@@ -33,6 +33,8 @@ interface ResultsRevealProps {
   skillName: string;
   skillSlug: string;
   mode: string;
+  /** Only show radar chart after completing all sprints in a topic */
+  showRadar?: boolean;
 }
 
 function AnimatedNumber({
@@ -81,6 +83,7 @@ export default function ResultsReveal({
   skillName,
   skillSlug,
   mode,
+  showRadar = false,
 }: ResultsRevealProps) {
   const router = useRouter();
   const [showChart, setShowChart] = useState(false);
@@ -184,9 +187,9 @@ export default function ResultsReveal({
         <p className="text-sm text-muted-foreground mt-1">out of 100</p>
       </motion.div>
 
-      {/* Radar Chart */}
+      {/* Radar Chart - only shown after completing all sprints in a topic */}
       <AnimatePresence>
-        {showChart && (
+        {showChart && showRadar && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

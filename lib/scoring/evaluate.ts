@@ -40,7 +40,7 @@ interface SprintData {
 // ─── Dimension mapping for deterministic scoring ────────────
 
 /**
- * Maps interaction types to the dimensions they primarily test.
+ * Default mapping: interaction types to the dimensions they primarily test.
  * Each interaction contributes to 2 dimensions with primary/secondary weights.
  */
 const INTERACTION_DIMENSION_MAP: Record<
@@ -72,6 +72,80 @@ const INTERACTION_DIMENSION_MAP: Record<
     secondary: "communicationClarity",
   },
 };
+
+/**
+ * Per-skill dimension overrides: certain skills emphasize different dimensions
+ * for the same interaction type. This makes scoring contextually accurate.
+ */
+const SKILL_DIMENSION_OVERRIDES: Record<
+  string,
+  Partial<Record<string, { primary: DimensionKey; secondary: DimensionKey }>>
+> = {
+  "stakeholder-communication": {
+    SPOT_THE_SIGNAL: { primary: "communicationClarity", secondary: "analyticalThinking" },
+    FILL_THE_GAP: { primary: "communicationClarity", secondary: "strategicReasoning" },
+    TEACH_AND_TEST: { primary: "communicationClarity", secondary: "decisionQuality" },
+    RANK_AND_PRIORITIZE: { primary: "communicationClarity", secondary: "strategicReasoning" },
+  },
+  "data-interpretation": {
+    FORCED_TRADEOFF: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    FILL_THE_GAP: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    TEACH_AND_TEST: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    CURVEBALL: { primary: "quantitativeReasoning", secondary: "creativeProblemSolving" },
+  },
+  "financial-statement-analysis": {
+    FORCED_TRADEOFF: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    SPOT_THE_SIGNAL: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    FILL_THE_GAP: { primary: "quantitativeReasoning", secondary: "communicationClarity" },
+    CURVEBALL: { primary: "analyticalThinking", secondary: "quantitativeReasoning" },
+  },
+  "valuation": {
+    SPOT_THE_SIGNAL: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    FORCED_TRADEOFF: { primary: "quantitativeReasoning", secondary: "strategicReasoning" },
+    FILL_THE_GAP: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    TEACH_AND_TEST: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+  },
+  "gtm-strategy": {
+    SPOT_THE_SIGNAL: { primary: "strategicReasoning", secondary: "analyticalThinking" },
+    FILL_THE_GAP: { primary: "strategicReasoning", secondary: "communicationClarity" },
+    TEACH_AND_TEST: { primary: "strategicReasoning", secondary: "decisionQuality" },
+  },
+  "pricing-monetization": {
+    SPOT_THE_SIGNAL: { primary: "quantitativeReasoning", secondary: "strategicReasoning" },
+    FORCED_TRADEOFF: { primary: "strategicReasoning", secondary: "quantitativeReasoning" },
+    FILL_THE_GAP: { primary: "quantitativeReasoning", secondary: "strategicReasoning" },
+  },
+  "prioritization": {
+    SPOT_THE_SIGNAL: { primary: "decisionQuality", secondary: "strategicReasoning" },
+    FILL_THE_GAP: { primary: "strategicReasoning", secondary: "decisionQuality" },
+    TEACH_AND_TEST: { primary: "decisionQuality", secondary: "strategicReasoning" },
+    CURVEBALL: { primary: "decisionQuality", secondary: "creativeProblemSolving" },
+  },
+  "guesstimation": {
+    SPOT_THE_SIGNAL: { primary: "quantitativeReasoning", secondary: "creativeProblemSolving" },
+    FORCED_TRADEOFF: { primary: "quantitativeReasoning", secondary: "strategicReasoning" },
+    FILL_THE_GAP: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    TEACH_AND_TEST: { primary: "quantitativeReasoning", secondary: "analyticalThinking" },
+    CURVEBALL: { primary: "creativeProblemSolving", secondary: "quantitativeReasoning" },
+  },
+};
+
+/** Resolve dimension mapping for an interaction, considering skill context */
+function getDimensionMapping(
+  interactionType: string,
+  skillSlug?: string
+): { primary: DimensionKey; secondary: DimensionKey } {
+  // Check skill-specific overrides first
+  if (skillSlug) {
+    const override = SKILL_DIMENSION_OVERRIDES[skillSlug]?.[interactionType];
+    if (override) return override;
+  }
+  // Fall back to default type-based mapping
+  return (
+    INTERACTION_DIMENSION_MAP[interactionType] ??
+    INTERACTION_DIMENSION_MAP["SPOT_THE_SIGNAL"]
+  );
+}
 
 // ─── Deterministic Scoring (LEARN / PRACTICE) ──────────────
 
@@ -184,7 +258,8 @@ function scoreRanking(
 function distributeToDimensions(
   interactions: SprintInteraction[],
   responses: SprintResponse[],
-  mode?: string
+  mode?: string,
+  skillSlug?: string
 ): DimensionScores {
   const dimensionTotals: Record<DimensionKey, number> = {} as Record<
     DimensionKey,
@@ -206,9 +281,7 @@ function distributeToDimensions(
     );
     const { score } = scoreInteractionDeterministic(interaction, response, mode);
 
-    const mapping =
-      INTERACTION_DIMENSION_MAP[interaction.type] ??
-      INTERACTION_DIMENSION_MAP["SPOT_THE_SIGNAL"];
+    const mapping = getDimensionMapping(interaction.type, skillSlug);
 
     // Primary dimension gets 70% weight
     dimensionTotals[mapping.primary] += score * 0.7;
@@ -379,7 +452,8 @@ function buildDeterministicHighlights(
 export async function evaluateAttempt(
   sprint: SprintData,
   responses: SprintResponse[],
-  mode: string
+  mode: string,
+  skillSlug?: string
 ): Promise<EvaluationResult> {
   // Build enriched responses for all modes (uses deterministic scoring per interaction)
   const enrichedResponses = buildEnrichedResponses(
@@ -405,7 +479,7 @@ export async function evaluateAttempt(
   }
 
   // ── LEARN / PRACTICE mode (or COMPETE fallback): deterministic scoring ──
-  const scores = distributeToDimensions(sprint.interactions, responses, mode);
+  const scores = distributeToDimensions(sprint.interactions, responses, mode, skillSlug);
   const totalScore = Math.round(
     DIMENSION_KEYS.reduce((sum, key) => sum + scores[key], 0) /
       DIMENSION_KEYS.length

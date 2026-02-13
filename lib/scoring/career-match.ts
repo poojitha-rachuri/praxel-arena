@@ -22,6 +22,9 @@ export interface CareerMatch {
   matchPercentage: number;
 }
 
+/** Minimum number of attempted skills before showing a career match percentage */
+const MIN_ATTEMPTED_SKILLS = 2;
+
 export function computeCareerMatches(
   skillScores: SkillScoreInput[],
   careerGoals: CareerMappingInput[]
@@ -39,19 +42,27 @@ export function computeCareerMatches(
 
     let weightedSum = 0;
     let careerWeight = 0;
+    let attemptedCount = 0;
 
     for (const mapping of mappings) {
-      const score = scoreLookup.get(mapping.skillId) ?? 0;
+      const score = scoreLookup.get(mapping.skillId);
+      // Skip unattempted skills instead of treating them as 0
+      if (score === undefined) continue;
+      attemptedCount++;
       weightedSum += score * mapping.weight;
       careerWeight += mapping.weight;
+    }
+
+    // Require minimum skill coverage before showing a percentage
+    if (attemptedCount < MIN_ATTEMPTED_SKILLS || careerWeight === 0) {
+      return { name: career.name, slug: career.slug, icon: career.icon, matchPercentage: 0 };
     }
 
     return {
       name: career.name,
       slug: career.slug,
       icon: career.icon,
-      matchPercentage:
-        careerWeight > 0 ? Math.round(weightedSum / careerWeight) : 0,
+      matchPercentage: Math.round(weightedSum / careerWeight),
     };
   });
 }
