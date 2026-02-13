@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Ford Motor Co. Financial Metrics",
+        "data": [
+          {
+            "name": "Debt-to-Equity",
+            "value": 3.8
+          },
+          {
+            "name": "Interest Coverage",
+            "value": 2.1
+          },
+          {
+            "name": "Current Ratio",
+            "value": 1.2
+          },
+          {
+            "name": "Return on Equity (%)",
+            "value": 18
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

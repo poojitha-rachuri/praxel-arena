@@ -33,7 +33,30 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Engagement Rate: Control vs Variant B (Days 1-3)",
+        "data": [
+          {
+            "day": "Day 1",
+            "Control": 42,
+            "Variant B": 41
+          },
+          {
+            "day": "Day 2",
+            "Control": 38,
+            "Variant B": 43
+          },
+          {
+            "day": "Day 3",
+            "Control": 40,
+            "Variant B": 45
+          }
+        ],
+        "xKey": "day",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +140,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "A/B Test Results: Variant A vs Control",
+        "data": [
+          {
+            "name": "Control Booking Rate",
+            "value": 10
+          },
+          {
+            "name": "Variant A Booking Rate",
+            "value": 10.5
+          },
+          {
+            "name": "Control Avg Revenue",
+            "value": 150
+          },
+          {
+            "name": "Variant A Avg Revenue",
+            "value": 145.5
+          },
+          {
+            "name": "Control Revenue per 100 Visitors",
+            "value": 1500
+          },
+          {
+            "name": "Variant A Revenue per 100 Visitors",
+            "value": 1527.75
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

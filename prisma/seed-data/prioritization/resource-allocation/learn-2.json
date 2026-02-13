@@ -61,7 +61,30 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Project NPV vs Engineer Requirements",
+        "data": [
+          {
+            "name": "Project X",
+            "value": 4,
+            "engineers": 8
+          },
+          {
+            "name": "Project Y",
+            "value": 3.5,
+            "engineers": 6
+          },
+          {
+            "name": "Project Z",
+            "value": 2.8,
+            "engineers": 5
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

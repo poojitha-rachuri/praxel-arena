@@ -61,7 +61,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "SaaS Beta Program Metrics vs. Industry Benchmarks",
+        "data": [
+          {
+            "name": "Activation Rate",
+            "value": 45
+          },
+          {
+            "name": "Week 4 Retention",
+            "value": 12
+          },
+          {
+            "name": "NPS Score",
+            "value": 62
+          },
+          {
+            "name": "Industry Avg Activation",
+            "value": 40
+          },
+          {
+            "name": "Industry Avg Retention",
+            "value": 35
+          },
+          {
+            "name": "Industry Avg NPS",
+            "value": 50
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

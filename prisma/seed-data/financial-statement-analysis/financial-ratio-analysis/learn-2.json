@@ -61,7 +61,47 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Inventory Turnover Trend (2-Year Period)",
+        "data": [
+          {
+            "name": "Year 1 Q1",
+            "value": 8
+          },
+          {
+            "name": "Year 1 Q2",
+            "value": 7.5
+          },
+          {
+            "name": "Year 1 Q3",
+            "value": 6.8
+          },
+          {
+            "name": "Year 1 Q4",
+            "value": 5.9
+          },
+          {
+            "name": "Year 2 Q1",
+            "value": 4.8
+          },
+          {
+            "name": "Year 2 Q2",
+            "value": 3.9
+          },
+          {
+            "name": "Year 2 Q3",
+            "value": 3.2
+          },
+          {
+            "name": "Year 2 Q4",
+            "value": 3
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

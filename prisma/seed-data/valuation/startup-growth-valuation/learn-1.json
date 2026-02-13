@@ -61,7 +61,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Series B Company Metrics vs. SaaS Benchmarks",
+        "data": [
+          {
+            "name": "ARR Growth %",
+            "value": 110
+          },
+          {
+            "name": "Gross Margin %",
+            "value": 78
+          },
+          {
+            "name": "Net Revenue Retention %",
+            "value": 135
+          },
+          {
+            "name": "Best-in-Class NRR %",
+            "value": 120
+          },
+          {
+            "name": "Typical Growth at 20x",
+            "value": 100
+          },
+          {
+            "name": "Typical Growth at 30x",
+            "value": 150
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

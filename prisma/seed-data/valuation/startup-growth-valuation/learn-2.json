@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "TAM Claim vs Addressable Market Reality",
+        "data": [
+          {
+            "name": "Claimed TAM",
+            "value": 180
+          },
+          {
+            "name": "US SMB Lending Market",
+            "value": 45
+          },
+          {
+            "name": "3-State Market",
+            "value": 4.5
+          },
+          {
+            "name": "Target Revenue Band ($1-5M)",
+            "value": 1.8
+          },
+          {
+            "name": "Current ARR",
+            "value": 0.004
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

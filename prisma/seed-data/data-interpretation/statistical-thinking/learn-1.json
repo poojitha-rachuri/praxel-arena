@@ -61,7 +61,43 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Shopify Merchant Monthly Revenue Distribution",
+        "data": [
+          {
+            "name": "Merchant 1",
+            "value": 800
+          },
+          {
+            "name": "Merchant 2",
+            "value": 1500
+          },
+          {
+            "name": "Merchant 3",
+            "value": 2100
+          },
+          {
+            "name": "Merchant 4",
+            "value": 3200
+          },
+          {
+            "name": "Merchant 5",
+            "value": 4500
+          },
+          {
+            "name": "Merchant 6",
+            "value": 8900
+          },
+          {
+            "name": "Merchant 7",
+            "value": 41000
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

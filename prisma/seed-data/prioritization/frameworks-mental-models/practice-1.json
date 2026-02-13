@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Feature Prioritization: RICE Scores with Confidence Adjustment",
+        "data": [
+          {
+            "name": "Feature A (RICE)",
+            "value": 120
+          },
+          {
+            "name": "Feature B (RICE)",
+            "value": 85
+          },
+          {
+            "name": "Feature C (RICE)",
+            "value": 200
+          },
+          {
+            "name": "Feature C (Adjusted 50% confidence)",
+            "value": 100
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,
@@ -117,7 +141,47 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Project Prioritization Metrics Comparison",
+        "data": [
+          {
+            "name": "Project X: Cost of Delay/Week",
+            "value": 50
+          },
+          {
+            "name": "Project Y: Cost of Delay/Week",
+            "value": 30
+          },
+          {
+            "name": "Project X: Duration (Weeks)",
+            "value": 4
+          },
+          {
+            "name": "Project Y: Duration (Weeks)",
+            "value": 1
+          },
+          {
+            "name": "Project X: Total Cost of Delay",
+            "value": 200
+          },
+          {
+            "name": "Project Y: Total Cost of Delay",
+            "value": 30
+          },
+          {
+            "name": "Project X: CD3 (Cost/Duration)",
+            "value": 12.5
+          },
+          {
+            "name": "Project Y: CD3 (Cost/Duration)",
+            "value": 30
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

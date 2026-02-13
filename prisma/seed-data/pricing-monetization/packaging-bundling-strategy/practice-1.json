@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Tier Conversion Rates vs User Distribution",
+        "data": [
+          {
+            "name": "Starter Users",
+            "value": 68
+          },
+          {
+            "name": "Pro Users",
+            "value": 24
+          },
+          {
+            "name": "Growth Users",
+            "value": 8
+          },
+          {
+            "name": "Starter→Pro Conv.",
+            "value": 11
+          },
+          {
+            "name": "Pro→Growth Conv.",
+            "value": 1.8
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +173,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Datadog Product Adoption & Customer Metrics (YoY Change)",
+        "data": [
+          {
+            "name": "Customers w/ 2+ Products",
+            "value": 82
+          },
+          {
+            "name": "Customers w/ 2+ Products (Prior Year)",
+            "value": 75
+          },
+          {
+            "name": "Customers w/ 4+ Products",
+            "value": 44
+          },
+          {
+            "name": "Customers w/ 4+ Products (Prior Year)",
+            "value": 33
+          },
+          {
+            "name": "Avg ARR per Customer Growth (%)",
+            "value": 20
+          },
+          {
+            "name": "Seat Growth (%)",
+            "value": 0
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

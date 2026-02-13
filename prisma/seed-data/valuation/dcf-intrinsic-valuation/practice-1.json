@@ -61,7 +61,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Nike WACC Component Analysis",
+        "data": [
+          {
+            "name": "Risk-Free Rate",
+            "value": 4.2
+          },
+          {
+            "name": "Equity Risk Premium",
+            "value": 5.5
+          },
+          {
+            "name": "Beta",
+            "value": 1.1
+          },
+          {
+            "name": "Cost of Debt",
+            "value": 4.8
+          },
+          {
+            "name": "Tax Rate",
+            "value": 21
+          },
+          {
+            "name": "Debt/Capital %",
+            "value": 15
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,
@@ -117,7 +149,23 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "pie",
+        "title": "Enterprise Value Composition - Target Corp DCF",
+        "data": [
+          {
+            "name": "Terminal Value",
+            "value": 78
+          },
+          {
+            "name": "Explicit Forecast Period",
+            "value": 22
+          }
+        ],
+        "nameKey": "name",
+        "dataKey": "value"
+      }
     },
     {
       "order": 5,

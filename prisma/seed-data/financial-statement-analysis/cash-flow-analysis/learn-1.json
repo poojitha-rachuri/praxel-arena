@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Netflix Q3 Cash Flow Components ($B)",
+        "data": [
+          {
+            "name": "Operating CF",
+            "value": 1.9
+          },
+          {
+            "name": "CapEx",
+            "value": -0.1
+          },
+          {
+            "name": "Content Additions",
+            "value": -3.2
+          },
+          {
+            "name": "Financing CF",
+            "value": 1.5
+          },
+          {
+            "name": "Free Cash Flow",
+            "value": -1.4
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

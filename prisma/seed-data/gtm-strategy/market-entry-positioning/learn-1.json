@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Trial-to-Paid Conversion Rate by Company Size",
+        "data": [
+          {
+            "name": "10-50 employees",
+            "value": 22
+          },
+          {
+            "name": "51-200 employees",
+            "value": 8
+          },
+          {
+            "name": "201-1000 employees",
+            "value": 3
+          },
+          {
+            "name": "1000+ employees",
+            "value": 1
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

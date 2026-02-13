@@ -33,7 +33,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Revenue vs Feature Requests by Customer Segment",
+        "data": [
+          {
+            "name": "Enterprise Revenue %",
+            "value": 68
+          },
+          {
+            "name": "Enterprise Requests %",
+            "value": 8.5
+          },
+          {
+            "name": "SMB Revenue %",
+            "value": 32
+          },
+          {
+            "name": "SMB Requests %",
+            "value": 91.5
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +169,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Investment vs. Performance Outcomes",
+        "data": [
+          {
+            "name": "Initial Investment",
+            "value": 1200
+          },
+          {
+            "name": "Proposed Additional Investment",
+            "value": 600
+          },
+          {
+            "name": "Current Conversion Lift (0.4%)",
+            "value": 0.4
+          },
+          {
+            "name": "Target Conversion Lift (5%)",
+            "value": 5
+          },
+          {
+            "name": "Current Adoption Rate (3.1%)",
+            "value": 3.1
+          },
+          {
+            "name": "Success Probability (%)",
+            "value": 25
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

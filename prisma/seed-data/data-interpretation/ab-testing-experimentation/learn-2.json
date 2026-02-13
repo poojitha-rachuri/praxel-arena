@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Expected vs Observed Significant Results (20 Tests, α = 0.05)",
+        "data": [
+          {
+            "name": "Expected False Positives",
+            "value": 1
+          },
+          {
+            "name": "Observed Significant Results",
+            "value": 1
+          },
+          {
+            "name": "Total Tests Run",
+            "value": 20
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

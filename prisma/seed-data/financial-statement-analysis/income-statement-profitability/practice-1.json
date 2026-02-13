@@ -33,7 +33,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "SaaS Company Key Metrics YoY Change (%)",
+        "data": [
+          {
+            "name": "Revenue",
+            "value": 30
+          },
+          {
+            "name": "Deferred Revenue",
+            "value": -15
+          },
+          {
+            "name": "Accounts Receivable",
+            "value": 100
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +137,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Nike Q3 Key Metrics - Year-over-Year Change",
+        "data": [
+          {
+            "name": "Revenue Growth",
+            "value": 5
+          },
+          {
+            "name": "Gross Margin Change (bps)",
+            "value": 150
+          },
+          {
+            "name": "SG&A Growth",
+            "value": 12
+          },
+          {
+            "name": "Operating Margin Change (bps)",
+            "value": -80
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

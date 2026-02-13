@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Cross-Functional Project Health Metrics",
+        "data": [
+          {
+            "name": "Slack Response Time (hrs)",
+            "value": 6.2
+          },
+          {
+            "name": "Weekly Meeting Load (hrs)",
+            "value": 18
+          },
+          {
+            "name": "Async Doc Completion (%)",
+            "value": 34
+          },
+          {
+            "name": "Decision Escalation Rate (%)",
+            "value": 72
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

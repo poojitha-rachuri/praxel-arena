@@ -61,7 +61,23 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Booking Flow A/B Test Conversion Rates",
+        "data": [
+          {
+            "name": "Control",
+            "value": 3.2
+          },
+          {
+            "name": "Variant",
+            "value": 3.4
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

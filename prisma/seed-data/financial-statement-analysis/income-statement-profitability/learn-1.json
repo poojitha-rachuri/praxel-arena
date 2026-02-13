@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Nike Financial Metrics (in Billions)",
+        "data": [
+          {
+            "name": "Revenue",
+            "value": 51
+          },
+          {
+            "name": "Cost of Goods Sold",
+            "value": 29
+          },
+          {
+            "name": "Gross Profit",
+            "value": 22
+          },
+          {
+            "name": "Operating Expenses",
+            "value": 10
+          },
+          {
+            "name": "Operating Income",
+            "value": 12
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

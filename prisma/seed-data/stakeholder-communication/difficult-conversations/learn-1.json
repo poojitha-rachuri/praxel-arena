@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Impact of Delay Communication Timing",
+        "data": [
+          {
+            "name": "Order Retention - Early Notice",
+            "value": 78
+          },
+          {
+            "name": "Order Retention - Late Notice",
+            "value": 41
+          },
+          {
+            "name": "NPS Drop - Early Notice",
+            "value": 12
+          },
+          {
+            "name": "NPS Drop - Late Notice",
+            "value": 38
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

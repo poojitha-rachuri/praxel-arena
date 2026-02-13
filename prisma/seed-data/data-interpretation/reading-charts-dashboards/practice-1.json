@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Shopify Store Monthly Revenue",
+        "data": [
+          {
+            "name": "Jan",
+            "value": 12000
+          },
+          {
+            "name": "Feb",
+            "value": 14000
+          },
+          {
+            "name": "Mar",
+            "value": 13000
+          },
+          {
+            "name": "Apr",
+            "value": 19000
+          },
+          {
+            "name": "May",
+            "value": 18000
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -61,7 +89,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "pie",
+        "title": "Nike Q3 Revenue by Region",
+        "data": [
+          {
+            "name": "North America",
+            "value": 42
+          },
+          {
+            "name": "EMEA",
+            "value": 27
+          },
+          {
+            "name": "Greater China",
+            "value": 16
+          },
+          {
+            "name": "APLA",
+            "value": 15
+          }
+        ],
+        "nameKey": "name",
+        "dataKey": "value"
+      }
     },
     {
       "order": 3,

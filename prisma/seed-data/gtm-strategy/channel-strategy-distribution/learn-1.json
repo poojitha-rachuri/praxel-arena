@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Customer Acquisition Cost by Channel",
+        "data": [
+          {
+            "name": "Organic SEO",
+            "value": 45
+          },
+          {
+            "name": "Partner Referrals",
+            "value": 90
+          },
+          {
+            "name": "LinkedIn Ads",
+            "value": 185
+          },
+          {
+            "name": "Google Ads",
+            "value": 320
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

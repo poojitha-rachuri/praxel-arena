@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "EV/Revenue Multiple vs Revenue Growth Rate",
+        "data": [
+          {
+            "name": "Datadog",
+            "value": 0.72
+          },
+          {
+            "name": "Splunk",
+            "value": 0.58
+          },
+          {
+            "name": "Snowflake",
+            "value": 0.6
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

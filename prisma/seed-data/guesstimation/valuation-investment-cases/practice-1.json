@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Revenue Multiple Comparison",
+        "data": [
+          {
+            "name": "This Company",
+            "value": 18
+          },
+          {
+            "name": "Peer Average",
+            "value": 25
+          },
+          {
+            "name": "High Growth Peers",
+            "value": 28
+          },
+          {
+            "name": "Similar Growth Peers",
+            "value": 25
+          },
+          {
+            "name": "Market Average",
+            "value": 22
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +145,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Uber vs Lyft 2019 IPO Metrics Comparison",
+        "data": [
+          {
+            "name": "Uber Revenue ($B)",
+            "value": 14
+          },
+          {
+            "name": "Lyft Revenue ($B)",
+            "value": 3.6
+          },
+          {
+            "name": "Uber Valuation ($B)",
+            "value": 75
+          },
+          {
+            "name": "Lyft Valuation ($B)",
+            "value": 20
+          },
+          {
+            "name": "Uber Rev Multiple",
+            "value": 5.4
+          },
+          {
+            "name": "Lyft Rev Multiple",
+            "value": 5.6
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

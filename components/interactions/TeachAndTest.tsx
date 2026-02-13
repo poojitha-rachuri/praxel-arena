@@ -20,6 +20,7 @@ interface TeachAndTestProps {
   timeTarget: number;
   onAnswer: (answer: string) => void;
   disabled?: boolean;
+  chartData?: unknown;
 }
 
 const STEPS = [
@@ -37,6 +38,7 @@ export function TeachAndTest({
   timeTarget,
   onAnswer,
   disabled = false,
+  chartData,
 }: TeachAndTestProps) {
   const [phase, setPhase] = useState<"teach" | "test">(
     teachingPreamble ? "teach" : "test"
@@ -171,7 +173,7 @@ export function TeachAndTest({
             ) : isForcedTradeoff ? (
               <ForcedTradeoff {...testProps} />
             ) : (
-              <SpotTheSignal {...testProps} />
+              <SpotTheSignal {...testProps} chartData={chartData} />
             )}
           </motion.div>
         )}

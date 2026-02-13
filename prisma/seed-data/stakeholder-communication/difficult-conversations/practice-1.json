@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Quarterly Employee Engagement Metrics Comparison",
+        "data": [
+          {
+            "name": "eNPS (Q1)",
+            "value": 42
+          },
+          {
+            "name": "eNPS (Q2)",
+            "value": 18
+          },
+          {
+            "name": "Voluntary Attrition % (Q1)",
+            "value": 8
+          },
+          {
+            "name": "Voluntary Attrition % (Q2)",
+            "value": 14
+          },
+          {
+            "name": "Transparency Concerns %",
+            "value": 67
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +173,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Director's Engagement Metrics (2-Week Change)",
+        "data": [
+          {
+            "name": "Output Quality",
+            "value": 0
+          },
+          {
+            "name": "Leadership Meeting Attendance",
+            "value": -100
+          },
+          {
+            "name": "Cross-Functional Slack Messages",
+            "value": -40
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

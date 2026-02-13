@@ -61,7 +61,43 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Feature Requests by ARR Impact",
+        "data": [
+          {
+            "name": "Request #1",
+            "value": 3
+          },
+          {
+            "name": "Request #2",
+            "value": 4
+          },
+          {
+            "name": "Request #3",
+            "value": 5
+          },
+          {
+            "name": "Request #4",
+            "value": 8
+          },
+          {
+            "name": "Request #5",
+            "value": 7
+          },
+          {
+            "name": "Request #8",
+            "value": 38
+          },
+          {
+            "name": "Other Requests",
+            "value": 35
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

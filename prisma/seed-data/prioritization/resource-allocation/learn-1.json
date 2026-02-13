@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Project ROI vs Resource Time Investment",
+        "data": [
+          {
+            "name": "Project A (24 eng-months)",
+            "value": 140
+          },
+          {
+            "name": "Project B (4 eng-months)",
+            "value": 95
+          },
+          {
+            "name": "Project C (18 eng-months)",
+            "value": 120
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

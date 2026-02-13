@@ -33,7 +33,45 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Team Utilization vs Revenue Impact",
+        "data": [
+          {
+            "team": "Team A",
+            "metric": "Utilization",
+            "value": 95
+          },
+          {
+            "team": "Team A",
+            "metric": "Revenue Impact",
+            "value": 12
+          },
+          {
+            "team": "Team B",
+            "metric": "Utilization",
+            "value": 60
+          },
+          {
+            "team": "Team B",
+            "metric": "Revenue Impact",
+            "value": 41
+          },
+          {
+            "team": "Team C",
+            "metric": "Utilization",
+            "value": 80
+          },
+          {
+            "team": "Team C",
+            "metric": "Revenue Impact",
+            "value": 47
+          }
+        ],
+        "xKey": "team",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +183,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Marketing Channel ROAS Comparison",
+        "data": [
+          {
+            "name": "Influencers",
+            "value": 5.1
+          },
+          {
+            "name": "Digital Ads",
+            "value": 4.2
+          },
+          {
+            "name": "Trade Promos",
+            "value": 2.3
+          },
+          {
+            "name": "TV",
+            "value": 1.8
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Key SaaS Metrics: Year-over-Year Comparison",
+        "data": [
+          {
+            "name": "ARR Growth (%)",
+            "value": 85
+          },
+          {
+            "name": "Net Revenue Retention - Previous (%)",
+            "value": 130
+          },
+          {
+            "name": "Net Revenue Retention - Current (%)",
+            "value": 108
+          },
+          {
+            "name": "CAC Payback - Previous (months)",
+            "value": 14
+          },
+          {
+            "name": "CAC Payback - Current (months)",
+            "value": 22
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +173,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Key Fundraising Metrics vs. Benchmarks",
+        "data": [
+          {
+            "name": "Gross Margin",
+            "value": 70
+          },
+          {
+            "name": "Logo Retention",
+            "value": 95
+          },
+          {
+            "name": "LTV/CAC Ratio",
+            "value": 3.2
+          },
+          {
+            "name": "Runway (months)",
+            "value": 18
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

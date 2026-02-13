@@ -33,7 +33,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Target vs Peer Set Valuation Multiples",
+        "data": [
+          {
+            "name": "EV/Revenue - Peer Median",
+            "value": 8.2
+          },
+          {
+            "name": "EV/Revenue - Target",
+            "value": 6.1
+          },
+          {
+            "name": "EV/EBITDA - Peer Median",
+            "value": 32
+          },
+          {
+            "name": "EV/EBITDA - Target",
+            "value": 35
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +141,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Peer Group P/E Multiples",
+        "data": [
+          {
+            "name": "CrowdStrike",
+            "value": 62
+          },
+          {
+            "name": "Palo Alto",
+            "value": 48
+          },
+          {
+            "name": "Fortinet",
+            "value": 40
+          },
+          {
+            "name": "SentinelOne",
+            "value": 0
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

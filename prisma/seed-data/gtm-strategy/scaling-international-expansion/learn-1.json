@@ -61,7 +61,40 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Germany vs US Market Metrics Comparison",
+        "data": [
+          {
+            "name": "CAC (€)",
+            "value": 420,
+            "comparison": 280
+          },
+          {
+            "name": "LTV (€)",
+            "value": 2100,
+            "comparison": 3400
+          },
+          {
+            "name": "Payback (months)",
+            "value": 9,
+            "comparison": 5
+          },
+          {
+            "name": "Gross Margin (%)",
+            "value": 71,
+            "comparison": 78
+          },
+          {
+            "name": "LTV:CAC Ratio",
+            "value": 5,
+            "comparison": 12.1
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

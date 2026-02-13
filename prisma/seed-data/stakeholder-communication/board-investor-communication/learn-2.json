@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Key SaaS Metrics: Current vs Prior Year",
+        "data": [
+          {
+            "name": "Gross Margin (Current)",
+            "value": 61
+          },
+          {
+            "name": "Gross Margin (Prior)",
+            "value": 78
+          },
+          {
+            "name": "Burn Multiple (Current)",
+            "value": 2.8
+          },
+          {
+            "name": "Burn Multiple (Prior)",
+            "value": 1.2
+          },
+          {
+            "name": "Net Revenue Retention",
+            "value": 145
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

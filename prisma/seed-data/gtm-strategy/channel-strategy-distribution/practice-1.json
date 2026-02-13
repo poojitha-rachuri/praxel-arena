@@ -33,7 +33,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "CAC and LTV:CAC Ratio by Channel",
+        "data": [
+          {
+            "name": "Direct Sales CAC",
+            "value": 1200
+          },
+          {
+            "name": "Partner Channel CAC",
+            "value": 680
+          },
+          {
+            "name": "Content/Inbound CAC",
+            "value": 310
+          },
+          {
+            "name": "Direct Sales LTV:CAC",
+            "value": 4.2
+          },
+          {
+            "name": "Partner Channel LTV:CAC",
+            "value": 3.1
+          },
+          {
+            "name": "Content/Inbound LTV:CAC",
+            "value": 6.8
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +177,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Revenue Lift by Number of Sales Channels",
+        "data": [
+          {
+            "name": "1 Channel",
+            "value": 100
+          },
+          {
+            "name": "2 Channels",
+            "value": 145
+          },
+          {
+            "name": "3 Channels",
+            "value": 190
+          },
+          {
+            "name": "4 Channels",
+            "value": 202
+          },
+          {
+            "name": "5+ Channels",
+            "value": 212
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

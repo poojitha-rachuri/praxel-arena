@@ -117,7 +117,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Cost Savings Comparison: Option A vs Option B",
+        "data": [
+          {
+            "name": "Option A - Annual Savings",
+            "value": 1200
+          },
+          {
+            "name": "Option B - Annual Savings",
+            "value": 400
+          },
+          {
+            "name": "Option A - Migration Cost (6 months)",
+            "value": 600
+          },
+          {
+            "name": "Option B - Migration Cost",
+            "value": 0
+          },
+          {
+            "name": "Option A - Net Savings (Year 1)",
+            "value": 600
+          },
+          {
+            "name": "Option B - Net Savings (Year 1)",
+            "value": 400
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Price Increase vs Subscriber Loss by Tool",
+        "data": [
+          {
+            "name": "SaaS Tool A - Price Increase",
+            "value": 10
+          },
+          {
+            "name": "SaaS Tool A - Subscriber Loss",
+            "value": 2
+          },
+          {
+            "name": "Competing Tool - Price Increase",
+            "value": 5
+          },
+          {
+            "name": "Competing Tool - Subscriber Loss",
+            "value": 15
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

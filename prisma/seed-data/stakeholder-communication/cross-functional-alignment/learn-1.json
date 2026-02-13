@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "RACI Role Distribution for Deliverable",
+        "data": [
+          {
+            "name": "Accountable",
+            "value": 4
+          },
+          {
+            "name": "Responsible",
+            "value": 2
+          },
+          {
+            "name": "Consulted",
+            "value": 0
+          },
+          {
+            "name": "Informed",
+            "value": 0
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

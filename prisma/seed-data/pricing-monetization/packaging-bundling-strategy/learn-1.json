@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Conversion Rates Across SaaS Tiers",
+        "data": [
+          {
+            "name": "Free → Starter (2.1%)",
+            "value": 2.1
+          },
+          {
+            "name": "Starter → Pro (18%)",
+            "value": 18
+          },
+          {
+            "name": "Pro → Enterprise (31%)",
+            "value": 31
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

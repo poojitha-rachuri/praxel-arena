@@ -33,7 +33,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Trial-to-Paid Conversion Rate by Segment",
+        "data": [
+          {
+            "name": "SMB",
+            "value": 3
+          },
+          {
+            "name": "Mid-market",
+            "value": 14
+          },
+          {
+            "name": "Enterprise",
+            "value": 6
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +137,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Competitive Pricing Analysis by Market Segment",
+        "data": [
+          {
+            "name": "Competitor A (General HR)",
+            "value": 50
+          },
+          {
+            "name": "Competitor B (Enterprise Compliance)",
+            "value": 120
+          },
+          {
+            "name": "Your Product (Healthcare HIPAA)",
+            "value": 95
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

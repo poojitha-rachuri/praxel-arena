@@ -326,6 +326,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
             <TeachAndTest
               {...sharedProps}
               teachingPreamble={currentInteraction.teachingPreamble}
+              chartData={currentInteraction.chartData}
             />
           )}
         </InteractionCard>

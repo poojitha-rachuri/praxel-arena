@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "SaaS Company Valuation Multiples vs Growth Rates",
+        "data": [
+          {
+            "name": "Firm A (40% growth)",
+            "value": 12
+          },
+          {
+            "name": "Firm B (20% growth)",
+            "value": 8
+          },
+          {
+            "name": "Firm C (25% growth)",
+            "value": 15
+          },
+          {
+            "name": "Target Firm (30% growth)",
+            "value": 0
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

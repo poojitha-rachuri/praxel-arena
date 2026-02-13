@@ -33,7 +33,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "pie",
+        "title": "Asset Composition Breakdown",
+        "data": [
+          {
+            "name": "Cash",
+            "value": 50
+          },
+          {
+            "name": "Inventory",
+            "value": 120
+          },
+          {
+            "name": "Accounts Receivable",
+            "value": 30
+          },
+          {
+            "name": "Equipment",
+            "value": 200
+          }
+        ],
+        "nameKey": "name",
+        "dataKey": "value"
+      }
     },
     {
       "order": 2,
@@ -89,7 +113,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Starbucks 2023 Assets vs Liabilities",
+        "data": [
+          {
+            "name": "Current Assets",
+            "value": 6.3
+          },
+          {
+            "name": "Current Liabilities",
+            "value": 9.2
+          },
+          {
+            "name": "Total Assets",
+            "value": 29.4
+          },
+          {
+            "name": "Total Liabilities",
+            "value": 35.6
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 4,
