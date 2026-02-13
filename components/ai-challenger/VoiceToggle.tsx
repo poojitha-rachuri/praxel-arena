@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useConversation } from "@elevenlabs/react";
 import { Mic, MicOff, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 // ─── Voice State Machine ────────────────────────────────
 
@@ -38,16 +39,19 @@ export function VoiceToggle({
     onConnect: (_props: { conversationId: string }) => {
       setVoiceState("active");
       onStateChangeRef.current(true);
+      trackEvent("voice_started", { conversationId: _props.conversationId });
     },
     onDisconnect: () => {
       setVoiceState("cooldown");
       onStateChangeRef.current(false);
+      trackEvent("voice_ended");
       cooldownTimer.current = setTimeout(() => {
         setVoiceState("idle");
       }, 1000);
     },
     onError: (message: string) => {
       console.error("[voice] Error:", message);
+      trackEvent("voice_error", { error: message });
       setVoiceState("error");
       setTimeout(() => {
         setVoiceState("idle");

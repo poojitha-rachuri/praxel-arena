@@ -10,6 +10,7 @@ import {
   Gift,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 interface ShareSheetProps {
   isOpen: boolean;
@@ -42,6 +43,7 @@ export default function ShareSheet({
           text: `Check out my business skill credentials on Praxel Arena!`,
           url: profileUrl,
         });
+        trackEvent("profile_shared", { method: "native" });
       } catch {
         // User cancelled
       }
@@ -52,6 +54,7 @@ export default function ShareSheet({
     try {
       await navigator.clipboard.writeText(profileUrl);
       setLinkCopied(true);
+      trackEvent("profile_shared", { method: "copy_link" });
       setTimeout(() => setLinkCopied(false), 2000);
     } catch {
       // Fallback
@@ -63,6 +66,7 @@ export default function ShareSheet({
     try {
       await navigator.clipboard.writeText(referralCode);
       setCodeCopied(true);
+      trackEvent("referral_code_copied", { referralCode });
       setTimeout(() => setCodeCopied(false), 2000);
     } catch {
       // Fallback

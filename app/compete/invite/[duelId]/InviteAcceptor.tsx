@@ -8,6 +8,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { CARD_SPRING } from "@/lib/utils/constants";
 import { cn } from "@/lib/utils";
 import { SignInButton } from "@clerk/nextjs";
+import { trackEvent } from "@/lib/analytics";
 
 interface InviteAcceptorProps {
   duelId: string;
@@ -48,6 +49,7 @@ export default function InviteAcceptor({
       const data = await res.json().catch(() => ({}));
 
       if (res.ok && data.duel?.id) {
+        trackEvent("invite_accepted", { duelId, skillName });
         router.push(`/compete/${data.duel.id}`);
         return;
       }
@@ -64,11 +66,12 @@ export default function InviteAcceptor({
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
+      trackEvent("invite_link_copied", { duelId, skillName });
       setTimeout(() => setCopied(false), 2000);
     } catch {
       // fallback
     }
-  }, []);
+  }, [duelId, skillName]);
 
   const initials = challengerName
     .split(" ")

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { ensureUser } from "@/lib/auth/ensure-user";
+import { getPostHogServer } from "@/lib/posthog";
 import {
   MATCHMAKING_INITIAL_RANGE,
   ELO_INITIAL_RATING,
@@ -97,6 +98,13 @@ export async function POST(request: NextRequest) {
               select: { id: true, name: true, imageUrl: true },
             },
           },
+        });
+
+        const ph = getPostHogServer();
+        ph?.capture({
+          distinctId: user.clerkId,
+          event: "duel_joined",
+          properties: { duelId: body.duelId, skillName: updatedDuel.skill.name },
         });
 
         return NextResponse.json({ duel: sanitizeDuelForClient(updatedDuel as unknown as Record<string, unknown>), action: "joined" });
@@ -232,6 +240,13 @@ export async function POST(request: NextRequest) {
           },
         });
 
+        const ph = getPostHogServer();
+        ph?.capture({
+          distinctId: user.clerkId,
+          event: "duel_matched",
+          properties: { duelId: bestMatch.id, skillSlug: body.skillSlug, eloDiff: bestEloDiff },
+        });
+
         return NextResponse.json({ duel: sanitizeDuelForClient(updatedDuel as unknown as Record<string, unknown>), action: "matched" });
       } catch {
         // Another user took this duel first -- fall through to create new
@@ -287,6 +302,13 @@ export async function POST(request: NextRequest) {
           select: { id: true, name: true, imageUrl: true },
         },
       },
+    });
+
+    const ph = getPostHogServer();
+    ph?.capture({
+      distinctId: user.clerkId,
+      event: "duel_created",
+      properties: { duelId: newDuel.id, skillSlug: body.skillSlug },
     });
 
     return NextResponse.json({ duel: sanitizeDuelForClient(newDuel as unknown as Record<string, unknown>), action: "created" });
