@@ -24,6 +24,10 @@ export const DUEL_PROGRESS_TIMEOUT_MINUTES = 30;
 export const AI_MODEL_GENERATION = "claude-opus-4-6";
 export const AI_MODEL_EVALUATION = "claude-sonnet-4-5-20250929";
 
+// AI Challenger
+export const AI_CHALLENGE_RATE_LIMIT = 10; // text sessions per user per hour
+export const AI_VOICE_RATE_LIMIT = 5; // voice sessions per user per hour
+
 // Animation
 export const CARD_SPRING = { stiffness: 300, damping: 25 };
 export const SCORE_COUNT_DURATION = 1.5; // seconds
