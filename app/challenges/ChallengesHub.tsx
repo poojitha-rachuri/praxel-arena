@@ -36,7 +36,7 @@ interface Skill {
 
 type ChallengeResponse = Omit<ChallengeCardProps, "skillName" | "index"> & {
   id: string;
-  skill?: { name: string } | null;
+  skill?: { id: string; name: string; slug: string } | null;
 };
 
 const AI_ICON_MAP = {
@@ -254,6 +254,11 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
                 rewardXpTenth={challenge.rewardXpTenth}
                 attemptCount={challenge.attemptCount}
                 userBestAttempt={challenge.userBestAttempt}
+                onStart={() => {
+                  if (challenge.skill?.slug) {
+                    router.push(`/compete/${challenge.skill.slug}`);
+                  }
+                }}
                 index={i}
               />
             ))}
