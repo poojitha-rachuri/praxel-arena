@@ -93,74 +93,83 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
   }, [selectedSkill, selectedType, isStarting, router]);
 
   return (
-    <div className="mx-auto max-w-2xl space-y-8 p-4">
+    <div className="mx-auto max-w-lg space-y-6 p-4">
       {/* Page Header */}
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Challenges</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Sharpen your skills with AI conversations and timed challenges
+        <h1 className="bg-gradient-to-r from-violet-400 to-primary bg-clip-text text-2xl font-extrabold tracking-tight text-transparent">
+          Challenges
+        </h1>
+        <p className="mt-0.5 text-xs text-muted-foreground">
+          Test your skills with AI-powered conversations
         </p>
       </div>
 
-      {/* ─── AI Challenges (Featured) ──────────────────── */}
-      <section>
-        <div className="mb-4 flex items-center gap-2">
+      {/* ─── AI Challenges ──────────────────── */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-2">
           <div className="flex size-8 items-center justify-center rounded-lg bg-primary/10">
             <Brain className="size-4 text-primary" />
           </div>
-          <div>
-            <h2 className="text-base font-semibold">AI Challenges</h2>
-            <p className="text-xs text-muted-foreground">Powered by Claude</p>
+          <div className="flex-1">
+            <h2 className="text-sm font-semibold">AI Challenges</h2>
+            <p className="text-[10px] text-muted-foreground">Powered by Claude</p>
           </div>
-          <div className="ml-auto flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5">
+          <div className="flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5">
             <Sparkles className="size-3 text-primary" />
             <span className="text-[10px] font-semibold text-primary">NEW</span>
           </div>
         </div>
 
         {/* Skill picker */}
-        <div className="mb-4">
-          <p className="mb-2 text-xs font-medium text-muted-foreground">Choose a skill</p>
-          <div className="grid gap-2 grid-cols-2 sm:grid-cols-3">
-            {skills.map((skill) => (
-              <button
+        <div>
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Choose a skill</p>
+          <div className="grid gap-2 grid-cols-2">
+            {skills.map((skill, i) => (
+              <motion.button
                 key={skill.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.04, type: "spring", ...CARD_SPRING }}
+                whileTap={{ scale: 0.96 }}
                 onClick={() => setSelectedSkill(skill.id)}
                 className={cn(
                   "flex items-center gap-2 rounded-xl border p-2.5 text-left transition-all min-h-[44px]",
                   selectedSkill === skill.id
                     ? "border-primary bg-primary/5 ring-1 ring-primary/30"
-                    : "border-border hover:border-foreground/20 hover:bg-muted/50"
+                    : "border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/30"
                 )}
               >
-                <SkillIcon slug={skill.slug} size="sm" className="size-6" />
+                <SkillIcon slug={skill.slug} size="sm" className="size-7" />
                 <span className="text-xs font-medium truncate">{skill.name}</span>
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
 
         {/* Challenge type cards */}
-        <div className="mb-4">
-          <p className="mb-2 text-xs font-medium text-muted-foreground">Choose a challenge type</p>
-          <div className="grid gap-3 sm:grid-cols-3">
+        <div>
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Choose a challenge type</p>
+          <div className="grid gap-2 sm:grid-cols-3">
             {(
               Object.entries(CHALLENGE_TYPE_CONFIG) as [
                 AIChallengeTypeName,
                 (typeof CHALLENGE_TYPE_CONFIG)[AIChallengeTypeName],
               ][]
-            ).map(([key, config]) => {
+            ).map(([key, config], i) => {
               const Icon = AI_ICON_MAP[config.icon];
               return (
                 <motion.button
                   key={key}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + i * 0.05, type: "spring", ...CARD_SPRING }}
                   onClick={() => setSelectedType(key)}
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{ scale: 0.96 }}
                   className={cn(
                     "flex flex-col items-center gap-2 rounded-xl border p-4 text-center transition-all min-h-[44px]",
                     selectedType === key
                       ? "border-primary bg-primary/5 ring-1 ring-primary/30"
-                      : "border-border hover:border-foreground/20 hover:bg-muted/50"
+                      : "border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/30"
                   )}
                 >
                   <div
@@ -190,14 +199,13 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
         <motion.button
           onClick={handleStartAI}
           disabled={!selectedSkill || !selectedType || isStarting}
-          animate={{
-            opacity: selectedSkill && selectedType ? 1 : 0.5,
-          }}
+          animate={{ opacity: selectedSkill && selectedType ? 1 : 0.4 }}
+          whileTap={selectedSkill && selectedType ? { scale: 0.97 } : undefined}
           transition={{ type: "spring", ...CARD_SPRING }}
           className={cn(
-            "flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-colors min-h-[44px]",
+            "flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold transition-colors min-h-[48px]",
             selectedSkill && selectedType && !isStarting
-              ? "bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer"
+              ? "bg-gradient-to-r from-violet-600 to-primary text-white shadow-lg shadow-primary/20 cursor-pointer"
               : "bg-muted text-muted-foreground cursor-not-allowed"
           )}
         >
