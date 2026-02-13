@@ -201,19 +201,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Target A — higher ROE means superior shareholder returns"
+          "text": "Target A  -  higher ROE means superior shareholder returns"
         },
         {
           "id": "b",
-          "text": "Target B — margin-driven ROE is more sustainable and less fragile"
+          "text": "Target B  -  margin-driven ROE is more sustainable and less fragile"
         },
         {
           "id": "c",
-          "text": "Target A — high leverage signals management confidence in cash flows"
+          "text": "Target A  -  high leverage signals management confidence in cash flows"
         },
         {
           "id": "d",
-          "text": "Neither — ROE alone is insufficient to differentiate them"
+          "text": "Neither  -  ROE alone is insufficient to differentiate them"
         }
       ],
       "correctAnswer": "b",

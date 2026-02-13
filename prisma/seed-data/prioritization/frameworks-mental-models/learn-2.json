@@ -165,11 +165,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Wait for RICE data — precision matters most"
+          "text": "Wait for RICE data  -  precision matters most"
         },
         {
           "id": "b",
-          "text": "Use ICE scoring now — speed beats precision here"
+          "text": "Use ICE scoring now  -  speed beats precision here"
         },
         {
           "id": "c",
@@ -249,7 +249,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Ship it anyway — the RICE score still holds"
+          "text": "Ship it anyway  -  the RICE score still holds"
         },
         {
           "id": "b",

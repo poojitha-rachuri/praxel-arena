@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Assets are split into current and non-current. Current assets are cash or items expected to convert to cash within one year — like inventory, accounts receivable, and short-term investments. Non-current (long-term) assets include buildings, patents, and equipment that provide value over many years. This distinction matters because it tells you how liquid a company is.",
+      "teachingPreamble": "Assets are split into current and non-current. Current assets are cash or items expected to convert to cash within one year  -  like inventory, accounts receivable, and short-term investments. Non-current (long-term) assets include buildings, patents, and equipment that provide value over many years. This distinction matters because it tells you how liquid a company is.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,19 +153,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Supplier A — positive working capital means they can meet obligations"
+          "text": "Supplier A  -  positive working capital means they can meet obligations"
         },
         {
           "id": "b",
-          "text": "Supplier B — fast growth will fix the working capital gap"
+          "text": "Supplier B  -  fast growth will fix the working capital gap"
         },
         {
           "id": "c",
-          "text": "Neither — both have disqualifying risks"
+          "text": "Neither  -  both have disqualifying risks"
         },
         {
           "id": "d",
-          "text": "Supplier B — negative working capital is normal for growing firms"
+          "text": "Supplier B  -  negative working capital is normal for growing firms"
         }
       ],
       "correctAnswer": "a",
@@ -181,24 +181,24 @@
       "options": [
         {
           "id": "a",
-          "text": "0.75 — Starbucks may struggle to cover short-term obligations"
+          "text": "0.75  -  Starbucks may struggle to cover short-term obligations"
         },
         {
           "id": "b",
-          "text": "1.33 — Starbucks is in a strong liquidity position"
+          "text": "1.33  -  Starbucks is in a strong liquidity position"
         },
         {
           "id": "c",
-          "text": "2.0 — Starbucks has twice the assets it needs"
+          "text": "2.0  -  Starbucks has twice the assets it needs"
         },
         {
           "id": "d",
-          "text": "0.75 — This always means a company will go bankrupt"
+          "text": "0.75  -  This always means a company will go bankrupt"
         }
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "The current ratio (Current Assets ÷ Current Liabilities) measures liquidity — a company's ability to pay short-term debts. A ratio above 1.0 means more current assets than current liabilities. Many analysts prefer a ratio between 1.5 and 2.0, though some industries like retail routinely operate below 1.0 due to strong cash flow cycles.",
+      "teachingPreamble": "The current ratio (Current Assets ÷ Current Liabilities) measures liquidity  -  a company's ability to pay short-term debts. A ratio above 1.0 means more current assets than current liabilities. Many analysts prefer a ratio between 1.5 and 2.0, though some industries like retail routinely operate below 1.0 due to strong cash flow cycles.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -237,7 +237,7 @@
       "options": [
         {
           "id": "a",
-          "text": "The current ratio dropped from 1.8 to 1.4 — still acceptable"
+          "text": "The current ratio dropped from 1.8 to 1.4  -  still acceptable"
         },
         {
           "id": "b",

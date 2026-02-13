@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Gross margin measures profitability after direct costs (COGS), while operating margin subtracts all operating expenses like SG&A, R&D, and depreciation. A large gap between the two reveals how much overhead is consuming your gross profit—common in retail chains with heavy store costs and marketing spend.",
+      "teachingPreamble": "Gross margin measures profitability after direct costs (COGS), while operating margin subtracts all operating expenses like SG&A, R&D, and depreciation. A large gap between the two reveals how much overhead is consuming your gross profit - common in retail chains with heavy store costs and marketing spend.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -118,7 +118,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "EBITDA (Earnings Before Interest, Taxes, Depreciation & Amortization) strips out financing decisions (interest), tax jurisdictions, and accounting choices around asset depreciation. This makes it useful for apples-to-apples comparisons—for example, comparing a debt-heavy LBO target in Germany with an equity-funded competitor in the U.S.",
+      "teachingPreamble": "EBITDA (Earnings Before Interest, Taxes, Depreciation & Amortization) strips out financing decisions (interest), tax jurisdictions, and accounting choices around asset depreciation. This makes it useful for apples-to-apples comparisons - for example, comparing a debt-heavy LBO target in Germany with an equity-funded competitor in the U.S.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -157,15 +157,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Company A—proven operational efficiency with strong flow-through"
+          "text": "Company A - proven operational efficiency with strong flow-through"
         },
         {
           "id": "b",
-          "text": "Company B—higher gross margin means more room to optimize operations"
+          "text": "Company B - higher gross margin means more room to optimize operations"
         },
         {
           "id": "c",
-          "text": "Neither—the operating margin gap in B is a red flag"
+          "text": "Neither - the operating margin gap in B is a red flag"
         },
         {
           "id": "d",
@@ -185,7 +185,7 @@
       "options": [
         {
           "id": "a",
-          "text": "None—ASC 606 requires recognizing revenue at contract signing"
+          "text": "None - ASC 606 requires recognizing revenue at contract signing"
         },
         {
           "id": "b",
@@ -241,19 +241,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Positive—higher operating income means improved profitability"
+          "text": "Positive - higher operating income means improved profitability"
         },
         {
           "id": "b",
-          "text": "Neutral—this is a standard accounting update with no real impact"
+          "text": "Neutral - this is a standard accounting update with no real impact"
         },
         {
           "id": "c",
-          "text": "Concerning—it artificially inflates margins without changing cash flows"
+          "text": "Concerning - it artificially inflates margins without changing cash flows"
         },
         {
           "id": "d",
-          "text": "Positive—capitalized R&D always signals stronger innovation investment"
+          "text": "Positive - capitalized R&D always signals stronger innovation investment"
         }
       ],
       "correctAnswer": "c",

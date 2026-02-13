@@ -41,15 +41,15 @@
       "options": [
         {
           "id": "a",
-          "text": "CFO — high interaction already, just disagreeing"
+          "text": "CFO  -  high interaction already, just disagreeing"
         },
         {
           "id": "b",
-          "text": "Head of Design — most meetings means most important"
+          "text": "Head of Design  -  most meetings means most important"
         },
         {
           "id": "c",
-          "text": "VP Engineering — approval power but barely contacted"
+          "text": "VP Engineering  -  approval power but barely contacted"
         },
         {
           "id": "d",
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Stakeholder conflicts often arise not from opposing goals but from different underlying interests. When Airbnb's trust & safety team clashed with growth teams over verification requirements, a facilitator discovered both cared about long-term retention — they just defined it differently. Mapping what stakeholders truly care about (not just what they say) lets you find alignment opportunities.",
+      "teachingPreamble": "Stakeholder conflicts often arise not from opposing goals but from different underlying interests. When Airbnb's trust & safety team clashed with growth teams over verification requirements, a facilitator discovered both cared about long-term retention  -  they just defined it differently. Mapping what stakeholders truly care about (not just what they say) lets you find alignment opportunities.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Side with VP Sales — revenue always wins"
+          "text": "Side with VP Sales  -  revenue always wins"
         },
         {
           "id": "b",
-          "text": "Side with IT Security — compliance is non-negotiable"
+          "text": "Side with IT Security  -  compliance is non-negotiable"
         },
         {
           "id": "c",
@@ -197,23 +197,23 @@
     },
     {
       "order": 7,
-      "prompt": "You're a PM at Stripe prioritizing stakeholder alignment for a new fraud detection feature. Rank these stakeholders from FIRST to engage to LAST: (a) Legal team — high power, low interest, slow to respond; (b) CEO — high power, high interest, quarterly check-in scheduled; (c) Merchant support team — low power, high interest, vocal advocates; (d) External payment partner — low power, low interest, contractual dependency only.",
+      "prompt": "You're a PM at Stripe prioritizing stakeholder alignment for a new fraud detection feature. Rank these stakeholders from FIRST to engage to LAST: (a) Legal team  -  high power, low interest, slow to respond; (b) CEO  -  high power, high interest, quarterly check-in scheduled; (c) Merchant support team  -  low power, high interest, vocal advocates; (d) External payment partner  -  low power, low interest, contractual dependency only.",
       "options": [
         {
           "id": "a",
-          "text": "Legal — high power, low interest, slow responder"
+          "text": "Legal  -  high power, low interest, slow responder"
         },
         {
           "id": "b",
-          "text": "CEO — high power, high interest"
+          "text": "CEO  -  high power, high interest"
         },
         {
           "id": "c",
-          "text": "Merchant support — low power, high interest"
+          "text": "Merchant support  -  low power, high interest"
         },
         {
           "id": "d",
-          "text": "External partner — low power, low interest"
+          "text": "External partner  -  low power, low interest"
         }
       ],
       "correctAnswer": "b,a,c,d",
@@ -229,7 +229,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Ignore them — they were low priority on your map"
+          "text": "Ignore them  -  they were low priority on your map"
         },
         {
           "id": "b",

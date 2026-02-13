@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The Rule of 72 says doubling time ≈ 72 / growth rate. It works for any compounding period — annual, quarterly, or monthly. For example, at 10% annual growth, revenue doubles in roughly 7.2 years.",
+      "teachingPreamble": "The Rule of 72 says doubling time ≈ 72 / growth rate. It works for any compounding period  -  annual, quarterly, or monthly. For example, at 10% annual growth, revenue doubles in roughly 7.2 years.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Use the 35% CAGR — proven historical track record"
+          "text": "Use the 35% CAGR  -  proven historical track record"
         },
         {
           "id": "b",
-          "text": "Use decelerating analyst estimates — growth slows with scale"
+          "text": "Use decelerating analyst estimates  -  growth slows with scale"
         },
         {
           "id": "c",
@@ -229,7 +229,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep the forecast — Spotify's brand moat is strong enough"
+          "text": "Keep the forecast  -  Spotify's brand moat is strong enough"
         },
         {
           "id": "b",

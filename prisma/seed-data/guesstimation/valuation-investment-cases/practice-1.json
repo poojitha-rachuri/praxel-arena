@@ -97,11 +97,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Invest in A — higher growth ceiling justifies premium"
+          "text": "Invest in A  -  higher growth ceiling justifies premium"
         },
         {
           "id": "b",
-          "text": "Invest in B — superior retention and cheaper entry"
+          "text": "Invest in B  -  superior retention and cheaper entry"
         },
         {
           "id": "c",
@@ -109,7 +109,7 @@
         },
         {
           "id": "d",
-          "text": "Pass on both — neither shows capital efficiency"
+          "text": "Pass on both  -  neither shows capital efficiency"
         }
       ],
       "correctAnswer": "b",
@@ -213,15 +213,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Use $3.1B — transaction comps reflect actual willingness to pay"
+          "text": "Use $3.1B  -  transaction comps reflect actual willingness to pay"
         },
         {
           "id": "b",
-          "text": "Use $2.4B — DCF captures your specific unit economics"
+          "text": "Use $2.4B  -  DCF captures your specific unit economics"
         },
         {
           "id": "c",
-          "text": "Use $1.6B — conservative builds investor trust"
+          "text": "Use $1.6B  -  conservative builds investor trust"
         },
         {
           "id": "d",
@@ -249,7 +249,7 @@
         },
         {
           "id": "c",
-          "text": "Comparable revenue scale ($300M–$800M range)"
+          "text": "Comparable revenue scale ($300M - $800M range)"
         },
         {
           "id": "d",
@@ -269,11 +269,11 @@
       "options": [
         {
           "id": "a",
-          "text": "WACC rises ~2%, but near-term growth slows more — double hit to DCF"
+          "text": "WACC rises ~2%, but near-term growth slows more  -  double hit to DCF"
         },
         {
           "id": "b",
-          "text": "Higher rates don't matter for high-growth — maintain original valuation"
+          "text": "Higher rates don't matter for high-growth  -  maintain original valuation"
         },
         {
           "id": "c",

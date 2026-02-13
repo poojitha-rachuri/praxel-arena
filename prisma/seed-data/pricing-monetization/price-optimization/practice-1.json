@@ -73,11 +73,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Run Van Westendorp—captures full WTP distribution without revenue risk"
+          "text": "Run Van Westendorp - captures full WTP distribution without revenue risk"
         },
         {
           "id": "b",
-          "text": "Run A/B test—revealed preference data beats stated preference every time"
+          "text": "Run A/B test - revealed preference data beats stated preference every time"
         },
         {
           "id": "c",
@@ -217,7 +217,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Raise SMB prices 10-15%—inelastic demand means revenue gains with minimal churn"
+          "text": "Raise SMB prices 10-15% - inelastic demand means revenue gains with minimal churn"
         },
         {
           "id": "b",

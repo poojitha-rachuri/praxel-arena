@@ -141,11 +141,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Feature X — user demand is the strongest signal"
+          "text": "Feature X  -  user demand is the strongest signal"
         },
         {
           "id": "b",
-          "text": "Feature Y — Must haves always come before Should haves"
+          "text": "Feature Y  -  Must haves always come before Should haves"
         },
         {
           "id": "c",
@@ -186,30 +186,30 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Cost of Delay asks: 'What do we lose for every week we don't ship this?' Amazon famously uses this thinking — if a checkout improvement generates $200K/week, delaying it by 3 weeks costs $600K. This reframes prioritization from 'what's most valuable' to 'what's most urgent to capture value now.'",
+      "teachingPreamble": "Cost of Delay asks: 'What do we lose for every week we don't ship this?' Amazon famously uses this thinking  -  if a checkout improvement generates $200K/week, delaying it by 3 weeks costs $600K. This reframes prioritization from 'what's most valuable' to 'what's most urgent to capture value now.'",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
     },
     {
       "order": 7,
-      "prompt": "Using Cost of Delay thinking, rank these projects from highest to lowest priority: (a) New dashboard — saves team 2hrs/week, no deadline. (b) Compliance fix — $50K/day fine starts in 5 days. (c) Onboarding flow — losing 30% of signups daily. (d) Logo redesign — brand refresh planned for next quarter.",
+      "prompt": "Using Cost of Delay thinking, rank these projects from highest to lowest priority: (a) New dashboard  -  saves team 2hrs/week, no deadline. (b) Compliance fix  -  $50K/day fine starts in 5 days. (c) Onboarding flow  -  losing 30% of signups daily. (d) Logo redesign  -  brand refresh planned for next quarter.",
       "options": [
         {
           "id": "a",
-          "text": "New dashboard — saves 2hrs/week"
+          "text": "New dashboard  -  saves 2hrs/week"
         },
         {
           "id": "b",
-          "text": "Compliance fix — $50K/day fine imminent"
+          "text": "Compliance fix  -  $50K/day fine imminent"
         },
         {
           "id": "c",
-          "text": "Onboarding flow — losing 30% of signups daily"
+          "text": "Onboarding flow  -  losing 30% of signups daily"
         },
         {
           "id": "d",
-          "text": "Logo redesign — planned for next quarter"
+          "text": "Logo redesign  -  planned for next quarter"
         }
       ],
       "correctAnswer": "b,c,a,d",
@@ -225,11 +225,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Logo redesign jumps up — its cost of delay just skyrocketed"
+          "text": "Logo redesign jumps up  -  its cost of delay just skyrocketed"
         },
         {
           "id": "b",
-          "text": "No change — compliance and onboarding still matter more"
+          "text": "No change  -  compliance and onboarding still matter more"
         },
         {
           "id": "c",
@@ -243,7 +243,7 @@
       "correctAnswer": "a",
       "insightAnswer": "a",
       "teachingPreamble": null,
-      "priorContext": "Previously, the logo redesign ranked last because it had low cost of delay — it was a nice-to-have planned for next quarter. Now the context has shifted: a strategic pivot makes it time-sensitive with real revenue implications.",
+      "priorContext": "Previously, the logo redesign ranked last because it had low cost of delay  -  it was a nice-to-have planned for next quarter. Now the context has shifted: a strategic pivot makes it time-sensitive with real revenue implications.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

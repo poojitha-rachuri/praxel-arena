@@ -191,6 +191,26 @@ export default function DuelPageClient({ initialDuel }: DuelPageClientProps) {
           </motion.div>
         )}
 
+        {duel.status === "IN_PROGRESS" && !duel.myAttemptComplete && !duel.sprint && (
+          <motion.div
+            key="no-sprint"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex flex-1 flex-col items-center justify-center gap-4 p-4"
+          >
+            <AlertCircle className="size-10 text-muted-foreground" />
+            <div className="text-center">
+              <h2 className="text-lg font-semibold">Sprint Not Available</h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                This duel doesn&apos;t have content loaded. Please create a new duel.
+              </p>
+            </div>
+            <Button variant="outline" onClick={() => router.push("/compete")}>
+              Back to Arena
+            </Button>
+          </motion.div>
+        )}
+
         {duel.status === "IN_PROGRESS" && duel.myAttemptComplete && (
           <motion.div
             key="waiting-opponent"

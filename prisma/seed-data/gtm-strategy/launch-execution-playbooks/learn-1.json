@@ -101,11 +101,11 @@
       "options": [
         {
           "id": "a",
-          "text": "1–2 weeks before GA to build last-minute buzz"
+          "text": "1 - 2 weeks before GA to build last-minute buzz"
         },
         {
           "id": "b",
-          "text": "6–12 weeks before GA to iterate on feedback"
+          "text": "6 - 12 weeks before GA to iterate on feedback"
         },
         {
           "id": "c",
@@ -113,12 +113,12 @@
         },
         {
           "id": "d",
-          "text": "12–18 months before GA to lock in pricing"
+          "text": "12 - 18 months before GA to lock in pricing"
         }
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Beta programs serve as a controlled stress test with real users before you commit to a public launch. Figma ran a 10-week private beta for its Dev Mode feature, gathering feedback from 500 design teams, which led to three major UX changes before general availability — changes that would have been far costlier post-launch.",
+      "teachingPreamble": "Beta programs serve as a controlled stress test with real users before you commit to a public launch. Figma ran a 10-week private beta for its Dev Mode feature, gathering feedback from 500 design teams, which led to three major UX changes before general availability  -  changes that would have been far costlier post-launch.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -202,7 +202,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Launch metrics fall into three categories: awareness (reach, impressions), engagement (conversion rates, activation), and retention (DAU/MAU, churn). Dropbox famously tracked its landing page conversion rate during its MVP launch — a 35% visitor-to-waitlist rate validated that the value proposition resonated, even before the product was fully built.",
+      "teachingPreamble": "Launch metrics fall into three categories: awareness (reach, impressions), engagement (conversion rates, activation), and retention (DAU/MAU, churn). Dropbox famously tracked its landing page conversion rate during its MVP launch  -  a 35% visitor-to-waitlist rate validated that the value proposition resonated, even before the product was fully built.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

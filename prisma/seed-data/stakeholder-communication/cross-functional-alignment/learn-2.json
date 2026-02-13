@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "A working agreement is a documented set of norms that cross-functional teams co-create to define how they'll communicate, make decisions, and handle disagreements. When Spotify scaled its squad model, each squad established explicit working agreements covering response times, escalation paths, and meeting cadences — reducing inter-team friction by 40%.",
+      "teachingPreamble": "A working agreement is a documented set of norms that cross-functional teams co-create to define how they'll communicate, make decisions, and handle disagreements. When Spotify scaled its squad model, each squad established explicit working agreements covering response times, escalation paths, and meeting cadences  -  reducing inter-team friction by 40%.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

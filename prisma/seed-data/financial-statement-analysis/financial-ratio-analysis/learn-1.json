@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "The current ratio (current assets ÷ current liabilities) measures broad liquidity, while the quick ratio strips out inventory and prepaid expenses. When there's a large gap between the two, it signals that inventory is a dominant component of current assets — a red flag for companies where inventory can be slow to convert to cash, like retailers facing demand shifts.",
+      "teachingPreamble": "The current ratio (current assets ÷ current liabilities) measures broad liquidity, while the quick ratio strips out inventory and prepaid expenses. When there's a large gap between the two, it signals that inventory is a dominant component of current assets  -  a red flag for companies where inventory can be slow to convert to cash, like retailers facing demand shifts.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Efficiency ratios like inventory turnover (COGS ÷ average inventory) and receivables turnover (revenue ÷ average receivables) reveal how well a company converts assets into revenue. However, these ratios must be interpreted within business model context — a warehouse club like Costco intentionally stocks fewer SKUs at high volume, naturally producing higher turnover than a general merchandise retailer.",
+      "teachingPreamble": "Efficiency ratios like inventory turnover (COGS ÷ average inventory) and receivables turnover (revenue ÷ average receivables) reveal how well a company converts assets into revenue. However, these ratios must be interpreted within business model context  -  a warehouse club like Costco intentionally stocks fewer SKUs at high volume, naturally producing higher turnover than a general merchandise retailer.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Profitability ratios like gross margin, operating margin, and net margin tell you about accounting earnings, but they don't reveal cash generation quality. Advanced analysts compare accrual-based margins to free cash flow margins. A persistent gap between operating profit and free cash flow often signals heavy capital expenditure requirements, aggressive revenue recognition, or poor working capital management — all of which degrade true economic profitability.",
+      "teachingPreamble": "Profitability ratios like gross margin, operating margin, and net margin tell you about accounting earnings, but they don't reveal cash generation quality. Advanced analysts compare accrual-based margins to free cash flow margins. A persistent gap between operating profit and free cash flow often signals heavy capital expenditure requirements, aggressive revenue recognition, or poor working capital management  -  all of which degrade true economic profitability.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -245,7 +245,7 @@
         },
         {
           "id": "d",
-          "text": "No change — the original ratio priority ranking still holds"
+          "text": "No change  -  the original ratio priority ranking still holds"
         }
       ],
       "correctAnswer": "a",

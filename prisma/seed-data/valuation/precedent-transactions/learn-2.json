@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Control premiums reflect the extra price acquirers pay above a target's unaffected trading value to gain control. In Microsoft's $69B Activision deal, the offer represented a ~45% premium to the unaffected price. Premiums vary by sector and strategic rationale, typically ranging 20–50%.",
+      "teachingPreamble": "Control premiums reflect the extra price acquirers pay above a target's unaffected trading value to gain control. In Microsoft's $69B Activision deal, the offer represented a ~45% premium to the unaffected price. Premiums vary by sector and strategic rationale, typically ranging 20 - 50%.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -173,11 +173,11 @@
       "options": [
         {
           "id": "a",
-          "text": "38% premium to $42—use the truly unaffected price before any leak"
+          "text": "38% premium to $42 - use the truly unaffected price before any leak"
         },
         {
           "id": "b",
-          "text": "18% premium to $49—the market-adjusted price is more current"
+          "text": "18% premium to $49 - the market-adjusted price is more current"
         },
         {
           "id": "c",
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Selecting the correct 'unaffected' date is one of the trickiest parts of precedent analysis. When Elon Musk's Twitter bid leaked, the stock jumped 27% before formal announcement. Best practice is to report premiums at multiple reference points—1-day, 1-week, and 30-day pre-announcement—flagging any information leakage.",
+      "teachingPreamble": "Selecting the correct 'unaffected' date is one of the trickiest parts of precedent analysis. When Elon Musk's Twitter bid leaked, the stock jumped 27% before formal announcement. Best practice is to report premiums at multiple reference points - 1-day, 1-week, and 30-day pre-announcement - flagging any information leakage.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -233,7 +233,7 @@
         },
         {
           "id": "b",
-          "text": "Keep your original analysis unchanged—fundamentals haven't shifted"
+          "text": "Keep your original analysis unchanged - fundamentals haven't shifted"
         },
         {
           "id": "c",

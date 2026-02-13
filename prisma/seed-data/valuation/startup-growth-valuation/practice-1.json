@@ -13,19 +13,19 @@
       "options": [
         {
           "id": "a",
-          "text": "$80M — the stated pre-money is the effective valuation"
+          "text": "$80M  -  the stated pre-money is the effective valuation"
         },
         {
           "id": "b",
-          "text": "$64M — option pool reduces effective pre-money by $16M"
+          "text": "$64M  -  option pool reduces effective pre-money by $16M"
         },
         {
           "id": "c",
-          "text": "$60M — founders' share defines the effective valuation"
+          "text": "$60M  -  founders' share defines the effective valuation"
         },
         {
           "id": "d",
-          "text": "$100M — you should use post-money as the reference"
+          "text": "$100M  -  you should use post-money as the reference"
         }
       ],
       "correctAnswer": "b",
@@ -117,19 +117,19 @@
       "options": [
         {
           "id": "a",
-          "text": "70% gross margin is standard — neutral impact on multiple"
+          "text": "70% gross margin is standard  -  neutral impact on multiple"
         },
         {
           "id": "b",
-          "text": "140% NRR signals exceptional expansion — justifies premium to comps"
+          "text": "140% NRR signals exceptional expansion  -  justifies premium to comps"
         },
         {
           "id": "c",
-          "text": "$2B TAM limits upside — warrants a discount to comps"
+          "text": "$2B TAM limits upside  -  warrants a discount to comps"
         },
         {
           "id": "d",
-          "text": "Negative FCF indicates unsustainable model — apply steep discount"
+          "text": "Negative FCF indicates unsustainable model  -  apply steep discount"
         }
       ],
       "correctAnswer": "b",
@@ -209,19 +209,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Offer A — higher valuation offsets participation at $400M exit"
+          "text": "Offer A  -  higher valuation offsets participation at $400M exit"
         },
         {
           "id": "b",
-          "text": "Offer B — non-participating converts; founders keep more above preference"
+          "text": "Offer B  -  non-participating converts; founders keep more above preference"
         },
         {
           "id": "c",
-          "text": "Offer A — participating preferred capped at 3x limits investor take"
+          "text": "Offer A  -  participating preferred capped at 3x limits investor take"
         },
         {
           "id": "d",
-          "text": "Offer B — strategic partner accelerates exit likelihood enough to compensate"
+          "text": "Offer B  -  strategic partner accelerates exit likelihood enough to compensate"
         }
       ],
       "correctAnswer": "b",
@@ -237,11 +237,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Accept — headline valuation protects signaling for future rounds"
+          "text": "Accept  -  headline valuation protects signaling for future rounds"
         },
         {
           "id": "b",
-          "text": "Counter at $350M clean terms — avoid structure that punishes downside"
+          "text": "Counter at $350M clean terms  -  avoid structure that punishes downside"
         },
         {
           "id": "c",

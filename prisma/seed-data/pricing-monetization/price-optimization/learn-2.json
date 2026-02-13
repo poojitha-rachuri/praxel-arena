@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Willingness-to-pay (WTP) research suffers from hypothetical bias—customers overstate what they'd pay when no real money is at stake. Becker-DeGroot-Marschak (BDM) auctions and real purchase experiments solve this by making responses consequential. Slack used incentive-compatible conjoint studies before launching paid tiers, finding WTP was 22% lower than direct survey responses suggested.",
+      "teachingPreamble": "Willingness-to-pay (WTP) research suffers from hypothetical bias - customers overstate what they'd pay when no real money is at stake. Becker-DeGroot-Marschak (BDM) auctions and real purchase experiments solve this by making responses consequential. Slack used incentive-compatible conjoint studies before launching paid tiers, finding WTP was 22% lower than direct survey responses suggested.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,11 +153,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Live A/B test—real purchase data outweighs backlash risk"
+          "text": "Live A/B test - real purchase data outweighs backlash risk"
         },
         {
           "id": "b",
-          "text": "Conjoint study—fintech trust is fragile, avoid perception damage"
+          "text": "Conjoint study - fintech trust is fragile, avoid perception damage"
         },
         {
           "id": "c",
@@ -241,7 +241,7 @@
         },
         {
           "id": "b",
-          "text": "Ignore it—A/B testing is standard practice and will blow over"
+          "text": "Ignore it - A/B testing is standard practice and will blow over"
         },
         {
           "id": "c",

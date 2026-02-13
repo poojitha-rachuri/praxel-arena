@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The average (mean) adds everything up and divides equally, but a single extreme value can distort it dramatically. The median is the middle value when you line up all numbers — it's far more resistant to outliers, making it the go-to metric when data is skewed.",
+      "teachingPreamble": "The average (mean) adds everything up and divides equally, but a single extreme value can distort it dramatically. The median is the middle value when you line up all numbers  -  it's far more resistant to outliers, making it the go-to metric when data is skewed.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -122,7 +122,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Correlation means two things move together, but causation means one actually causes the other. In business, confusing the two leads to costly mistakes — like assuming a marketing campaign drove sales when a seasonal trend was the real driver. Always ask: could a hidden third variable explain both?",
+      "teachingPreamble": "Correlation means two things move together, but causation means one actually causes the other. In business, confusing the two leads to costly mistakes  -  like assuming a marketing campaign drove sales when a seasonal trend was the real driver. Always ask: could a hidden third variable explain both?",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -161,11 +161,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Ship it — a 15% lift is too big to ignore"
+          "text": "Ship it  -  a 15% lift is too big to ignore"
         },
         {
           "id": "b",
-          "text": "Keep testing — 80 visitors is far too small to trust"
+          "text": "Keep testing  -  80 visitors is far too small to trust"
         },
         {
           "id": "c",
@@ -189,24 +189,24 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes — 80% approval is overwhelmingly positive"
+          "text": "Yes  -  80% approval is overwhelmingly positive"
         },
         {
           "id": "b",
-          "text": "No — 50 users can't reliably represent 230 million"
+          "text": "No  -  50 users can't reliably represent 230 million"
         },
         {
           "id": "c",
-          "text": "Yes — surveys are always representative of the population"
+          "text": "Yes  -  surveys are always representative of the population"
         },
         {
           "id": "d",
-          "text": "No — they should only use internal employee feedback"
+          "text": "No  -  they should only use internal employee feedback"
         }
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Sample size determines how trustworthy your findings are. A small sample can produce dramatic-looking results purely by chance. As a rule of thumb, larger and more representative samples give you more confidence that your results reflect reality — not random noise.",
+      "teachingPreamble": "Sample size determines how trustworthy your findings are. A small sample can produce dramatic-looking results purely by chance. As a rule of thumb, larger and more representative samples give you more confidence that your results reflect reality  -  not random noise.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -263,7 +263,7 @@
       "correctAnswer": "a",
       "insightAnswer": "a",
       "teachingPreamble": null,
-      "priorContext": "Previously, your team was evaluating whether a pricing change boosted revenue and confirmed the sample size and metric type. Now you discover the test ran during Black Friday week — a major confounding variable.",
+      "priorContext": "Previously, your team was evaluating whether a pricing change boosted revenue and confirmed the sample size and metric type. Now you discover the test ran during Black Friday week  -  a major confounding variable.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

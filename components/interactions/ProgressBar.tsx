@@ -82,16 +82,22 @@ export function ProgressBar({
           {config.label}
         </div>
 
-        {/* Timer */}
-        <div className={cn(
-          "flex items-center gap-1.5 text-sm font-mono tabular-nums",
-          isCritical ? "text-danger font-bold animate-pulse" :
-          isWarning ? "text-warning" :
-          "text-muted-foreground"
-        )}>
-          <Timer className="size-3.5" />
-          {timeString}
-        </div>
+        {/* Timer — only visible in COMPETE mode */}
+        {mode === "COMPETE" ? (
+          <div className={cn(
+            "flex items-center gap-1.5 text-sm font-mono tabular-nums",
+            isCritical ? "text-danger font-bold animate-pulse" :
+            isWarning ? "text-warning" :
+            "text-muted-foreground"
+          )}>
+            <Timer className="size-3.5" />
+            {timeString}
+          </div>
+        ) : (
+          <span className="text-xs text-muted-foreground tabular-nums">
+            {currentIndex + 1} / {totalInteractions}
+          </span>
+        )}
       </div>
 
       {/* Step indicator dots */}

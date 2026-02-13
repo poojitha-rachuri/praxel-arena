@@ -13,19 +13,19 @@
       "options": [
         {
           "id": "a",
-          "text": "25% — $5M of $20M post-money"
+          "text": "25%  -  $5M of $20M post-money"
         },
         {
           "id": "b",
-          "text": "33% — $5M of $15M pre-money"
+          "text": "33%  -  $5M of $15M pre-money"
         },
         {
           "id": "c",
-          "text": "20% — $5M of $25M post-money"
+          "text": "20%  -  $5M of $25M post-money"
         },
         {
           "id": "d",
-          "text": "30% — blended pre and post calculation"
+          "text": "30%  -  blended pre and post calculation"
         }
       ],
       "correctAnswer": "a",
@@ -118,7 +118,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The VC method works backward from exit. You estimate the terminal value at exit (e.g., projected revenue × exit multiple), then divide by the target return multiple to get the post-money valuation today. This is fundamentally different from DCF—VCs price rounds based on what return they need, not a cost-of-capital discount rate. Sequoia famously uses variants of this approach to back into acceptable entry prices.",
+      "teachingPreamble": "The VC method works backward from exit. You estimate the terminal value at exit (e.g., projected revenue × exit multiple), then divide by the target return multiple to get the post-money valuation today. This is fundamentally different from DCF - VCs price rounds based on what return they need, not a cost-of-capital discount rate. Sequoia famously uses variants of this approach to back into acceptable entry prices.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -157,15 +157,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Match at $80M — 150% growth justifies premium, losing deal is worse"
+          "text": "Match at $80M  -  150% growth justifies premium, losing deal is worse"
         },
         {
           "id": "b",
-          "text": "Counter at $65M — slight premium over competitor, preserves return math"
+          "text": "Counter at $65M  -  slight premium over competitor, preserves return math"
         },
         {
           "id": "c",
-          "text": "Walk away — $80M pre-money destroys Series B step-up economics"
+          "text": "Walk away  -  $80M pre-money destroys Series B step-up economics"
         },
         {
           "id": "d",
@@ -202,7 +202,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "TAM-based valuation sizes the opportunity ceiling, but investors frequently confuse Total Addressable Market with Serviceable Obtainable Market (SOM). A $2B TAM might yield only a $200M SOM after filtering for geography, customer segment, and competitive dynamics. Uber's early pitch cited a $4B global taxi market—their actual addressable opportunity was far larger because they redefined the market, illustrating how TAM framing can mislead in both directions.",
+      "teachingPreamble": "TAM-based valuation sizes the opportunity ceiling, but investors frequently confuse Total Addressable Market with Serviceable Obtainable Market (SOM). A $2B TAM might yield only a $200M SOM after filtering for geography, customer segment, and competitive dynamics. Uber's early pitch cited a $4B global taxi market - their actual addressable opportunity was far larger because they redefined the market, illustrating how TAM framing can mislead in both directions.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

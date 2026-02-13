@@ -101,11 +101,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Brand marketing — improving CAC has faster payback"
+          "text": "Brand marketing  -  improving CAC has faster payback"
         },
         {
           "id": "b",
-          "text": "Loyalty program — higher LTV creates more total value"
+          "text": "Loyalty program  -  higher LTV creates more total value"
         },
         {
           "id": "c",
@@ -113,7 +113,7 @@
         },
         {
           "id": "d",
-          "text": "Neither — reinvest in product instead"
+          "text": "Neither  -  reinvest in product instead"
         }
       ],
       "correctAnswer": "b",
@@ -221,11 +221,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Model A — massive funnel offsets low conversion"
+          "text": "Model A  -  massive funnel offsets low conversion"
         },
         {
           "id": "b",
-          "text": "Model B — every user pays, cleaner economics"
+          "text": "Model B  -  every user pays, cleaner economics"
         },
         {
           "id": "c",
@@ -277,19 +277,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Roughly 1.3:1 — dangerously close to breakeven"
+          "text": "Roughly 1.3:1  -  dangerously close to breakeven"
         },
         {
           "id": "b",
-          "text": "Roughly 2.1:1 — still healthy enough to sustain"
+          "text": "Roughly 2.1:1  -  still healthy enough to sustain"
         },
         {
           "id": "c",
-          "text": "Roughly 0.8:1 — company is losing money per customer"
+          "text": "Roughly 0.8:1  -  company is losing money per customer"
         },
         {
           "id": "d",
-          "text": "Roughly 1.7:1 — below target but manageable"
+          "text": "Roughly 1.7:1  -  below target but manageable"
         }
       ],
       "correctAnswer": "a",

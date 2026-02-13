@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "A subscription model charges customers a recurring fee—monthly or annually—for continuous access to a product or service. Netflix charges ~$15/month for unlimited streaming, generating predictable recurring revenue that now exceeds $33 billion annually. The key advantage is revenue predictability, which makes forecasting and investment planning much easier.",
+      "teachingPreamble": "A subscription model charges customers a recurring fee - monthly or annually - for continuous access to a product or service. Netflix charges ~$15/month for unlimited streaming, generating predictable recurring revenue that now exceeds $33 billion annually. The key advantage is revenue predictability, which makes forecasting and investment planning much easier.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -102,7 +102,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "The freemium model gives users a basic product for free while charging for premium features. Dropbox famously grew to 700M users by offering 2GB free storage, then converting ~4% to paid plans starting at $12/month. The free tier acts as a massive acquisition funnel—lowering the barrier to try your product so you can demonstrate value before asking for payment.",
+      "teachingPreamble": "The freemium model gives users a basic product for free while charging for premium features. Dropbox famously grew to 700M users by offering 2GB free storage, then converting ~4% to paid plans starting at $12/month. The free tier acts as a massive acquisition funnel - lowering the barrier to try your product so you can demonstrate value before asking for payment.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -137,7 +137,7 @@
     },
     {
       "order": 5,
-      "prompt": "You're launching a B2B analytics tool for SMBs. Usage varies wildly—some clients run 10 reports/month, others run 10,000. Which model best balances fairness, simplicity, and revenue?",
+      "prompt": "You're launching a B2B analytics tool for SMBs. Usage varies wildly - some clients run 10 reports/month, others run 10,000. Which model best balances fairness, simplicity, and revenue?",
       "options": [
         {
           "id": "a",

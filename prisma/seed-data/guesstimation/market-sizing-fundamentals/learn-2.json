@@ -102,7 +102,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Bottom-up sizing builds from small, observable units—like individual customers, stores, or transactions—and scales up. It's grounded in real-world data you can verify. Sweetgreen used bottom-up logic early on: counting office workers near target locations and estimating capture rates to size each store's revenue potential.",
+      "teachingPreamble": "Bottom-up sizing builds from small, observable units - like individual customers, stores, or transactions - and scales up. It's grounded in real-world data you can verify. Sweetgreen used bottom-up logic early on: counting office workers near target locations and estimating capture rates to size each store's revenue potential.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -186,7 +186,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "In practice, strong analysts use both approaches as a cross-check. Top-down is fastest for ballpark TAM estimates and works well when industry reports exist—like McKinsey sizing the global EV market at $460B. Bottom-up shines when you need credible, defensible numbers tied to specific customers and pricing.",
+      "teachingPreamble": "In practice, strong analysts use both approaches as a cross-check. Top-down is fastest for ballpark TAM estimates and works well when industry reports exist - like McKinsey sizing the global EV market at $460B. Bottom-up shines when you need credible, defensible numbers tied to specific customers and pricing.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -225,7 +225,7 @@
       "options": [
         {
           "id": "a",
-          "text": "No change—TAM stays the same regardless of competition"
+          "text": "No change - TAM stays the same regardless of competition"
         },
         {
           "id": "b",

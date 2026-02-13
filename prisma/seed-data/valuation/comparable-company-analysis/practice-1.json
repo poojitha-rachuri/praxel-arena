@@ -93,19 +93,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Similar growth rates—growth is the primary multiple driver"
+          "text": "Similar growth rates - growth is the primary multiple driver"
         },
         {
           "id": "b",
-          "text": "Similar market caps—size drives liquidity and investor base"
+          "text": "Similar market caps - size drives liquidity and investor base"
         },
         {
           "id": "c",
-          "text": "Equal weight to both—neither dominates"
+          "text": "Equal weight to both - neither dominates"
         },
         {
           "id": "d",
-          "text": "Neither—focus only on same cuisine type"
+          "text": "Neither - focus only on same cuisine type"
         }
       ],
       "correctAnswer": "a",
@@ -201,11 +201,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Exclude it—M&A speculation distorts the trading multiple"
+          "text": "Exclude it - M&A speculation distorts the trading multiple"
         },
         {
           "id": "b",
-          "text": "Include it—removing data points reduces sample integrity"
+          "text": "Include it - removing data points reduces sample integrity"
         },
         {
           "id": "c",
@@ -257,7 +257,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Remove the comp entirely—its business model no longer matches"
+          "text": "Remove the comp entirely - its business model no longer matches"
         },
         {
           "id": "b",

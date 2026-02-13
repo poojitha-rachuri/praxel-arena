@@ -41,15 +41,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Datadog — its multiple is moderate but growth is strong"
+          "text": "Datadog  -  its multiple is moderate but growth is strong"
         },
         {
           "id": "b",
-          "text": "Splunk — lowest multiple suggests the market is bearish"
+          "text": "Splunk  -  lowest multiple suggests the market is bearish"
         },
         {
           "id": "c",
-          "text": "Snowflake — highest multiple but growth may not justify 30x"
+          "text": "Snowflake  -  highest multiple but growth may not justify 30x"
         },
         {
           "id": "d",
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Peer selection is the most critical step in comps. You need companies with similar business models, growth rates, margins, and risk profiles. When Goldman Sachs valued Spotify's IPO in 2018, they chose peers like Pandora and Netflix — not Apple or Amazon — because those companies shared a subscription-based digital media model with similar revenue growth trajectories.",
+      "teachingPreamble": "Peer selection is the most critical step in comps. You need companies with similar business models, growth rates, margins, and risk profiles. When Goldman Sachs valued Spotify's IPO in 2018, they chose peers like Pandora and Netflix  -  not Apple or Amazon  -  because those companies shared a subscription-based digital media model with similar revenue growth trajectories.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -229,7 +229,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep the same peers — the pivot hasn't happened yet"
+          "text": "Keep the same peers  -  the pivot hasn't happened yet"
         },
         {
           "id": "b",

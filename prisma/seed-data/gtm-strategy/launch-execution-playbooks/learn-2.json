@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When Figma ran its beta from 2015-2016, it didn't just fix bugs—it validated that design teams would actually collaborate in-browser, a critical product-market fit signal. Structured betas use cohort-based enrollment, success criteria gates, and predefined kill/proceed metrics to systematically de-risk launches before committing full GTM resources.",
+      "teachingPreamble": "When Figma ran its beta from 2015-2016, it didn't just fix bugs - it validated that design teams would actually collaborate in-browser, a critical product-market fit signal. Structured betas use cohort-based enrollment, success criteria gates, and predefined kill/proceed metrics to systematically de-risk launches before committing full GTM resources.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Slack's 2014 launch used a rolling thunder approach—invite-only waves across teams of increasing size—which let them scale infrastructure and refine onboarding between waves. Rolling thunder launches sequence market entry across segments, geographies, or use cases, allowing teams to apply learnings from each wave to the next while building sustained momentum rather than a single spike.",
+      "teachingPreamble": "Slack's 2014 launch used a rolling thunder approach - invite-only waves across teams of increasing size - which let them scale infrastructure and refine onboarding between waves. Rolling thunder launches sequence market entry across segments, geographies, or use cases, allowing teams to apply learnings from each wave to the next while building sustained momentum rather than a single spike.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Superhuman famously used a 'product-market fit engine' measuring how disappointed users would be if the product disappeared, tracked by weekly cohort. Research from Amplitude across 12,000 products shows that Week-1 and Week-4 retention cohort curves are the strongest early predictor of long-term success—far more than vanity metrics like downloads or press hits.",
+      "teachingPreamble": "Superhuman famously used a 'product-market fit engine' measuring how disappointed users would be if the product disappeared, tracked by weekly cohort. Research from Amplitude across 12,000 products shows that Week-1 and Week-4 retention cohort curves are the strongest early predictor of long-term success - far more than vanity metrics like downloads or press hits.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

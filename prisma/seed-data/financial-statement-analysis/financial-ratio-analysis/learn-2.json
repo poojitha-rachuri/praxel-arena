@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "DuPont decomposition splits ROE into profit margin × asset turnover × equity multiplier. When a company's ROE rises while both margin and turnover are flat, the equity multiplier is the driver. From 2020–2023, Apple's ROE surged partly because buybacks shrank equity, amplifying the multiplier—a financial engineering effect, not operational improvement.",
+      "teachingPreamble": "DuPont decomposition splits ROE into profit margin × asset turnover × equity multiplier. When a company's ROE rises while both margin and turnover are flat, the equity multiplier is the driver. From 2020 - 2023, Apple's ROE surged partly because buybacks shrank equity, amplifying the multiplier - a financial engineering effect, not operational improvement.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -126,7 +126,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "The cash conversion cycle (DSO + DIO − DPO) measures how quickly a firm converts investments into cash. When ROIC looks strong but the CCC is lengthening—DSO rising faster than revenue, or DIO creeping up—it often signals channel stuffing or aggressive revenue recognition. Under Armour faced this exact pattern in 2016–2017: impressive ROIC masked by ballooning receivables that preceded a major revenue restatement.",
+      "teachingPreamble": "The cash conversion cycle (DSO + DIO − DPO) measures how quickly a firm converts investments into cash. When ROIC looks strong but the CCC is lengthening - DSO rising faster than revenue, or DIO creeping up - it often signals channel stuffing or aggressive revenue recognition. Under Armour faced this exact pattern in 2016 - 2017: impressive ROIC masked by ballooning receivables that preceded a major revenue restatement.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -165,11 +165,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Target A—superior ROE justifies leverage in a consolidating industry"
+          "text": "Target A - superior ROE justifies leverage in a consolidating industry"
         },
         {
           "id": "b",
-          "text": "Target B—real cash generation with balance sheet flexibility for integration"
+          "text": "Target B - real cash generation with balance sheet flexibility for integration"
         },
         {
           "id": "c",
@@ -177,7 +177,7 @@
         },
         {
           "id": "d",
-          "text": "Pass on both—neither clears the cost of capital hurdle"
+          "text": "Pass on both - neither clears the cost of capital hurdle"
         }
       ],
       "correctAnswer": "b",
@@ -253,11 +253,11 @@
         },
         {
           "id": "b",
-          "text": "Walk away—the original thesis on cash generation is invalidated"
+          "text": "Walk away - the original thesis on cash generation is invalidated"
         },
         {
           "id": "c",
-          "text": "Proceed unchanged—inventory liquidation proves management operational competence"
+          "text": "Proceed unchanged - inventory liquidation proves management operational competence"
         },
         {
           "id": "d",
@@ -267,7 +267,7 @@
       "correctAnswer": "a",
       "insightAnswer": "a",
       "teachingPreamble": null,
-      "priorContext": "Previously you chose Target B over Target A based on its 9% FCF yield and conservative balance sheet. New disclosure reveals the FCF was inflated by a non-recurring working capital release, cutting sustainable FCF yield to 3.6%—below your 10% cost of capital on a yield basis alone.",
+      "priorContext": "Previously you chose Target B over Target A based on its 9% FCF yield and conservative balance sheet. New disclosure reveals the FCF was inflated by a non-recurring working capital release, cutting sustainable FCF yield to 3.6% - below your 10% cost of capital on a yield basis alone.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

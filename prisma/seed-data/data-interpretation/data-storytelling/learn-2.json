@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Audience framing isn't about dumbing data down—it's about aligning the same truth to different decision contexts. When Spotify's data team presents churn analysis, the CFO needs to understand LTV erosion by cohort, while the Product VP needs to see which playlist engagement thresholds predict retention. Same underlying dataset, entirely different narrative spines.",
+      "teachingPreamble": "Audience framing isn't about dumbing data down - it's about aligning the same truth to different decision contexts. When Spotify's data team presents churn analysis, the CFO needs to understand LTV erosion by cohort, while the Product VP needs to see which playlist engagement thresholds predict retention. Same underlying dataset, entirely different narrative spines.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The most advanced data storytelling skill is narrating negative or null results without losing credibility or momentum. Netflix's experimentation team frames null results as 'eliminated hypotheses'—each one reducing uncertainty about where the real lever exists. The narrative structure shifts from 'Here's what worked' to 'Here's what we now know, and here's where that points us next.'",
+      "teachingPreamble": "The most advanced data storytelling skill is narrating negative or null results without losing credibility or momentum. Netflix's experimentation team frames null results as 'eliminated hypotheses' - each one reducing uncertainty about where the real lever exists. The narrative structure shifts from 'Here's what worked' to 'Here's what we now know, and here's where that points us next.'",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,11 +153,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Lead with growth—it's the board's strategic priority—then transition to economics"
+          "text": "Lead with growth - it's the board's strategic priority - then transition to economics"
         },
         {
           "id": "b",
-          "text": "Lead with unit economics decline—boards respect facing hard truths first"
+          "text": "Lead with unit economics decline - boards respect facing hard truths first"
         },
         {
           "id": "c",
@@ -255,7 +255,7 @@
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "You had just presented root cause analysis showing onboarding friction as the primary driver of mid-market decline, with recommendations to rebuild the onboarding flow. The CPO's acquisition news fundamentally changes the solution landscape—your friction diagnosis is still valid, but your recommendations are now partially obsolete.",
+      "priorContext": "You had just presented root cause analysis showing onboarding friction as the primary driver of mid-market decline, with recommendations to rebuild the onboarding flow. The CPO's acquisition news fundamentally changes the solution landscape - your friction diagnosis is still valid, but your recommendations are now partially obsolete.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

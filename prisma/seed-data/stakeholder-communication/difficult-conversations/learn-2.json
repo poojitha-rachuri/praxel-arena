@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When Salesforce missed enterprise adoption targets in 2016, leadership didn't hide the gap—they reframed the timeline with a revised strategy and intermediate proof points. The 'expectation reset' technique works by acknowledging reality, explaining the revised trajectory, and anchoring stakeholders to new, credible milestones rather than dwelling on the miss.",
+      "teachingPreamble": "When Salesforce missed enterprise adoption targets in 2016, leadership didn't hide the gap - they reframed the timeline with a revised strategy and intermediate proof points. The 'expectation reset' technique works by acknowledging reality, explaining the revised trajectory, and anchoring stakeholders to new, credible milestones rather than dwelling on the miss.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,7 +145,7 @@
     },
     {
       "order": 5,
-      "prompt": "Your VP of Engineering is a top performer but regularly steamrolls peers in cross-functional meetings, causing two product managers to request transfers. Do you address this now—risking his departure during a critical launch—or wait until post-launch?",
+      "prompt": "Your VP of Engineering is a top performer but regularly steamrolls peers in cross-functional meetings, causing two product managers to request transfers. Do you address this now - risking his departure during a critical launch - or wait until post-launch?",
       "options": [
         {
           "id": "a",
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "When expectations are challenged, amateurs defend their number—experts defend their methodology. Airbnb's CFO famously navigated post-IPO expectation resets by presenting scenario-based forecasts with clear assumptions behind each. This 'transparent range' approach lets stakeholders see you've stress-tested your thinking, making even conservative estimates feel rigorous rather than sandbagged.",
+      "teachingPreamble": "When expectations are challenged, amateurs defend their number - experts defend their methodology. Airbnb's CFO famously navigated post-IPO expectation resets by presenting scenario-based forecasts with clear assumptions behind each. This 'transparent range' approach lets stakeholders see you've stress-tested your thinking, making even conservative estimates feel rigorous rather than sandbagged.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

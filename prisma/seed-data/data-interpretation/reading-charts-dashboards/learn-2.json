@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "One of the most common ways charts mislead is by truncating the y-axis — starting it at a number other than zero. This can make tiny differences look dramatic. For example, a cable news network once showed a bar chart where a 1% change looked like a 50% jump simply by starting the y-axis at 99%.",
+      "teachingPreamble": "One of the most common ways charts mislead is by truncating the y-axis  -  starting it at a number other than zero. This can make tiny differences look dramatic. For example, a cable news network once showed a bar chart where a 1% change looked like a 50% jump simply by starting the y-axis at 99%.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Pie charts work best with 2–4 categories where differences are obvious. When you have many slices of similar size, the human eye struggles to compare arc lengths accurately. A horizontal bar chart is almost always a better choice for comparing multiple categories — it's why data teams at companies like Google and Amazon default to bar charts in internal dashboards.",
+      "teachingPreamble": "Pie charts work best with 2 - 4 categories where differences are obvious. When you have many slices of similar size, the human eye struggles to compare arc lengths accurately. A horizontal bar chart is almost always a better choice for comparing multiple categories  -  it's why data teams at companies like Google and Amazon default to bar charts in internal dashboards.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Start at zero — accuracy builds long-term trust with leadership"
+          "text": "Start at zero  -  accuracy builds long-term trust with leadership"
         },
         {
           "id": "b",
-          "text": "Start at baseline — executives need to see the growth clearly"
+          "text": "Start at baseline  -  executives need to see the growth clearly"
         },
         {
           "id": "c",
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "KPI dashboards often use smoothing techniques like moving averages to help decision-makers focus on trends rather than reacting to daily or weekly fluctuations. A single bad week might spike a metric, but a 3-month moving average shows whether the overall direction is improving. However, you should always be able to drill into the raw data — smoothing can sometimes mask real problems.",
+      "teachingPreamble": "KPI dashboards often use smoothing techniques like moving averages to help decision-makers focus on trends rather than reacting to daily or weekly fluctuations. A single bad week might spike a metric, but a 3-month moving average shows whether the overall direction is improving. However, you should always be able to drill into the raw data  -  smoothing can sometimes mask real problems.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -229,7 +229,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Logarithmic axes are always wrong — switch to linear immediately"
+          "text": "Logarithmic axes are always wrong  -  switch to linear immediately"
         },
         {
           "id": "b",
@@ -237,7 +237,7 @@
         },
         {
           "id": "c",
-          "text": "It doesn't matter — the trend direction is the same either way"
+          "text": "It doesn't matter  -  the trend direction is the same either way"
         },
         {
           "id": "d",
@@ -247,7 +247,7 @@
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "Previously you reviewed a KPI dashboard and interpreted revenue as growing steadily. Now you discover the y-axis is logarithmic, meaning equal visual distances represent multiplicative (not additive) changes — steady-looking growth is actually accelerating exponentially.",
+      "priorContext": "Previously you reviewed a KPI dashboard and interpreted revenue as growing steadily. Now you discover the y-axis is logarithmic, meaning equal visual distances represent multiplicative (not additive) changes  -  steady-looking growth is actually accelerating exponentially.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

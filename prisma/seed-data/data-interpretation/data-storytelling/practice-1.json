@@ -269,7 +269,7 @@
     },
     {
       "order": 8,
-      "prompt": "Midway through your presentation, the CEO reveals Uber is in acquisition talks for a last-mile logistics startup—making your organic growth narrative obsolete. With 5 minutes left, how do you pivot your data story?",
+      "prompt": "Midway through your presentation, the CEO reveals Uber is in acquisition talks for a last-mile logistics startup - making your organic growth narrative obsolete. With 5 minutes left, how do you pivot your data story?",
       "options": [
         {
           "id": "a",

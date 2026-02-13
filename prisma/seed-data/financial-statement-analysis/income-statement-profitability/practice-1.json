@@ -17,7 +17,7 @@
         },
         {
           "id": "b",
-          "text": "Revenue quality is suspect—future revenue pipeline is shrinking"
+          "text": "Revenue quality is suspect - future revenue pipeline is shrinking"
         },
         {
           "id": "c",
@@ -89,19 +89,19 @@
       "options": [
         {
           "id": "a",
-          "text": "A—higher gross margin means stronger pricing power and brand"
+          "text": "A - higher gross margin means stronger pricing power and brand"
         },
         {
           "id": "b",
-          "text": "B—converts more gross profit into operating profit, showing cost discipline"
+          "text": "B - converts more gross profit into operating profit, showing cost discipline"
         },
         {
           "id": "c",
-          "text": "A—gross margin is the most reliable profitability indicator"
+          "text": "A - gross margin is the most reliable profitability indicator"
         },
         {
           "id": "d",
-          "text": "Neither—you need net income to compare operational quality"
+          "text": "Neither - you need net income to compare operational quality"
         }
       ],
       "correctAnswer": "b",
@@ -197,7 +197,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Use reported EBITDA—capitalization follows GAAP rules correctly"
+          "text": "Use reported EBITDA - capitalization follows GAAP rules correctly"
         },
         {
           "id": "b",
@@ -253,7 +253,7 @@
       "options": [
         {
           "id": "a",
-          "text": "No change—analyze current profitability and assume contract renews"
+          "text": "No change - analyze current profitability and assume contract renews"
         },
         {
           "id": "b",

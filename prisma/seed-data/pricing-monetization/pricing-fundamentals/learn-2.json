@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Price sensitivity (also called price elasticity of demand) describes how much customer buying behavior changes in response to a price change. When Netflix raised its US plan price by $1 in 2019, most subscribers stayed — indicating low price sensitivity. When a gas station raises prices by $0.10, many drivers switch to the station across the street — indicating high price sensitivity.",
+      "teachingPreamble": "Price sensitivity (also called price elasticity of demand) describes how much customer buying behavior changes in response to a price change. When Netflix raised its US plan price by $1 in 2019, most subscribers stayed  -  indicating low price sensitivity. When a gas station raises prices by $0.10, many drivers switch to the station across the street  -  indicating high price sensitivity.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Several factors determine how price sensitive customers are. Key drivers include: the availability of substitutes (more alternatives = more sensitivity), switching costs (high costs = less sensitivity), and the purchase's share of budget (bigger share = more sensitivity). Apple's ecosystem creates high switching costs — moving from iPhone to Android means losing iMessage, AirDrop, and app purchases — which keeps Apple's customers less price sensitive.",
+      "teachingPreamble": "Several factors determine how price sensitive customers are. Key drivers include: the availability of substitutes (more alternatives = more sensitivity), switching costs (high costs = less sensitivity), and the purchase's share of budget (bigger share = more sensitivity). Apple's ecosystem creates high switching costs  -  moving from iPhone to Android means losing iMessage, AirDrop, and app purchases  -  which keeps Apple's customers less price sensitive.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

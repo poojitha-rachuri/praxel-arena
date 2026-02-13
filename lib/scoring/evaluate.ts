@@ -81,7 +81,8 @@ const INTERACTION_DIMENSION_MAP: Record<
  */
 function scoreInteractionDeterministic(
   interaction: SprintInteraction,
-  response: SprintResponse | undefined
+  response: SprintResponse | undefined,
+  mode?: string
 ): { score: number; isCorrect: boolean } {
   if (!response) {
     return { score: 0, isCorrect: false };
@@ -91,10 +92,11 @@ function scoreInteractionDeterministic(
   const timeSpent = Number(response.timeSpent) || 0;
   const { correctAnswer, type } = interaction;
   const timeTarget = Number(interaction.timeTarget) || 10;
+  const isTimedMode = mode === "COMPETE";
 
   // For RANK_AND_PRIORITIZE, check partial correctness
   if (type === "RANK_AND_PRIORITIZE" && correctAnswer) {
-    return scoreRanking(answer, correctAnswer, timeSpent, timeTarget);
+    return scoreRanking(answer, correctAnswer, timeSpent, timeTarget, isTimedMode);
   }
 
   const isCorrect = answer === correctAnswer;
@@ -109,14 +111,15 @@ function scoreInteractionDeterministic(
   // Base score for correct answer
   let score = 75;
 
-  // Time bonus: answering within target gets up to +15 points
-  if (timeSpent <= timeTarget) {
-    const timeRatio = timeSpent / timeTarget;
-    score += Math.round(15 * (1 - timeRatio * 0.5)); // 8-15 bonus points
-  } else {
-    // Time penalty for going over (but already correct, so mild)
-    const overRatio = Math.min((timeSpent - timeTarget) / timeTarget, 1);
-    score -= Math.round(10 * overRatio); // Up to -10 penalty
+  // Time bonus/penalty ONLY in COMPETE mode
+  if (isTimedMode) {
+    if (timeSpent <= timeTarget) {
+      const timeRatio = timeSpent / timeTarget;
+      score += Math.round(15 * (1 - timeRatio * 0.5)); // 8-15 bonus points
+    } else {
+      const overRatio = Math.min((timeSpent - timeTarget) / timeTarget, 1);
+      score -= Math.round(10 * overRatio); // Up to -10 penalty
+    }
   }
 
   // Clamp to 0-100
@@ -133,7 +136,8 @@ function scoreRanking(
   answer: string,
   correctAnswer: string,
   rawTimeSpent: number,
-  rawTimeTarget: number
+  rawTimeTarget: number,
+  isTimedMode: boolean
 ): { score: number; isCorrect: boolean } {
   const timeSpent = Number(rawTimeSpent) || 0;
   const timeTarget = Number(rawTimeTarget) || 10;
@@ -158,11 +162,13 @@ function scoreRanking(
   // Base score from position accuracy
   let score = Math.round(positionRatio * 85);
 
-  // Perfect order bonus with time consideration
+  // Perfect order bonus (time bonus only in COMPETE)
   if (isCorrect) {
     score = 80;
-    if (timeSpent <= timeTarget) {
+    if (isTimedMode && timeSpent <= timeTarget) {
       score += Math.round(15 * (1 - (timeSpent / timeTarget) * 0.5));
+    } else if (!isTimedMode) {
+      score = 85; // Flat bonus for perfect ranking without time pressure
     }
   }
 
@@ -177,7 +183,8 @@ function scoreRanking(
  */
 function distributeToDimensions(
   interactions: SprintInteraction[],
-  responses: SprintResponse[]
+  responses: SprintResponse[],
+  mode?: string
 ): DimensionScores {
   const dimensionTotals: Record<DimensionKey, number> = {} as Record<
     DimensionKey,
@@ -197,7 +204,7 @@ function distributeToDimensions(
     const response = responses.find(
       (r) => r.interactionId === interaction.id
     );
-    const { score } = scoreInteractionDeterministic(interaction, response);
+    const { score } = scoreInteractionDeterministic(interaction, response, mode);
 
     const mapping =
       INTERACTION_DIMENSION_MAP[interaction.type] ??
@@ -398,7 +405,7 @@ export async function evaluateAttempt(
   }
 
   // ── LEARN / PRACTICE mode (or COMPETE fallback): deterministic scoring ──
-  const scores = distributeToDimensions(sprint.interactions, responses);
+  const scores = distributeToDimensions(sprint.interactions, responses, mode);
   const totalScore = Math.round(
     DIMENSION_KEYS.reduce((sum, key) => sum + scores[key], 0) /
       DIMENSION_KEYS.length
@@ -538,8 +545,8 @@ function evaluateDuelDeterministic(
   player1Matches: number,
   player2Matches: number
 ): DuelEvaluation {
-  const p1Scores = distributeToDimensions(sprint.interactions, p1Responses);
-  const p2Scores = distributeToDimensions(sprint.interactions, p2Responses);
+  const p1Scores = distributeToDimensions(sprint.interactions, p1Responses, "COMPETE");
+  const p2Scores = distributeToDimensions(sprint.interactions, p2Responses, "COMPETE");
 
   const p1Total = DIMENSION_KEYS.reduce((s, k) => s + p1Scores[k], 0);
   const p2Total = DIMENSION_KEYS.reduce((s, k) => s + p2Scores[k], 0);

@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Correlation means two variables move together, but it doesn't mean one causes the other. Often, a hidden third variable — called a confounding variable — drives both. For example, larger cities naturally have more of everything: more shops, more incidents, more people.",
+      "teachingPreamble": "Correlation means two variables move together, but it doesn't mean one causes the other. Often, a hidden third variable  -  called a confounding variable  -  drives both. For example, larger cities naturally have more of everything: more shops, more incidents, more people.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -45,7 +45,7 @@
         },
         {
           "id": "b",
-          "text": "Age is a likely confound — younger users may retain better regardless"
+          "text": "Age is a likely confound  -  younger users may retain better regardless"
         },
         {
           "id": "c",
@@ -97,11 +97,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes — 15% is a meaningful improvement worth shipping"
+          "text": "Yes  -  15% is a meaningful improvement worth shipping"
         },
         {
           "id": "b",
-          "text": "No — 30 users is far too small to trust the result"
+          "text": "No  -  30 users is far too small to trust the result"
         },
         {
           "id": "c",
@@ -153,11 +153,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Launch now — speed matters more than perfect data"
+          "text": "Launch now  -  speed matters more than perfect data"
         },
         {
           "id": "b",
-          "text": "Run the full test — a bad pricing decision is very costly"
+          "text": "Run the full test  -  a bad pricing decision is very costly"
         },
         {
           "id": "c",
@@ -185,7 +185,7 @@
         },
         {
           "id": "b",
-          "text": "Rating movies doesn't cause retention — engaged users just do both"
+          "text": "Rating movies doesn't cause retention  -  engaged users just do both"
         },
         {
           "id": "c",
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "This is the correlation-causation trap in action at scale. When companies observe that power users do X, they assume making all users do X will create power users. But the behavior is often a symptom of engagement, not its cause. The underlying trait — genuine interest — drives both the behavior and the outcome.",
+      "teachingPreamble": "This is the correlation-causation trap in action at scale. When companies observe that power users do X, they assume making all users do X will create power users. But the behavior is often a symptom of engagement, not its cause. The underlying trait  -  genuine interest  -  drives both the behavior and the outcome.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -237,11 +237,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Yes — 10,000 users is large enough to overcome any imbalance"
+          "text": "Yes  -  10,000 users is large enough to overcome any imbalance"
         },
         {
           "id": "b",
-          "text": "No — the uneven mobile split is a confound that invalidates the result"
+          "text": "No  -  the uneven mobile split is a confound that invalidates the result"
         },
         {
           "id": "c",
@@ -255,7 +255,7 @@
       "correctAnswer": "c",
       "insightAnswer": "c",
       "teachingPreamble": null,
-      "priorContext": "Previously you ranked a 10,000-user A/B test as the most trustworthy evidence. Now new information reveals the test and control groups weren't balanced — the test group was disproportionately mobile users, introducing a potential confounding variable that could explain the lift.",
+      "priorContext": "Previously you ranked a 10,000-user A/B test as the most trustworthy evidence. Now new information reveals the test and control groups weren't balanced  -  the test group was disproportionately mobile users, introducing a potential confounding variable that could explain the lift.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

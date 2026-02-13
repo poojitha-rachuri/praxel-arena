@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "A distribution channel is any route your product takes to reach the end customer. When Shopify launched, it used content marketing, app store partnerships, and a direct sales team — each was a distinct channel. Choosing the right mix determines how fast and efficiently you grow.",
+      "teachingPreamble": "A distribution channel is any route your product takes to reach the end customer. When Shopify launched, it used content marketing, app store partnerships, and a direct sales team  -  each was a distinct channel. Choosing the right mix determines how fast and efficiently you grow.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Channel-market fit means your distribution channel matches the buying behavior of your target audience. Atlassian found channel-market fit by selling developer tools through a self-serve website — because developers prefer to try before they buy, not talk to salespeople. A mismatched channel wastes money no matter how good your product is.",
+      "teachingPreamble": "Channel-market fit means your distribution channel matches the buying behavior of your target audience. Atlassian found channel-market fit by selling developer tools through a self-serve website  -  because developers prefer to try before they buy, not talk to salespeople. A mismatched channel wastes money no matter how good your product is.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -149,11 +149,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Direct sales — early customer conversations shape the product faster"
+          "text": "Direct sales  -  early customer conversations shape the product faster"
         },
         {
           "id": "b",
-          "text": "Freemium funnel — small businesses won't take sales calls anyway"
+          "text": "Freemium funnel  -  small businesses won't take sales calls anyway"
         },
         {
           "id": "c",
@@ -229,7 +229,7 @@
     },
     {
       "order": 8,
-      "prompt": "Your top-performing SEO channel just took a hit — Google's latest algorithm update dropped your organic traffic by 60%. Your partner referral program is growing but only delivers 20 leads/month. What's your best next move?",
+      "prompt": "Your top-performing SEO channel just took a hit  -  Google's latest algorithm update dropped your organic traffic by 60%. Your partner referral program is growing but only delivers 20 leads/month. What's your best next move?",
       "options": [
         {
           "id": "a",

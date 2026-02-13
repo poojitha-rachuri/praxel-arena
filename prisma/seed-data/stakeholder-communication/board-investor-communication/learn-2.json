@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "At Series B, investors have shifted from betting on potential to validating a growth machine. When Figma raised its Series B, the narrative led with proof that its product-led growth loop was repeatable—showing cohort retention, expansion revenue, and declining CAC payback periods. The fundraising narrative must answer: 'Is this engine scalable?'",
+      "teachingPreamble": "At Series B, investors have shifted from betting on potential to validating a growth machine. When Figma raised its Series B, the narrative led with proof that its product-led growth loop was repeatable - showing cohort retention, expansion revenue, and declining CAC payback periods. The fundraising narrative must answer: 'Is this engine scalable?'",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Legendary board operators like Jeff Weiner at LinkedIn never brought high-stakes decisions to board meetings without 'pre-wiring'—individually briefing each director before the formal session. This surfaces objections in private where they can be addressed without group dynamics amplifying skepticism. The board meeting itself then becomes a ratification event, not a debate. Surprises in boardrooms destroy CEO credibility.",
+      "teachingPreamble": "Legendary board operators like Jeff Weiner at LinkedIn never brought high-stakes decisions to board meetings without 'pre-wiring' - individually briefing each director before the formal session. This surfaces objections in private where they can be addressed without group dynamics amplifying skepticism. The board meeting itself then becomes a ratification event, not a debate. Surprises in boardrooms destroy CEO credibility.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -255,7 +255,7 @@
       "correctAnswer": "a",
       "insightAnswer": "a",
       "teachingPreamble": null,
-      "priorContext": "You had pre-wired this pitch assuming a16z had no competing portfolio conflicts. The partner's disclosure mid-pitch fundamentally changes the information asymmetry—they now gain competitive intelligence while offering you no realistic path to investment due to portfolio conflict policies.",
+      "priorContext": "You had pre-wired this pitch assuming a16z had no competing portfolio conflicts. The partner's disclosure mid-pitch fundamentally changes the information asymmetry - they now gain competitive intelligence while offering you no realistic path to investment due to portfolio conflict policies.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

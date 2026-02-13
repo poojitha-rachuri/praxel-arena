@@ -13,19 +13,19 @@
       "options": [
         {
           "id": "a",
-          "text": "$120,000 — the full contract value"
+          "text": "$120,000  -  the full contract value"
         },
         {
           "id": "b",
-          "text": "$30,000 — three months of the annual contract"
+          "text": "$30,000  -  three months of the annual contract"
         },
         {
           "id": "c",
-          "text": "$0 — revenue is recognized only at year-end"
+          "text": "$0  -  revenue is recognized only at year-end"
         },
         {
           "id": "d",
-          "text": "$60,000 — half upfront, half at delivery"
+          "text": "$60,000  -  half upfront, half at delivery"
         }
       ],
       "correctAnswer": "b",
@@ -153,15 +153,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Company A — higher gross margins fund future profitability at scale"
+          "text": "Company A  -  higher gross margins fund future profitability at scale"
         },
         {
           "id": "b",
-          "text": "Company B — it's already profitable and lower risk"
+          "text": "Company B  -  it's already profitable and lower risk"
         },
         {
           "id": "c",
-          "text": "Neither — food delivery margins are too thin"
+          "text": "Neither  -  food delivery margins are too thin"
         },
         {
           "id": "d",
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Earnings quality measures how well reported profits reflect actual cash generation. High-quality earnings are backed by real cash flow, while low-quality earnings may rely on aggressive revenue recognition, one-time gains, or accounting estimates. Before its collapse, WorldCom showed growing earnings while capitalizing ordinary expenses — a classic earnings quality red flag that analysts could have caught by comparing net income to operating cash flow.",
+      "teachingPreamble": "Earnings quality measures how well reported profits reflect actual cash generation. High-quality earnings are backed by real cash flow, while low-quality earnings may rely on aggressive revenue recognition, one-time gains, or accounting estimates. Before its collapse, WorldCom showed growing earnings while capitalizing ordinary expenses  -  a classic earnings quality red flag that analysts could have caught by comparing net income to operating cash flow.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -245,7 +245,7 @@
         },
         {
           "id": "c",
-          "text": "No impact — accounting changes don't affect real economics"
+          "text": "No impact  -  accounting changes don't affect real economics"
         },
         {
           "id": "d",

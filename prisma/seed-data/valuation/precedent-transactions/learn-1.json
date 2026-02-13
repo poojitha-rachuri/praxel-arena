@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Precedent transaction analysis values a company by examining prices paid in comparable M&A deals. When Microsoft acquired Activision Blizzard for $68.7B in 2022, it paid roughly 30% above Activision's pre-deal trading price. This premium over market price—called a control premium—reflects the value of owning and directing the entire business.",
+      "teachingPreamble": "Precedent transaction analysis values a company by examining prices paid in comparable M&A deals. When Microsoft acquired Activision Blizzard for $68.7B in 2022, it paid roughly 30% above Activision's pre-deal trading price. This premium over market price - called a control premium - reflects the value of owning and directing the entire business.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -49,7 +49,7 @@
         },
         {
           "id": "c",
-          "text": "Adjust for market conditions—Deal A reflects a different cycle"
+          "text": "Adjust for market conditions - Deal A reflects a different cycle"
         },
         {
           "id": "d",
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Synergies—cost savings or revenue gains from combining two businesses—are a key driver of M&A premiums. When Kraft merged with Heinz in 2015, the deal thesis centered on $1.5B in cost synergies. Analysts separate the 'price paid for the standalone business' from the 'price paid for synergies' to understand if acquirers overpaid—EV of $8B ÷ ($800M EBITDA + $200M synergies) = 8x.",
+      "teachingPreamble": "Synergies - cost savings or revenue gains from combining two businesses - are a key driver of M&A premiums. When Kraft merged with Heinz in 2015, the deal thesis centered on $1.5B in cost synergies. Analysts separate the 'price paid for the standalone business' from the 'price paid for synergies' to understand if acquirers overpaid - EV of $8B ÷ ($800M EBITDA + $200M synergies) = 8x.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -173,7 +173,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Compare LTM 12.5x vs NTM 10.0x—the gap signals growth value"
+          "text": "Compare LTM 12.5x vs NTM 10.0x - the gap signals growth value"
         },
         {
           "id": "b",

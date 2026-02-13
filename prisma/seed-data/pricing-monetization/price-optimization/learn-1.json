@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Price elasticity of demand measures how sensitive customer purchasing is to price changes. It's calculated as % change in quantity demanded ÷ % change in price. When Netflix raised its U.S. streaming price from $9.99 to $10.99 in 2017, subscriber growth barely slowed — a sign of inelastic demand.",
+      "teachingPreamble": "Price elasticity of demand measures how sensitive customer purchasing is to price changes. It's calculated as % change in quantity demanded ÷ % change in price. When Netflix raised its U.S. streaming price from $9.99 to $10.99 in 2017, subscriber growth barely slowed  -  a sign of inelastic demand.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Willingness-to-pay (WTP) research uncovers how much customers will actually spend. Direct questions ('What would you pay?') are notoriously unreliable — people understate to get lower prices. Companies like Porsche and HubSpot use conjoint analysis, which presents tradeoff scenarios between features and prices, forcing respondents to reveal true preferences indirectly.",
+      "teachingPreamble": "Willingness-to-pay (WTP) research uncovers how much customers will actually spend. Direct questions ('What would you pay?') are notoriously unreliable  -  people understate to get lower prices. Companies like Porsche and HubSpot use conjoint analysis, which presents tradeoff scenarios between features and prices, forcing respondents to reveal true preferences indirectly.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Anchoring is a cognitive bias where the first number people see heavily influences their judgment of subsequent numbers. The Economist famously offered a print-only subscription at $125, a web-only at $59, and print+web at $125 — the 'useless' middle option anchored buyers toward the combo deal, boosting revenue by 43% in Dan Ariely's study.",
+      "teachingPreamble": "Anchoring is a cognitive bias where the first number people see heavily influences their judgment of subsequent numbers. The Economist famously offered a print-only subscription at $125, a web-only at $59, and print+web at $125  -  the 'useless' middle option anchored buyers toward the combo deal, boosting revenue by 43% in Dan Ariely's study.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

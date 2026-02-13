@@ -205,7 +205,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Walk away—13x exceeds precedent range and sets a bad market signal"
+          "text": "Walk away - 13x exceeds precedent range and sets a bad market signal"
         },
         {
           "id": "b",
@@ -233,7 +233,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Remove Deal C entirely—unwound deals are not valid precedents"
+          "text": "Remove Deal C entirely - unwound deals are not valid precedents"
         },
         {
           "id": "b",

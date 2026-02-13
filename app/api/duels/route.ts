@@ -238,8 +238,8 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // No match found - find a COMPETE sprint for this skill to use
-    const sprint = await prisma.sprint.findFirst({
+    // No match found - find a COMPETE sprint for this skill (fallback to PRACTICE)
+    let sprint = await prisma.sprint.findFirst({
       where: {
         skillId: skill.id,
         mode: "COMPETE",
@@ -249,11 +249,30 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    if (!sprint) {
+      sprint = await prisma.sprint.findFirst({
+        where: {
+          skillId: skill.id,
+          mode: "PRACTICE",
+        },
+        include: {
+          interactions: { orderBy: { order: "asc" } },
+        },
+      });
+    }
+
+    if (!sprint) {
+      return NextResponse.json(
+        { error: "No sprint available for this skill" },
+        { status: 404 }
+      );
+    }
+
     // Create a new waiting duel
     const newDuel = await prisma.duel.create({
       data: {
         skillId: skill.id,
-        sprintId: sprint?.id ?? null,
+        sprintId: sprint.id,
         player1Id: user.id,
         status: "WAITING",
       },

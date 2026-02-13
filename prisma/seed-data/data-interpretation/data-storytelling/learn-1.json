@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Effective data stories follow an inverted pyramid: lead with the 'so what,' then support with evidence. When McKinsey analyzed 500+ executive presentations, those opening with a clear business implication received 3.2x faster decision-making versus those that started with methodology. This is sometimes called the 'Minto Pyramid Principle'—answer first, argument second.",
+      "teachingPreamble": "Effective data stories follow an inverted pyramid: lead with the 'so what,' then support with evidence. When McKinsey analyzed 500+ executive presentations, those opening with a clear business implication received 3.2x faster decision-making versus those that started with methodology. This is sometimes called the 'Minto Pyramid Principle' - answer first, argument second.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Audience framing means reshaping the same data story for different decision-makers. The board needs churn framed as revenue risk and strategic trajectory—'We're losing $4.2M ARR from mid-market accounts.' The product team needs it framed as actionable feature signals—'Users who skip onboarding step 3 churn at 2.4x the rate.' Same data, different narrative lens, different call to action.",
+      "teachingPreamble": "Audience framing means reshaping the same data story for different decision-makers. The board needs churn framed as revenue risk and strategic trajectory - 'We're losing $4.2M ARR from mid-market accounts.' The product team needs it framed as actionable feature signals - 'Users who skip onboarding step 3 churn at 2.4x the rate.' Same data, different narrative lens, different call to action.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

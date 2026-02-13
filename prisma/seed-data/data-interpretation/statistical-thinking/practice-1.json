@@ -141,11 +141,11 @@
       "options": [
         {
           "id": "a",
-          "text": "200 merchants, 8 weeks — captures seasonal behavior patterns"
+          "text": "200 merchants, 8 weeks  -  captures seasonal behavior patterns"
         },
         {
           "id": "b",
-          "text": "2,000 merchants, 3 weeks — larger sample yields more reliable results"
+          "text": "2,000 merchants, 3 weeks  -  larger sample yields more reliable results"
         },
         {
           "id": "c",
@@ -169,7 +169,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Ship it — statistically significant lift in the core metric wins"
+          "text": "Ship it  -  statistically significant lift in the core metric wins"
         },
         {
           "id": "b",
@@ -177,7 +177,7 @@
         },
         {
           "id": "c",
-          "text": "Ignore qualitative data — 30 users is too small to matter"
+          "text": "Ignore qualitative data  -  30 users is too small to matter"
         },
         {
           "id": "d",
@@ -253,11 +253,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Results are still valid — 2,000 is a large enough sample"
+          "text": "Results are still valid  -  2,000 is a large enough sample"
         },
         {
           "id": "b",
-          "text": "Results are biased — the sample doesn't represent your population"
+          "text": "Results are biased  -  the sample doesn't represent your population"
         },
         {
           "id": "c",

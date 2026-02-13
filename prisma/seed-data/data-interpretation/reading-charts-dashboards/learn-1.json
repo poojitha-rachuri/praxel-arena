@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Different chart types serve different purposes. Line charts show how a single metric changes over time — the x-axis is time and the y-axis is your metric. For example, Netflix uses line charts to track daily active users across quarters.",
+      "teachingPreamble": "Different chart types serve different purposes. Line charts show how a single metric changes over time  -  the x-axis is time and the y-axis is your metric. For example, Netflix uses line charts to track daily active users across quarters.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -98,7 +98,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "One of the most common tricks in misleading charts is a truncated y-axis — starting the axis at a number other than zero. This visually exaggerates small differences. A bar going from 400K to 420K looks like a huge jump when the bottom of the chart is 400K, even though it's only a 5% increase.",
+      "teachingPreamble": "One of the most common tricks in misleading charts is a truncated y-axis  -  starting the axis at a number other than zero. This visually exaggerates small differences. A bar going from 400K to 420K looks like a huge jump when the bottom of the chart is 400K, even though it's only a 5% increase.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -137,15 +137,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Breadth — one KPI per area gives a balanced health check"
+          "text": "Breadth  -  one KPI per area gives a balanced health check"
         },
         {
           "id": "b",
-          "text": "Depth — focus on bookings since it drives everything else"
+          "text": "Depth  -  focus on bookings since it drives everything else"
         },
         {
           "id": "c",
-          "text": "Depth — focus on customer complaints to reduce churn"
+          "text": "Depth  -  focus on customer complaints to reduce churn"
         },
         {
           "id": "d",
@@ -217,7 +217,7 @@
     },
     {
       "order": 8,
-      "prompt": "Your colleague points out the y-axis is labeled in 'thousands' but one data point was entered in raw units. The chart shows Uber's January rides at 12 while other months show 8,500–9,200. What should you do first?",
+      "prompt": "Your colleague points out the y-axis is labeled in 'thousands' but one data point was entered in raw units. The chart shows Uber's January rides at 12 while other months show 8,500 - 9,200. What should you do first?",
       "options": [
         {
           "id": "a",
@@ -239,7 +239,7 @@
       "correctAnswer": "c",
       "insightAnswer": "c",
       "teachingPreamble": null,
-      "priorContext": "Previously you learned to always check axis labels and scales before drawing conclusions. Now a real-world data entry inconsistency has made one data point appear wildly off — the chart looks correct at first glance but the underlying data may be mislabeled.",
+      "priorContext": "Previously you learned to always check axis labels and scales before drawing conclusions. Now a real-world data entry inconsistency has made one data point appear wildly off  -  the chart looks correct at first glance but the underlying data may be mislabeled.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

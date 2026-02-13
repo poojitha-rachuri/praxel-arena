@@ -13,7 +13,7 @@
       "options": [
         {
           "id": "a",
-          "text": "We need $50K more budget—here's why it drives 3x ROI."
+          "text": "We need $50K more budget - here's why it drives 3x ROI."
         },
         {
           "id": "b",
@@ -30,26 +30,26 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "BLUF stands for Bottom Line Up Front—a communication method borrowed from military briefings. You state your key message, recommendation, or ask in the very first sentence, then provide supporting details. Busy executives at companies like Amazon use this approach because it respects the reader's time and makes decisions faster.",
+      "teachingPreamble": "BLUF stands for Bottom Line Up Front - a communication method borrowed from military briefings. You state your key message, recommendation, or ask in the very first sentence, then provide supporting details. Busy executives at companies like Amazon use this approach because it respects the reader's time and makes decisions faster.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
     },
     {
       "order": 2,
-      "prompt": "A VP receives three Slack messages. Message A: 'Q3 revenue hit $4.2M, 18% above target—no action needed.' Message B: 'Wanted to share some revenue thoughts.' Message C: 'Let's schedule time to discuss numbers.' Which message lets the VP act fastest?",
+      "prompt": "A VP receives three Slack messages. Message A: 'Q3 revenue hit $4.2M, 18% above target - no action needed.' Message B: 'Wanted to share some revenue thoughts.' Message C: 'Let's schedule time to discuss numbers.' Which message lets the VP act fastest?",
       "options": [
         {
           "id": "a",
-          "text": "Message A—it leads with the data and the conclusion."
+          "text": "Message A - it leads with the data and the conclusion."
         },
         {
           "id": "b",
-          "text": "Message B—it signals the topic is about revenue."
+          "text": "Message B - it signals the topic is about revenue."
         },
         {
           "id": "c",
-          "text": "Message C—scheduling a meeting ensures alignment."
+          "text": "Message C - scheduling a meeting ensures alignment."
         },
         {
           "id": "d",
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep it—completeness prevents follow-up questions."
+          "text": "Keep it - completeness prevents follow-up questions."
         },
         {
           "id": "b",
-          "text": "Cut it—lead with the ask, link the full analysis as an appendix."
+          "text": "Cut it - lead with the ask, link the full analysis as an appendix."
         },
         {
           "id": "c",
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "A decision memo is a short document that helps a leader say yes, no, or choose between options. At Amazon, these are the famous 6-page memos. At their core, every decision memo needs: the decision to be made, 2-3 options with tradeoffs, a clear recommendation, and supporting data. The goal isn't to show all your work—it's to make it easy for the reader to decide.",
+      "teachingPreamble": "A decision memo is a short document that helps a leader say yes, no, or choose between options. At Amazon, these are the famous 6-page memos. At their core, every decision memo needs: the decision to be made, 2-3 options with tradeoffs, a clear recommendation, and supporting data. The goal isn't to show all your work - it's to make it easy for the reader to decide.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -225,7 +225,7 @@
     },
     {
       "order": 8,
-      "prompt": "Midway through the meeting, the COO says: 'I only have 2 minutes left—what do you need from me right now?' How do you respond?",
+      "prompt": "Midway through the meeting, the COO says: 'I only have 2 minutes left - what do you need from me right now?' How do you respond?",
       "options": [
         {
           "id": "a",

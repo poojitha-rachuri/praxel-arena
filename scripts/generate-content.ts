@@ -245,6 +245,11 @@ INTERACTION TYPES:
 ${interactionSequence}
 ${existingContext}
 
+WRITING STYLE:
+- Never use em dashes or en dashes. Use commas, periods, or spaced hyphens ( - ) instead.
+- Keep sentences concise and direct.
+- Avoid long parenthetical clauses.
+
 OUTPUT: Return ONLY a JSON object. No markdown, no commentary.`;
 
   const user = `Generate a ${config.mode} sprint for "${skill.name}" on the topic "${config.topicName}" (${config.topicDescription}).

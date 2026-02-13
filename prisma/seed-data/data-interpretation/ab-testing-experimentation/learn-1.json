@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Every A/B test starts with a null hypothesis — the assumption that there's no difference between your control and variant. For example, Spotify might test a new playlist layout by assuming it won't change user engagement. The goal of the experiment is to gather enough evidence to reject this null hypothesis.",
+      "teachingPreamble": "Every A/B test starts with a null hypothesis  -  the assumption that there's no difference between your control and variant. For example, Spotify might test a new playlist layout by assuming it won't change user engagement. The goal of the experiment is to gather enough evidence to reject this null hypothesis.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -41,7 +41,7 @@
       "options": [
         {
           "id": "a",
-          "text": "The variant is clearly better — ship it immediately"
+          "text": "The variant is clearly better  -  ship it immediately"
         },
         {
           "id": "b",
@@ -109,7 +109,7 @@
     },
     {
       "order": 4,
-      "prompt": "In A/B testing, a ____ error means concluding a variant wins when it actually doesn't — also called a false positive.",
+      "prompt": "In A/B testing, a ____ error means concluding a variant wins when it actually doesn't  -  also called a false positive.",
       "options": [
         {
           "id": "a",
@@ -141,7 +141,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Ship now — p<0.05 proves the variant wins"
+          "text": "Ship now  -  p<0.05 proves the variant wins"
         },
         {
           "id": "b",
@@ -225,7 +225,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Continue the test — both groups are equally affected"
+          "text": "Continue the test  -  both groups are equally affected"
         },
         {
           "id": "b",
@@ -243,7 +243,7 @@
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "You had a well-designed 14-day A/B test running on a checkout flow redesign. Now a major external change — a 40% site-wide speed improvement — has been introduced mid-experiment, potentially changing baseline user behavior and invalidating the controlled conditions you established.",
+      "priorContext": "You had a well-designed 14-day A/B test running on a checkout flow redesign. Now a major external change  -  a 40% site-wide speed improvement  -  has been introduced mid-experiment, potentially changing baseline user behavior and invalidating the controlled conditions you established.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

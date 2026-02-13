@@ -31,6 +31,7 @@ import {
 } from "@dnd-kit/modifiers";
 import { GripVertical, Lock } from "lucide-react";
 import type { InteractionOption } from "@/types";
+import { InteractionChart } from "./InteractionChart";
 
 // ─── Sortable Item ──────────────────────────────────────
 
@@ -132,6 +133,7 @@ interface RankAndPrioritizeProps {
   correctAnswer: string | null;
   insightAnswer: string | null;
   timeTarget: number;
+  chartData?: unknown;
   onAnswer: (answer: string) => void;
   disabled?: boolean;
 }
@@ -141,6 +143,7 @@ export function RankAndPrioritize({
   options,
   correctAnswer,
   insightAnswer,
+  chartData,
   onAnswer,
   disabled = false,
 }: RankAndPrioritizeProps) {
@@ -200,6 +203,9 @@ export function RankAndPrioritize({
       <Badge variant="secondary" className="self-start text-xs">
         Rank & Prioritize
       </Badge>
+
+      {/* Chart (when available) */}
+      {chartData != null && <InteractionChart chartData={chartData} />}
 
       {/* Prompt */}
       <p className="text-lg font-medium text-foreground leading-relaxed">

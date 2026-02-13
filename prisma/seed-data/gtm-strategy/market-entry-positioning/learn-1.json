@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Before launching a product, companies need to identify exactly who they're selling to. An Ideal Customer Profile (ICP) describes the type of company or person most likely to buy your product and get the most value from it — like how Slack initially targeted small tech teams, not entire Fortune 500 companies.",
+      "teachingPreamble": "Before launching a product, companies need to identify exactly who they're selling to. An Ideal Customer Profile (ICP) describes the type of company or person most likely to buy your product and get the most value from it  -  like how Slack initially targeted small tech teams, not entire Fortune 500 companies.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "A value proposition is a clear statement of why a customer should buy from you instead of anyone else. It connects a specific customer pain to your unique solution — for example, Zoom's early value prop was dead-simple video calls that 'just work,' directly targeting frustration with buggy competitors like WebEx.",
+      "teachingPreamble": "A value proposition is a clear statement of why a customer should buy from you instead of anyone else. It connects a specific customer pain to your unique solution  -  for example, Zoom's early value prop was dead-simple video calls that 'just work,' directly targeting frustration with buggy competitors like WebEx.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Competitive positioning is about owning a distinct space in your customer's mind. You don't need to be better at everything — you need to be clearly different on what matters most to your ICP. When HubSpot entered the CRM market against Salesforce, they didn't try to out-feature them — they positioned as the CRM that's free to start and easy for small marketing teams.",
+      "teachingPreamble": "Competitive positioning is about owning a distinct space in your customer's mind. You don't need to be better at everything  -  you need to be clearly different on what matters most to your ICP. When HubSpot entered the CRM market against Salesforce, they didn't try to out-feature them  -  they positioned as the CRM that's free to start and easy for small marketing teams.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The most effective framework for delivering bad news is Situation-Impact-Path Forward (SIP). You state the situation factually, quantify the impact so stakeholders understand the stakes, then present a clear path forward. When Cisco's Chuck Robbins announced a $600M restructuring in 2014, he led with the competitive landscape shift, quantified the financial impact, then outlined the transformation plan—earning analyst confidence despite the bad news.",
+      "teachingPreamble": "The most effective framework for delivering bad news is Situation-Impact-Path Forward (SIP). You state the situation factually, quantify the impact so stakeholders understand the stakes, then present a clear path forward. When Cisco's Chuck Robbins announced a $600M restructuring in 2014, he led with the competitive landscape shift, quantified the financial impact, then outlined the transformation plan - earning analyst confidence despite the bad news.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -97,7 +97,7 @@
         },
         {
           "id": "b",
-          "text": "\"We fell 15% short—here's what we've identified and are changing\""
+          "text": "\"We fell 15% short - here's what we've identified and are changing\""
         },
         {
           "id": "c",
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "High-trust leaders practice 'accountability without blame'—they own the result, diagnose the root cause, and present corrective action. Research from Harvard Business School shows executives who lead with ownership when delivering bad news are rated 32% more trustworthy by boards than those who lead with external explanations. Satya Nadella modeled this at Microsoft by publicly owning the Windows Phone failure before pivoting resources to cloud—building immense credibility.",
+      "teachingPreamble": "High-trust leaders practice 'accountability without blame' - they own the result, diagnose the root cause, and present corrective action. Research from Harvard Business School shows executives who lead with ownership when delivering bad news are rated 32% more trustworthy by boards than those who lead with external explanations. Satya Nadella modeled this at Microsoft by publicly owning the Windows Phone failure before pivoting resources to cloud - building immense credibility.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -181,7 +181,7 @@
         },
         {
           "id": "b",
-          "text": "\"We have a $4M deal at risk—what do we need to unblock together?\""
+          "text": "\"We have a $4M deal at risk - what do we need to unblock together?\""
         },
         {
           "id": "c",
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "In cross-functional difficult conversations, the 'shared problem' reframe converts adversarial dynamics into collaborative ones. Instead of 'your problem is hurting me,' you frame it as 'we have a shared problem to solve.' When Shopify's leadership identified friction between engineering and sales, they mandated 'we language' in all escalations—resulting in a 27% faster resolution time on cross-team blockers and measurably higher internal trust scores.",
+      "teachingPreamble": "In cross-functional difficult conversations, the 'shared problem' reframe converts adversarial dynamics into collaborative ones. Instead of 'your problem is hurting me,' you frame it as 'we have a shared problem to solve.' When Shopify's leadership identified friction between engineering and sales, they mandated 'we language' in all escalations - resulting in a 27% faster resolution time on cross-team blockers and measurably higher internal trust scores.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -229,7 +229,7 @@
     },
     {
       "order": 8,
-      "prompt": "You followed the plan—shared data, presented cuts, outlined the review process. But midway through Q&A, your Head of Sales reveals to the room that a competitor just acquired your second-largest client. The mood shifts to panic. What's your best immediate response?",
+      "prompt": "You followed the plan - shared data, presented cuts, outlined the review process. But midway through Q&A, your Head of Sales reveals to the room that a competitor just acquired your second-largest client. The mood shifts to panic. What's your best immediate response?",
       "options": [
         {
           "id": "a",
@@ -251,7 +251,7 @@
       "correctAnswer": "a",
       "insightAnswer": "a",
       "teachingPreamble": null,
-      "priorContext": "You were executing a well-structured budget cut announcement to department heads using the SIP framework. The data-driven rationale had landed well and the Q&A was productive—until unexpected competitive news surfaced mid-meeting, creating a compounding crisis and emotional escalation.",
+      "priorContext": "You were executing a well-structured budget cut announcement to department heads using the SIP framework. The data-driven rationale had landed well and the Q&A was productive - until unexpected competitive news surfaced mid-meeting, creating a compounding crisis and emotional escalation.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

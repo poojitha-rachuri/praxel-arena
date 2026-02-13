@@ -93,7 +93,7 @@
     },
     {
       "order": 3,
-      "prompt": "Using Tesla's 2023 figures — Operating CF: $13.3B, Capital Expenditures: $8.9B — what is Tesla's free cash flow?",
+      "prompt": "Using Tesla's 2023 figures  -  Operating CF: $13.3B, Capital Expenditures: $8.9B  -  what is Tesla's free cash flow?",
       "options": [
         {
           "id": "a",
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Free Cash Flow (FCF) = Operating Cash Flow minus Capital Expenditures. It represents the cash available to pay dividends, buy back stock, reduce debt, or fund acquisitions. FCF is often considered more reliable than net income because it's harder to manipulate — cash either exists or it doesn't.",
+      "teachingPreamble": "Free Cash Flow (FCF) = Operating Cash Flow minus Capital Expenditures. It represents the cash available to pay dividends, buy back stock, reduce debt, or fund acquisitions. FCF is often considered more reliable than net income because it's harder to manipulate  -  cash either exists or it doesn't.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,11 +153,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Cut marketing — cash preservation is paramount for survival"
+          "text": "Cut marketing  -  cash preservation is paramount for survival"
         },
         {
           "id": "b",
-          "text": "Raise equity — declining CAC signals improving unit economics worth funding"
+          "text": "Raise equity  -  declining CAC signals improving unit economics worth funding"
         },
         {
           "id": "c",
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When net income and operating cash flow diverge significantly, investigate the reconciliation. Large non-cash items — goodwill impairments, inventory write-downs, stock-based compensation, and depreciation — reduce net income without burning cash. Conversely, if OCF is much worse than net income, watch for aggressive revenue recognition or rising receivables.",
+      "teachingPreamble": "When net income and operating cash flow diverge significantly, investigate the reconciliation. Large non-cash items  -  goodwill impairments, inventory write-downs, stock-based compensation, and depreciation  -  reduce net income without burning cash. Conversely, if OCF is much worse than net income, watch for aggressive revenue recognition or rising receivables.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

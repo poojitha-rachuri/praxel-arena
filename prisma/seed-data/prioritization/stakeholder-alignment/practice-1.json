@@ -97,7 +97,7 @@
         },
         {
           "id": "b",
-          "text": "Propose phased rollout—core scope now, remaining features in Q4"
+          "text": "Propose phased rollout - core scope now, remaining features in Q4"
         },
         {
           "id": "c",
@@ -133,7 +133,7 @@
         },
         {
           "id": "d",
-          "text": "Survey data is unreliable—focus only on executive sentiment"
+          "text": "Survey data is unreliable - focus only on executive sentiment"
         }
       ],
       "correctAnswer": "c",
@@ -197,7 +197,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Give all 10 to Product—higher revenue impact wins"
+          "text": "Give all 10 to Product - higher revenue impact wins"
         },
         {
           "id": "b",
@@ -209,7 +209,7 @@
         },
         {
           "id": "d",
-          "text": "Give all 10 to Infrastructure—reliability is a prerequisite for growth"
+          "text": "Give all 10 to Infrastructure - reliability is a prerequisite for growth"
         }
       ],
       "correctAnswer": "c",
@@ -253,7 +253,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Push forward without CTO support—client commitments come first"
+          "text": "Push forward without CTO support - client commitments come first"
         },
         {
           "id": "b",

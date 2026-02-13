@@ -30,14 +30,14 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Cohort analysis tracks a specific group of users over time rather than blending all users together. Month-12 retention of 35% means 35% of the original cohort is still active after 12 months — this is measured against the original cohort size, not the previous month's survivors.",
+      "teachingPreamble": "Cohort analysis tracks a specific group of users over time rather than blending all users together. Month-12 retention of 35% means 35% of the original cohort is still active after 12 months  -  this is measured against the original cohort size, not the previous month's survivors.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
     },
     {
       "order": 2,
-      "prompt": "A DTC brand shows these cohort retention rates — Month 1: 40%, Month 3: 28%, Month 6: 25%, Month 12: 24%, Month 18: 23%. What's the most important signal for forecasting long-term revenue?",
+      "prompt": "A DTC brand shows these cohort retention rates  -  Month 1: 40%, Month 3: 28%, Month 6: 25%, Month 12: 24%, Month 18: 23%. What's the most important signal for forecasting long-term revenue?",
       "options": [
         {
           "id": "a",
@@ -153,11 +153,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Anchor on retention-driven LTV — it's your strongest data"
+          "text": "Anchor on retention-driven LTV  -  it's your strongest data"
         },
         {
           "id": "b",
-          "text": "Anchor on user growth — revenue is dominated by new cohort volume"
+          "text": "Anchor on user growth  -  revenue is dominated by new cohort volume"
         },
         {
           "id": "c",
@@ -181,19 +181,19 @@
       "options": [
         {
           "id": "a",
-          "text": "About 400K — simply 50K × 8 quarters"
+          "text": "About 400K  -  simply 50K × 8 quarters"
         },
         {
           "id": "b",
-          "text": "About 280K — applying 70% retention uniformly"
+          "text": "About 280K  -  applying 70% retention uniformly"
         },
         {
           "id": "c",
-          "text": "About 200K — recent cohorts at high retention, older ones at 45%"
+          "text": "About 200K  -  recent cohorts at high retention, older ones at 45%"
         },
         {
           "id": "d",
-          "text": "About 120K — most early cohorts have fully churned"
+          "text": "About 120K  -  most early cohorts have fully churned"
         }
       ],
       "correctAnswer": "c",
@@ -245,7 +245,7 @@
         },
         {
           "id": "c",
-          "text": "Keep 50K/quarter — international markets won't contribute meaningfully"
+          "text": "Keep 50K/quarter  -  international markets won't contribute meaningfully"
         },
         {
           "id": "d",

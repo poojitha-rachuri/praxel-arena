@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Hybrid monetization models combine two or more pricing approaches—like Slack's freemium + per-seat subscription, or AWS mixing subscription reserved instances with usage-based on-demand pricing. The key insight is that different customer segments value products differently, and a single model often leaves money on the table or locks out potential users.",
+      "teachingPreamble": "Hybrid monetization models combine two or more pricing approaches - like Slack's freemium + per-seat subscription, or AWS mixing subscription reserved instances with usage-based on-demand pricing. The key insight is that different customer segments value products differently, and a single model often leaves money on the table or locks out potential users.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Freemium models aren't just about free users—they're an acquisition engine. Spotify's free tier costs them roughly €0.50/user/month in licensing, but converts ~27% of free users to premium over time at €10.99/month. The economic math works because the lifetime value of converted users vastly exceeds the cost of subsidizing the free tier.",
+      "teachingPreamble": "Freemium models aren't just about free users - they're an acquisition engine. Spotify's free tier costs them roughly €0.50/user/month in licensing, but converts ~27% of free users to premium over time at €10.99/month. The economic math works because the lifetime value of converted users vastly exceeds the cost of subsidizing the free tier.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,7 +153,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep flat subscriptions only—SMBs are your core and simplicity drives growth"
+          "text": "Keep flat subscriptions only - SMBs are your core and simplicity drives growth"
         },
         {
           "id": "b",
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "When marketplaces add subscriptions, they're betting that predictable recurring revenue and increased frequency will offset margin compression. Uber One subscribers take 4x more rides but at lower per-ride margins. The math only works if the subscription drives incremental trips—not just discounting rides customers would have taken anyway. This cannibalization risk is the central tension in marketplace hybrid models.",
+      "teachingPreamble": "When marketplaces add subscriptions, they're betting that predictable recurring revenue and increased frequency will offset margin compression. Uber One subscribers take 4x more rides but at lower per-ride margins. The math only works if the subscription drives incremental trips - not just discounting rides customers would have taken anyway. This cannibalization risk is the central tension in marketplace hybrid models.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

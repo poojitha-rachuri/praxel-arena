@@ -13,19 +13,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Responsible — the person doing the work"
+          "text": "Responsible  -  the person doing the work"
         },
         {
           "id": "b",
-          "text": "Accountable — the person who approves the outcome"
+          "text": "Accountable  -  the person who approves the outcome"
         },
         {
           "id": "c",
-          "text": "Consulted — the subject matter expert giving input"
+          "text": "Consulted  -  the subject matter expert giving input"
         },
         {
           "id": "d",
-          "text": "Informed — the person notified after completion"
+          "text": "Informed  -  the person notified after completion"
         }
       ],
       "correctAnswer": "b",
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Working agreements are lightweight team contracts that define how people collaborate — things like response times, meeting norms, and escalation paths. At Atlassian, cross-functional squads create working agreements at project kickoff, covering topics like 'Slack messages get a response within 4 hours during business hours.' These agreements reduce friction by making expectations explicit before conflicts arise.",
+      "teachingPreamble": "Working agreements are lightweight team contracts that define how people collaborate  -  things like response times, meeting norms, and escalation paths. At Atlassian, cross-functional squads create working agreements at project kickoff, covering topics like 'Slack messages get a response within 4 hours during business hours.' These agreements reduce friction by making expectations explicit before conflicts arise.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Daily standups in cross-functional teams serve a different purpose than single-team standups — the goal is to surface dependencies and blockers between functions. At Shopify, cross-functional pods use a 'blockers-first' format: each person leads with what's stuck, then spends 15 seconds on progress. This keeps the meeting under 10 minutes and ensures the most critical alignment issues get airtime.",
+      "teachingPreamble": "Daily standups in cross-functional teams serve a different purpose than single-team standups  -  the goal is to surface dependencies and blockers between functions. At Shopify, cross-functional pods use a 'blockers-first' format: each person leads with what's stuck, then spends 15 seconds on progress. This keeps the meeting under 10 minutes and ensures the most critical alignment issues get airtime.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

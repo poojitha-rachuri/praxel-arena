@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "CAC payback period measures how many months it takes to recoup your customer acquisition cost from gross profit. It's calculated as CAC ÷ monthly gross profit per customer. Investors typically want payback under 12-18 months for SaaS — Slack achieved ~11 months at scale.",
+      "teachingPreamble": "CAC payback period measures how many months it takes to recoup your customer acquisition cost from gross profit. It's calculated as CAC ÷ monthly gross profit per customer. Investors typically want payback under 12-18 months for SaaS  -  Slack achieved ~11 months at scale.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -93,24 +93,24 @@
       "options": [
         {
           "id": "a",
-          "text": "3:1 — healthy, sustainable unit economics"
+          "text": "3:1  -  healthy, sustainable unit economics"
         },
         {
           "id": "b",
-          "text": "3:1 — dangerously low, needs improvement"
+          "text": "3:1  -  dangerously low, needs improvement"
         },
         {
           "id": "c",
-          "text": "0.33:1 — losing money on every customer"
+          "text": "0.33:1  -  losing money on every customer"
         },
         {
           "id": "d",
-          "text": "3:1 — over-investing, should spend more on growth"
+          "text": "3:1  -  over-investing, should spend more on growth"
         }
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "The LTV:CAC ratio is the north star of unit economics. A ratio of 3:1 is the widely-accepted benchmark — meaning you earn $3 for every $1 spent acquiring a customer. Below 1:1 you're losing money; above 5:1 you may be under-investing in growth. HubSpot targets 3:1 across its segments.",
+      "teachingPreamble": "The LTV:CAC ratio is the north star of unit economics. A ratio of 3:1 is the widely-accepted benchmark  -  meaning you earn $3 for every $1 spent acquiring a customer. Below 1:1 you're losing money; above 5:1 you may be under-investing in growth. HubSpot targets 3:1 across its segments.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -149,11 +149,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Cut CAC — improves ratio and payback immediately"
+          "text": "Cut CAC  -  improves ratio and payback immediately"
         },
         {
           "id": "b",
-          "text": "Launch loyalty program — higher LTV drives long-term value"
+          "text": "Launch loyalty program  -  higher LTV drives long-term value"
         },
         {
           "id": "c",
@@ -161,7 +161,7 @@
         },
         {
           "id": "d",
-          "text": "Do neither — focus on raising prices instead"
+          "text": "Do neither  -  focus on raising prices instead"
         }
       ],
       "correctAnswer": "b",
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "To estimate gross-profit LTV in subscription businesses, use: (ARPU × Gross Margin) ÷ Churn Rate. This gives you the total gross profit a customer generates over their lifetime. Sophisticated models discount future cash flows, but this quick formula — used widely in VC due diligence — gets you within striking distance.",
+      "teachingPreamble": "To estimate gross-profit LTV in subscription businesses, use: (ARPU × Gross Margin) ÷ Churn Rate. This gives you the total gross profit a customer generates over their lifetime. Sophisticated models discount future cash flows, but this quick formula  -  used widely in VC due diligence  -  gets you within striking distance.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -233,25 +233,25 @@
       "options": [
         {
           "id": "a",
-          "text": "Enterprise — higher absolute profit per deal"
+          "text": "Enterprise  -  higher absolute profit per deal"
         },
         {
           "id": "b",
-          "text": "Self-serve — 4.5x LTV:CAC vs ~1.25x for enterprise"
+          "text": "Self-serve  -  4.5x LTV:CAC vs ~1.25x for enterprise"
         },
         {
           "id": "c",
-          "text": "Enterprise — contracted revenue reduces uncertainty"
+          "text": "Enterprise  -  contracted revenue reduces uncertainty"
         },
         {
           "id": "d",
-          "text": "Split equally — diversification reduces risk"
+          "text": "Split equally  -  diversification reduces risk"
         }
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "Previously you analyzed a standard SaaS model with $200/month ARPU and 2% churn. Now the company has two distinct channels with vastly different unit economics — enterprise sales vs. self-serve — forcing you to compare across revenue models rather than optimize a single one.",
+      "priorContext": "Previously you analyzed a standard SaaS model with $200/month ARPU and 2% churn. Now the company has two distinct channels with vastly different unit economics  -  enterprise sales vs. self-serve  -  forcing you to compare across revenue models rather than optimize a single one.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

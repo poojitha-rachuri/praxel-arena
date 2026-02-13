@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When Spotify expanded from Sweden to 60+ markets, they discovered that global TAM was misleading — what mattered was whether localized customer acquisition costs and lifetime values made each market independently viable. A scaling playbook starts with unit economics, not market size. The localized LTV:CAC ratio accounts for translation costs, local payment processing, regulatory compliance, and region-specific churn rates.",
+      "teachingPreamble": "When Spotify expanded from Sweden to 60+ markets, they discovered that global TAM was misleading  -  what mattered was whether localized customer acquisition costs and lifetime values made each market independently viable. A scaling playbook starts with unit economics, not market size. The localized LTV:CAC ratio accounts for translation costs, local payment processing, regulatory compliance, and region-specific churn rates.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -119,7 +119,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Scaling playbooks typically follow a 'land, learn, expand' cadence. When Shopify entered Japan, they didn't localize everything — they started with a narrow ideal customer profile (English-comfortable D2C brands), validated product-market fit, then layered on Japanese-language support and local payment integrations. The 'land' phase deliberately constrains scope to test assumptions cheaply before committing heavy resources.",
+      "teachingPreamble": "Scaling playbooks typically follow a 'land, learn, expand' cadence. When Shopify entered Japan, they didn't localize everything  -  they started with a narrow ideal customer profile (English-comfortable D2C brands), validated product-market fit, then layered on Japanese-language support and local payment integrations. The 'land' phase deliberately constrains scope to test assumptions cheaply before committing heavy resources.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -158,11 +158,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Brazil — larger TAM justifies the investment and timeline"
+          "text": "Brazil  -  larger TAM justifies the investment and timeline"
         },
         {
           "id": "b",
-          "text": "Singapore — faster time-to-revenue preserves optionality for Brazil later"
+          "text": "Singapore  -  faster time-to-revenue preserves optionality for Brazil later"
         },
         {
           "id": "c",
@@ -203,7 +203,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When Uber scaled to 70+ countries, each market appeared viable in isolation. But the 'messy middle' — operating in 15-40 markets simultaneously — created hidden costs: duplicated engineering for localization, multi-region compliance teams, and management overhead that couldn't be cleanly allocated. Fully-loaded unit economics (including allocated shared costs like platform engineering and central ops) often tell a very different story than contribution-margin-only views.",
+      "teachingPreamble": "When Uber scaled to 70+ countries, each market appeared viable in isolation. But the 'messy middle'  -  operating in 15-40 markets simultaneously  -  created hidden costs: duplicated engineering for localization, multi-region compliance teams, and management overhead that couldn't be cleanly allocated. Fully-loaded unit economics (including allocated shared costs like platform engineering and central ops) often tell a very different story than contribution-margin-only views.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -246,7 +246,7 @@
         },
         {
           "id": "b",
-          "text": "Invest $1.2M — this infrastructure enables expansion across APAC"
+          "text": "Invest $1.2M  -  this infrastructure enables expansion across APAC"
         },
         {
           "id": "c",

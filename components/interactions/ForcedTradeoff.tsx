@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Lightbulb, Scale } from "lucide-react";
 import type { InteractionOption } from "@/types";
 import { renderBoldPrompt } from "@/lib/utils/safe-html";
+import { InteractionChart } from "./InteractionChart";
 
 const OPTION_ACCENT_COLORS = [
   "bg-info",
@@ -21,6 +22,7 @@ interface ForcedTradeoffProps {
   correctAnswer: string | null;
   insightAnswer: string | null;
   timeTarget: number;
+  chartData?: unknown;
   onAnswer: (answer: string) => void;
   disabled?: boolean;
 }
@@ -30,6 +32,7 @@ export function ForcedTradeoff({
   options,
   correctAnswer,
   insightAnswer,
+  chartData,
   onAnswer,
   disabled = false,
 }: ForcedTradeoffProps) {
@@ -55,6 +58,9 @@ export function ForcedTradeoff({
           <span className="text-xs font-bold text-insight uppercase tracking-wide">Forced Tradeoff</span>
         </div>
       </div>
+
+      {/* Chart (when available) */}
+      {chartData != null && <InteractionChart chartData={chartData} />}
 
       {/* Scenario Prompt */}
       <div className="space-y-2">

@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Participating preferred gives investors their liquidation preference back PLUS a pro-rata share of remaining proceeds. A participation cap (e.g., 3x) limits total payout—here 3x the $30M investment = $90M. Without the cap, the investor would get $144M. At high exits, investors typically convert to common if conversion yields more than the capped amount.",
+      "teachingPreamble": "Participating preferred gives investors their liquidation preference back PLUS a pro-rata share of remaining proceeds. A participation cap (e.g., 3x) limits total payout - here 3x the $30M investment = $90M. Without the cap, the investor would get $144M. At high exits, investors typically convert to common if conversion yields more than the capped amount.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

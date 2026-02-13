@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { Lightbulb, PenLine } from "lucide-react";
 import type { InteractionOption } from "@/types";
+import { InteractionChart } from "./InteractionChart";
 
 interface FillTheGapProps {
   id: string;
@@ -13,6 +14,7 @@ interface FillTheGapProps {
   correctAnswer: string | null;
   insightAnswer: string | null;
   timeTarget: number;
+  chartData?: unknown;
   onAnswer: (answer: string) => void;
   disabled?: boolean;
 }
@@ -22,6 +24,7 @@ export function FillTheGap({
   options,
   correctAnswer,
   insightAnswer,
+  chartData,
   onAnswer,
   disabled = false,
 }: FillTheGapProps) {
@@ -69,6 +72,9 @@ export function FillTheGap({
           <span className="text-xs font-bold text-success uppercase tracking-wide">Fill the Gap</span>
         </div>
       </div>
+
+      {/* Chart (when available) */}
+      {chartData != null && <InteractionChart chartData={chartData} />}
 
       {/* Prompt with blank */}
       <div className="space-y-2">

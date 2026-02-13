@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Competitive positioning is how you define your product's unique place in the market relative to alternatives. When Slack launched, it didn't position as 'email replacement' — it positioned as 'where work happens,' carving a distinct mental category. A strong positioning statement clarifies who you serve, what you offer, and why you're different.",
+      "teachingPreamble": "Competitive positioning is how you define your product's unique place in the market relative to alternatives. When Slack launched, it didn't position as 'email replacement'  -  it positioned as 'where work happens,' carving a distinct mental category. A strong positioning statement clarifies who you serve, what you offer, and why you're different.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "A value proposition has three core layers: the target customer (who), the key benefit (what outcome you deliver), and the differentiation (why you, not them). Stripe's value prop isn't just 'payment processing' — it's 'developer-first payments infrastructure that takes minutes to integrate,' with proof points like 7-line code snippets and 135+ supported currencies.",
+      "teachingPreamble": "A value proposition has three core layers: the target customer (who), the key benefit (what outcome you deliver), and the differentiation (why you, not them). Stripe's value prop isn't just 'payment processing'  -  it's 'developer-first payments infrastructure that takes minutes to integrate,' with proof points like 7-line code snippets and 135+ supported currencies.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -149,11 +149,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Cheapest option — price is the easiest way to win customers"
+          "text": "Cheapest option  -  price is the easiest way to win customers"
         },
         {
           "id": "b",
-          "text": "AI-native for remote teams — differentiated positioning avoids a price war"
+          "text": "AI-native for remote teams  -  differentiated positioning avoids a price war"
         },
         {
           "id": "c",

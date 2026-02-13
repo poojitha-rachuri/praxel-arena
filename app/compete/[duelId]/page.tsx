@@ -73,6 +73,7 @@ export default async function DuelPage({
           teachingPreamble: i.teachingPreamble,
           priorContext: i.priorContext,
           timeTarget: i.timeTarget,
+          chartData: i.chartData,
         })),
       }
     : null;

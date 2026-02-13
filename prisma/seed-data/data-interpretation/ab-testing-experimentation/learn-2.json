@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When running multiple comparisons, Bonferroni correction (dividing α by the number of tests) is the simplest fix but is overly conservative—it dramatically reduces your power to detect real effects. At LinkedIn, data scientists frequently use the Benjamini-Hochberg procedure, which controls the false discovery rate (the expected proportion of false positives among rejected hypotheses) rather than the family-wise error rate, giving substantially more power.",
+      "teachingPreamble": "When running multiple comparisons, Bonferroni correction (dividing α by the number of tests) is the simplest fix but is overly conservative - it dramatically reduces your power to detect real effects. At LinkedIn, data scientists frequently use the Benjamini-Hochberg procedure, which controls the false discovery rate (the expected proportion of false positives among rejected hypotheses) rather than the family-wise error rate, giving substantially more power.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,7 +145,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Ship it—the overall result is significant and positive"
+          "text": "Ship it - the overall result is significant and positive"
         },
         {
           "id": "b",
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Experienced experimentation teams track guardrail metrics alongside their primary metric to catch unintended harm. Booking.com, which runs thousands of tests annually, uses an Overall Evaluation Criterion (OEC)—a composite metric that balances short-term revenue against long-term user engagement. Without an OEC, teams often optimize one metric while silently degrading another, creating an illusion of improvement.",
+      "teachingPreamble": "Experienced experimentation teams track guardrail metrics alongside their primary metric to catch unintended harm. Booking.com, which runs thousands of tests annually, uses an Overall Evaluation Criterion (OEC) - a composite metric that balances short-term revenue against long-term user engagement. Without an OEC, teams often optimize one metric while silently degrading another, creating an illusion of improvement.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -229,7 +229,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Results are fine—Benjamini-Hochberg already handles interaction effects"
+          "text": "Results are fine - Benjamini-Hochberg already handles interaction effects"
         },
         {
           "id": "b",
@@ -247,7 +247,7 @@
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "Previously you corrected for multiple comparisons assuming independent tests. Now a cross-experiment contamination has been discovered—40% of treatment users were simultaneously in another experiment that changed pricing, violating the independence assumption and potentially confounding your results.",
+      "priorContext": "Previously you corrected for multiple comparisons assuming independent tests. Now a cross-experiment contamination has been discovered - 40% of treatment users were simultaneously in another experiment that changed pricing, violating the independence assumption and potentially confounding your results.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

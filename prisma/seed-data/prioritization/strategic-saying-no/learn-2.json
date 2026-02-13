@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The sunk cost fallacy becomes most dangerous at the executive level, where large investments create psychological commitment traps. The diagnostic test is simple: if you had zero dollars invested today, would you greenlight this project at its current projected ROI? Shopify reportedly killed a major internal platform rebuild mid-flight when prospective ROI turned negative—saving $20M+ in further spend.",
+      "teachingPreamble": "The sunk cost fallacy becomes most dangerous at the executive level, where large investments create psychological commitment traps. The diagnostic test is simple: if you had zero dollars invested today, would you greenlight this project at its current projected ROI? Shopify reportedly killed a major internal platform rebuild mid-flight when prospective ROI turned negative - saving $20M+ in further spend.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -118,7 +118,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Debt tracking isn't just for engineering. Product teams at companies like Atlassian and Stripe maintain 'scope debt registers'—catalogs of deferred commitments with estimated carrying costs. The key distinction: technical debt compounds through increasing maintenance burden, while scope debt compounds through escalating customer expectations and competitive gaps. Both require explicit interest payments, but scope debt is harder to measure because the 'interest' is opportunity cost and churn risk.",
+      "teachingPreamble": "Debt tracking isn't just for engineering. Product teams at companies like Atlassian and Stripe maintain 'scope debt registers' - catalogs of deferred commitments with estimated carrying costs. The key distinction: technical debt compounds through increasing maintenance burden, while scope debt compounds through escalating customer expectations and competitive gaps. Both require explicit interest payments, but scope debt is harder to measure because the 'interest' is opportunity cost and churn risk.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -157,7 +157,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build it—18% revenue loss would crater next funding round"
+          "text": "Build it - 18% revenue loss would crater next funding round"
         },
         {
           "id": "b",
@@ -181,7 +181,7 @@
     },
     {
       "order": 6,
-      "prompt": "Stripe's product team uses a 'kill criteria' framework—predefined conditions that automatically trigger project cancellation. What's the primary advantage over periodic review-based killing?",
+      "prompt": "Stripe's product team uses a 'kill criteria' framework - predefined conditions that automatically trigger project cancellation. What's the primary advantage over periodic review-based killing?",
       "options": [
         {
           "id": "a",
@@ -202,30 +202,30 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "The hardest 'no' is killing your own project mid-flight. Best-in-class product organizations pre-commit to kill criteria—quantitative thresholds set at project kickoff that trigger automatic cancellation. Stripe and Amazon both use variants of this approach. The power lies in temporal separation: you define the exit conditions when you're rational (before investment), so the decision executes when you're biased (after months of sunk costs). This converts an emotional political decision into a mechanical trigger.",
+      "teachingPreamble": "The hardest 'no' is killing your own project mid-flight. Best-in-class product organizations pre-commit to kill criteria - quantitative thresholds set at project kickoff that trigger automatic cancellation. Stripe and Amazon both use variants of this approach. The power lies in temporal separation: you define the exit conditions when you're rational (before investment), so the decision executes when you're biased (after months of sunk costs). This converts an emotional political decision into a mechanical trigger.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
     },
     {
       "order": 7,
-      "prompt": "Your B2B platform has capacity for 1 major initiative. Rank these from highest to lowest strategic value using a debt-adjusted prioritization lens: (a) Rebuild authentication system—3 security incidents in 6 months, (b) Custom analytics dashboard requested by top 3 accounts worth $4.2M combined, (c) Reduce API latency from 800ms to 200ms—affects all 340 customers, (d) Build integration requested by a partner promising $2M in referrals.",
+      "prompt": "Your B2B platform has capacity for 1 major initiative. Rank these from highest to lowest strategic value using a debt-adjusted prioritization lens: (a) Rebuild authentication system - 3 security incidents in 6 months, (b) Custom analytics dashboard requested by top 3 accounts worth $4.2M combined, (c) Reduce API latency from 800ms to 200ms - affects all 340 customers, (d) Build integration requested by a partner promising $2M in referrals.",
       "options": [
         {
           "id": "a",
-          "text": "Rebuild authentication—existential security risk, compounding debt"
+          "text": "Rebuild authentication - existential security risk, compounding debt"
         },
         {
           "id": "b",
-          "text": "Custom analytics for top 3 accounts—$4.2M retention"
+          "text": "Custom analytics for top 3 accounts - $4.2M retention"
         },
         {
           "id": "c",
-          "text": "API latency reduction—platform-wide impact, 340 customers"
+          "text": "API latency reduction - platform-wide impact, 340 customers"
         },
         {
           "id": "d",
-          "text": "Partner integration—$2M speculative referral revenue"
+          "text": "Partner integration - $2M speculative referral revenue"
         }
       ],
       "correctAnswer": "a,c,b,d",
@@ -241,7 +241,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Accelerate the integration—CEO's public commitment is now a constraint"
+          "text": "Accelerate the integration - CEO's public commitment is now a constraint"
         },
         {
           "id": "b",

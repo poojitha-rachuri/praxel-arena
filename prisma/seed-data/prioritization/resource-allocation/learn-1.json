@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Opportunity cost is the value of the next-best alternative you forgo when making a choice. When Spotify allocated its engineering team to podcasts in 2019, the opportunity cost was the music features those engineers could have built instead. Understanding opportunity cost ensures you're not just picking good options—you're picking the best one relative to what you sacrifice.",
+      "teachingPreamble": "Opportunity cost is the value of the next-best alternative you forgo when making a choice. When Spotify allocated its engineering team to podcasts in 2019, the opportunity cost was the music features those engineers could have built instead. Understanding opportunity cost ensures you're not just picking good options - you're picking the best one relative to what you sacrifice.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Capacity planning isn't just about filling every hour—it's about maintaining strategic flexibility. Amazon Web Services deliberately keeps engineering teams at roughly 70-80% allocation so they can absorb urgent customer escalations and experiment with innovations. When utilization exceeds ~85%, queuing theory shows wait times for new work spike exponentially, creating bottlenecks across the organization.",
+      "teachingPreamble": "Capacity planning isn't just about filling every hour - it's about maintaining strategic flexibility. Amazon Web Services deliberately keeps engineering teams at roughly 70-80% allocation so they can absorb urgent customer escalations and experiment with innovations. When utilization exceeds ~85%, queuing theory shows wait times for new work spike exponentially, creating bottlenecks across the organization.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Lending product—the revenue upside is significantly higher"
+          "text": "Lending product - the revenue upside is significantly higher"
         },
         {
           "id": "b",
-          "text": "Infrastructure rebuild—reliability is the foundation for all growth"
+          "text": "Infrastructure rebuild - reliability is the foundation for all growth"
         },
         {
           "id": "c",
@@ -173,19 +173,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Project X—higher total value wins every time"
+          "text": "Project X - higher total value wins every time"
         },
         {
           "id": "b",
-          "text": "Project Y—$200K/month throughput beats X's $100K/month"
+          "text": "Project Y - $200K/month throughput beats X's $100K/month"
         },
         {
           "id": "c",
-          "text": "Neither—you need ROI percentage, not absolute value"
+          "text": "Neither - you need ROI percentage, not absolute value"
         },
         {
           "id": "d",
-          "text": "Both—run them in parallel to maximize output"
+          "text": "Both - run them in parallel to maximize output"
         }
       ],
       "correctAnswer": "b",
@@ -197,23 +197,23 @@
     },
     {
       "order": 7,
-      "prompt": "You lead product at a SaaS company with one 8-person team. Rank these initiatives from highest to lowest priority using value-per-unit-time and strategic risk: (a) Security compliance audit—$0 direct revenue, 2 months, required by Q3 or lose enterprise clients worth $1.2M/year. (b) AI feature—$400K/year revenue, 4 months build. (c) Onboarding redesign—$250K/year in reduced churn, 1 month. (d) Mobile app—$600K/year revenue, 8 months build.",
+      "prompt": "You lead product at a SaaS company with one 8-person team. Rank these initiatives from highest to lowest priority using value-per-unit-time and strategic risk: (a) Security compliance audit - $0 direct revenue, 2 months, required by Q3 or lose enterprise clients worth $1.2M/year. (b) AI feature - $400K/year revenue, 4 months build. (c) Onboarding redesign - $250K/year in reduced churn, 1 month. (d) Mobile app - $600K/year revenue, 8 months build.",
       "options": [
         {
           "id": "a",
-          "text": "Security compliance audit—regulatory, 2 months"
+          "text": "Security compliance audit - regulatory, 2 months"
         },
         {
           "id": "b",
-          "text": "AI feature—$400K/year, 4 months"
+          "text": "AI feature - $400K/year, 4 months"
         },
         {
           "id": "c",
-          "text": "Onboarding redesign—$250K/year churn reduction, 1 month"
+          "text": "Onboarding redesign - $250K/year churn reduction, 1 month"
         },
         {
           "id": "d",
-          "text": "Mobile app—$600K/year, 8 months"
+          "text": "Mobile app - $600K/year, 8 months"
         }
       ],
       "correctAnswer": "c,a,b,d",
@@ -237,7 +237,7 @@
         },
         {
           "id": "c",
-          "text": "Stay the course—no single client should dictate your roadmap"
+          "text": "Stay the course - no single client should dictate your roadmap"
         },
         {
           "id": "d",

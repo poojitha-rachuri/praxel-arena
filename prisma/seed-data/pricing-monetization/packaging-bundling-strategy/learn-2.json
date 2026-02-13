@@ -153,7 +153,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Gate SSO/audit fully behind enterprise—it's the strongest conversion lever"
+          "text": "Gate SSO/audit fully behind enterprise - it's the strongest conversion lever"
         },
         {
           "id": "b",
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Healthy tier distributions typically follow a pattern where 10-20% of revenue comes from the entry tier (acquisition), 40-50% from mid-tier (core), and 30-40% from the top tier (expansion). When HubSpot noticed over-concentration in their Professional tier, they redesigned Enterprise with exclusive features like custom objects and sandboxes—shifting 15% of revenue upward within two quarters. Extreme mid-tier concentration signals a broken upsell narrative.",
+      "teachingPreamble": "Healthy tier distributions typically follow a pattern where 10-20% of revenue comes from the entry tier (acquisition), 40-50% from mid-tier (core), and 30-40% from the top tier (expansion). When HubSpot noticed over-concentration in their Professional tier, they redesigned Enterprise with exclusive features like custom objects and sandboxes - shifting 15% of revenue upward within two quarters. Extreme mid-tier concentration signals a broken upsell narrative.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -237,7 +237,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Match competitor—ungating enterprise features and competing on service and support"
+          "text": "Match competitor - ungating enterprise features and competing on service and support"
         },
         {
           "id": "b",

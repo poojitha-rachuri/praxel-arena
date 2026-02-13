@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Effective tier boundaries are drawn at natural value inflection points—usage levels where a customer segment derives dramatically more value and willingness-to-pay spikes. Slack discovered this when teams crossing ~50 users shifted from cost-conscious buyers to strategic purchasers willing to pay for admin controls and SSO, creating a clean tier break between Pro and Enterprise Grid.",
+      "teachingPreamble": "Effective tier boundaries are drawn at natural value inflection points - usage levels where a customer segment derives dramatically more value and willingness-to-pay spikes. Slack discovered this when teams crossing ~50 users shifted from cost-conscious buyers to strategic purchasers willing to pay for admin controls and SSO, creating a clean tier break between Pro and Enterprise Grid.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Feature gating works best when gated features are 'more-of' or 'better-at' capabilities—not core workflow blockers. HubSpot learned this the hard way: early gates on essential CRM reporting drove frustration and churn. They restructured so the free CRM was fully functional, gating advanced automation and attribution instead—features power users craved after experiencing core value.",
+      "teachingPreamble": "Feature gating works best when gated features are 'more-of' or 'better-at' capabilities - not core workflow blockers. HubSpot learned this the hard way: early gates on essential CRM reporting drove frustration and churn. They restructured so the free CRM was fully functional, gating advanced automation and attribution instead - features power users craved after experiencing core value.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Per-seat enterprise tier—captures value as organizations scale up"
+          "text": "Per-seat enterprise tier - captures value as organizations scale up"
         },
         {
           "id": "b",
-          "text": "Flat $149/mo—simpler packaging retains self-serve conversion advantage"
+          "text": "Flat $149/mo - simpler packaging retains self-serve conversion advantage"
         },
         {
           "id": "c",

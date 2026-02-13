@@ -122,7 +122,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The sunk cost fallacy is one of the most expensive cognitive biases in product development. Concorde's governments kept funding the supersonic jet for decades despite clear evidence it would never be profitable — because they'd already invested so much. In scope management, the only rational question is: given what we know now, does the next dollar of investment yield positive expected value? Past spend is irrelevant to that calculation.",
+      "teachingPreamble": "The sunk cost fallacy is one of the most expensive cognitive biases in product development. Concorde's governments kept funding the supersonic jet for decades despite clear evidence it would never be profitable  -  because they'd already invested so much. In scope management, the only rational question is: given what we know now, does the next dollar of investment yield positive expected value? Past spend is irrelevant to that calculation.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -161,7 +161,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Build it — losing $2.4M ARR is unacceptable risk"
+          "text": "Build it  -  losing $2.4M ARR is unacceptable risk"
         },
         {
           "id": "b",
@@ -206,7 +206,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Amazon's two-pizza teams use a 'tradeoff transparency' principle: every yes has an explicit cost. When Andy Jassy's AWS team receives internal requests, they respond with a displacement analysis — here's what we'd need to stop or delay to accommodate this. This reframes 'no' from a rejection into a visible resource allocation choice, putting the burden of the tradeoff decision back on the requester and preserving the relationship.",
+      "teachingPreamble": "Amazon's two-pizza teams use a 'tradeoff transparency' principle: every yes has an explicit cost. When Andy Jassy's AWS team receives internal requests, they respond with a displacement analysis  -  here's what we'd need to stop or delay to accommodate this. This reframes 'no' from a rejection into a visible resource allocation choice, putting the burden of the tradeoff decision back on the requester and preserving the relationship.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

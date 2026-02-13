@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { AlertTriangle, Lightbulb } from "lucide-react";
 import type { InteractionOption } from "@/types";
 import { renderBoldPrompt } from "@/lib/utils/safe-html";
+import { InteractionChart } from "./InteractionChart";
 
 interface CurveballProps {
   id: string;
@@ -15,6 +16,7 @@ interface CurveballProps {
   insightAnswer: string | null;
   priorContext: string | null;
   timeTarget: number;
+  chartData?: unknown;
   onAnswer: (answer: string) => void;
   disabled?: boolean;
 }
@@ -25,6 +27,7 @@ export function Curveball({
   correctAnswer,
   insightAnswer,
   priorContext,
+  chartData,
   onAnswer,
   disabled = false,
 }: CurveballProps) {
@@ -62,6 +65,9 @@ export function Curveball({
       </motion.div>
 
       {/* Type badge (kept subtle since warning banner is prominent) */}
+
+      {/* Chart (when available) */}
+      {chartData != null && <InteractionChart chartData={chartData} />}
 
       {/* Prompt */}
       <div className="space-y-2">

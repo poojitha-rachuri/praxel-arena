@@ -97,11 +97,11 @@
         },
         {
           "id": "b",
-          "text": "Current liabilities exceed current assets—negative working capital"
+          "text": "Current liabilities exceed current assets - negative working capital"
         },
         {
           "id": "c",
-          "text": "Total liabilities exceed total assets—negative equity"
+          "text": "Total liabilities exceed total assets - negative equity"
         },
         {
           "id": "d",
@@ -153,7 +153,7 @@
         },
         {
           "id": "c",
-          "text": "Split evenly—$250K to each priority"
+          "text": "Split evenly - $250K to each priority"
         },
         {
           "id": "d",
@@ -201,15 +201,15 @@
       "options": [
         {
           "id": "a",
-          "text": "Company A—60% equity ratio signals financial stability"
+          "text": "Company A - 60% equity ratio signals financial stability"
         },
         {
           "id": "b",
-          "text": "Company B—larger asset base means more growth potential"
+          "text": "Company B - larger asset base means more growth potential"
         },
         {
           "id": "c",
-          "text": "Company B—high leverage can amplify shareholder returns"
+          "text": "Company B - high leverage can amplify shareholder returns"
         },
         {
           "id": "d",
@@ -237,11 +237,11 @@
         },
         {
           "id": "c",
-          "text": "Only liabilities change—you no longer owe the supplier"
+          "text": "Only liabilities change - you no longer owe the supplier"
         },
         {
           "id": "d",
-          "text": "No balance sheet impact—consignment is off-balance-sheet"
+          "text": "No balance sheet impact - consignment is off-balance-sheet"
         }
       ],
       "correctAnswer": "a",

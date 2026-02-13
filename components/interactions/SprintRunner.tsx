@@ -271,6 +271,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
     correctAnswer: currentInteraction.correctAnswer,
     insightAnswer: displayInsight,
     timeTarget: currentInteraction.timeTarget,
+    chartData: currentInteraction.chartData,
     onAnswer: handleAnswer,
   };
 

@@ -97,19 +97,19 @@
       "options": [
         {
           "id": "a",
-          "text": "$3.25 — undercut competitors to build volume quickly"
+          "text": "$3.25  -  undercut competitors to build volume quickly"
         },
         {
           "id": "b",
-          "text": "$4.50 — position between premium and local for credibility"
+          "text": "$4.50  -  position between premium and local for credibility"
         },
         {
           "id": "c",
-          "text": "$3.25 — match local shops and compete on convenience"
+          "text": "$3.25  -  match local shops and compete on convenience"
         },
         {
           "id": "d",
-          "text": "$4.50 — higher price signals quality to justify the brand"
+          "text": "$4.50  -  higher price signals quality to justify the brand"
         }
       ],
       "correctAnswer": "d",
@@ -205,11 +205,11 @@
         },
         {
           "id": "b",
-          "text": "Stay at $25 — your value delivered far exceeds the price"
+          "text": "Stay at $25  -  your value delivered far exceeds the price"
         },
         {
           "id": "c",
-          "text": "Raise to $50 — capture more of the $200 value created"
+          "text": "Raise to $50  -  capture more of the $200 value created"
         },
         {
           "id": "d",

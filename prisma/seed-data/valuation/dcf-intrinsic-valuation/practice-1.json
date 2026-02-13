@@ -109,7 +109,7 @@
         },
         {
           "id": "c",
-          "text": "No terminal value — project cash flows for 50 years instead"
+          "text": "No terminal value  -  project cash flows for 50 years instead"
         },
         {
           "id": "d",
@@ -133,7 +133,7 @@
         },
         {
           "id": "b",
-          "text": "Terminal value dominates — the model is overly sensitive to assumptions"
+          "text": "Terminal value dominates  -  the model is overly sensitive to assumptions"
         },
         {
           "id": "c",

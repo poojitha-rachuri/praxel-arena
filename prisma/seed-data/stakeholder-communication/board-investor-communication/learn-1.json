@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Top-performing board decks follow a 'pyramid principle'—leading with the key conclusion or ask, then layering in supporting data. When Airbnb's CFO presented to their board pre-IPO, decks opened with the strategic decision needed, followed by 3-4 supporting metrics slides. Board members have limited attention; front-loading the ask ensures alignment before diving into details.",
+      "teachingPreamble": "Top-performing board decks follow a 'pyramid principle' - leading with the key conclusion or ask, then layering in supporting data. When Airbnb's CFO presented to their board pre-IPO, decks opened with the strategic decision needed, followed by 3-4 supporting metrics slides. Board members have limited attention; front-loading the ask ensures alignment before diving into details.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -45,7 +45,7 @@
         },
         {
           "id": "b",
-          "text": "Growth is increasingly fueled by new logos, not expansion—a durability risk"
+          "text": "Growth is increasingly fueled by new logos, not expansion - a durability risk"
         },
         {
           "id": "c",
@@ -114,14 +114,14 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Board trust is built through intellectual honesty, not spin. When Shopify missed commerce growth targets in 2022, their leadership team presented a transparent 'miss-diagnose-fix' framework: acknowledge the gap quantitatively, attribute root causes with data, and share a corrective roadmap with measurable milestones. Boards penalize surprises far more than misses—experienced directors expect 30-40% of metrics to underperform in any given quarter.",
+      "teachingPreamble": "Board trust is built through intellectual honesty, not spin. When Shopify missed commerce growth targets in 2022, their leadership team presented a transparent 'miss-diagnose-fix' framework: acknowledge the gap quantitatively, attribute root causes with data, and share a corrective roadmap with measurable milestones. Boards penalize surprises far more than misses - experienced directors expect 30-40% of metrics to underperform in any given quarter.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
     },
     {
       "order": 4,
-      "prompt": "In fundraising narratives, the most compelling pitch decks frame market size using a ____ approach—starting from actual customer data and unit economics rather than top-down TAM estimates.",
+      "prompt": "In fundraising narratives, the most compelling pitch decks frame market size using a ____ approach - starting from actual customer data and unit economics rather than top-down TAM estimates.",
       "options": [
         {
           "id": "a",
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Elite investor communicators use 'question trees'—for every key metric in their deck, they map 2-3 adversarial questions a skeptical board member might ask, and pre-build data-backed responses. Stripe's leadership reportedly maintains a living Q&A document that maps each KPI to its vulnerabilities, bear-case interpretations, and counter-evidence. This method beats scripted answers because it teaches flexible reasoning, not memorized lines.",
+      "teachingPreamble": "Elite investor communicators use 'question trees' - for every key metric in their deck, they map 2-3 adversarial questions a skeptical board member might ask, and pre-build data-backed responses. Stripe's leadership reportedly maintains a living Q&A document that maps each KPI to its vulnerabilities, bear-case interpretations, and counter-evidence. This method beats scripted answers because it teaches flexible reasoning, not memorized lines.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

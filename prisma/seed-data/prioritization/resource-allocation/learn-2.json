@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Opportunity cost isn't what you spend—it's what you sacrifice. When Stripe chose to dedicate 40% of its engineering capacity to payment infrastructure in 2018 instead of lending products, the true cost was the delayed revenue from lending, not the engineering salaries. Advanced resource allocation requires evaluating every commitment against the next-best use of those same resources.",
+      "teachingPreamble": "Opportunity cost isn't what you spend - it's what you sacrifice. When Stripe chose to dedicate 40% of its engineering capacity to payment infrastructure in 2018 instead of lending products, the true cost was the delayed revenue from lending, not the engineering salaries. Advanced resource allocation requires evaluating every commitment against the next-best use of those same resources.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -193,14 +193,14 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Queuing theory—proven in manufacturing at Toyota and applied at Amazon's infrastructure teams—shows that wait times grow exponentially as utilization approaches 100%. At 80% utilization, a new task might wait 4x its processing time. At 95%, that same task could wait 19x. This is why elite teams like Google's SRE group deliberately maintain 20-30% slack capacity—not as waste, but as the capacity to respond to high-value opportunities.",
+      "teachingPreamble": "Queuing theory - proven in manufacturing at Toyota and applied at Amazon's infrastructure teams - shows that wait times grow exponentially as utilization approaches 100%. At 80% utilization, a new task might wait 4x its processing time. At 95%, that same task could wait 19x. This is why elite teams like Google's SRE group deliberately maintain 20-30% slack capacity - not as waste, but as the capacity to respond to high-value opportunities.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
     },
     {
       "order": 7,
-      "prompt": "You lead platform engineering at Shopify. Rank these by WSJF priority (highest first): (a) API migration—$200K/mo delay cost, 4 months; (b) Security patch—$900K/mo delay cost, 1 month; (c) New merchant dashboard—$400K/mo delay cost, 3 months; (d) Performance optimization—$300K/mo delay cost, 2 months.",
+      "prompt": "You lead platform engineering at Shopify. Rank these by WSJF priority (highest first): (a) API migration - $200K/mo delay cost, 4 months; (b) Security patch - $900K/mo delay cost, 1 month; (c) New merchant dashboard - $400K/mo delay cost, 3 months; (d) Performance optimization - $300K/mo delay cost, 2 months.",
       "options": [
         {
           "id": "a",
@@ -232,7 +232,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep security first—regulatory risk still dominates all others"
+          "text": "Keep security first - regulatory risk still dominates all others"
         },
         {
           "id": "b",
@@ -250,7 +250,7 @@
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "Previously, you ranked the security patch first using WSJF (900/1=900). With the duration tripled to 3 months, its WSJF drops to 300—now equal to performance optimization (300/2=150... wait, still higher). Recalculating: Security=900/3=300, Perf=300/2=150, Dashboard=400/3=133, API=200/4=50. Security still leads, but the gap has closed dramatically, making this a genuine re-evaluation moment.",
+      "priorContext": "Previously, you ranked the security patch first using WSJF (900/1=900). With the duration tripled to 3 months, its WSJF drops to 300 - now equal to performance optimization (300/2=150... wait, still higher). Recalculating: Security=900/3=300, Perf=300/2=150, Dashboard=400/3=133, API=200/4=50. Security still leads, but the gap has closed dramatically, making this a genuine re-evaluation moment.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

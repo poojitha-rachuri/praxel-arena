@@ -77,7 +77,7 @@
         },
         {
           "id": "b",
-          "text": "Bangkok only—prove unit economics, build repeatable playbook, then expand"
+          "text": "Bangkok only - prove unit economics, build repeatable playbook, then expand"
         },
         {
           "id": "c",
@@ -213,11 +213,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Localized free tier—grow to dominance, monetize later via enterprise"
+          "text": "Localized free tier - grow to dominance, monetize later via enterprise"
         },
         {
           "id": "b",
-          "text": "Gate features—low ARPU markets must prove willingness to pay first"
+          "text": "Gate features - low ARPU markets must prove willingness to pay first"
         },
         {
           "id": "c",
@@ -273,7 +273,7 @@
         },
         {
           "id": "b",
-          "text": "Split 70/30 UAE/UK—double down on winner, stabilize the underperformer"
+          "text": "Split 70/30 UAE/UK - double down on winner, stabilize the underperformer"
         },
         {
           "id": "c",
@@ -281,7 +281,7 @@
         },
         {
           "id": "d",
-          "text": "Hold budget in reserve until Germany clears regulatory—preserve optionality"
+          "text": "Hold budget in reserve until Germany clears regulatory - preserve optionality"
         }
       ],
       "correctAnswer": "b",

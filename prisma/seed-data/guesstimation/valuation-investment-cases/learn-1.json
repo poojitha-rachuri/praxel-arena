@@ -149,15 +149,15 @@
       "options": [
         {
           "id": "a",
-          "text": "$75M at $500M—pay up for high-growth winners"
+          "text": "$75M at $500M - pay up for high-growth winners"
         },
         {
           "id": "b",
-          "text": "$50M at $350M—protect downside before unit economics prove out"
+          "text": "$50M at $350M - protect downside before unit economics prove out"
         },
         {
           "id": "c",
-          "text": "Pass entirely—negative unit economics is a dealbreaker"
+          "text": "Pass entirely - negative unit economics is a dealbreaker"
         },
         {
           "id": "d",
@@ -233,7 +233,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Raise discount rate and haircut revenue—value drops 40-50%"
+          "text": "Raise discount rate and haircut revenue - value drops 40-50%"
         },
         {
           "id": "b",

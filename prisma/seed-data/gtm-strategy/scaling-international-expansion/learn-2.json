@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Market entry sequencing determines how fast and where you expand. The 'beachhead blitz' model—entering many markets quickly, measuring traction, then concentrating resources on winners—was pioneered by companies like Uber, which launched in 100+ cities globally, then exited or merged in markets (e.g., China, Southeast Asia) where local competitors dominated. This contrasts with waterfall approaches used by companies like IKEA, which spent years localizing each market.",
+      "teachingPreamble": "Market entry sequencing determines how fast and where you expand. The 'beachhead blitz' model - entering many markets quickly, measuring traction, then concentrating resources on winners - was pioneered by companies like Uber, which launched in 100+ cities globally, then exited or merged in markets (e.g., China, Southeast Asia) where local competitors dominated. This contrasts with waterfall approaches used by companies like IKEA, which spent years localizing each market.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -41,7 +41,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Austria is most efficient—lowest CAC means best market"
+          "text": "Austria is most efficient - lowest CAC means best market"
         },
         {
           "id": "b",
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Deep localization goes beyond translation—it requires rearchitecting your value proposition for local willingness-to-pay and content preferences. Spotify's India launch combined aggressive price localization (₹119/month vs. $9.99 in the US—a 85% discount) with curating 3B+ streams of local Bollywood and regional music. This 'value prop localization' framework means adapting pricing, content, and distribution simultaneously rather than treating localization as a surface-level translation exercise.",
+      "teachingPreamble": "Deep localization goes beyond translation - it requires rearchitecting your value proposition for local willingness-to-pay and content preferences. Spotify's India launch combined aggressive price localization (₹119/month vs. $9.99 in the US - a 85% discount) with curating 3B+ streams of local Bollywood and regional music. This 'value prop localization' framework means adapting pricing, content, and distribution simultaneously rather than treating localization as a surface-level translation exercise.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -190,7 +190,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "The 'copy-paste scaling' anti-pattern occurs when companies replicate their home-market playbook without re-validating product-market fit locally. Groupon famously scaled to 48 countries in 18 months by cloning its US model, only to retreat from most markets when local deal economics, merchant relationships, and consumer behavior diverged sharply. The antidote is treating each new market as a 'PMF re-discovery' exercise—running lean validation sprints before committing full GTM resources, even when the core product is proven elsewhere.",
+      "teachingPreamble": "The 'copy-paste scaling' anti-pattern occurs when companies replicate their home-market playbook without re-validating product-market fit locally. Groupon famously scaled to 48 countries in 18 months by cloning its US model, only to retreat from most markets when local deal economics, merchant relationships, and consumer behavior diverged sharply. The antidote is treating each new market as a 'PMF re-discovery' exercise - running lean validation sprints before committing full GTM resources, even when the core product is proven elsewhere.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -225,7 +225,7 @@
     },
     {
       "order": 8,
-      "prompt": "Six months into your Brazil expansion, a new regulation requires all fintech customer data to be processed by locally-licensed entities—your current AWS-based architecture doesn't qualify. Your biggest enterprise prospect (Itaú bank) pauses their $2M contract pending compliance. What's your best move?",
+      "prompt": "Six months into your Brazil expansion, a new regulation requires all fintech customer data to be processed by locally-licensed entities - your current AWS-based architecture doesn't qualify. Your biggest enterprise prospect (Itaú bank) pauses their $2M contract pending compliance. What's your best move?",
       "options": [
         {
           "id": "a",

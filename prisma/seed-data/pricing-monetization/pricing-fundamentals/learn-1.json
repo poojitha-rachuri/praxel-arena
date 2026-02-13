@@ -110,7 +110,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Value-based pricing sets prices according to how much value the customer perceives or receives, not what it costs to produce. Pharmaceutical companies often use this approach — a cancer drug that extends life by years can be priced far above its manufacturing cost because the value to patients is enormous.",
+      "teachingPreamble": "Value-based pricing sets prices according to how much value the customer perceives or receives, not what it costs to produce. Pharmaceutical companies often use this approach  -  a cancer drug that extends life by years can be priced far above its manufacturing cost because the value to patients is enormous.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -149,19 +149,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Price at $8 — win customers fast with a lower price"
+          "text": "Price at $8  -  win customers fast with a lower price"
         },
         {
           "id": "b",
-          "text": "Price at $14 — capture value from unique AI time savings"
+          "text": "Price at $14  -  capture value from unique AI time savings"
         },
         {
           "id": "c",
-          "text": "Price at $3.50 — just cover costs and grow volume"
+          "text": "Price at $3.50  -  just cover costs and grow volume"
         },
         {
           "id": "d",
-          "text": "Price at $10 — split the difference between competitors"
+          "text": "Price at $10  -  split the difference between competitors"
         }
       ],
       "correctAnswer": "b",
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Price sensitivity measures how much customer demand changes when you raise or lower prices. When customers see few alternatives or deeply value your product, they're less price sensitive — economists call this inelastic demand. Luxury brands like Rolex thrive on low price sensitivity, while commodity products like generic paper towels face very high price sensitivity.",
+      "teachingPreamble": "Price sensitivity measures how much customer demand changes when you raise or lower prices. When customers see few alternatives or deeply value your product, they're less price sensitive  -  economists call this inelastic demand. Luxury brands like Rolex thrive on low price sensitivity, while commodity products like generic paper towels face very high price sensitivity.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -233,11 +233,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep $9.80 — your costs haven't changed"
+          "text": "Keep $9.80  -  your costs haven't changed"
         },
         {
           "id": "b",
-          "text": "Raise to $16.99 — shift to value-based pricing on perceived benefit"
+          "text": "Raise to $16.99  -  shift to value-based pricing on perceived benefit"
         },
         {
           "id": "c",
@@ -245,7 +245,7 @@
         },
         {
           "id": "d",
-          "text": "Raise to $25 — charge as much as possible while trending"
+          "text": "Raise to $25  -  charge as much as possible while trending"
         }
       ],
       "correctAnswer": "b",

@@ -13,15 +13,15 @@
       "options": [
         {
           "id": "a",
-          "text": "$125M — subtract only capex from OCF"
+          "text": "$125M  -  subtract only capex from OCF"
         },
         {
           "id": "b",
-          "text": "$113M — subtract capex and interest from OCF"
+          "text": "$113M  -  subtract capex and interest from OCF"
         },
         {
           "id": "c",
-          "text": "$137M — add back interest tax shield to FCFE"
+          "text": "$137M  -  add back interest tax shield to FCFE"
         },
         {
           "id": "d",
@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "d",
       "insightAnswer": "d",
-      "teachingPreamble": "Free Cash Flow to Firm (FCFF) represents cash available to all capital providers — both debt and equity holders. Unlike FCFE (free cash flow to equity), FCFF adds back after-tax interest expense to OCF minus capex because interest is a payment to debt holders, not a true operating cost. Tesla's 2023 FCFF exceeded its FCFE by roughly $300M due to this interest add-back.",
+      "teachingPreamble": "Free Cash Flow to Firm (FCFF) represents cash available to all capital providers  -  both debt and equity holders. Unlike FCFE (free cash flow to equity), FCFF adds back after-tax interest expense to OCF minus capex because interest is a payment to debt holders, not a true operating cost. Tesla's 2023 FCFF exceeded its FCFE by roughly $300M due to this interest add-back.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Burn rate comes in two flavors: gross burn (total monthly cash outflows) and net burn (outflows minus inflows). Runway = cash balance ÷ net burn rate. WeWork's 2019 implosion was partly because its reported metrics obscured a $219M monthly net burn rate against $2.5B in reserves — just 11 months of runway while pursuing an IPO at a $47B valuation.",
+      "teachingPreamble": "Burn rate comes in two flavors: gross burn (total monthly cash outflows) and net burn (outflows minus inflows). Runway = cash balance ÷ net burn rate. WeWork's 2019 implosion was partly because its reported metrics obscured a $219M monthly net burn rate against $2.5B in reserves  -  just 11 months of runway while pursuing an IPO at a $47B valuation.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,11 +153,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Pay down debt — tightening credit makes refinancing risky"
+          "text": "Pay down debt  -  tightening credit makes refinancing risky"
         },
         {
           "id": "b",
-          "text": "Fund expansion — 22.5% IRR far exceeds 7.5% debt cost"
+          "text": "Fund expansion  -  22.5% IRR far exceeds 7.5% debt cost"
         },
         {
           "id": "c",
@@ -165,7 +165,7 @@
         },
         {
           "id": "d",
-          "text": "Delay both — hoard cash given macro uncertainty"
+          "text": "Delay both  -  hoard cash given macro uncertainty"
         }
       ],
       "correctAnswer": "a",
@@ -237,7 +237,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Fund the pivot — new runway of ~9 months is sufficient"
+          "text": "Fund the pivot  -  new runway of ~9 months is sufficient"
         },
         {
           "id": "b",
@@ -255,7 +255,7 @@
       "correctAnswer": "b",
       "insightAnswer": "b",
       "teachingPreamble": null,
-      "priorContext": "Previously, this SaaS startup had $24M cash, $3.2M monthly expenses, and $1.4M revenue giving 13.3 months runway. Now their largest customer churned, dropping revenue to $1.15M and increasing net burn to $2.05M — just 11.7 months runway before any pivot investment.",
+      "priorContext": "Previously, this SaaS startup had $24M cash, $3.2M monthly expenses, and $1.4M revenue giving 13.3 months runway. Now their largest customer churned, dropping revenue to $1.15M and increasing net burn to $2.05M  -  just 11.7 months runway before any pivot investment.",
       "timeTarget": 15,
       "type": "CURVEBALL"
     }

@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "When high-influence stakeholders clash, the most effective resolution isn't picking a winner—it's reframing the problem. At Spotify, product and engineering leaders often disagreed on feature scope, but PMs who surfaced shared goals (like user retention) found compromises 3x faster. This technique is called interest-based negotiation.",
+      "teachingPreamble": "When high-influence stakeholders clash, the most effective resolution isn't picking a winner - it's reframing the problem. At Spotify, product and engineering leaders often disagreed on feature scope, but PMs who surfaced shared goals (like user retention) found compromises 3x faster. This technique is called interest-based negotiation.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -149,7 +149,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Full delay—technical debt compounds and creates larger future costs"
+          "text": "Full delay - technical debt compounds and creates larger future costs"
         },
         {
           "id": "b",
@@ -194,7 +194,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Resistant stakeholders often aren't opposed to the goal—they're opposed to feeling excluded from the solution. Research from Harvard Business Review found that stakeholders who co-designed even 15% of a proposal were 4x more likely to champion it. At Microsoft, PMs who invited skeptical VPs into early design sprints saw approval rates jump from 35% to 78%.",
+      "teachingPreamble": "Resistant stakeholders often aren't opposed to the goal - they're opposed to feeling excluded from the solution. Research from Harvard Business Review found that stakeholders who co-designed even 15% of a proposal were 4x more likely to champion it. At Microsoft, PMs who invited skeptical VPs into early design sprints saw approval rates jump from 35% to 78%.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -229,7 +229,7 @@
     },
     {
       "order": 8,
-      "prompt": "Midway through your Stripe compliance rollout, the CFO—previously supportive—reverses position after a board meeting focused on cost reduction. She now wants to shelve the project. What's your best move?",
+      "prompt": "Midway through your Stripe compliance rollout, the CFO - previously supportive - reverses position after a board meeting focused on cost reduction. She now wants to shelve the project. What's your best move?",
       "options": [
         {
           "id": "a",

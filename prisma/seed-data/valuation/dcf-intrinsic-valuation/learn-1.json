@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "A Discounted Cash Flow (DCF) model values a company by estimating all the cash it will generate in the future, then discounting those amounts back to today's dollars. Think of it like this: if someone offered you $100 today or $100 in five years, you'd take it today — because you could invest that money and grow it. DCF applies this same logic to value entire businesses like Apple or Tesla.",
+      "teachingPreamble": "A Discounted Cash Flow (DCF) model values a company by estimating all the cash it will generate in the future, then discounting those amounts back to today's dollars. Think of it like this: if someone offered you $100 today or $100 in five years, you'd take it today  -  because you could invest that money and grow it. DCF applies this same logic to value entire businesses like Apple or Tesla.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -118,7 +118,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "WACC stands for Weighted Average Cost of Capital. Companies fund themselves with two main sources — debt (loans, bonds) and equity (shareholders' money). Each has a cost: debt has interest payments, and equity investors expect returns for their risk. WACC blends these two costs based on how much of each the company uses. For example, Coca-Cola's WACC is roughly 7%, meaning every dollar of capital costs them about 7 cents per year.",
+      "teachingPreamble": "WACC stands for Weighted Average Cost of Capital. Companies fund themselves with two main sources  -  debt (loans, bonds) and equity (shareholders' money). Each has a cost: debt has interest payments, and equity investors expect returns for their risk. WACC blends these two costs based on how much of each the company uses. For example, Coca-Cola's WACC is roughly 7%, meaning every dollar of capital costs them about 7 cents per year.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -157,11 +157,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Duke Energy — low WACC discounts distant cash flows less severely"
+          "text": "Duke Energy  -  low WACC discounts distant cash flows less severely"
         },
         {
           "id": "b",
-          "text": "Palantir — high growth means bigger future cash flows dominate"
+          "text": "Palantir  -  high growth means bigger future cash flows dominate"
         },
         {
           "id": "c",
@@ -169,7 +169,7 @@
         },
         {
           "id": "d",
-          "text": "Neither — distant cash flows are always negligible"
+          "text": "Neither  -  distant cash flows are always negligible"
         }
       ],
       "correctAnswer": "a",
@@ -202,7 +202,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "A DCF typically forecasts cash flows for 5–10 years, but companies don't just stop existing after that. Terminal value captures all the value from year 11 onward into infinity. It's often calculated using a perpetuity growth formula: Terminal Value = Final Year Cash Flow × (1 + growth rate) ÷ (WACC – growth rate). In practice, terminal value frequently accounts for 60–80% of a company's total DCF value, which is why getting this number right matters enormously.",
+      "teachingPreamble": "A DCF typically forecasts cash flows for 5 - 10 years, but companies don't just stop existing after that. Terminal value captures all the value from year 11 onward into infinity. It's often calculated using a perpetuity growth formula: Terminal Value = Final Year Cash Flow × (1 + growth rate) ÷ (WACC  -  growth rate). In practice, terminal value frequently accounts for 60 - 80% of a company's total DCF value, which is why getting this number right matters enormously.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -241,19 +241,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Valuation increases — higher rates signal a strong economy"
+          "text": "Valuation increases  -  higher rates signal a strong economy"
         },
         {
           "id": "b",
-          "text": "Valuation drops significantly — WACC rises, discounting is heavier"
+          "text": "Valuation drops significantly  -  WACC rises, discounting is heavier"
         },
         {
           "id": "c",
-          "text": "Valuation stays flat — cash flows didn't change"
+          "text": "Valuation stays flat  -  cash flows didn't change"
         },
         {
           "id": "d",
-          "text": "Valuation increases — terminal growth rate rises with rates"
+          "text": "Valuation increases  -  terminal growth rate rises with rates"
         }
       ],
       "correctAnswer": "b",

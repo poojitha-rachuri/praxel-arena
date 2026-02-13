@@ -93,7 +93,7 @@
     },
     {
       "order": 3,
-      "prompt": "When delivering bad news to a senior stakeholder, the most effective structure is: lead with the ____, then provide context, then present the path forward—never bury the headline.",
+      "prompt": "When delivering bad news to a senior stakeholder, the most effective structure is: lead with the ____, then provide context, then present the path forward - never bury the headline.",
       "options": [
         {
           "id": "a",
@@ -261,7 +261,7 @@
         },
         {
           "id": "b",
-          "text": "Answer directly—state what leadership sacrificed, or honestly say they haven't yet"
+          "text": "Answer directly - state what leadership sacrificed, or honestly say they haven't yet"
         },
         {
           "id": "c",

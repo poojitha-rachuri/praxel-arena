@@ -93,11 +93,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Ship the bug fix — Must Haves always come first in MoSCoW"
+          "text": "Ship the bug fix  -  Must Haves always come first in MoSCoW"
         },
         {
           "id": "b",
-          "text": "Ship the enterprise feature — revenue impact outweighs category labels"
+          "text": "Ship the enterprise feature  -  revenue impact outweighs category labels"
         },
         {
           "id": "c",
@@ -189,19 +189,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Dark mode theme — Nice to Have"
+          "text": "Dark mode theme  -  Nice to Have"
         },
         {
           "id": "b",
-          "text": "Payment processing fix — Must Have"
+          "text": "Payment processing fix  -  Must Have"
         },
         {
           "id": "c",
-          "text": "AR room tours — Won't Have"
+          "text": "AR room tours  -  Won't Have"
         },
         {
           "id": "d",
-          "text": "Improved search filters — Should Have"
+          "text": "Improved search filters  -  Should Have"
         }
       ],
       "correctAnswer": "b,d,a,c",
@@ -217,11 +217,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Feature A — higher revenue impact score wins with 40% weight"
+          "text": "Feature A  -  higher revenue impact score wins with 40% weight"
         },
         {
           "id": "b",
-          "text": "Feature B — its weighted total (7.10) beats Feature A (5.85)"
+          "text": "Feature B  -  its weighted total (7.10) beats Feature A (5.85)"
         },
         {
           "id": "c",
@@ -229,7 +229,7 @@
         },
         {
           "id": "d",
-          "text": "Neither — scores below 8 weighted average shouldn't ship"
+          "text": "Neither  -  scores below 8 weighted average shouldn't ship"
         }
       ],
       "correctAnswer": "b",
@@ -273,7 +273,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Keep it top priority — the ICE score doesn't change"
+          "text": "Keep it top priority  -  the ICE score doesn't change"
         },
         {
           "id": "b",
@@ -285,7 +285,7 @@
         },
         {
           "id": "d",
-          "text": "Remove it entirely — individual user features are now irrelevant"
+          "text": "Remove it entirely  -  individual user features are now irrelevant"
         }
       ],
       "correctAnswer": "b",

@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "A DCF typically projects free cash flows for 5–10 years, but a company doesn't stop operating after that. Terminal value captures everything beyond the forecast period—and often represents 60–80% of total enterprise value. The two common methods are the Gordon Growth Model (perpetuity growth) and the Exit Multiple method.",
+      "teachingPreamble": "A DCF typically projects free cash flows for 5 - 10 years, but a company doesn't stop operating after that. Terminal value captures everything beyond the forecast period - and often represents 60 - 80% of total enterprise value. The two common methods are the Gordon Growth Model (perpetuity growth) and the Exit Multiple method.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -153,19 +153,19 @@
       "options": [
         {
           "id": "a",
-          "text": "4%—utilities have monopoly pricing power supporting high growth"
+          "text": "4% - utilities have monopoly pricing power supporting high growth"
         },
         {
           "id": "b",
-          "text": "2%—it's near long-term GDP/inflation, appropriate for stable businesses"
+          "text": "2% - it's near long-term GDP/inflation, appropriate for stable businesses"
         },
         {
           "id": "c",
-          "text": "4%—higher growth always yields a more accurate valuation"
+          "text": "4% - higher growth always yields a more accurate valuation"
         },
         {
           "id": "d",
-          "text": "Neither matters—terminal value is insignificant in utility DCFs"
+          "text": "Neither matters - terminal value is insignificant in utility DCFs"
         }
       ],
       "correctAnswer": "b",
@@ -181,19 +181,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Revenue growth and tax rate—taxes drive all value"
+          "text": "Revenue growth and tax rate - taxes drive all value"
         },
         {
           "id": "b",
-          "text": "WACC and terminal growth rate—they most impact enterprise value"
+          "text": "WACC and terminal growth rate - they most impact enterprise value"
         },
         {
           "id": "c",
-          "text": "Depreciation and capex—they are hardest to forecast"
+          "text": "Depreciation and capex - they are hardest to forecast"
         },
         {
           "id": "d",
-          "text": "Working capital and debt balance—they change every quarter"
+          "text": "Working capital and debt balance - they change every quarter"
         }
       ],
       "correctAnswer": "b",
@@ -245,7 +245,7 @@
         },
         {
           "id": "c",
-          "text": "No effect—DCF uses company-specific data, not market rates"
+          "text": "No effect - DCF uses company-specific data, not market rates"
         },
         {
           "id": "d",

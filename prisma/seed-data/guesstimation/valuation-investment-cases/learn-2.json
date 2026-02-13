@@ -13,19 +13,19 @@
       "options": [
         {
           "id": "a",
-          "text": "~8x — moderate growth doesn't justify premium"
+          "text": "~8x  -  moderate growth doesn't justify premium"
         },
         {
           "id": "b",
-          "text": "~15x — Rule of 40 score of 115 commands top-decile multiple"
+          "text": "~15x  -  Rule of 40 score of 115 commands top-decile multiple"
         },
         {
           "id": "c",
-          "text": "~25x — growth rate alone drives the multiple"
+          "text": "~25x  -  growth rate alone drives the multiple"
         },
         {
           "id": "d",
-          "text": "~4x — gross margins are irrelevant to revenue multiples"
+          "text": "~4x  -  gross margins are irrelevant to revenue multiples"
         }
       ],
       "correctAnswer": "b",
@@ -41,7 +41,7 @@
       "options": [
         {
           "id": "a",
-          "text": "20x is fair — matches CrowdStrike's public comparable directly"
+          "text": "20x is fair  -  matches CrowdStrike's public comparable directly"
         },
         {
           "id": "b",
@@ -93,19 +93,19 @@
       "options": [
         {
           "id": "a",
-          "text": "~$225M — just multiply ARR by 15x"
+          "text": "~$225M  -  just multiply ARR by 15x"
         },
         {
           "id": "b",
-          "text": "~$53M — back-solve from exit, accounting for dilution and return target"
+          "text": "~$53M  -  back-solve from exit, accounting for dilution and return target"
         },
         {
           "id": "c",
-          "text": "~$150M — exit value divided by 3x return target"
+          "text": "~$150M  -  exit value divided by 3x return target"
         },
         {
           "id": "d",
-          "text": "~$105M — exit value divided by return, adjusted for dilution"
+          "text": "~$105M  -  exit value divided by return, adjusted for dilution"
         }
       ],
       "correctAnswer": "d",
@@ -149,19 +149,19 @@
       "options": [
         {
           "id": "a",
-          "text": "Company A — hypergrowth marketplaces with high take rates dominate winner-take-all markets"
+          "text": "Company A  -  hypergrowth marketplaces with high take rates dominate winner-take-all markets"
         },
         {
           "id": "b",
-          "text": "Company B — profitable growth de-risks the investment and signals capital efficiency"
+          "text": "Company B  -  profitable growth de-risks the investment and signals capital efficiency"
         },
         {
           "id": "c",
-          "text": "Company A — but negotiate a 1.5x liquidation preference to hedge burn risk"
+          "text": "Company A  -  but negotiate a 1.5x liquidation preference to hedge burn risk"
         },
         {
           "id": "d",
-          "text": "Company B — but only with a ratchet clause tied to growth maintaining 50%+"
+          "text": "Company B  -  but only with a ratchet clause tied to growth maintaining 50%+"
         }
       ],
       "correctAnswer": "c",
@@ -177,24 +177,24 @@
       "options": [
         {
           "id": "a",
-          "text": "12x — always anchor to where public markets trade today"
+          "text": "12x  -  always anchor to where public markets trade today"
         },
         {
           "id": "b",
-          "text": "15x — precedent transactions reflect real control premiums paid"
+          "text": "15x  -  precedent transactions reflect real control premiums paid"
         },
         {
           "id": "c",
-          "text": "13-14x — triangulate methods, weighting DCF and precedents over trading comps"
+          "text": "13-14x  -  triangulate methods, weighting DCF and precedents over trading comps"
         },
         {
           "id": "d",
-          "text": "10x — apply a discount for current macro uncertainty"
+          "text": "10x  -  apply a discount for current macro uncertainty"
         }
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Professional valuations triangulate across three methods: trading comparables (public market mood), precedent transactions (what acquirers actually paid, including control premiums), and DCF (intrinsic value). The key guesstimation insight: precedent transactions typically run 20-40% above trading comps due to control premiums and synergies. A weighted blend — heavier on DCF and precedents for M&A — gives the most defensible range.",
+      "teachingPreamble": "Professional valuations triangulate across three methods: trading comparables (public market mood), precedent transactions (what acquirers actually paid, including control premiums), and DCF (intrinsic value). The key guesstimation insight: precedent transactions typically run 20-40% above trading comps due to control premiums and synergies. A weighted blend  -  heavier on DCF and precedents for M&A  -  gives the most defensible range.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -233,7 +233,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Lower bid 15-20% — higher WACC crushes DCF and debt costs erode LBO returns"
+          "text": "Lower bid 15-20%  -  higher WACC crushes DCF and debt costs erode LBO returns"
         },
         {
           "id": "b",
@@ -241,7 +241,7 @@
         },
         {
           "id": "c",
-          "text": "Walk away — rate spikes make all acquisitions uninvestable"
+          "text": "Walk away  -  rate spikes make all acquisitions uninvestable"
         },
         {
           "id": "d",

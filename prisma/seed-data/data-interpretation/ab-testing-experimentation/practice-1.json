@@ -64,7 +64,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Run the checkout redesign — maximize expected revenue impact"
+          "text": "Run the checkout redesign  -  maximize expected revenue impact"
         },
         {
           "id": "b",
@@ -88,7 +88,7 @@
     },
     {
       "order": 3,
-      "prompt": "When multiple metrics are tested in one experiment, the probability of at least one false positive increases — this is called the ____ problem.",
+      "prompt": "When multiple metrics are tested in one experiment, the probability of at least one false positive increases  -  this is called the ____ problem.",
       "options": [
         {
           "id": "a",
@@ -128,7 +128,7 @@
         },
         {
           "id": "c",
-          "text": "Evaluate net revenue impact — the composite metric drives the decision"
+          "text": "Evaluate net revenue impact  -  the composite metric drives the decision"
         },
         {
           "id": "d",
@@ -208,7 +208,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Accept larger MDE — only detect big effects but keep true metric"
+          "text": "Accept larger MDE  -  only detect big effects but keep true metric"
         },
         {
           "id": "b",
@@ -264,7 +264,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Roll back — the novelty effect invalidates the experiment entirely"
+          "text": "Roll back  -  the novelty effect invalidates the experiment entirely"
         },
         {
           "id": "b",
@@ -272,7 +272,7 @@
         },
         {
           "id": "c",
-          "text": "Ignore the decay — the original test was statistically valid"
+          "text": "Ignore the decay  -  the original test was statistically valid"
         },
         {
           "id": "d",

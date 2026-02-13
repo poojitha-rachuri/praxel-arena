@@ -45,7 +45,7 @@
         },
         {
           "id": "b",
-          "text": "Zoom's low growth makes it a poor comp—remove or footnote it"
+          "text": "Zoom's low growth makes it a poor comp - remove or footnote it"
         },
         {
           "id": "c",
@@ -102,19 +102,19 @@
       "options": [
         {
           "id": "a",
-          "text": "$200M—reported EBITDA is the standard"
+          "text": "$200M - reported EBITDA is the standard"
         },
         {
           "id": "b",
-          "text": "$230M—add back the settlement for consistency"
+          "text": "$230M - add back the settlement for consistency"
         },
         {
           "id": "c",
-          "text": "$170M—subtract the non-recurring gain"
+          "text": "$170M - subtract the non-recurring gain"
         },
         {
           "id": "d",
-          "text": "$185M—subtract half since it may recur"
+          "text": "$185M - subtract half since it may recur"
         }
       ],
       "correctAnswer": "c",
@@ -158,11 +158,11 @@
       "options": [
         {
           "id": "a",
-          "text": "12 comps—larger sample reduces outlier impact"
+          "text": "12 comps - larger sample reduces outlier impact"
         },
         {
           "id": "b",
-          "text": "4 comps—precision of match matters more than sample size"
+          "text": "4 comps - precision of match matters more than sample size"
         },
         {
           "id": "c",

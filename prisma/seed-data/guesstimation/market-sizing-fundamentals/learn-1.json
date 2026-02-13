@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "a",
       "insightAnswer": "a",
-      "teachingPreamble": "Market sizing starts with three concentric circles: TAM, SAM, and SOM. TAM (Total Addressable Market) is the total global demand for your product category — the biggest circle, representing everyone who could theoretically buy what you sell. Think of it as the entire ocean, even if you only fish in one pond.",
+      "teachingPreamble": "Market sizing starts with three concentric circles: TAM, SAM, and SOM. TAM (Total Addressable Market) is the total global demand for your product category  -  the biggest circle, representing everyone who could theoretically buy what you sell. Think of it as the entire ocean, even if you only fish in one pond.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -106,7 +106,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "There are two main ways to size a market. Top-down starts big (total population or industry revenue) and narrows using filters like demographics and adoption rates. Bottom-up starts small — counting individual customers, transactions, or stores — and multiplies upward. Population-based sizing is a common top-down technique: start with a population, then apply percentage filters step by step.",
+      "teachingPreamble": "There are two main ways to size a market. Top-down starts big (total population or industry revenue) and narrows using filters like demographics and adoption rates. Bottom-up starts small  -  counting individual customers, transactions, or stores  -  and multiplies upward. Population-based sizing is a common top-down technique: start with a population, then apply percentage filters step by step.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -145,11 +145,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Top-down only — fast, credible, uses published industry data"
+          "text": "Top-down only  -  fast, credible, uses published industry data"
         },
         {
           "id": "b",
-          "text": "Bottom-up only — shows deep understanding of unit economics"
+          "text": "Bottom-up only  -  shows deep understanding of unit economics"
         },
         {
           "id": "c",
@@ -237,7 +237,7 @@
         },
         {
           "id": "c",
-          "text": "Ignore it — regulations rarely affect actual purchasing behavior"
+          "text": "Ignore it  -  regulations rarely affect actual purchasing behavior"
         },
         {
           "id": "d",

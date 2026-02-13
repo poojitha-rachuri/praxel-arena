@@ -3,7 +3,7 @@
   "topicSlug": "unit-economics-revenue-models",
   "mode": "LEARN",
   "title": "Foundations of Unit Economics",
-  "description": "Master the core metrics—LTV, CAC, ARPU, and payback period—that drive business profitability decisions.",
+  "description": "Master the core metrics - LTV, CAC, ARPU, and payback period - that drive business profitability decisions.",
   "difficulty": 2,
   "sprintOrder": 1,
   "interactions": [
@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "c",
       "insightAnswer": "c",
-      "teachingPreamble": "Customer Lifetime Value (LTV) is the total revenue you expect from one customer over their entire relationship with your business. It's calculated simply as ARPU × average customer lifespan. For example, Netflix earns roughly $15/month per subscriber—if a subscriber stays 3 years, their LTV is about $540.",
+      "teachingPreamble": "Customer Lifetime Value (LTV) is the total revenue you expect from one customer over their entire relationship with your business. It's calculated simply as ARPU × average customer lifespan. For example, Netflix earns roughly $15/month per subscriber - if a subscriber stays 3 years, their LTV is about $540.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -114,7 +114,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Customer Acquisition Cost (CAC) is the total spent on sales and marketing divided by the number of new customers acquired. The gold standard in SaaS is an LTV:CAC ratio of 3:1 or higher—meaning every dollar spent acquiring a customer returns three dollars. Shopify, for instance, has historically maintained an LTV:CAC ratio above 3x, signaling efficient growth.",
+      "teachingPreamble": "Customer Acquisition Cost (CAC) is the total spent on sales and marketing divided by the number of new customers acquired. The gold standard in SaaS is an LTV:CAC ratio of 3:1 or higher - meaning every dollar spent acquiring a customer returns three dollars. Shopify, for instance, has historically maintained an LTV:CAC ratio above 3x, signaling efficient growth.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"
@@ -198,7 +198,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "Average Revenue Per User (ARPU) is total revenue divided by total users over a given period. It's a vital health metric because it captures pricing power and mix effects. When companies like Spotify offer student or family discounts, the blended ARPU drops well below the headline price—Spotify's actual average is roughly $7/month per premium subscriber, not the $10.99 individual rate.",
+      "teachingPreamble": "Average Revenue Per User (ARPU) is total revenue divided by total users over a given period. It's a vital health metric because it captures pricing power and mix effects. When companies like Spotify offer student or family discounts, the blended ARPU drops well below the headline price - Spotify's actual average is roughly $7/month per premium subscriber, not the $10.99 individual rate.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

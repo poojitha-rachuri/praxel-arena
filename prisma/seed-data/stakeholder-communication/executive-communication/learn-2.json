@@ -30,7 +30,7 @@
       ],
       "correctAnswer": "b",
       "insightAnswer": "b",
-      "teachingPreamble": "A data-driven narrative isn't about dumping numbers on executives—it's about weaving data into a clear story that drives action. When Airbnb's analytics team presents to leadership, they don't start with spreadsheets; they start with an insight like 'Hosts who respond within 1 hour see 38% more bookings' and then show the supporting data.",
+      "teachingPreamble": "A data-driven narrative isn't about dumping numbers on executives - it's about weaving data into a clear story that drives action. When Airbnb's analytics team presents to leadership, they don't start with spreadsheets; they start with an insight like 'Hosts who respond within 1 hour see 38% more bookings' and then show the supporting data.",
       "priorContext": null,
       "timeTarget": 25,
       "type": "TEACH_AND_TEST"

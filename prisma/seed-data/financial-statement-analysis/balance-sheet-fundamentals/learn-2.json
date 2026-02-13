@@ -149,7 +149,7 @@
       "options": [
         {
           "id": "a",
-          "text": "Take the deal—10% savings is too valuable to pass up"
+          "text": "Take the deal - 10% savings is too valuable to pass up"
         },
         {
           "id": "b",
@@ -157,7 +157,7 @@
         },
         {
           "id": "c",
-          "text": "Decline—protecting your liquidity cushion is more important"
+          "text": "Decline - protecting your liquidity cushion is more important"
         },
         {
           "id": "d",
@@ -177,11 +177,11 @@
       "options": [
         {
           "id": "a",
-          "text": "Company A—higher current ratio always means better liquidity"
+          "text": "Company A - higher current ratio always means better liquidity"
         },
         {
           "id": "b",
-          "text": "Company B—its assets are more readily convertible to cash"
+          "text": "Company B - its assets are more readily convertible to cash"
         },
         {
           "id": "c",
@@ -189,7 +189,7 @@
         },
         {
           "id": "d",
-          "text": "Neither—you need the debt-to-equity ratio instead"
+          "text": "Neither - you need the debt-to-equity ratio instead"
         }
       ],
       "correctAnswer": "b",
@@ -245,7 +245,7 @@
         },
         {
           "id": "d",
-          "text": "No impact—receivables will eventually convert to cash anyway"
+          "text": "No impact - receivables will eventually convert to cash anyway"
         }
       ],
       "correctAnswer": "c",
