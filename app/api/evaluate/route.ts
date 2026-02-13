@@ -66,7 +66,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    r.timeSpent = Number(r.timeSpent) || 0;
+    r.timeSpent = Math.max(1, Number(r.timeSpent) || 0);
+    r.answer = r.answer.slice(0, 500);
   }
 
   try {
