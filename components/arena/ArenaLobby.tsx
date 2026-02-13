@@ -9,6 +9,8 @@ import {
   Clock,
   Trophy,
   ChevronRight,
+  Link2,
+  Share2,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { CARD_SPRING } from "@/lib/utils/constants";
@@ -51,6 +53,8 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
   const [isCreating, setIsCreating] = useState(false);
   const [duels, setDuels] = useState<Duel[]>([]);
   const [loadingDuels, setLoadingDuels] = useState(true);
+  const [inviteLink, setInviteLink] = useState<string | null>(null);
+  const [inviteCopied, setInviteCopied] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -90,74 +94,173 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
     }
   }, [selectedSkill, isCreating, skills, router]);
 
+  const handleChallengeAFriend = useCallback(async () => {
+    if (!selectedSkill || isCreating) return;
+    setIsCreating(true);
+    try {
+      const skill = skills.find((s) => s.id === selectedSkill);
+      if (!skill) return;
+      const res = await fetch("/api/duels", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ skillSlug: skill.slug }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.duel?.id) {
+        const link = `${window.location.origin}/compete/invite/${data.duel.id}`;
+        setInviteLink(link);
+        // Try to share via Web Share API
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: `Praxel Arena Duel`,
+              text: `I challenged you to a ${skill.name} duel on Praxel Arena!`,
+              url: link,
+            });
+          } catch {
+            // User cancelled or not supported — link is still visible
+          }
+        }
+        // Refresh duels
+        setDuels((prev) => [
+          {
+            id: data.duel.id,
+            status: "WAITING",
+            skill: { name: skill.name, slug: skill.slug, icon: skill.icon },
+            createdAt: new Date().toISOString(),
+            completedAt: null,
+            winnerId: null,
+          },
+          ...prev,
+        ]);
+        return;
+      }
+      console.error("Failed to create challenge:", data);
+    } catch (error) {
+      console.error("Failed to create challenge:", error);
+    } finally {
+      setIsCreating(false);
+    }
+  }, [selectedSkill, isCreating, skills]);
+
+  const handleCopyInvite = useCallback(async () => {
+    if (!inviteLink) return;
+    try {
+      await navigator.clipboard.writeText(inviteLink);
+      setInviteCopied(true);
+      setTimeout(() => setInviteCopied(false), 2000);
+    } catch {
+      // Fallback: do nothing
+    }
+  }, [inviteLink]);
+
   return (
-    <div className="flex flex-col gap-5 p-4">
-      {/* Arena header with gradient text */}
+    <div className="mx-auto flex max-w-lg flex-col gap-5 p-4">
+      {/* Arena header */}
       <div>
         <h1 className="bg-gradient-to-r from-violet-400 to-primary bg-clip-text text-2xl font-extrabold tracking-tight text-transparent">
-          Compete
+          Arena
         </h1>
         <p className="text-xs text-muted-foreground">
           Head-to-head skill duels with Elo ratings
         </p>
       </div>
 
-      {/* Skill pill selector */}
+      {/* Skill selector — 2-column grid */}
       <div>
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           Choose your arena
         </p>
-        <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+        <div className="grid grid-cols-2 gap-2">
           {skills.map((skill, i) => (
             <motion.button
               key={skill.id}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.04, type: "spring", ...CARD_SPRING }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedSkill(skill.id)}
+              whileTap={{ scale: 0.96 }}
+              onClick={() => {
+                setSelectedSkill(skill.id);
+                setInviteLink(null);
+              }}
               className={cn(
-                "flex items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-medium transition-all min-h-[36px]",
+                "flex items-center gap-2 rounded-xl border p-2.5 text-left transition-all min-h-[44px]",
                 selectedSkill === skill.id
-                  ? "border-primary bg-primary/10 text-primary ring-1 ring-primary/30"
-                  : "border-border bg-card hover:border-primary/30 hover:bg-primary/5"
+                  ? "border-primary bg-primary/5 ring-1 ring-primary/30"
+                  : "border-border/50 bg-card/80 backdrop-blur-sm hover:border-primary/30"
               )}
             >
-              <SkillIcon slug={skill.slug} size="sm" className="size-6" />
-              <span>{skill.name}</span>
+              <SkillIcon slug={skill.slug} size="sm" className="size-7" />
+              <span className="text-xs font-medium truncate">{skill.name}</span>
             </motion.button>
           ))}
         </div>
       </div>
 
-      {/* Hero CTA */}
-      <motion.button
-        onClick={handleFindOpponent}
-        disabled={!selectedSkill || isCreating}
-        animate={{
-          opacity: selectedSkill ? 1 : 0.4,
-          scale: selectedSkill ? 1 : 0.98,
-        }}
-        whileTap={selectedSkill ? { scale: 0.97 } : undefined}
-        transition={{ type: "spring", ...CARD_SPRING }}
-        className={cn(
-          "flex items-center justify-center gap-2 rounded-2xl py-4 text-sm font-bold transition-colors min-h-[56px]",
-          selectedSkill && !isCreating
-            ? "bg-gradient-to-r from-violet-600 to-primary text-white shadow-lg shadow-primary/20 cursor-pointer"
-            : "bg-muted text-muted-foreground cursor-not-allowed"
-        )}
-      >
-        {isCreating ? (
-          <Loader2 className="size-5 animate-spin" />
-        ) : (
-          <>
-            <Swords className="size-5" />
-            Find Opponent
-          </>
-        )}
-      </motion.button>
+      {/* CTAs */}
+      <div className="flex gap-3">
+        <motion.button
+          onClick={handleFindOpponent}
+          disabled={!selectedSkill || isCreating}
+          animate={{ opacity: selectedSkill ? 1 : 0.4 }}
+          whileTap={selectedSkill ? { scale: 0.97 } : undefined}
+          transition={{ type: "spring", ...CARD_SPRING }}
+          className={cn(
+            "flex flex-1 items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold transition-colors min-h-[48px]",
+            selectedSkill && !isCreating
+              ? "bg-gradient-to-r from-violet-600 to-primary text-white shadow-lg shadow-primary/20 cursor-pointer"
+              : "bg-muted text-muted-foreground cursor-not-allowed"
+          )}
+        >
+          {isCreating ? (
+            <Loader2 className="size-4 animate-spin" />
+          ) : (
+            <>
+              <Swords className="size-4" />
+              Find Opponent
+            </>
+          )}
+        </motion.button>
 
-      {/* Your Duels — horizontal scroll */}
+        <motion.button
+          onClick={handleChallengeAFriend}
+          disabled={!selectedSkill || isCreating}
+          animate={{ opacity: selectedSkill ? 1 : 0.4 }}
+          whileTap={selectedSkill ? { scale: 0.97 } : undefined}
+          transition={{ type: "spring", ...CARD_SPRING }}
+          className={cn(
+            "flex flex-1 items-center justify-center gap-2 rounded-xl border py-3 text-sm font-semibold transition-colors min-h-[48px]",
+            selectedSkill && !isCreating
+              ? "border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 cursor-pointer"
+              : "border-border bg-muted text-muted-foreground cursor-not-allowed"
+          )}
+        >
+          <Share2 className="size-4" />
+          Challenge Friend
+        </motion.button>
+      </div>
+
+      {/* Invite link banner */}
+      {inviteLink && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex items-center gap-2 rounded-xl border border-primary/20 bg-primary/5 p-3"
+        >
+          <Link2 className="size-4 shrink-0 text-primary" />
+          <p className="flex-1 truncate text-xs text-muted-foreground">
+            {inviteLink}
+          </p>
+          <button
+            onClick={handleCopyInvite}
+            className="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground"
+          >
+            {inviteCopied ? "Copied!" : "Copy"}
+          </button>
+        </motion.div>
+      )}
+
+      {/* Your Duels — vertical list */}
       <div>
         <h2 className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
           Your Duels
@@ -175,27 +278,34 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
             </p>
           </div>
         ) : (
-          <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
+          <div className="flex flex-col gap-2">
             {duels.map((duel, i) => (
               <motion.button
                 key={duel.id}
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: -12 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.05, type: "spring", ...CARD_SPRING }}
-                whileTap={{ scale: 0.97 }}
+                transition={{ delay: i * 0.04, type: "spring", ...CARD_SPRING }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => router.push(`/compete/${duel.id}`)}
-                className="flex min-w-[200px] snap-start flex-col gap-2 rounded-xl border border-border/50 bg-card/80 p-3 backdrop-blur-sm transition-colors hover:border-primary/30"
+                className="flex w-full items-center gap-3 rounded-xl border border-border/50 bg-card/80 p-3 backdrop-blur-sm transition-colors hover:border-primary/30"
               >
-                <div className="flex items-center gap-2">
-                  <SkillIcon slug={duel.skill.slug} size="sm" />
-                  <span className="flex-1 truncate text-xs font-semibold">
+                <SkillIcon slug={duel.skill.slug} size="sm" />
+                <div className="flex flex-1 flex-col items-start gap-0.5 min-w-0">
+                  <span className="text-sm font-semibold truncate w-full text-left">
                     {duel.skill.name}
                   </span>
+                  <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                    <Clock className="size-2.5" />
+                    {new Date(duel.createdAt).toLocaleDateString(undefined, {
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
                   {duel.winnerId === userId && (
                     <Trophy className="size-3.5 text-amber-400" />
                   )}
-                </div>
-                <div className="flex items-center justify-between">
                   <Badge
                     variant="outline"
                     className={cn(
@@ -205,16 +315,7 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
                   >
                     {duel.status.replace("_", " ")}
                   </Badge>
-                  <span className="flex items-center gap-0.5 text-[10px] text-muted-foreground">
-                    <Clock className="size-2.5" />
-                    {new Date(duel.createdAt).toLocaleDateString(undefined, {
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </span>
-                </div>
-                <div className="flex items-center justify-end">
-                  <ChevronRight className="size-3 text-muted-foreground" />
+                  <ChevronRight className="size-4 text-muted-foreground" />
                 </div>
               </motion.button>
             ))}
