@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Meal-Kit Startup: Key Metrics vs Industry Benchmarks",
+        "data": [
+          {
+            "name": "Monthly Churn Rate (%)",
+            "value": 20
+          },
+          {
+            "name": "Avg Customer Lifespan (months)",
+            "value": 5
+          },
+          {
+            "name": "ARPU ($/month)",
+            "value": 80
+          },
+          {
+            "name": "CAC ($)",
+            "value": 250
+          },
+          {
+            "name": "LTV ($)",
+            "value": 400
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

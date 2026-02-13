@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Healthcare Deal EV/EBITDA Multiples",
+        "data": [
+          {
+            "name": "Deal A",
+            "value": 14.2
+          },
+          {
+            "name": "Deal B (Bidding War)",
+            "value": 18.7
+          },
+          {
+            "name": "Deal C",
+            "value": 15.1
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

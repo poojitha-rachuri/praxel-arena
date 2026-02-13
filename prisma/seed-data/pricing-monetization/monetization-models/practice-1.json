@@ -33,7 +33,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Free Tier vs Paid Conversion Metrics",
+        "data": [
+          {
+            "name": "Users Hitting Free Cap Weekly",
+            "value": 40
+          },
+          {
+            "name": "Free-to-Paid Conversion Rate",
+            "value": 2.1
+          },
+          {
+            "name": "Paid Users Citing Low Value",
+            "value": 65
+          },
+          {
+            "name": "Active Free Users Not Capped",
+            "value": 60
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +141,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Marketplace Metrics: Previous Year vs Current Year",
+        "data": [
+          {
+            "name": "GMV (Previous Year)",
+            "value": 800
+          },
+          {
+            "name": "GMV (Current Year)",
+            "value": 1000
+          },
+          {
+            "name": "Take Rate % (Previous Year)",
+            "value": 6.5
+          },
+          {
+            "name": "Take Rate % (Current Year)",
+            "value": 5.2
+          },
+          {
+            "name": "Net Revenue (Previous Year)",
+            "value": 52
+          },
+          {
+            "name": "Net Revenue (Current Year)",
+            "value": 56.16
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

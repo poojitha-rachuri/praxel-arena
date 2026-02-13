@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Platform Migration Support by Department",
+        "data": [
+          {
+            "name": "Engineering",
+            "value": 8
+          },
+          {
+            "name": "Sales",
+            "value": 3
+          },
+          {
+            "name": "Customer Success",
+            "value": 4
+          },
+          {
+            "name": "Finance",
+            "value": 9
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

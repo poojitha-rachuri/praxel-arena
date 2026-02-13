@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "EV/Revenue Multiples: Public Comps vs Private Startup",
+        "data": [
+          {
+            "name": "Datadog",
+            "value": 18
+          },
+          {
+            "name": "CrowdStrike",
+            "value": 20
+          },
+          {
+            "name": "Snowflake",
+            "value": 30
+          },
+          {
+            "name": "Private Startup (Implied)",
+            "value": 20
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

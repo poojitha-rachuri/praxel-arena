@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "B2B Prospect Purchase Priorities (n=200)",
+        "data": [
+          {
+            "name": "Ease of Setup",
+            "value": 68
+          },
+          {
+            "name": "Advanced Features",
+            "value": 14
+          },
+          {
+            "name": "Price",
+            "value": 12
+          },
+          {
+            "name": "Brand Reputation",
+            "value": 6
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

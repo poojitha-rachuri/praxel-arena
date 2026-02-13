@@ -33,7 +33,47 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Shopify Q3 YoY Growth Metrics",
+        "data": [
+          {
+            "name": "GMV Growth",
+            "value": 22
+          },
+          {
+            "name": "Merchant Count Growth",
+            "value": 31
+          },
+          {
+            "name": "Revenue per Merchant",
+            "value": -14
+          },
+          {
+            "name": "North America ARPU",
+            "value": -12
+          },
+          {
+            "name": "Europe ARPU",
+            "value": -16
+          },
+          {
+            "name": "Asia ARPU",
+            "value": -11
+          },
+          {
+            "name": "Latin America ARPU",
+            "value": -18
+          },
+          {
+            "name": "APAC ARPU",
+            "value": -13
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -61,7 +101,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Key Performance Metrics: Customer vs Dasher Impact",
+        "data": [
+          {
+            "name": "Delivery Time",
+            "value": -8
+          },
+          {
+            "name": "Customer NPS",
+            "value": 12
+          },
+          {
+            "name": "Dasher Churn",
+            "value": 23
+          },
+          {
+            "name": "Dasher Satisfaction",
+            "value": -19
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

@@ -19,6 +19,7 @@ export const EVALUATION_RATE_LIMIT = 30; // per user per hour
 // Duel timeouts
 export const DUEL_WAITING_TIMEOUT_MINUTES = 15;
 export const DUEL_PROGRESS_TIMEOUT_MINUTES = 30;
+export const DUEL_CREATION_RATE_LIMIT = 10; // duels per user per hour
 
 // AI Models
 export const AI_MODEL_GENERATION = "claude-opus-4-6";

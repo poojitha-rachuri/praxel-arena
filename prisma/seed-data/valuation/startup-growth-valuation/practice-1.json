@@ -33,7 +33,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Pre-Money Valuation Comparison (Series B)",
+        "data": [
+          {
+            "name": "Stated Pre-Money",
+            "value": 80
+          },
+          {
+            "name": "Option Pool Cost",
+            "value": 20
+          },
+          {
+            "name": "Effective Pre-Money",
+            "value": 60
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +137,43 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Fintech Startup Key Metrics vs Benchmarks",
+        "data": [
+          {
+            "name": "ARR ($M)",
+            "value": 8
+          },
+          {
+            "name": "Net Revenue Retention (%)",
+            "value": 140
+          },
+          {
+            "name": "Gross Margin (%)",
+            "value": 70
+          },
+          {
+            "name": "FCF ($M)",
+            "value": -5
+          },
+          {
+            "name": "Public Comps Multiple (x)",
+            "value": 15
+          },
+          {
+            "name": "Private Comps Multiple Low (x)",
+            "value": 20
+          },
+          {
+            "name": "Private Comps Multiple High (x)",
+            "value": 25
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Key Liquidity & Efficiency Metrics",
+        "data": [
+          {
+            "name": "Current Ratio",
+            "value": 2.4
+          },
+          {
+            "name": "Quick Ratio",
+            "value": 0.6
+          },
+          {
+            "name": "Inventory Turnover (Prior Year)",
+            "value": 8
+          },
+          {
+            "name": "Inventory Turnover (Current Year)",
+            "value": 4
+          },
+          {
+            "name": "DSO (Days)",
+            "value": 32
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -61,7 +89,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Pfizer Interest Coverage Ratio Trend",
+        "data": [
+          {
+            "name": "2 Years Ago",
+            "value": 6.1
+          },
+          {
+            "name": "1 Year Ago",
+            "value": 4.5
+          },
+          {
+            "name": "Current",
+            "value": 3.2
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Beta Product Metrics - Launch Readiness Assessment",
+        "data": [
+          {
+            "name": "Sign-up to Activation",
+            "value": 42
+          },
+          {
+            "name": "Activation to Week 4 Retention",
+            "value": 18
+          },
+          {
+            "name": "NPS (Retained Users)",
+            "value": 62
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

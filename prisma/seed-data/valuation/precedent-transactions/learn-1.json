@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "EV/Revenue Multiples for Recent SaaS Acquisitions",
+        "data": [
+          {
+            "name": "Deal A (2021 Bull Market)",
+            "value": 18
+          },
+          {
+            "name": "Deal B (2023 Downturn)",
+            "value": 8
+          },
+          {
+            "name": "Deal C (2023 Downturn)",
+            "value": 9
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

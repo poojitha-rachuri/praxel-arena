@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Pet Food Startup Market Analysis ($B vs $M)",
+        "data": [
+          {
+            "name": "TAM: Total US Pet Food Market",
+            "value": 50000
+          },
+          {
+            "name": "SAM: Premium Organic Segment",
+            "value": 8000
+          },
+          {
+            "name": "SOM: Year 1 Target Revenue",
+            "value": 12
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,
@@ -117,7 +137,23 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Market Size Estimates: TAM vs SAM",
+        "data": [
+          {
+            "name": "Analyst A Estimate",
+            "value": 3300
+          },
+          {
+            "name": "Analyst B Estimate",
+            "value": 320
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

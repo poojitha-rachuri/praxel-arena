@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Spotify Subscriber Growth (2022-2024)",
+        "data": [
+          {
+            "name": "Q1 2022",
+            "value": 180
+          },
+          {
+            "name": "Q1 2023",
+            "value": 220
+          },
+          {
+            "name": "Q2 2024",
+            "value": 260
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

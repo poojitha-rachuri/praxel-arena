@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Pre-Bundle vs Post-Bundle Key Metrics",
+        "data": [
+          {
+            "name": "Pre-Bundle ARPU",
+            "value": 142
+          },
+          {
+            "name": "Post-Bundle ARPU",
+            "value": 131
+          },
+          {
+            "name": "ARPU Change (%)",
+            "value": -7.7
+          },
+          {
+            "name": "New Customer Growth (%)",
+            "value": 18
+          },
+          {
+            "name": "Existing Customer Adoption (%)",
+            "value": 41
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

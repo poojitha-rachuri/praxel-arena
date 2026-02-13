@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Shopify Q3 2023 Cash Flow Components ($M)",
+        "data": [
+          {
+            "name": "Operating Cash Flow",
+            "value": 200
+          },
+          {
+            "name": "Capex",
+            "value": -35
+          },
+          {
+            "name": "Stock-Based Comp",
+            "value": 120
+          },
+          {
+            "name": "Reported FCF",
+            "value": 165
+          },
+          {
+            "name": "Adjusted FCF (ex-SBC)",
+            "value": 45
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Target Balance Sheet Key Metrics ($B)",
+        "data": [
+          {
+            "name": "Current Assets",
+            "value": 18.1
+          },
+          {
+            "name": "Current Liabilities",
+            "value": 19.5
+          },
+          {
+            "name": "Non-Current Assets",
+            "value": 35.2
+          },
+          {
+            "name": "Total Assets",
+            "value": 53.3
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

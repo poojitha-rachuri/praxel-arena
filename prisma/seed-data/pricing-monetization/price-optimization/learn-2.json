@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Van Westendorp Price Sensitivity Analysis",
+        "data": [
+          {
+            "name": "Point of Marginal Cheapness",
+            "value": 29
+          },
+          {
+            "name": "Optimal Price Point",
+            "value": 42
+          },
+          {
+            "name": "Indifference Price",
+            "value": 49
+          },
+          {
+            "name": "Current Price",
+            "value": 55
+          },
+          {
+            "name": "Point of Marginal Expensiveness",
+            "value": 69
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

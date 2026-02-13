@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Market Size Analysis: TAM vs SAM vs SOM",
+        "data": [
+          {
+            "name": "Global Pet Food TAM",
+            "value": 120
+          },
+          {
+            "name": "US Premium Dog Food SAM",
+            "value": 8
+          },
+          {
+            "name": "Year-1 SOM",
+            "value": 12
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

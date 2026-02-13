@@ -61,7 +61,47 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "RICE Score Comparison",
+        "data": [
+          {
+            "name": "Feature A - Reach",
+            "value": 5000
+          },
+          {
+            "name": "Feature A - Impact",
+            "value": 3
+          },
+          {
+            "name": "Feature A - Confidence",
+            "value": 80
+          },
+          {
+            "name": "Feature A - Effort",
+            "value": 4
+          },
+          {
+            "name": "Feature B - Reach",
+            "value": 12000
+          },
+          {
+            "name": "Feature B - Impact",
+            "value": 2
+          },
+          {
+            "name": "Feature B - Confidence",
+            "value": 50
+          },
+          {
+            "name": "Feature B - Effort",
+            "value": 3
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

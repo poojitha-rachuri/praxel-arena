@@ -33,7 +33,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Weekly Retention Rate Decline",
+        "data": [
+          {
+            "name": "Week 1",
+            "value": 41
+          },
+          {
+            "name": "Week 2",
+            "value": 38
+          },
+          {
+            "name": "Week 3",
+            "value": 29
+          },
+          {
+            "name": "Week 4",
+            "value": 19
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +169,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Key Metrics vs Targets - Week 1 Performance",
+        "data": [
+          {
+            "name": "Activation Rate",
+            "value": 62
+          },
+          {
+            "name": "App Rating (of 5)",
+            "value": 82
+          },
+          {
+            "name": "Paid Conversion",
+            "value": 1.2
+          },
+          {
+            "name": "Paid Conversion Target",
+            "value": 4
+          },
+          {
+            "name": "Support Resolution (min)",
+            "value": 14
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

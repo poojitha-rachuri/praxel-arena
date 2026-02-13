@@ -61,7 +61,23 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "U.S. Yoga Mat Market Estimation Comparison",
+        "data": [
+          {
+            "name": "Top-down (Fitness Population)",
+            "value": 1800
+          },
+          {
+            "name": "Bottom-up (Studio Counts)",
+            "value": 600
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

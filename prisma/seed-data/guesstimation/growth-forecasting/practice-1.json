@@ -33,7 +33,40 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Revenue vs CAC Growth Over 24 Months",
+        "data": [
+          {
+            "month": 0,
+            "revenue": 200,
+            "cac": 30
+          },
+          {
+            "month": 6,
+            "revenue": 350,
+            "cac": 34
+          },
+          {
+            "month": 12,
+            "revenue": 500,
+            "cac": 42
+          },
+          {
+            "month": 18,
+            "revenue": 650,
+            "cac": 48
+          },
+          {
+            "month": 24,
+            "revenue": 800,
+            "cac": 55
+          }
+        ],
+        "xKey": "month",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +150,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "line",
+        "title": "Customer Retention Cohort Curve",
+        "data": [
+          {
+            "name": "Month 0",
+            "value": 100
+          },
+          {
+            "name": "Month 1",
+            "value": 60
+          },
+          {
+            "name": "Month 3",
+            "value": 30
+          },
+          {
+            "name": "Month 6",
+            "value": 25
+          },
+          {
+            "name": "Month 12",
+            "value": 23
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

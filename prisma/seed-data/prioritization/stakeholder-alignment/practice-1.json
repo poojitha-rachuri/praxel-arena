@@ -33,7 +33,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Stakeholder Support Levels for Product Launch",
+        "data": [
+          {
+            "name": "CEO",
+            "value": 9
+          },
+          {
+            "name": "Engineering Lead",
+            "value": 4
+          },
+          {
+            "name": "Sales VP",
+            "value": 8
+          },
+          {
+            "name": "Legal Counsel",
+            "value": 3
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +141,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Support for New Compliance Initiative by Role",
+        "data": [
+          {
+            "name": "Managers",
+            "value": 72
+          },
+          {
+            "name": "Individual Contributors",
+            "value": 31
+          },
+          {
+            "name": "Executive Sponsors (Urgency Rating)",
+            "value": 90
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

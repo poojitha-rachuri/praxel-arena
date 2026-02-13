@@ -33,7 +33,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Pro Plan Pricing Change Impact",
+        "data": [
+          {
+            "name": "Price (Before)",
+            "value": 49
+          },
+          {
+            "name": "Price (After)",
+            "value": 59
+          },
+          {
+            "name": "Subscribers (Before)",
+            "value": 2000
+          },
+          {
+            "name": "Subscribers (After)",
+            "value": 1700
+          },
+          {
+            "name": "Revenue $K (Before)",
+            "value": 98
+          },
+          {
+            "name": "Revenue $K (After)",
+            "value": 100.3
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +177,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Plan Selection Rate Comparison: Page A vs Page B",
+        "data": [
+          {
+            "name": "Page A - $45 Plan",
+            "value": 28
+          },
+          {
+            "name": "Page A - $90 Plan",
+            "value": 22
+          },
+          {
+            "name": "Page A - $360 Plan",
+            "value": 12
+          },
+          {
+            "name": "Page B - $45 Plan",
+            "value": 25
+          },
+          {
+            "name": "Page B - $180 Plan",
+            "value": 38
+          },
+          {
+            "name": "Page B - $360 Plan",
+            "value": 15
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

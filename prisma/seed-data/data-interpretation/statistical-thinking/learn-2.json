@@ -61,7 +61,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Playlist Creators by Age Group",
+        "data": [
+          {
+            "name": "18-24",
+            "value": 80
+          },
+          {
+            "name": "25-34",
+            "value": 12
+          },
+          {
+            "name": "35-44",
+            "value": 5
+          },
+          {
+            "name": "45-54",
+            "value": 2
+          },
+          {
+            "name": "55+",
+            "value": 1
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

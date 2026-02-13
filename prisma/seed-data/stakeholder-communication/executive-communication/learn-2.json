@@ -61,7 +61,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Shopify Q3 Metrics - Percentage Change",
+        "data": [
+          {
+            "name": "Revenue",
+            "value": 12
+          },
+          {
+            "name": "Customer Acquisition Cost",
+            "value": 34
+          },
+          {
+            "name": "Customer Lifetime Value",
+            "value": -8
+          },
+          {
+            "name": "Churn Rate",
+            "value": 5
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

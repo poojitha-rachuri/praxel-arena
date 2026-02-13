@@ -61,7 +61,23 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Spotify Revenue per User by Segment",
+        "data": [
+          {
+            "name": "Paid Subscribers",
+            "value": 49.04
+          },
+          {
+            "name": "Free Users",
+            "value": 3.99
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

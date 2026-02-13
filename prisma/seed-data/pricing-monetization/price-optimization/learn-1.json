@@ -61,7 +61,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Revenue by Price Point",
+        "data": [
+          {
+            "name": "$29/mo",
+            "value": 34800
+          },
+          {
+            "name": "$39/mo",
+            "value": 40950
+          },
+          {
+            "name": "$49/mo",
+            "value": 30380
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

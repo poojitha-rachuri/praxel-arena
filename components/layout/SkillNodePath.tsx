@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowLeft, ChevronDown, Lock, Check, Play, RotateCcw } from "lucide-react";
 import { CARD_SPRING } from "@/lib/utils/constants";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 import type { TopicMeta, SprintMeta } from "@/lib/data/mode-page-data";
 
 interface SkillNodePathProps {
@@ -178,7 +179,7 @@ export default function SkillNodePath({
         >
           <ArrowLeft className="size-4" />
         </button>
-        <span className="text-lg">{skill.icon || "📊"}</span>
+        <SkillIcon slug={skill.slug} size="sm" />
         <div className="flex-1">
           <h1 className="text-sm font-semibold">{skill.name}</h1>
           <p className="text-[10px] text-muted-foreground">
@@ -326,7 +327,7 @@ export default function SkillNodePath({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedNode(null)}
-              className="fixed inset-0 z-50 bg-black/40"
+              className="fixed inset-0 z-[60] bg-black/40"
             />
             {/* Sheet */}
             <motion.div
@@ -334,7 +335,7 @@ export default function SkillNodePath({
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", stiffness: 400, damping: 35 }}
-              className="fixed inset-x-0 bottom-0 z-50 rounded-t-2xl bg-card p-5 pb-8 shadow-2xl"
+              className="fixed inset-x-0 bottom-0 z-[60] rounded-t-2xl bg-card p-5 pb-[calc(76px+env(safe-area-inset-bottom))] shadow-2xl"
             >
               <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-muted" />
               <h3 className="text-base font-semibold">

@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Product Launch RACI Accountability Assignment",
+        "data": [
+          {
+            "name": "Marketing Strategy",
+            "value": 1
+          },
+          {
+            "name": "Engineering Build",
+            "value": 1
+          },
+          {
+            "name": "Go-to-Market Timeline",
+            "value": 3
+          },
+          {
+            "name": "Budget Management",
+            "value": 1
+          },
+          {
+            "name": "Customer Support Prep",
+            "value": 1
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +145,27 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Stakeholder Communication Efficiency Gaps",
+        "data": [
+          {
+            "name": "Meetings per Decision",
+            "value": 3
+          },
+          {
+            "name": "Slack Messages to Resolve",
+            "value": 47
+          },
+          {
+            "name": "RACI Coverage (%)",
+            "value": 40
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

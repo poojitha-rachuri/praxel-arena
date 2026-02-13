@@ -4,6 +4,7 @@ import { ensureUser } from "@/lib/auth/ensure-user";
 import {
   MATCHMAKING_INITIAL_RANGE,
   ELO_INITIAL_RATING,
+  DUEL_CREATION_RATE_LIMIT,
 } from "@/lib/utils/constants";
 
 /** Strip correctAnswer/insightAnswer from COMPETE sprint interactions before sending to client */
@@ -116,11 +117,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const skill = await prisma.skill.findUnique({
-      where: { slug: body.skillSlug },
-    });
+    // Rate limit duel creation
+    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
+    const [skill, recentDuelCount] = await Promise.all([
+      prisma.skill.findUnique({ where: { slug: body.skillSlug } }),
+      prisma.duel.count({
+        where: { player1Id: user.id, createdAt: { gte: oneHourAgo } },
+      }),
+    ]);
+
     if (!skill) {
       return NextResponse.json({ error: "Skill not found" }, { status: 404 });
+    }
+
+    if (recentDuelCount >= DUEL_CREATION_RATE_LIMIT) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded. Try again later.", retryAfter: 3600 },
+        { status: 429 }
+      );
     }
 
     // Get user's Elo for this skill

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import RadarChart from "@/components/skill-graph/RadarChart";
@@ -25,8 +26,8 @@ const ProgressCharts = dynamic(
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Crown, Flame } from "lucide-react";
-import { useState } from "react";
+import { Crown, Flame, Share2 } from "lucide-react";
+import ShareSheet from "@/components/profile/ShareSheet";
 
 interface AttemptSummary {
   id: string;
@@ -67,6 +68,7 @@ interface ProfileClientProps {
   user: {
     name: string | null;
     imageUrl: string | null;
+    id?: string;
   };
   aggregateScores: Record<string, number>;
   skills: {
@@ -86,6 +88,7 @@ interface ProfileClientProps {
   attemptCursor?: string | null;
   gamification?: GamificationData;
   isOwnProfile?: boolean;
+  referralCode?: string | null;
 }
 
 function getInitials(name: string | null): string {
@@ -107,21 +110,21 @@ export default function ProfileClient({
   attemptCursor = null,
   gamification,
   isOwnProfile = false,
+  referralCode,
 }: ProfileClientProps) {
   const router = useRouter();
-  const [copied, setCopied] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [profileUrl, setProfileUrl] = useState("");
+
+  useEffect(() => {
+    setProfileUrl(
+      user.id
+        ? `${window.location.origin}/profile/${user.id}`
+        : window.location.href
+    );
+  }, [user.id]);
 
   const hasScores = Object.values(aggregateScores).some((v) => v > 0);
-
-  async function handleShare() {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // Fallback: do nothing
-    }
-  }
 
   return (
     <main className="flex min-h-screen flex-col items-center px-4 py-6 max-w-lg mx-auto">
@@ -142,8 +145,9 @@ export default function ProfileClient({
         </Avatar>
         <h1 className="text-2xl font-bold">{user.name ?? "Unknown User"}</h1>
         {isOwnProfile && (
-          <Button variant="outline" size="sm" onClick={handleShare}>
-            {copied ? "Copied!" : "Share Profile"}
+          <Button variant="outline" size="sm" onClick={() => setShareOpen(true)}>
+            <Share2 className="size-4 mr-1.5" />
+            Share Profile
           </Button>
         )}
       </motion.div>
@@ -329,6 +333,15 @@ export default function ProfileClient({
 
       {/* Bottom padding for mobile nav */}
       <div className="h-20" />
+
+      {/* Share Sheet */}
+      <ShareSheet
+        isOpen={shareOpen}
+        onClose={() => setShareOpen(false)}
+        profileUrl={profileUrl}
+        userName={user.name ?? "User"}
+        referralCode={referralCode ?? null}
+      />
     </main>
   );
 }

@@ -33,7 +33,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "SaaS Key Metrics vs Benchmarks",
+        "data": [
+          {
+            "name": "LTV ($1,000)",
+            "value": 1
+          },
+          {
+            "name": "CAC ($600)",
+            "value": 0.6
+          },
+          {
+            "name": "LTV:CAC Ratio",
+            "value": 1.67
+          },
+          {
+            "name": "Benchmark LTV:CAC",
+            "value": 3
+          },
+          {
+            "name": "Gross Margin %",
+            "value": 80
+          },
+          {
+            "name": "Payback Period (mo)",
+            "value": 15
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -117,7 +149,43 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Customer Lifetime Value vs Acquisition Cost",
+        "data": [
+          {
+            "name": "CAC",
+            "value": 120
+          },
+          {
+            "name": "First Order Revenue",
+            "value": 60
+          },
+          {
+            "name": "First Order Contribution",
+            "value": 21
+          },
+          {
+            "name": "Monthly Contribution (Avg)",
+            "value": 52.5
+          },
+          {
+            "name": "Break-even Contribution",
+            "value": 120
+          },
+          {
+            "name": "3-Month LTV",
+            "value": 110
+          },
+          {
+            "name": "6-Month LTV",
+            "value": 165
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 5,

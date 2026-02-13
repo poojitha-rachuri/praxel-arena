@@ -61,7 +61,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Peloton FY2022 vs FY2021 Key Margin Metrics (%)",
+        "data": [
+          {
+            "name": "Gross Margin FY2021",
+            "value": 35.4
+          },
+          {
+            "name": "Gross Margin FY2022",
+            "value": 19.2
+          },
+          {
+            "name": "Operating Margin FY2021",
+            "value": -3.8
+          },
+          {
+            "name": "Operating Margin FY2022",
+            "value": -68.7
+          },
+          {
+            "name": "EBITDA Margin FY2021",
+            "value": 2.1
+          },
+          {
+            "name": "EBITDA Margin FY2022",
+            "value": -52.1
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,

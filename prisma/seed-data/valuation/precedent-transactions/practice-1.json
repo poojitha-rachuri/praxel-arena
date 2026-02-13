@@ -33,7 +33,35 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "SaaS Precedent Transaction EV/Revenue Multiples",
+        "data": [
+          {
+            "name": "Deal 1",
+            "value": 4.2
+          },
+          {
+            "name": "Deal 2",
+            "value": 4.5
+          },
+          {
+            "name": "Deal 3 (Bidding War)",
+            "value": 11.8
+          },
+          {
+            "name": "Deal 4",
+            "value": 4.9
+          },
+          {
+            "name": "Deal 5",
+            "value": 4.7
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 2,
@@ -145,7 +173,31 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Precedent Transaction EV/EBITDA Multiples by Buyer Type",
+        "data": [
+          {
+            "name": "Deal A (Strategic)",
+            "value": 12.5
+          },
+          {
+            "name": "Deal B (PE)",
+            "value": 9.1
+          },
+          {
+            "name": "Deal C (Strategic)",
+            "value": 11.8
+          },
+          {
+            "name": "Deal D (PE)",
+            "value": 8.7
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 6,

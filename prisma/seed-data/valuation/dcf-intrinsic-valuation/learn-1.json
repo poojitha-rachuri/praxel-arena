@@ -61,7 +61,39 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Projected vs Discounted Cash Flows",
+        "data": [
+          {
+            "name": "Year 1 Projected",
+            "value": 1
+          },
+          {
+            "name": "Year 1 Discounted",
+            "value": 0.91
+          },
+          {
+            "name": "Year 2 Projected",
+            "value": 2
+          },
+          {
+            "name": "Year 2 Discounted",
+            "value": 1.65
+          },
+          {
+            "name": "Year 3 Projected",
+            "value": 5
+          },
+          {
+            "name": "Year 3 Discounted",
+            "value": 3.76
+          }
+        ],
+        "xKey": "name",
+        "yKey": "value"
+      }
     },
     {
       "order": 3,
