@@ -215,7 +215,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
 
       // Mode-dependent feedback timing
       const insightText = currentInteraction.insightAnswer;
-      const feedbackDuration = calculateFeedbackDuration(insightText, mode);
+      const feedbackDuration = calculateFeedbackDuration(insightText, mode, finalCorrect);
 
       if (feedbackDuration === null) {
         // LEARN mode: show Continue button, no auto-advance
@@ -331,7 +331,7 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
         </InteractionCard>
       </AnimatePresence>
 
-      {/* Continue Button — visible in LEARN mode (manual advance) and PRACTICE mode (tap to skip timer) */}
+      {/* Continue Button — fixed at bottom, visible in LEARN mode (manual advance) and PRACTICE mode (tap to skip timer) */}
       <AnimatePresence>
         {showFeedback && (waitingForContinue || mode === "PRACTICE") && (
           <motion.div
@@ -339,12 +339,12 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="mt-4 px-4"
+            className="fixed inset-x-0 bottom-0 z-40 px-4 pb-[calc(16px+env(safe-area-inset-bottom))] pt-3 bg-gradient-to-t from-background via-background to-transparent"
           >
             <button
               onClick={advance}
               className={cn(
-                "w-full min-h-[48px] rounded-xl text-base font-semibold",
+                "w-full max-w-lg mx-auto min-h-[48px] rounded-xl text-base font-semibold",
                 "flex items-center justify-center gap-2 transition-colors",
                 "active:scale-[0.98] touch-manipulation",
                 lastCorrect === true
