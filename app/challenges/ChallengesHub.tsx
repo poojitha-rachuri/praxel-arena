@@ -255,9 +255,7 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
                 attemptCount={challenge.attemptCount}
                 userBestAttempt={challenge.userBestAttempt}
                 onStart={() => {
-                  if (challenge.skill?.slug) {
-                    router.push(`/compete/${challenge.skill.slug}`);
-                  }
+                  router.push(`/challenges/${challenge.id}`);
                 }}
                 index={i}
               />
