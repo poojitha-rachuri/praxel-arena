@@ -61,7 +61,19 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "SPOT_THE_SIGNAL"
+      "type": "SPOT_THE_SIGNAL",
+      "chartData": {
+        "type": "bar",
+        "title": "Shopify Merchant Revenue by Region",
+        "xKey": "region",
+        "yKey": "revenue",
+        "data": [
+          { "region": "N. America", "revenue": 4.2 },
+          { "region": "Europe", "revenue": 1.8 },
+          { "region": "Asia", "revenue": 1.1 },
+          { "region": "Other", "revenue": 0.4 }
+        ]
+      }
     },
     {
       "order": 3,

@@ -39,6 +39,7 @@ export interface Interaction {
   teachingPreamble: string | null;
   priorContext: string | null;
   timeTarget: number;
+  chartData?: unknown;
 }
 
 export interface Sprint {
@@ -296,7 +297,10 @@ export function SprintRunner({ sprint, onComplete, mode, onExit, exitPending }: 
           isCorrect={lastCorrect}
         >
           {currentInteraction.type === "SPOT_THE_SIGNAL" && (
-            <SpotTheSignal {...sharedProps} />
+            <SpotTheSignal
+              {...sharedProps}
+              chartData={currentInteraction.chartData}
+            />
           )}
 
           {currentInteraction.type === "FORCED_TRADEOFF" && (

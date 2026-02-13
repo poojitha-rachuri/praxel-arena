@@ -50,6 +50,7 @@ export default async function LearnSprintPage({
       teachingPreamble: i.teachingPreamble,
       priorContext: i.priorContext,
       timeTarget: i.timeTarget,
+      chartData: i.chartData,
     })),
   };
 

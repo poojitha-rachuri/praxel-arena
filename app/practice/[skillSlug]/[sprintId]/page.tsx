@@ -49,6 +49,7 @@ export default async function PracticeSprintPage({
       teachingPreamble: i.teachingPreamble,
       priorContext: i.priorContext,
       timeTarget: i.timeTarget,
+      chartData: i.chartData,
     })),
   };
 

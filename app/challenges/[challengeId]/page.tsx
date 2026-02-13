@@ -106,6 +106,7 @@ function serializeSprint(sprint: {
     teachingPreamble: string | null;
     priorContext: string | null;
     timeTarget: number;
+    chartData?: unknown;
   }[];
 }) {
   return {
@@ -125,6 +126,7 @@ function serializeSprint(sprint: {
       teachingPreamble: i.teachingPreamble,
       priorContext: i.priorContext,
       timeTarget: i.timeTarget,
+      chartData: i.chartData,
     })),
   };
 }

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Lightbulb, BarChart3 } from "lucide-react";
 import type { InteractionOption } from "@/types";
 import { renderBoldPrompt } from "@/lib/utils/safe-html";
+import { InteractionChart } from "./InteractionChart";
 
 const OPTION_ACCENT_COLORS = [
   "bg-info",      // A = blue
@@ -23,6 +24,7 @@ interface SpotTheSignalProps {
   timeTarget: number;
   onAnswer: (answer: string) => void;
   disabled?: boolean;
+  chartData?: unknown;
 }
 
 export function SpotTheSignal({
@@ -32,6 +34,7 @@ export function SpotTheSignal({
   insightAnswer,
   onAnswer,
   disabled = false,
+  chartData,
 }: SpotTheSignalProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
@@ -55,6 +58,9 @@ export function SpotTheSignal({
           <span className="text-xs font-bold text-info uppercase tracking-wide">Spot the Signal</span>
         </div>
       </div>
+
+      {/* Chart (if present) */}
+      {chartData != null && <InteractionChart chartData={chartData} />}
 
       {/* Prompt */}
       <div className="space-y-2">

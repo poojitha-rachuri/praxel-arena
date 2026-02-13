@@ -184,6 +184,7 @@ model Interaction {
   teachingPreamble String?         // For TEACH_AND_TEST type
   priorContext     String?         // For CURVEBALL type
   timeTarget       Int             @default(15) // seconds
+  chartData        Json?           // Optional chart data for visual interactions
   createdAt        DateTime        @default(now())
 
   sprint           Sprint          @relation(fields: [sprintId], references: [id], onDelete: Cascade)
