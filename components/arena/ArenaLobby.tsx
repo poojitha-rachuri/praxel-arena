@@ -2,21 +2,16 @@
 
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import useSWR from "swr";
 import { motion } from "motion/react";
 import {
   Swords,
   Loader2,
-  Clock,
-  Trophy,
-  ChevronRight,
   Link2,
   Share2,
+  Info,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { CARD_SPRING } from "@/lib/utils/constants";
 import { cn } from "@/lib/utils";
-import { fetcher } from "@/lib/swr/fetcher";
 import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface Skill {
@@ -26,28 +21,10 @@ interface Skill {
   icon: string | null;
 }
 
-interface Duel {
-  id: string;
-  status: string;
-  skill: { name: string; slug: string; icon: string | null };
-  createdAt: string;
-  completedAt: string | null;
-  winnerId: string | null;
-}
-
 interface ArenaLobbyProps {
   skills: Skill[];
   userId: string;
 }
-
-const STATUS_COLORS: Record<string, string> = {
-  WAITING: "bg-amber-500/15 text-amber-400 border-amber-500/20",
-  IN_PROGRESS: "bg-blue-500/15 text-blue-400 border-blue-500/20",
-  EVALUATING: "bg-violet-500/15 text-violet-400 border-violet-500/20",
-  COMPLETED: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20",
-  CANCELLED: "bg-muted text-muted-foreground",
-  FORFEIT: "bg-red-500/15 text-red-400 border-red-500/20",
-};
 
 export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
   const router = useRouter();
@@ -55,13 +32,6 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
   const [isCreating, setIsCreating] = useState(false);
   const [inviteLink, setInviteLink] = useState<string | null>(null);
   const [inviteCopied, setInviteCopied] = useState(false);
-
-  const { data, isLoading: loadingDuels, mutate } = useSWR<{ duels: Duel[] }>(
-    "/api/duels",
-    fetcher,
-    { revalidateOnFocus: false }
-  );
-  const duels = data?.duels ?? [];
 
   /** Shared duel creation — returns the new duel data or null on failure */
   const createDuel = useCallback(async (skillSlug: string): Promise<{ id: string } | null> => {
@@ -112,14 +82,13 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
             // User cancelled — link is still visible
           }
         }
-        mutate(); // Refresh duel list from server
       }
     } catch (error) {
       console.error("Failed to create challenge:", error);
     } finally {
       setIsCreating(false);
     }
-  }, [selectedSkill, isCreating, skills, createDuel, mutate]);
+  }, [selectedSkill, isCreating, skills, createDuel]);
 
   const handleCopyInvite = useCallback(async () => {
     if (!inviteLink) return;
@@ -141,6 +110,14 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
         </h1>
         <p className="text-xs text-muted-foreground">
           Head-to-head skill duels with Elo ratings
+        </p>
+      </div>
+
+      {/* How it works */}
+      <div className="flex items-start gap-2.5 rounded-xl border border-border/50 bg-muted/30 px-3 py-2.5">
+        <Info className="size-4 shrink-0 text-primary mt-0.5" />
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          Pick a skill, then find a random opponent or challenge a friend. You both answer the same sprint — highest score wins Elo points.
         </p>
       </div>
 
@@ -237,69 +214,6 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
           </button>
         </motion.div>
       )}
-
-      {/* Your Duels — vertical list */}
-      <div>
-        <h2 className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-          Your Duels
-        </h2>
-
-        {loadingDuels ? (
-          <div className="flex items-center justify-center py-6">
-            <Loader2 className="size-5 animate-spin text-muted-foreground" />
-          </div>
-        ) : duels.length === 0 ? (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border py-8 text-center">
-            <Swords className="mb-2 size-6 text-muted-foreground/40" />
-            <p className="text-xs text-muted-foreground">
-              No duels yet. Pick a skill and find an opponent!
-            </p>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-2">
-            {duels.map((duel, i) => (
-              <motion.button
-                key={duel.id}
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.04, type: "spring", ...CARD_SPRING }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => router.push(`/compete/${duel.id}`)}
-                className="flex w-full items-center gap-3 rounded-xl border border-border/50 bg-card/80 p-3 backdrop-blur-sm transition-colors hover:border-primary/30"
-              >
-                <SkillIcon slug={duel.skill.slug} size="sm" />
-                <div className="flex flex-1 flex-col items-start gap-0.5 min-w-0">
-                  <span className="text-sm font-semibold truncate w-full text-left">
-                    {duel.skill.name}
-                  </span>
-                  <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                    <Clock className="size-2.5" />
-                    {new Date(duel.createdAt).toLocaleDateString(undefined, {
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  {duel.winnerId === userId && (
-                    <Trophy className="size-3.5 text-amber-400" />
-                  )}
-                  <Badge
-                    variant="outline"
-                    className={cn(
-                      "text-[9px] uppercase tracking-wider border",
-                      STATUS_COLORS[duel.status] ?? ""
-                    )}
-                  >
-                    {duel.status.replace("_", " ")}
-                  </Badge>
-                  <ChevronRight className="size-4 text-muted-foreground" />
-                </div>
-              </motion.button>
-            ))}
-          </div>
-        )}
-      </div>
     </div>
   );
 }

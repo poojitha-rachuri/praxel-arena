@@ -2,8 +2,7 @@ import { redirect } from "next/navigation";
 import { ensureUser } from "@/lib/auth/ensure-user";
 import { getModePageData } from "@/lib/data/mode-page-data";
 import AppShell from "@/components/layout/AppShell";
-import SkillCardsGrid from "@/components/layout/SkillCardsGrid";
-import { ActiveChallengeBanner } from "@/components/gamification/ActiveChallengeBanner";
+import SkillAccordion from "@/components/layout/SkillAccordion";
 import CareerCarousel from "@/components/layout/CareerCarousel";
 
 export default async function PracticePage() {
@@ -23,16 +22,16 @@ export default async function PracticePage() {
           </p>
         </div>
 
-        <ActiveChallengeBanner />
-
         {data.allCareerMatches.length > 0 && (
           <CareerCarousel careers={data.allCareerMatches} />
         )}
 
-        <SkillCardsGrid
+        <SkillAccordion
           skills={data.skills}
+          topics={data.topics}
           sprints={data.sprints}
           completedSprints={data.completedSprints}
+          mode="PRACTICE"
           basePath="/practice"
         />
       </div>

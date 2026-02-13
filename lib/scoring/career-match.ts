@@ -23,7 +23,7 @@ export interface CareerMatch {
 }
 
 /** Minimum number of attempted skills before showing a career match percentage */
-const MIN_ATTEMPTED_SKILLS = 2;
+const MIN_ATTEMPTED_SKILLS = 1;
 
 export function computeCareerMatches(
   skillScores: SkillScoreInput[],

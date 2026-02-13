@@ -15,8 +15,8 @@ export default async function ProfilePage() {
   const baseUser = await ensureUser();
   if (!baseUser) redirect("/sign-in");
 
-  // Run user data, recent attempts, and credentials queries in parallel
-  const [user, recentAttempts, credentials] = await Promise.all([
+  // Run user data, recent attempts, credentials, and duels queries in parallel
+  const [user, recentAttempts, credentials, duels] = await Promise.all([
     prisma.user.findUnique({
       where: { id: baseUser.id },
       include: {
@@ -70,6 +70,22 @@ export default async function ProfilePage() {
       where: { userId: baseUser.id },
       include: { skill: { select: { name: true, slug: true, icon: true } } },
       orderBy: { grantedAt: "desc" },
+    }),
+    prisma.duel.findMany({
+      where: {
+        OR: [{ player1Id: baseUser.id }, { player2Id: baseUser.id }],
+        status: "COMPLETED",
+      },
+      select: {
+        id: true,
+        winnerId: true,
+        player1Id: true,
+        eloChange: true,
+        completedAt: true,
+        skill: { select: { name: true, slug: true, icon: true } },
+      },
+      orderBy: { completedAt: "desc" },
+      take: 10,
     }),
   ]);
 
@@ -223,6 +239,16 @@ export default async function ProfilePage() {
         gamification={gamification}
         isOwnProfile
         referralCode={referralCode}
+        duelHistory={duels.map((d) => ({
+          id: d.id,
+          skillName: d.skill.name,
+          skillSlug: d.skill.slug,
+          skillIcon: d.skill.icon,
+          completedAt: d.completedAt?.toISOString() ?? null,
+          eloChange: d.eloChange,
+          isWinner: d.winnerId === baseUser.id,
+          isDraw: d.winnerId === null,
+        }))}
       />
     </AppShell>
   );

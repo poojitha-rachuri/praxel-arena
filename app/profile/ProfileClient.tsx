@@ -26,8 +26,11 @@ const ProgressCharts = dynamic(
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Crown, Flame, Share2 } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Crown, Flame, Share2, Swords, Trophy, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import ShareSheet from "@/components/profile/ShareSheet";
+import { SkillIcon } from "@/components/ui/SkillIcon";
+import Link from "next/link";
 
 interface AttemptSummary {
   id: string;
@@ -38,6 +41,17 @@ interface AttemptSummary {
   mode: string;
   totalScore: number;
   completedAt: string | null;
+}
+
+interface DuelSummary {
+  id: string;
+  skillName: string;
+  skillSlug: string;
+  skillIcon: string | null;
+  completedAt: string | null;
+  eloChange: number | null;
+  isWinner: boolean;
+  isDraw: boolean;
 }
 
 interface GamificationData {
@@ -89,6 +103,7 @@ interface ProfileClientProps {
   gamification?: GamificationData;
   isOwnProfile?: boolean;
   referralCode?: string | null;
+  duelHistory?: DuelSummary[];
 }
 
 function getInitials(name: string | null): string {
@@ -111,6 +126,7 @@ export default function ProfileClient({
   gamification,
   isOwnProfile = false,
   referralCode,
+  duelHistory = [],
 }: ProfileClientProps) {
   const router = useRouter();
   const [shareOpen, setShareOpen] = useState(false);
@@ -327,6 +343,66 @@ export default function ProfileClient({
               initialAttempts={attemptHistory}
               initialCursor={attemptCursor}
             />
+          </section>
+        </>
+      )}
+
+      {/* Duel History */}
+      {isOwnProfile && duelHistory.length > 0 && (
+        <>
+          <Separator className="my-6" />
+          <section className="w-full space-y-3">
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Duel History
+            </h2>
+            <div className="flex flex-col gap-2">
+              {duelHistory.map((duel, i) => (
+                <motion.div
+                  key={duel.id}
+                  initial={{ x: -12, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.04, duration: 0.25 }}
+                >
+                  <Link
+                    href={`/compete/${duel.id}`}
+                    className="flex items-center gap-3 rounded-xl border border-border/50 bg-card/80 p-3 transition-colors hover:border-primary/30"
+                  >
+                    <SkillIcon slug={duel.skillSlug} size="sm" />
+                    <div className="flex flex-1 flex-col items-start gap-0.5 min-w-0">
+                      <span className="text-sm font-semibold truncate w-full text-left">
+                        {duel.skillName}
+                      </span>
+                      {duel.completedAt && (
+                        <span className="text-[10px] text-muted-foreground">
+                          {new Date(duel.completedAt).toLocaleDateString(undefined, {
+                            month: "short",
+                            day: "numeric",
+                          })}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      {duel.eloChange != null && (
+                        <span className={cn(
+                          "flex items-center gap-0.5 text-xs font-bold tabular-nums",
+                          duel.eloChange > 0 ? "text-success" : duel.eloChange < 0 ? "text-destructive" : "text-muted-foreground"
+                        )}>
+                          {duel.eloChange > 0 ? <TrendingUp className="size-3" /> : duel.eloChange < 0 ? <TrendingDown className="size-3" /> : <Minus className="size-3" />}
+                          {duel.eloChange > 0 ? "+" : ""}{duel.eloChange}
+                        </span>
+                      )}
+                      {duel.isWinner ? (
+                        <Trophy className="size-4 text-amber-400" />
+                      ) : duel.isDraw ? (
+                        <Swords className="size-4 text-muted-foreground" />
+                      ) : (
+                        <Swords className="size-4 text-destructive/60" />
+                      )}
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </section>
         </>
       )}

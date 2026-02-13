@@ -529,28 +529,38 @@ async function main() {
       order: sprintData.sprintOrder,
     };
 
+    const interactionPayloads = sprintData.interactions.map((interaction) => ({
+      skillId,
+      type: interaction.type as "TEACH_AND_TEST" | "SPOT_THE_SIGNAL" | "FORCED_TRADEOFF" | "FILL_THE_GAP" | "RANK_AND_PRIORITIZE" | "CURVEBALL",
+      order: interaction.order,
+      prompt: interaction.prompt,
+      options: interaction.options,
+      correctAnswer: interaction.correctAnswer,
+      insightAnswer: interaction.insightAnswer ?? null,
+      teachingPreamble: interaction.teachingPreamble ?? null,
+      priorContext: interaction.priorContext ?? null,
+      timeTarget: interaction.timeTarget,
+      chartData: (interaction as Record<string, unknown>).chartData ?? undefined,
+    }));
+
     const sprint = await prisma.sprint.upsert({
       where: sprintWhere,
       update: { topicId, description: sprintPayload.description, difficulty: sprintPayload.difficulty, order: sprintPayload.order },
       create: {
         ...sprintPayload,
-        interactions: {
-          create: sprintData.interactions.map((interaction) => ({
-            skillId,
-            type: interaction.type as "TEACH_AND_TEST" | "SPOT_THE_SIGNAL" | "FORCED_TRADEOFF" | "FILL_THE_GAP" | "RANK_AND_PRIORITIZE" | "CURVEBALL",
-            order: interaction.order,
-            prompt: interaction.prompt,
-            options: interaction.options,
-            correctAnswer: interaction.correctAnswer,
-            insightAnswer: interaction.insightAnswer ?? null,
-            teachingPreamble: interaction.teachingPreamble ?? null,
-            priorContext: interaction.priorContext ?? null,
-            timeTarget: interaction.timeTarget,
-            chartData: (interaction as Record<string, unknown>).chartData ?? undefined,
-          })),
-        },
+        interactions: { create: interactionPayloads },
       },
     });
+
+    // On update: replace all interactions so em-dashes / stale content is fixed
+    const existingCount = await prisma.interaction.count({ where: { sprintId: sprint.id } });
+    if (existingCount > 0) {
+      await prisma.interaction.deleteMany({ where: { sprintId: sprint.id } });
+      await prisma.interaction.createMany({
+        data: interactionPayloads.map((p) => ({ ...p, sprintId: sprint.id })),
+      });
+    }
+
     sprintCount++;
     interactionCount += sprintData.interactions.length;
   }
@@ -567,6 +577,19 @@ async function main() {
     const skillId = skillMap.get(sprintData.skillSlug);
     if (!skillId) continue;
 
+    const competeInteractions = sprintData.interactions.map((interaction) => ({
+      skillId,
+      type: interaction.type as "SPOT_THE_SIGNAL" | "FORCED_TRADEOFF" | "FILL_THE_GAP" | "RANK_AND_PRIORITIZE" | "CURVEBALL",
+      order: interaction.order,
+      prompt: interaction.prompt,
+      options: interaction.options,
+      correctAnswer: interaction.correctAnswer,
+      insightAnswer: interaction.insightAnswer,
+      priorContext: interaction.priorContext ?? null,
+      timeTarget: interaction.timeTarget,
+      chartData: (interaction as Record<string, unknown>).chartData ?? undefined,
+    }));
+
     const sprint = await prisma.sprint.upsert({
       where: {
         skillId_title_mode: { skillId, title: sprintData.title, mode: "COMPETE" },
@@ -579,22 +602,19 @@ async function main() {
         description: sprintData.description,
         isGenerated: false,
         difficulty: sprintData.difficulty,
-        interactions: {
-          create: sprintData.interactions.map((interaction) => ({
-            skillId,
-            type: interaction.type as "SPOT_THE_SIGNAL" | "FORCED_TRADEOFF" | "FILL_THE_GAP" | "RANK_AND_PRIORITIZE" | "CURVEBALL",
-            order: interaction.order,
-            prompt: interaction.prompt,
-            options: interaction.options,
-            correctAnswer: interaction.correctAnswer,
-            insightAnswer: interaction.insightAnswer,
-            priorContext: interaction.priorContext ?? null,
-            timeTarget: interaction.timeTarget,
-            chartData: (interaction as Record<string, unknown>).chartData ?? undefined,
-          })),
-        },
+        interactions: { create: competeInteractions },
       },
     });
+
+    // On update: replace interactions to fix stale content
+    const existingCompeteCount = await prisma.interaction.count({ where: { sprintId: sprint.id } });
+    if (existingCompeteCount > 0) {
+      await prisma.interaction.deleteMany({ where: { sprintId: sprint.id } });
+      await prisma.interaction.createMany({
+        data: competeInteractions.map((p) => ({ ...p, sprintId: sprint.id })),
+      });
+    }
+
     competeSprintIds.set(sprintData.skillSlug, sprint.id);
     competeCount++;
   }
