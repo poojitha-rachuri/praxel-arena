@@ -235,6 +235,11 @@ export function AIChallenger({
           <VoiceToggle
             onStateChange={handleVoiceStateChange}
             disabled={ended}
+            challengeContext={
+              context.type === "standalone"
+                ? { skillId: context.skillId, challengeType: context.challengeType }
+                : undefined
+            }
           />
           <button
             onClick={handleEnd}

@@ -18,11 +18,16 @@ type VoiceState =
 interface VoiceToggleProps {
   onStateChange: (active: boolean) => void;
   disabled?: boolean;
+  challengeContext?: {
+    skillId: string;
+    challengeType?: string;
+  };
 }
 
 export function VoiceToggle({
   onStateChange,
   disabled,
+  challengeContext,
 }: VoiceToggleProps) {
   const [voiceState, setVoiceState] = useState<VoiceState>("idle");
   const cooldownTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -67,7 +72,11 @@ export function VoiceToggle({
     setVoiceState("requesting");
 
     try {
-      const res = await fetch("/api/elevenlabs/signed-url");
+      const res = await fetch("/api/elevenlabs/signed-url", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(challengeContext ?? {}),
+      });
       if (!res.ok) {
         const data = await res.json();
         console.error("[voice] Signed URL error:", data.error);
@@ -76,11 +85,21 @@ export function VoiceToggle({
         return;
       }
 
-      const { signedUrl } = await res.json();
+      const { signedUrl, overrides } = await res.json();
       setVoiceState("connecting");
 
-      // No client-side prompt overrides — agent prompt configured server-side via ElevenLabs dashboard
-      await conversation.startSession({ signedUrl });
+      // Apply server-generated prompt and first message as overrides
+      await conversation.startSession({
+        signedUrl,
+        ...(overrides && {
+          overrides: {
+            agent: {
+              prompt: { prompt: overrides.prompt },
+              firstMessage: overrides.firstMessage,
+            },
+          },
+        }),
+      });
     } catch (err) {
       console.error("[voice] Failed to start:", err);
       setVoiceState("error");
@@ -89,7 +108,7 @@ export function VoiceToggle({
         onStateChangeRef.current(false);
       }, 2000);
     }
-  }, [voiceState, conversation]);
+  }, [voiceState, conversation, challengeContext]);
 
   const stopVoice = useCallback(async () => {
     if (voiceState !== "active") return;

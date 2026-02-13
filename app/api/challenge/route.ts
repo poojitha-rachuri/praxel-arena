@@ -14,15 +14,12 @@ const anthropic = createAnthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 // ─── Zod Schemas ────────────────────────────────────────
 
+// Vercel AI SDK sends various part types (text, step-start, tool-invocation, etc.)
+// We accept all part types but validate text content length after parsing.
 const MessageSchema = z.object({
   id: z.string(),
   role: z.enum(["user", "assistant"]), // Never allow 'system' from client
-  parts: z.array(
-    z.object({
-      type: z.literal("text"),
-      text: z.string().max(2000),
-    })
-  ),
+  parts: z.array(z.object({ type: z.string() }).passthrough()),
 });
 
 const PostSprintContext = z.object({
@@ -73,6 +70,22 @@ export async function POST(req: NextRequest) {
   }
 
   const { messages, context } = parsed.data;
+
+  // Validate text parts don't exceed max length
+  for (const msg of messages) {
+    for (const part of msg.parts) {
+      if (
+        part.type === "text" &&
+        typeof part.text === "string" &&
+        part.text.length > 2000
+      ) {
+        return NextResponse.json(
+          { error: "Message too long" },
+          { status: 400 }
+        );
+      }
+    }
+  }
 
   // Build system prompt — server fetches all context data
   // Rate limiting is enforced at session creation (/api/challenge/sessions)
