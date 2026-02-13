@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Share2,
@@ -28,6 +28,11 @@ export default function ShareSheet({
 }: ShareSheetProps) {
   const [linkCopied, setLinkCopied] = useState(false);
   const [codeCopied, setCodeCopied] = useState(false);
+  const [canNativeShare, setCanNativeShare] = useState(false);
+
+  useEffect(() => {
+    setCanNativeShare(typeof navigator !== "undefined" && "share" in navigator);
+  }, []);
 
   const handleNativeShare = useCallback(async () => {
     if (navigator.share) {
@@ -107,7 +112,7 @@ export default function ShareSheet({
 
             <div className="space-y-3">
               {/* Native share (mobile) */}
-              {typeof navigator !== "undefined" && "share" in navigator && (
+              {canNativeShare && (
                 <button
                   onClick={handleNativeShare}
                   className="flex w-full items-center gap-3 rounded-xl border border-border p-3 text-left transition-colors hover:bg-muted/50"

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import RadarChart from "@/components/skill-graph/RadarChart";
@@ -26,7 +27,6 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Crown, Flame, Share2 } from "lucide-react";
-import { useState } from "react";
 import ShareSheet from "@/components/profile/ShareSheet";
 
 interface AttemptSummary {
@@ -114,14 +114,17 @@ export default function ProfileClient({
 }: ProfileClientProps) {
   const router = useRouter();
   const [shareOpen, setShareOpen] = useState(false);
+  const [profileUrl, setProfileUrl] = useState("");
+
+  useEffect(() => {
+    setProfileUrl(
+      user.id
+        ? `${window.location.origin}/profile/${user.id}`
+        : window.location.href
+    );
+  }, [user.id]);
 
   const hasScores = Object.values(aggregateScores).some((v) => v > 0);
-
-  const profileUrl = typeof window !== "undefined"
-    ? user.id
-      ? `${window.location.origin}/profile/${user.id}`
-      : window.location.href
-    : "";
 
   return (
     <main className="flex min-h-screen flex-col items-center px-4 py-6 max-w-lg mx-auto">

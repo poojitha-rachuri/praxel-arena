@@ -144,15 +144,35 @@ export default async function ProfilePage() {
     }))
   );
 
-  // Ensure referral code exists
+  // Ensure referral code exists (race-safe: conditional update + unique constraint handling)
   let referralCode = user.referralCode;
   if (!referralCode) {
-    const code = `PA-${user.id.slice(-6).toUpperCase()}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
-    await prisma.user.update({
-      where: { id: user.id },
-      data: { referralCode: code },
-    });
-    referralCode = code;
+    const randomPart = crypto.randomUUID().slice(0, 6).toUpperCase();
+    const code = `PA-${user.id.slice(-6).toUpperCase()}-${randomPart}`;
+    try {
+      // Conditional update: only sets code if referralCode is still null
+      const updated = await prisma.user.updateMany({
+        where: { id: user.id, referralCode: { equals: null } },
+        data: { referralCode: code },
+      });
+      if (updated.count > 0) {
+        referralCode = code;
+      } else {
+        // Another request set it first — re-fetch
+        const refreshed = await prisma.user.findUnique({
+          where: { id: user.id },
+          select: { referralCode: true },
+        });
+        referralCode = refreshed?.referralCode ?? code;
+      }
+    } catch {
+      // Another request generated the code concurrently — re-fetch it
+      const refreshed = await prisma.user.findUnique({
+        where: { id: user.id },
+        select: { referralCode: true },
+      });
+      referralCode = refreshed?.referralCode ?? code;
+    }
   }
 
   // Gamification data

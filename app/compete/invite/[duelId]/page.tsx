@@ -3,12 +3,20 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import InviteAcceptor from "./InviteAcceptor";
 
+// Prisma CUIDs are 25 chars, alphanumeric starting with 'c'
+const CUID_RE = /^c[a-z0-9]{24}$/;
+
 export default async function InvitePage({
   params,
 }: {
   params: Promise<{ duelId: string }>;
 }) {
   const { duelId } = await params;
+
+  if (!CUID_RE.test(duelId)) {
+    redirect("/compete");
+  }
+
   const { userId: clerkId } = await auth();
 
   // Fetch duel info (public — anyone with the link can see the invite)

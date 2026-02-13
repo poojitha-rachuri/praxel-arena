@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import useSWR from "swr";
 import { motion } from "motion/react";
 import {
   Brain,
@@ -10,19 +9,14 @@ import {
   Flame,
   Lightbulb,
   ChevronRight,
-  Trophy,
-  Timer,
-  Target,
   Sparkles,
 } from "lucide-react";
-import { ChallengeCard, type ChallengeCardProps } from "@/components/gamification/ChallengeCard";
 import {
   CHALLENGE_TYPE_CONFIG,
   type AIChallengeTypeName,
 } from "@/lib/ai/prompts/challenge-types";
 import { cn } from "@/lib/utils";
 import { CARD_SPRING } from "@/lib/utils/constants";
-import { fetcher } from "@/lib/swr/fetcher";
 import { SkillIcon } from "@/components/ui/SkillIcon";
 
 // ─── Types ──────────────────────────────────────────────
@@ -34,11 +28,6 @@ interface Skill {
   icon: string | null;
   description: string | null;
 }
-
-type ChallengeResponse = Omit<ChallengeCardProps, "skillName" | "index"> & {
-  id: string;
-  skill?: { id: string; name: string; slug: string } | null;
-};
 
 const AI_ICON_MAP = {
   Briefcase,
@@ -55,13 +44,6 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<AIChallengeTypeName | null>(null);
   const [isStarting, setIsStarting] = useState(false);
-
-  // Daily challenges data
-  const { data, isLoading } = useSWR("/api/challenges", fetcher, {
-    refreshInterval: 300000,
-    revalidateOnFocus: false,
-  });
-  const dailyChallenges = (data?.challenges ?? []) as ChallengeResponse[];
 
   const handleStartAI = useCallback(async () => {
     if (!selectedSkill || !selectedType || isStarting) return;
@@ -215,64 +197,8 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
       </section>
 
       {/* ─── Timed Challenges (hidden — seed data expires, feature not demo-ready) ─── */}
-      {false && (<>
-      <div className="flex items-center gap-3">
-        <div className="h-px flex-1 bg-border" />
-        <span className="text-xs font-medium text-muted-foreground">Daily Challenges</span>
-        <div className="h-px flex-1 bg-border" />
-      </div>
-
-      <section>
-        <div className="mb-4 flex items-center gap-2">
-          <div className="flex size-8 items-center justify-center rounded-lg bg-amber-500/10">
-            <Trophy className="size-4 text-amber-500" />
-          </div>
-          <div>
-            <h2 className="text-base font-semibold">Timed Challenges</h2>
-            <p className="text-xs text-muted-foreground">Compete for XP and leaderboard rank</p>
-          </div>
-        </div>
-
-        {isLoading ? (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[...Array(2)].map((_, i) => (
-              <div
-                key={i}
-                className="h-48 animate-pulse rounded-xl bg-muted"
-              />
-            ))}
-          </div>
-        ) : dailyChallenges.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-border p-8 text-center">
-            <Trophy className="mx-auto mb-2 size-6 text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">
-              No active challenges right now. Check back soon!
-            </p>
-          </div>
-        ) : (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {dailyChallenges.map((challenge, i) => (
-              <ChallengeCard
-                key={challenge.id}
-                type={challenge.type}
-                name={challenge.name}
-                description={challenge.description}
-                skillName={challenge.skill?.name}
-                endsAt={challenge.endsAt}
-                rewardXpFirst={challenge.rewardXpFirst}
-                rewardXpTenth={challenge.rewardXpTenth}
-                attemptCount={challenge.attemptCount}
-                userBestAttempt={challenge.userBestAttempt}
-                onStart={() => {
-                  router.push(`/challenges/${challenge.id}`);
-                }}
-                index={i}
-              />
-            ))}
-          </div>
-        )}
-      </section>
-      </>)}
+      {/* TODO: Re-enable when timed challenge feature is ready. Previous implementation
+          used useSWR("/api/challenges") with ChallengeCard grid. See git history. */}
     </div>
   );
 }

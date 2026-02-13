@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import useSWR from "swr";
 import { motion } from "motion/react";
 import {
   Swords,
@@ -15,6 +16,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { CARD_SPRING } from "@/lib/utils/constants";
 import { cn } from "@/lib/utils";
+import { fetcher } from "@/lib/swr/fetcher";
 import { SkillIcon } from "@/components/ui/SkillIcon";
 
 interface Skill {
@@ -51,66 +53,55 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
   const router = useRouter();
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
   const [isCreating, setIsCreating] = useState(false);
-  const [duels, setDuels] = useState<Duel[]>([]);
-  const [loadingDuels, setLoadingDuels] = useState(true);
   const [inviteLink, setInviteLink] = useState<string | null>(null);
   const [inviteCopied, setInviteCopied] = useState(false);
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/api/duels")
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .then((data) => {
-        if (!cancelled) setDuels(data.duels ?? []);
-      })
-      .catch((err) => console.error("Failed to fetch duels:", err))
-      .finally(() => {
-        if (!cancelled) setLoadingDuels(false);
-      });
-    return () => { cancelled = true; };
+  const { data, isLoading: loadingDuels, mutate } = useSWR<{ duels: Duel[] }>(
+    "/api/duels",
+    fetcher,
+    { revalidateOnFocus: false }
+  );
+  const duels = data?.duels ?? [];
+
+  /** Shared duel creation — returns the new duel data or null on failure */
+  const createDuel = useCallback(async (skillSlug: string): Promise<{ id: string } | null> => {
+    const res = await fetch("/api/duels", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ skillSlug }),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (res.ok && body.duel?.id) return body.duel;
+    console.error("Failed to create duel:", body);
+    return null;
   }, []);
 
   const handleFindOpponent = useCallback(async () => {
     if (!selectedSkill || isCreating) return;
+    const skill = skills.find((s) => s.id === selectedSkill);
+    if (!skill) return;
     setIsCreating(true);
     try {
-      const skill = skills.find((s) => s.id === selectedSkill);
-      if (!skill) return;
-      const res = await fetch("/api/duels", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ skillSlug: skill.slug }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.duel?.id) {
-        router.push(`/compete/${data.duel.id}`);
-        return;
-      }
-      console.error("Failed to create duel:", data);
+      const duel = await createDuel(skill.slug);
+      if (duel) router.push(`/compete/${duel.id}`);
     } catch (error) {
       console.error("Failed to create duel:", error);
     } finally {
       setIsCreating(false);
     }
-  }, [selectedSkill, isCreating, skills, router]);
+  }, [selectedSkill, isCreating, skills, router, createDuel]);
 
   const handleChallengeAFriend = useCallback(async () => {
     if (!selectedSkill || isCreating) return;
+    const skill = skills.find((s) => s.id === selectedSkill);
+    if (!skill) return;
     setIsCreating(true);
     try {
-      const skill = skills.find((s) => s.id === selectedSkill);
-      if (!skill) return;
-      const res = await fetch("/api/duels", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ skillSlug: skill.slug }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.duel?.id) {
-        const link = `${window.location.origin}/compete/invite/${data.duel.id}`;
+      const duel = await createDuel(skill.slug);
+      if (duel) {
+        const link = `${window.location.origin}/compete/invite/${duel.id}`;
         setInviteLink(link);
-        // Try to share via Web Share API
-        if (navigator.share) {
+        if (typeof navigator !== "undefined" && navigator.share) {
           try {
             await navigator.share({
               title: `Praxel Arena Duel`,
@@ -118,30 +109,17 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
               url: link,
             });
           } catch {
-            // User cancelled or not supported — link is still visible
+            // User cancelled — link is still visible
           }
         }
-        // Refresh duels
-        setDuels((prev) => [
-          {
-            id: data.duel.id,
-            status: "WAITING",
-            skill: { name: skill.name, slug: skill.slug, icon: skill.icon },
-            createdAt: new Date().toISOString(),
-            completedAt: null,
-            winnerId: null,
-          },
-          ...prev,
-        ]);
-        return;
+        mutate(); // Refresh duel list from server
       }
-      console.error("Failed to create challenge:", data);
     } catch (error) {
       console.error("Failed to create challenge:", error);
     } finally {
       setIsCreating(false);
     }
-  }, [selectedSkill, isCreating, skills]);
+  }, [selectedSkill, isCreating, skills, createDuel, mutate]);
 
   const handleCopyInvite = useCallback(async () => {
     if (!inviteLink) return;
@@ -150,7 +128,7 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
       setInviteCopied(true);
       setTimeout(() => setInviteCopied(false), 2000);
     } catch {
-      // Fallback: do nothing
+      // Clipboard API not available in this context
     }
   }, [inviteLink]);
 
