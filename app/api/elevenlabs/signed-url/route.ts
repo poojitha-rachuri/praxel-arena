@@ -114,24 +114,31 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const response = await fetch(
-      `https://api.elevenlabs.io/v1/convai/conversation/get_signed_url?agent_id=${agentId}`,
-      {
-        method: "GET",
-        headers: { "xi-api-key": apiKey },
-      }
-    );
+    // ElevenLabs API uses hyphenated endpoint: get-signed-url (not get_signed_url)
+    const url = `https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${agentId}`;
+    console.log("[elevenlabs] Requesting signed URL for agent:", agentId);
+    
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { "xi-api-key": apiKey },
+    });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("[elevenlabs] Failed to get signed URL:", errorText);
+      console.error("[elevenlabs] Failed to get signed URL:", {
+        status: response.status,
+        statusText: response.statusText,
+        error: errorText,
+      });
       return NextResponse.json(
-        { error: "Failed to create voice session" },
+        { error: "Failed to create voice session", details: errorText },
         { status: 502 }
       );
     }
 
     const data = await response.json();
+    console.log("[elevenlabs] Got signed URL successfully");
+    
     return NextResponse.json({
       signedUrl: data.signed_url,
       ...(voiceOverrides && { overrides: voiceOverrides }),
@@ -139,7 +146,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("[elevenlabs] Signed URL error:", error);
     return NextResponse.json(
-      { error: "Voice service unavailable" },
+      { error: "Voice service unavailable", details: String(error) },
       { status: 502 }
     );
   }
