@@ -37,7 +37,7 @@ const AI_ICON_MAP = {
 
 // ─── Component ──────────────────────────────────────────
 
-export default function ChallengesHub({ skills }: { skills: Skill[] }) {
+export default function ChallengesHub({ skills, bannerSlot }: { skills: Skill[]; bannerSlot?: React.ReactNode }) {
   const router = useRouter();
 
   // AI challenge state
@@ -76,12 +76,13 @@ export default function ChallengesHub({ skills }: { skills: Skill[] }) {
 
   return (
     <div className="mx-auto max-w-lg space-y-6 p-4">
+      {/* Welcome banner */}
+      {bannerSlot}
+
       {/* Page Header */}
       <div>
-        <h1 className="bg-gradient-to-r from-violet-400 to-primary bg-clip-text text-2xl font-extrabold tracking-tight text-transparent">
-          Challenges
-        </h1>
-        <p className="mt-0.5 text-xs text-muted-foreground">
+        <h1 className="text-xl font-bold tracking-tight">Challenge</h1>
+        <p className="text-xs text-muted-foreground">
           Test your skills with AI-powered conversations
         </p>
       </div>

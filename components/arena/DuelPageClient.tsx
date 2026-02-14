@@ -7,12 +7,14 @@ import { Loader2, Swords, Clock, AlertCircle } from "lucide-react";
 import { SprintRunner } from "@/components/interactions/SprintRunner";
 import MatchResult from "@/components/arena/MatchResult";
 import { Button } from "@/components/ui/button";
+import { SkillIcon } from "@/components/ui/SkillIcon";
 import type { SprintResponse } from "@/types";
 
 interface DuelData {
   id: string;
   status: string;
   skillName: string;
+  skillSlug: string;
   skillIcon: string | null;
   sprint: {
     id: string;
@@ -64,7 +66,13 @@ export default function DuelPageClient({ initialDuel }: DuelPageClientProps) {
         if (res.ok) {
           const data = await res.json();
           if (data.duel) {
-            setDuel(data.duel);
+            // Preserve original sprint data (includes correctAnswer for feedback)
+            // The poll response strips correctAnswer to prevent cheating via
+            // network inspection, but we already have it from the initial SSR.
+            setDuel((prev) => ({
+              ...data.duel,
+              sprint: prev.sprint ?? data.duel.sprint,
+            }));
           }
         }
       } catch {
@@ -160,9 +168,10 @@ export default function DuelPageClient({ initialDuel }: DuelPageClientProps) {
                 />
               ))}
             </div>
-            <p className="text-xs text-muted-foreground">
-              {duel.skillName} {duel.skillIcon}
-            </p>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <SkillIcon slug={duel.skillSlug} size="sm" />
+              <span>{duel.skillName}</span>
+            </div>
           </motion.div>
         )}
 
@@ -277,21 +286,59 @@ export default function DuelPageClient({ initialDuel }: DuelPageClientProps) {
                 eloChange?: number;
                 analysis?: string;
               };
+
+              // Remap so current user always appears as "me" (violet / left)
+              const iAmPlayer1 = duel.isPlayer1;
+              const myName = iAmPlayer1
+                ? (evalData.player1Name ?? "You")
+                : (evalData.player2Name ?? "You");
+              const opponentName = iAmPlayer1
+                ? (evalData.player2Name ?? "Opponent")
+                : (evalData.player1Name ?? "Opponent");
+              const myScores = iAmPlayer1
+                ? (evalData.player1Scores ?? {})
+                : (evalData.player2Scores ?? {});
+              const opponentScores = iAmPlayer1
+                ? (evalData.player2Scores ?? {})
+                : (evalData.player1Scores ?? {});
+              const iWon = iAmPlayer1
+                ? evalData.winnerId === "player1"
+                : evalData.winnerId === "player2";
+
+              // Remap dimension winners to use display names
+              const remappedDimWinners: Record<string, string> = {};
+              for (const [key, winner] of Object.entries(evalData.dimensionWinners ?? {})) {
+                // dimensionWinners are stored as player names by the API
+                const origP1Name = evalData.player1Name ?? "Player 1";
+                const isP1Win = winner === origP1Name;
+                remappedDimWinners[key] = (iAmPlayer1 ? isP1Win : !isP1Win)
+                  ? myName
+                  : opponentName;
+              }
+
+              // Replace generic player references in AI analysis with actual names
+              let analysis = evalData.analysis ?? "";
+              const p1Name = evalData.player1Name ?? "Player 1";
+              const p2Name = evalData.player2Name ?? "Player 2";
+              analysis = analysis
+                .replace(/\bplayer\s*1\b/gi, p1Name)
+                .replace(/\bplayer\s*2\b/gi, p2Name);
+
               return (
                 <MatchResult
                   player1={{
-                    name: evalData.player1Name ?? "Player 1",
-                    scores: evalData.player1Scores ?? {},
-                    isWinner: evalData.winnerId === "player1",
+                    name: myName,
+                    scores: myScores,
+                    isWinner: iWon,
                   }}
                   player2={{
-                    name: evalData.player2Name ?? "Player 2",
-                    scores: evalData.player2Scores ?? {},
-                    isWinner: evalData.winnerId === "player2",
+                    name: opponentName,
+                    scores: opponentScores,
+                    isWinner: !iWon,
                   }}
-                  dimensionWinners={evalData.dimensionWinners ?? {}}
+                  dimensionWinners={remappedDimWinners}
                   eloChange={evalData.eloChange ?? 0}
-                  analysis={evalData.analysis ?? ""}
+                  analysis={analysis}
                 />
               );
             })()}

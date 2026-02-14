@@ -18,7 +18,7 @@ export default async function LearnPage() {
         <div>
           <h1 className="text-xl font-bold tracking-tight">Learn</h1>
           <p className="text-xs text-muted-foreground">
-            Guided micro-lessons across 6 business skills
+            Guided micro-lessons across key business skills
           </p>
         </div>
 

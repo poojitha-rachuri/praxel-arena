@@ -22,10 +22,12 @@ export default async function ChallengesPage() {
 
   return (
     <AppShell>
-      <div className="p-4">
-        <ModeWelcomeBanner mode="CHALLENGE" hasCompletions={sessionCount > 0} />
-      </div>
-      <ChallengesHub skills={skills} />
+      <ChallengesHub
+        skills={skills}
+        bannerSlot={
+          <ModeWelcomeBanner mode="CHALLENGE" hasCompletions={sessionCount > 0} />
+        }
+      />
     </AppShell>
   );
 }

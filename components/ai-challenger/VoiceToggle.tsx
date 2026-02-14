@@ -20,6 +20,8 @@ interface VoiceToggleProps {
   onStateChange: (active: boolean) => void;
   onTranscript?: (message: string, source: "user" | "ai") => void;
   disabled?: boolean;
+  /** Auto-start voice session on mount (for voice-locked mode) */
+  autoStart?: boolean;
   challengeContext?: {
     skillId: string;
     challengeType?: string;
@@ -30,6 +32,7 @@ export function VoiceToggle({
   onStateChange,
   onTranscript,
   disabled,
+  autoStart,
   challengeContext,
 }: VoiceToggleProps) {
   const [voiceState, setVoiceState] = useState<VoiceState>("idle");
@@ -73,6 +76,8 @@ export function VoiceToggle({
       if (cooldownTimer.current) clearTimeout(cooldownTimer.current);
     };
   }, []);
+
+  const autoStartedRef = useRef(false);
 
   const startVoice = useCallback(async () => {
     if (voiceState !== "idle") return;
@@ -129,6 +134,16 @@ export function VoiceToggle({
       }, 2000);
     }
   }, [voiceState, conversation, challengeContext]);
+
+  // Auto-start voice session when autoStart is true (voice-locked mode)
+  useEffect(() => {
+    if (autoStart && !autoStartedRef.current && voiceState === "idle") {
+      autoStartedRef.current = true;
+      // Small delay so component fully mounts before requesting mic
+      const timer = setTimeout(() => startVoice(), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [autoStart, voiceState, startVoice]);
 
   const stopVoice = useCallback(async () => {
     if (voiceState !== "active") return;

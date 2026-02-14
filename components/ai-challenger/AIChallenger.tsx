@@ -297,12 +297,13 @@ export function AIChallenger({
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {/* Only show voice toggle if not locked to a specific mode */}
-          {!isTextLocked && !isVoiceLocked && (
+          {/* Show voice toggle for unlocked mode and voice-locked mode (auto-starts) */}
+          {!isTextLocked && (
             <VoiceToggle
               onStateChange={handleVoiceStateChange}
               onTranscript={handleVoiceTranscript}
               disabled={ended}
+              autoStart={isVoiceLocked}
               challengeContext={
                 context.type === "standalone"
                   ? { skillId: context.skillId, challengeType: context.challengeType }

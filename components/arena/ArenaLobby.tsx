@@ -105,9 +105,7 @@ export default function ArenaLobby({ skills, userId }: ArenaLobbyProps) {
     <div className="mx-auto flex max-w-lg flex-col gap-5 p-4">
       {/* Arena header */}
       <div>
-        <h1 className="bg-gradient-to-r from-violet-400 to-primary bg-clip-text text-2xl font-extrabold tracking-tight text-transparent">
-          Arena
-        </h1>
+        <h1 className="text-xl font-bold tracking-tight">Compete</h1>
         <p className="text-xs text-muted-foreground">
           Head-to-head skill duels with Elo ratings
         </p>

@@ -77,6 +77,7 @@ export async function GET(
         id: duel.id,
         status: duel.status,
         skillName: duel.skill.name,
+        skillSlug: duel.skill.slug,
         skillIcon: duel.skill.icon,
         sprint: sprintData,
         evaluation: duel.evaluation,
