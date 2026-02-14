@@ -33,7 +33,12 @@
       "teachingPreamble": "Free Cash Flow to Firm (FCFF) represents cash available to all capital providers  -  both debt and equity holders. Unlike FCFE (free cash flow to equity), FCFF adds back after-tax interest expense to OCF minus capex because interest is a payment to debt holders, not a true operating cost. Tesla's 2023 FCFF exceeded its FCFE by roughly $300M due to this interest add-back.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 2,
@@ -89,6 +94,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.2
       }
     },
     {
@@ -117,7 +127,12 @@
       "teachingPreamble": "Burn rate comes in two flavors: gross burn (total monthly cash outflows) and net burn (outflows minus inflows). Runway = cash balance ÷ net burn rate. WeWork's 2019 implosion was partly because its reported metrics obscured a $219M monthly net burn rate against $2.5B in reserves  -  just 11 months of runway while pursuing an IPO at a $47B valuation.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 4,
@@ -145,7 +160,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "communicationClarity": 0.28,
+        "analyticalThinking": 0.28
+      }
     },
     {
       "order": 5,
@@ -173,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 6,
@@ -201,7 +227,12 @@
       "teachingPreamble": "Levered Free Cash Flow (LFCF) = OCF minus capex, representing cash after operations and maintenance but before financing decisions. However, sustainability analysis requires looking at total obligations. GE's dividend cut in 2017 came despite seemingly adequate LFCF because mandatory debt service and pension obligations consumed cash that headline FCF metrics didn't capture.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 7,
@@ -229,7 +260,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.35,
+        "quantitativeReasoning": 0.34,
+        "decisionQuality": 0.2,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +294,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously, this SaaS startup had $24M cash, $3.2M monthly expenses, and $1.4M revenue giving 13.3 months runway. Now their largest customer churned, dropping revenue to $1.15M and increasing net burn to $2.05M  -  just 11.7 months runway before any pivot investment.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "analyticalThinking": 0.37,
+        "quantitativeReasoning": 0.32,
+        "creativeProblemSolving": 0.19,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

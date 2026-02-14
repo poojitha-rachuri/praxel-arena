@@ -33,7 +33,13 @@
       "teachingPreamble": "RICE stands for Reach, Impact, Confidence, and Effort. It was popularized by Intercom to score product features. The formula is (Reach × Impact × Confidence) ÷ Effort, giving you a single score to compare projects.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 2,
@@ -101,6 +107,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -129,7 +141,13 @@
       "teachingPreamble": "ICE stands for Impact, Confidence, and Ease. Unlike RICE, it drops the Reach metric and scores each factor on a simple 1-10 scale. Sean Ellis at GrowthHackers created ICE for fast experimentation where you need quick, gut-informed scoring without detailed data.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -157,7 +175,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "communicationClarity": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -185,7 +209,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "decisionQuality": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -213,7 +243,13 @@
       "teachingPreamble": "MoSCoW categorizes items into Must Have, Should Have, Could Have, and Won't Have. Unlike numeric scoring, it groups work into priority buckets. It's especially popular in agile projects where teams need clear agreement on what's non-negotiable versus nice-to-have.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 7,
@@ -241,7 +277,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -269,7 +311,13 @@
       "teachingPreamble": null,
       "priorContext": "You previously ranked features using RICE and selected a top project based on first-mover advantage. Now a competitor has launched the same feature, fundamentally changing the Impact and Confidence assumptions in your original score.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "decisionQuality": 0.33,
+        "creativeProblemSolving": 0.37,
+        "strategicReasoning": 0.18,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

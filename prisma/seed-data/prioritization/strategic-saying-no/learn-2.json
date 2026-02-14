@@ -33,7 +33,13 @@
       "teachingPreamble": "The sunk cost fallacy becomes most dangerous at the executive level, where large investments create psychological commitment traps. The diagnostic test is simple: if you had zero dollars invested today, would you greenlight this project at its current projected ROI? Shopify reportedly killed a major internal platform rebuild mid-flight when prospective ROI turned negative - saving $20M+ in further spend.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 2,
@@ -93,6 +99,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -121,7 +133,13 @@
       "teachingPreamble": "Debt tracking isn't just for engineering. Product teams at companies like Atlassian and Stripe maintain 'scope debt registers' - catalogs of deferred commitments with estimated carrying costs. The key distinction: technical debt compounds through increasing maintenance burden, while scope debt compounds through escalating customer expectations and competitive gaps. Both require explicit interest payments, but scope debt is harder to measure because the 'interest' is opportunity cost and churn risk.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -149,7 +167,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "communicationClarity": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -177,7 +201,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "decisionQuality": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -205,7 +235,13 @@
       "teachingPreamble": "The hardest 'no' is killing your own project mid-flight. Best-in-class product organizations pre-commit to kill criteria - quantitative thresholds set at project kickoff that trigger automatic cancellation. Stripe and Amazon both use variants of this approach. The power lies in temporal separation: you define the exit conditions when you're rational (before investment), so the decision executes when you're biased (after months of sunk costs). This converts an emotional political decision into a mechanical trigger.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 7,
@@ -233,7 +269,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -261,7 +303,13 @@
       "teachingPreamble": null,
       "priorContext": "You had ranked the partner integration last in priority due to speculative revenue and higher-value alternatives. Now the CEO has made a public commitment, creating a new external constraint that changes the political and reputational calculus without changing the underlying strategic analysis.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "decisionQuality": 0.33,
+        "creativeProblemSolving": 0.37,
+        "strategicReasoning": 0.18,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

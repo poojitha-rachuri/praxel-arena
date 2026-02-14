@@ -33,7 +33,13 @@
       "teachingPreamble": "A Discounted Cash Flow (DCF) model values a company by estimating all the cash it will generate in the future, then discounting those amounts back to today's dollars. Think of it like this: if someone offered you $100 today or $100 in five years, you'd take it today  -  because you could invest that money and grow it. DCF applies this same logic to value entire businesses like Apple or Tesla.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 2,
@@ -93,6 +99,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.48,
+        "analyticalThinking": 0.32,
+        "strategicReasoning": 0.08,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -121,7 +133,13 @@
       "teachingPreamble": "WACC stands for Weighted Average Cost of Capital. Companies fund themselves with two main sources  -  debt (loans, bonds) and equity (shareholders' money). Each has a cost: debt has interest payments, and equity investors expect returns for their risk. WACC blends these two costs based on how much of each the company uses. For example, Coca-Cola's WACC is roughly 7%, meaning every dollar of capital costs them about 7 cents per year.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 4,
@@ -149,7 +167,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 5,
@@ -177,7 +201,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.31,
+        "strategicReasoning": 0.33,
+        "decisionQuality": 0.23,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 6,
@@ -205,7 +235,13 @@
       "teachingPreamble": "A DCF typically forecasts cash flows for 5 - 10 years, but companies don't just stop existing after that. Terminal value captures all the value from year 11 onward into infinity. It's often calculated using a perpetuity growth formula: Terminal Value = Final Year Cash Flow × (1 + growth rate) ÷ (WACC  -  growth rate). In practice, terminal value frequently accounts for 60 - 80% of a company's total DCF value, which is why getting this number right matters enormously.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 7,
@@ -233,7 +269,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -261,7 +303,13 @@
       "teachingPreamble": null,
       "priorContext": "You previously built a DCF with an 8% WACC and 2% terminal growth rate for a retail chain. Now interest rates have jumped 1.5%, which raises both the cost of debt and the risk-free rate embedded in cost of equity, pushing WACC higher.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.3,
+        "quantitativeReasoning": 0.29,
+        "analyticalThinking": 0.25,
+        "decisionQuality": 0.16
+      }
     }
   ]
 }

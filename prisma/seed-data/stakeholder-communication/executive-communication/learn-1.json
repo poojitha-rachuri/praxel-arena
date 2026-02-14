@@ -33,7 +33,13 @@
       "teachingPreamble": "BLUF stands for Bottom Line Up Front - a communication method borrowed from military briefings. You state your key message, recommendation, or ask in the very first sentence, then provide supporting details. Busy executives at companies like Amazon use this approach because it respects the reader's time and makes decisions faster.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.44,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Data-driven narratives pair numbers with context to tell a clear story. Instead of saying 'Sales are going well,' a Shopify product manager might write 'Merchant sign-ups grew 12% MoM to 14,200, driven by our new onboarding flow.' The number anchors the claim, the comparison (MoM) shows direction, and the cause gives the executive something actionable.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.48,
+        "strategicReasoning": 0.21,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.32,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "A decision memo is a short document that helps a leader say yes, no, or choose between options. At Amazon, these are the famous 6-page memos. At their core, every decision memo needs: the decision to be made, 2-3 options with tradeoffs, a clear recommendation, and supporting data. The goal isn't to show all your work - it's to make it easy for the reader to decide.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.39,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "You prepared a polished decision memo on APAC expansion for HubSpot's COO and were 3 minutes into a 15-minute presentation when the COO got pulled into an urgent issue.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.17
+      }
     }
   ]
 }

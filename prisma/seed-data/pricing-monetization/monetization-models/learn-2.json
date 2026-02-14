@@ -33,7 +33,13 @@
       "teachingPreamble": "Hybrid monetization models combine two or more pricing approaches - like Slack's freemium + per-seat subscription, or AWS mixing subscription reserved instances with usage-based on-demand pricing. The key insight is that different customer segments value products differently, and a single model often leaves money on the table or locks out potential users.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "Freemium models aren't just about free users - they're an acquisition engine. Spotify's free tier costs them roughly €0.50/user/month in licensing, but converts ~27% of free users to premium over time at €10.99/month. The economic math works because the lifetime value of converted users vastly exceeds the cost of subsidizing the free tier.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "quantitativeReasoning": 0.31,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "When marketplaces add subscriptions, they're betting that predictable recurring revenue and increased frequency will offset margin compression. Uber One subscribers take 4x more rides but at lower per-ride margins. The math only works if the subscription drives incremental trips - not just discounting rides customers would have taken anyway. This cannibalization risk is the central tension in marketplace hybrid models.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.33,
+        "quantitativeReasoning": 0.23,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you had a stable hybrid model with freemium driving developer adoption and subscriptions driving revenue. Now a well-funded competitor has disrupted the market by open-sourcing their core and undercutting on price, threatening your acquisition funnel and your paid conversion rates.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.31,
+        "quantitativeReasoning": 0.24,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

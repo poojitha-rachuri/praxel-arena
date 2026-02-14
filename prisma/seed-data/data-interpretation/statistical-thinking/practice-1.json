@@ -61,6 +61,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.5,
+        "analyticalThinking": 0.36,
+        "decisionQuality": 0.14
       }
     },
     {
@@ -89,7 +94,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 3,
@@ -133,6 +143,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.36,
+        "decisionQuality": 0.15
       }
     },
     {
@@ -161,7 +176,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "analyticalThinking": 0.32,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.12
+      }
     },
     {
       "order": 5,
@@ -189,7 +210,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "analyticalThinking": 0.33,
+        "strategicReasoning": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 6,
@@ -217,7 +244,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.39,
+        "quantitativeReasoning": 0.31,
+        "decisionQuality": 0.19,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 7,
@@ -245,7 +278,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.38,
+        "quantitativeReasoning": 0.32,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -273,7 +312,13 @@
       "teachingPreamble": null,
       "priorContext": "Earlier you chose to run a 2,000-merchant pricing test at Shopify for statistical significance. You assumed the sample was representative of your merchant base.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.35,
+        "creativeProblemSolving": 0.34,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

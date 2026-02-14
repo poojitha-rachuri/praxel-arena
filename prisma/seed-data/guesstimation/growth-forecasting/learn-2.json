@@ -33,7 +33,13 @@
       "teachingPreamble": "Cohort analysis tracks a specific group of users over time rather than blending all users together. Month-12 retention of 35% means 35% of the original cohort is still active after 12 months  -  this is measured against the original cohort size, not the previous month's survivors.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.13,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "creativeProblemSolving": 0.26,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "S-curve (logistic) growth models show that most products follow an adoption pattern: slow start, rapid acceleration, then deceleration as the addressable market saturates. Naively extrapolating peak growth rates forward is one of the most common forecasting errors in estimation problems.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.12,
+        "creativeProblemSolving": 0.13
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Stacking cohorts is essential for realistic forecasting. Each quarter's cohort ages independently: the newest cohort retains ~70%, while the oldest approaches 45%. You sum across all living cohorts: roughly 50K×0.45 for old cohorts graduating toward 50K×0.70 for new ones. With 8 cohorts blending from 45-70%, the weighted total lands near 200K.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.13,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.25,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you estimated ~200K active sellers for a marketplace adding 50K sellers/quarter with retention flattening at 45%. Now the marketplace has expanded to 3 new countries, changing the acquisition and growth dynamics.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.37,
+        "quantitativeReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

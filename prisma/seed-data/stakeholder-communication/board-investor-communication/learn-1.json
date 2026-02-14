@@ -33,7 +33,13 @@
       "teachingPreamble": "Top-performing board decks follow a 'pyramid principle' - leading with the key conclusion or ask, then layering in supporting data. When Airbnb's CFO presented to their board pre-IPO, decks opened with the strategic decision needed, followed by 3-4 supporting metrics slides. Board members have limited attention; front-loading the ask ensures alignment before diving into details.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.44,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "Board trust is built through intellectual honesty, not spin. When Shopify missed commerce growth targets in 2022, their leadership team presented a transparent 'miss-diagnose-fix' framework: acknowledge the gap quantitatively, attribute root causes with data, and share a corrective roadmap with measurable milestones. Boards penalize surprises far more than misses - experienced directors expect 30-40% of metrics to underperform in any given quarter.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.48,
+        "strategicReasoning": 0.21,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.32,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Elite investor communicators use 'question trees' - for every key metric in their deck, they map 2-3 adversarial questions a skeptical board member might ask, and pre-build data-backed responses. Stripe's leadership reportedly maintains a living Q&A document that maps each KPI to its vulnerabilities, bear-case interpretations, and counter-evidence. This method beats scripted answers because it teaches flexible reasoning, not memorized lines.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.39,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "You had prepared a standard board update focused on growth metrics and product milestones. A breaking competitive development has shifted the board's attention away from your planned narrative, and you must demonstrate strategic composure and data fluency in real time.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.17
+      }
     }
   ]
 }

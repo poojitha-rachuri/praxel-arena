@@ -33,7 +33,13 @@
       "teachingPreamble": "Before launching a product, companies need to identify exactly who they're selling to. An Ideal Customer Profile (ICP) describes the type of company or person most likely to buy your product and get the most value from it  -  like how Slack initially targeted small tech teams, not entire Fortune 500 companies.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "A value proposition is a clear statement of why a customer should buy from you instead of anyone else. It connects a specific customer pain to your unique solution  -  for example, Zoom's early value prop was dead-simple video calls that 'just work,' directly targeting frustration with buggy competitors like WebEx.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "communicationClarity": 0.33,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.11
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Competitive positioning is about owning a distinct space in your customer's mind. You don't need to be better at everything  -  you need to be clearly different on what matters most to your ICP. When HubSpot entered the CRM market against Salesforce, they didn't try to out-feature them  -  they positioned as the CRM that's free to start and easy for small marketing teams.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "Earlier you chose to position your project management tool for an underserved niche of creative agencies. Now a well-funded competitor has noticed and is targeting the same niche with a free offering.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.35,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

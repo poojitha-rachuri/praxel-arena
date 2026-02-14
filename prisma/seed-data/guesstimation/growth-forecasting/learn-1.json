@@ -33,7 +33,13 @@
       "teachingPreamble": "The Rule of 72 says doubling time ≈ 72 / growth rate. It works for any compounding period  -  annual, quarterly, or monthly. For example, at 10% annual growth, revenue doubles in roughly 7.2 years.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.13,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "creativeProblemSolving": 0.26,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Cohort analysis tracks groups of users acquired at the same time and measures how they behave over time. The key insight: total active users equals the sum of surviving members across all cohorts, not just the latest acquisition number.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.12,
+        "creativeProblemSolving": 0.13
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "When comparing two compounding trajectories, the crossover point depends on both the starting base and the growth rate differential. You can estimate it by solving 10×1.5^t = 40×1.25^t, or approximate by noting the ratio (4x) must be closed by the ~20 percentage point growth gap.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.13,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.25,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "Earlier you analyzed Spotify's subscriber trajectory at ~40M net adds per year with decelerating percentage growth. Now a major competitive shock has entered the market, requiring you to reassess your extrapolation assumptions.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.37,
+        "quantitativeReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

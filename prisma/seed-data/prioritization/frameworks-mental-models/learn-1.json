@@ -33,7 +33,13 @@
       "teachingPreamble": "RICE is a popular prioritization framework created at Intercom. It scores projects on four factors: Reach (how many people it affects), Impact (how much it affects them), Confidence (how sure you are), and Effort (how much work it takes). The final score is (Reach × Impact × Confidence) ÷ Effort.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 2,
@@ -77,6 +83,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -105,7 +117,13 @@
       "teachingPreamble": "MoSCoW is a simpler framework often used in product and project management. It groups items into four buckets: Must have (non-negotiable), Should have (important but not critical), Could have (nice to have), and Won't have (not now). Spotify uses MoSCoW-style thinking to define what goes into each product release.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -133,7 +151,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "communicationClarity": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -161,7 +185,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "decisionQuality": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -189,7 +219,13 @@
       "teachingPreamble": "Cost of Delay asks: 'What do we lose for every week we don't ship this?' Amazon famously uses this thinking  -  if a checkout improvement generates $200K/week, delaying it by 3 weeks costs $600K. This reframes prioritization from 'what's most valuable' to 'what's most urgent to capture value now.'",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 7,
@@ -217,7 +253,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -245,7 +287,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously, the logo redesign ranked last because it had low cost of delay  -  it was a nice-to-have planned for next quarter. Now the context has shifted: a strategic pivot makes it time-sensitive with real revenue implications.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "decisionQuality": 0.33,
+        "creativeProblemSolving": 0.37,
+        "strategicReasoning": 0.18,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

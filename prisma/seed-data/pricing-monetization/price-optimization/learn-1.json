@@ -33,7 +33,13 @@
       "teachingPreamble": "Price elasticity of demand measures how sensitive customer purchasing is to price changes. It's calculated as % change in quantity demanded ÷ % change in price. When Netflix raised its U.S. streaming price from $9.99 to $10.99 in 2017, subscriber growth barely slowed  -  a sign of inelastic demand.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Willingness-to-pay (WTP) research uncovers how much customers will actually spend. Direct questions ('What would you pay?') are notoriously unreliable  -  people understate to get lower prices. Companies like Porsche and HubSpot use conjoint analysis, which presents tradeoff scenarios between features and prices, forcing respondents to reveal true preferences indirectly.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.31,
+        "communicationClarity": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "quantitativeReasoning": 0.32,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "Anchoring is a cognitive bias where the first number people see heavily influences their judgment of subsequent numbers. The Economist famously offered a print-only subscription at $125, a web-only at $59, and print+web at $125  -  the 'useless' middle option anchored buyers toward the combo deal, boosting revenue by 43% in Dan Ariely's study.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.34,
+        "decisionQuality": 0.31,
+        "quantitativeReasoning": 0.24,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you validated $39/mo through conjoint analysis and A/B testing with strong conversion. Now a well-funded competitor has launched a free tier covering most of your core features, shifting the competitive landscape and potentially resetting customer price expectations.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.32,
+        "quantitativeReasoning": 0.23,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

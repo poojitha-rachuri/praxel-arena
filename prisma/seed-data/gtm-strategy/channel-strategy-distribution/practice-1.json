@@ -65,6 +65,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.12
       }
     },
     {
@@ -93,7 +99,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "analyticalThinking": 0.18,
+        "creativeProblemSolving": 0.13
+      }
     },
     {
       "order": 3,
@@ -121,7 +133,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "communicationClarity": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 4,
@@ -149,7 +167,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 5,
@@ -205,6 +229,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -233,7 +263,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 7,
@@ -261,7 +297,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 8,
@@ -289,7 +331,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you relied heavily on a reseller-led channel strategy with one dominant partner driving 40% of revenue. Now that partner has been acquired by a competitor, creating an urgent 90-day window before losing access to those customer relationships entirely.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     }
   ]
 }

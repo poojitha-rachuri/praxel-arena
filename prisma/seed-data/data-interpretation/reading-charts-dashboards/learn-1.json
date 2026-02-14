@@ -33,7 +33,12 @@
       "teachingPreamble": "Different chart types serve different purposes. Line charts show how a single metric changes over time  -  the x-axis is time and the y-axis is your metric. For example, Netflix uses line charts to track daily active users across quarters.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 2,
@@ -68,11 +73,28 @@
         "xKey": "region",
         "yKey": "revenue",
         "data": [
-          { "region": "N. America", "revenue": 4.2 },
-          { "region": "Europe", "revenue": 1.8 },
-          { "region": "Asia", "revenue": 1.1 },
-          { "region": "Other", "revenue": 0.4 }
+          {
+            "region": "N. America",
+            "revenue": 4.2
+          },
+          {
+            "region": "Europe",
+            "revenue": 1.8
+          },
+          {
+            "region": "Asia",
+            "revenue": 1.1
+          },
+          {
+            "region": "Other",
+            "revenue": 0.4
+          }
         ]
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.38,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -101,7 +123,12 @@
       "teachingPreamble": "One of the most common tricks in misleading charts is a truncated y-axis  -  starting the axis at a number other than zero. This visually exaggerates small differences. A bar going from 400K to 420K looks like a huge jump when the bottom of the chart is 400K, even though it's only a 5% increase.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 4,
@@ -129,7 +156,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 5,
@@ -157,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 6,
@@ -185,7 +223,12 @@
       "teachingPreamble": "KPI dashboards use different visual elements to communicate at a glance. A metric card (or scorecard) displays a single key number prominently, often with a small arrow or color indicating if it's trending up or down. These are the first things executives look at when opening a dashboard.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 7,
@@ -213,7 +256,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.36,
+        "quantitativeReasoning": 0.33,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 8,
@@ -241,7 +290,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you learned to always check axis labels and scales before drawing conclusions. Now a real-world data entry inconsistency has made one data point appear wildly off  -  the chart looks correct at first glance but the underlying data may be mislabeled.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.34,
+        "creativeProblemSolving": 0.36,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

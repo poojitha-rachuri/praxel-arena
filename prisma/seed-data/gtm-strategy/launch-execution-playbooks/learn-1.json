@@ -33,7 +33,13 @@
       "teachingPreamble": "A launch playbook is a single source of truth that aligns marketing, sales, product, and support around who does what and by when. When Slack launched its enterprise product, it used a detailed playbook coordinating 12 teams across a 90-day window to ensure messaging, enablement, and infrastructure were all ready simultaneously.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 2,
@@ -93,6 +99,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -121,7 +133,13 @@
       "teachingPreamble": "Beta programs serve as a controlled stress test with real users before you commit to a public launch. Figma ran a 10-week private beta for its Dev Mode feature, gathering feedback from 500 design teams, which led to three major UX changes before general availability  -  changes that would have been far costlier post-launch.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 4,
@@ -149,7 +167,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "communicationClarity": 0.31,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -177,7 +201,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -205,7 +235,13 @@
       "teachingPreamble": "Launch metrics fall into three categories: awareness (reach, impressions), engagement (conversion rates, activation), and retention (DAU/MAU, churn). Dropbox famously tracked its landing page conversion rate during its MVP launch  -  a 35% visitor-to-waitlist rate validated that the value proposition resonated, even before the product was fully built.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 7,
@@ -233,7 +269,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -261,7 +303,13 @@
       "teachingPreamble": null,
       "priorContext": "Your original playbook assumed a single launch targeting both enterprise and SMB segments simultaneously. Beta data now reveals a sharp divergence: enterprise users show 80% retention while SMB users drop to 15% by week two.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

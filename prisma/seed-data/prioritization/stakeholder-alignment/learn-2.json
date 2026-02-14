@@ -33,7 +33,13 @@
       "teachingPreamble": "When high-influence stakeholders clash, the most effective resolution isn't picking a winner - it's reframing the problem. At Spotify, product and engineering leaders often disagreed on feature scope, but PMs who surfaced shared goals (like user retention) found compromises 3x faster. This technique is called interest-based negotiation.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "decisionQuality": 0.42,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.12
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "A RACI matrix (Responsible, Accountable, Consulted, Informed) clarifies decision rights before conflict erupts. When Atlassian rolled out a new pricing model, overlapping ownership between Product and Revenue teams caused six weeks of delays. Implementing RACI early reduced decision cycle time by 40% in subsequent launches.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Resistant stakeholders often aren't opposed to the goal - they're opposed to feeling excluded from the solution. Research from Harvard Business Review found that stakeholders who co-designed even 15% of a proposal were 4x more likely to champion it. At Microsoft, PMs who invited skeptical VPs into early design sprints saw approval rates jump from 35% to 78%.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "decisionQuality": 0.42,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "You previously mapped stakeholders and the CFO was a key champion. After a board meeting shifted company focus to cost reduction, the CFO reversed her support. Your pilot results are strong but the political landscape has changed.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "decisionQuality": 0.32,
+        "creativeProblemSolving": 0.37,
+        "strategicReasoning": 0.18,
+        "analyticalThinking": 0.13
+      }
     }
   ]
 }

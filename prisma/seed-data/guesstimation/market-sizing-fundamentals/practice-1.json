@@ -33,7 +33,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "creativeProblemSolving": 0.11
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "creativeProblemSolving": 0.27,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 4,
@@ -153,6 +171,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "creativeProblemSolving": 0.27,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -181,7 +205,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 6,
@@ -209,7 +239,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 7,
@@ -237,7 +273,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -265,7 +307,13 @@
       "teachingPreamble": null,
       "priorContext": "You originally sized the commuter coffee cart market assuming pre-COVID foot traffic in downtown business districts. Now 30% of workers are permanently remote, fundamentally changing where your customers are.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.38,
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

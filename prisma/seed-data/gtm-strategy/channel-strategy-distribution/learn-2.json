@@ -33,7 +33,13 @@
       "teachingPreamble": "Customer Acquisition Cost (CAC) varies dramatically by channel - HubSpot reported that inbound channels average $942 CAC in SaaS while outbound averages $1,876. But many teams undercount by excluding onboarding, partner commissions, and sales time. Fully loaded CAC captures all costs to convert a prospect into a paying customer through a given channel.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "Many companies report a single blended CAC - total spend divided by total customers. Shopify's early growth team discovered that breaking CAC by channel revealed their partner/app ecosystem acquired merchants at 1/5th the cost of paid ads. Blended CAC masks this, letting expensive channels hide behind cheap ones, which leads to misallocated budgets.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "communicationClarity": 0.33,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.11
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Slack's enterprise channel had a higher raw CAC ($15K+) than self-serve ($200), but enterprise deals paid back in 8 months vs. 14 months for self-serve because of larger contract values. CAC payback period - months of revenue needed to recover acquisition cost - reveals which channels strain or fuel your cash position, which is critical for capital-constrained startups.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you identified partner referrals as your highest-performing channel with the best LTV:CAC ratio and were scaling investment there. Now that partner is becoming a competitor, creating critical channel concentration risk.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.35,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

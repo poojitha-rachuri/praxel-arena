@@ -33,7 +33,12 @@
       "teachingPreamble": "The current ratio (current assets ÷ current liabilities) measures broad liquidity, while the quick ratio strips out inventory and prepaid expenses. When there's a large gap between the two, it signals that inventory is a dominant component of current assets  -  a red flag for companies where inventory can be slow to convert to cash, like retailers facing demand shifts.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 2,
@@ -85,6 +90,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.18
       }
     },
     {
@@ -113,7 +123,12 @@
       "teachingPreamble": "Efficiency ratios like inventory turnover (COGS ÷ average inventory) and receivables turnover (revenue ÷ average receivables) reveal how well a company converts assets into revenue. However, these ratios must be interpreted within business model context  -  a warehouse club like Costco intentionally stocks fewer SKUs at high volume, naturally producing higher turnover than a general merchandise retailer.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.2
+      }
     },
     {
       "order": 4,
@@ -141,7 +156,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "communicationClarity": 0.27,
+        "analyticalThinking": 0.29
+      }
     },
     {
       "order": 5,
@@ -169,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "analyticalThinking": 0.33,
+        "strategicReasoning": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 6,
@@ -197,7 +223,12 @@
       "teachingPreamble": "Profitability ratios like gross margin, operating margin, and net margin tell you about accounting earnings, but they don't reveal cash generation quality. Advanced analysts compare accrual-based margins to free cash flow margins. A persistent gap between operating profit and free cash flow often signals heavy capital expenditure requirements, aggressive revenue recognition, or poor working capital management  -  all of which degrade true economic profitability.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 7,
@@ -225,7 +256,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.33,
+        "quantitativeReasoning": 0.37,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -253,7 +290,13 @@
       "teachingPreamble": null,
       "priorContext": "In the previous interaction, you ranked fixed charge coverage as the top ratio for an LBO analysis. Now a sudden 150 bps rate hike dramatically increases the cost of the target's variable-rate debt, which represents 60% of its capital structure. The assumptions underpinning your original debt servicing projections have materially changed.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "analyticalThinking": 0.38,
+        "quantitativeReasoning": 0.31,
+        "creativeProblemSolving": 0.2,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

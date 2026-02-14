@@ -33,7 +33,13 @@
       "teachingPreamble": "A RACI matrix clarifies roles on cross-functional projects by assigning each person as Responsible, Accountable, Consulted, or Informed. For example, when Spotify launches a new feature, the product manager is typically Accountable (final sign-off), while engineers are Responsible (doing the build). Mixing these up is one of the top causes of project delays.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.2,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "Working agreements are lightweight team contracts that define how people collaborate  -  things like response times, meeting norms, and escalation paths. At Atlassian, cross-functional squads create working agreements at project kickoff, covering topics like 'Slack messages get a response within 4 hours during business hours.' These agreements reduce friction by making expectations explicit before conflicts arise.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.42,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.19,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.46,
+        "strategicReasoning": 0.23,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.34,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Daily standups in cross-functional teams serve a different purpose than single-team standups  -  the goal is to surface dependencies and blockers between functions. At Shopify, cross-functional pods use a 'blockers-first' format: each person leads with what's stuck, then spends 15 seconds on progress. This keeps the meeting under 10 minutes and ensures the most critical alignment issues get airtime.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.38,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "You had a clean RACI and working agreement in place, but a new compliance requirement surfaced mid-project that no existing role covers. The launch date is in 2 weeks.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.24,
+        "strategicReasoning": 0.16
+      }
     }
   ]
 }

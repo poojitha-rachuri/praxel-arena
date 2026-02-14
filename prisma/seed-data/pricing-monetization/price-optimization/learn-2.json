@@ -33,7 +33,13 @@
       "teachingPreamble": "Willingness-to-pay (WTP) research suffers from hypothetical bias - customers overstate what they'd pay when no real money is at stake. Becker-DeGroot-Marschak (BDM) auctions and real purchase experiments solve this by making responses consequential. Slack used incentive-compatible conjoint studies before launching paid tiers, finding WTP was 22% lower than direct survey responses suggested.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "A/B pricing experiments require careful unit-of-randomization design. HubSpot learned this when colleagues at the same company saw different prices during a test, generating support tickets and social media backlash. Best practice for B2B is account-level or cohort-level randomization, and for B2C, geographic or time-based splits reduce contamination risk while maintaining statistical power.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.31,
+        "communicationClarity": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "quantitativeReasoning": 0.32,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Anchoring in price optimization goes beyond simple high-low framing. Sophisticated operators use reference price anchoring (showing original vs. discounted price) and decoy anchoring (adding an unattractive option to steer choice). However, aggressive anchoring can inflate short-term conversion while increasing post-purchase regret. Booking.com and Amazon continuously monitor downstream metrics like cancellation rates and return rates to ensure anchoring lifts net revenue, not just gross bookings.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.34,
+        "decisionQuality": 0.31,
+        "quantitativeReasoning": 0.24,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "You had been running a successful A/B pricing experiment with strong statistical results favoring the higher price. Now a public relations crisis has emerged that changes the decision calculus from pure optimization to brand trust management.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.32,
+        "quantitativeReasoning": 0.23,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

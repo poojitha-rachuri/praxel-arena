@@ -33,7 +33,13 @@
       "teachingPreamble": "A DCF's terminal value often accounts for 60-80% of total enterprise value. You estimate it using the Gordon Growth Model: TV = FCF₅ × (1+g) / (r−g), where g is long-term growth and r is the discount rate. For quick estimation, grow the current FCF forward 5 years, then apply the formula.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.41,
+        "creativeProblemSolving": 0.28,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "Revenue multiples and EBITDA multiples are mathematically linked through margins. If a company trades at Nx revenue with M% EBITDA margins, its implied EV/EBITDA = N / M. This shortcut lets you instantly translate between multiples and sanity-check valuations without a spreadsheet.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "When using public comparables to value private companies, you must adjust for illiquidity (typically 20-35% discount) and size (10-30% discount). These discounts compound multiplicatively: if base value is $1B, a 30% illiquidity and 20% size discount gives $1B × 0.70 × 0.80 = $560M, not $1B × 0.50.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you were valuing the $2B marketplace acquisition using comparable multiples and a DCF at a 10% discount rate, with stable revenue assumptions. Now macroeconomic conditions and company fundamentals have both deteriorated simultaneously.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.39,
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

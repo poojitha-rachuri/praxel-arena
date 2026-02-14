@@ -33,7 +33,13 @@
       "teachingPreamble": "Revenue multiples for private companies are typically discounted 15-30% versus public comps to reflect illiquidity, execution risk, and information asymmetry. However, the discount narrows for late-stage companies with strong unit economics and high NRR, since these metrics de-risk the forward revenue trajectory.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.12,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.09,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "Participating preferred gives investors their liquidation preference back PLUS a pro-rata share of remaining proceeds. A participation cap (e.g., 3x) limits total payout - here 3x the $30M investment = $90M. Without the cap, the investor would get $144M. At high exits, investors typically convert to common if conversion yields more than the capped amount.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.32,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Full-ratchet anti-dilution reprices ALL of an investor's shares to the new lower round price, not just a weighted average. If the Series A post-money was $60M and the Series B pre-money is $40M (a down-round), the Series A investor's conversion price resets to the Series B price per share. This dramatically increases their share count and ownership percentage, heavily diluting founders and earlier investors.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.12,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.34,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.24,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously, you valued a high-growth SaaS company at premium multiples benchmarked to public comps. Now, public SaaS multiples have compressed 50% due to a market crash, the IPO exit path is closed, and the company urgently needs capital to extend its runway.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.28,
+        "quantitativeReasoning": 0.32,
+        "analyticalThinking": 0.23,
+        "decisionQuality": 0.17
+      }
     }
   ]
 }

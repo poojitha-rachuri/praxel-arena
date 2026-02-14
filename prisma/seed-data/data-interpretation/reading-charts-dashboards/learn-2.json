@@ -33,7 +33,12 @@
       "teachingPreamble": "One of the most common ways charts mislead is by truncating the y-axis  -  starting it at a number other than zero. This can make tiny differences look dramatic. For example, a cable news network once showed a bar chart where a 1% change looked like a 50% jump simply by starting the y-axis at 99%.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 2,
@@ -81,6 +86,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.38,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -109,7 +119,12 @@
       "teachingPreamble": "Pie charts work best with 2 - 4 categories where differences are obvious. When you have many slices of similar size, the human eye struggles to compare arc lengths accurately. A horizontal bar chart is almost always a better choice for comparing multiple categories  -  it's why data teams at companies like Google and Amazon default to bar charts in internal dashboards.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 4,
@@ -137,7 +152,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 5,
@@ -165,7 +185,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 6,
@@ -193,7 +219,12 @@
       "teachingPreamble": "KPI dashboards often use smoothing techniques like moving averages to help decision-makers focus on trends rather than reacting to daily or weekly fluctuations. A single bad week might spike a metric, but a 3-month moving average shows whether the overall direction is improving. However, you should always be able to drill into the raw data  -  smoothing can sometimes mask real problems.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 7,
@@ -221,7 +252,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.36,
+        "quantitativeReasoning": 0.33,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 8,
@@ -249,7 +286,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you reviewed a KPI dashboard and interpreted revenue as growing steadily. Now you discover the y-axis is logarithmic, meaning equal visual distances represent multiplicative (not additive) changes  -  steady-looking growth is actually accelerating exponentially.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.34,
+        "creativeProblemSolving": 0.36,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

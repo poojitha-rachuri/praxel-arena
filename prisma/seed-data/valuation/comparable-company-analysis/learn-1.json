@@ -33,7 +33,13 @@
       "teachingPreamble": "Comparable company analysis (or \"comps\") values a business by comparing it to similar public companies using trading multiples. The most common multiple is EV/EBITDA, which divides a company's enterprise value (equity + debt − cash) by its earnings before interest, taxes, depreciation, and amortization. For example, if Chipotle trades at 20x EV/EBITDA while McDonald's trades at 15x, the market is pricing Chipotle's growth potential more aggressively.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.48,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.1,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Peer selection is the most critical step in comps. You need companies with similar business models, growth rates, margins, and risk profiles. When Goldman Sachs valued Spotify's IPO in 2018, they chose peers like Pandora and Netflix  -  not Apple or Amazon  -  because those companies shared a subscription-based digital media model with similar revenue growth trajectories.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.12,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.34,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "After selecting peers and gathering their multiples, analysts benchmark the target company against the group's central tendency. Consider five software peers with EV/EBITDA multiples of 12x, 14x, 15x, 16x, and 45x. The mean is 20.4x, heavily skewed by the outlier, while the median of 15x better represents the typical peer. This is why Wall Street analysts almost always anchor on the median.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.25,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "You previously built a comps analysis using hardware peers with a median EV/EBITDA of 14x. Now the target company is pivoting to a SaaS model, which changes the relevant peer set and likely the most appropriate valuation multiple, since early-stage SaaS companies often lack meaningful EBITDA.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.28,
+        "quantitativeReasoning": 0.32,
+        "analyticalThinking": 0.24,
+        "decisionQuality": 0.16
+      }
     }
   ]
 }

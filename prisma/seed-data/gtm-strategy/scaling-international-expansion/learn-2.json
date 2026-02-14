@@ -33,7 +33,13 @@
       "teachingPreamble": "Market entry sequencing determines how fast and where you expand. The 'beachhead blitz' model - entering many markets quickly, measuring traction, then concentrating resources on winners - was pioneered by companies like Uber, which launched in 100+ cities globally, then exited or merged in markets (e.g., China, Southeast Asia) where local competitors dominated. This contrasts with waterfall approaches used by companies like IKEA, which spent years localizing each market.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Deep localization goes beyond translation - it requires rearchitecting your value proposition for local willingness-to-pay and content preferences. Spotify's India launch combined aggressive price localization (₹119/month vs. $9.99 in the US - a 85% discount) with curating 3B+ streams of local Bollywood and regional music. This 'value prop localization' framework means adapting pricing, content, and distribution simultaneously rather than treating localization as a surface-level translation exercise.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "communicationClarity": 0.31,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "The 'copy-paste scaling' anti-pattern occurs when companies replicate their home-market playbook without re-validating product-market fit locally. Groupon famously scaled to 48 countries in 18 months by cloning its US model, only to retreat from most markets when local deal economics, merchant relationships, and consumer behavior diverged sharply. The antidote is treating each new market as a 'PMF re-discovery' exercise - running lean validation sprints before committing full GTM resources, even when the core product is proven elsewhere.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you chose Brazil for fast time-to-revenue based on existing infrastructure and 4-month regulatory approval. Now a new data sovereignty regulation has emerged that invalidates your compliance assumption, threatening your anchor enterprise deal and Series C timeline.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

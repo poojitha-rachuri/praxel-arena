@@ -33,7 +33,13 @@
       "teachingPreamble": "CAC payback period measures how many months it takes to recoup your customer acquisition cost from gross profit. It's calculated as CAC ÷ monthly gross profit per customer. Investors typically want payback under 12-18 months for SaaS  -  Slack achieved ~11 months at scale.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "creativeProblemSolving": 0.27,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "The LTV:CAC ratio is the north star of unit economics. A ratio of 3:1 is the widely-accepted benchmark  -  meaning you earn $3 for every $1 spent acquiring a customer. Below 1:1 you're losing money; above 5:1 you may be under-investing in growth. HubSpot targets 3:1 across its segments.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.14,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.28,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.18
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "To estimate gross-profit LTV in subscription businesses, use: (ARPU × Gross Margin) ÷ Churn Rate. This gives you the total gross profit a customer generates over their lifetime. Sophisticated models discount future cash flows, but this quick formula  -  used widely in VC due diligence  -  gets you within striking distance.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you analyzed a standard SaaS model with $200/month ARPU and 2% churn. Now the company has two distinct channels with vastly different unit economics  -  enterprise sales vs. self-serve  -  forcing you to compare across revenue models rather than optimize a single one.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.38,
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

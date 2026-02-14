@@ -53,6 +53,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.12
       }
     },
     {
@@ -81,7 +87,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "communicationClarity": 0.33,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 3,
@@ -109,7 +121,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.11
+      }
     },
     {
       "order": 4,
@@ -157,6 +175,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.13,
+        "communicationClarity": 0.12
       }
     },
     {
@@ -185,7 +209,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 6,
@@ -213,7 +243,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 7,
@@ -241,7 +277,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 8,
@@ -269,7 +311,13 @@
       "teachingPreamble": null,
       "priorContext": "You previously validated mid-market as your strongest ICP with 14% trial-to-paid conversion. Now the market leader has introduced a free tier directly targeting your segment, changing the competitive landscape.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.36,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     }
   ]
 }

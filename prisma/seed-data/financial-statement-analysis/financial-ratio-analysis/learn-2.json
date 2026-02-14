@@ -33,7 +33,12 @@
       "teachingPreamble": "DuPont decomposition splits ROE into profit margin × asset turnover × equity multiplier. When a company's ROE rises while both margin and turnover are flat, the equity multiplier is the driver. From 2020 - 2023, Apple's ROE surged partly because buybacks shrank equity, amplifying the multiplier - a financial engineering effect, not operational improvement.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 2,
@@ -101,6 +106,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.18
       }
     },
     {
@@ -129,7 +139,12 @@
       "teachingPreamble": "The cash conversion cycle (DSO + DIO − DPO) measures how quickly a firm converts investments into cash. When ROIC looks strong but the CCC is lengthening - DSO rising faster than revenue, or DIO creeping up - it often signals channel stuffing or aggressive revenue recognition. Under Armour faced this exact pattern in 2016 - 2017: impressive ROIC masked by ballooning receivables that preceded a major revenue restatement.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.2
+      }
     },
     {
       "order": 4,
@@ -157,7 +172,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "communicationClarity": 0.27,
+        "analyticalThinking": 0.29
+      }
     },
     {
       "order": 5,
@@ -185,7 +205,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "analyticalThinking": 0.33,
+        "strategicReasoning": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 6,
@@ -213,7 +239,12 @@
       "teachingPreamble": "Comparing ratios across industries or business models introduces capital structure distortions. Pre-ASC 842, a retailer leasing stores (like Costco) appeared more asset-efficient than one owning them (like Walmart), inflating ROA and turnover ratios. ROIC with fully capitalized leases and NOPAT (stripping financing effects) provides the most apples-to-apples comparison of operating efficiency across different capital deployment strategies.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 7,
@@ -241,7 +272,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.33,
+        "quantitativeReasoning": 0.37,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -269,7 +306,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you chose Target B over Target A based on its 9% FCF yield and conservative balance sheet. New disclosure reveals the FCF was inflated by a non-recurring working capital release, cutting sustainable FCF yield to 3.6% - below your 10% cost of capital on a yield basis alone.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "analyticalThinking": 0.38,
+        "quantitativeReasoning": 0.31,
+        "creativeProblemSolving": 0.2,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

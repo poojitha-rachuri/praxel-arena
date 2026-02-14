@@ -28,6 +28,7 @@ interface SprintInteraction {
   teachingPreamble?: string | null;
   priorContext?: string | null;
   timeTarget: number;
+  dimensionWeights?: Record<string, number> | null;
 }
 
 interface SprintData {
@@ -155,22 +156,18 @@ function getDimensionMapping(
  */
 function scoreInteractionDeterministic(
   interaction: SprintInteraction,
-  response: SprintResponse | undefined,
-  mode?: string
+  response: SprintResponse | undefined
 ): { score: number; isCorrect: boolean } {
   if (!response) {
     return { score: 0, isCorrect: false };
   }
 
   const { answer } = response;
-  const timeSpent = Number(response.timeSpent) || 0;
   const { correctAnswer, type } = interaction;
-  const timeTarget = Number(interaction.timeTarget) || 10;
-  const isTimedMode = mode === "COMPETE";
 
   // For RANK_AND_PRIORITIZE, check partial correctness
   if (type === "RANK_AND_PRIORITIZE" && correctAnswer) {
-    return scoreRanking(answer, correctAnswer, timeSpent, timeTarget, isTimedMode);
+    return scoreRanking(answer, correctAnswer);
   }
 
   const isCorrect = answer === correctAnswer;
@@ -182,24 +179,7 @@ function scoreInteractionDeterministic(
     return { score: partialCredit, isCorrect: false };
   }
 
-  // Base score for correct answer
-  let score = 75;
-
-  // Time bonus/penalty ONLY in COMPETE mode
-  if (isTimedMode) {
-    if (timeSpent <= timeTarget) {
-      const timeRatio = timeSpent / timeTarget;
-      score += Math.round(15 * (1 - timeRatio * 0.5)); // 8-15 bonus points
-    } else {
-      const overRatio = Math.min((timeSpent - timeTarget) / timeTarget, 1);
-      score -= Math.round(10 * overRatio); // Up to -10 penalty
-    }
-  }
-
-  // Clamp to 0-100
-  score = Math.max(0, Math.min(100, score));
-
-  return { score, isCorrect: true };
+  return { score: 100, isCorrect: true };
 }
 
 /**
@@ -208,13 +188,8 @@ function scoreInteractionDeterministic(
  */
 function scoreRanking(
   answer: string,
-  correctAnswer: string,
-  rawTimeSpent: number,
-  rawTimeTarget: number,
-  isTimedMode: boolean
+  correctAnswer: string
 ): { score: number; isCorrect: boolean } {
-  const timeSpent = Number(rawTimeSpent) || 0;
-  const timeTarget = Number(rawTimeTarget) || 10;
   const playerOrder = answer.split(",").map((s) => s.trim());
   const correctOrder = correctAnswer.split(",").map((s) => s.trim());
 
@@ -231,24 +206,16 @@ function scoreRanking(
   }
 
   const isCorrect = correctPositions === correctOrder.length;
-  const positionRatio = correctPositions / correctOrder.length;
 
-  // Base score from position accuracy
-  let score = Math.round(positionRatio * 85);
-
-  // Perfect order bonus (time bonus only in COMPETE)
   if (isCorrect) {
-    score = 80;
-    if (isTimedMode && timeSpent <= timeTarget) {
-      score += Math.round(15 * (1 - (timeSpent / timeTarget) * 0.5));
-    } else if (!isTimedMode) {
-      score = 85; // Flat bonus for perfect ranking without time pressure
-    }
+    return { score: 100, isCorrect: true };
   }
 
-  score = Math.max(0, Math.min(100, score));
+  // Proportional credit for partially correct rankings
+  const positionRatio = correctPositions / correctOrder.length;
+  const score = Math.round(positionRatio * 100);
 
-  return { score, isCorrect };
+  return { score, isCorrect: false };
 }
 
 /**
@@ -258,7 +225,6 @@ function scoreRanking(
 function distributeToDimensions(
   interactions: SprintInteraction[],
   responses: SprintResponse[],
-  mode?: string,
   skillSlug?: string
 ): DimensionScores {
   const dimensionTotals: Record<DimensionKey, number> = {} as Record<
@@ -279,17 +245,25 @@ function distributeToDimensions(
     const response = responses.find(
       (r) => r.interactionId === interaction.id
     );
-    const { score } = scoreInteractionDeterministic(interaction, response, mode);
+    const { score } = scoreInteractionDeterministic(interaction, response);
 
-    const mapping = getDimensionMapping(interaction.type, skillSlug);
-
-    // Primary dimension gets 70% weight
-    dimensionTotals[mapping.primary] += score * 0.7;
-    dimensionCounts[mapping.primary] += 0.7;
-
-    // Secondary dimension gets 30% weight
-    dimensionTotals[mapping.secondary] += score * 0.3;
-    dimensionCounts[mapping.secondary] += 0.3;
+    if (interaction.dimensionWeights && typeof interaction.dimensionWeights === "object") {
+      // Per-question weights: distribute score across all specified dimensions
+      const weights = interaction.dimensionWeights as Record<string, number>;
+      for (const [dim, weight] of Object.entries(weights)) {
+        if (DIMENSION_KEYS.includes(dim as DimensionKey) && weight > 0) {
+          dimensionTotals[dim as DimensionKey] += score * weight;
+          dimensionCounts[dim as DimensionKey] += weight;
+        }
+      }
+    } else {
+      // Fallback: use type-based mapping with skill overrides
+      const mapping = getDimensionMapping(interaction.type, skillSlug);
+      dimensionTotals[mapping.primary] += score * 0.7;
+      dimensionCounts[mapping.primary] += 0.7;
+      dimensionTotals[mapping.secondary] += score * 0.3;
+      dimensionCounts[mapping.secondary] += 0.3;
+    }
   }
 
   // Calculate weighted averages
@@ -313,8 +287,6 @@ function buildDeterministicFeedback(
   responses: SprintResponse[]
 ): string {
   let correctCount = 0;
-  let totalTime = 0;
-  let totalTimeTarget = 0;
 
   for (const interaction of interactions) {
     const response = responses.find(
@@ -322,26 +294,18 @@ function buildDeterministicFeedback(
     );
     const { isCorrect } = scoreInteractionDeterministic(interaction, response);
     if (isCorrect) correctCount++;
-    totalTime += response?.timeSpent ?? 0;
-    totalTimeTarget += interaction.timeTarget;
   }
 
   const accuracy = interactions.length > 0
     ? Math.round((correctCount / interactions.length) * 100)
     : 0;
-  const timeEfficiency =
-    totalTime <= totalTimeTarget
-      ? "ahead of pace"
-      : totalTime <= totalTimeTarget * 1.5
-        ? "close to target"
-        : "over time";
 
   if (accuracy >= 90) {
-    return `Excellent performance with ${accuracy}% accuracy and ${timeEfficiency} timing. You demonstrated strong command of the material across most interactions.`;
+    return `Excellent performance with ${accuracy}% accuracy. You demonstrated strong command of the material across most interactions.`;
   } else if (accuracy >= 70) {
-    return `Solid showing with ${accuracy}% accuracy and ${timeEfficiency} timing. A few areas could use reinforcement, but your foundational understanding is clear.`;
+    return `Solid showing with ${accuracy}% accuracy. A few areas could use reinforcement, but your foundational understanding is clear.`;
   } else if (accuracy >= 50) {
-    return `You scored ${accuracy}% accuracy with ${timeEfficiency} timing. Consider revisiting the concepts in LEARN mode to strengthen your foundation before practicing further.`;
+    return `You scored ${accuracy}% accuracy. Consider revisiting the concepts in LEARN mode to strengthen your foundation before practicing further.`;
   } else {
     return `This sprint was challenging with ${accuracy}% accuracy. We recommend starting with LEARN mode on this skill to build core understanding before returning to practice.`;
   }
@@ -479,7 +443,7 @@ export async function evaluateAttempt(
   }
 
   // ── LEARN / PRACTICE mode (or COMPETE fallback): deterministic scoring ──
-  const scores = distributeToDimensions(sprint.interactions, responses, mode, skillSlug);
+  const scores = distributeToDimensions(sprint.interactions, responses, skillSlug);
   const totalScore = Math.round(
     DIMENSION_KEYS.reduce((sum, key) => sum + scores[key], 0) /
       DIMENSION_KEYS.length
@@ -619,8 +583,8 @@ function evaluateDuelDeterministic(
   player1Matches: number,
   player2Matches: number
 ): DuelEvaluation {
-  const p1Scores = distributeToDimensions(sprint.interactions, p1Responses, "COMPETE");
-  const p2Scores = distributeToDimensions(sprint.interactions, p2Responses, "COMPETE");
+  const p1Scores = distributeToDimensions(sprint.interactions, p1Responses);
+  const p2Scores = distributeToDimensions(sprint.interactions, p2Responses);
 
   const p1Total = DIMENSION_KEYS.reduce((s, k) => s + p1Scores[k], 0);
   const p2Total = DIMENSION_KEYS.reduce((s, k) => s + p2Scores[k], 0);

@@ -5,39 +5,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { X, HelpCircle } from "lucide-react";
 import { SCORING_DIMENSIONS } from "@/lib/scoring/dimensions";
 
-/** Static mapping of how interaction types contribute to dimensions */
-const INTERACTION_MAPPING = [
-  {
-    type: "Spot the Signal",
-    primary: "Analytical Thinking",
-    secondary: "Quantitative Reasoning",
-  },
-  {
-    type: "Forced Tradeoff",
-    primary: "Strategic Reasoning",
-    secondary: "Decision Quality",
-  },
-  {
-    type: "Fill the Gap",
-    primary: "Communication Clarity",
-    secondary: "Analytical Thinking",
-  },
-  {
-    type: "Rank & Prioritize",
-    primary: "Strategic Reasoning",
-    secondary: "Decision Quality",
-  },
-  {
-    type: "Curveball",
-    primary: "Creative Problem Solving",
-    secondary: "Decision Quality",
-  },
-  {
-    type: "Teach & Test",
-    primary: "Analytical Thinking",
-    secondary: "Communication Clarity",
-  },
-];
 
 export default function ScoringExplainer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,8 +63,8 @@ export default function ScoringExplainer() {
                     6 Skill Dimensions
                   </h3>
                   <p className="text-xs text-muted-foreground mb-3">
-                    Every interaction tests one or two of these dimensions.
-                    Your total score is the average of all six.
+                    Every question tests multiple dimensions with custom
+                    weights. Your total score is the average of all six.
                   </p>
                   <div className="grid gap-2">
                     {SCORING_DIMENSIONS.map((dim) => (
@@ -114,50 +81,18 @@ export default function ScoringExplainer() {
                   </div>
                 </section>
 
-                {/* 2. Interaction mapping */}
+                {/* 2. How weights work */}
                 <section>
                   <h3 className="text-sm font-medium mb-2">
-                    Question Type Mapping
+                    Per-Question Weights
                   </h3>
-                  <p className="text-xs text-muted-foreground mb-3">
-                    Each question type contributes to a primary dimension (70%
-                    weight) and a secondary dimension (30% weight).
+                  <p className="text-xs text-muted-foreground">
+                    Each question has its own dimension weight distribution
+                    based on what it tests. For example, a data analysis
+                    question might weight 60% Quantitative Reasoning, 30%
+                    Analytical Thinking, and 10% Decision Quality. Different
+                    skills emphasize different dimensions.
                   </p>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-xs">
-                      <thead>
-                        <tr className="border-b border-border text-muted-foreground">
-                          <th className="text-left py-1.5 pr-2 font-medium">
-                            Question Type
-                          </th>
-                          <th className="text-left py-1.5 pr-2 font-medium">
-                            Primary (70%)
-                          </th>
-                          <th className="text-left py-1.5 font-medium">
-                            Secondary (30%)
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {INTERACTION_MAPPING.map((row) => (
-                          <tr
-                            key={row.type}
-                            className="border-b border-border/50"
-                          >
-                            <td className="py-1.5 pr-2 font-medium">
-                              {row.type}
-                            </td>
-                            <td className="py-1.5 pr-2 text-muted-foreground">
-                              {row.primary}
-                            </td>
-                            <td className="py-1.5 text-muted-foreground">
-                              {row.secondary}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
                 </section>
 
                 {/* 3. Scoring rules */}
@@ -165,23 +100,11 @@ export default function ScoringExplainer() {
                   <h3 className="text-sm font-medium mb-2">Scoring Rules</h3>
                   <div className="space-y-2 text-xs text-muted-foreground">
                     <div className="flex gap-2">
-                      <span className="text-success font-medium shrink-0">+75</span>
-                      <span>Base score for a correct answer</span>
+                      <span className="text-success font-medium shrink-0">100</span>
+                      <span>Correct answer</span>
                     </div>
                     <div className="flex gap-2">
-                      <span className="text-success font-medium shrink-0">+8-15</span>
-                      <span>
-                        Time bonus for answering within the target time
-                      </span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-danger font-medium shrink-0">-10</span>
-                      <span>
-                        Maximum time penalty for going over target (correct answers only)
-                      </span>
-                    </div>
-                    <div className="flex gap-2">
-                      <span className="text-warning font-medium shrink-0">+15</span>
+                      <span className="text-warning font-medium shrink-0">15</span>
                       <span>
                         Partial credit on Curveball and Forced Tradeoff
                         questions (even when incorrect)
@@ -194,6 +117,10 @@ export default function ScoringExplainer() {
                         correctly-placed items
                       </span>
                     </div>
+                    <div className="flex gap-2">
+                      <span className="text-danger font-medium shrink-0">0</span>
+                      <span>Incorrect answer</span>
+                    </div>
                   </div>
                 </section>
 
@@ -202,9 +129,9 @@ export default function ScoringExplainer() {
                   <h3 className="text-sm font-medium mb-2">COMPETE Mode</h3>
                   <p className="text-xs text-muted-foreground">
                     In COMPETE mode, Claude AI evaluates your responses
-                    holistically across all 6 dimensions, providing nuanced
-                    scoring that considers reasoning quality and strategic
-                    depth beyond simple right/wrong answers.
+                    holistically across all 6 dimensions, considering reasoning
+                    quality and strategic depth beyond simple right/wrong
+                    answers.
                   </p>
                 </section>
 
@@ -213,7 +140,7 @@ export default function ScoringExplainer() {
                   <h3 className="text-sm font-medium mb-2">Total Score</h3>
                   <p className="text-xs text-muted-foreground">
                     Your total score is the average of all 6 dimension scores,
-                    each ranging from 0 to 100.
+                    each ranging from 0 to 100. Accuracy is the only factor.
                   </p>
                 </section>
               </div>

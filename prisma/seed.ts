@@ -215,6 +215,7 @@ interface CompeteSprintSeed {
     insightAnswer: string;
     priorContext?: string;
     timeTarget: number;
+    dimensionWeights?: Record<string, number>;
   }[];
 }
 
@@ -541,6 +542,7 @@ async function main() {
       priorContext: interaction.priorContext ?? null,
       timeTarget: interaction.timeTarget,
       chartData: interaction.chartData ?? undefined,
+      dimensionWeights: interaction.dimensionWeights ?? undefined,
     }));
 
     const sprint = await prisma.sprint.upsert({
@@ -588,6 +590,7 @@ async function main() {
       priorContext: interaction.priorContext ?? null,
       timeTarget: interaction.timeTarget,
       chartData: (interaction as Record<string, unknown>).chartData ?? undefined, // COMPETE data is inline, not Zod-parsed
+      dimensionWeights: (interaction as Record<string, unknown>).dimensionWeights ?? undefined,
     }));
 
     const sprint = await prisma.sprint.upsert({

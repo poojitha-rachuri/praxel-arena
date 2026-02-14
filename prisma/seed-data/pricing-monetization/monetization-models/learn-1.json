@@ -33,7 +33,13 @@
       "teachingPreamble": "A subscription model charges customers a recurring fee - monthly or annually - for continuous access to a product or service. Netflix charges ~$15/month for unlimited streaming, generating predictable recurring revenue that now exceeds $33 billion annually. The key advantage is revenue predictability, which makes forecasting and investment planning much easier.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -77,6 +83,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -105,7 +117,13 @@
       "teachingPreamble": "The freemium model gives users a basic product for free while charging for premium features. Dropbox famously grew to 700M users by offering 2GB free storage, then converting ~4% to paid plans starting at $12/month. The free tier acts as a massive acquisition funnel - lowering the barrier to try your product so you can demonstrate value before asking for payment.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -133,7 +151,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 5,
@@ -161,7 +185,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "quantitativeReasoning": 0.31,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 6,
@@ -189,7 +219,13 @@
       "teachingPreamble": "A marketplace model generates revenue by facilitating transactions between two or more parties, typically taking a commission or fee per transaction. Airbnb charges hosts a 3% fee and guests up to 14.2%, earning $9.9B in 2023 revenue without owning a single property. The challenge is the 'chicken-and-egg' problem: you need both supply and demand to create value.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -217,7 +253,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.33,
+        "quantitativeReasoning": 0.23,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 8,
@@ -245,7 +287,13 @@
       "teachingPreamble": null,
       "priorContext": "Earlier you chose tiered subscriptions for your B2B analytics tool. Now enterprise clients are leaving because rigid tiers don't match their variable usage patterns, forcing you to reconsider your monetization approach.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.31,
+        "quantitativeReasoning": 0.24,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

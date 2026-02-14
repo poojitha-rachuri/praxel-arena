@@ -33,7 +33,13 @@
       "teachingPreamble": "A distribution channel is any route your product takes to reach the end customer. When Shopify launched, it used content marketing, app store partnerships, and a direct sales team  -  each was a distinct channel. Choosing the right mix determines how fast and efficiently you grow.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "strategicReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "Channel-market fit means your distribution channel matches the buying behavior of your target audience. Atlassian found channel-market fit by selling developer tools through a self-serve website  -  because developers prefer to try before they buy, not talk to salespeople. A mismatched channel wastes money no matter how good your product is.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.37,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "communicationClarity": 0.33,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.11
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Channel concentration risk is real. Zynga built its entire business on Facebook's platform, and when Facebook changed its algorithm in 2012, Zynga lost 80% of its daily active users almost overnight. Smart GTM strategies diversify across 2-3 proven channels while continuously testing new ones.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.32,
+        "communicationClarity": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously, you ranked SEO content as your top channel priority and were building a partner referral program. Now a Google algorithm change has disrupted your primary growth engine.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.34,
+        "strategicReasoning": 0.35,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

@@ -33,7 +33,12 @@
       "teachingPreamble": "Revenue recognition determines when a company can count money as earned. Under accrual accounting, revenue is recognized as the service is delivered, not necessarily when cash is received. For example, Salesforce recognizes subscription revenue monthly over the contract term, even if the customer pays the full year upfront.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 2,
@@ -89,6 +94,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.5,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.19
       }
     },
     {
@@ -117,7 +127,12 @@
       "teachingPreamble": "Gross margin measures profit after subtracting the direct cost of making products (COGS), while operating margin also subtracts selling, general, and administrative expenses (SG&A). The gap between the two reveals how much overhead a company carries. Target, for instance, often shows a 28% gross margin but only a 6% operating margin because of massive store operations and labor costs.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 4,
@@ -145,7 +160,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "communicationClarity": 0.26,
+        "analyticalThinking": 0.3
+      }
     },
     {
       "order": 5,
@@ -173,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "analyticalThinking": 0.32,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.12
+      }
     },
     {
       "order": 6,
@@ -201,7 +227,12 @@
       "teachingPreamble": "Earnings quality measures how well reported profits reflect actual cash generation. High-quality earnings are backed by real cash flow, while low-quality earnings may rely on aggressive revenue recognition, one-time gains, or accounting estimates. Before its collapse, WorldCom showed growing earnings while capitalizing ordinary expenses  -  a classic earnings quality red flag that analysts could have caught by comparing net income to operating cash flow.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 7,
@@ -229,7 +260,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.34,
+        "quantitativeReasoning": 0.36,
+        "decisionQuality": 0.19,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +294,13 @@
       "teachingPreamble": null,
       "priorContext": "Earlier you learned that SaaS companies recognize subscription revenue over the contract period. Now imagine you've been analyzing a software company that previously booked large multi-year license deals entirely upfront, inflating current-period revenue and margins. Management just changed its revenue recognition policy.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "analyticalThinking": 0.38,
+        "quantitativeReasoning": 0.32,
+        "creativeProblemSolving": 0.18,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

@@ -220,11 +220,19 @@ Write to: `prisma/seed-data/stakeholder-communication/<topicSlug>/learn-<N>.json
       "correctAnswer": "b",
       "insightAnswer": "b",
       "priorContext": null,
-      "timeTarget": 25
+      "timeTarget": 25,
+      "dimensionWeights": {
+        "communicationClarity": 0.35,
+        "strategicReasoning": 0.30,
+        "decisionQuality": 0.20,
+        "creativeProblemSolving": 0.15
+      }
     }
   ]
 }
 ```
+
+Each interaction MUST include a `dimensionWeights` field -- a JSON object mapping scoring dimension keys (`analyticalThinking`, `strategicReasoning`, `quantitativeReasoning`, `communicationClarity`, `decisionQuality`, `creativeProblemSolving`) to float weights that sum to 1.0. Weights should reflect how much each dimension matters for that specific interaction. For Stakeholder Communication, emphasize `communicationClarity` and `strategicReasoning`.
 
 ### PRACTICE Sprint Output
 Write to: `prisma/seed-data/stakeholder-communication/<topicSlug>/practice-<N>.json`

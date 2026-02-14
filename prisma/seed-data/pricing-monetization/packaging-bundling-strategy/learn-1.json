@@ -33,7 +33,13 @@
       "teachingPreamble": "Effective tier boundaries are drawn at natural value inflection points - usage levels where a customer segment derives dramatically more value and willingness-to-pay spikes. Slack discovered this when teams crossing ~50 users shifted from cost-conscious buyers to strategic purchasers willing to pay for admin controls and SSO, creating a clean tier break between Pro and Enterprise Grid.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Feature gating works best when gated features are 'more-of' or 'better-at' capabilities - not core workflow blockers. HubSpot learned this the hard way: early gates on essential CRM reporting drove frustration and churn. They restructured so the free CRM was fully functional, gating advanced automation and attribution instead - features power users craved after experiencing core value.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "quantitativeReasoning": 0.33,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "Dual-motion strategies (self-serve + sales-led) are justified when segments have fundamentally different unit economics. Atlassian famously ran pure self-serve for years, but introduced enterprise sales when they found deals above $50K had 3x higher LTV-to-CAC ratios despite higher acquisition costs. The key test: does the sales-assisted path generate enough incremental LTV to justify the added cost structure?",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.33,
+        "decisionQuality": 0.32,
+        "quantitativeReasoning": 0.23,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you designed a 4-tier structure with a sales-assisted enterprise motion justified by superior LTV-to-CAC ratios. Now the go-to-market is shifting to product-led growth, eliminating most of the sales team and requiring self-serve purchasing across all tiers within 90 days.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.31,
+        "quantitativeReasoning": 0.25,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

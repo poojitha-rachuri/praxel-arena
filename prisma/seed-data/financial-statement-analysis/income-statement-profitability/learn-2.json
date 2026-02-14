@@ -33,7 +33,12 @@
       "teachingPreamble": "Gross margin measures profitability after direct costs (COGS), while operating margin subtracts all operating expenses like SG&A, R&D, and depreciation. A large gap between the two reveals how much overhead is consuming your gross profit - common in retail chains with heavy store costs and marketing spend.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 2,
@@ -93,6 +98,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.5,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.19
       }
     },
     {
@@ -121,7 +131,12 @@
       "teachingPreamble": "EBITDA (Earnings Before Interest, Taxes, Depreciation & Amortization) strips out financing decisions (interest), tax jurisdictions, and accounting choices around asset depreciation. This makes it useful for apples-to-apples comparisons - for example, comparing a debt-heavy LBO target in Germany with an equity-funded competitor in the U.S.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 4,
@@ -149,7 +164,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "communicationClarity": 0.26,
+        "analyticalThinking": 0.3
+      }
     },
     {
       "order": 5,
@@ -177,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "analyticalThinking": 0.32,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.12
+      }
     },
     {
       "order": 6,
@@ -205,7 +231,12 @@
       "teachingPreamble": "Earnings quality measures how well reported profits reflect actual economic performance. Key red flags include: net income consistently exceeding operating cash flow, growing accruals (like unbilled receivables), frequent 'one-time' adjustments, and aggressive revenue recognition under ASC 606 where performance obligations may be debatable.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 7,
@@ -233,7 +264,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.34,
+        "quantitativeReasoning": 0.36,
+        "decisionQuality": 0.19,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -261,7 +298,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you identified multiple earnings quality red flags at this industrial company including persistent cash flow shortfalls and fast-growing receivables. Now management has made an accounting policy change that further boosts reported earnings without any operational improvement.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "analyticalThinking": 0.38,
+        "quantitativeReasoning": 0.32,
+        "creativeProblemSolving": 0.18,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

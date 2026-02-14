@@ -33,7 +33,13 @@
       "teachingPreamble": "Peer selection goes beyond industry classification. The best comps share similar business models, growth rates, margin profiles, and capital intensity. Chipotle's fast-casual model and 15%+ unit growth make it more comparable to high-growth restaurant concepts than traditional QSR chains like McDonald's.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 2,
@@ -94,6 +100,12 @@
         ],
         "xKey": "name",
         "yKey": "multiple"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.48,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.1,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -122,7 +134,13 @@
       "teachingPreamble": "Normalizing financials is critical for apples-to-apples comparisons. Non-recurring items like litigation gains, restructuring charges, or asset write-downs should be stripped out. If a company's reported EBITDA includes a one-time $30M gain, you subtract it to reflect ongoing earning power.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -150,7 +168,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.12,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 5,
@@ -178,7 +202,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.34,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 6,
@@ -206,7 +236,13 @@
       "teachingPreamble": "Cross-border comps introduce complexity. Even when fundamentals match, multiples can diverge due to country risk premiums, lower trading liquidity on foreign exchanges, differences in corporate governance standards, or varying accounting frameworks (IFRS vs. US GAAP). Analysts must adjust or clearly disclose these factors.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 7,
@@ -234,7 +270,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.31,
+        "decisionQuality": 0.25,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -262,7 +304,13 @@
       "teachingPreamble": null,
       "priorContext": "You had built a tight 5-company peer set for a cloud infrastructure target. The highest-weighted comp just announced a spinoff that will separate its cloud and hardware businesses, meaning its consolidated multiples no longer reflect a pure-play comparable.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.28,
+        "quantitativeReasoning": 0.32,
+        "analyticalThinking": 0.24,
+        "decisionQuality": 0.16
+      }
     }
   ]
 }

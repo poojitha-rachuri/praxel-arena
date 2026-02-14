@@ -33,7 +33,13 @@
       "teachingPreamble": "The 'Rule of 40' says revenue growth rate + profit margin should exceed 40% for healthy SaaS. Companies scoring well above 40 (like growth + margin = 115) historically trade at 15-20x revenue. But the real power is using this as a guesstimation anchor: score above 40 → premium multiple; below → discount.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.41,
+        "creativeProblemSolving": 0.28,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "Sophisticated investors back-solve entry valuations from target returns. If a company will be worth $X at exit, you divide by your target return multiple, then adjust for dilution from future funding rounds. This 'venture math' framework: Exit Value ÷ Return Target × (1 - Dilution) = Max Entry Valuation. Here: exit ~$450M (assuming ARR triples to $45M × 15x), ÷ 3x = $150M, × 0.70 for dilution = ~$105M.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Professional valuations triangulate across three methods: trading comparables (public market mood), precedent transactions (what acquirers actually paid, including control premiums), and DCF (intrinsic value). The key guesstimation insight: precedent transactions typically run 20-40% above trading comps due to control premiums and synergies. A weighted blend  -  heavier on DCF and precedents for M&A  -  gives the most defensible range.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you triangulated a 13-14x EBITDA offer using a 10% WACC DCF, 12x trading comps, and 15x precedent transactions. Now rates have spiked 200bps, raising your WACC to ~12% and senior debt costs to ~7%, fundamentally changing both intrinsic value and leveraged return math.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.39,
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

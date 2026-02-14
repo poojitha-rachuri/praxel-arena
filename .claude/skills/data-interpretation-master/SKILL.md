@@ -220,11 +220,20 @@ Write to: `prisma/seed-data/data-interpretation/<topicSlug>/learn-<N>.json`
       "correctAnswer": "b",
       "insightAnswer": "b",
       "priorContext": null,
-      "timeTarget": 25
+      "timeTarget": 25,
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.35,
+        "analyticalThinking": 0.30,
+        "strategicReasoning": 0.15,
+        "decisionQuality": 0.10,
+        "creativeProblemSolving": 0.10
+      }
     }
   ]
 }
 ```
+
+Each interaction MUST include a `dimensionWeights` field -- a JSON object mapping scoring dimension keys (`analyticalThinking`, `strategicReasoning`, `quantitativeReasoning`, `communicationClarity`, `decisionQuality`, `creativeProblemSolving`) to float weights that sum to 1.0. Weights should reflect how much each dimension matters for that specific interaction. For Data Interpretation, emphasize `quantitativeReasoning` and `analyticalThinking`.
 
 ### PRACTICE Sprint Output
 Write to: `prisma/seed-data/data-interpretation/<topicSlug>/practice-<N>.json`

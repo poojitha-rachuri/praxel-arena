@@ -61,6 +61,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "strategicReasoning": 0.18,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -89,7 +95,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.33,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.25,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 3,
@@ -117,7 +129,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.47,
+        "strategicReasoning": 0.22,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.12
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.36,
+        "strategicReasoning": 0.33,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 5,
@@ -197,6 +221,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.44,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -225,7 +255,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.33,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.23,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 7,
@@ -253,7 +289,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.38,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -281,7 +323,13 @@
       "teachingPreamble": null,
       "priorContext": "You had finalized a board deck positioning net revenue retention as the company's primary growth engine. Overnight, your largest customer representing 12% of ARR notified they are churning, fundamentally undermining the deck's core thesis.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.24,
+        "strategicReasoning": 0.16
+      }
     }
   ]
 }

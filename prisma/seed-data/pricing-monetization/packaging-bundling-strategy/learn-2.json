@@ -33,7 +33,13 @@
       "teachingPreamble": "Bundle cannibalization occurs when customers who would have paid more à la carte switch to a discounted bundle, destroying margin. Microsoft found that early Office 365 bundles cannibalized higher-margin standalone Exchange and SharePoint deals before rebalancing tier composition. The key diagnostic is measuring whether incremental revenue per customer is positive or negative versus the counterfactual product mix.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "Slack's self-serve to enterprise bridge is a masterclass: teams grow organically on free/pro tiers, but governance needs (SSO, compliance, cross-workspace discovery) create natural friction as organizations scale past ~200 users. Datadog similarly uses usage-based metering where infrastructure monitoring costs scale predictably until a threshold triggers enterprise negotiation. The best bridges feel like natural progressions, not artificial walls.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.36,
+        "quantitativeReasoning": 0.33,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Healthy tier distributions typically follow a pattern where 10-20% of revenue comes from the entry tier (acquisition), 40-50% from mid-tier (core), and 30-40% from the top tier (expansion). When HubSpot noticed over-concentration in their Professional tier, they redesigned Enterprise with exclusive features like custom objects and sandboxes - shifting 15% of revenue upward within two quarters. Extreme mid-tier concentration signals a broken upsell narrative.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.33,
+        "decisionQuality": 0.32,
+        "quantitativeReasoning": 0.23,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you designed usage-based enterprise conversion triggers and gated advanced compliance features behind your enterprise tier. Now a competitor has made equivalent features free, undermining your gating strategy.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.31,
+        "quantitativeReasoning": 0.25,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

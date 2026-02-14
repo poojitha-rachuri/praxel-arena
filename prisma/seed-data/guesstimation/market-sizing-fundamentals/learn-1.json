@@ -33,7 +33,13 @@
       "teachingPreamble": "Market sizing starts with three concentric circles: TAM, SAM, and SOM. TAM (Total Addressable Market) is the total global demand for your product category  -  the biggest circle, representing everyone who could theoretically buy what you sell. Think of it as the entire ocean, even if you only fish in one pond.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.41,
+        "creativeProblemSolving": 0.28,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.13
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "There are two main ways to size a market. Top-down starts big (total population or industry revenue) and narrows using filters like demographics and adoption rates. Bottom-up starts small  -  counting individual customers, transactions, or stores  -  and multiplies upward. Population-based sizing is a common top-down technique: start with a population, then apply percentage filters step by step.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.13,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.26,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.16
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "Bottom-up sizing builds estimates from granular, countable units. You identify the number of potential customers, estimate what percentage would realistically buy, multiply by price, and scale over time. This approach is especially powerful for B2B products where you can count potential buyers. The math: number of customers × adoption rate × price per unit × time period.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "creativeProblemSolving": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you estimated the German e-scooter market using a top-down approach starting with 84M population and filtering by demographics and purchase likelihood. Now a major regulatory change restricts where scooters can be ridden.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.39,
+        "quantitativeReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

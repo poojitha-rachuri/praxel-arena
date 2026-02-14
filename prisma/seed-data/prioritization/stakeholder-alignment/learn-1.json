@@ -33,7 +33,13 @@
       "teachingPreamble": "A Power-Interest Matrix is a 2×2 grid that plots stakeholders by their authority (power) and their engagement level (interest) in your project. At Spotify, product managers use this matrix before every major launch to decide who needs a deep briefing versus a simple update. The goal is to focus your limited time on stakeholders who can make or break your initiative.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 2,
@@ -81,6 +87,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "decisionQuality": 0.42,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.12
       }
     },
     {
@@ -109,7 +121,13 @@
       "teachingPreamble": "Stakeholder conflicts often arise not from opposing goals but from different underlying interests. When Airbnb's trust & safety team clashed with growth teams over verification requirements, a facilitator discovered both cared about long-term retention  -  they just defined it differently. Mapping what stakeholders truly care about (not just what they say) lets you find alignment opportunities.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 4,
@@ -137,7 +155,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.39,
+        "decisionQuality": 0.31,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -165,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -193,7 +223,13 @@
       "teachingPreamble": "Not every powerful stakeholder wants to be in every meeting. At Microsoft, when the Azure team launched a new pricing model, the CFO had veto power but no desire to attend weekly standups. The team sent concise monthly briefs instead. Over-engaging these stakeholders wastes their time and yours; under-engaging them risks a late-stage veto that derails everything.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.2,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 7,
@@ -221,7 +257,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "decisionQuality": 0.42,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 8,
@@ -249,7 +291,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously the external payment partner was mapped as low power, low interest. Now they've announced a competing product and threatened the partnership, dramatically shifting their power and interest levels on your stakeholder map.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "decisionQuality": 0.32,
+        "creativeProblemSolving": 0.37,
+        "strategicReasoning": 0.18,
+        "analyticalThinking": 0.13
+      }
     }
   ]
 }

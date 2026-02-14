@@ -33,7 +33,13 @@
       "teachingPreamble": "WACC (Weighted Average Cost of Capital) blends the cost of debt and equity based on a company's capital structure. For example, if Apple funds itself 80% with equity costing 10% and 20% with debt costing 3% after tax, its WACC is about 8.6%. WACC is the discount rate used to convert future cash flows into today's dollars.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.48,
+        "analyticalThinking": 0.32,
+        "strategicReasoning": 0.08,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "A DCF typically projects free cash flows for 5 - 10 years, but a company doesn't stop operating after that. Terminal value captures everything beyond the forecast period - and often represents 60 - 80% of total enterprise value. The two common methods are the Gordon Growth Model (perpetuity growth) and the Exit Multiple method.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.42,
+        "analyticalThinking": 0.32,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.31,
+        "strategicReasoning": 0.33,
+        "decisionQuality": 0.23,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Sensitivity analysis tests how your valuation changes when key assumptions shift. Analysts build data tables showing enterprise value across different WACC and terminal growth rate combinations. For instance, Netflix's implied value per share might range from $350 to $600 just by moving WACC from 8% to 10% and growth from 2% to 4%.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.31,
+        "communicationClarity": 0.14,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.33,
+        "analyticalThinking": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "You had previously built a DCF with a WACC of 8% and terminal growth of 2.5%, producing a fair value of $45 per share. Now the macroeconomic environment has shifted dramatically with a major rate hike.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.3,
+        "quantitativeReasoning": 0.29,
+        "analyticalThinking": 0.25,
+        "decisionQuality": 0.16
+      }
     }
   ]
 }

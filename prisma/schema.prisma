@@ -189,6 +189,7 @@ model Interaction {
   priorContext     String?         // For CURVEBALL type
   timeTarget       Int             @default(15) // seconds
   chartData        Json?           // Optional chart data for visual interactions
+  dimensionWeights Json?           // Per-question dimension weights, e.g. { "analyticalThinking": 0.8, "strategicReasoning": 0.2 }
   createdAt        DateTime        @default(now())
 
   sprint           Sprint          @relation(fields: [sprintId], references: [id], onDelete: Cascade)

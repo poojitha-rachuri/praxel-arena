@@ -220,11 +220,19 @@ Write to: `prisma/seed-data/gtm-strategy/<topicSlug>/learn-<N>.json`
       "correctAnswer": "b",
       "insightAnswer": "b",
       "priorContext": null,
-      "timeTarget": 25
+      "timeTarget": 25,
+      "dimensionWeights": {
+        "strategicReasoning": 0.35,
+        "decisionQuality": 0.25,
+        "analyticalThinking": 0.20,
+        "creativeProblemSolving": 0.20
+      }
     }
   ]
 }
 ```
+
+Each interaction MUST include a `dimensionWeights` field -- a JSON object mapping scoring dimension keys (`analyticalThinking`, `strategicReasoning`, `quantitativeReasoning`, `communicationClarity`, `decisionQuality`, `creativeProblemSolving`) to float weights that sum to 1.0. Weights should reflect how much each dimension matters for that specific interaction. For GTM Strategy, emphasize `strategicReasoning` and `decisionQuality`.
 
 ### PRACTICE Sprint Output
 Write to: `prisma/seed-data/gtm-strategy/<topicSlug>/practice-<N>.json`

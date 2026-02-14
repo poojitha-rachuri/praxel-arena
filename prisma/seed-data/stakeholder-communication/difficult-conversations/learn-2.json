@@ -33,7 +33,13 @@
       "teachingPreamble": "When Salesforce missed enterprise adoption targets in 2016, leadership didn't hide the gap - they reframed the timeline with a revised strategy and intermediate proof points. The 'expectation reset' technique works by acknowledging reality, explaining the revised trajectory, and anchoring stakeholders to new, credible milestones rather than dwelling on the miss.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.44,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "The SBI (Situation-Behavior-Impact) model is used at companies like Google and Netflix for high-stakes feedback. Instead of saying 'Your presentations are weak,' you say: 'In Monday's board meeting [Situation], you skipped the risk section [Behavior], which left directors questioning our due diligence [Impact].' This specificity makes feedback actionable and harder to dismiss defensively.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.48,
+        "strategicReasoning": 0.21,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.32,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "When expectations are challenged, amateurs defend their number - experts defend their methodology. Airbnb's CFO famously navigated post-IPO expectation resets by presenting scenario-based forecasts with clear assumptions behind each. This 'transparent range' approach lets stakeholders see you've stress-tested your thinking, making even conservative estimates feel rigorous rather than sandbagged.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.39,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "You were executing a structured expectation-reset meeting about revised Q4 guidance when an investor introduced an unexpected leadership risk question, forcing you to manage two difficult conversations simultaneously while maintaining credibility.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.17
+      }
     }
   ]
 }

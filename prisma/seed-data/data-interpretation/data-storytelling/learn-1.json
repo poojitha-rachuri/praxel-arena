@@ -33,7 +33,12 @@
       "teachingPreamble": "Effective data stories follow an inverted pyramid: lead with the 'so what,' then support with evidence. When McKinsey analyzed 500+ executive presentations, those opening with a clear business implication received 3.2x faster decision-making versus those that started with methodology. This is sometimes called the 'Minto Pyramid Principle' - answer first, argument second.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 2,
@@ -85,6 +90,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.36,
+        "decisionQuality": 0.15
       }
     },
     {
@@ -113,7 +123,12 @@
       "teachingPreamble": "Audience framing means reshaping the same data story for different decision-makers. The board needs churn framed as revenue risk and strategic trajectory - 'We're losing $4.2M ARR from mid-market accounts.' The product team needs it framed as actionable feature signals - 'Users who skip onboarding step 3 churn at 2.4x the rate.' Same data, different narrative lens, different call to action.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 4,
@@ -141,7 +156,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 5,
@@ -169,7 +189,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 6,
@@ -197,7 +223,12 @@
       "teachingPreamble": "The ethical boundary of data storytelling is where narrative discipline meets intellectual honesty. Amazon's internal '6-pager' culture requires authors to include 'risks and counterarguments' sections precisely because a persuasive narrative can easily omit inconvenient data. The strongest data stories gain credibility by explicitly surfacing the strongest counterpoint and explaining why the core insight still holds despite it.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.38,
+        "communicationClarity": 0.18
+      }
     },
     {
       "order": 7,
@@ -225,7 +256,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.38,
+        "quantitativeReasoning": 0.31,
+        "decisionQuality": 0.2,
+        "strategicReasoning": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +290,13 @@
       "teachingPreamble": null,
       "priorContext": "You had just presented a data story recommending pay structure changes to improve DoorDash driver satisfaction. The VP now reveals a pending acquisition of a competitor with higher driver satisfaction, fundamentally changing the strategic context of your recommendation.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.34,
+        "creativeProblemSolving": 0.35,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.12
+      }
     }
   ]
 }

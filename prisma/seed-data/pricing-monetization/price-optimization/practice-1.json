@@ -65,6 +65,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "decisionQuality": 0.12
       }
     },
     {
@@ -93,7 +99,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "quantitativeReasoning": 0.31,
+        "decisionQuality": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 3,
@@ -121,7 +133,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.37,
+        "strategicReasoning": 0.32,
+        "communicationClarity": 0.19,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 4,
@@ -149,7 +167,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.33,
+        "quantitativeReasoning": 0.23,
+        "analyticalThinking": 0.13
+      }
     },
     {
       "order": 5,
@@ -209,6 +233,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.39,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -237,7 +267,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "quantitativeReasoning": 0.32,
+        "decisionQuality": 0.18,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 7,
@@ -265,7 +301,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you planned to raise SMB prices 10-15% based on inelastic demand. Now a competitor's free tier has likely made SMB demand far more elastic, invalidating your original elasticity assumptions.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "creativeProblemSolving": 0.33,
+        "strategicReasoning": 0.31,
+        "quantitativeReasoning": 0.25,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 8,
@@ -293,7 +335,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.32,
+        "quantitativeReasoning": 0.24,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

@@ -33,7 +33,13 @@
       "teachingPreamble": "Opportunity cost isn't what you spend - it's what you sacrifice. When Stripe chose to dedicate 40% of its engineering capacity to payment infrastructure in 2018 instead of lending products, the true cost was the delayed revenue from lending, not the engineering salaries. Advanced resource allocation requires evaluating every commitment against the next-best use of those same resources.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 2,
@@ -84,6 +90,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
       }
     },
     {
@@ -112,7 +124,13 @@
       "teachingPreamble": "Weighted Shortest Job First (WSJF) is a sequencing framework used by companies like Spotify and SAFe-adopting enterprises. It calculates priority as Cost of Delay divided by Job Duration. A feature worth $500K/month delayed that takes 2 months (WSJF=250) should be sequenced before one worth $800K/month delayed that takes 5 months (WSJF=160), even though the second has higher absolute value.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.38,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.12
+      }
     },
     {
       "order": 4,
@@ -140,7 +158,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "strategicReasoning": 0.38,
+        "decisionQuality": 0.31,
+        "communicationClarity": 0.2,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 5,
@@ -168,7 +192,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "decisionQuality": 0.37,
+        "strategicReasoning": 0.32,
+        "analyticalThinking": 0.19,
+        "creativeProblemSolving": 0.12
+      }
     },
     {
       "order": 6,
@@ -196,7 +226,13 @@
       "teachingPreamble": "Queuing theory - proven in manufacturing at Toyota and applied at Amazon's infrastructure teams - shows that wait times grow exponentially as utilization approaches 100%. At 80% utilization, a new task might wait 4x its processing time. At 95%, that same task could wait 19x. This is why elite teams like Google's SRE group deliberately maintain 20-30% slack capacity - not as waste, but as the capacity to respond to high-value opportunities.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "decisionQuality": 0.36,
+        "strategicReasoning": 0.33,
+        "analyticalThinking": 0.18,
+        "communicationClarity": 0.13
+      }
     },
     {
       "order": 7,
@@ -224,7 +260,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "decisionQuality": 0.44,
+        "strategicReasoning": 0.31,
+        "analyticalThinking": 0.14,
+        "communicationClarity": 0.11
+      }
     },
     {
       "order": 8,
@@ -252,7 +294,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously, you ranked the security patch first using WSJF (900/1=900). With the duration tripled to 3 months, its WSJF drops to 300 - now equal to performance optimization (300/2=150... wait, still higher). Recalculating: Security=900/3=300, Perf=300/2=150, Dashboard=400/3=133, API=200/4=50. Security still leads, but the gap has closed dramatically, making this a genuine re-evaluation moment.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "decisionQuality": 0.33,
+        "creativeProblemSolving": 0.37,
+        "strategicReasoning": 0.18,
+        "analyticalThinking": 0.12
+      }
     }
   ]
 }

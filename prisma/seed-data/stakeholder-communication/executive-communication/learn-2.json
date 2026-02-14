@@ -33,7 +33,13 @@
       "teachingPreamble": "A data-driven narrative isn't about dumping numbers on executives - it's about weaving data into a clear story that drives action. When Airbnb's analytics team presents to leadership, they don't start with spreadsheets; they start with an insight like 'Hosts who respond within 1 hour see 38% more bookings' and then show the supporting data.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 2,
@@ -85,6 +91,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.44,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -113,7 +125,13 @@
       "teachingPreamble": "The SCR framework (Situation, Complication, Resolution) is a proven structure for data-driven narratives. McKinsey consultants use it religiously: 'Our NPS is 72 (Situation). However, NPS among enterprise clients dropped 15 points this quarter (Complication). We recommend deploying dedicated success managers, which our pilot showed recovers 80% of at-risk accounts (Resolution).'",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -141,7 +159,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.48,
+        "strategicReasoning": 0.21,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -169,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.32,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -197,7 +227,13 @@
       "teachingPreamble": "Decision memos gain credibility when they don't hide complexity. Amazon's six-page memo culture expects authors to address counterarguments head-on. For example: 'While our A/B test showed a 22% lift in conversions, customer satisfaction scores dipped 6%. We believe the dip is temporary based on our 2022 rebrand data, where satisfaction recovered within 60 days. We recommend proceeding with a 90-day review checkpoint.'",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 7,
@@ -225,7 +261,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.39,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -253,7 +295,13 @@
       "teachingPreamble": null,
       "priorContext": "You had prepared a polished data-driven narrative showing 18% growth using your team's methodology, but the CFO just revealed that finance calculates the same metric differently, showing flat performance. Your credibility is now at stake in front of the leadership team.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.17
+      }
     }
   ]
 }

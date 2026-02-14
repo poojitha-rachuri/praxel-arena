@@ -33,7 +33,13 @@
       "teachingPreamble": "At Series B, investors have shifted from betting on potential to validating a growth machine. When Figma raised its Series B, the narrative led with proof that its product-led growth loop was repeatable - showing cohort retention, expansion revenue, and declining CAC payback periods. The fundraising narrative must answer: 'Is this engine scalable?'",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 2,
@@ -89,6 +95,12 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "communicationClarity": 0.44,
+        "analyticalThinking": 0.26,
+        "strategicReasoning": 0.19,
+        "decisionQuality": 0.11
       }
     },
     {
@@ -117,7 +129,13 @@
       "teachingPreamble": "Board members test CEO judgment most during misses, not wins. The 'Own-Diagnose-Act' framework is how top operators like Claire Hughes Johnson (Stripe COO) recommend handling board scrutiny: own the number without hedging, diagnose contributing factors with data, and present a concrete remediation plan with dates. Deflection or reframing erodes trust exponentially.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.43,
+        "analyticalThinking": 0.27,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.12
+      }
     },
     {
       "order": 4,
@@ -145,7 +163,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "communicationClarity": 0.48,
+        "strategicReasoning": 0.21,
+        "analyticalThinking": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 5,
@@ -173,7 +197,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "communicationClarity": 0.32,
+        "strategicReasoning": 0.32,
+        "decisionQuality": 0.24,
+        "analyticalThinking": 0.12
+      }
     },
     {
       "order": 6,
@@ -201,7 +231,13 @@
       "teachingPreamble": "Legendary board operators like Jeff Weiner at LinkedIn never brought high-stakes decisions to board meetings without 'pre-wiring' - individually briefing each director before the formal session. This surfaces objections in private where they can be addressed without group dynamics amplifying skepticism. The board meeting itself then becomes a ratification event, not a debate. Surprises in boardrooms destroy CEO credibility.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "communicationClarity": 0.41,
+        "analyticalThinking": 0.28,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 7,
@@ -229,7 +265,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "communicationClarity": 0.39,
+        "strategicReasoning": 0.31,
+        "decisionQuality": 0.19,
+        "analyticalThinking": 0.11
+      }
     },
     {
       "order": 8,
@@ -257,7 +299,13 @@
       "teachingPreamble": null,
       "priorContext": "You had pre-wired this pitch assuming a16z had no competing portfolio conflicts. The partner's disclosure mid-pitch fundamentally changes the information asymmetry - they now gain competitive intelligence while offering you no realistic path to investment due to portfolio conflict policies.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "communicationClarity": 0.28,
+        "creativeProblemSolving": 0.32,
+        "decisionQuality": 0.23,
+        "strategicReasoning": 0.17
+      }
     }
   ]
 }

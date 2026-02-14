@@ -33,7 +33,12 @@
       "teachingPreamble": "A balance sheet is a financial snapshot of a company at a single point in time. It lists everything a company owns (assets), everything it owes (liabilities), and the residual value belonging to owners (equity). Think of it like your personal finances: your home value is an asset, your mortgage is a liability, and the difference is your equity.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 2,
@@ -89,6 +94,11 @@
         ],
         "xKey": "name",
         "yKey": "value"
+      },
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.49,
+        "analyticalThinking": 0.33,
+        "decisionQuality": 0.18
       }
     },
     {
@@ -117,7 +127,12 @@
       "teachingPreamble": "Assets are split into current and non-current. Current assets are cash or items expected to convert to cash within one year  -  like inventory, accounts receivable, and short-term investments. Non-current (long-term) assets include buildings, patents, and equipment that provide value over many years. This distinction matters because it tells you how liquid a company is.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.45,
+        "analyticalThinking": 0.36,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 4,
@@ -145,7 +160,12 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 10,
-      "type": "FILL_THE_GAP"
+      "type": "FILL_THE_GAP",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.43,
+        "communicationClarity": 0.28,
+        "analyticalThinking": 0.29
+      }
     },
     {
       "order": 5,
@@ -173,7 +193,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 15,
-      "type": "FORCED_TRADEOFF"
+      "type": "FORCED_TRADEOFF",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.38,
+        "analyticalThinking": 0.31,
+        "strategicReasoning": 0.2,
+        "decisionQuality": 0.11
+      }
     },
     {
       "order": 6,
@@ -201,7 +227,12 @@
       "teachingPreamble": "The current ratio (Current Assets ÷ Current Liabilities) measures liquidity  -  a company's ability to pay short-term debts. A ratio above 1.0 means more current assets than current liabilities. Many analysts prefer a ratio between 1.5 and 2.0, though some industries like retail routinely operate below 1.0 due to strong cash flow cycles.",
       "priorContext": null,
       "timeTarget": 25,
-      "type": "TEACH_AND_TEST"
+      "type": "TEACH_AND_TEST",
+      "dimensionWeights": {
+        "quantitativeReasoning": 0.44,
+        "analyticalThinking": 0.37,
+        "communicationClarity": 0.19
+      }
     },
     {
       "order": 7,
@@ -229,7 +260,13 @@
       "teachingPreamble": null,
       "priorContext": null,
       "timeTarget": 20,
-      "type": "RANK_AND_PRIORITIZE"
+      "type": "RANK_AND_PRIORITIZE",
+      "dimensionWeights": {
+        "analyticalThinking": 0.32,
+        "quantitativeReasoning": 0.37,
+        "decisionQuality": 0.18,
+        "strategicReasoning": 0.13
+      }
     },
     {
       "order": 8,
@@ -257,7 +294,13 @@
       "teachingPreamble": null,
       "priorContext": "Previously you learned the current ratio measures liquidity using current assets and current liabilities. Now a sudden customer bankruptcy has wiped out a large receivable, forcing you to question whether the remaining balance sheet figures reflect reality.",
       "timeTarget": 15,
-      "type": "CURVEBALL"
+      "type": "CURVEBALL",
+      "dimensionWeights": {
+        "analyticalThinking": 0.39,
+        "quantitativeReasoning": 0.31,
+        "creativeProblemSolving": 0.19,
+        "decisionQuality": 0.11
+      }
     }
   ]
 }

@@ -97,8 +97,8 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // In duel context, always use COMPETE scoring even if the underlying sprint
-    // is a PRACTICE fallback (time bonuses/penalties should apply in duels)
+    // In duel context, always use COMPETE scoring (AI evaluation) even if the
+    // underlying sprint is a PRACTICE fallback
     const effectiveMode = duelId ? "COMPETE" : sprint.mode;
 
     // Build SprintData for the evaluator
@@ -117,6 +117,7 @@ export async function POST(request: NextRequest) {
         teachingPreamble: i.teachingPreamble,
         priorContext: i.priorContext,
         timeTarget: i.timeTarget,
+        dimensionWeights: i.dimensionWeights as Record<string, number> | null,
       })),
     };
 
@@ -262,7 +263,13 @@ export async function POST(request: NextRequest) {
             duelId,
             user.id,
             attempt.id,
-            sprint,
+            {
+              ...sprint,
+              interactions: sprint.interactions.map((i) => ({
+                ...i,
+                dimensionWeights: i.dimensionWeights as Record<string, number> | null | undefined,
+              })),
+            },
             responses
           );
         } catch (duelError) {
@@ -353,6 +360,7 @@ async function completeDuelAttempt(
       teachingPreamble: string | null;
       priorContext: string | null;
       timeTarget: number;
+      dimensionWeights?: Record<string, number> | null;
     }[];
   },
   responses: SprintResponse[]
@@ -470,6 +478,7 @@ async function completeDuelAttempt(
       teachingPreamble: i.teachingPreamble,
       priorContext: i.priorContext,
       timeTarget: i.timeTarget,
+      dimensionWeights: i.dimensionWeights as Record<string, number> | null,
     })),
   };
 
