@@ -43,12 +43,14 @@ export function VoiceToggle({
   onTranscriptRef.current = onTranscript;
 
   const conversation = useConversation({
-    onConnect: (_props: { conversationId: string }) => {
+    onConnect: (props) => {
+      console.log("[voice] Connected:", props);
       setVoiceState("active");
       onStateChangeRef.current(true);
-      trackEvent("voice_started", { conversationId: _props.conversationId });
+      trackEvent("voice_started", { conversationId: props?.conversationId });
     },
-    onDisconnect: () => {
+    onDisconnect: (props) => {
+      console.log("[voice] Disconnected:", props);
       setVoiceState("cooldown");
       onStateChangeRef.current(false);
       trackEvent("voice_ended");
@@ -56,17 +58,30 @@ export function VoiceToggle({
         setVoiceState("idle");
       }, 1000);
     },
-    onError: (message: string) => {
-      console.error("[voice] Error:", message);
-      trackEvent("voice_error", { error: message });
+    onError: (error: unknown) => {
+      // Error can be string or object depending on SDK version
+      const errorMessage = typeof error === "string" 
+        ? error 
+        : (error as { message?: string })?.message || "Unknown error";
+      console.error("[voice] Error:", error);
+      trackEvent("voice_error", { error: errorMessage });
       setVoiceState("error");
       setTimeout(() => {
         setVoiceState("idle");
         onStateChangeRef.current(false);
       }, 2000);
     },
-    onMessage: (props: { message: string; source: "user" | "ai" }) => {
-      onTranscriptRef.current?.(props.message, props.source);
+    onMessage: (props) => {
+      // Handle both old and new SDK message formats
+      // New format: { message, source } or { message: { message, source } }
+      console.log("[voice] Message received:", props);
+      const message = props?.message ?? props;
+      const source = props?.source ?? (message as { source?: string })?.source;
+      const text = typeof message === "string" ? message : (message as { message?: string })?.message;
+      
+      if (text && source) {
+        onTranscriptRef.current?.(text, source as "user" | "ai");
+      }
     },
   });
 
@@ -111,11 +126,14 @@ export function VoiceToggle({
       }
 
       const { signedUrl, overrides } = await res.json();
+      console.log("[voice] Got signed URL, connecting...", { signedUrl: signedUrl?.substring(0, 50) + "...", overrides });
       setVoiceState("connecting");
 
       // Apply server-generated prompt and first message as overrides
+      // connectionType: "websocket" is required when using signedUrl
       await conversation.startSession({
         signedUrl,
+        connectionType: "websocket",
         ...(overrides && {
           overrides: {
             agent: {
